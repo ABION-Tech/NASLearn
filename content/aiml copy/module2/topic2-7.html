@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Preprocessing and EDA - Week 2</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            /* Bootstrap primary blue */
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .highlight {
+            background-color: #f0f8ff;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        .tooltips {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltips .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            /* Position above the text */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltips:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
+
+        <h2>Introduction to Data Visualization Tools: Matplotlib and Seaborn</h2>
+        <p>Data visualization is an essential tool in data science for understanding and communicating insights derived
+            from data. By transforming complex numerical data into graphical representations, we can easily identify
+            patterns, trends, and relationships that may not be immediately apparent through mere analysis.</p>
+
+        <div class="highlight">
+            <h3>Importance of Data Visualization</h3>
+            <p>Visualization not only aids in analysis but also helps communicate findings effectively to stakeholders.
+                Visual aids can tell a compelling story, making complex data more accessible and actionable.</p>
+        </div>
+
+        <h3>1. Matplotlib</h3>
+        <p><strong>A foundational library:</strong> Matplotlib is a versatile plotting library that offers extensive
+            control and flexibility for creating a variety of visualizations.</p>
+
+        <h4>Core Components</h4>
+        <ul>
+            <li><strong>Figure:</strong> The overall container for one or more plots.</li>
+            <li><strong>Axes:</strong> Represents a single plot area within a figure.</li>
+            <li><strong>Plots:</strong> Visual elements like lines, scatter points, histograms, etc.</li>
+        </ul>
+
+        <h4>Basic Usage</h4>
+        <pre>
+            <code>
+import matplotlib.pyplot as plt
+
+# Create a figure and axes
+fig, ax = plt.subplots()
+
+# Plot data
+ax.plot(x, y)
+
+# Add labels and title
+ax.set_xlabel('X-axis label')
+ax.set_ylabel('Y-axis label')
+ax.set_title('Plot Title')
+
+# Show the plot
+plt.show()
+            </code>
+        </pre>
+
+        <h3>2. Seaborn</h3>
+        <p><strong>A high-level interface:</strong> Seaborn is built on top of Matplotlib, providing a more
+            user-friendly interface for generating a range of visualizations with less code.</p>
+
+        <h4>Key Features</h4>
+        <ul>
+            <li><strong>Themes:</strong> Predefined styles that enhance the visual appeal of plots.</li>
+            <li><strong>Statistical plots:</strong> Specialized plots for statistical analysis, such as regression and
+                joint plots.</li>
+            <li><strong>Categorical plots:</strong> Visualizations tailored for categorical data, including bar plots
+                and count plots.</li>
+        </ul>
+
+        <h4>Basic Usage</h4>
+        <pre>
+            <code>
+import seaborn as sns
+
+# Load a dataset
+tips = sns.load_dataset('tips')
+
+# Create a scatter plot
+sns.scatterplot(x='total_bill', y='tip', data=tips)
+            </code>
+        </pre>
+
+        <h3>Choosing the Right Tool</h3>
+        <p>Selecting between Matplotlib and Seaborn depends on your specific needs:</p>
+        <ul>
+            <li><strong>Matplotlib:</strong> Ideal for complex visualizations where fine control over individual plot
+                elements is required.</li>
+            <li><strong>Seaborn:</strong> Best for quickly generating common visualizations, particularly with
+                categorical data.</li>
+        </ul>
+
+        <h3>Additional Tips for Effective Data Visualization</h3>
+        <ul>
+            <li><strong>Explore Documentation:</strong> Both Matplotlib and Seaborn have extensive documentation filled
+                with examples and tutorials to help you master their functionalities.</li>
+            <li><strong>Experiment:</strong> Try different styles and parameters to create visualizations that best meet
+                your needs and preferences.</li>
+            <li><strong>Consider Interactivity:</strong> For more engaging visuals, explore libraries like Plotly or
+                Bokeh, which support interactive visualizations.</li>
+        </ul>
+
+        <div class="highlight">
+            <h3>Conclusion</h3>
+            <p>Mastering Matplotlib and Seaborn will empower you to create insightful and visually appealing
+                visualizations, enhancing your ability to analyze and communicate your data effectively.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

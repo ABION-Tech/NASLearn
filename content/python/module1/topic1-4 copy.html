@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Coding Exercises</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: white;
+      color: black;
+    }
+
+    .blue-accent {
+      color: blue;
+    }
+
+    #editor {
+      height: 300px;
+      width: 100%;
+      overflow: auto;
+      border: 2px solid lightgray;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      resize: both;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+
+    #output {
+      height: 300px;
+      width: 100%;
+      overflow: auto;
+      border: 2px solid lightgray;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+  </style>
+  <script src="https://skulpt.org/static/skulpt.min.js"></script>
+  <script src="https://skulpt.org/static/skulpt-stdlib.js"></script>
+</head>
+
+<body>
+
+  <div class="container-fluid d-flex">
+    <div class="col-md-8 p-4">
+      <h3 class="blue-accent">Hands-On Exercises:</h3>
+
+      <h5>Exercise 1: Creating a Simple Program</h5>
+      <ol>
+        <li>
+          Write a Python program that takes the user's name and age as input and displays a message:
+          <pre><code>name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+print("Hello " + name + ", you are " + str(age) + " years old!")</code></pre>
+        </li>
+        <li>
+          Modify the program to calculate how many years it will take for the user to turn 100:
+          <pre><code>years_to_100 = 100 - age
+print(name + ", you will turn 100 in " + str(years_to_100) + " years.")</code></pre>
+        </li>
+      </ol>
+
+      <h5>Exercise 2: Basic Calculator</h5>
+      <ol>
+        <li>
+          Write a simple Python calculator that performs addition, subtraction, multiplication, and division based on
+          user input.
+          <pre><code>num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+operation = input("Choose operation (+, -, *, /): ")
+
+if operation == "+":
+    print(num1 + num2)
+elif operation == "-":
+    print(num1 - num2)
+elif operation == "*":
+    print(num1 * num2)
+elif operation == "/":
+    print(num1 / num2)
+else:
+    print("Invalid operation")</code></pre>
+        </li>
+      </ol>
+    </div>
+
+    <div class="col-md-4">
+      <div id="editor" contenteditable="true" class="p-3">
+        # Write your Python code here...
+      </div>
+      <button class="btn btn-primary mt-2" id="run-code">Run Code</button>
+      <div id="output" class="p-3 mt-2">
+        <h5 class="blue-accent">Output:</h5>
+        <pre id="output-text">Your output will appear here...</pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('run-code').addEventListener('click', function () {
+      const code = document.getElementById('editor').innerText;
+
+      Sk.configure({
+        output: function (text) {
+          document.getElementById('output-text').innerText += text;
+        },
+        read: function (x) {
+          if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
+            throw "File not found: '" + x + "'";
+          }
+          return Sk.builtinFiles["files"][x];
+        }
+      });
+
+      // Clear previous output
+      document.getElementById('output-text').innerText = '';
+
+      // Run the code
+      Sk.misceval.asyncToPromise(function () {
+        return Sk.importMainWithBody("<stdin>", false, code, true);
+      }).catch(function (err) {
+        document.getElementById('output-text').innerText = err.toString();
+      });
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Video with Container</title>
+    <style>
+        /* Outer container for the video and other elements */
+        .container {
+            padding: 20px;
+            max-width: 600px; /* Adjust based on overall layout */
+            margin: 0 auto; /* Center it */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Container for the video with padding and gradient border */
+        .video-border {
+            max-width: 800px; /* Limits size on larger screens */
+            width: 100%; /* Full width on smaller screens */
+            background-image: linear-gradient(45deg, blue, cyan); /* Gradient border */
+            padding: 10px; /* Space for the border */
+            border-radius: 10px; /* Smooth corners for the border */
+        }
+
+        /* iframe to ensure it resizes correctly */
+        .video-border iframe {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            border: none; /* Remove default iframe border */
+            display: block;
+        }
+
+        /* Styling for the credit text */
+        .credit {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: gray;
+        }
+
+        /* Media query for mobile responsiveness */
+        @media (max-width: 600px) {
+            .video-border {
+                max-width: 100%; /* Video takes full width on mobile */
+            }
+            .credit {
+                font-size: 12px; /* Smaller font on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Outer container wrapping the video and text -->
+    <div class="container">
+        <div class="video-border">
+            <!-- Embedded YouTube video -->
+            <iframe 
+            src="https://www.youtube.com/embed/OyEHnIC45Zk" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"     
+            allowfullscreen>
+            </iframe>
+        </div>
+        <div class="credit">Video by: Your YouTube Channel Name</div>
+    </div>
+
+</body>
+</html>

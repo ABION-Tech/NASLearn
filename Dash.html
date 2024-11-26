@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAS Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      /* Light Theme */
+      --bg-color-light: #f4f6f9;
+      --text-color-light: #333;
+      --sidebar-bg-light: #ffffff;
+      --card-bg-light: #ffffff;
+      --primary-color-light: #0056b3;
+      
+      /* Dark Theme */
+      --bg-color-dark: #121212;
+      --text-color-dark: #e0e0e0;
+      --sidebar-bg-dark: #1e1e1e;
+      --card-bg-dark: #2b2b2b;
+      --primary-color-dark: #4a90e2;
+    }
+
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
+      overflow: hidden;
+    }
+
+    body.dark-theme {
+      background-color: var(--bg-color-dark);
+      color: var(--text-color-dark);
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 250px;
+      background-color: var(--sidebar-bg-light);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.active {
+      transform: translateX(0);
+    }
+
+    .dark-theme .sidebar {
+      background-color: var(--sidebar-bg-dark);
+      box-shadow: 2px 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    .sidebar-overlay.active {
+      display: block;
+    }
+
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .sidebar-nav {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-nav a {
+      color: var(--text-color-light);
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .dark-theme .sidebar-nav a {
+      color: var(--text-color-dark);
+    }
+
+    .sidebar-nav a:hover {
+      background-color: rgba(0, 86, 179, 0.1);
+    }
+
+    .dark-theme .sidebar-nav a:hover {
+      background-color: rgba(74, 144, 226, 0.2);
+    }
+
+    /* Main Content Styles */
+    .main-content {
+      margin-left: 0;
+      padding: 1rem;
+      width: 100%;
+      overflow-y: auto;
+      transition: margin-left 0.3s ease;
+    }
+
+    .main-content.sidebar-active {
+      margin-left: 250px;
+    }
+
+    /* Header Styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: var(--primary-color-light);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .dark-theme .header {
+      background-color: var(--primary-color-dark);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .theme-toggle, .menu-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .theme-toggle:hover, .menu-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    /* Card Styles */
+    .card {
+      background-color: var(--card-bg-light);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+    }
+
+    .dark-theme .card {
+      background-color: var(--card-bg-dark);
+      color: var(--text-color-dark);
+    }
+
+    /* Progress Styles */
+    .progress {
+      height: 25px;
+      border-radius: 15px;
+      background-color: rgba(0, 86, 179, 0.1);
+    }
+
+    .progress-bar {
+      background-color: var(--primary-color-light);
+      border-radius: 15px;
+    }
+
+    .dark-theme .progress-bar {
+      background-color: var(--primary-color-dark);
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+      .sidebar {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 250px;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1500;
+    }
+
+    .modal-content {
+      background-color: var(--card-bg-light);
+      border-radius: 10px;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .dark-theme .modal-content {
+      background-color: var(--card-bg-dark);
+      color: var(--text-color-dark);
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>NAS Dashboard</h3>
+      <button class="sidebar-close" id="sidebarClose">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" id="dashboardLink">
+        <i class="fas fa-tachometer-alt"></i>Dashboard
+      </a>
+      <a href="#" id="tasksLink">
+        <i class="fas fa-tasks"></i>Tasks
+      </a>
+      <a href="#" id="notificationsLink">
+        <i class="fas fa-bell"></i>Notifications
+      </a>
+      <a href="#" id="learnLink">
+        <i class="fas fa-graduation-cap"></i>Learning Center
+      </a>
+    </nav>
+    <div class="mt-auto">
+      <a href="#" class="btn btn-outline-primary w-100" id="settingsLink">
+        <i class="fas fa-cog"></i> Settings
+      </a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <h1>NAS Dashboard</h1>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content" id="mainContent">
+    <div id="dashboardContent">
+      <h2>Welcome, User</h2>
+      
+      <!-- Quick Stats -->
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <h5>Completed Tasks</h5>
+            <p class="display-6">45</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <h5>Active Projects</h5>
+            <p class="display-6">12</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <h5>Pending Reviews</h5>
+            <p class="display-6">5</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Tracking -->
+      <div class="card">
+        <h4>Project Progress</h4>
+        <div class="progress mb-3">
+          <div class="progress-bar" style="width: 70%;">70%</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" style="width: 45%;">45%</div>
+        </div>
+      </div>
+
+      <!-- Recent Activities -->
+      <div class="card">
+        <h4>Recent Activities</h4>
+        <ul class="list-unstyled">
+          <li>Task A completed</li>
+          <li>Reviewed Project X</li>
+          <li>Updated Profile</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Dynamic Content Area -->
+    <div id="dynamicContent" style="display: none;"></div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="learnModal">
+    <div class="modal-content">
+      <h3>Learning Center</h3>
+      <p>Explore our curated learning resources and training materials.</p>
+      <div class="d-grid gap-2">
+        <a href="#" class="btn btn-primary">Online Courses</a>
+        <a href="#" class="btn btn-secondary">Tutorials</a>
+        <a href="#" class="btn btn-secondary">Documentation</a>
+      </div>
+      <button class="btn btn-outline-secondary mt-3" id="closeLearnModal">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-theme');
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    // Theme toggle event
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-theme');
+      const isDarkTheme = body.classList.contains('dark-theme');
+      
+      // Update theme toggle icon
+      themeToggle.innerHTML = isDarkTheme 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
+      
+      // Save theme preference
+      localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+    });
+
+    // Sidebar Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const sidebarClose = document.getElementById('sidebarClose');
+    const mainContent = document.getElementById('mainContent');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('active');
+      sidebarOverlay.classList.toggle('active');
+      mainContent.classList.toggle('sidebar-active');
+    }
+
+    menuToggle.addEventListener('click', toggleSidebar);
+    sidebarClose.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    // Navigation and Dynamic Content
+    const dashboardContent = document.getElementById('dashboardContent');
+    const dynamicContent = document.getElementById('dynamicContent');
+
+    const navLinks = {
+      dashboardLink: () => {
+        dashboardContent.style.display = 'block';
+        dynamicContent.style.display = 'none';
+      },
+      tasksLink: () => {
+        dashboardContent.style.display = 'none';
+        dynamicContent.style.display = 'block';
+        dynamicContent.innerHTML = `
+          <div class="card">
+            <h2>Tasks</h2>
+            <ul class="list-group">
+              <li class="list-group-item">Complete project proposal</li>
+              <li class="list-group-item">Review quarterly report</li>
+              <li class="list-group-item">Schedule team meeting</li>
+            </ul>
+          </div>
+        `;
+      },
+      notificationsLink: () => {
+        dashboardContent.style.display = 'none';
+        dynamicContent.style.display = 'block';
+        dynamicContent.innerHTML = `
+          <div class="card">
+            <h2>Notifications</h2>
+            <div class="alert alert-info">No new notifications</div>
+          </div>
+        `;
+      }
+    };
+    document.addEventListener('DOMContentLoaded', () => {
+  const body = document.body;
+  const themeToggle = document.getElementById('themeToggle');
+  const menuToggle = document.getElementById('menuToggle');
+  const sidebar = document.getElementById('sidebar');
+  const sidebarOverlay = document.getElementById('sidebarOverlay');
+  const sidebarClose = document.getElementById('sidebarClose');
+
+  // Theme Toggle
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+    const icon = themeToggle.querySelector('i');
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
+  });
+
+  // Sidebar Toggle
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.add('active');
+    sidebarOverlay.classList.add('active');
+  });
+
+  // Sidebar Close
+  sidebarClose.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    sidebarOverlay.classList.remove('active');
+  });
+
+  // Overlay Click
+  sidebarOverlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    sidebarOverlay.classList.remove('active');
+  });
+});
+
+
+    // Learning Center Modal
+    const learnLink = document.getElementById('learnLink');
+    const learnModal = document.getElementById('learnModal');
+    const closeLearnModal = document.getElementById('closeLearnModal');

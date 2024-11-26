@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning - Week 1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS */
+    body {
+      background-color: #ffffff;
+      color: #333333;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+    }
+
+    h1 {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    p,
+    li {
+      color: #333333;
+      font-size: 1.1rem;
+    }
+
+    .content-box {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .blue-text {
+      color: #007bff;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .discussion,
+    .practice,
+    .additional {
+      margin-top: 30px;
+    }
+
+    .custom-btn {
+      background-color: #007bff;
+      color: white;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 8px 15px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .custom-btn:hover {
+      background-color: #007BFF;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Week 1: Introduction to Machine Learning</h1>
+
+    <div class="content-box">
+      <h2>Lecture Material</h2>
+
+      <h3>Introduction to Machine Learning</h3>
+      <p><strong>Definition:</strong> Machine Learning (ML) is a subset of Artificial Intelligence (AI) that focuses on
+        developing algorithms capable of learning from data and improving their performance without being explicitly
+        programmed. Instead of hardcoding rules, ML models identify patterns from data, helping them make predictions or
+        decisions.</p>
+
+      <h3>Key Concepts</h3>
+      <ul>
+        <li><span class="blue-text">Model:</span> A mathematical framework that learns from data to make decisions or
+          predictions.</li>
+        <li><span class="blue-text">Algorithm:</span> The step-by-step process used to train a model to recognize
+          patterns in data.</li>
+        <li><span class="blue-text">Dataset:</span> The collection of data used to train and test a model.</li>
+        <li><span class="blue-text">Features:</span> Independent variables used as inputs for the model.</li>
+        <li><span class="blue-text">Labels:</span> The target output the model aims to predict.</li>
+        <li><span class="blue-text">Training:</span> The process of learning from data by adjusting model parameters.
+        </li>
+        <li><span class="blue-text">Testing:</span> Evaluating the model's performance using new, unseen data.</li>
+      </ul>
+
+      <h3>Types of Machine Learning</h3>
+      <p>Machine Learning can be classified into three main types:</p>
+      <ul>
+        <li><strong>Supervised Learning:</strong> The model is trained on labeled data (inputs paired with correct
+          outputs). Used in <span class="blue-text">classification</span> (predicting categories) and <span
+            class="blue-text">regression</span> (predicting continuous values).</li>
+        <li><strong>Unsupervised Learning:</strong> No labeled data is provided. Models find patterns or structures in
+          the data, such as in <span class="blue-text">clustering</span> and <span class="blue-text">dimensionality
+            reduction</span>.</li>
+        <li><strong>Reinforcement Learning:</strong> Models learn by interacting with an environment and receiving
+          feedback in the form of rewards or penalties.</li>
+      </ul>
+
+      <h3>Applications of Machine Learning</h3>
+      <ul>
+        <li><span class="blue-text">Predictive Analytics:</span> Used for forecasting trends in business, finance, and
+          healthcare.</li>
+        <li><span class="blue-text">Natural Language Processing (NLP):</span> Enhancing machine interaction with human
+          language (e.g., chatbots, sentiment analysis).</li>
+        <li><span class="blue-text">Computer Vision:</span> Allowing machines to understand and process images, as seen
+          in self-driving cars or facial recognition.</li>
+        <li><span class="blue-text">Recommendation Systems:</span> Suggesting products or content based on user behavior
+          (e.g., Netflix, Amazon).</li>
+      </ul>
+    </div>
+
+    <div class="content-box">
+      <h2>Real-World Examples</h2>
+      <ul>
+        <li><strong>Netflix:</strong> Machine learning models analyze user preferences to recommend movies and TV shows.
+        </li>
+        <li><strong>Amazon:</strong> Predictive algorithms suggest products users may be interested in based on previous
+          purchases.</li>
+        <li><strong>Google Search:</strong> ML algorithms rank search results based on relevance and past user behavior.
+        </li>
+        <li><strong>Autonomous Vehicles:</strong> Machine learning helps cars navigate and make decisions in real time.
+        </li>
+      </ul>
+    </div>
+
+    <div class="discussion content-box">
+      <h2>Discussion Questions</h2>
+      <ul>
+        <li>What are the ethical considerations when using machine learning in decision-making?</li>
+        <li>How can machine learning help address social and environmental challenges?</li>
+        <li>What limitations and challenges exist in machine learning applications?</li>
+        <li>How can we ensure fairness and reduce bias in machine learning models?</li>
+      </ul>
+    </div>
+
+    <div class="practice content-box">
+      <h2>Practice Exercises</h2>
+      <ul>
+        <li>Implement a linear regression model using Scikit-learn or any other ML library.</li>
+        <li>Explore the role of different loss functions and optimization algorithms in model training.</li>
+        <li>Tune hyperparameters of a machine learning model to improve its accuracy and performance.</li>
+      </ul>
+    </div>
+
+    <div class="additional content-box">
+      <h2>Additional Topics</h2>
+      <ul>
+        <li><span class="blue-text">Data Preprocessing:</span> Cleaning and preparing data for machine learning.</li>
+        <li><span class="blue-text">Feature Engineering:</span> Creating new features or transforming existing ones to
+          optimize model performance.</li>
+        <li><span class="blue-text">Overfitting and Underfitting:</span> Understanding the balance between model
+          complexity and performance.</li>
+        <li><span class="blue-text">Ensemble Methods:</span> Combining multiple models to achieve better results.</li>
+        <li><span class="blue-text">Deep Learning:</span> Leveraging neural networks for advanced learning tasks.</li>
+      </ul>
+    </div>
+
+    <a href="#" class="custom-btn">Next: Week 2 - Supervised Learning</a>
+  </div>
+
+</body>
+
+</html>

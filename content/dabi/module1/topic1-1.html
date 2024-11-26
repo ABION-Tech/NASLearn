@@ -1,11 +1,300 @@
-<html>
-    <h2>Introduction: Overview</h2>
-<p>Welcome to the Web Development Course! In this overview, we'll cover:</p>
-<ul>
-    <li>Course objectives</li>
-    <li>What you'll learn</li>
-    <li>Prerequisites</li>
-    <li>Course structure</li>
-</ul>
-<p>Let's get started on your journey to becoming a web developer!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics and Business Intelligence</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="display-4 mb-4">Definitions and Key Roles</h1>
+
+        <section id="data-analytics" class="mb-5">
+            <h2 class="h3 mb-3">1.1 Introduction to Data Analytics (DA)</h2>
+            <p class="lead">
+                Data Analytics (DA) involves examining datasets to draw meaningful conclusions about the information
+                they
+                contain. This encompasses a wide range of techniques from simple descriptive statistics to complex
+                predictive modeling.
+            </p>
+            <p class="lead">
+                The goal of DA is to uncover patterns, correlations, and trends within data that
+                can
+                inform business decisions and strategies. Data Analytics is a critical component of modern business
+                operations, providing insights that can lead to improved efficiency, increased revenue, and competitive
+                advantages.
+            </p>
+
+            <div class="card mt-4">
+                <div class="card-header bg-primary text-white">
+                    <strong>Importance</strong>
+                </div>
+                <div class="card-body">
+                    <p>
+                        In today’s data-driven world, the ability to analyze and interpret data is invaluable.
+                        Businesses
+                        generate
+                        massive amounts of data through various channels such as transactions, customer interactions,
+                        and
+                        social
+                        media. Data Analytics enables organizations to convert this raw data into actionable insights,
+                        helping
+                        to
+                        understand customer behavior, optimize operations, predict future trends, and make informed
+                        decisions.
+                        For
+                        instance, through predictive analytics, businesses can forecast sales, manage inventory, and
+                        tailor
+                        marketing efforts to target specific customer segments effectively.
+                    </p>
+                </div>
+            </div>
+            <div class="card mt-4">
+                <div class="card-header bg-primary text-white">
+                    <strong>Key Techniques</strong>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                    <li><strong>Descriptive Analytics:</strong> Summarizes historical data to understand what has
+                        happened
+                        in
+                        the past. This includes techniques like data aggregation and data mining.</li>
+                    <li class="list-group-item">
+                    <li><strong>Diagnostic Analytics:</strong> Examines historical data to determine why something
+                        happened.
+                        This often involves data discovery and drill-down analysis.</li>
+                    <li class="list-group-item">
+                    <li><strong>Predictive Analytics:</strong> Uses statistical models and machine learning techniques
+                        to
+                        predict future outcomes based on historical data. Examples include regression analysis and time
+                        series
+                        forecasting.</li>
+                    <li class="list-group-item">
+                    <li><strong>Prescriptive Analytics:</strong> Recommends actions to achieve desired outcomes. This
+                        involves
+                        the use of optimization and simulation algorithms to suggest the best course of action based on
+                        predictive models.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="business-intelligence" class="mb-5">
+            <h2 class="h3 mb-3">1.2 Introduction to Business Intelligence (BI)</h2>
+            <p>
+                Business Intelligence (BI) refers to the technologies, applications, and practices used for the
+                collection,
+                integration, analysis, and presentation of business information. BI is focused on providing
+                comprehensive,
+                up-to-date, and accurate information to support decision-making processes. BI systems compile data from
+                various sources into a coherent format, making it accessible and useful for business analysis.
+            </p>
+            <h3>Importance</h3>
+            <p>
+                BI tools and systems are essential for understanding the historical, current, and future state of
+                business
+                operations. They provide insights into various aspects such as sales performance, customer behavior,
+                market
+                trends, and operational efficiency. By leveraging BI, organizations can make data-driven decisions that
+                enhance strategic planning, improve operational efficiency, and gain a competitive edge. For example, a
+                BI
+                dashboard might allow a retail company to track real-time sales data, monitor inventory levels, and
+                analyze
+                customer buying patterns to optimize stock levels and improve customer satisfaction.
+            </p>
+            <h3>Key Components</h3>
+            <ul>
+                <li><strong>Data Warehousing:</strong> The centralized storage of data from different sources, making it
+                    easy to access and analyze.</li>
+                <li><strong>Data Mining:</strong> The process of discovering patterns and relationships in large
+                    datasets.
+                </li>
+                <li><strong>Reporting and Query Tools:</strong> Tools that generate reports and enable users to query
+                    data
+                    to answer specific business questions.</li>
+                <li><strong>Dashboard and Visualization Tools:</strong> Applications that present data in visual formats
+                    like charts and graphs for easy interpretation.</li>
+                <li><strong>Performance Metrics and Benchmarking:</strong> Tools that measure performance against
+                    benchmarks
+                    to assess and improve business operations.</li>
+            </ul>
+        </section>
+
+        <section id="differences">
+            <h2>1.3 Differences between DA and BI</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Analysis</th>
+                        <th>Business Intelligence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Scope and Focus:</strong> DA encompasses a broad range of techniques, including
+                            descriptive, diagnostic, predictive, and prescriptive analytics. It is more focused on
+                            extracting insights from data to forecast future trends and recommend actions.</td>
+                        <td><strong>Scope and Focus:</strong> BI primarily focuses on descriptive and diagnostic
+                            analytics
+                            to understand historical and current data. It is more about reporting and querying to
+                            provide a
+                            snapshot of business performance.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Outcome:</strong> DA produces models and simulations to predict future outcomes and
+                            suggest strategic actions.</td>
+                        <td><strong>Outcome:</strong> BI produces dashboards, reports, and visualizations that summarize
+                            past and present data to support decision-making.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tools and Techniques:</strong> DA utilizes statistical analysis, machine learning
+                            algorithms, and advanced modeling techniques (e.g., Python, R, Scikit-learn).</td>
+                        <td><strong>Tools and Techniques:</strong> BI uses tools like dashboards and reporting software
+                            (e.g., Power BI, Tableau) primarily for visualization and summary.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="similarities">
+            <h2>1.4 Similarities between DA and BI</h2>
+            <ul>
+                <li><strong>Data-Driven:</strong> Both fields rely on data to derive insights and support
+                    decision-making
+                    processes. They involve collecting, processing, and analyzing data to generate meaningful
+                    information.
+                </li>
+                <li><strong>Tools and Technologies:</strong> Both DA and BI use similar tools and technologies for data
+                    processing and visualization. For instance, SQL can be used in both fields to manage and query data,
+                    while tools like Tableau and Power BI are used for data visualization.</li>
+                <li><strong>Goal:</strong> The ultimate goal of both DA and BI is to improve business performance by
+                    providing actionable insights. They help organizations understand their operations better, identify
+                    opportunities for improvement, and make informed decisions.</li>
+            </ul>
+        </section>
+
+        <section id="activity">
+            <h2>Activity</h2>
+            <p><strong>Discussion:</strong> Engage in a community discussion about how DA and BI are used in various
+                industries. Share examples and personal experiences.</p>
+        </section>
+        <h2 class="section-title">YouTube Video Explanation</h2>
+        <p>Watch the video below to get a more in-depth understanding.
+        </p>
+
+
+        <div class="video-container">
+            <div class="gradient-border">
+                <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <div class="video-links">
+                    <h4>Channel Name<h4>
+                </div>
+            </div>
+        </div>
+</body>
+
 </html>

@@ -1,0 +1,67 @@
+﻿I need you to develop this course lecture content expand upon the details and concepts within, 
+work 5 times harder to fully fleshed out  adding codes and explanations where necessary
+
+misconceptions about all the above generally 
+
+add the disclaimer encourage creativity, and problem solving
+
+I need you to generate a new well styled and mordern looking UI bootstrap webpage with no header or footer, for the following content, you can customize it too with embeded custom css, it should be predominately white, and black text, with blue accent I need you to develop this content of these course and expand upon the content and concepts within, 
+work 3 times harder to fully flesh out
+
+
+
+.now in this page include an editable rigth side and downwards resizable code editor, but  mobile-first and responsive to larger screens, also this code editor has a viewport to dispay output of the code written, this is in python so make it work
+
+
+develop this contetn which is a conlusion of the first week content, for this i need cards that appaear stacked on mobile and grided on larger screen, this card will hold  summary, a two to 3 word higlight on the default face, and when toggled flips to shows a lot more summary of the concept behind, also make it hover effective
+
+
+i need you to geenrate 2 bootstrap webpage for the following content, you can customize it too with custom css, it should be predominately white, and black text, with blue accent, 1. i scalled intro duction(develop this into more and make it a page) Overview:
+This first week lays the foundation for your journey into Python programming. You will be introduced to the core concepts of programming and understand Python�s significance as a versatile, beginner-friendly language. By the end of this week, you�ll be able to set up your Python environment, write your first program, and understand essential programming concepts such as variables, data types, and basic input/output.
+also in this add the course details like infro from the course including duration and mode, like 6 months splitted into 2, part 1 10 weeks of the first 3 month is for the main course, 2 weeks for 2 electives, ending part 1, part 2 is a 3 month unpaid internship withh our affiliates.
+
+noe for pagr 2 its titled getting started, you know what to do, develop this page content as you create the page
+
+
+
+
+
+
+# Weekly Course Content Generation Prompt
+
+Given the following curriculum for Week [X] of  User Interface and User experience:
+
+[Insert week's curriculum topics here]
+
+Please generate comprehensive course content including:
+
+1. Lecture Material:
+   - Detailed explanations of each topic
+   - Key concepts and their significance
+   - Real-world examples and applications
+
+2. Discussion Questions:
+   - Thought-provoking questions to encourage critical thinking
+   - Topics for group discussions or forums
+
+3. Practice Exercises:
+   - Problems or scenarios for students to apply their knowledge
+   - Step-by-step solutions with explanations
+
+
+4. Assessment :
+   - Potential quiz or exam questions
+   - Project or assignment suggestions
+
+5. Practical Applications:
+   - How the week's topics relate to real-world scenarios or career applications
+
+6. Common Misconceptions:
+   - Address any frequently misunderstood concepts
+   - Clarify potential points of confusion
+
+7. Recap and Preview:
+    - Summary of the week's key takeaways
+    - Brief introduction to next week's topics
+
+Please ensure the content is engaging, clear, and appropriate for the course level. Include a mix of theoretical knowledge and practical applications to enhance student learning.

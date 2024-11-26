@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Algorithms and Problem Solving</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        h3 {
+            color: #007BFF;
+            /* Bootstrap primary color */
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            /* Light background for code blocks */
+            border-left: 4px solid #007BFF;
+            /* Blue accent for the left border */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container my-5">
+        <h3>Algorithms and Problem Solving</h3>
+
+        <h5>Sorting Algorithms</h5>
+        <p>Sorting algorithms are essential for organizing data efficiently.</p>
+        <ul>
+            <li><strong>Bubble Sort</strong>: Repeatedly swaps adjacent elements if they are in the wrong order.</li>
+            <li><strong>Selection Sort</strong>: Selects the smallest (or largest) element and swaps it with the first
+                unsorted element.</li>
+            <li><strong>Insertion Sort</strong>: Inserts each element into its proper position in a sorted portion of
+                the list.</li>
+            <li><strong>Merge Sort</strong>: Recursively divides the list in half, sorts each half, and merges them.
+            </li>
+            <li><strong>Quick Sort</strong>: Selects a pivot, partitions the array into elements less than and greater
+                than the pivot, and recursively sorts the partitions.</li>
+        </ul>
+
+        <h6>Example of Bubble Sort:</h6>
+        <pre><code>def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] &gt; arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+</code></pre>
+
+        <h5>Searching Algorithms</h5>
+        <p>Searching algorithms are used to find an element within a data structure.</p>
+        <ul>
+            <li><strong>Linear Search</strong>: Iterates over each element in the list to find the target.</li>
+            <li><strong>Binary Search</strong>: Efficiently finds an element in a sorted list by repeatedly dividing the
+                search interval in half.</li>
+        </ul>
+
+        <h6>Example of Binary Search:</h6>
+        <pre><code>def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low &lt;= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] &lt; target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+</code></pre>
+
+        <h5>Algorithmic Complexity and Big O Notation</h5>
+        <p>Understanding the performance of algorithms is critical for writing efficient code. <strong>Big O
+                notation</strong> is used to describe the time complexity (how runtime scales with input size) and space
+            complexity (how memory usage scales with input size) of algorithms.</p>
+        <ul>
+            <li><strong>O(1)</strong>: Constant time — the operation doesn't depend on the input size.</li>
+            <li><strong>O(n)</strong>: Linear time — the operation takes time proportional to the input size.</li>
+            <li><strong>O(log n)</strong>: Logarithmic time — typically seen in efficient search algorithms like binary
+                search.</li>
+            <li><strong>O(n²)</strong>: Quadratic time — common in less efficient algorithms like bubble sort.</li>
+        </ul>
+    </div>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

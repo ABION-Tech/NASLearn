@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervised Learning - Regression</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent for headers */
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            /* Light grey for code blocks */
+            border-left: 4px solid #007BFF;
+            /* Blue accent border */
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .evaluation-metrics {
+            background-color: #f8f9fa;
+            /* Light grey for evaluation metrics */
+            border-left: 4px solid #007BFF;
+            /* Blue accent border */
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container content">
+        <h1>Week 3: Supervised Learning - Regression</h1>
+
+        <h2>Linear Regression: Simple and Multiple Linear Regression</h2>
+
+        <p>
+            <strong>Linear regression</strong> is a statistical method used to model the relationship between a
+            dependent variable and one or more independent variables. It assumes a linear relationship between the
+            variables and aims to find the best-fitting line or hyperplane that minimizes the distance between the
+            predicted values and the actual values. This technique is crucial in predictive analytics, allowing us to
+            make informed decisions based on data.
+        </p>
+
+        <h3>1. Simple Linear Regression</h3>
+        <p>
+            The model for simple linear regression can be expressed mathematically as follows:
+        </p>
+        <div class="code-block">
+            y = β₀ + β₁x + ε
+        </div>
+        <p>where:</p>
+        <ul>
+            <li><code>y</code> is the dependent variable</li>
+            <li><code>x</code> is the independent variable</li>
+            <li><code>β₀</code> is the intercept</li>
+            <li><code>β₁</code> is the slope</li>
+            <li><code>ε</code> is the error term</li>
+        </ul>
+
+        <p>
+            <strong>Ordinary least squares (OLS)</strong> is a common method for estimating the coefficients
+            <code>β₀</code> and <code>β₁</code> by minimizing the sum of squared residuals. This approach ensures that
+            the best fit line is as close as possible to all the data points.
+        </p>
+
+        <h3>2. Multiple Linear Regression</h3>
+        <p>
+            The model for multiple linear regression is given by:
+        </p>
+        <div class="code-block">
+            y = β₀ + β₁x₁ + β₂x₂ + ... + βₚxₚ + ε
+        </div>
+        <p>where:</p>
+        <ul>
+            <li><code>y</code> is the dependent variable</li>
+            <li><code>x₁</code>, <code>x₂</code>, ..., <code>xₚ</code> are the independent variables</li>
+            <li><code>β₀</code>, <code>β₁</code>, ..., <code>βₚ</code> are the coefficients</li>
+            <li><code>ε</code> is the error term</li>
+        </ul>
+
+        <p>In matrix notation, this can be represented as:</p>
+        <div class="code-block">
+            y = Xβ + ε
+        </div>
+        <p>where:</p>
+        <ul>
+            <li><code>y</code> is an <code>n</code>-dimensional vector of dependent variables</li>
+            <li><code>X</code> is an <code>n</code> x <code>p</code> matrix of independent variables</li>
+            <li><code>β</code> is a <code>p</code>-dimensional vector of coefficients</li>
+            <li><code>ε</code> is an <code>n</code>-dimensional vector of errors</li>
+        </ul>
+
+        <h3>Model Interpretation</h3>
+        <p>Understanding the output of a regression model is crucial:</p>
+        <ul>
+            <li><strong>Coefficients:</strong> The coefficients <code>β₀</code> and <code>β₁</code> (or <code>β₀</code>,
+                <code>β₁</code>, ..., <code>βₚ</code> in multiple regression) represent the impact of the independent
+                variables on the dependent variable. Each coefficient indicates how much the dependent variable is
+                expected to increase when the corresponding independent variable increases by one unit.
+            </li>
+            <li><strong>Intercept:</strong> The intercept <code>β₀</code> represents the expected value of the dependent
+                variable when all independent variables are zero. It provides a baseline for predictions.</li>
+            <li><strong>Slope:</strong> The slope <code>β₁</code> represents the change in the dependent variable for a
+                unit change in the independent variable. This is particularly useful for interpreting the strength and
+                direction of relationships.</li>
+        </ul>
+
+        <h3>Evaluation Metrics</h3>
+        <div class="evaluation-metrics">
+            <p><strong>Mean squared error (MSE):</strong> Measures the average squared difference between the predicted
+                and actual values, indicating how well the model fits the data.</p>
+            <p><strong>Root mean squared error (RMSE):</strong> The square root of the MSE, providing a more
+                interpretable measure as it is in the same units as the dependent variable.</p>
+            <p><strong>Mean absolute error (MAE):</strong> Measures the average absolute difference between the
+                predicted and actual values, offering another perspective on prediction accuracy.</p>
+            <p><strong>R-squared:</strong> Measures the proportion of variance in the dependent variable explained by
+                the independent variables, indicating the goodness of fit of the model.</p>
+        </div>
+
+        <h3>Assumptions of Linear Regression</h3>
+        <p>For linear regression to provide valid results, certain assumptions must be met:</p>
+        <ul>
+            <li><strong>Linearity:</strong> The relationship between the independent and dependent variables is linear.
+            </li>
+            <li><strong>Independence:</strong> The observations are independent of each other, which is crucial for
+                valid hypothesis testing.</li>
+            <li><strong>Homoscedasticity:</strong> The variance of the errors is constant across all levels of the
+                independent variables.</li>
+            <li><strong>Normality:</strong> The errors are normally distributed, which is important for inference and
+                hypothesis testing.</li>
+        </ul>
+
+        <h3>Model Building and Evaluation</h3>
+        <p>Building a linear regression model involves several key steps:</p>
+        <ol>
+            <li><strong>Data preparation:</strong> Clean and preprocess the data, including handling missing values,
+                outliers, and encoding categorical variables.</li>
+            <li><strong>Feature selection:</strong> Choose the relevant independent variables to include in the model
+                based on domain knowledge and exploratory data analysis.</li>
+            <li><strong>Model training:</strong> Fit the regression model to the training data, using techniques such as
+                OLS to estimate coefficients.</li>
+            <li><strong>Model evaluation:</strong> Assess the model's performance using appropriate metrics like MSE,
+                RMSE, and R-squared.</li>
+            <li><strong>Model tuning:</strong> Adjust the model's hyperparameters or consider alternative modeling
+                techniques to improve performance.</li>
+        </ol>
+
+        <h3>Applications of Linear Regression</h3>
+        <p>Linear regression is widely used across various fields:</p>
+        <ul>
+            <li><strong>Predicting house prices:</strong> Predicting the price of a house based on features like size,
+                number of bedrooms, and location.</li>
+            <li><strong>Sales forecasting:</strong> Predicting future sales based on historical data and other
+                influencing factors.</li>
+            <li><strong>Financial modeling:</strong> Predicting stock prices, interest rates, or other financial
+                variables using relevant indicators.</li>
+            <li><strong>Scientific research:</strong> Modeling relationships between variables in various fields such as
+                biology, physics, and economics to understand underlying phenomena.</li>
+        </ul>
+
+        <p>Linear regression is a powerful and versatile tool for modeling linear relationships between variables. By
+            understanding the underlying concepts and assumptions, you can effectively apply linear regression to a wide
+            range of problems in data science.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>

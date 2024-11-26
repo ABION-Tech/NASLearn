@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Hands-On Exercises</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .exercise {
+            margin-bottom: 40px;
+        }
+
+        .code-editor-container {
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            /* Fixed height for the code editor area */
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .code-editor {
+            flex-grow: 1;
+            padding: 10px;
+            resize: vertical;
+            overflow: auto;
+            font-family: monospace;
+            border: none;
+            outline: none;
+        }
+
+        .output-viewport {
+            border-top: 1px solid #ced4da;
+            padding: 10px;
+            height: 100px;
+            background-color: #f8f9fa;
+            overflow-y: auto;
+        }
+
+        @media (min-width: 576px) {
+            .code-editor-container {
+                flex-direction: row;
+                height: 500px;
+                /* Increase height for larger screens */
+            }
+
+            .code-editor {
+                width: 60%;
+                /* Width of the code editor */
+            }
+
+            .output-viewport {
+                width: 40%;
+                /* Width of the output viewport */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container content">
+        <h1 class="blue-accent">Hands-On Exercises</h1>
+
+        <div class="exercise">
+            <h4 class="blue-accent">Exercise 1: Student Records Management</h4>
+            <p>Write a program that uses various data structures to store and manipulate a collection of student
+                records. Each student record should include a name, age, and list of grades.</p>
+
+            <h5>Code:</h5>
+            <pre><code>students = [
+    {'name': 'Alice', 'age': 20, 'grades': [85, 90, 92]},
+    {'name': 'Bob', 'age': 21, 'grades': [78, 85, 88]},
+]
+
+# Accessing student records
+for student in students:
+    name = student['name']
+    age = student['age']
+    avg_grade = sum(student['grades']) / len(student['grades'])
+    print(f"{name}, Age: {age}, Average Grade: {avg_grade}")</code></pre>
+        </div>
+
+        <div class="exercise">
+            <h4 class="blue-accent">Exercise 2: Set Operations</h4>
+            <p>Write a program that creates two sets of student IDs and performs union, intersection, and difference
+                operations.</p>
+
+            <h5>Code:</h5>
+            <pre><code>set1 = {101, 102, 103}
+set2 = {102, 103, 104}
+
+print(set1.union(set2))  # Union
+print(set1.intersection(set2))  # Intersection
+print(set1.difference(set2))  # Difference</code></pre>
+        </div>
+
+        <div class="code-editor-container">
+            <textarea id="code-editor" class="code-editor" placeholder="Write your Python code here..."></textarea>
+            <div id="output-viewport" class="output-viewport">Output will appear here...</div>
+        </div>
+
+        <button id="run-button" class="btn btn-primary">Run Code</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("run-button").onclick = function () {
+            const code = document.getElementById("code-editor").value;
+            const outputViewport = document.getElementById("output-viewport");
+
+            // Clear previous output
+            outputViewport.innerHTML = '';
+
+            try {
+                // Create a new function from the code and execute it
+                const func = new Function(code);
+                const originalLog = console.log;
+
+                // Capture console.log output
+                console.log = function (message) {
+                    outputViewport.innerHTML += message + '<br>';
+                };
+
+                func(); // Run the code
+                console.log = originalLog; // Restore original console.log
+            } catch (e) {
+                outputViewport.innerHTML = 'Error: ' + e.message; // Display error
+            }
+        };
+    </script>
+</body>
+
+</html>

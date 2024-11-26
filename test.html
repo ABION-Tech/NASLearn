@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On Exercises</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS for page design -->
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1,
+        h2,
+        h4 {
+            color: #007BFF;
+            /* Blue accent for headings */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #007BFF;
+            /* Blue accent for highlighted terms */
+            font-weight: bold;
+        }
+
+        .code-editor-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .code-editor {
+            flex: 1;
+            border: 2px solid #007BFF;
+            margin-right: 20px;
+            resize: both;
+            overflow: auto;
+            min-height: 400px;
+            min-width: 300px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            background-color: #f8f9fa;
+        }
+
+        .output-viewport {
+            flex: 1;
+            border: 2px solid #007BFF;
+            padding: 20px;
+            background-color: #f1f1f1;
+            min-height: 400px;
+        }
+
+        .output-viewport p {
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .code-editor-container {
+                flex-direction: column;
+            }
+
+            .code-editor,
+            .output-viewport {
+                min-width: 100%;
+            }
+        }
+
+        .section-divider {
+            border-top: 2px solid #007BFF;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Hands-On Exercises</h1>
+
+        <div class="custom-card">
+            <h2 class="section-title">Exercise 1: Supervised Learning (Iris Dataset)</h2>
+            <p>In this exercise, you'll load the Iris dataset and implement a <span class="highlight">Logistic
+                    Regression</span> model to classify different species of flowers. You will evaluate the model using
+                a confusion matrix and accuracy score.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="custom-card">
+            <h2 class="section-title">Exercise 2: Unsupervised Learning (Customer Segmentation)</h2>
+            <p>For this exercise, apply <span class="highlight">K-Means</span> clustering to group customers based on
+                purchasing behavior. Visualize the clusters and evaluate the model using the silhouette score.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="custom-card">
+            <h2 class="section-title">Exercise 3: Hyperparameter Tuning</h2>
+            <p>In this exercise, use <span class="highlight">GridSearchCV</span> to tune hyperparameters for a
+                classification model such as Random Forest. Compare the tuned model's performance with the default
+                model.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title">Code Editor & Output</h2>
+        <div class="code-editor-container">
+            <!-- Code Editor -->
+            <textarea class="code-editor" id="codeEditor" placeholder="Write your Python code here..."></textarea>
+
+            <!-- Output Viewport -->
+            <div class="output-viewport" id="outputViewport">
+                <h4>Output:</h4>
+                <p id="outputText">Your code output will be displayed here.</p>
+            </div>
+        </div>
+
+        <!-- Run Button -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="runCode()">Run Code</button>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript to handle code execution and display output -->
+    <script>
+        function runCode() {
+            var code = document.getElementById("codeEditor").value;
+            // Simulate code execution (for now, only outputs the code as a demo)
+            document.getElementById("outputText").innerText = "Executing the following Python code:\n\n" + code;
+        }
+    </script>
+
+</body>
+
+</html>

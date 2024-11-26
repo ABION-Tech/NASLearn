@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1: AI and Machine Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p {
+            color: #222;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            margin-top: 30px;
+            color: #007bff;
+        }
+
+        .question {
+            background-color: #f1f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid #007bff;
+        }
+
+        pre {
+            background-color: #f3f3f3;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+        }
+
+        .practice-exercise {
+            padding: 15px;
+            background-color: #e9f5ff;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #007BFF;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            color: #007BFF;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content-wrapper">
+        <h1>Week 1: Introduction to Artificial Intelligence and Machine Learning</h1>
+
+        <h3>Discussion Questions</h3>
+
+        <div class="question">
+            <strong>1. What are the ethical implications of AI development?</strong>
+            <ul>
+                <li><strong>Bias and discrimination:</strong> AI systems can perpetuate biases in training data,
+                    resulting in discriminatory outcomes.</li>
+                <li><strong>Privacy concerns:</strong> AI's ability to collect and analyze personal data poses privacy
+                    risks.</li>
+                <li><strong>Job displacement:</strong> AI-driven automation could lead to job losses in some sectors.
+                </li>
+                <li><strong>Autonomous weapons:</strong> Raises concerns about the use of lethal force without human
+                    oversight.</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <strong>2. How can AI address global challenges like climate change and poverty?</strong>
+            <ul>
+                <li><strong>Climate change:</strong> AI can enhance energy efficiency, resource management, and
+                    environmental forecasting.</li>
+                <li><strong>Poverty:</strong> AI can improve access to education, healthcare, and economic opportunities
+                    in underserved regions.</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <strong>3. What are the potential limitations and risks of AI?</strong>
+            <ul>
+                <li><strong>Lack of understanding:</strong> AI may not fully grasp the context of the data and could
+                    make unintended decisions.</li>
+                <li><strong>Black box problem:</strong> Many AI models are opaque, making it difficult to interpret
+                    their decision-making processes.</li>
+                <li><strong>Dependence:</strong> Over-reliance on AI could lead to vulnerabilities if systems fail or
+                    are compromised.</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <strong>4. How can we ensure responsible AI development?</strong>
+            <ul>
+                <li><strong>Ethical guidelines:</strong> Creating and adhering to ethical standards in AI development.
+                </li>
+                <li><strong>Transparency:</strong> Making AI systems explainable to understand and challenge decisions.
+                </li>
+                <li><strong>Inclusivity:</strong> Ensuring AI benefits all sectors of society, not just select groups.
+                </li>
+                <li><strong>International cooperation:</strong> Establishing global governance for AI safety and usage.
+                </li>
+            </ul>
+        </div>
+
+        <h3>Practice Exercises</h3>
+
+        <div class="practice-exercise">
+            <strong>1. Install Python and Jupyter Notebook:</strong>
+            <ul>
+                <li>Download and install Python from <a href="https://www.python.org/" target="_blank">Python.org</a>
+                </li>
+                <li>Install Jupyter Notebook with pip: <code>pip install jupyterlab</code></li>
+            </ul>
+        </div>
+
+        <div class="practice-exercise">
+            <strong>2. Create a Pandas DataFrame and perform basic operations:</strong>
+            <pre>
+import pandas as pd
+
+data = {'Name': ['Alice', 'Bob', 'Charlie'],
+        'Age': [25, 30, 35],
+        'City': ['New York', 'Los Angeles', 'Chicago']}
+
+df = pd.DataFrame(data)
+
+# Selecting columns
+print(df['Name'])
+
+# Filtering rows
+print(df[df['Age'] > 30])
+
+# Summarizing data
+print(df.describe())
+        </pre>
+        </div>
+
+        <div class="practice-exercise">
+            <strong>3. Implement a simple linear regression model using Scikit-Learn:</strong>
+            <pre>
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+X = df[['Age']]
+y = df['City']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+        </pre>
+        </div>
+
+        <h3>Practical Applications</h3>
+
+        <ul>
+            <li>Analyze customer data to identify patterns and trends using clustering algorithms.</li>
+            <li>Build a recommendation system for products/services using collaborative or content-based filtering.</li>
+            <li>Develop a customer support chatbot using NLP techniques.</li>
+        </ul>
+
+        <h3>Common Misconceptions</h3>
+
+        <ul>
+            <li>AI is not equivalent to human intelligence but is a tool to augment human tasks.</li>
+            <li>AI won't replace humans in all jobs, but it will transform how we work and create new opportunities.
+            </li>
+            <li>AI is not inherently dangerous; its development and use dictate the risks.</li>
+        </ul>
+
+        <h3>Assignment</h3>
+        <p>Install Python and Jupyter Notebook and practice basic data manipulation with Pandas.</p>
+
+    </div>
+
+</body>
+
+</html>

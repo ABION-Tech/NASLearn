@@ -1,0 +1,151 @@
+Here's a detailed 10-week curriculum designed to teach Project Management, culminating in a capstone project in Week 10. The curriculum emphasizes both theoretical knowledge and practical application, providing a comprehensive foundation for anyone looking to excel in project management.
+
+### Project Management Curriculum
+
+---
+
+#### **Week 1: Introduction to Project Management**
+- **Objectives:**
+  - Understand the definition and importance of project management.
+  - Identify key concepts and terminology.
+- **Content:**
+  - Overview of project management: history and evolution.
+  - Types of projects and project life cycle phases (Initiation, Planning, Execution, Monitoring and Controlling, Closing).
+  - Introduction to project management methodologies (Agile, Waterfall, PRINCE2, etc.).
+  - Roles and responsibilities of a project manager.
+- **Activities:**
+  - Group discussion on the impact of effective project management in various industries.
+  - Quiz on key concepts and terminology.
+
+---
+
+#### **Week 2: Project Initiation**
+- **Objectives:**
+  - Learn how to initiate a project effectively.
+- **Content:**
+  - Developing a project charter: components and purpose.
+  - Identifying stakeholders: techniques for stakeholder analysis.
+  - Defining project scope and objectives.
+  - Conducting feasibility studies.
+- **Activities:**
+  - Create a sample project charter based on a fictional project.
+  - Stakeholder analysis exercise using a case study.
+
+---
+
+#### **Week 3: Project Planning**
+- **Objectives:**
+  - Understand the planning phase and its importance.
+- **Content:**
+  - Developing a project management plan: components and importance.
+  - Work breakdown structure (WBS): creating and using WBS.
+  - Resource planning: identifying and allocating resources.
+  - Risk management: identifying, analyzing, and planning for risks.
+- **Activities:**
+  - Workshop to develop a WBS for a chosen project.
+  - Group activity to identify potential risks and create a risk management plan.
+
+---
+
+#### **Week 4: Scheduling Techniques**
+- **Objectives:**
+  - Learn how to create effective project schedules.
+- **Content:**
+  - Gantt charts: how to create and interpret them.
+  - Critical path method (CPM) and project evaluation and review technique (PERT).
+  - Tools and software for scheduling (e.g., Microsoft Project, Asana, Trello).
+- **Activities:**
+  - Hands-on exercise: creating a Gantt chart for the previous week's project plan.
+  - Case study analysis on scheduling issues and solutions.
+
+---
+
+#### **Week 5: Project Execution**
+- **Objectives:**
+  - Understand the execution phase of project management.
+- **Content:**
+  - Leading project teams: communication, motivation, and conflict resolution.
+  - Quality management: tools and techniques for ensuring quality.
+  - Implementing the project management plan: tracking progress and making adjustments.
+- **Activities:**
+  - Role-playing scenarios to practice conflict resolution and leadership.
+  - Create a quality management plan for the chosen project.
+
+---
+
+#### **Week 6: Monitoring and Controlling**
+- **Objectives:**
+  - Learn how to monitor project performance and implement control measures.
+- **Content:**
+  - Key performance indicators (KPIs) and project performance measurement.
+  - Change management: processes and documentation.
+  - Tools for monitoring (e.g., dashboards, reports).
+- **Activities:**
+  - Develop KPIs for the ongoing project.
+  - Simulation exercise to manage changes in a project scenario.
+
+---
+
+#### **Week 7: Project Closing**
+- **Objectives:**
+  - Understand the importance of properly closing a project.
+- **Content:**
+  - Closing processes: administrative closure, contract closure, and stakeholder satisfaction.
+  - Lessons learned: documenting and sharing insights for future projects.
+  - Project documentation and archiving.
+- **Activities:**
+  - Workshop to compile a project closure report.
+  - Group discussion on lessons learned from past projects.
+
+---
+
+#### **Week 8: Advanced Project Management Techniques**
+- **Objectives:**
+  - Explore advanced methodologies and tools in project management.
+- **Content:**
+  - Agile project management: principles, roles, and ceremonies.
+  - Lean project management: maximizing value and minimizing waste.
+  - Change management strategies in project management.
+- **Activities:**
+  - Case study analysis of an Agile project.
+  - Group discussion on the effectiveness of Lean principles in project management.
+
+---
+
+#### **Week 9: Real-World Application of Project Management**
+- **Objectives:**
+  - Apply project management principles to real-world scenarios.
+- **Content:**
+  - Industry-specific project management challenges (IT, construction, healthcare, etc.).
+  - Ethical considerations and best practices in project management.
+  - The role of technology in modern project management.
+- **Activities:**
+  - Group project to develop a project plan for a real-world scenario.
+  - Presentation of project plans and feedback session.
+
+---
+
+#### **Week 10: Capstone Project**
+- **Objectives:**
+  - Synthesize knowledge gained throughout the course into a comprehensive project.
+- **Content:**
+  - Students will select a project to manage from initiation to closing phases, applying all learned concepts.
+- **Activities:**
+  - Presentation of the capstone project, including the project charter, management plan, WBS, risk management plan, and lessons learned.
+  - Peer review of each other's projects and constructive feedback.
+
+---
+
+### Assessment Methods
+- **Quizzes and Tests:** To assess understanding of key concepts weekly.
+- **Group Projects:** Collaborative work to encourage teamwork and application of project management techniques.
+- **Capstone Project:** A comprehensive assessment of knowledge and skills acquired throughout the course.
+
+### Resources
+- **Textbooks:**
+  - "A Guide to the Project Management Body of Knowledge (PMBOK® Guide)" by PMI.
+  - "Scrum: The Art of Doing Twice the Work in Half the Time" by Jeff Sutherland.
+- **Software Tools:**
+  - Microsoft Project, Trello, Asana, or equivalent project management software.
+
+This curriculum is designed to equip learners with practical skills and knowledge in project management, preparing them for real-world applications and enhancing their career prospects in various fields.

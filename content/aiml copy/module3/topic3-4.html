@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervised Learning - Regression</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .definition {
+            font-weight: bold;
+        }
+
+        .metric {
+            font-style: italic;
+        }
+
+        .code {
+            background-color: #f8f9fa;
+            border-left: 3px solid #007BFF;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            background-color: #e7f1ff;
+            border: 1px solid #007BFF;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .list-group-item {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-section">
+            <h1>Week 3: Supervised Learning - Regression</h1>
+            <h2>Overfitting and Underfitting: Cross-Validation Techniques</h2>
+            <p>In the realm of machine learning, understanding the concepts of overfitting and underfitting is crucial
+                for developing robust models. These issues arise from the complexity of the models relative to the data
+                they are trained on, affecting their ability to generalize to new, unseen data.</p>
+
+            <h3>1. Overfitting</h3>
+            <p class="definition">Definition:</p>
+            <p>Overfitting occurs when a model learns the training data too well, capturing noise along with the
+                underlying patterns. This leads to high accuracy on training data but poor performance on new data.</p>
+            <p class="definition">Causes:</p>
+            <ul>
+                <li><strong>Overly complex models:</strong> High flexibility allows the model to fit the training data
+                    closely, but this can include irrelevant details.</li>
+                <li><strong>Insufficient data:</strong> A small dataset increases the risk of overfitting since the
+                    model may not have enough examples to generalize from.</li>
+            </ul>
+            <p class="definition">Consequences:</p>
+            <p>Overfitted models exhibit poor generalization performance, leading to inaccurate predictions on new or
+                unseen datasets.</p>
+
+            <h3>2. Underfitting</h3>
+            <p class="definition">Definition:</p>
+            <p>Underfitting occurs when a model is too simple to capture the underlying patterns in the data, resulting
+                in poor performance on both training and test sets.</p>
+            <p class="definition">Causes:</p>
+            <ul>
+                <li><strong>Insufficient model complexity:</strong> A simple model may overlook critical relationships
+                    in the data.</li>
+                <li><strong>Poor feature engineering:</strong> Omitting relevant features or including irrelevant ones
+                    can hinder the model's learning process.</li>
+            </ul>
+            <p class="definition">Consequences:</p>
+            <p>Underfitted models fail to accurately predict outcomes, showing significant errors on both training and
+                testing data.</p>
+
+            <h3>3. Cross-Validation</h3>
+            <p>Cross-validation is a vital technique to evaluate a model's performance, helping to ensure that it
+                generalizes well to unseen data. By splitting the dataset into multiple parts, it provides a more robust
+                assessment of the model's predictive capabilities.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>K-fold cross-validation:</strong> The dataset is divided into K equally sized folds. The
+                    model is trained on K-1 folds and validated on the remaining fold. This process is repeated K times,
+                    and the average performance is reported, which helps in mitigating overfitting.
+                </li>
+                <li class="list-group-item">
+                    <strong>Stratified K-fold cross-validation:</strong> Ensures that each fold maintains the same
+                    proportion of class labels as the complete dataset, providing a more accurate estimate of model
+                    performance on imbalanced datasets.
+                </li>
+                <li class="list-group-item">
+                    <strong>Leave-one-out cross-validation (LOOCV):</strong> Each instance in the dataset is used as a
+                    test set once, while the remaining instances form the training set. While comprehensive, this method
+                    can be computationally expensive.
+                </li>
+                <li class="list-group-item">
+                    <strong>Repeated cross-validation:</strong> Combines K-fold cross-validation with multiple
+                    repetitions, yielding a more stable estimate of model performance by reducing variance.
+                </li>
+            </ul>
+
+            <h3>Choosing the Right Cross-Validation Technique</h3>
+            <p>The selection of an appropriate cross-validation technique should be based on the size of the dataset and
+                available computational resources. For smaller datasets, LOOCV may be feasible, but for larger datasets,
+                K-fold cross-validation is often preferred due to its balance between computational efficiency and
+                reliability.</p>
+
+            <h3>Additional Considerations</h3>
+            <ul>
+                <li><strong>Hyperparameter tuning:</strong> Cross-validation is a valuable method for tuning
+                    hyperparameters, allowing you to assess model performance across various configurations.</li>
+                <li><strong>Nested cross-validation:</strong> This approach evaluates both the model performance and the
+                    hyperparameter tuning process by nesting one cross-validation loop within another.</li>
+                <li><strong>Bootstrapping:</strong> This resampling technique involves drawing random samples from the
+                    dataset, allowing multiple training sets to be created, thereby providing insights into the model's
+                    variability.</li>
+            </ul>
+
+            <h2 class="highlight">Conclusion</h2>
+            <p>By understanding and addressing the issues of overfitting and underfitting, and by effectively using
+                cross-validation techniques, you can build more reliable and robust machine learning models that are
+                capable of performing well on new, unseen data.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

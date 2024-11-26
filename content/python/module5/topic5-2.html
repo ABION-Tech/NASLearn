@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Data Cleaning and Transformation</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        h2,
+        h4 {
+            color: #007BFF;
+            /* Blue accent color */
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            /* Light background for code blocks */
+            border-left: 4px solid #007BFF;
+            /* Blue accent for the left border */
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            /* Ensure long lines are scrollable */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h2>Data Cleaning and Transformation</h2>
+
+        <h4>Handling Missing Values</h4>
+        <p>
+            Missing or null data is common in real-world datasets. <code>pandas</code> offers easy methods to handle
+            missing data.
+        </p>
+
+        <h5>Checking for Missing Data</h5>
+        <pre><code>df.isnull()  # Returns True for missing data, otherwise False
+df.isnull().sum()  # Counts the number of missing values per column</code></pre>
+
+        <h5>Filling Missing Values</h5>
+        <p>You can fill missing data using <code>fillna()</code>, which allows you to replace missing values with a
+            specific value or method.</p>
+        <pre><code>df['Age'].fillna(df['Age'].mean(), inplace=True)  # Fill missing ages with the column’s mean</code></pre>
+
+        <h5>Dropping Missing Values</h5>
+        <p>You can remove rows or columns that contain missing values using <code>dropna()</code>.</p>
+        <pre><code>df.dropna(inplace=True)  # Drops rows with missing values</code></pre>
+
+        <h4>Handling Duplicates</h4>
+        <p>Duplicate data can skew analysis. <code>pandas</code> provides ways to find and remove duplicate entries.</p>
+
+        <h5>Finding Duplicates</h5>
+        <pre><code>df.duplicated()  # Returns a boolean Series indicating duplicates</code></pre>
+
+        <h5>Removing Duplicates</h5>
+        <pre><code>df.drop_duplicates(inplace=True)  # Removes duplicate rows</code></pre>
+
+        <h4>Data Transformation: Aggregation and Grouping</h4>
+        <p>Grouping data allows you to split the dataset into groups and perform operations on each group.</p>
+
+        <h5>Aggregating Data</h5>
+        <p>Aggregation means applying a function to columns of data.</p>
+        <pre><code>df['Age'].mean()  # Compute the mean age</code></pre>
+
+        <h5>Grouping Data</h5>
+        <p>Grouping is done using the <code>groupby()</code> function to split the data into groups based on some
+            criteria.</p>
+        <pre><code>grouped = df.groupby('City')
+grouped['Age'].mean()  # Get the average age for each city</code></pre>
+
+        <h5>Transforming Data</h5>
+        <p>You can use methods like <code>apply()</code> to apply a custom function to a DataFrame or Series.</p>
+        <pre><code>df['Age'] = df['Age'].apply(lambda x: x + 1)  # Increase every age by 1</code></pre>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

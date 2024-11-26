@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Functions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid lightgray;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid content">
+        <h3 class="blue-accent">Functions in Python</h3>
+        <p>Functions are reusable blocks of code that perform a specific task. They help you write modular and clean
+            code.</p>
+
+        <h5 class="blue-accent">Defining and Calling Functions:</h5>
+        <p>Functions are defined using the <code>def</code> keyword. A function can take arguments and return a result.
+        </p>
+        <p><strong>Example:</strong></p>
+        <pre><code>def greet(name):
+    return "Hello, " + name
+
+print(greet("Alice"))
+</code></pre>
+
+        <h5 class="blue-accent">Parameters and Arguments:</h5>
+        <p><strong>Parameters</strong> are variables listed in the function definition. <strong>Arguments</strong> are
+            the values passed to the function when it is called.</p>
+        <p><strong>Example:</strong></p>
+        <pre><code>def add(a, b):
+    return a + b
+
+print(add(3, 5))  # Outputs: 8
+</code></pre>
+
+        <h5 class="blue-accent">Return Statement:</h5>
+        <p>The <code>return</code> statement is used to return a value from the function.</p>
+
+        <h5 class="blue-accent">Function Scope:</h5>
+        <p><strong>Local Variables</strong>: Variables declared inside a function and not accessible outside it.<br>
+            <strong>Global Variables</strong>: Variables declared outside functions and accessible throughout the
+            program.
+        </p>
+        <p><strong>Example:</strong></p>
+        <pre><code>x = 10  # Global variable
+
+def my_function():
+    x = 5  # Local variable
+    print("Inside function:", x)
+
+my_function()
+print("Outside function:", x)
+</code></pre>
+
+        <h5 class="blue-accent">Default Parameters:</h5>
+        <p>You can define default values for parameters that are used if no arguments are passed when the function is
+            called.</p>
+        <p><strong>Example:</strong></p>
+        <pre><code>def greet(name="World"):
+    return "Hello, " + name
+
+print(greet())  # Outputs: Hello, World
+print(greet("Alice"))  # Outputs: Hello, Alice
+</code></pre>
+    </div>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

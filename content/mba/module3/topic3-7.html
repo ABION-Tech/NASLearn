@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            /* White background */
+            color: #000000;
+            /* Black text */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+            /* Blue accent for headings */
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #007bff;
+            /* Blue border for questions */
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            /* Light gray background for questions */
+        }
+
+        .progress {
+            margin-top: 20px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Assessment </h1>
+
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 0%;" id="progressBar">0%</div>
+        </div>
+
+        <div class="question">
+            <h2>1. Quiz Question:</h2>
+            <p>Which of the following is NOT one of the 4 Ps of marketing?</p>
+            <div>
+                <label><input type="radio" name="question1" value="a"> a) Product</label><br>
+                <label><input type="radio" name="question1" value="b"> b) Price</label><br>
+                <label><input type="radio" name="question1" value="c"> c) Partnership</label><br>
+                <label><input type="radio" name="question1" value="d"> d) Place</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>2. True/False Question:</h2>
+            <p>Quantitative research is primarily concerned with understanding consumer motivations through in-depth
+                interviews and focus groups.</p>
+            <div>
+                <label><input type="radio" name="question2" value="true"> True</label><br>
+                <label><input type="radio" name="question2" value="false"> False</label>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="calculateScore()">Submit Answers</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const totalQuestions = 2;
+
+            // Question 1
+            const question1 = document.querySelector('input[name="question1"]:checked');
+            if (question1 && question1.value === "c") {
+                score++;
+            }
+
+            // Question 2
+            const question2 = document.querySelector('input[name="question2"]:checked');
+            if (question2 && question2.value === "false") {
+                score++;
+            }
+
+            // Calculate progress
+            const progress = (score / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressBar').innerText = progress.toFixed(0) + '%';
+
+            // Display result
+            document.getElementById('result').innerText = `You scored ${score} out of ${totalQuestions}.`;
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

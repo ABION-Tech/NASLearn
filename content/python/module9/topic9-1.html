@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraping Basics</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        h2,
+        h4 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-section {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 900px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #212529;
+            overflow-x: auto;
+        }
+
+        hr {
+            border-top: 2px solid #007BFF;
+            /* Blue accent */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container content-section">
+        <h2>Web Scraping Basics</h2>
+        <hr>
+
+        <h4>A. Understanding HTML and the Document Object Model (DOM)</h4>
+        <ul>
+            <li><strong>HTML Basics</strong>:
+                <ul>
+                    <li><strong>Structure of HTML</strong>: Introduction to the structure of HTML documents, including
+                        tags, elements, and attributes.</li>
+                    <li><strong>Common HTML Tags</strong>: Understanding commonly used tags such as
+                        <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;h1&gt;</code>,
+                        <code>&lt;p&gt;</code>, and <code>&lt;a&gt;</code>, and their significance in web content
+                        structure.
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Document Object Model (DOM)</strong>:
+                <ul>
+                    <li><strong>DOM Definition</strong>: The DOM is a tree-like structure that represents the HTML
+                        document. Each node in the DOM tree corresponds to a part of the document.</li>
+                    <li><strong>Navigating the DOM</strong>: Understanding how to traverse the DOM, including parent,
+                        child, and sibling relationships between elements.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>B. Using Libraries like <code>BeautifulSoup</code> and <code>requests</code> for Web Scraping</h4>
+        <ul>
+            <li><strong>Introduction to <code>requests</code></strong>:
+                <ul>
+                    <li><strong>Making HTTP Requests</strong>: Using the <code>requests</code> library to send HTTP
+                        requests and retrieve web pages.</li>
+                    <li><strong>Response Handling</strong>: Understanding how to handle response objects, including
+                        status codes, headers, and content.</li>
+                </ul>
+            </li>
+            <li><strong>Introduction to <code>BeautifulSoup</code></strong>:
+                <ul>
+                    <li><strong>Parsing HTML</strong>: Using <code>BeautifulSoup</code> to parse HTML documents and
+                        navigate the DOM tree.</li>
+                    <li><strong>Selecting Elements</strong>: Techniques for selecting HTML elements using methods like
+                        <code>find()</code>, <code>find_all()</code>, and CSS selectors.
+                    </li>
+                    <li><strong>Extracting Text and Attributes</strong>: How to extract text content and attributes
+                        (e.g., <code>href</code> from links) from selected elements.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>C. Example: Basic Web Scraping</h4>
+        <pre><code>import requests
+from bs4 import BeautifulSoup
+
+# Send an HTTP GET request
+url = 'http://example.com'
+response = requests.get(url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the HTML content
+    soup = BeautifulSoup(response.text, 'html.parser')
+    
+    # Find the title of the page
+    title = soup.title.string
+    print(f'Title of the page: {title}')
+else:
+    print('Failed to retrieve the page')</code></pre>
+
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

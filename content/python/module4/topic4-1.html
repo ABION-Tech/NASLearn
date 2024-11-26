@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Data Structures Review</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section-title {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .exercise {
+            background-color: #f8f9fa;
+            border-left: 5px solid blue;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 3px;
+            border-radius: 3px;
+        }
+
+        .card {
+            border: none;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container content">
+        <h1 class="blue-accent">Basic Data Structures (Review)</h1>
+        <p>In this section, we will review the fundamental data structures: lists, tuples, sets, and dictionaries,
+            focusing on the operations and methods specific to each.</p>
+
+        <div class="section-title">
+            <h3 class="blue-accent">Lists</h3>
+        </div>
+        <p><strong>Operations:</strong> Adding, removing, accessing, and slicing elements.</p>
+        <p><strong>Methods:</strong>
+            <code>append()</code>,
+            <code>extend()</code>,
+            <code>pop()</code>,
+            <code>remove()</code>,
+            <code>sort()</code>, etc.
+        </p>
+        <pre><code>my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list)  # Outputs: [1, 2, 3, 4]</code></pre>
+
+        <div class="section-title">
+            <h3 class="blue-accent">Tuples</h3>
+        </div>
+        <p><strong>Operations:</strong> Indexing, slicing, and using immutable sequences.</p>
+        <p><strong>Methods:</strong>
+            <code>count()</code>,
+            <code>index()</code>.
+        </p>
+        <pre><code>my_tuple = (1, 2, 3)
+print(my_tuple.index(2))  # Outputs: 1</code></pre>
+
+        <div class="section-title">
+            <h3 class="blue-accent">Sets</h3>
+        </div>
+        <p><strong>Operations:</strong> Adding, removing, union, intersection, and difference operations.</p>
+        <p><strong>Methods:</strong>
+            <code>add()</code>,
+            <code>remove()</code>,
+            <code>union()</code>,
+            <code>intersection()</code>.
+        </p>
+        <pre><code>my_set = {1, 2, 3}
+my_set.add(4)
+print(my_set)  # Outputs: {1, 2, 3, 4}</code></pre>
+
+        <div class="section-title">
+            <h3 class="blue-accent">Dictionaries</h3>
+        </div>
+        <p><strong>Operations:</strong> Adding, removing, and updating key-value pairs.</p>
+        <p><strong>Methods:</strong>
+            <code>get()</code>,
+            <code>pop()</code>,
+            <code>items()</code>,
+            <code>keys()</code>,
+            <code>values()</code>.
+        </p>
+        <pre><code>my_dict = {'a': 1, 'b': 2}
+my_dict['c'] = 3
+print(my_dict)  # Outputs: {'a': 1, 'b': 2, 'c': 3}</code></pre>
+
+        <div class="exercise">
+            <h4 class="blue-accent">Hands-On Exercises:</h4>
+            <ul>
+                <li>Implement basic operations on lists, tuples, sets, and dictionaries.</li>
+                <li>Write Python programs that perform complex operations using these structures.</li>
+            </ul>
+        </div>
+
+        <div class="section-title">
+            <h3 class="blue-accent">Exercise</h3>
+        </div>
+
+        <!-- Responsive Cards -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title blue-accent">List Operations</h5>
+                        <p class="card-text">Learn how to add, remove, and manipulate elements in lists.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title blue-accent">Tuple Methods</h5>
+                        <p class="card-text">Explore indexing, slicing, and methods like <code>count()</code> and
+                            <code>index()</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title blue-accent">Set Operations</h5>
+                        <p class="card-text">Perform union, intersection, and difference operations with sets.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title blue-accent">Dictionary Methods</h5>
+                        <p class="card-text">Work with key-value pairs and methods like <code>get()</code> and
+                            <code>pop()</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

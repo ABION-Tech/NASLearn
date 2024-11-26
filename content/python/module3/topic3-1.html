@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Lists</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            /* Ensure line breaks are preserved */
+        }
+
+        h5 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container content">
+        <h1 class="blue-accent">Python Lists</h1>
+
+        <h4>1. <span class="blue-accent">Lists</span>:</h4>
+        <p>A list is a mutable, ordered collection of items. Lists can store items of different data types, including
+            integers, strings, floats, and even other lists.</p>
+
+        <h5>Creating Lists:</h5>
+        <p>You can create a list by placing a sequence of elements inside square brackets <code>[]</code>, separated by
+            commas.</p>
+
+        <div class="code-block">
+            my_list = [1, 2, 3, 4, 5] <br>
+            names = ["Alice", "Bob", "Charlie"] <br>
+            mixed_list = [1, "Apple", 3.5]
+        </div>
+
+        <h5>Accessing List Elements:</h5>
+        <p>Elements in a list are indexed starting from 0. You can access individual items using their index or use
+            slicing to access a range of elements.</p>
+
+        <div class="code-block">
+            print(my_list[0]) # Outputs: 1 (first element) <br>
+            print(my_list[1:3]) # Outputs: [2, 3] (second and third elements)
+        </div>
+
+        <h5>Modifying Lists:</h5>
+        <p>Lists are mutable, meaning you can change their content after they are created.</p>
+
+        <div class="code-block">
+            my_list[2] = 10 # Changes the third element <br>
+            print(my_list) # Outputs: [1, 2, 10, 4, 5]
+        </div>
+
+        <h5>List Methods:</h5>
+        <p>Python provides various built-in methods for lists that make it easy to manipulate them.</p>
+        <ul>
+            <li><code>append()</code>: Adds an item to the end of the list.</li>
+            <li><code>extend()</code>: Adds multiple items to the end of the list.</li>
+            <li><code>insert()</code>: Inserts an item at a specific index.</li>
+            <li><code>remove()</code>: Removes the first occurrence of a specified item.</li>
+            <li><code>pop()</code>: Removes and returns the item at a specific index (or the last item if no index is
+                provided).</li>
+            <li><code>sort()</code>: Sorts the list in ascending order.</li>
+            <li><code>reverse()</code>: Reverses the order of elements in the list.</li>
+            <li><code>index()</code>: Returns the index of the first occurrence of a specified value.</li>
+            <li><code>count()</code>: Returns the number of occurrences of a specified value in the list.</li>
+        </ul>
+
+        <h5>Examples:</h5>
+        <div class="code-block">
+            my_list = [1, 2, 3, 4, 5] <br>
+            my_list.append(6) # Adds 6 to the end of the list <br>
+            my_list.insert(2, 10) # Inserts 10 at index 2 <br>
+            print(my_list) # Outputs: [1, 2, 10, 3, 4, 5, 6] <br><br>
+
+            my_list.remove(10) # Removes 10 <br>
+            print(my_list) # Outputs: [1, 2, 3, 4, 5, 6] <br><br>
+
+            my_list.pop(2) # Removes and returns the item at index 2 <br>
+            print(my_list) # Outputs: [1, 2, 4, 5, 6]
+        </div>
+
+        <h5>List Comprehensions:</h5>
+        <p>List comprehensions provide a concise way to create lists based on existing lists or other iterable objects.
+            It’s a powerful way to apply expressions to the elements of a list or filter data based on certain
+            conditions.</p>
+
+        <div class="code-block">
+            squares = [x**2 for x in range(5)] <br>
+            print(squares) # Outputs: [0, 1, 4, 9, 16] <br><br>
+
+            even_numbers = [x for x in range(10) if x % 2 == 0] <br>
+            print(even_numbers) # Outputs: [0, 2, 4, 6, 8]
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

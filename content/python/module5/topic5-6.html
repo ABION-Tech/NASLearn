@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Conclusion - Data Manipulation with Pandas</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        .card {
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: 2px solid #007BFF;
+            /* Blue accent border */
+            border-radius: 10px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            /* Scale effect on hover */
+        }
+
+        .card-flip {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .card-front {
+            background-color: #ffffff;
+            /* Front color */
+        }
+
+        .card-back {
+            background-color: #f8f9fa;
+            /* Light background for back */
+            color: black;
+            /* Text color for back */
+            transform: rotateY(180deg);
+        }
+
+        .card:hover .card-flip {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Conclusion of Week 1</h2>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-flip">
+                        <div class="card-front">
+                            <h5>DataFrames</h5>
+                        </div>
+                        <div class="card-back">
+                            <p>Created and manipulated DataFrames and Series for efficient data storage and analysis,
+                                allowing for complex data structures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-flip">
+                        <div class="card-front">
+                            <h5>Data Cleaning</h5>
+                        </div>
+                        <div class="card-back">
+                            <p>Learned techniques for cleaning and transforming data by handling missing values and
+                                duplicates to ensure data integrity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-flip">
+                        <div class="card-front">
+                            <h5>Data Filtering</h5>
+                        </div>
+                        <div class="card-back">
+                            <p>Filtered and selected data using conditions to extract meaningful insights from large
+                                datasets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-flip">
+                        <div class="card-front">
+                            <h5>Merging Data</h5>
+                        </div>
+                        <div class="card-back">
+                            <p>Combined multiple DataFrames using merging and joining techniques for cohesive data
+                                analysis across different sources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-flip">
+                        <div class="card-front">
+                            <h5>Hands-On Practice</h5>
+                        </div>
+                        <div class="card-back">
+                            <p>Engaged in practical exercises that solidified understanding of data manipulation
+                                concepts and techniques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

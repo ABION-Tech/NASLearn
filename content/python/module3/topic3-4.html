@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Dictionaries</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            /* Ensure line breaks are preserved */
+        }
+
+        h5 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container content">
+        <h1 class="blue-accent">Python Dictionaries</h1>
+
+        <h4>4. <span class="blue-accent">Dictionaries</span>:</h4>
+        <p>A dictionary is a collection of key-value pairs. Each key maps to a value, and dictionaries are ideal for
+            storing data that has a meaningful association between two items.</p>
+
+        <h5>Creating Dictionaries:</h5>
+        <p>You can create a dictionary by placing key-value pairs inside curly braces <code>{}</code>, with a colon
+            <code>:</code> separating the key from the value.</p>
+
+        <div class="code-block">
+            student = {<br>
+            &nbsp;&nbsp;"name": "Alice",<br>
+            &nbsp;&nbsp;"age": 25,<br>
+            &nbsp;&nbsp;"major": "Computer Science"<br>
+            }
+        </div>
+
+        <h5>Accessing and Modifying Dictionary Elements:</h5>
+        <p>You can access and modify dictionary values using their keys.</p>
+
+        <div class="code-block">
+            print(student["name"]) # Outputs: Alice<br><br>
+            student["age"] = 26 # Modifies the value associated with the key 'age'
+        </div>
+
+        <h5>Dictionary Methods:</h5>
+        <ul>
+            <li><strong>keys()</strong>: Returns a view object of all the keys in the dictionary.</li>
+            <li><strong>values()</strong>: Returns a view object of all the values in the dictionary.</li>
+            <li><strong>items()</strong>: Returns a view object of all key-value pairs in the dictionary.</li>
+            <li><strong>get()</strong>: Returns the value associated with a specified key (optional default value if key
+                is not found).</li>
+            <li><strong>pop()</strong>: Removes and returns the value associated with a specified key.</li>
+        </ul>
+
+        <h5>Example:</h5>
+        <div class="code-block">
+            student = {"name": "Alice", "age": 25, "major": "Computer Science"}<br><br>
+
+            # Accessing keys, values, and items<br>
+            print(student.keys()) # Outputs: dict_keys(['name', 'age', 'major'])<br>
+            print(student.values()) # Outputs: dict_values(['Alice', 25, 'Computer Science'])<br>
+            print(student.items()) # Outputs: dict_items([('name', 'Alice'), ('age', 25), ('major', 'Computer
+            Science')])
+        </div>
+
+        <h5>Nested Dictionaries:</h5>
+        <p>Dictionaries can also contain other dictionaries, allowing for more complex data structures.</p>
+
+        <div class="code-block">
+            students = {<br>
+            &nbsp;&nbsp;"Alice": {"age": 25, "major": "Computer Science"},<br>
+            &nbsp;&nbsp;"Bob": {"age": 22, "major": "Mathematics"}<br>
+            }<br>
+            print(students)
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

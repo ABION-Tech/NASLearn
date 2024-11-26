@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Recap and Preview</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #007bff;
+            /* Blue accent color */
+        }
+
+        .card {
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-front {
+            background-color: #f9f9f9;
+        }
+
+        .card-back {
+            background-color: #e9ecef;
+            transform: rotateY(180deg);
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Recap and Preview</h1>
+
+        <h2>This Week's Key Takeaways:</h2>
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-inner" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h4>Business Role</h4>
+                        </div>
+                        <div class="card-back">
+                            <p>The role of businesses in the economy is crucial to societal development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-inner" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h4>Business Structures</h4>
+                        </div>
+                        <div class="card-back">
+                            <p>Understanding different business structures is essential for legal protection and
+                                operational success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-inner" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <h4>Business Functions</h4>
+                        </div>
+                        <div class="card-back">
+                            <p>Key business functions—finance, marketing, operations, and management—are interconnected
+                                and vital for business sustainability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Next Week’s Preview:</h2>
+        <p>In <strong>Week 2</strong>, we will dive deeper into <strong>Leadership and Organizational Behavior</strong>,
+            exploring various leadership styles, team dynamics, and how organizational culture impacts business
+            performance.</p>
+
+        <h2>Course Content Overview:</h2>
+        <p>This content provides a comprehensive, balanced mix of theory, real-world applications, and hands-on
+            exercises to engage students and ensure they grasp key MBA fundamentals.</p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional, if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript for card flip effect
+        document.querySelectorAll('.card-inner').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+    </script>
+</body>
+
+</html>

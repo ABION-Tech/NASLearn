@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2: Data Preprocessing and EDA</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .highlight {
+            background-color: #f0f8ff;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #dddddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        code {
+            background-color: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">
+            <h1>Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
+            <p>Data preprocessing and exploratory data analysis are critical steps in the machine learning pipeline.
+                These processes help ensure that the data is clean, accurate, and ready for analysis. In this week, we
+                will focus on handling missing data, dealing with outliers, and encoding categorical data.</p>
+        </div>
+
+        <div class="section">
+            <h2>1. Handling Missing Data</h2>
+            <p>Missing data is a common issue in real-world datasets and can arise due to various reasons such as data
+                entry errors, sensor failures, or privacy concerns. Addressing missing values is essential to prevent
+                biases in your models.</p>
+            <div class="highlight">
+                <strong>Identifying Missing Values:</strong> Utilize functions like <code>isnull()</code> or
+                <code>isna()</code> in Python to detect missing values in your dataset.
+            </div>
+            <h3>Imputation Techniques</h3>
+            <ul>
+                <li><strong>Mean/Median/Mode Imputation:</strong> Replace missing values with the mean, median, or mode
+                    of the respective column.</li>
+                <li><strong>K-Nearest Neighbors Imputation:</strong> Impute missing values based on the values of nearby
+                    data points.</li>
+                <li><strong>Interpolation:</strong> Use interpolation methods to estimate missing values, particularly
+                    useful for time series data.</li>
+                <li><strong>Multiple Imputation:</strong> Generate multiple complete datasets by imputing missing values
+                    with various methods and combine the results for robust analysis.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>2. Dealing with Outliers</h2>
+            <p>Outliers are data points that significantly deviate from the rest of the data. They can distort the
+                results of statistical analyses and negatively impact model performance.</p>
+            <div class="highlight">
+                <strong>Identification Methods:</strong> Employ statistical methods like Z-scores, interquartile range
+                (IQR), or visualization techniques (e.g., box plots) to identify outliers.
+            </div>
+            <h3>Treatment Strategies</h3>
+            <ul>
+                <li><strong>Removal:</strong> Discard outliers if they are erroneous or disproportionately influence the
+                    model.</li>
+                <li><strong>Capping:</strong> Replace outliers with a set maximum or minimum value.</li>
+                <li><strong>Winsorization:</strong> Substitute outliers with the nearest non-outlier value to minimize
+                    their influence.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. Encoding Categorical Data</h2>
+            <p>Categorical data cannot be directly used by most machine learning algorithms. It needs to be converted
+                into a numerical format for analysis.</p>
+            <h3>Encoding Techniques</h3>
+            <ul>
+                <li><strong>One-Hot Encoding:</strong> Create binary features for each category, enabling algorithms to
+                    process the data effectively.</li>
+                <li><strong>Label Encoding:</strong> Assign unique integers to each category, suitable for ordinal data.
+                </li>
+                <li><strong>Ordinal Encoding:</strong> Assign integers based on the order of categories, capturing
+                    relationships between them.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Best Practices</h2>
+            <p>When handling missing data and outliers, keep these best practices in mind:</p>
+            <ul>
+                <li><strong>Choose Appropriate Techniques:</strong> Select methods based on the specific characteristics
+                    of your dataset and the ML algorithm you are using.</li>
+                <li><strong>Consider the Impact on Model Performance:</strong> Experiment with different techniques and
+                    evaluate their effects on model accuracy and generalization.</li>
+                <li><strong>Document Your Choices:</strong> Maintain clear documentation of the methods used for
+                    handling missing data and outliers to ensure reproducibility in your analysis.</li>
+            </ul>
+            <p>By effectively addressing these data quality issues, you can enhance the quality and reliability of your
+                machine learning models.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Loops</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid lightgray;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid content">
+        <h3 class="blue-accent">Loops in Python</h3>
+        <p>Loops allow you to repeat a block of code multiple times, making it easier to perform repetitive tasks.</p>
+
+        <h5 class="blue-accent">`for` Loop:</h5>
+        <p>Used when you know how many times you want to iterate (e.g., over a sequence like a list, string, or range).
+        </p>
+        <p><strong>Example:</strong></p>
+        <pre><code>for i in range(5):
+    print("This is iteration number", i)
+</code></pre>
+        <p>- <strong>`range()` function</strong>: Generates a sequence of numbers. For example, <code>range(5)</code>
+            generates numbers 0 through 4.</p>
+
+        <h5 class="blue-accent">`while` Loop:</h5>
+        <p>Used when you want to repeat a block of code as long as a condition is true.</p>
+        <p><strong>Example:</strong></p>
+        <pre><code>counter = 0
+while counter &lt; 5:
+    print("Counter is:", counter)
+    counter += 1
+</code></pre>
+
+        <h5 class="blue-accent">Loop Control Statements:</h5>
+        <ol>
+            <li><strong>`break`</strong>: Exits the loop prematurely.</li>
+            <li><strong>`continue`</strong>: Skips the rest of the loop’s current iteration and moves to the next
+                iteration.</li>
+            <li><strong>`else` clause with loops</strong>: Executes after the loop completes unless the loop is
+                terminated by <code>break</code>.</li>
+        </ol>
+        <p><strong>Examples:</strong></p>
+        <pre><code># break example
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+
+# continue example
+for i in range(5):
+    if i == 3:
+        continue
+    print(i)
+</code></pre>
+    </div>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

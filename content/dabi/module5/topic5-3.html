@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript and jQuery Concepts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h2,
+        h3 {
+            color: #007BFF;
+            margin-top: 20px;
+        }
+
+        p,
+        code {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        .code-title {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container mt-5">
+        <!-- jQuery Section -->
+        <h1>Introduction to jQuery</h1>
+
+        <div class="section">
+            <h3>2.1 What is jQuery?</h3>
+            <p>jQuery is a fast, small, and feature-rich JavaScript library. It simplifies tasks like DOM manipulation,
+                event handling, and animation, making it easier to build dynamic and interactive web pages.</p>
+
+            <p><strong>Why Use jQuery?</strong></p>
+            <ul>
+                <li>Cross-browser compatibility.</li>
+                <li>Simplifies complex JavaScript tasks.</li>
+                <li>Extensive plugin ecosystem.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>2.2 Basic jQuery Syntax</h3>
+            <p><strong>Selecting Elements:</strong></p>
+            <pre><code>$(document).ready(function() {
+    $("p").click(function() {
+        $(this).hide();
+    });
+});</code></pre>
+
+            <p><strong>Event Handling:</strong></p>
+            <pre><code>$("button").click(function() {
+    alert("Button clicked!");
+});</code></pre>
+
+            <p><strong>DOM Manipulation:</strong></p>
+            <pre><code>$("#myDiv").text("Hello, jQuery!");</code></pre>
+        </div>
+
+        <div class="section">
+            <h3>2.3 jQuery Animations</h3>
+            <p><strong>Basic Animation:</strong></p>
+            <pre><code>$("#myDiv").fadeOut();</code></pre>
+
+            <p><strong>Chaining Animations:</strong></p>
+            <pre><code>$("#myDiv").slideUp().slideDown().fadeOut();</code></pre>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery (for demonstration purposes) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Tableau Features</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Advanced Tableau Features</h1>
+    </header>
+
+    <main>
+        <section id="calculations-parameters">
+            <h2>Calculations and Parameters</h2>
+            <p>
+                - <strong>Calculations:</strong> Creating calculated fields to perform complex calculations (e.g.,
+                aggregations, conditional logic).
+            </p>
+            <p>
+                - <strong>Parameters:</strong> Using parameters to allow users to control aspects of the visualization
+                dynamically.
+            </p>
+        </section>
+
+        <section id="filters-sets">
+            <h2>Filters and Sets</h2>
+            <p>
+                - <strong>Filters:</strong> Applying filters to focus on specific subsets of data.
+            </p>
+            <p>
+                - <strong>Sets:</strong> Creating sets to group and analyze data based on common attributes or
+                conditions.
+            </p>
+        </section>
+
+        <section id="practical-exercise">
+            <h2>Practical Exercise</h2>
+            <p>
+                <strong>Hands-On Practice:</strong> Explore advanced Tableau features by creating calculated fields,
+                applying filters, and using parameters to build interactive dashboards. Use sets to segment data and
+                perform comparative analysis.
+            </p>
+        </section>
+    </main>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Tableau Features</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Advanced Tableau Features</h1>
+    </header>
+
+    <main>
+        <section id="calculations-parameters">
+            <h2>Calculations and Parameters</h2>
+            <p>
+                - <strong>Calculations:</strong> Creating calculated fields to perform complex calculations (e.g.,
+                aggregations, conditional logic).
+            </p>
+            <p>
+                - <strong>Parameters:</strong> Using parameters to allow users to control aspects of the visualization
+                dynamically.
+            </p>
+        </section>
+
+        <section id="filters-sets">
+            <h2>Filters and Sets</h2>
+            <p>
+                - <strong>Filters:</strong> Applying filters to focus on specific subsets of data.
+            </p>
+            <p>
+                - <strong>Sets:</strong> Creating sets to group and analyze data based on common attributes or
+                conditions.
+            </p>
+        </section>
+
+        <section id="practical-exercise">
+            <h2>Practical Exercise</h2>
+            <p>
+                <strong>Hands-On Practice:</strong> Explore advanced Tableau features by creating calculated fields,
+                applying filters, and using parameters to build interactive dashboards. Use sets to segment data and
+                perform comparative analysis.
+            </p>
+        </section>
+    </main>
+
+</body>
+
+</html>

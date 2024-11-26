@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Preprocessing and EDA - Week 2</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            /* Blue accent color */
+        }
+
+        .container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            /* Light grey background for code blocks */
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .highlight {
+            background-color: #007bff;
+            /* Blue accent for highlights */
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .note {
+            background-color: #e7f1ff;
+            /* Light blue background for notes */
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            /* Blue accent left border */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
+        <h2>Exploratory Data Analysis (EDA): Visualizing Data Distributions and Relationships Between Variables</h2>
+
+        <p>Exploratory Data Analysis (EDA) is a crucial step in the machine learning process. It involves exploring the
+            data to gain insights, identify patterns, and uncover potential issues. Visualizing data is a powerful tool
+            for EDA, as it allows us to see trends and relationships that might be difficult to detect through numerical
+            analysis alone.</p>
+
+        <h3>1. Visualizing Data Distributions</h3>
+        <p>Understanding the distribution of your data is essential for understanding its characteristics and
+            identifying potential outliers or anomalies. Various visualization techniques can help illustrate the
+            distribution of numerical variables:</p>
+
+        <ul>
+            <li><strong>Histograms:</strong> These show the distribution of a numerical variable, indicating the
+                frequency of different values. Histograms help visualize how data is spread across different ranges.
+            </li>
+            <li><strong>Density Plots:</strong> Smooth versions of histograms, density plots are useful for visualizing
+                continuous distributions. They provide a clearer representation of the distribution shape.</li>
+            <li><strong>Box Plots:</strong> These visualize the distribution of a numerical variable by displaying
+                quartiles, median, and potential outliers, providing a summary of the data distribution.</li>
+            <li><strong>Violin Plots:</strong> Combining box plots and kernel density plots, violin plots offer a
+                detailed visualization of the data distribution, emphasizing the density of the data at different
+                values.</li>
+        </ul>
+
+        <h3>2. Visualizing Relationships Between Variables</h3>
+        <p>Examining the relationships between variables can help identify patterns, correlations, and dependencies,
+            leading to more informed analyses and decisions:</p>
+
+        <ul>
+            <li><strong>Scatter Plots:</strong> These illustrate the relationship between two numerical variables,
+                helping to identify trends, clusters, and correlations.</li>
+            <li><strong>Line Plots:</strong> These show the trend of a numerical variable over time or against another
+                numerical variable, making it easy to visualize changes and patterns over intervals.</li>
+            <li><strong>Heatmaps:</strong> Utilizing a color-coded matrix, heatmaps visualize the correlation between
+                multiple variables, making it easy to identify strong and weak relationships.</li>
+            <li><strong>Pair Plots:</strong> These create a grid of scatter plots to visualize the relationships between
+                all pairs of numerical variables in a dataset, providing a comprehensive view of interactions.</li>
+        </ul>
+
+        <h3>Interpreting Visualizations</h3>
+        <p>To derive meaningful insights from visualizations, consider the following approaches:</p>
+        <ul>
+            <li><strong>Identify Patterns:</strong> Look for trends, clusters, or outliers in the data that can inform
+                your analysis.</li>
+            <li><strong>Assess Normality:</strong> Determine if the data follows a normal distribution or if it has a
+                different shape that could influence modeling choices.</li>
+            <li><strong>Detect Outliers:</strong> Identify data points that significantly deviate from the rest of the
+                data, as these can impact analysis and model performance.</li>
+            <li><strong>Explore Relationships:</strong> Analyze whether there are strong or weak relationships between
+                variables, guiding further investigation and hypothesis testing.</li>
+        </ul>
+
+        <h3>Choosing the Right Visualization</h3>
+        <p>The best visualization technique depends on the type of data and the questions you want to answer. Consider
+            the following factors:</p>
+        <ul>
+            <li><strong>Data Type:</strong> Determine whether your data is numerical or categorical, as this influences
+                visualization choices.</li>
+            <li><strong>Number of Variables:</strong> Consider whether you are analyzing one, two, or multiple variables
+                and select visualizations accordingly.</li>
+            <li><strong>Research Question:</strong> Clarify the insights you aim to gain to select the most appropriate
+                visualization techniques.</li>
+        </ul>
+
+        <h3>EDA Tools</h3>
+        <p>Utilizing the right tools can enhance your EDA process. Here are some popular libraries:</p>
+        <ul>
+            <li><strong>Matplotlib:</strong> A powerful and flexible plotting library for creating a wide range of
+                visualizations, suitable for basic to complex plots.</li>
+            <li><strong>Seaborn:</strong> A high-level data visualization library built on top of Matplotlib, offering a
+                more user-friendly interface and enhanced aesthetics for visualizations.</li>
+            <li><strong>Plotly:</strong> An interactive plotting library that supports various visualization types and
+                allows for customization and exploration of data.</li>
+        </ul>
+
+        <div class="note">
+            <strong>Note:</strong> By effectively using EDA techniques and visualization tools, you can gain valuable
+            insights into your data, identify potential issues, and make informed decisions about your machine learning
+            models. Engaging in a thorough EDA process sets a solid foundation for successful model development and
+            deployment.
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

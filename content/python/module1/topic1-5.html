@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Conclusion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .toggle-content {
+            display: none;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 0.25rem;
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: blue;
+        }
+
+        .container1 {
+            font-weight: 480;
+            font-size: 1.15rem;
+            padding: 7px 15px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h3 class="text-center blue-accent">Conclusion for Week 1</h3>
+        <div class="row mt-4">
+            <div class="container1">
+                <p>Great job getting to the end this weeks, the foundational skills learned here will prepare you for
+                    more advanced topics in the upcoming weeks </p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleContent(this)">
+                    <div class="card-body">
+                        <h5 class="highlight">Python Setup</h5>
+                        <p class="toggle-content">Students have successfully set up their Python environment and IDE, a
+                            crucial first step in their coding journey.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleContent(this)">
+                    <div class="card-body">
+                        <h5 class="highlight">First Program</h5>
+                        <p class="toggle-content">The first Python program, "Hello, World!", introduced students to
+                            Python's basic syntax and structure.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleContent(this)">
+                    <div class="card-body">
+                        <h5 class="highlight">Basic Concepts</h5>
+                        <p class="toggle-content">Students learned essential programming concepts such as variables,
+                            data types, and input/output operations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleContent(this)">
+                    <div class="card-body">
+                        <h5 class="highlight">Hands-On Exercises</h5>
+                        <p class="toggle-content">Practical exercises reinforced students' understanding of programming
+                            basics, ensuring a strong foundation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card" onclick="toggleContent(this)">
+                    <div class="card-body">
+                        <h5 class="highlight">Foundational Skills</h5>
+                        <p class="toggle-content">These foundational skills will prepare students for more advanced
+                            topics in the upcoming weeks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(card) {
+            const toggleContent = card.querySelector('.toggle-content');
+            toggleContent.style.display = toggleContent.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

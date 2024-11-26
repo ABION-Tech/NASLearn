@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Conclusion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .card {
+            margin: 15px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            perspective: 1000px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-front {
+            background-color: #f8f9fa;
+        }
+
+        .card-back {
+            background-color: #e9ecef;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid content">
+        <h3 class="blue-accent">Conclusion for Week 2</h3>
+        <p>Congratulations on reaching the end of Week 2! By now, you should have a solid grasp of essential programming
+            concepts. Embrace the knowledge you've gained, as it's the foundation for your coding journey. Keep
+            practicing, stay curious, and don't hesitate to explore new ideas. You're doing great!</p>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-inner" onclick="this.classList.toggle('flipped');">
+                        <div class="card-front">
+                            <h5>Control Flow</h5>
+                            <p class="blue-accent">Flow Control</p>
+                        </div>
+                        <div class="card-back">
+                            <h5>Control Flow</h5>
+                            <p>Understand how to control the flow of your programs using <code>if</code>,
+                                <code>elif</code>, <code>else</code> statements, and loops like <code>for</code> and
+                                <code>while</code>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-inner" onclick="this.classList.toggle('flipped');">
+                        <div class="card-front">
+                            <h5>Reusable Code</h5>
+                            <p class="blue-accent">Functions</p>
+                        </div>
+                        <div class="card-back">
+                            <h5>Reusable Code</h5>
+                            <p>Learn how to create and use functions to make your code reusable, efficient, and
+                                organized.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-inner" onclick="this.classList.toggle('flipped');">
+                        <div class="card-front">
+                            <h5>Lambda Functions</h5>
+                            <p class="blue-accent">Lambda Insight</p>
+                        </div>
+                        <div class="card-back">
+                            <h5>Lambda Functions</h5>
+                            <p>Gain insight into lambda functions and explore their practical use cases in your
+                                programs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-inner" onclick="this.classList.toggle('flipped');">
+                        <div class="card-front">
+                            <h5>Hands-On Exercises</h5>
+                            <p class="blue-accent">Practice Makes Perfect</p>
+                        </div>
+                        <div class="card-back">
+                            <h5>Hands-On Exercises</h5>
+                            <p>Complete hands-on exercises to reinforce your understanding of control flow and function
+                                concepts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

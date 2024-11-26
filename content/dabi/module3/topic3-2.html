@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced SQL Queries</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Advanced SQL Queries</h1>
+    </header>
+
+    <main>
+        <section id="joins">
+            <h2>JOINs</h2>
+            <p>
+                JOINs are used to combine rows from two or more tables based on related columns. Common types of JOINs
+                include:
+            </p>
+            <ul>
+                <li>
+                    <strong>INNER JOIN:</strong> Returns only the matching rows from both tables.
+                    <pre><code>SELECT orders.order_id, customers.customer_name
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.customer_id;</code></pre>
+                </li>
+                <li>
+                    <strong>LEFT JOIN (or LEFT OUTER JOIN):</strong> Returns all rows from the left table and the
+                    matched rows from the right table. If no match, NULL values are returned.
+                    <pre><code>SELECT orders.order_id, customers.customer_name
+FROM orders
+LEFT JOIN customers ON orders.customer_id = customers.customer_id;</code></pre>
+                </li>
+                <li>
+                    <strong>RIGHT JOIN (or RIGHT OUTER JOIN):</strong> Returns all rows from the right table and the
+                    matched rows from the left table. If no match, NULL values are returned.
+                </li>
+                <li>
+                    <strong>FULL JOIN (or FULL OUTER JOIN):</strong> Returns rows when there is a match in one of the
+                    tables. If there is no match, NULL values are returned for columns from the table that lacks the
+                    match.
+                </li>
+            </ul>
+        </section>
+
+        <section id="subqueries">
+            <h2>Subqueries</h2>
+            <p>
+                Subqueries are nested queries used within another SQL query. They are useful for performing complex
+                filtering and calculations.
+            </p>
+            <pre><code>SELECT customer_name
+FROM customers
+WHERE customer_id IN (SELECT customer_id FROM orders WHERE order_date > '2024-01-01');</code></pre>
+        </section>
+
+        <section id="aggregations">
+            <h2>Aggregations</h2>
+            <p>
+                Aggregation functions perform calculations on a set of values and return a single value. Common
+                aggregation functions include:
+            </p>
+            <ul>
+                <li>
+                    <strong>COUNT:</strong> Counts the number of rows.
+                    <pre><code>SELECT COUNT(*) FROM orders;</code></pre>
+                </li>
+                <li>
+                    <strong>SUM:</strong> Calculates the sum of a numeric column.
+                    <pre><code>SELECT SUM(total_amount) FROM orders;</code></pre>
+                </li>
+                <li>
+                    <strong>AVG:</strong> Calculates the average value of a numeric column.
+                    <pre><code>SELECT AVG(total_amount) FROM orders;</code></pre>
+                </li>
+                <li>
+                    <strong>MAX:</strong> Returns the maximum value.
+                    <pre><code>SELECT MAX(total_amount) FROM orders;</code></pre>
+                </li>
+                <li>
+                    <strong>MIN:</strong> Returns the minimum value.
+                    <pre><code>SELECT MIN(total_amount) FROM orders;</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section id="practical-exercise">
+            <h2>Practical Exercise</h2>
+            <p>
+                <strong>Hands-On Practice:</strong> Write advanced SQL queries using JOINs, subqueries, and aggregation
+                functions. Practice combining multiple tables and performing complex data retrievals.
+            </p>
+        </section>
+    </main>
+
+</body>
+
+</html>

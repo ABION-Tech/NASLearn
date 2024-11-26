@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Implementing Algorithms in Python</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        h3 {
+            color: #007BFF;
+            /* Blue accent color */
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            /* Light background for code blocks */
+            border-left: 4px solid #007BFF;
+            /* Blue accent for the left border */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container my-5">
+        <h3>Implementing Algorithms in Python</h3>
+        <p>In this section, we will implement common algorithms in Python and analyze their performance. We will explore
+            sorting and searching algorithms and their applications in various scenarios.</p>
+
+        <h5>Sorting Algorithms</h5>
+        <p>Sorting algorithms are fundamental in computer science as they help arrange data in a specific order. Below,
+            we implement two popular sorting algorithms: <strong>Merge Sort</strong> and <strong>Quick Sort</strong>.
+        </p>
+
+        <h6>Merge Sort</h6>
+        <p>Merge Sort is a divide-and-conquer algorithm that splits the array into halves, sorts them recursively, and
+            then merges the sorted halves. Here is an implementation:</p>
+        <pre><code>def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2  # Find the mid of the array
+        left_half = arr[:mid]  # Dividing the elements into 2 halves
+        right_half = arr[mid:]
+
+        merge_sort(left_half)  # Sorting the first half
+        merge_sort(right_half)  # Sorting the second half
+
+        i = j = k = 0
+
+        # Copy data to temp arrays L[] and R[]
+        while i &lt; len(left_half) and j &lt; len(right_half):
+            if left_half[i] &lt;= right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        # Checking if any element was left
+        while i &lt; len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j &lt; len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+    return arr</code></pre>
+
+        <h6>Quick Sort</h6>
+        <p>Quick Sort is another divide-and-conquer algorithm that selects a pivot and partitions the array around the
+            pivot. The implementation is as follows:</p>
+        <pre><code>def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]  # Choosing the pivot
+    left = [x for x in arr if x &lt; pivot]  # Elements less than pivot
+    middle = [x for x in arr if x == pivot]  # Elements equal to pivot
+    right = [x for x in arr if x &gt; pivot]  # Elements greater than pivot
+    return quick_sort(left) + middle + quick_sort(right)</code></pre>
+
+        <h5>Searching Algorithms</h5>
+        <p>Searching algorithms help find specific elements in data structures. In this section, we will implement
+            breadth-first search (BFS) and depth-first search (DFS) for traversing graphs.</p>
+
+        <h6>Breadth-First Search (BFS)</h6>
+        <p>BFS is an algorithm for traversing or searching tree or graph data structures. It starts at the root (or an
+            arbitrary node in the case of a graph) and explores all neighboring nodes at the present depth before moving
+            on to nodes at the next depth level. Here's a basic implementation:</p>
+        <pre><code>from collections import deque
+
+def bfs(graph, start):
+    visited = set()  # Set to keep track of visited nodes
+    queue = deque([start])  # Create a queue for BFS
+
+    while queue:
+        vertex = queue.popleft()  # Dequeue a vertex from queue
+        if vertex not in visited:
+            visited.add(vertex)  # Mark the node as visited
+            print(vertex, end=" ")  # Process the node
+
+            # Enqueue non-visited neighbors
+            queue.extend(neighbor for neighbor in graph[vertex] if neighbor not in visited)
+
+# Example of a graph as a dictionary
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E']
+}
+
+print("BFS Traversal starting from A:")
+bfs(graph, 'A')</code></pre>
+
+        <h6>Depth-First Search (DFS)</h6>
+        <p>DFS is an algorithm for traversing or searching tree or graph data structures. It starts at the root and
+            explores as far as possible along each branch before backtracking. Below is an implementation:</p>
+        <pre><code>def dfs(graph, vertex, visited=None):
+    if visited is None:
+        visited = set()  # Set to keep track of visited nodes
+    visited.add(vertex)  # Mark the node as visited
+    print(vertex, end=" ")  # Process the node
+
+    for neighbor in graph[vertex]:
+        if neighbor not in visited:
+            dfs(graph, neighbor, visited)
+
+print("\nDFS Traversal starting from A:")
+dfs(graph, 'A')</code></pre>
+
+        <h5>Performance Analysis</h5>
+        <p>Both merge sort and quick sort have average time complexities of O(n log n). Merge sort is stable, whereas
+            quick sort is generally faster but not stable. BFS has a time complexity of O(V + E) where V is the number
+            of vertices and E is the number of edges, while DFS has the same complexity. Understanding the performance
+            of these algorithms is crucial for selecting the right one based on the problem requirements.</p>
+    </div>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

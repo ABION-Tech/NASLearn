@@ -1,0 +1,144 @@
+### Video Editing Masterclass: 10-Week Course + Capstone Project
+
+**Course Overview**:  
+This 10-week video editing course is designed to take participants from beginner to advanced level, equipping them with comprehensive skills in video editing, post-production workflows, storytelling, and creative techniques. The course will balance theory, practical exercises, and project work to ensure participants are prepared to edit high-quality videos professionally. The capstone project in Week 10 will allow students to apply their skills to a final video project, showcasing everything they've learned.
+
+---
+
+### Week 1: **Introduction to Video Editing**
+- **Objective**: Lay the foundation of video editing by introducing essential terms, concepts, and tools.
+- **Topics Covered**:
+  - **Overview of Video Editing**: Understanding what video editing entails, its importance in storytelling, and the role of an editor.
+  - **Video Formats & Codecs**: Introduction to common video formats (e.g., MP4, MOV, AVI) and codecs (H.264, ProRes) and how they affect video quality and workflow.
+  - **Setting up a Project**: Creating a new project in editing software (Adobe Premiere Pro, DaVinci Resolve, or Final Cut Pro) and organizing media files for efficient editing.
+  - **Navigating the Software Interface**: Understanding the workspace, including timelines, media bins, effects panels, and preview windows.
+
+- **Practical Task**: Importing footage and organizing it into bins. Creating a new sequence.
+
+---
+
+### Week 2: **Basic Editing Techniques**
+- **Objective**: Learn the core video editing functions and how to perform basic cuts and trims.
+- **Topics Covered**:
+  - **Cutting & Trimming**: Using tools like the razor blade, ripple edit, and trim to cut and arrange clips on the timeline.
+  - **In-Point/Out-Point**: Defining the start and end of a clip for precise editing.
+  - **Timeline Navigation**: Efficient ways to navigate and scrub through footage using keyboard shortcuts and markers.
+  - **Layering Clips**: Working with multiple video tracks for overlaying footage, text, or graphics.
+  
+- **Practical Task**: Create a 1-minute sequence using raw footage, focusing on basic cuts, trims, and clip arrangement.
+
+---
+
+### Week 3: **Transitions and Effects**
+- **Objective**: Understand and apply transitions and basic effects to enhance storytelling and smooth scene changes.
+- **Topics Covered**:
+  - **Types of Transitions**: Learn about different transitions (cut, dissolve, fade, wipe) and when to use them.
+  - **Customizing Transitions**: Adjusting the duration and style of transitions for smoother edits.
+  - **Applying Basic Effects**: Introduction to effects like blur, sharpening, and color correction tools in editing software.
+  - **Working with Keyframes**: Introduction to keyframing for dynamic transitions and animation effects.
+
+- **Practical Task**: Add appropriate transitions to a 1-minute sequence and use keyframing to animate a simple effect.
+
+---
+
+### Week 4: **Audio Editing and Mixing**
+- **Objective**: Learn the basics of audio editing, including syncing, mixing, and applying effects.
+- **Topics Covered**:
+  - **Audio Basics**: Understanding sound levels, mono vs. stereo, and audio waveform visualization.
+  - **Syncing Audio with Video**: Techniques for syncing separate audio and video tracks.
+  - **Adjusting Audio Levels**: Balancing audio levels, including voice, background music, and sound effects.
+  - **Basic Audio Effects**: Introduction to EQ, reverb, and noise reduction for clearer sound.
+  - **Music & Sound Design**: Incorporating music and sound effects to enhance storytelling.
+
+- **Practical Task**: Sync audio with video and adjust levels for a clean, professional-sounding edit.
+
+---
+
+### Week 5: **Advanced Editing Techniques**
+- **Objective**: Explore advanced editing techniques to create seamless and polished content.
+- **Topics Covered**:
+  - **Multicam Editing**: Learn how to edit footage from multiple camera angles.
+  - **Speed & Time Manipulation**: Creating slow-motion, fast-motion, and freeze-frame effects.
+  - **Split-Screen and Picture-in-Picture**: Working with multiple videos on screen simultaneously.
+  - **Proxy Workflow**: Working with large video files by creating proxies to improve editing efficiency.
+  - **Nested Sequences**: Simplifying complex edits by nesting sequences.
+
+- **Practical Task**: Edit a multicam sequence and apply time-manipulation effects.
+
+---
+
+### Week 6: **Color Correction and Grading**
+- **Objective**: Master color correction and grading techniques to enhance the visual quality of videos.
+- **Topics Covered**:
+  - **Color Theory in Video**: Understanding color temperature, balance, and the emotional impact of color.
+  - **Basic Color Correction**: Adjusting brightness, contrast, white balance, and exposure to achieve natural-looking footage.
+  - **Introduction to Color Grading**: Applying creative color looks to establish mood and tone.
+  - **Scopes and Tools**: Using waveform monitors, histograms, and vectorscopes to fine-tune color accuracy.
+
+- **Practical Task**: Perform color correction and grading on a 2-minute sequence, adjusting for both natural and stylized looks.
+
+---
+
+### Week 7: **Titles, Graphics, and Motion**
+- **Objective**: Add and animate titles, lower thirds, and graphic elements to enrich videos.
+- **Topics Covered**:
+  - **Creating Titles & Lower Thirds**: Adding text and graphic elements to introduce speakers or provide information.
+  - **Animating Text**: Using keyframes to create dynamic text animations (fade-in, slide, bounce, etc.).
+  - **Intro/Outro Graphics**: Designing intros and outros with brand logos, motion graphics, and transitions.
+  - **Working with Templates**: Importing and modifying existing motion graphics templates (MOGRT files).
+
+- **Practical Task**: Design and animate a title sequence with text and motion graphics for a 2-minute video.
+
+---
+
+### Week 8: **Exporting and Deliverables**
+- **Objective**: Learn how to export videos in various formats for different platforms.
+- **Topics Covered**:
+  - **Export Settings**: Understanding resolution, frame rates, and bit rates for different export requirements.
+  - **Choosing the Right Format**: Exporting videos for web, social media, and broadcast.
+  - **File Compression**: Strategies for maintaining quality while reducing file size.
+  - **Batch Exporting**: Exporting multiple sequences or variations in one go.
+  - **Understanding Client Deliverables**: Best practices for exporting final versions, versions for review, and backup files.
+
+- **Practical Task**: Export a video in multiple formats (e.g., YouTube, Instagram, and client review versions).
+
+---
+
+### Week 9: **Storytelling and Editing Techniques**
+- **Objective**: Understand the art of storytelling through video editing.
+- **Topics Covered**:
+  - **Editing for Narrative**: Using cuts, transitions, and pacing to tell a cohesive story.
+  - **Montage Editing**: Creating a montage to condense time or convey a theme.
+  - **Emotional Pacing**: Using rhythm and timing to enhance emotional impact.
+  - **Visual Continuity**: Maintaining continuity between shots to avoid jarring transitions.
+  - **Building Tension and Release**: Techniques for creating suspense and resolving it effectively.
+
+- **Practical Task**: Edit a short narrative scene, focusing on pacing and emotional impact.
+
+---
+
+### Week 10: **Capstone Project**
+- **Objective**: Apply everything learned throughout the course to create a final project.
+- **Capstone Details**:
+  - **Project Brief**: Choose between creating a short film, documentary, music video, or promotional video that is 3-5 minutes long. The project should incorporate various skills learned, such as editing, audio mixing, color grading, motion graphics, and storytelling.
+  - **Requirements**:
+    - Use at least three different types of transitions.
+    - Apply color correction and grading.
+    - Include titles, lower thirds, or other graphic elements.
+    - Proper audio sync and mixing.
+    - Export in at least two different formats (one for web, one for client review).
+  - **Deliverable**: Submit a completed project along with a reflective write-up describing the creative choices made and challenges faced during the editing process.
+
+- **Evaluation**: The final project will be evaluated based on technical proficiency, storytelling, creative use of editing techniques, and adherence to deliverable specifications.
+
+---
+
+### Outcomes:
+By the end of this course, participants will be proficient in:
+- Setting up video editing projects efficiently.
+- Editing footage with precision and creativity.
+- Applying transitions, effects, and audio adjustments.
+- Using advanced techniques like color grading, multicam editing, and keyframing.
+- Exporting video content for multiple platforms.
+- Completing professional-quality video editing projects.
+

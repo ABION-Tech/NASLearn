@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Data Manipulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>SQL Data Manipulation</h1>
+    </header>
+
+    <main>
+        <section id="insert-statement">
+            <h2>INSERT Statement</h2>
+            <p>
+                The INSERT statement is used to add new rows to a table.
+            </p>
+            <pre><code>INSERT INTO customers (customer_name, contact_name, country)
+VALUES ('John Doe', 'John', 'USA');</code></pre>
+        </section>
+
+        <section id="update-statement">
+            <h2>UPDATE Statement</h2>
+            <p>
+                The UPDATE statement modifies existing rows in a table.
+            </p>
+            <pre><code>UPDATE customers
+SET contact_name = 'Jane'
+WHERE customer_name = 'John Doe';</code></pre>
+        </section>
+
+        <section id="delete-statement">
+            <h2>DELETE Statement</h2>
+            <p>
+                The DELETE statement removes rows from a table.
+            </p>
+            <pre><code>DELETE FROM customers
+WHERE customer_name = 'John Doe';</code></pre>
+        </section>
+
+        <section id="data-integrity">
+            <h2>Data Integrity</h2>
+            <p>
+                Maintaining data integrity involves ensuring the accuracy and consistency of data within a database. Key
+                concepts include:
+            </p>
+            <ul>
+                <li><strong>Primary Keys:</strong> Unique identifiers for each row in a table.</li>
+                <li><strong>Foreign Keys:</strong> Columns that create a relationship between tables by referencing
+                    primary keys.</li>
+                <li><strong>Constraints:</strong> Rules applied to columns to enforce data integrity (e.g., NOT NULL,
+                    UNIQUE, CHECK).</li>
+            </ul>
+        </section>
+
+        <section id="transactions">
+            <h2>Transactions</h2>
+            <p>
+                Transactions ensure that a series of SQL operations are executed as a single unit, maintaining data
+                integrity. If any operation fails, the entire transaction is rolled back.
+            </p>
+            <pre><code>BEGIN TRANSACTION;
+UPDATE accounts SET balance = balance - 100 WHERE account_id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE account_id = 2;
+COMMIT;</code></pre>
+        </section>
+
+        <section id="practical-exercise">
+            <h2>Practical Exercise</h2>
+            <p>
+                <strong>Hands-On Practice:</strong> Write SQL statements to insert, update, and delete data in sample
+                databases. Practice using primary keys, foreign keys, and constraints to maintain data integrity.
+                Implement transactions to ensure data consistency.
+            </p>
+        </section>
+    </main>
+
+</body>
+
+</html>

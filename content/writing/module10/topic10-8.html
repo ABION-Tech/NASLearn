@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Curriculum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .module-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            /* space between cards */
+        }
+
+        .module {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1;
+            min-width: 250px;
+            /* minimum width for small screens */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* To spread content evenly */
+        }
+
+        .module h5 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h2>Course Curriculum</h2>
+        <div class="module-container">
+            <div class="module">
+                <h5>Module 1: Introduction to [Course Subject]</h5>
+                <p>Get familiar with the basics of [Course Subject] and its applications in the industry.</p>
+            </div>
+            <div class="module">
+                <h5>Module 2: Advanced Concepts in [Course Subject]</h5>
+                <p>Deep dive into the advanced concepts and methodologies of [Course Subject].</p>
+            </div>
+            <div class="module">
+                <h5>Module 3: Project Phase</h5>
+                <p>Work on real-world projects to solidify your understanding of the concepts you've learned.</p>
+            </div>
+            <div class="module">
+                <h5>Module 4: Industry Tools</h5>
+                <p>Learn how to use industry-standard tools for [specific tasks] in [Course Subject].</p>
+            </div>
+            <div class="module">
+                <h5>Module 5: Internship Preparation</h5>
+                <p>Prepare for your internship with a focus on industry expectations and professional development.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

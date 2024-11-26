@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Video</title>
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+ 
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-credit {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Responsive Video -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/your-video-id" title="YouTube video" allowfullscreen></iframe>
+    </div>
+    <!-- Credit for YouTube Channel -->
+    <div class="video-credit">
+        Credit: <a href="https://www.youtube.com/channel/your-channel-link" target="_blank">Your YouTube Channel</a>
+    </div>
+</div>
+
+</body>
+</html>

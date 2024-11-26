@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Preprocessing and EDA - Week 2</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            /* Blue accent color */
+        }
+
+        .container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            /* Light grey background for code blocks */
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .highlight {
+            background-color: #007bff;
+            /* Blue accent for highlights */
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .note {
+            background-color: #e7f1ff;
+            /* Light blue background for notes */
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            /* Blue accent left border */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
+        <h2>Data Transformation: Feature Scaling, Normalization, and Standardization</h2>
+
+        <p>Data transformation is a crucial step in data preprocessing, especially when dealing with numerical features.
+            It involves scaling or normalizing the data to a common range, which can significantly enhance the
+            performance of many machine learning algorithms.</p>
+
+        <h3>1. Feature Scaling</h3>
+        <p>Feature scaling transforms numerical features to a common scale, which is essential as many ML algorithms are
+            sensitive to the scale of features.</p>
+
+        <ul>
+            <li><strong>Min-max scaling:</strong> This technique scales features to a specific range, typically between
+                0 and 1.</li>
+        </ul>
+        <pre><code>from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+X_scaled = scaler.fit_transform(X)</code></pre>
+
+        <ul>
+            <li><strong>Robust scaling:</strong> Utilizes the interquartile range (IQR) to scale features, making it
+                less sensitive to outliers.</li>
+        </ul>
+        <pre><code>from sklearn.preprocessing import RobustScaler
+
+scaler = RobustScaler()
+X_scaled = scaler.fit_transform(X)</code></pre>
+
+        <h3>2. Normalization</h3>
+        <p>Normalization transforms features to have a mean of 0 and a standard deviation of 1. This is particularly
+            useful for algorithms that assume normally distributed data.</p>
+
+        <ul>
+            <li><strong>StandardScaler:</strong> This technique scales features using the mean and standard deviation.
+            </li>
+        </ul>
+        <pre><code>from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)</code></pre>
+
+        <h3>3. Standardization</h3>
+        <p>Standardization is similar to normalization but employs the mean and standard deviation of the entire dataset
+            instead of those of each feature. This can be advantageous when features exhibit different variances.</p>
+
+        <ul>
+            <li><strong>StandardScaler:</strong> This can also be used for standardization.</li>
+        </ul>
+
+        <h3>Choosing the Right Technique</h3>
+        <p>The selection of scaling or normalization technique is contingent on the specific characteristics of your
+            data and the ML algorithm employed. Consider the following:</p>
+        <ul>
+            <li><strong>Algorithm requirements:</strong> Some algorithms, like linear regression and support vector
+                machines, may gain from feature scaling.</li>
+            <li><strong>Data distribution:</strong> If your data is normally distributed, normalization may be the best
+                approach.</li>
+            <li><strong>Outliers:</strong> Robust scaling can be beneficial for datasets that contain outliers.</li>
+        </ul>
+
+        <h3>Additional Considerations</h3>
+        <p>When performing data transformation, consider these additional factors:</p>
+        <ul>
+            <li><strong>Handle categorical features:</strong> Ensure categorical features are encoded before scaling or
+                normalization.</li>
+            <li><strong>Avoid scaling target variables:</strong> If your target variable is numerical, refrain from
+                scaling it unless absolutely necessary.</li>
+            <li><strong>Experiment and evaluate:</strong> Test various scaling techniques and assess their impact on
+                model performance.</li>
+        </ul>
+
+        <div class="note">
+            <strong>Note:</strong> By applying appropriate data transformation techniques, you can enhance the
+            convergence of your machine learning algorithms and bolster overall model performance.
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterating Over Data Structures in Python</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            /* Ensure line breaks are preserved */
+        }
+
+        h5 {
+            margin-top: 20px;
+        }
+
+        ul {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container content">
+        <h1 class="blue-accent">Iterating Over Data Structures in Python</h1>
+
+        <h3 class="blue-accent">4. Iterating Over Data Structures</h3>
+        <p>You can iterate over lists, tuples, sets, and dictionaries using loops.</p>
+
+        <h5>Iterating Over a List:</h5>
+        <p>To loop through the items in a list, you can use a <strong>for loop</strong>.</p>
+        <div class="code-block">
+            # Iterating over a list<br>
+            for item in my_list:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(item)
+        </div>
+
+        <h5>Iterating Over a Dictionary:</h5>
+        <p>When iterating over a dictionary, you can access both keys and values using the <strong>items()</strong>
+            method.</p>
+        <div class="code-block">
+            # Iterating over a dictionary<br>
+            for key, value in my_dict.items():<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(f"{key}: {value}")
+        </div>
+
+        <h5>Iterating Over Other Data Structures:</h5>
+        <p>Sets can also be iterated similarly to lists. Here’s how:</p>
+        <div class="code-block">
+            # Iterating over a set<br>
+            for element in my_set:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(element)
+        </div>
+
+        <h5>Using List Comprehensions:</h5>
+        <p>Python offers a concise way to create lists using list comprehensions, which can also involve iteration:</p>
+        <div class="code-block">
+            squares = [x**2 for x in range(10)] # Creates a list of squares<br>
+            print(squares) # Outputs: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+        </div>
+
+        <h5>Conclusion:</h5>
+        <p>Iterating through data structures is a fundamental aspect of programming in Python. It allows for efficient
+            data manipulation and access, making it easier to perform tasks such as filtering, transforming, and
+            processing data.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

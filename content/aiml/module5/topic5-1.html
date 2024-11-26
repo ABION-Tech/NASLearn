@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+        }
+
+        h2 {
+            margin-top: 30px;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+        }
+
+        .content-section {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .list-group-item {
+            background-color: transparent;
+            border: none;
+        }
+
+        .list-group-item:hover {
+            background-color: #e9ecef;
+        }
+
+        .highlight {
+            background-color: #e0f7fa;
+            border-left: 5px solid #007BFF;
+            padding: 10px;
+            margin: 15px 0;
+        }
+    </style>
+    <title>Week 5: Unsupervised Learning - Clustering</title>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="content-section">
+            <h1>Week 5: Unsupervised Learning - Clustering</h1>
+
+            <h2>Introduction to Unsupervised Learning</h2>
+            <p><strong>Unsupervised learning</strong> is a type of machine learning where algorithms learn from
+                <strong>unlabeled data</strong>. Unlike supervised learning, there is no explicit target variable to
+                predict. Instead, the goal is to discover <strong>patterns</strong>, <strong>structures</strong>, or
+                <strong>relationships</strong> within the data itself.
+            </p>
+
+            <div class="highlight">
+                <h3>Key Concepts:</h3>
+                <ul>
+                    <li><strong>Unlabeled data:</strong> Data without corresponding target variables.</li>
+                    <li><strong>Clustering:</strong> Grouping similar data points together.</li>
+                    <li><strong>Dimensionality reduction:</strong> Reducing the number of features in a dataset while
+                        preserving important information.</li>
+                </ul>
+            </div>
+
+            <h2>Clustering Algorithms</h2>
+            <p>Clustering algorithms are used to group similar data points together based on their features. Common
+                clustering algorithms include:</p>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>K-means clustering:</strong> A partitioning algorithm that divides
+                    the data into K clusters.</li>
+                <li class="list-group-item"><strong>Hierarchical clustering:</strong> Creates a hierarchy of clusters,
+                    starting from individual data points and merging them based on similarity.</li>
+                <li class="list-group-item"><strong>Density-based clustering:</strong> Groups data points based on their
+                    density in the feature space.</li>
+                <li class="list-group-item"><strong>DBSCAN:</strong> A density-based algorithm that identifies clusters
+                    of arbitrary shapes.</li>
+                <li class="list-group-item"><strong>Mean-shift clustering:</strong> A clustering algorithm that shifts
+                    data points to regions of high density.</li>
+            </ul>
+
+            <h2>Choosing the Right Clustering Algorithm</h2>
+            <p>The choice of clustering algorithm depends on the characteristics of your data and the specific goals of
+                your analysis. Consider the following factors:</p>
+            <ul>
+                <li><strong>Number of clusters:</strong> If you have a known number of clusters, K-means clustering may
+                    be appropriate.</li>
+                <li><strong>Cluster shape:</strong> If clusters have arbitrary shapes, density-based clustering
+                    algorithms like DBSCAN may be more suitable.</li>
+                <li><strong>Computational resources:</strong> Some clustering algorithms, such as hierarchical
+                    clustering, can be computationally expensive for large datasets.</li>
+            </ul>
+
+            <h2>Evaluation Metrics</h2>
+            <p>To assess the effectiveness of clustering algorithms, several evaluation metrics can be employed:</p>
+            <ul>
+                <li><strong>Silhouette coefficient:</strong> Measures how similar a data point is to its own cluster
+                    compared to other clusters. A higher silhouette score indicates better-defined clusters.</li>
+                <li><strong>Calinski-Harabasz index:</strong> Measures the ratio of between-cluster variance to
+                    within-cluster variance, with higher values indicating better clustering.</li>
+                <li><strong>Davies-Bouldin index:</strong> Measures the average similarity between each cluster and its
+                    nearest cluster, with lower values indicating better clustering.</li>
+            </ul>
+
+            <h2>Applications of Clustering</h2>
+            <p>Clustering has numerous applications across various fields, including:</p>
+            <ul>
+                <li><strong>Customer segmentation:</strong> Grouping customers based on their behavior and preferences
+                    to enhance marketing strategies.</li>
+                <li><strong>Image segmentation:</strong> Dividing images into different regions or objects for improved
+                    analysis and processing.</li>
+                <li><strong>Anomaly detection:</strong> Identifying unusual data points that deviate from the norm,
+                    often used in fraud detection.</li>
+                <li><strong>Social network analysis:</strong> Analyzing relationships between individuals or groups to
+                    uncover patterns and insights.</li>
+                <li><strong>Recommendation systems:</strong> Suggesting items or content based on user preferences
+                    through clustering similar items.</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>By understanding the principles of unsupervised learning and clustering algorithms, you can effectively
+                analyze unlabeled data and discover valuable insights that drive decision-making and innovation across
+                various industries.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

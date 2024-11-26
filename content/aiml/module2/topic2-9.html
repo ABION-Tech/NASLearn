@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Preprocessing and Exploratory Data Analysis (EDA)</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent color */
+        }
+
+        .section-title {
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            margin: 20px 0;
+        }
+
+        .list-group-item {
+            border: none;
+            /* Remove borders from list items */
+            background-color: rgba(0, 123, 255, 0.1);
+            /* Light blue background for emphasis */
+        }
+
+        .list-group-item:hover {
+            background-color: rgba(0, 123, 255, 0.2);
+            /* Darker blue on hover */
+        }
+
+        .best-practices {
+            background-color: rgba(0, 123, 255, 0.05);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h1 class="section-title">Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
+
+            <h2 class="section-title">Statistical Analysis: Correlation and Distribution</h2>
+
+            <p>Statistical analysis is a fundamental tool for understanding and interpreting data. It helps us quantify
+                relationships between variables and describe the distribution of data.</p>
+
+            <h3>1. Correlation</h3>
+            <p>Correlation quantifies the degree to which two variables are related.</p>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Correlation coefficient:</strong> A measure of the strength and
+                    direction of the linear relationship between two variables.</li>
+                <li class="list-group-item">
+                    <strong>Pearson correlation:</strong> Measures the linear relationship between two continuous
+                    variables.
+                </li>
+                <li class="list-group-item">
+                    <strong>Spearman correlation:</strong> Measures the monotonic relationship between two variables,
+                    regardless of their linearity.
+                </li>
+                <li class="list-group-item">
+                    <strong>Correlation matrix:</strong> A table that shows the correlation coefficients between all
+                    pairs of variables in a dataset.
+                </li>
+            </ul>
+
+            <h4>Interpreting Correlation Coefficients</h4>
+            <p>Correlation coefficients range from -1 to 1:</p>
+            <ul>
+                <li><strong>-1:</strong> Perfect negative correlation (variables move in opposite directions).</li>
+                <li><strong>0:</strong> No correlation.</li>
+                <li><strong>1:</strong> Perfect positive correlation (variables move in the same direction).</li>
+            </ul>
+            <p>The closer the absolute value is to 1, the stronger the correlation.</p>
+
+            <h4>Visualization</h4>
+            <p>Effective visualization is crucial for interpreting correlation:</p>
+            <ul>
+                <li><strong>Scatter plots:</strong> Visualize the relationship between two variables.</li>
+                <li><strong>Heatmaps:</strong> Visualize correlation matrices, providing a clear overview of
+                    relationships.</li>
+            </ul>
+
+            <h3>2. Distribution</h3>
+            <p>Understanding distribution is key to analyzing data. It helps to describe how values are spread over a
+                range.</p>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Probability distribution:</strong> Describes the likelihood of
+                    different values occurring in a dataset.</li>
+                <li class="list-group-item"><strong>Common distributions:</strong>
+                    <ul>
+                        <li><strong>Normal distribution:</strong> Bell-shaped curve, also known as Gaussian
+                            distribution.</li>
+                        <li><strong>Uniform distribution:</strong> All values have equal probability.</li>
+                        <li><strong>Poisson distribution:</strong> Describes the number of events occurring in a fixed
+                            interval of time or space.</li>
+                        <li><strong>Binomial distribution:</strong> Describes the number of successes in a fixed number
+                            of Bernoulli trials.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Visualization</h4>
+            <p>Visualizations help to communicate distribution insights:</p>
+            <ul>
+                <li><strong>Histograms:</strong> Visualize the distribution of a numerical variable.</li>
+                <li><strong>Density plots:</strong> Smooth versions of histograms, showing probability density.</li>
+                <li><strong>Q-Q plots:</strong> Compare the distribution of a dataset to a theoretical distribution,
+                    highlighting deviations.</li>
+            </ul>
+
+            <h3>Statistical Tests</h3>
+            <p>Statistical tests are used to make inferences from data:</p>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Hypothesis testing:</strong> Determine if a sample mean or
+                    proportion is significantly different from a population mean or proportion.</li>
+                <li class="list-group-item"><strong>T-test:</strong> Compares the means of two groups to assess if they
+                    are statistically different from one another.</li>
+                <li class="list-group-item"><strong>ANOVA (Analysis of Variance):</strong> Compares the means of
+                    multiple groups.</li>
+                <li class="list-group-item"><strong>Chi-squared test:</strong> Tests for independence between
+                    categorical variables.</li>
+            </ul>
+
+            <div class="best-practices">
+                <h4>Best Practices</h4>
+                <ul>
+                    <li><strong>Consider the context:</strong> Interpret statistical results in the context of your
+                        domain and research question.</li>
+                    <li><strong>Avoid overinterpretation:</strong> Remember that correlation does not imply causation.
+                    </li>
+                    <li><strong>Use appropriate statistical tests:</strong> Choose the correct test based on the type of
+                        data and research question.</li>
+                    <li><strong>Visualize the data:</strong> Utilize visualizations to enhance understanding and
+                        interpretation of statistical results.</li>
+                </ul>
+            </div>
+
+            <p>By understanding correlation and distribution, you can gain valuable insights into your data and make
+                informed decisions.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

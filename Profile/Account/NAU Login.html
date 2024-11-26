@@ -1,4 +1,6 @@
-<html><head>
+<html>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -32,7 +34,7 @@
             margin-bottom: 15px;
         }
 
-        .login-box input[type="text"], 
+        .login-box input[type="text"],
         .login-box input[type="password"] {
             width: 100%;
             padding: 10px;
@@ -41,7 +43,7 @@
             box-sizing: border-box;
         }
 
-        .login-box .button, 
+        .login-box .button,
         .login-box .google-button {
             display: block;
             background: #333;
@@ -52,7 +54,7 @@
             margin-top: 10px;
         }
 
-        .login-box .button:hover, 
+        .login-box .button:hover,
         .login-box .google-button:hover {
             background: #555;
         }
@@ -80,9 +82,10 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <div class="logo">NAU</div>
+        <div class="logo">NAS</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -112,65 +115,70 @@
     </main>
 
     <footer>
-        <p>© 2024 New Age University. All rights reserved.</p>
+        <p>© 2024 New Age Skillsphere. All rights reserved.</p>
     </footer>
 
 
-<style id="dcoder_stylesheet">/* Global Styles for Login Page */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+    <style id="dcoder_stylesheet">
+        /* Global Styles for Login Page */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-}
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
 
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
 
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-footer {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-}
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
 
-footer p {
-    margin: 0;
-}
-</style><script id="dcoder_script">// script.js
+        footer p {
+            margin: 0;
+        }
+    </style>
+    <script id="dcoder_script">// script.js
 
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const toggleBtn = document.querySelector('.toggle-btn');
-    
-    if (sidebar.style.width === '0px' || sidebar.style.width === '') {
-        sidebar.style.width = '250px';
-        toggleBtn.innerHTML = '&#9664;'; // Left arrow
-    } else {
-        sidebar.style.width = '0';
-        toggleBtn.innerHTML = '&#9654;'; // Right arrow
-    }
-}
-</script></body></html>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const toggleBtn = document.querySelector('.toggle-btn');
+
+            if (sidebar.style.width === '0px' || sidebar.style.width === '') {
+                sidebar.style.width = '250px';
+                toggleBtn.innerHTML = '&#9664;'; // Left arrow
+            } else {
+                sidebar.style.width = '0';
+                toggleBtn.innerHTML = '&#9654;'; // Right arrow
+            }
+        }
+    </script>
+</body>
+
+</html>

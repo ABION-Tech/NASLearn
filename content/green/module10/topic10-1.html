@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project Development</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f7f9fc;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        code {
+            display: block;
+            background-color: #eee;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .bash {
+            background-color: #f9f2f4;
+            color: #007bff;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Capstone Project Development</h1>
+
+    <div class="section">
+        <h2>1.1. Project Overview</h2>
+        <ul>
+            <li><strong>Objective:</strong> Develop a fully functional web application that incorporates front-end and
+                back-end technologies learned during the course. This project should demonstrate the integration of
+                React for the front-end and Node.js/Express for the back-end, with a focus on real-world application and
+                deployment.</li>
+            <li><strong>Project Ideas:</strong></li>
+            <ul>
+                <li>Task Management App: A web application that allows users to create, update, and manage tasks.</li>
+                <li>E-Commerce Site: An online store with product listings, a shopping cart, and user authentication.
+                </li>
+                <li>Blog Platform: A platform where users can create, edit, and comment on blog posts.</li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>1.2. Steps for Development</h2>
+
+        <h3>1. Planning and Design</h3>
+        <ul>
+            <li><strong>Define Requirements:</strong></li>
+            <ul>
+                <li>Create a list of features and functionalities your application will have.</li>
+                <li>Outline the user flow and wireframes for the application.</li>
+            </ul>
+            <li><strong>Set Up a Project Repository:</strong></li>
+            <ul>
+                <li>Initialize a Git repository for your project:
+                    <code class="bash">git init</code>
+                </li>
+                <li>Create a new repository on GitHub and push your initial setup:
+                    <code class="bash">git remote add origin https://github.com/username/capstone-project.git</code>
+                    <code class="bash">git push -u origin master</code>
+                </li>
+            </ul>
+        </ul>
+
+        <h3>2. Back-End Development</h3>
+        <ul>
+            <li><strong>Create the Server:</strong></li>
+            <ul>
+                <li>Set up an Express server and define your routes and controllers.</li>
+                <li>Connect to a database (e.g., MongoDB) and define schemas and models:
+                    <code class="bash">
+                        const express = require('express');<br>
+                        const mongoose = require('mongoose');<br>
+                        const cors = require('cors');<br>
+                        const app = express();<br>
+                        const PORT = process.env.PORT || 5000;<br>
+                        app.use(cors());<br>
+                        app.use(express.json());<br>
+                        mongoose.connect('mongodb://localhost:27017/capstone', { useNewUrlParser: true, useUnifiedTopology: true });<br>
+                        const itemSchema = new mongoose.Schema({ name: String, description: String, completed: Boolean });<br>
+                        const Item = mongoose.model('Item', itemSchema);<br>
+                        app.get('/api/items', async (req, res) => { const items = await Item.find(); res.json(items); });<br>
+                        app.post('/api/items', async (req, res) => { const newItem = new Item(req.body); await newItem.save(); res.json(newItem); });<br>
+                        app.listen(PORT, () => console.log(`Server running on port ${PORT}`));<br>
+                    </code>
+                </li>
+            </ul>
+            <li><strong>Implement Authentication (if needed):</strong> Add routes and middleware for user authentication
+                using libraries like jsonwebtoken.</li>
+        </ul>
+
+        <h3>3. Front-End Development</h3>
+        <ul>
+            <li><strong>Create React Components:</strong></li>
+            <ul>
+                <li>Develop React components that interact with the back-end API:
+                    <code class="bash">
+                        import React, { useState, useEffect } from 'react';<br>
+                        import axios from 'axios';<br>
+                        function App() {<br>
+                            const [items, setItems] = useState([]);<br>
+                            useEffect(() => {<br>
+                                axios.get('/api/items')<br>
+                                    .then(response => setItems(response.data))<br>
+                                    .catch(error => console.error('There was an error!', error));<br>
+                            }, []);<br>
+                            return (<br>
+                                &lt;div className="App"&gt;<br>
+                                &lt;h1&gt;Item List&lt;/h1&gt;<br>
+                                &lt;ul&gt;<br>
+                                    {items.map(item => (<br>
+                                        &lt;li key={item._id}&gt;{item.name}: {item.description}&lt;/li&gt;<br>
+                                    ))}<br>
+                                &lt;/ul&gt;<br>
+                                &lt;/div&gt;<br>
+                            );<br>
+                        }<br>
+                        export default App;<br>
+                    </code>
+                </li>
+            </ul>
+            <li><strong>Style the Application:</strong> Use CSS or CSS frameworks like Bootstrap to style your app.</li>
+        </ul>
+
+        <h3>4. Deployment</h3>
+        <ul>
+            <li><strong>Prepare for Deployment:</strong> Ensure your project is configured correctly for deployment.
+            </li>
+            <li><strong>Deploy to Heroku:</strong>
+                <code class="bash">heroku create<br>git push heroku master</code>
+            </li>
+            <li><strong>Verify Deployment:</strong> Test the deployed application to ensure everything works as
+                expected.</li>
+        </ul>
+
+    </div>
+
+</body>
+
+</html>

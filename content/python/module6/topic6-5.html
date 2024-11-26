@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent for headings */
+        }
+
+        .exercise {
+            margin-bottom: 40px;
+            /* Spacing between exercises */
+        }
+
+        .editor-container {
+            display: flex;
+            flex-direction: column;
+            height: 70vh;
+            /* Height of editor container */
+        }
+
+        .editor {
+            flex: 1;
+            border: 1px solid #007BFF;
+            /* Blue accent border */
+            border-radius: 5px;
+            padding: 10px;
+            resize: both;
+            /* Allows resizing */
+            overflow: auto;
+            /* Scrollable if content overflows */
+            font-family: monospace;
+            /* Monospace font for code editor */
+        }
+
+        .output {
+            border: 1px solid #007BFF;
+            /* Blue accent border */
+            border-radius: 5px;
+            padding: 10px;
+            height: 250px;
+            /* Height of output area */
+            overflow-y: auto;
+            /* Scrollable if content overflows */
+            background-color: #f8f9fa;
+            /* Light background for output */
+        }
+
+        .btn-execute {
+            background-color: #007BFF;
+            /* Button color */
+            color: white;
+            /* Button text color */
+        }
+
+        .btn-execute:hover {
+            background-color: #007BFF;
+            /* Darker blue on hover */
+        }
+    </style>
+    <title>Hands-On Exercises</title>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Hands-On Exercises</h1>
+
+        <div class="exercise">
+            <h2>Exercise 1: Data Visualization Project</h2>
+            <p><strong>Objective:</strong> Create a series of visualizations for a given dataset.</p>
+            <p><strong>Instructions:</strong></p>
+            <ol>
+                <li>Choose a dataset (e.g., from Kaggle or UCI Machine Learning Repository).</li>
+                <li>Create at least three different types of plots (line, bar, scatter, etc.) using
+                    <code>matplotlib</code>.
+                </li>
+                <li>Use <code>seaborn</code> to create at least one statistical plot (e.g., histogram or box plot).</li>
+                <li>Customize each plot with titles, labels, and legends, and ensure they are clear and informative.
+                </li>
+            </ol>
+        </div>
+
+        <div class="exercise">
+            <h2>Exercise 2: Comparing Visualizations</h2>
+            <p><strong>Objective:</strong> Compare the same data represented through different types of visualizations.
+            </p>
+            <p><strong>Instructions:</strong></p>
+            <ol>
+                <li>Select a dataset.</li>
+                <li>Create visualizations for the same aspect of the data using a line plot, bar plot, and scatter plot.
+                </li>
+                <li>Analyze and discuss which visualization represents the data best and why.</li>
+            </ol>
+        </div>
+
+        <div class="exercise">
+            <h2>Exercise 3: Time Series Analysis (Optional)</h2>
+            <p><strong>Objective:</strong> Visualize a time series dataset.</p>
+            <p><strong>Instructions:</strong></p>
+            <ol>
+                <li>Find a public dataset that includes a time component (e.g., stock prices, weather data).</li>
+                <li>Create a time series line plot and analyze trends over time.</li>
+            </ol>
+        </div>
+
+        <div class="editor-container">
+            <h3>Python Code Editor</h3>
+            <textarea id="codeEditor" class="editor" placeholder="Write your Python code here..."></textarea>
+            <button id="executeButton" class="btn btn-execute mt-2">Run Code</button>
+            <h4>Output:</h4>
+            <div id="output" class="output"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Simple code execution simulation
+        document.getElementById('executeButton').onclick = function () {
+            const code = document.getElementById('codeEditor').value;
+            try {
+                // Simulating code execution and output
+                const output = eval(code); // Note: eval is dangerous in production
+                document.getElementById('output').innerText = output || 'Code executed successfully, no output.';
+            } catch (error) {
+                document.getElementById('output').innerText = 'Error: ' + error.message;
+            }
+        };
+    </script>
+</body>
+
+</html>

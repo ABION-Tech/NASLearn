@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 Conclusion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .card {
+            transition: transform 0.3s;
+            perspective: 1000px;
+            /* 3D effect */
+            margin-bottom: 30px;
+            /* Space between cards */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            /* Slightly enlarge card on hover */
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            /* Enable 3D */
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            /* Hide the back when facing front */
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-back {
+            background-color: #f8f9fa;
+            /* Light background for back */
+            transform: rotateY(180deg);
+            /* Flip back */
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+            /* Flip to show back */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container content">
+        <h1 class="blue-accent">Conclusion for Week 3</h1>
+        <p>By the end of this week, students should:</p>
+        <ul>
+            <li>Understand how to work with lists, tuples, sets, and dictionaries to store and manipulate data.</li>
+            <li>Be comfortable using methods and operations specific to each data structure.</li>
+            <li>Have completed hands-on exercises that reinforce the concepts learned during the week.</li>
+        </ul>
+        <p>These data structures will form the foundation of efficient data handling in Python, essential for more
+            advanced programming tasks later in the course.</p>
+
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h5 class="blue-accent">Data Structures</h5>
+                            <p>Key Concepts</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Lists, tuples, sets, and dictionaries are fundamental data structures that allow for
+                                efficient data storage and manipulation in Python.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h5 class="blue-accent">Hands-On Exercises</h5>
+                            <p>Practical Application</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Hands-on exercises provided students with opportunities to apply what they learned,
+                                solidifying their understanding of data structures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h5 class="blue-accent">Foundation for Future</h5>
+                            <p>Essential Skills</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Mastering these data structures sets a solid foundation for tackling more advanced
+                                programming challenges in Python.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body

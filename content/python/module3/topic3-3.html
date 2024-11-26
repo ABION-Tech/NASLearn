@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Sets</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            /* Ensure line breaks are preserved */
+        }
+
+        h5 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container content">
+        <h1 class="blue-accent">Python Sets</h1>
+
+        <h4>3. <span class="blue-accent">Sets</span>:</h4>
+        <p>A set is an unordered collection of unique elements. Sets are useful when you need to store items without
+            duplicates or when you want to perform mathematical operations like union, intersection, or difference.</p>
+
+        <h5>Creating Sets:</h5>
+        <p>You can create a set by placing elements inside curly braces <code>{}</code>, or you can use the
+            <code>set()</code> function.</p>
+
+        <div class="code-block">
+            my_set = {1, 2, 3, 4, 5} <br>
+            empty_set = set() # Creates an empty set
+        </div>
+
+        <h5>Accessing Set Elements:</h5>
+        <p>You cannot access elements in a set using an index because sets are unordered. However, you can iterate over
+            a set using loops.</p>
+
+        <h5>Set Methods:</h5>
+        <ul>
+            <li><strong>add()</strong>: Adds an element to the set.</li>
+            <li><strong>remove()</strong>: Removes a specified element from the set (raises an error if the element is
+                not found).</li>
+            <li><strong>discard()</strong>: Removes an element from the set (does nothing if the element is not found).
+            </li>
+            <li><strong>union()</strong>: Returns a set containing all elements from both sets.</li>
+            <li><strong>intersection()</strong>: Returns a set containing only elements found in both sets.</li>
+            <li><strong>difference()</strong>: Returns a set containing elements that are in the first set but not in
+                the second set.</li>
+            <li><strong>issubset()</strong>: Checks if one set is a subset of another.</li>
+        </ul>
+
+        <h5>Examples:</h5>
+        <div class="code-block">
+            set1 = {1, 2, 3} <br>
+            set2 = {3, 4, 5} <br><br>
+
+            print(set1.union(set2)) # Outputs: {1, 2, 3, 4, 5} <br>
+            print(set1.intersection(set2)) # Outputs: {3} <br>
+            print(set1.difference(set2)) # Outputs: {1, 2}
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

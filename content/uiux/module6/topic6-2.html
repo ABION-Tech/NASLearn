@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Design</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            /* Blue accent */
+        }
+
+        .content-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #007bff;
+            /* Blue border */
+            border-radius: 5px;
+        }
+
+        .example-code {
+            background-color: #f8f9fa;
+            /* Light background for code */
+            border-left: 4px solid #007bff;
+            /* Blue accent */
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-section">
+            <h2>6.2 Adaptive Design</h2>
+
+            <h3>Differences Between Responsive and Adaptive Design</h3>
+            <h4>Responsive Design:</h4>
+            <ul>
+                <li><strong>Fluid Layouts:</strong> Utilizes flexible layouts that adjust dynamically to changes in the
+                    browser window, ensuring a consistent look across all devices.</li>
+                <li><strong>Media Queries:</strong> Employs media queries to apply different styles based on screen
+                    size, enabling tailored presentations for different devices.</li>
+                <li><strong>Single Design:</strong> Creates a single design that adapts to various screen sizes, making
+                    it easier to manage and update.</li>
+            </ul>
+
+            <h4>Adaptive Design:</h4>
+            <ul>
+                <li><strong>Fixed Layouts:</strong> Uses predefined layouts for specific screen sizes or breakpoints,
+                    allowing for optimized experiences on each device.</li>
+                <li><strong>Multiple Designs:</strong> Creates multiple designs for different screen sizes, providing a
+                    more tailored user experience.</li>
+                <li><strong>Device Detection:</strong> Detects the device type and loads the appropriate layout,
+                    ensuring users receive the best experience regardless of the device used.</li>
+            </ul>
+
+            <h4>Significance:</h4>
+            <ul>
+                <li><strong>Responsive Design:</strong> Offers a seamless and fluid user experience as the layout
+                    dynamically adapts to screen size changes, ideal for varied user scenarios.</li>
+                <li><strong>Adaptive Design:</strong> Provides a more tailored experience for specific devices, useful
+                    for applications requiring precise control over layout but may require more development effort.</li>
+            </ul>
+
+            <p>The choice between responsive and adaptive design often depends on the project's specific requirements,
+                including the complexity of the design, the target audience, and the desired level of flexibility.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Techniques for Adaptive Design</h3>
+
+            <h4>Fixed Layouts:</h4>
+            <ul>
+                <li><strong>Create Multiple Designs:</strong> Design separate layouts for different screen sizes (e.g.,
+                    mobile, tablet, desktop).</li>
+                <li><strong>Use Media Queries:</strong> Employ media queries to load the appropriate layout based on the
+                    device's screen width.</li>
+            </ul>
+
+            <h5>Example:</h5>
+            <pre class="example-code">
+                @media (max-width: 768px) {
+                    /* Mobile layout styles */
+                }
+
+                @media (min-width: 769px) and (max-width: 1024px) {
+                    /* Tablet layout styles */
+                }
+
+                @media (min-width: 1025px) {
+                    /* Desktop layout styles */
+                }
+            </pre>
+
+            <h4>Predefined Breakpoints:</h4>
+            <ul>
+                <li><strong>Determine Breakpoints:</strong> Identify specific screen widths at which the layout should
+                    change for better usability.</li>
+                <li><strong>Apply Styles:</strong> Use media queries to apply different styles based on the screen
+                    width.</li>
+            </ul>
+
+            <h5>Example:</h5>
+            <pre class="example-code">
+                @media (max-width: 600px) {
+                    /* Mobile layout styles */
+                }
+
+                @media (min-width: 601px) and (max-width: 992px) {
+                    /* Tablet layout styles */
+                }
+
+                @media (min-width: 993px) {
+                    /* Desktop layout styles */
+                }
+            </pre>
+
+            <h4>Device-Specific Layouts:</h4>
+            <ul>
+                <li><strong>Create Tailored Designs:</strong> Design unique layouts for specific devices (e.g.,
+                    smartphones, tablets, desktops) to enhance user engagement.</li>
+                <li><strong>Detect Device Type:</strong> Use JavaScript or server-side techniques to detect the device
+                    type and load the appropriate layout.</li>
+            </ul>
+
+            <h5>Example:</h5>
+            <pre class="example-code">
+                if (window.innerWidth <= 600) {
+                    // Load mobile layout
+                } else if (window.innerWidth <= 992) {
+                    // Load tablet layout
+                } else {
+                    // Load desktop layout
+                }
+            </pre>
+
+            <p>By understanding the differences between responsive and adaptive design and effectively utilizing
+                techniques like fixed layouts, predefined breakpoints, and device-specific layouts, designers can create
+                websites and applications that provide a seamless and optimal user experience across various devices.
+            </p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

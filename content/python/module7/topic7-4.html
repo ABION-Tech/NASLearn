@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Tuning and Evaluation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1,
+        h2,
+        h4 {
+            color: #007BFF;
+            /* Blue accent for headings */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #007BFF;
+            /* Blue accent for highlighted terms */
+            font-weight: bold;
+        }
+
+        .custom-card {
+            background-color: white;
+            border: 1px solid #007BFF;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-card:hover {
+            transform: scale(1.03);
+            /* Hover effect for card */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .code-snippet {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+
+        .evaluation-metrics {
+            background-color: #F8F9FA;
+            border-left: 5px solid #007BFF;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section-divider {
+            border-top: 2px solid #007BFF;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Model Tuning and Evaluation</h1>
+
+        <div class="custom-card">
+            <h2 class="section-title">Hyperparameter Tuning</h2>
+            <p>Hyperparameters are parameters that control the learning process (e.g., the number of clusters in K-Means
+                or the learning rate in neural networks). One of the most common ways to tune hyperparameters is by
+                using <span class="highlight">GridSearchCV</span>, which tests multiple combinations of hyperparameters
+                to find the best configuration.</p>
+
+            <h4>Example: Hyperparameter Tuning with GridSearchCV</h4>
+            <div class="code-snippet">
+                <code>from sklearn.model_selection import GridSearchCV<br>from sklearn.ensemble import RandomForestClassifier<br><br># Example: Hyperparameter tuning for a RandomForest classifier<br>param_grid = {'n_estimators': [100, 200, 300], 'max_depth': [5, 10, 15]}<br>rf = RandomForestClassifier()<br><br>grid_search = GridSearchCV(rf, param_grid, cv=3)<br>grid_search.fit(X_train, y_train)<br><br>print(f"Best Parameters: {grid_search.best_params_}")</code>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="custom-card">
+            <h2 class="section-title">Cross-Validation</h2>
+            <p><span class="highlight">Cross-validation</span> divides the dataset into k-folds and evaluates the model
+                on each fold to ensure it generalizes well to unseen data. This technique is essential for avoiding
+                overfitting and improving the reliability of model performance metrics.</p>
+
+            <h4>Example: 5-Fold Cross-Validation</h4>
+            <div class="code-snippet">
+                <code>from sklearn.model_selection import cross_val_score<br><br># Performing 5-fold cross-validation<br>scores = cross_val_score(LogisticRegression(), X, y, cv=5)<br>print(f"Cross-validation scores: {scores}")</code>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+/* Basic Reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+font-family: Arial, sans-serif;
+top: 80px;
+}
+
+.container {
+padding: 20px;
+}
+
+/* Video container to hold everything */
+.video-container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* Gradient border container */
+.gradient-border {
+padding: 5px;
+background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+border-radius: 10px;
+}
+
+/* Video or content inside the border */
+.video-content {
+border-radius: 10px;
+display: block;
+}
+
+.video-links {
+color: grey;
+font-size: 0.8rem;
+text-align: center;
+margin-top: 5px;
+}
+
+/* Ensure responsive width and height for the video */
+iframe {
+width: 100%;
+height: 400px;
+border-radius: 10px;
+}
+
+/* Responsiveness */
+@media (min-width: 1200px) {
+iframe {
+width: 800px;
+height: 450px;
+}
+}
+
+@media (max-width: 1200px) {
+iframe {
+width: 800px;
+height: 350px;
+}
+}
+
+@media (max-width: 768px) {
+iframe {
+width: 500px;
+height: 200px;
+}
+}
+
+/* For mobile screens, to avoid the box-like appearance */
+@media (max-width: 360px) {
+.video-content {
+width: 280px;
+/* Take full width */
+height: 200px;
+/* Adjust height to give a more rectangular shape */
+}
+
+/* For mobile screens, to avoid the box-like appearance */
+@media (max-width: 256px) {
+.video-content {
+width: 1080px;
+/* Take full width */
+height: 300px;
+/* Adjust height to give a more rectangular shape */
+}
+}
+}
+</style>
+</head>
+
+<body>
+    <h1>Testing and Debugging in Node.js</h1>
+
+    <!-- Section 4.1 - Unit Testing -->
+    <div class="content-section">
+        <h2>4.1. Unit Testing</h2>
+        <p>Unit testing ensures that individual components of your application work as expected.</p>
+
+        <h3>Setting Up Testing Frameworks</h3>
+        <p>Use Mocha as the test framework and Chai for assertions.</p>
+        <pre><code>const chai = require('chai');
+const expect = chai.expect;
+
+describe('User Authentication', function() {
+    it('should register a new user', async function() {
+        const res = await request(app).post('/register')
+            .send({ name: 'John Doe', email: 'john@example.com', password: 'password123' });
+        expect(res.status).to.equal(201);
+    });
+});
+</code></pre>
+        <p class="explanation">
+            <strong>Explanation:</strong> <br>
+            <code>request(app)</code>: Simulates HTTP requests to the Express app for testing. <br>
+            <code>expect()</code>: Provides assertions to verify test outcomes.
+        </p>
+    </div>
+
+    <!-- Section 4.2 - Integration Testing -->
+    <div class="content-section">
+        <h2>4.2. Integration Testing</h2>
+        <p>Integration tests ensure that different parts of your application work together correctly.</p>
+
+        <h3>Testing API Endpoints</h3>
+        <p>Test that your RESTful API endpoints function correctly and handle edge cases.</p>
+        <pre><code>describe('API Endpoints', function() {
+    it('should return all users', async function() {
+        const res = await request(app).get('/api/users');
+        expect(res.status).to.equal(200);
+        expect(res.body).to.be.an('array');
+    });
+});
+</code></pre>
+        <p class="explanation">
+            <strong>Explanation:</strong> <br>
+            <code>request(app).get()</code>: Simulates GET requests to the API endpoint and checks the response.
+        </p>
+    </div>
+
+    <!-- Section 4.3 - Debugging Techniques -->
+    <div class="content-section">
+        <h2>4.3. Debugging Techniques</h2>
+        <p>Effective debugging helps identify and fix issues in your application.</p>
+
+        <h3>Using console.log()</h3>
+        <p>Log important information to the console for debugging.</p>
+        <pre><code>app.post('/login', async (req, res) => {
+    console.log('Login attempt:', req.body);
+    // Further login logic...
+});
+</code></pre>
+        <p class="explanation">
+            <strong>Explanation:</strong> <br>
+            <code>console.log()</code>: Useful for tracing execution flow and checking variable values.
+        </p>
+
+        <h3>Using Debugging Tools</h3>
+        <p>Node.js Inspector: Use the built-in Node.js inspector for advanced debugging.</p>
+        <pre><code>node --inspect server.js
+</code></pre>
+        <p class="explanation">
+            <strong>Explanation:</strong> <br>
+            <code>--inspect</code>: Starts the Node.js application with debugging enabled.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

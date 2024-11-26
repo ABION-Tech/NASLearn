@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Overview - New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            /* Light background */
+            padding-top: 50px;
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+            /* Accent color */
+        }
+
+        .accent-text {
+            color: #007bff;
+        }
+
+        .info-box {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        /* Curriculum Section Styles */
+        .curriculum-card {
+            margin-bottom: 30px;
+            /* Space between rows */
+        }
+
+        .curriculum-card .card {
+            height: 100%;
+            background-color: #f8f9fa;
+            /* Light grey background */
+            border: 1px solid #ddd;
+            /* Light grey border */
+            border-radius: 10px;
+            /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .curriculum-card .card-body {
+            padding: 20px;
+        }
+
+        .curriculum-card .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .curriculum-card .card-text {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .curriculum-card .card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Main Header for the Course -->
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1>Welcome to [Course Title]</h1>
+                <p class="lead">Your journey to mastering [Course Subject] begins here!</p>
+            </div>
+        </div>
+
+        <!-- Overview Section -->
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="info-box">
+                    <h2>About This Course</h2>
+                    <p>This course is designed to give you a comprehensive understanding of [Key Course Focus]. Over the
+                        next several weeks, you will engage with expert-led lectures, hands-on projects, and
+                        collaborative learning activities.</p>
+                    <p>Our unique learning model ensures you can balance theoretical knowledge with practical
+                        application, both during the class phase and in your internship.</p>
+
+                    <h2>Learning Model</h2>
+                    <ul>
+                        <li>Self-paced lessons available on the LMS</li>
+                        <li>Weekly live Q&A sessions with instructors</li>
+                        <li>Hands-on projects and peer collaboration</li>
+                        <li>Internship opportunities for real-world experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Curriculum Section with Cards -->
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <h2>Course Curriculum</h2>
+            </div>
+
+            <div class="col-md-4 curriculum-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Module 1: Introduction to [Course Subject]</h5>
+                        <p class="card-text">Get familiar with the basics of [Course Subject] and its applications in
+                            the industry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 curriculum-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Module 2: Advanced Concepts in [Course Subject]</h5>
+                        <p class="card-text">Deep dive into the advanced concepts and methodologies of [Course Subject].
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 curriculum-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Module 3: Project Phase</h5>
+                        <p class="card-text">Work on real-world projects to solidify your understanding of the concepts
+                            you've learned.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 curriculum-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Module 4: Industry Tools</h5>
+                        <p class="card-text">Learn how to use industry-standard tools for [specific tasks] in [Course
+                            Subject].</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 curriculum-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Module 5: Internship Preparation</h5>
+                        <p class="card-text">Prepare for your internship with a focus on industry expectations and
+                            professional development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Class Phase and Internship Section -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-10">
+                <div class="info-box">
+                    <h2>The Class Phase</h2>
+                    <p>In this phase, you will have access to all the course materials via the LMS. Expect a combination
+                        of live instructor-led sessions, assignments, and self-paced study. Weekly Q&A sessions with
+                        instructors will help clarify any doubts and guide your learning process.</p>
+
+                    <h2>The Internship</h2>
+                    <p>After completing the class phase, you will transition to a 3-month internship. This is where you
+                        apply what you've learned in a real-world environment, working on projects that directly
+                        contribute to your future career or entrepreneurial goals.</p>
+
+                    <div class="text-center mt-4">
+                        <a href="#" class="btn btn-primary btn-lg">Go to LMS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6: Advanced Supervised Learning - Support Vector Machines (SVMs)</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            /* Blue accent */
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .code {
+            background-color: #f8f9fa;
+            /* Light gray for code blocks */
+            padding: 10px;
+            border-left: 5px solid #007bff;
+            /* Blue accent for code block border */
+        }
+
+        .list-group-item {
+            background-color: transparent;
+            /* Transparent background for list items */
+        }
+
+        .bg-light-blue {
+            background-color: #e7f1ff;
+            /* Light blue background */
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+
+        <div class="section">
+            <h1 class="text-center">Week 6: Advanced Supervised Learning - Support Vector Machines (SVMs)</h1>
+        </div>
+
+        <div class="section">
+            <h2>Support Vector Machines (SVMs)</h2>
+            <p>Support Vector Machines (SVMs) are supervised learning algorithms that are widely used for classification
+                tasks. They are particularly effective when dealing with high-dimensional data. The primary objective of
+                SVM is to find the optimal hyperplane that best separates the data into different classes, maximizing
+                the margin between the classes.</p>
+        </div>
+
+        <div class="section">
+            <h3>1. Linear SVM</h3>
+            <p>Linear SVM operates under the assumption that the data can be separated linearly. The key concepts
+                include:</p>
+            <ul class="list-group">
+                <li class="list-group-item">**Hyperplane:** A linear decision boundary that separates the data into two
+                    classes.</li>
+                <li class="list-group-item">**Margin:** The distance between the hyperplane and the nearest data points
+                    from each class.</li>
+                <li class="list-group-item">**Optimization:** SVM aims to find the hyperplane that provides the largest
+                    margin.</li>
+            </ul>
+            <p>Mathematically, the optimization problem can be formulated as:</p>
+            <div class="code">
+                <pre>maximize: γ
+subject to: yi(w⋅xi + b) ≥ 1 for all i</pre>
+            </div>
+            <p>where:</p>
+            <ul class="list-group">
+                <li class="list-group-item">`yi`: The class label of the ith data point.</li>
+                <li class="list-group-item">`xi`: The ith data point.</li>
+                <li class="list-group-item">`w`: The normal vector to the hyperplane.</li>
+                <li class="list-group-item">`b`: The bias term.</li>
+                <li class="list-group-item">`γ`: The margin.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>2. Kernel Trick</h3>
+            <p>In many real-world scenarios, data is not linearly separable. The kernel trick is a technique that allows
+                SVM to operate in a higher-dimensional feature space, enabling the separation of classes that are not
+                linearly separable.</p>
+            <h4>Common Kernels:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">**Linear Kernel:** Best suited for linearly separable data.</li>
+                <li class="list-group-item">**Polynomial Kernel:** Useful for capturing non-linear relationships.</li>
+                <li class="list-group-item">**Radial Basis Function (RBF) Kernel:** A popular choice for various
+                    non-linear relationships, providing flexibility in the decision boundary.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>3. Soft Margin SVM</h3>
+            <p>Soft Margin SVM allows for some misclassifications to enhance the model's generalization capabilities.
+                This is particularly useful in datasets with noise and outliers.</p>
+            <p>Key components include:</p>
+            <ul class="list-group">
+                <li class="list-group-item">**Regularization Parameter (C):** Controls the trade-off between maximizing
+                    the margin and minimizing misclassifications.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>4. Evaluation Metrics</h3>
+            <p>Evaluating the performance of an SVM model involves various metrics:</p>
+            <ul class="list-group">
+                <li class="list-group-item">**Accuracy:** The proportion of correct predictions.</li>
+                <li class="list-group-item">**Precision:** The proportion of positive predictions that are correct.</li>
+                <li class="list-group-item">**Recall:** The proportion of actual positive instances that are correctly
+                    predicted.</li>
+                <li class="list-group-item">**F1-score:** The harmonic mean of precision and recall, providing a balance
+                    between the two.</li>
+                <li class="list-group-item">**ROC Curve:** A graphical representation showing the true positive rate
+                    against the false positive rate, helping to evaluate the trade-offs between sensitivity and
+                    specificity.</li>
+            </ul>
+        </div>
+
+        <div class="section bg-light-blue">
+            <h2>Applications of SVM</h2>
+            <p>Support Vector Machines have diverse applications across various fields:</p>
+            <ul class="list-group">
+                <li class="list-group-item">**Text Classification:** Categorizing text documents (e.g., spam detection,
+                    sentiment analysis).</li>
+                <li class="list-group-item">**Image Classification:** Identifying objects or scenes in images.</li>
+                <li class="list-group-item">**Bioinformatics:** Predicting protein structure and function based on
+                    genetic data.</li>
+                <li class="list-group-item">**Anomaly Detection:** Identifying unusual or rare data points that deviate
+                    from expected patterns.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Advantages and Disadvantages</h3>
+            <h4>Advantages:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Effective for high-dimensional data.</li>
+                <li class="list-group-item">Robust to outliers, making it suitable for noisy datasets.</li>
+                <li class="list-group-item">Can handle non-linear relationships using kernel tricks.</li>
+            </ul>
+            <h4>Disadvantages:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Can be computationally expensive for large datasets.</li>
+                <li class="list-group-item">Sensitive to the choice of kernel and regularization parameter, which may
+                    require extensive tuning.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <p>By mastering the principles of Support Vector Machines, you will be equipped to apply this powerful
+                algorithm effectively across a wide range of classification challenges.</p>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

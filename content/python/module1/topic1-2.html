@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Installing Python and IDEs</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      padding: 20px;
+    }
+
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Bootstrap blue */
+    }
+
+    .content {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    strong {
+      color: #000;
+      /* Black text for strong elements */
+    }
+
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="content">
+      <h2>Installing Python and IDEs</h2>
+
+      <h3>Installing Python:</h3>
+      <h4>1. Windows:</h4>
+      <ul>
+        <li>Download Python from <a href="https://www.python.org/downloads/" target="_blank">Python's official
+            website</a>.</li>
+        <li>Ensure you check the option to "Add Python to PATH" during installation.</li>
+        <li>Verify the installation by typing <code>python --version</code> in Command Prompt.</li>
+      </ul>
+
+      <h4>2. macOS:</h4>
+      <ul>
+        <li>macOS typically comes with Python pre-installed, but it’s recommended to download the latest version from <a
+            href="https://www.python.org/downloads/" target="_blank">python.org</a>.</li>
+        <li>You can also install Python via <strong>Homebrew</strong> using the command:</li>
+        <pre><code>brew install python</code></pre>
+      </ul>
+
+      <h4>3. Linux:</h4>
+      <ul>
+        <li>Use your distribution’s package manager to install Python. For example, on Ubuntu:</li>
+        <pre><code>sudo apt-get update
+sudo apt-get install python3</code></pre>
+      </ul>
+
+      <h3>Integrated Development Environments (IDEs):</h3>
+      <h4>1. PyCharm:</h4>
+      <ul>
+        <li>PyCharm is an industry-standard Python IDE developed by JetBrains.</li>
+        <li>It offers code intelligence features such as code completion, debugging tools, and project management
+          capabilities.</li>
+      </ul>
+
+      <h4>2. Visual Studio Code (VS Code):</h4>
+      <ul>
+        <li>A lightweight editor that can be enhanced with Python extensions.</li>
+        <li>VS Code is popular for being versatile and offering excellent support for Python with linting, debugging,
+          and intellisense features.</li>
+      </ul>
+
+      <h4>3. Jupyter Notebook:</h4>
+      <ul>
+        <li>Ideal for data science and interactive Python programming.</li>
+        <li>It allows you to write Python code, see the output immediately, and combine it with markdown documentation.
+        </li>
+      </ul>
+
+      <h4>4. IDLE (Integrated Development and Learning Environment):</h4>
+      <ul>
+        <li>Comes pre-installed with Python and is simple and beginner-friendly.</li>
+        <li>It’s best for writing smaller Python scripts.</li>
+      </ul>
+
+      <h3>Hands-On:</h3>
+      <ul>
+        <li>Install Python and an IDE of your choice.</li>
+        <li>Open your chosen IDE and write your first Python program (covered in the next section).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

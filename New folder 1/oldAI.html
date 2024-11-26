@@ -1,193 +1,214 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAU Course Page</title>
+    <title>NAS Course Page</title>
     <link rel="stylesheet" href="C:\Users\NCAC COOPERATIVE\Documents\New Age University\New\styles.css">
     <style>
- /* General styles */
- header{
-    z-index: 1800;
-  }
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: white;
-    color: black;
-}
+        /* General styles */
+        header {
+            z-index: 1800;
+        }
 
-/* Header styles */
-.navbar {
-    background-color: white !important;
-    border-bottom: 2px solid black;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: white;
+            color: black;
+        }
 
-.navbar-brand img {
-    height: 70px;
-}
+        /* Header styles */
+        .navbar {
+            background-color: white !important;
+            border-bottom: 2px solid black;
+        }
 
-#courseTitle {
-    color: black;
-}
+        .navbar-brand img {
+            height: 70px;
+        }
 
-/* Notification icon and badge */
-.notification-icon {
-    position: relative;
-    cursor: pointer;
-    font-size: 2.5;
-}
+        #courseTitle {
+            color: black;
+        }
 
-#notificationCount {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.75rem;
-    line-height: 1; /* Ensure it aligns well */
-}
+        /* Notification icon and badge */
+        .notification-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 2.5;
+        }
 
-/* Wrapper for main content and sidebar */
-.wrapper {
-    display: flex;
-    flex: 1;
-    margin-top: 76px; /* Adjust based on your header height */
-}
+        #notificationCount {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            line-height: 1;
+            /* Ensure it aligns well */
+        }
 
-/* Sidebar styles */
-#sidebar {
-    min-width: 300px;
-    width: 250px;
-    background-color: #f8f9fa;
-    border-right: 1px solid #dee2e6;
-    padding: 20px;
-    overflow-y: auto;
-    height: calc(100vh - 50px - 10px); /* Adjust based on header and footer height */
-    position: fixed;
-    left: 0;  /* Keep left at 0 to prevent negative positioning issues */
-    top: 78px; /* Align with bottom of header */
-    transition: transform 0.3s ease; /* Smooth transition */
-    z-index: 1000; /* High z-index to ensure it's on top of the content */
-    padding-bottom: 50px;
-}
+        /* Wrapper for main content and sidebar */
+        .wrapper {
+            display: flex;
+            flex: 1;
+            margin-top: 76px;
+            /* Adjust based on your header height */
+        }
 
-#sidebar.collapsed {
-    transform: translateX(-300px); /* Move sidebar off-screen when collapsed */
-}
+        /* Sidebar styles */
+        #sidebar {
+            min-width: 300px;
+            width: 250px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            padding: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 50px - 10px);
+            /* Adjust based on header and footer height */
+            position: fixed;
+            left: 0;
+            /* Keep left at 0 to prevent negative positioning issues */
+            top: 78px;
+            /* Align with bottom of header */
+            transition: transform 0.3s ease;
+            /* Smooth transition */
+            z-index: 1000;
+            /* High z-index to ensure it's on top of the content */
+            padding-bottom: 50px;
+        }
 
-#sidebar h2 {
-    color: black;
-}
+        #sidebar.collapsed {
+            transform: translateX(-300px);
+            /* Move sidebar off-screen when collapsed */
+        }
 
-.module-list {
-    padding-left: 0;
-    font-size: 14px;
-}
+        #sidebar h2 {
+            color: black;
+        }
 
-.module-item {
-    margin-bottom: 10px;
-}
+        .module-list {
+            padding-left: 0;
+            font-size: 14px;
+        }
 
-.module-title {
-    cursor: pointer;
-    font-weight: bold;
-}
+        .module-item {
+            margin-bottom: 10px;
+        }
 
-.module-header{
-    font-size: 24px;
-}
+        .module-title {
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-.topic-list {
-    display: none;
-    padding-left: 20px;
-}
+        .module-header {
+            font-size: 24px;
+        }
 
-.topic-item {
-    cursor: pointer;
-}
+        .topic-list {
+            display: none;
+            padding-left: 20px;
+        }
 
-/* Main content area */
-#main-content {
-    flex: 1;
-    padding: 20px;
-    transition: margin-left 0.3s ease, width 0.3s ease;
-    width: 100%;
-    margin-left: 250px; /* Start with space for the sidebar */
-    width: calc(100% - 250px); /* Start with reduced width to accommodate sidebar */
-}
+        .topic-item {
+            cursor: pointer;
+        }
 
-#main-content.expanded {
-    transform: translateX(0); /* Shift back to full screen when the sidebar is hidden */
-    width: 100%; /* Ensure it takes up the whole width */
-}
+        /* Main content area */
+        #main-content {
+            flex: 1;
+            padding: 20px;
+            transition: margin-left 0.3s ease, width 0.3s ease;
+            width: 100%;
+            margin-left: 250px;
+            /* Start with space for the sidebar */
+            width: calc(100% - 250px);
+            /* Start with reduced width to accommodate sidebar */
+        }
 
-#main-content.full {
-    margin-left: 0; /* Full width when sidebar is hidden */
-    width: 100%; /* Ensure it takes up the whole space */
-}
-/* Footer styles */
-footer {
-    background-color: #f8f9fa;
-    text-align: center;
-    padding: 10px;
-    border-top: 1px solid #dee2e6;
-     position: relative; /* Ensure it stays in its place */
-    z-index: 1500; /* Make sure footer is below the sidebar */
-}
-/* Toggle button styles */
-#toggle-btn {
-    position: fixed;
-    left: 10px;
-    top: 67px;
-    z-index: 1100; /* Highest z-index to be on top of everything */
-    background-color: black;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 10px;
-}
+        #main-content.expanded {
+            transform: translateX(0);
+            /* Shift back to full screen when the sidebar is hidden */
+            width: 100%;
+            /* Ensure it takes up the whole width */
+        }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    #main-content {
-        margin-left: 0;
-    }
-}
+        #main-content.full {
+            margin-left: 0;
+            /* Full width when sidebar is hidden */
+            width: 100%;
+            /* Ensure it takes up the whole space */
+        }
 
-/* Ensure main content is a single column */
-#main-content > * {
-    max-width: 100%;
-}
+        /* Footer styles */
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #dee2e6;
+            position: relative;
+            /* Ensure it stays in its place */
+            z-index: 1500;
+            /* Make sure footer is below the sidebar */
+        }
 
-/* Modal styles */
-.modal-content {
-    background-color: white;
-    color: black;
-}
+        /* Toggle button styles */
+        #toggle-btn {
+            position: fixed;
+            left: 10px;
+            top: 67px;
+            z-index: 1100;
+            /* Highest z-index to be on top of everything */
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 10px;
+        }
 
-.modal-header {
-    background-color: black;
-    color: white;
-}
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            #main-content {
+                margin-left: 0;
+            }
+        }
 
-.btn-primary {
-    background-color: black;
-    border-color: black;
-}
+        /* Ensure main content is a single column */
+        #main-content>* {
+            max-width: 100%;
+        }
 
-.btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
- </style>
+        /* Modal styles */
+        .modal-content {
+            background-color: white;
+            color: black;
+        }
+
+        .modal-header {
+            background-color: black;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: black;
+            border-color: black;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+    </style>
 
 </head>
 
@@ -196,16 +217,18 @@ footer {
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid" class="header">
             <a class="navbar-brand" href="#">
-                <img src="../Assets/Images/NAU1.png" alt="NAU Logo" style="height: 70px;">
+                <img src="/learn/Assets/Images/NAU1.png" alt="NAS Logo" style="height: 70px;">
             </a>
             <h1 class="navbar-text d-none d-lg-block" id="courseTitle">Artificial Intelligence</h1>
             <h1 class="navbar-text d-lg-none" id="courseTitleAbbr">AI</h1> <!-- Abbreviation for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/learn/components/student-dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="/learn/components/student-dashboard.html">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Learn</a></li>
                     <li class="nav-item"><a class="nav-link" href="/learn/login.html">Logout</a></li>
                     <li class="nav-item notification-icon" data-bs-toggle="modal" data-bs-target="#notificationModal">
@@ -215,7 +238,7 @@ footer {
                         <i class="fas fa-bell"></i> <!-- Your notification icon -->
                         <span id="notificationCount">3</span> <!-- Badge showing the count -->
                     </div>
-                    
+
                 </ul>
             </div>
         </div>
@@ -234,98 +257,147 @@ footer {
             <li class="module-item">
                 <div class="module-title" data-course="ai" data-module="Introduction">Introduction</div>
                 <ul class="topic-list">
-                    <li class="topic-item" data-course="ai" data-module="Introduction" data-topic="topic1-1">Topic 1.1: Overview</li>
-                    <li class="topic-item" data-course="ai" data-module="Introduction" data-topic="topic1-2">Topic 1.2: Getting Started</li>
+                    <li class="topic-item" data-course="ai" data-module="Introduction" data-topic="topic1-1">Topic 1.1:
+                        Overview</li>
+                    <li class="topic-item" data-course="ai" data-module="Introduction" data-topic="topic1-2">Topic 1.2:
+                        Getting Started</li>
                 </ul>
             </li>
-        <li class="module-item">
-            <div class="module-title" data-course="ai" data-module="module1">Module 1: Basics</div>
-            <ul class="topic-list">
-                <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-1">Topic 1.1: HTML & CSS</li>
-                <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-2">Topic 1.2: JavaScript Basics</li>
-                <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-1">Topic 1.1: HTML & CSS</li>
-                <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-2">Topic 1.2: JavaScript Basics</li>
-                <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-1">Topic 1.1: HTML & CSS</li>
-                <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-2">Topic 1.2: JavaScript Basics</li>
-            </ul>
+            <li class="module-item">
+                <div class="module-title" data-course="ai" data-module="module1">Module 1: Basics</div>
+                <ul class="topic-list">
+                    <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-1">Topic 1.1: HTML
+                        & CSS</li>
+                    <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-2">Topic 1.2:
+                        JavaScript Basics</li>
+                    <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-1">Topic 1.1: HTML
+                        & CSS</li>
+                    <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-2">Topic 1.2:
+                        JavaScript Basics</li>
+                    <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-1">Topic 1.1: HTML
+                        & CSS</li>
+                    <li class="topic-item" data-course="ai" data-module="module1" data-topic="topic1-2">Topic 1.2:
+                        JavaScript Basics</li>
+                </ul>
             </li>
             <li class="module-item">
                 <div class="module-title" data-course="ai" data-module="module2">Module 2: Advanced Concepts</div>
                 <ul class="topic-list">
-                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep
+                        Dive</li>
                 </ul>
             </li>
             <li class="module-item">
                 <div class="module-title" data-course="ai" data-module="module3">Module 3: Advanced Concepts</div>
                 <ul class="topic-list">
-                    <li class="topic-item" data-course="ai" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module3" data-topic="topic3-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>                    <li class="topic-item" data-module="module3" data-topic="topic2-2">Topic 2.2: Case Studies</li>                    <li class="topic-item" data-module="module3" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module3" data-topic="topic3-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module3" data-topic="topic3-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-module="module3" data-topic="topic2-2">Topic 2.2: Case Studies</li>
+                    <li class="topic-item" data-module="module3" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module3" data-topic="topic3-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep
+                        Dive</li>
                 </ul>
             </li>
             <li class="module-item">
                 <div class="module-title" data-course="ai" data-module="module4">Module 4: Advanced Concepts</div>
                 <ul class="topic-list">
-                    <li class="topic-item" data-course="ai" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module4" data-topic="topic4-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module4" data-topic="topic4-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module4" data-topic="topic4-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module4" data-topic="topic4-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep
+                        Dive</li>
                 </ul>
             </li>
             <li class="module-item">
                 <div class="module-title" data-course="ai" data-module="module5">Module 5: Advanced Concepts</div>
                 <ul class="topic-list">
-                    <li class="topic-item" data-course="ai" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module5" data-topic="topic5-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module5" data-topic="topic5-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module5" data-topic="topic5-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module5" data-topic="topic5-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep
+                        Dive</li>
                 </ul>
             </li>
             <li class="module-item">
                 <div class="module-title" data-course="ai" data-module="module6">Module 6: Advanced Concepts</div>
                 <ul class="topic-list">
-                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module6" data-topic="topic6-2">Topic 2.2: Case
+                        Studies</li>
                 </ul>
             </li>
             <li class="module-item">
                 <div class="module-title" data-course="ai" data-module="module7">Module 7: Advanced Concepts</div>
                 <ul class="topic-list">
-                    <li class="topic-item" data-course="ai" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module7" data-topic="topic7-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module7" data-topic="topic7-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module7" data-topic="topic7-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module7" data-topic="topic7-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep
+                        Dive</li>
                 </ul>
             </li>
             <li class="module-item">
                 <div class="module-title" data-course="ai" data-module="module8">Module 8: Advanced Concepts</div>
                 <ul class="topic-list">
-                    <li class="topic-item" data-course="ai" data-module="module8" data-topic="topic8-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="ai" data-module="module8" data-topic="topic8-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="ai" data-module="module8" data-topic="topic8-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module8" data-topic="topic8-1">Topic 2.1: Deep
+                        Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="module8" data-topic="topic8-2">Topic 2.2: Case
+                        Studies</li>
+                    <li class="topic-item" data-course="ai" data-module="module8" data-topic="topic8-1">Topic 2.1: Deep
+                        Dive</li>
                 </ul>
             </li>
             <li class="module-item">
                 <div class="module-title" data-course="ai" data-module="resources">Resources</div>
                 <ul class="topic-list">
-                    <li class="topic-item" data-course="ai" data-module="resources" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-course="ai" data-module="resources" data-topic="topic2-1">Topic 2.1:
+                        Deep Dive</li>
                 </ul>
             </li>
             <!-- Additional modules can be added here -->
@@ -337,13 +409,14 @@ footer {
         <h2>Welcome to the Course</h2>
         <p>Select a module from the sidebar to start learning.</p>
     </div>
-<footer>
-    <p>© 2024 New Age University. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>© 2024 New Age University. All rights reserved.</p>
+    </footer>
 
 
     <!-- Notification Modal -->
-    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -364,167 +437,168 @@ footer {
     </div>
 
 
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const sidebar = document.getElementById('sidebar');
-    const toggleBtn = document.getElementById('toggle-btn');
-    const mainContent = document.getElementById('main-content');
-    const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
-    const notificationCount = document.getElementById('notificationCount');
-    const notificationList = document.getElementById('notificationList');
-    const clearNotificationsBtn = document.getElementById('clearNotifications');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.getElementById('sidebar');
+            const toggleBtn = document.getElementById('toggle-btn');
+            const mainContent = document.getElementById('main-content');
+            const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
+            const notificationCount = document.getElementById('notificationCount');
+            const notificationList = document.getElementById('notificationList');
+            const clearNotificationsBtn = document.getElementById('clearNotifications');
 
 
-    function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        const mainContent = document.getElementById('main-content');
-        
-        sidebar.classList.toggle('collapsed');
-        if (sidebar.classList.contains('collapsed')) {
-            mainContent.classList.remove('shifted');
-            mainContent.classList.add('full');
-        } else {
-            mainContent.classList.remove('full');
-            mainContent.classList.add('shifted');
-        }
-    }
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const mainContent = document.getElementById('main-content');
 
-    // Toggle sidebar
-    toggleBtn.addEventListener('click', function () {
-        // Toggle sidebar visibility
-        sidebar.classList.toggle('collapsed');
-        mainContent.classList.toggle('expanded');
-        
-        // Update toggle button icon
-        this.textContent = sidebar.classList.contains('collapsed') ? '☰' : '☰';
-
-        // Adjust sidebar for small screens
-        if (!sidebar.classList.contains('collapsed')) {
-            sidebar.style.transform = 'translateX(0)';
-            sidebar.style.zIndex = '1050'; // Ensure it's above other content
-        } else {
-            sidebar.style.transform = 'translateX(-100%)';
-        }
-    });
-
-    // Handle responsive sidebar on window resize
-    function handleResponsiveSidebar() {
-        if (window.innerWidth <= 768) {
-            sidebar.classList.add('collapsed');
-            mainContent.classList.add('expanded');
-            toggleBtn.textContent = '☰';
-        } else {
-            sidebar.classList.remove('collapsed');
-            mainContent.classList.remove('expanded');
-            toggleBtn.textContent = '☰';
-        }
-    }
-
-    handleResponsiveSidebar();
-    window.addEventListener('resize', handleResponsiveSidebar);
-
-    // Toggle module topics
-    document.querySelectorAll('.module-title').forEach(moduleTitle => {
-        moduleTitle.addEventListener('click', function () {
-            const parentModule = this.parentElement;
-            const topicsList = parentModule.querySelector('.topic-list');
-
-            if (topicsList) {
-                // Toggle visibility of topics list
-                if (topicsList.style.display === 'none' || topicsList.style.display === '') {
-                    topicsList.style.display = 'block';
+                sidebar.classList.toggle('collapsed');
+                if (sidebar.classList.contains('collapsed')) {
+                    mainContent.classList.remove('shifted');
+                    mainContent.classList.add('full');
                 } else {
-                    topicsList.style.display = 'none';
-                }
-                // Toggle arrow icon
-                const arrow = this.querySelector('.arrow');
-                if (arrow) {
-                    arrow.classList.toggle('down');
+                    mainContent.classList.remove('full');
+                    mainContent.classList.add('shifted');
                 }
             }
 
-            // Toggle active class for parent module
-            parentModule.classList.toggle('active');
-        });
-    });
+            // Toggle sidebar
+            toggleBtn.addEventListener('click', function () {
+                // Toggle sidebar visibility
+                sidebar.classList.toggle('collapsed');
+                mainContent.classList.toggle('expanded');
 
-    // Load content when a topic is clicked
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('topic-item')) {
-            e.preventDefault();
-            const course = e.target.getAttribute('data-course');
-            const module = e.target.getAttribute('data-module');
-            const topic = e.target.getAttribute('data-topic');
-            loadContent(course, module, topic);
+                // Update toggle button icon
+                this.textContent = sidebar.classList.contains('collapsed') ? '☰' : '☰';
 
-            // Close sidebar on mobile after selecting a topic
-            if (window.innerWidth <= 768) {
-                sidebar.classList.add('collapsed');
-                mainContent.classList.add('expanded');
-                toggleBtn.textContent = '☰';
-                sidebar.style.transform = 'translateX(-100%)';
-            }
-        }
-    });
-
-    function loadContent(course, module, topic) {
-        const filePath = `content/${course}/${module}/${topic}.html`;
-        fetch(filePath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to load content');
+                // Adjust sidebar for small screens
+                if (!sidebar.classList.contains('collapsed')) {
+                    sidebar.style.transform = 'translateX(0)';
+                    sidebar.style.zIndex = '1050'; // Ensure it's above other content
+                } else {
+                    sidebar.style.transform = 'translateX(-100%)';
                 }
-                return response.text();
-            })
-            .then(data => {
-                mainContent.innerHTML = data;
-            })
-            .catch(error => {
-                mainContent.innerHTML = `
+            });
+
+            // Handle responsive sidebar on window resize
+            function handleResponsiveSidebar() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.add('collapsed');
+                    mainContent.classList.add('expanded');
+                    toggleBtn.textContent = '☰';
+                } else {
+                    sidebar.classList.remove('collapsed');
+                    mainContent.classList.remove('expanded');
+                    toggleBtn.textContent = '☰';
+                }
+            }
+
+            handleResponsiveSidebar();
+            window.addEventListener('resize', handleResponsiveSidebar);
+
+            // Toggle module topics
+            document.querySelectorAll('.module-title').forEach(moduleTitle => {
+                moduleTitle.addEventListener('click', function () {
+                    const parentModule = this.parentElement;
+                    const topicsList = parentModule.querySelector('.topic-list');
+
+                    if (topicsList) {
+                        // Toggle visibility of topics list
+                        if (topicsList.style.display === 'none' || topicsList.style.display === '') {
+                            topicsList.style.display = 'block';
+                        } else {
+                            topicsList.style.display = 'none';
+                        }
+                        // Toggle arrow icon
+                        const arrow = this.querySelector('.arrow');
+                        if (arrow) {
+                            arrow.classList.toggle('down');
+                        }
+                    }
+
+                    // Toggle active class for parent module
+                    parentModule.classList.toggle('active');
+                });
+            });
+
+            // Load content when a topic is clicked
+            document.addEventListener('click', function (e) {
+                if (e.target.classList.contains('topic-item')) {
+                    e.preventDefault();
+                    const course = e.target.getAttribute('data-course');
+                    const module = e.target.getAttribute('data-module');
+                    const topic = e.target.getAttribute('data-topic');
+                    loadContent(course, module, topic);
+
+                    // Close sidebar on mobile after selecting a topic
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.add('collapsed');
+                        mainContent.classList.add('expanded');
+                        toggleBtn.textContent = '☰';
+                        sidebar.style.transform = 'translateX(-100%)';
+                    }
+                }
+            });
+
+            function loadContent(course, module, topic) {
+                const filePath = `content/${course}/${module}/${topic}.html`;
+                fetch(filePath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to load content');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        mainContent.innerHTML = data;
+                    })
+                    .catch(error => {
+                        mainContent.innerHTML = `
                     <h2>Error Loading Content</h2>
                     <p>We encountered an issue loading the content. Please try again later.</p>
                 `;
-                console.error('Error:', error);
+                        console.error('Error:', error);
+                    });
+
+                // Save last selected topic
+                localStorage.setItem('lastCourse', course);
+                localStorage.setItem('lastModule', module);
+                localStorage.setItem('lastTopic', topic);
+            }
+
+            // Handle notifications
+            document.querySelector('.notification-icon').addEventListener('click', checkNotifications);
+
+            function checkNotifications() {
+                // Simulated notifications
+                const notifications = [
+                    "New course available",
+                    "Assignment deadline approaching",
+                    "General announcement"
+                ];
+
+                notificationList.innerHTML = notifications.map(notification => `<li>${notification}</li>`).join('');
+                notificationCount.style.display = 'inline';
+                notificationCount.textContent = notifications.length;
+                notificationModal.show();
+            }
+
+            clearNotificationsBtn.addEventListener('click', function () {
+                notificationList.innerHTML = '';
+                notificationCount.style.display = 'none';
+                notificationModal.hide();
             });
 
-        // Save last selected topic
-        localStorage.setItem('lastCourse', course);
-        localStorage.setItem('lastModule', module);
-        localStorage.setItem('lastTopic', topic);
-    }
-
-    // Handle notifications
-    document.querySelector('.notification-icon').addEventListener('click', checkNotifications);
-
-    function checkNotifications() {
-        // Simulated notifications
-        const notifications = [
-            "New course available",
-            "Assignment deadline approaching",
-            "General announcement"
-        ];
-
-        notificationList.innerHTML = notifications.map(notification => `<li>${notification}</li>`).join('');
-        notificationCount.style.display = 'inline';
-        notificationCount.textContent = notifications.length;
-        notificationModal.show();
-    }
-
-    clearNotificationsBtn.addEventListener('click', function() {
-        notificationList.innerHTML = '';
-        notificationCount.style.display = 'none';
-        notificationModal.hide();
-    });
-
-    // Load last selected topic on page load
-    const lastCourse = localStorage.getItem('lastCourse');
-    const lastModule = localStorage.getItem('lastModule');
-    const lastTopic = localStorage.getItem('lastTopic');
-    if (lastCourse && lastModule && lastTopic) {
-        loadContent(lastCourse, lastModule, lastTopic);
-    }
-});
+            // Load last selected topic on page load
+            const lastCourse = localStorage.getItem('lastCourse');
+            const lastModule = localStorage.getItem('lastModule');
+            const lastTopic = localStorage.getItem('lastTopic');
+            if (lastCourse && lastModule && lastTopic) {
+                loadContent(lastCourse, lastModule, lastTopic);
+            }
+        });
 
     </script>
 </body>
+
 </html>

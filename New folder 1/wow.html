@@ -1,109 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAU Course Page</title>
-  
+    <title>NAS Course Page</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <style>
         /* General Layout */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: #f7f7f7;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
 
 
-.container {
-    display: grid;
-    grid-template-columns: 400px 1fr; /* Sidebar, Main Content */
-    grid-template-rows: auto 1fr auto; /* Header, Content, Footer */
-    grid-template-areas: 
-        "header header"
-        "sidebar main-content"
-        "footer footer";
-    min-height: 100vh;
-}
-#courseTitle {
-    font-size: 1.5rem;
-    margin-left: 20px;
-}
+        .container {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            /* Sidebar, Main Content */
+            grid-template-rows: auto 1fr auto;
+            /* Header, Content, Footer */
+            grid-template-areas:
+                "header header"
+                "sidebar main-content"
+                "footer footer";
+            min-height: 100vh;
+        }
 
-/* Sidebar */
-.sidebar {
-    grid-area: sidebar;
-    background-color: #1e1e1e;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    height: calc(100vh - 70px); /* Viewport height minus header height */
-    position: fixed;
-    top: 70px; /* Position right under the header */
-    width: 300px;
-    transition: width 0.3s ease;
-    overflow-y: auto;
-}
+        #courseTitle {
+            font-size: 1.5rem;
+            margin-left: 20px;
+        }
 
-.main-content {
-    grid-area: main-content;
-    flex-grow: 1;
-    padding: 50px; /* Adjust for header */
-    background-color: #ffffff;
-    transition: margin-left 0.3s ease;
-    overflow-y: auto;
-    margin-left: 300px; /* Leaves space for sidebar */
-    margin-top: 80px; /* Adjust for header */
-}
+        /* Sidebar */
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #1e1e1e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            height: calc(100vh - 70px);
+            /* Viewport height minus header height */
+            position: fixed;
+            top: 70px;
+            /* Position right under the header */
+            width: 300px;
+            transition: width 0.3s ease;
+            overflow-y: auto;
+        }
 
-/* When the sidebar is collapsed, the main content should fill the screen */
-.main-content.expanded {
-    margin-left: 0; /* Fill the whole screen */
-    transition: margin-left 0.3s ease;
-}
+        .main-content {
+            grid-area: main-content;
+            flex-grow: 1;
+            padding: 50px;
+            /* Adjust for header */
+            background-color: #ffffff;
+            transition: margin-left 0.3s ease;
+            overflow-y: auto;
+            margin-left: 300px;
+            /* Leaves space for sidebar */
+            margin-top: 80px;
+            /* Adjust for header */
+        }
 
-.sidebar .module-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        /* When the sidebar is collapsed, the main content should fill the screen */
+        .main-content.expanded {
+            margin-left: 0;
+            /* Fill the whole screen */
+            transition: margin-left 0.3s ease;
+        }
 
-.module-item {
-    padding: 10px 0;
-    cursor: pointer;
-    border-bottom: 1px solid #202020;
-}
+        .sidebar .module-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-.module-title {
-    font-weight: bold;
-    font-size: 14px;
-}
+        .module-item {
+            padding: 10px 0;
+            cursor: pointer;
+            border-bottom: 1px solid #202020;
+        }
 
-.topic-list {
-    display: none;
-    padding-left: 20px;
-}
+        .module-title {
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-.module-item.active .topic-list {
-    display: block;
-}
+        .topic-list {
+            display: none;
+            padding-left: 20px;
+        }
 
-.topic-item {
-    padding: 5px 10px;
-    font-size: 12px;
-    cursor: pointer;
-}
+        .module-item.active .topic-list {
+            display: block;
+        }
 
-.topic-item:hover {
-    background-color: #444;
-}
+        .topic-item {
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .topic-item:hover {
+            background-color: #444;
+        }
 
 
         /* Footer */
@@ -113,9 +123,11 @@ body {
             color: white;
             text-align: center;
             padding: 10px;
-            margin-top: auto; /* Push footer to the bottom */
+            margin-top: auto;
+            /* Push footer to the bottom */
         }
-        .footer{
+
+        .footer {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -123,8 +135,9 @@ body {
             background-color: #333;
             color: white;
             width: 100%;
-            clear: both; /* Ensure it clears floated content */
-}
+            clear: both;
+            /* Ensure it clears floated content */
+        }
 
 
         /* Sidebar Toggle Button */
@@ -176,160 +189,216 @@ body {
         .modal-content {
             background-color: #f9f9f9;
         }
-  
-/* Ensure title is centered properly on small screens */
-@media (max-width: 768px) {
-    #courseTitle {
-        font-size: 1.2rem;
-        text-align: center;
-        margin-left: 0;
-    }
-}
-/* Wrapper for main content and sidebar */
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  min-height: 100vh;
-}
+
+        /* Ensure title is centered properly on small screens */
+        @media (max-width: 768px) {
+            #courseTitle {
+                font-size: 1.2rem;
+                text-align: center;
+                margin-left: 0;
+            }
+        }
+
+        /* Wrapper for main content and sidebar */
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            min-height: 100vh;
+        }
     </style>
 </head>
+
 <body>
 
-<!-- Header -->
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a class="navbar-brand" href="#">
-                <img src="enroll/Assets/Images/NAU1.png" alt="NAU Logo" style="height: 70px;">
-            </a>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="enroll/Assets/Images/NAU1.png" alt="NAS Logo" style="height: 70px;">
+                </a>
 
-            <!-- Course Title -->
-            <h1 class="navbar-text d-none d-lg-block" id="courseTitle">Web Development</h1>
+                <!-- Course Title -->
+                <h1 class="navbar-text d-none d-lg-block" id="courseTitle">Web Development</h1>
 
-            <!-- Toggler button for mobile view -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <!-- Links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Learn</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
-                    <li class="nav-item notification-icon" data-bs-toggle="modal" data-bs-target="#notificationModal" onclick="checkNotifications()">
-                        🔔
-                        <span id="notificationCount" class="badge">3</span> <!-- Notification badge -->
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Learn</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+                        <li class="nav-item notification-icon" data-bs-toggle="modal"
+                            data-bs-target="#notificationModal" onclick="checkNotifications()">
+                            🔔
+                            <span id="notificationCount" class="badge">3</span> <!-- Notification badge -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add padding for the fixed navbar to avoid content overlap -->
+    <main style="padding-top: 90px;">
+        <!-- Page content goes here -->
+    </main>
+
+    <!-- Sidebar -->
+
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h2>Course Modules</h2>
+                </div>
+                <ul class="module-list">
+                    <li class="module-item">
+                        <div class="module-title" data-course="webdev" data-module="Introduction">Introduction</div>
+                        <ul class="topic-list">
+                            <li class="topic-item" data-course="webdev" data-module="Introduction"
+                                data-topic="topic1-1">1.1: Overview</li>
+                            <li class="topic-item" data-course="webdev" data-module="Introduction"
+                                data-topic="topic1-2">1.2: Getting Started</li>
+                        </ul>
                     </li>
+                    <li class="module-item">
+                        <div class="module-title" data-course="webdev" data-module="module1">Module 1: Basics</div>
+                        <ul class="topic-list">
+                            <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-1">1.1:
+                                Intro to Web Dev</li>
+                            <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-2">1.2:
+                                Front-End vs Back-End</li>
+                            <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-1">1.3:
+                                HTML & CSS</li>
+                            <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-2">1.4:
+                                JavaScript Basics</li>
+                            <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-1">1.5:
+                                HTML & CSS</li>
+                            <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-2">1.6:
+                                JavaScript Basics</li>
+                        </ul>
+                    </li>
+                    <li class="module-item">
+                        <div class="module-title" data-course="webdev" data-module="module2">Module 2: Advanced Concepts
+                        </div>
+                        <ul class="topic-list">
+                            <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-1">
+                                Topic 2.1: Deep Dive</li>
+                        </ul>
+                    </li>
+                    <li class="module-item">
+                        <div class="module-title" data-course="webdev" data-module="module3">Module 3: Advanced Concepts
+                        </div>
+                        <ul class="topic-list">
+                            <li class="topic-item" data-course="webdev" data-module="module3" data-topic="topic3-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module3" data-topic="topic3-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module3" data-topic="topic3-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-module="module3" data-topic="topic2-2">Topic 2.2: Case Studies
+                            </li>
+                            <li class="topic-item" data-module="module3" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module3" data-topic="topic3-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module3" data-topic="topic3-1">
+                                Topic 2.1: Deep Dive</li>
+                        </ul>
+                    </li>
+                    <li class="module-item">
+                        <div class="module-title" data-course="webdev" data-module="module4">Module 4: Advanced Concepts
+                        </div>
+                        <ul class="topic-list">
+                            <li class="topic-item" data-course="webdev" data-module="module4" data-topic="topic4-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module4" data-topic="topic4-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module4" data-topic="topic4-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module4" data-topic="topic4-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module4" data-topic="topic4-1">
+                                Topic 2.1: Deep Dive</li>
+                        </ul>
+                    </li>
+                    <li class="module-item">
+                        <div class="module-title" data-course="webdev" data-module="module5">Module 5: Advanced Concepts
+                        </div>
+                        <ul class="topic-list">
+                            <li class="topic-item" data-course="webdev" data-module="module5" data-topic="topic5-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module5" data-topic="topic5-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module5" data-topic="topic5-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module5" data-topic="topic5-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module5" data-topic="topic5-1">
+                                Topic 2.1: Deep Dive</li>
+                        </ul>
+                    </li>
+                    <li class="module-item">
+                        <div class="module-title" data-course="webdev" data-module="module6">Module 6: Advanced Concepts
+                        </div>
+                        <ul class="topic-list">
+                            <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-2">
+                                Topic 2.2: Case Studies</li>
+                        </ul>
+                    </li>
+                    <li class="module-item">
+                        <div class="module-title" data-course="webdev" data-module="module7">Module 7: Advanced Concepts
+                        </div>
+                        <ul class="topic-list">
+                            <li class="topic-item" data-course="webdev" data-module="module7" data-topic="topic7-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module7" data-topic="topic7-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module7" data-topic="topic7-1">
+                                Topic 2.1: Deep Dive</li>
+                            <li class="topic-item" data-course="webdev" data-module="module7" data-topic="topic7-2">
+                                Topic 2.2: Case Studies</li>
+                            <li class="topic-item" data-course="webdev" data-module="module7" data-topic="topic7-1">
+                                Topic 2.1: Deep Dive</li>
+                        </ul>
+                    </li>
+                    <!-- More modules can be added here -->
                 </ul>
             </div>
-        </div>
-    </nav>
-</header>
-
-<!-- Add padding for the fixed navbar to avoid content overlap -->
-<main style="padding-top: 90px;">
-    <!-- Page content goes here -->
-</main>
-
- <!-- Sidebar -->
-    
- <div class="wrapper">
-    <aside class="sidebar">
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2>Course Modules</h2>
-        </div>
-        <ul class="module-list">
-            <li class="module-item">
-                <div class="module-title" data-course="webdev" data-module="Introduction">Introduction</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="webdev" data-module="Introduction" data-topic="topic1-1">1.1: Overview</li>
-                    <li class="topic-item" data-course="webdev" data-module="Introduction" data-topic="topic1-2">1.2: Getting Started</li>
-                </ul>
-            </li>
-        <li class="module-item">
-            <div class="module-title" data-course="webdev" data-module="module1">Module 1: Basics</div>
-            <ul class="topic-list">
-                <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-1">1.1: Intro to Web Dev</li>
-                <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-2">1.2: Front-End vs Back-End</li>
-                <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-1">1.3: HTML & CSS</li>
-                <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-2">1.4: JavaScript Basics</li>
-                <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-1">1.5: HTML & CSS</li>
-                <li class="topic-item" data-course="webdev" data-module="module1" data-topic="topic1-2">1.6: JavaScript Basics</li>
-            </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="webdev" data-module="module2">Module 2: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="webdev" data-module="module3">Module 3: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="webdev" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module3" data-topic="topic3-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>                    <li class="topic-item" data-module="module3" data-topic="topic2-2">Topic 2.2: Case Studies</li>                    <li class="topic-item" data-module="module3" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module3" data-topic="topic3-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="webdev" data-module="module4">Module 4: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="webdev" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module4" data-topic="topic4-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module4" data-topic="topic4-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="webdev" data-module="module5">Module 5: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="webdev" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module5" data-topic="topic5-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module5" data-topic="topic5-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="webdev" data-module="module6">Module 6: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="webdev" data-module="module7">Module 7: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="webdev" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module7" data-topic="topic7-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="webdev" data-module="module7" data-topic="topic7-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="webdev" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <!-- More modules can be added here -->
-        </ul>
+        </aside>
     </div>
-</aside>
-</div>
 
     <!-- Toggle Button -->
     <button id="toggle-btn">☰</button>
@@ -341,12 +410,13 @@ body {
     </main>
 
     <!-- Footer -->
-<footer>
-    <p>&copy; 2024 NAU. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 NAS. All rights reserved.</p>
+    </footer>
 
     <!-- Modal -->
-    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -370,102 +440,103 @@ body {
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Sidebar toggle functionality
-        const sidebar = document.getElementById('sidebar');
-        const toggleBtn = document.getElementById('toggle-btn');
-        const mainContent = document.getElementById('main-content');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Sidebar toggle functionality
+            const sidebar = document.getElementById('sidebar');
+            const toggleBtn = document.getElementById('toggle-btn');
+            const mainContent = document.getElementById('main-content');
 
-        toggleBtn.addEventListener('click', function () {
-            sidebar.classList.toggle('collapsed');
-            mainContent.classList.toggle('full-width');
-            toggleBtn.style.left = sidebar.classList.contains('collapsed') ? '10px' : '310px';
-        });
+            toggleBtn.addEventListener('click', function () {
+                sidebar.classList.toggle('collapsed');
+                mainContent.classList.toggle('full-width');
+                toggleBtn.style.left = sidebar.classList.contains('collapsed') ? '10px' : '310px';
+            });
 
-        // Activate modal when notification icon is clicked
-        document.querySelector('.notification-icon').addEventListener('click', function () {
-            const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
-            notificationModal.show();
-        });
-        
-    // Load the last selected course, module, and topic on page load (if available)
-    const lastCourse = localStorage.getItem('lastCourse');
-    const lastModule = localStorage.getItem('lastModule');
-    const lastTopic = localStorage.getItem('lastTopic');
-    if (lastCourse && lastModule && lastTopic) {
-        loadContent(lastCourse, lastModule, lastTopic);
-    }
+            // Activate modal when notification icon is clicked
+            document.querySelector('.notification-icon').addEventListener('click', function () {
+                const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
+                notificationModal.show();
+            });
 
-    // Toggle subcategories (topics) inside modules
-    document.querySelectorAll('.module-title').forEach(moduleTitle => {
-        moduleTitle.addEventListener('click', function () {
-            const parentModule = this.parentElement;
-            const topicsList = parentModule.querySelector('.topic-list'); // Fixed selector
-
-            if (topicsList) {
-                // Toggle the visibility of the topics list
-                topicsList.classList.toggle('hidden');
+            // Load the last selected course, module, and topic on page load (if available)
+            const lastCourse = localStorage.getItem('lastCourse');
+            const lastModule = localStorage.getItem('lastModule');
+            const lastTopic = localStorage.getItem('lastTopic');
+            if (lastCourse && lastModule && lastTopic) {
+                loadContent(lastCourse, lastModule, lastTopic);
             }
 
-            // Optional: toggle active class for the parent module
-            parentModule.classList.toggle('active');
-        });
-    });
+            // Toggle subcategories (topics) inside modules
+            document.querySelectorAll('.module-title').forEach(moduleTitle => {
+                moduleTitle.addEventListener('click', function () {
+                    const parentModule = this.parentElement;
+                    const topicsList = parentModule.querySelector('.topic-list'); // Fixed selector
 
-    // Load content when a topic is clicked
-    document.querySelectorAll('.topic-item').forEach(item => {
-        item.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent link default behavior
-            const course = this.getAttribute('data-course'); // Get course from data attribute
-            const module = this.getAttribute('data-module');
-            const topic = this.getAttribute('data-topic');
-            loadContent(course, module, topic); // Load the selected content
-        });
-    });
+                    if (topicsList) {
+                        // Toggle the visibility of the topics list
+                        topicsList.classList.toggle('hidden');
+                    }
 
-    // Function to load content dynamically
-    function loadContent(course, module, topic) {
-        const filePath = `content/${course}/${module}/${topic}.html`;  // Build file path
+                    // Optional: toggle active class for the parent module
+                    parentModule.classList.toggle('active');
+                });
+            });
+
+            // Load content when a topic is clicked
+            document.querySelectorAll('.topic-item').forEach(item => {
+                item.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent link default behavior
+                    const course = this.getAttribute('data-course'); // Get course from data attribute
+                    const module = this.getAttribute('data-module');
+                    const topic = this.getAttribute('data-topic');
+                    loadContent(course, module, topic); // Load the selected content
+                });
+            });
+
+            // Function to load content dynamically
+            function loadContent(course, module, topic) {
+                const filePath = `content/${course}/${module}/${topic}.html`;  // Build file path
 
 
 
 
-         // Function to clear notifications
-    function clearNotifications() {
-        const notificationCount = document.getElementById('notificationCount');
-        notificationCount.style.display = 'none'; // Hide the badge
-    }
-
-    // Function to handle checking notifications
-    function checkNotifications() {
-        const notificationCount = document.getElementById('notificationCount');
-        notificationCount.style.display = 'none'; // Hide the badge when checking notifications
-    }
-        
-        // Fetch and load external HTML content
-        fetch(filePath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to load content');
+                // Function to clear notifications
+                function clearNotifications() {
+                    const notificationCount = document.getElementById('notificationCount');
+                    notificationCount.style.display = 'none'; // Hide the badge
                 }
-                return response.text();
-            })
-            .then(data => {
-                mainContent.innerHTML = data; // Inject content into main section
-            })
-            .catch(error => {
-                mainContent.innerHTML = `
+
+                // Function to handle checking notifications
+                function checkNotifications() {
+                    const notificationCount = document.getElementById('notificationCount');
+                    notificationCount.style.display = 'none'; // Hide the badge when checking notifications
+                }
+
+                // Fetch and load external HTML content
+                fetch(filePath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to load content');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        mainContent.innerHTML = data; // Inject content into main section
+                    })
+                    .catch(error => {
+                        mainContent.innerHTML = `
                     <h2>Error Loading Content</h2>
                     <p>We encountered an issue loading the content. Please try again later.</p>
                 `;
-                console.error('Error:', error);
-            });
-        }
+                        console.error('Error:', error);
+                    });
+            }
 
-    });
+        });
 
 
-</script>
+    </script>
 </body>
+
 </html>

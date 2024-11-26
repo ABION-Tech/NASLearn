@@ -1,4 +1,6 @@
-<html><head>
+<html>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
@@ -46,7 +48,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
-            margin-top: -60px; /* Overlap the header slightly */
+            margin-top: -60px;
+            /* Overlap the header slightly */
         }
 
         .profile-content h2 {
@@ -54,7 +57,7 @@
             margin-bottom: 15px;
         }
 
-        .profile-content .info, 
+        .profile-content .info,
         .profile-content .courses,
         .profile-content .activities {
             margin-bottom: 20px;
@@ -96,9 +99,10 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <div class="logo">NAU</div>
+        <div class="logo">NAS</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -114,13 +118,14 @@
         <div class="profile-header">
             <img src="profile-pic.jpg" alt="Profile Picture">
             <h1>John Doe</h1>
-            <p>Student at New Age University</p>
+            <p>Student at New Age Skillsphere</p>
         </div>
 
         <div class="profile-content">
             <div class="info">
                 <h2>About Me</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel ligula id metus facilisis vehicula.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel ligula id metus facilisis
+                    vehicula.</p>
             </div>
 
             <div class="courses">
@@ -148,65 +153,70 @@
     </main>
 
     <footer>
-        <p>© 2024 New Age University. All rights reserved.</p>
+        <p>© 2024 New Age Skillsphere. All rights reserved.</p>
     </footer>
 
 
-<style id="dcoder_stylesheet">/* Global Styles for Sign-Up Page */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+    <style id="dcoder_stylesheet">
+        /* Global Styles for Sign-Up Page */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-}
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
 
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
 
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-footer {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-}
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
 
-footer p {
-    margin: 0;
-}
-</style><script id="dcoder_script">// script.js
+        footer p {
+            margin: 0;
+        }
+    </style>
+    <script id="dcoder_script">// script.js
 
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const toggleBtn = document.querySelector('.toggle-btn');
-    
-    if (sidebar.style.width === '0px' || sidebar.style.width === '') {
-        sidebar.style.width = '250px';
-        toggleBtn.innerHTML = '&#9664;'; // Left arrow
-    } else {
-        sidebar.style.width = '0';
-        toggleBtn.innerHTML = '&#9654;'; // Right arrow
-    }
-}
-</script></body></html>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const toggleBtn = document.querySelector('.toggle-btn');
+
+            if (sidebar.style.width === '0px' || sidebar.style.width === '') {
+                sidebar.style.width = '250px';
+                toggleBtn.innerHTML = '&#9664;'; // Left arrow
+            } else {
+                sidebar.style.width = '0';
+                toggleBtn.innerHTML = '&#9654;'; // Right arrow
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Syntax and Basics</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            color: black;
+            padding: 20px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        h2,
+        h3 {
+            color: #007bff;
+            /* Bootstrap blue color */
+        }
+
+        code {
+            background-color: #dadadb;
+            padding: 2px 4px;
+            font-size: 95%;
+        }
+
+        pre {
+            background-color: #dadadb;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 95%;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .alert {
+            background-color: #007bff;
+            color: white;
+            border-radius: 0;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>JavaScript Syntax and Basics</h2>
+
+        <h3>2.1. Variables and Data Types</h3>
+        <p>Variables store data that can be used and manipulated within your program. JavaScript supports various data
+            types, including strings, numbers, booleans, arrays, and objects.</p>
+        <p><strong>Declaring Variables:</strong></p>
+        <pre><code>let name = "John";
+const pi = 3.14;
+var age = 25;</code></pre>
+
+        <p><strong>Data Types:</strong></p>
+        <pre><code>let isStudent = true;   // Boolean
+let score = 85;         // Number
+let firstName = "Jane"; // String</code></pre>
+
+        <p><strong>Choosing <code>var</code>, <code>let</code>, or <code>const</code>:</strong></p>
+        <ul>
+            <li><code>let</code>: For variables that may change.</li>
+            <li><code>const</code>: For variables that should not change.</li>
+            <li><code>var</code>: The old way of declaring variables (use <code>let</code> or <code>const</code>
+                instead).</li>
+        </ul>
+
+        <h3>2.2. Operators</h3>
+        <p>Operators perform operations on variables and values.</p>
+        <p><strong>Arithmetic Operators:</strong></p>
+        <pre><code>let sum = 10 + 5;  // 15
+let product = 10 * 5; // 50</code></pre>
+
+        <p><strong>Assignment Operators:</strong></p>
+        <pre><code>let x = 10;
+x += 5;  // x is now 15</code></pre>
+
+        <p><strong>Comparison Operators:</strong></p>
+        <pre><code>let isEqual = (10 == "10"); // true
+let isIdentical = (10 === "10"); // false</code></pre>
+
+        <h3>2.3. Control Structures</h3>
+        <p>Control structures allow you to control the flow of your program based on conditions and loops.</p>
+
+        <p><strong>Conditional Statements:</strong></p>
+        <pre><code>let age = 18;
+
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are not an adult.");
+}</code></pre>
+
+        <p><strong>Loops:</strong></p>
+        <p><strong>For Loop:</strong></p>
+        <pre><code>for (let i = 0; i &lt; 5; i++) {
+    console.log("Number: " + i);
+}</code></pre>
+
+        <p><strong>While Loop:</strong></p>
+        <pre><code>let i = 0;
+while (i &lt; 5) {
+    console.log("Number: " + i);
+    i++;
+}</code></pre>
+    </div>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7: Deep Learning and Neural Networks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            /* Blue accent */
+        }
+
+        .content-section {
+            margin: 30px 0;
+        }
+
+        .neuron-diagram {
+            width: 100%;
+            height: auto;
+            border: 1px solid #007bff;
+            /* Blue accent border */
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .neuron-description {
+            margin-top: 15px;
+        }
+
+        .list-group-item {
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .list-group-item:hover {
+            background-color: #e9ecef;
+            /* Light gray on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-section">
+            <h1>Week 7: Deep Learning and Neural Networks</h1>
+            <p>In this topic, we dive deep into the fascinating world of <strong>neural networks</strong>, a cornerstone
+                of deep learning that mimics the human brain's interconnected neuron structure. This module will explore
+                the anatomy of neural networks, focusing on the input, hidden, and output layers and their roles in
+                transforming data into insightful predictions.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Understanding Layers: Input, Hidden, Output</h2>
+            <p>Neural networks are composed of layers of interconnected neurons. Each layer performs a specific function
+                in the network.</p>
+
+            <h3>1. Input Layer</h3>
+            <div class="neuron-diagram">
+                <p class="neuron-description">The input layer receives the data and prepares it for processing.</p>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Purpose:</strong> Receives the input data.</li>
+                <li class="list-group-item"><strong>Neurons:</strong> The number of neurons corresponds to the number of
+                    features in the input data.</li>
+                <li class="list-group-item"><strong>Function:</strong> Passes the input data to the hidden layers.</li>
+            </ul>
+
+            <h3>2. Hidden Layers</h3>
+            <div class="neuron-diagram">
+                <p class="neuron-description">Hidden layers extract features from the input and perform complex
+                    transformations.</p>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Purpose:</strong> Extract features and transform input data.</li>
+                <li class="list-group-item"><strong>Neurons:</strong> Varies based on problem complexity.</li>
+                <li class="list-group-item"><strong>Function:</strong> Apply non-linear transformations to learn complex
+                    patterns.</li>
+            </ul>
+
+            <h3>3. Output Layer</h3>
+            <div class="neuron-diagram">
+                <p class="neuron-description">The output layer produces the final predictions based on learned features.
+                </p>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Purpose:</strong> Produces the final output of the network.</li>
+                <li class="list-group-item"><strong>Neurons:</strong> Depends on the task, e.g., one neuron per class in
+                    classification.</li>
+                <li class="list-group-item"><strong>Function:</strong> Combines outputs from hidden layers to produce
+                    predictions.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Relationship Between Layers</h2>
+            <p>The effectiveness of neural networks is rooted in the relationships between layers:</p>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Connectivity:</strong> Neurons in one layer connect to neurons in
+                    the next layer, facilitating information flow.</li>
+                <li class="list-group-item"><strong>Weight Matrices:</strong> Connections are represented by weight
+                    matrices, determining the strength of these connections.</li>
+                <li class="list-group-item"><strong>Activation Functions:</strong> Non-linear functions applied to the
+                    weighted sums in each neuron, introducing complexity.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>The Role of Hidden Layers</h2>
+            <p>Hidden layers play a crucial role in the network's ability to learn:</p>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Feature Extraction:</strong> They extract relevant features from
+                    input data, enhancing the model's performance.</li>
+                <li class="list-group-item"><strong>Non-linear Transformations:</strong> By applying activation
+                    functions, hidden layers allow the network to model complex relationships.</li>
+                <li class="list-group-item"><strong>Representation Learning:</strong> They learn representations useful
+                    for tasks, improving the network's predictive capabilities.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>The Number of Hidden Layers and Neurons</h2>
+            <p>Determining the optimal architecture for your neural network is essential for success:</p>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Determining the Number of Layers:</strong> The complexity of the
+                    problem and data available influences the number of hidden layers and neurons.</li>
+                <li class="list-group-item"><strong>Experimentation:</strong> Experiment with different configurations
+                    to find the most effective model.</li>
+            </ul>
+            <p>Understanding the interplay between layers allows you to design and build effective neural networks
+                tailored for various tasks, from image classification to natural language processing and beyond.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On Exercises</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS for page design -->
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1,
+        h2,
+        h4 {
+            color: #007BFF;
+            /* Blue accent for headings */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #007BFF;
+            /* Blue accent for highlighted terms */
+            font-weight: bold;
+        }
+
+        .code-editor-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .code-editor {
+            flex: 1;
+            border: 2px solid #007BFF;
+            margin-right: 20px;
+            resize: both;
+            overflow: auto;
+            min-height: 400px;
+            min-width: 300px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            background-color: #f8f9fa;
+        }
+
+        .output-viewport {
+            flex: 1;
+            border: 2px solid #007BFF;
+            padding: 20px;
+            background-color: #f1f1f1;
+            min-height: 400px;
+        }
+
+        .output-viewport p {
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .code-editor-container {
+                flex-direction: column;
+            }
+
+            .code-editor,
+            .output-viewport {
+                min-width: 100%;
+            }
+        }
+
+        .section-divider {
+            border-top: 2px solid #007BFF;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Hands-On Exercises</h1>
+
+        <div class="custom-card">
+            <h2 class="section-title">Exercise 1: Supervised Learning (Iris Dataset)</h2>
+            <p>In this exercise, you'll load the Iris dataset and implement a <span class="highlight">Logistic
+                    Regression</span> model to classify different species of flowers. You will evaluate the model using
+                a confusion matrix and accuracy score.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="custom-card">
+            <h2 class="section-title">Exercise 2: Unsupervised Learning (Customer Segmentation)</h2>
+            <p>For this exercise, apply <span class="highlight">K-Means</span> clustering to group customers based on
+                purchasing behavior. Visualize the clusters and evaluate the model using the silhouette score.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="custom-card">
+            <h2 class="section-title">Exercise 3: Hyperparameter Tuning</h2>
+            <p>In this exercise, use <span class="highlight">GridSearchCV</span> to tune hyperparameters for a
+                classification model such as Random Forest. Compare the tuned model's performance with the default
+                model.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title">Code Editor & Output</h2>
+        <div class="code-editor-container">
+            <!-- Code Editor -->
+            <textarea class="code-editor" id="codeEditor" placeholder="Write your Python code here..."></textarea>
+
+            <!-- Output Viewport -->
+            <div class="output-viewport" id="outputViewport">
+                <h4>Output:</h4>
+                <p id="outputText">Your code output will be displayed here.</p>
+            </div>
+        </div>
+
+        <!-- Run Button -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="runCode()">Run Code</button>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript to handle code execution and display output -->
+    <script>
+        function runCode() {
+            var code = document.getElementById("codeEditor").value;
+            // Simulate code execution (for now, only outputs the code as a demo)
+            document.getElementById("outputText").innerText = "Executing the following Python code:\n\n" + code;
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+/* Basic Reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+font-family: Arial, sans-serif;
+top: 80px;
+}
+
+.container {
+padding: 20px;
+}
+
+/* Video container to hold everything */
+.video-container {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* Gradient border container */
+.gradient-border {
+padding: 5px;
+background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+border-radius: 10px;
+}
+
+/* Video or content inside the border */
+.video-content {
+border-radius: 10px;
+display: block;
+}
+
+.video-links {
+color: grey;
+font-size: 0.8rem;
+text-align: center;
+margin-top: 5px;
+}
+
+/* Ensure responsive width and height for the video */
+iframe {
+width: 100%;
+height: 400px;
+border-radius: 10px;
+}
+
+/* Responsiveness */
+@media (min-width: 1200px) {
+iframe {
+width: 800px;
+height: 450px;
+}
+}
+
+@media (max-width: 1200px) {
+iframe {
+width: 800px;
+height: 350px;
+}
+}
+
+@media (max-width: 768px) {
+iframe {
+width: 500px;
+height: 200px;
+}
+}
+
+/* For mobile screens, to avoid the box-like appearance */
+@media (max-width: 360px) {
+.video-content {
+width: 280px;
+/* Take full width */
+height: 200px;
+/* Adjust height to give a more rectangular shape */
+}
+
+/* For mobile screens, to avoid the box-like appearance */
+@media (max-width: 256px) {
+.video-content {
+width: 1080px;
+/* Take full width */
+height: 300px;
+/* Adjust height to give a more rectangular shape */
+}
+}
+}
+</style>
+</head>
+
+<body>
+    <h1>Deployment and Environment Configuration in Node.js</h1>
+
+    <!-- Section 5.1 - Environment Variables -->
+    <div class="content-section">
+        <h2>5.1 Environment Variables</h2>
+        <p>Environment variables store sensitive information and configuration settings.</p>
+
+        <h3>Using dotenv to Manage Environment Variables</h3>
+        <p>dotenv allows you to load environment variables from a <code>.env</code> file into <code>process.env</code>.
+        </p>
+        <pre><code>require('dotenv').config();
+console.log(process.env.DATABASE_URL);
+</code></pre>
+        <p class="explanation">
+            <strong>Explanation:</strong> <br>
+            <code>dotenv</code>: Loads environment variables from a <code>.env</code> file into
+            <code>process.env</code>.
+        </p>
+
+        <h3>Creating a .env File</h3>
+        <p>Store sensitive information like API keys and database URLs in a <code>.env</code> file:</p>
+        <pre><code>DATABASE_URL=mongodb://localhost/mydatabase
+ACCESS_TOKEN_SECRET=mysecrettoken
+</code></pre>
+    </div>
+
+    <!-- Section 5.2 - Deployment Strategies -->
+    <div class="content-section">
+        <h2>5.2 Deployment Strategies</h2>
+        <p>Deploying applications and managing environment configurations in the cloud is an important part of backend
+            development.</p>
+
+        <h3>Deploying to Cloud Services</h3>
+        <p>Deploy Node.js applications to platforms like Heroku, AWS, or Vercel. Below is an example using Heroku.</p>
+
+        <h4>Heroku Deployment Example</h4>
+        <p>Steps to deploy an app using the Heroku CLI:</p>
+        <pre><code>heroku create myapp
+git push heroku main
+</code></pre>
+        <p class="explanation">
+            <strong>Explanation:</strong> <br>
+            <code>heroku create</code>: Creates a new Heroku application. <br>
+            <code>git push heroku main</code>: Deploys the application to Heroku.
+        </p>
+
+        <h3>Setting Up CI/CD Pipelines</h3>
+        <p>Use CI/CD tools like GitHub Actions or Travis CI to automate testing and deployment. Here is an example of a
+            GitHub Actions workflow to deploy to Heroku:</p>
+
+        <pre><code>name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy to Heroku
+      run: |
+        git remote add heroku https://git.heroku.com/myapp.git
+        git push heroku main
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+</code></pre>
+        <p class="explanation">
+            <strong>Explanation:</strong> <br>
+            This GitHub Actions configuration automates deployment when changes are pushed to the <code>main</code>
+            branch. It uses Heroku’s API key stored in repository secrets for authentication.
+        </p>
+    </div>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

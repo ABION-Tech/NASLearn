@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Performance Tuning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>SQL Performance Tuning</h1>
+    </header>
+
+    <main>
+        <section id="indexes">
+            <h2>Indexes</h2>
+            <p>
+                Indexes improve the speed of data retrieval operations. They can be created on one or more columns of a
+                table.
+            </p>
+            <pre><code>CREATE INDEX idx_customer_name ON customers (customer_name);</code></pre>
+        </section>
+
+        <section id="query-optimization">
+            <h2>Query Optimization</h2>
+            <p>
+                Optimizing SQL queries involves writing efficient queries to minimize execution time and resource usage.
+                Best practices include:
+            </p>
+            <ul>
+                <li><strong>Using Indexes:</strong> Ensure that columns used in WHERE clauses and JOIN conditions are
+                    indexed.</li>
+                <li><strong>Avoiding Unnecessary Columns:</strong> Select only the necessary columns to reduce data
+                    transfer.</li>
+                <li><strong>Limiting Results:</strong> Use LIMIT or TOP to restrict the number of rows returned.</li>
+            </ul>
+            <pre><code>SELECT customer_name FROM customers LIMIT 10;</code></pre>
+        </section>
+
+        <section id="explain-plan">
+            <h2>Explain Plan</h2>
+            <p>
+                The EXPLAIN plan shows the execution strategy of a SQL query, helping to identify performance
+                bottlenecks.
+            </p>
+            <pre><code>EXPLAIN SELECT * FROM customers WHERE country = 'USA';</code></pre>
+        </section>
+
+        <section id="practical-exercise">
+            <h2>Practical Exercise</h2>
+            <p>
+                <strong>Hands-On Practice:</strong> Create indexes on sample tables and write optimized SQL queries. Use
+                EXPLAIN plans to analyze query performance and make necessary adjustments.
+            </p>
+        </section>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Quality and Data Cleaning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Data Quality and Data Cleaning</h1>
+    </header>
+
+    <main>
+        <section id="importance-of-data-quality">
+            <h2>3.1 Importance of Data Quality</h2>
+            <h3>Impact on Decision-Making</h3>
+            <p>
+                High-quality data is essential for accurate and reliable decision-making. Poor data quality can lead to
+                incorrect insights, faulty strategies, and missed opportunities. Ensuring data quality means that the
+                data is accurate, complete, consistent, timely, and relevant; which in turn enhances the reliability of
+                analyses and business decisions.
+            </p>
+        </section>
+
+        <section id="aspects-of-data-quality">
+            <h2>3.2 Aspects of Data Quality</h2>
+            <ul>
+                <li><strong>Accuracy:</strong> Data should be correct and free from errors.</li>
+                <li><strong>Completeness:</strong> All required data should be present.</li>
+                <li><strong>Consistency:</strong> Data should be the same across different datasets and systems.</li>
+                <li><strong>Timeliness:</strong> Data should be up-to-date and available when needed.</li>
+                <li><strong>Uniqueness:</strong> There should be no duplicate records within the dataset.</li>
+            </ul>
+        </section>
+
+        <section id="common-data-quality-issues">
+            <h2>3.3 Common Data Quality Issues</h2>
+            <h3>Missing Values</h3>
+            <p>
+                Missing data occurs when no value is stored for a data point. This can happen due to various reasons
+                such as data entry errors, system issues, or respondents skipping questions in surveys. Missing values
+                can lead to biased analyses and incomplete conclusions if not properly handled.
+            </p>
+
+            <h3>Duplicate Records</h3>
+            <p>
+                Duplicate records refer to multiple entries that represent the same entity in a dataset. These can occur
+                due to data entry errors, merging datasets from different sources, or system glitches. Duplicates can
+                distort statistical analyses and lead to inaccurate results.
+            </p>
+
+            <h3>Inconsistent Data</h3>
+            <p>
+                Inconsistent data arises when the same entity has different values in different datasets or within the
+                same dataset. This can be due to various reasons like different formats, data entry mistakes, or
+                discrepancies in data collection methods. Inconsistencies need to be identified and resolved to ensure
+                data integrity.
+            </p>
+
+            <h3>Outliers and Anomalies</h3>
+            <p>
+                Outliers are data points that significantly differ from other observations. While some outliers can
+                provide valuable insights, others may be the result of data entry errors or measurement issues.
+                Identifying and handling outliers is crucial for accurate data analysis.
+            </p>
+        </section>
+
+        <section id="data-cleaning-techniques">
+            <h2>3.4 Data Cleaning Techniques</h2>
+            <h3>Handling Missing Values</h3>
+            <ul>
+                <li><strong>Imputation:</strong> Replacing missing values with substituted values. This can be done
+                    using the mean, median, mode, or using more sophisticated methods like regression or machine
+                    learning algorithms.</li>
+                <li><strong>Deletion:</strong> Removing records with missing values. This approach is viable if the
+                    proportion of missing data is relatively small.</li>
+            </ul>
+
+            <h3>Removing Duplicates</h3>
+            <ul>
+                <li><strong>Identifying Duplicates:</strong> Use functions in data processing tools (e.g., Excel, SQL)
+                    to identify and flag duplicate records.</li>
+                <li><strong>Merging Duplicates:</strong> Combine information from duplicate records to create a single,
+                    comprehensive record.</li>
+            </ul>
+
+            <h3>Standardizing Data Formats</h3>
+            <ul>
+                <li><strong>Consistent Formatting:</strong> Ensure consistency in data formats across the dataset. For
+                    example, dates should be in the same format (e.g., YYYY-MM-DD), and units of measurement should be
+                    standardized.</li>
+                <li><strong>Normalization:</strong> Adjusting the values in the dataset to a common scale without
+                    distorting differences in the range of values.</li>
+            </ul>
+
+            <h3>Outlier Detection and Treatment</h3>
+            <ul>
+                <li><strong>Statistical Methods:</strong> Use statistical techniques like z-scores or IQR (Interquartile
+                    Range) to identify outliers.</li>
+                <li><strong>Treatment:</strong> Depending on the context, outliers can be removed, transformed, or
+                    investigated further for insights.</li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+
+</html>

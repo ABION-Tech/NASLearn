@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervised Learning - Regression</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #007bff;
+            /* Blue accent */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            overflow-x: auto;
+        }
+
+        .metric {
+            background-color: #f0f8ff;
+            border-left: 5px solid #007bff;
+            padding: 10px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container my-5">
+        <h1>Week 3: Supervised Learning - Regression</h1>
+
+        <h2>Model Evaluation Metrics: R-squared and Mean Squared Error (MSE)</h2>
+
+        <p>Evaluating the performance of a regression model is crucial to ensure its accuracy and reliability. R-squared
+            and Mean Squared Error (MSE) are two commonly used metrics for assessing the quality of a regression model.
+        </p>
+
+        <div class="metric">
+            <h3>1. R-squared (R²)</h3>
+            <p><strong>Definition:</strong> R-squared measures the proportion of variance in the dependent variable that
+                is explained by the independent variables.</p>
+            <p><strong>Interpretation:</strong></p>
+            <ul>
+                <li>Values range from 0 to 1.</li>
+                <li>A higher R-squared value indicates that a larger proportion of the variance is explained by the
+                    model.</li>
+                <li>However, a high R-squared does not necessarily mean a good model if the data is not well-fitting or
+                    there is overfitting.</li>
+            </ul>
+            <p><strong>Calculation:</strong></p>
+            <pre>
+R² = 1 - (SSR / SST)
+            </pre>
+            <p>where:</p>
+            <ul>
+                <li><strong>SSR (Sum of Squared Residuals)</strong> is the sum of the squared differences between the
+                    predicted and actual values.</li>
+                <li><strong>SST (Total Sum of Squares)</strong> is the sum of the squared differences between the actual
+                    values and the mean of the dependent variable.</li>
+            </ul>
+        </div>
+
+        <div class="metric">
+            <h3>2. Mean Squared Error (MSE)</h3>
+            <p><strong>Definition:</strong> MSE measures the average squared difference between the predicted and actual
+                values.</p>
+            <p><strong>Interpretation:</strong></p>
+            <ul>
+                <li>A lower MSE indicates a better-fitting model.</li>
+                <li>It is sensitive to outliers, as large errors are squared.</li>
+            </ul>
+            <p><strong>Calculation:</strong></p>
+            <pre>
+MSE = (1/n) * Σ(yᵢ - ŷᵢ)²
+            </pre>
+            <p>where:</p>
+            <ul>
+                <li><strong>n</strong> is the number of data points.</li>
+                <li><strong>yᵢ</strong> is the actual value.</li>
+                <li><strong>ŷᵢ</strong> is the predicted value.</li>
+            </ul>
+        </div>
+
+        <div class="metric">
+            <h3>Choosing the Right Metric</h3>
+            <p><strong>R-squared:</strong> Suitable for comparing models with different numbers of independent
+                variables. However, it can be misleading if the data is not well-fitting or there is overfitting.</p>
+            <p><strong>MSE:</strong> Sensitive to outliers and provides a direct measure of the average error.</p>
+        </div>
+
+        <div class="metric">
+            <h3>Additional Considerations</h3>
+            <ul>
+                <li><strong>Adjusted R-squared:</strong> Penalizes the addition of unnecessary independent variables,
+                    providing a more accurate measure when comparing models with different numbers of predictors.</li>
+                <li><strong>Root Mean Squared Error (RMSE):</strong> The square root of MSE, providing a more
+                    interpretable measure in the same units as the dependent variable.</li>
+                <li><strong>Relative Absolute Error (RAE):</strong> Measures the relative error compared to the mean of
+                    the dependent variable, giving context to the model's performance.</li>
+                <li><strong>Mean Absolute Percentage Error (MAPE):</strong> Measures the average percentage error
+                    between the predicted and actual values, allowing for a percentage-based interpretation of the
+                    model's accuracy.</li>
+            </ul>
+        </div>
+
+        <p>By understanding and using these evaluation metrics, you can effectively assess the performance of your
+            regression models and make informed decisions about model selection and tuning.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>

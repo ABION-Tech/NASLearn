@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Data Filtering and Selection</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        h2,
+        h4 {
+            color: #007BFF;
+            /* Blue accent color */
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            /* Light background for code blocks */
+            border-left: 4px solid #007BFF;
+            /* Blue accent for the left border */
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            /* Ensure long lines are scrollable */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h2>Data Filtering and Selection</h2>
+
+        <h4>Indexing and Slicing DataFrames</h4>
+        <p>You can filter and select subsets of your data using indexing techniques.</p>
+
+        <h5>Indexing by Columns</h5>
+        <pre><code>df['Age']  # Access a single column
+df[['Name', 'City']]  # Access multiple columns</code></pre>
+
+        <h5>Indexing by Rows with <code>loc[]</code> and <code>iloc[]</code></h5>
+        <p>
+            <code>loc[]</code>: Selects data by labels.<br>
+            <code>iloc[]</code>: Selects data by integer position.
+        </p>
+        <pre><code>df.loc[1]  # Access the second row using labels
+df.iloc[1]  # Access the second row using integer index</code></pre>
+
+        <h5>Slicing Rows</h5>
+        <pre><code>df[1:3]  # Access the second and third rows</code></pre>
+
+        <h4>Filtering Data Based on Conditions</h4>
+        <p>You can filter a DataFrame based on one or more conditions.</p>
+
+        <h5>Filtering by Condition</h5>
+        <pre><code>df[df['Age'] > 25]  # Select all rows where 'Age' is greater than 25</code></pre>
+
+        <h5>Multiple Conditions</h5>
+        <p>You can combine conditions using the <code>&</code> (AND) and <code>|</code> (OR) operators.</p>
+        <pre><code>df[(df['Age'] > 25) & (df['City'] == 'New York')]  # Multiple conditions</code></pre>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

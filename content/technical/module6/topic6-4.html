@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On CRUD Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1,
+        h2,
+        h4 {
+            color: #007bff;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .code-block {
+            background-color: #343a40;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li::before {
+            content: '•';
+            color: #007bff;
+            padding-right: 5px;
+        }
+
+        .explanation {
+            color: #6c757d;
+        }
+
+        .card {
+            border: none;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center mb-4">Hands-On Practice: Building a Simple CRUD Application</h1>
+
+        <h2>4.1. Project Setup</h2>
+        <h4>Initialize the Project:</h4>
+        <p>Create a new directory for your project and initialize it with npm.</p>
+        <div class="code-block">
+            <code>
+mkdir my-backend-project<br>
+cd my-backend-project<br>
+npm init -y
+        </code>
+        </div>
+
+        <h4>Install Dependencies:</h4>
+        <p>Install Express and Mongoose.</p>
+        <div class="code-block">
+            <code>
+npm install express mongoose
+        </code>
+        </div>
+
+        <h2>4.2. Creating the Server</h2>
+        <h4>Setup Express Server:</h4>
+        <div class="code-block">
+            <code>
+// app.js
+const express = require('express');<br>
+const mongoose = require('mongoose');<br>
+const app = express();<br><br>
+
+app.use(express.json());<br><br>
+
+mongoose.connect('mongodb://localhost/mydatabase', {<br>
+    useNewUrlParser: true,<br>
+    useUnifiedTopology: true<br>
+});<br><br>
+
+const userSchema = new mongoose.Schema({<br>
+    name: String,<br>
+    email: String,<br>
+    age: Number<br>
+});<br><br>
+
+const User = mongoose.model('User', userSchema);<br><br>
+
+// Create user<br>
+app.post('/users', (req, res) => {<br>
+    const newUser = new User(req.body);<br>
+    newUser.save((err, user) => {<br>
+        if (err) return res.status(500).send(err);<br>
+        res.status(201).send(user);<br>
+    });<br>
+});<br><br>
+
+// Read users<br>
+app.get('/users', (req, res) => {<br>
+    User.find({}, (err, users) => {<br>
+        if (err) return res.status(500).send(err);<br>
+        res.status(200).send(users);<br>
+    });<br>
+});<br><br>
+
+// Update user<br>
+app.put('/users/:id', (req, res) => {<br>
+    User.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, user) => {<br>
+        if (err) return res.status(500).send(err);<br>
+        res.status(200).send(user);<br>
+    });<br>
+});<br><br>
+
+// Delete user<br>
+app.delete('/users/:id', (req, res) => {<br>
+    User.findByIdAndDelete(req.params.id, (err) => {<br>
+        if (err) return res.status(500).send(err);<br>
+        res.status(204).send();<br>
+    });<br>
+});<br><br>
+
+app.listen(3000, () => {<br>
+    console.log('Server running on port 3000');<br>
+});
+        </code>
+        </div>
+
+        <h2>4.3. Testing the Application</h2>
+        <h4>Using Postman:</h4>
+        <p>Test CRUD operations by sending HTTP requests to your API endpoints using Postman or any other API testing
+            tool.</p>
+
+        <h4>Verifying Functionality:</h4>
+        <p>Ensure that all routes are functioning correctly and that data is being stored, retrieved, updated, and
+            deleted as expected.</p>
+
+    </div>
+
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

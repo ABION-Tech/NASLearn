@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototyping for Interaction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            /* Predominantly white background */
+            color: #000000;
+            /* Black text */
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            /* Blue accents for headings */
+        }
+
+        p {
+            margin-bottom: 1rem;
+            /* Spacing between paragraphs */
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            /* Blue accent border */
+        }
+
+        .important {
+            font-weight: bold;
+            color: #007bff;
+            /* Important text in blue */
+        }
+
+        ul {
+            list-style-type: none;
+            /* Remove default list styles */
+            padding-left: 0;
+            /* Remove padding */
+        }
+
+        li {
+            padding: 10px 0;
+            /* Space between list items */
+            position: relative;
+            /* For custom bullet styling */
+        }
+
+        li:before {
+            content: "✔️";
+            /* Custom bullet point */
+            position: absolute;
+            left: -20px;
+            /* Adjust position */
+            color: #007bff;
+            /* Blue bullet */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="section">
+            <h1>3.3 Prototyping for Interaction</h1>
+
+            <h2>Low-Fidelity vs. High-Fidelity Prototypes</h2>
+            <p>Prototyping is a crucial step in the design process, enabling teams to visualize and test their concepts.
+                Prototypes can be classified into two main categories: low-fidelity and high-fidelity.</p>
+
+            <h3>Low-Fidelity Prototypes:</h3>
+            <ul>
+                <li><span class="important">Definition:</span> Basic, non-interactive representations of a product that
+                    focus on the overall structure and layout.</li>
+                <li><span class="important">Purpose:</span> Used for early-stage testing, concept validation, and
+                    gathering feedback on the overall design.</li>
+                <li><span class="important">Examples:</span> Paper sketches, wireframes, click-through prototypes.</li>
+            </ul>
+
+            <h3>High-Fidelity Prototypes:</h3>
+            <ul>
+                <li><span class="important">Definition:</span> Detailed, interactive representations of a product that
+                    closely resemble the final design.</li>
+                <li><span class="important">Purpose:</span> Used for testing specific interactions, evaluating
+                    usability, and presenting to stakeholders.</li>
+                <li><span class="important">Examples:</span> Interactive prototypes created using tools like Figma,
+                    Adobe XD, or InVision.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>When to Use Each</h2>
+            <p>Choosing between low-fidelity and high-fidelity prototypes depends on the stage of the design process and
+                the specific goals of the testing.</p>
+
+            <h3>Low-Fidelity Prototypes:</h3>
+            <ul>
+                <li><span class="important">Early-Stage Testing:</span> When exploring different concepts and gathering
+                    initial feedback.</li>
+                <li><span class="important">Iterative Design:</span> For quickly testing and iterating on different
+                    ideas.</li>
+                <li><span class="important">Limited Resources:</span> When time or budget is limited.</li>
+            </ul>
+
+            <h3>High-Fidelity Prototypes:</h3>
+            <ul>
+                <li><span class="important">Detailed Testing:</span> For evaluating specific interactions and usability
+                    issues.</li>
+                <li><span class="important">Stakeholder Presentation:</span> To present the final design to stakeholders
+                    and obtain approval.</li>
+                <li><span class="important">User Testing:</span> For conducting in-depth usability tests with potential
+                    users.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Real-World Application</h2>
+            <p>Prototyping is essential across various design domains. Here’s how low-fidelity and high-fidelity
+                prototypes are applied in real-world scenarios:</p>
+
+            <h3>Mobile App Design:</h3>
+            <p>Low-fidelity prototypes can be used to test the overall layout and structure of an app, while
+                high-fidelity prototypes can be used to evaluate specific interactions, such as swiping, tapping, and
+                scrolling.</p>
+
+            <h3>Website Design:</h3>
+            <p>Low-fidelity prototypes can be used to test the navigation and information architecture of a website,
+                while high-fidelity prototypes can be used to evaluate the visual design and user experience.</p>
+
+            <h3>Product Design:</h3>
+            <p>Low-fidelity prototypes can be used to explore different design concepts, while high-fidelity prototypes
+                can be used to test the product's functionality and usability.</p>
+
+            <p>By utilizing both low-fidelity and high-fidelity prototypes throughout the design process, teams can
+                ensure that their products meet user needs and are both functional and visually appealing. This approach
+                facilitates better communication among team members and with stakeholders, ultimately leading to more
+                successful design outcomes.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

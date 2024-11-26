@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Border with Video</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 10px;
+            /* Adjust padding to create space between video and border */
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            /* Gradient color */
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            /* Rounded corners inside gradient */
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+        }
+
+        /* Make the video responsive */
+        @media (min-width: 1200px) {
+            .video-content {
+                width: 800px;
+            }
+        }
+
+        @media (max-width: 1200px) and (min-width: 768px) {
+            .video-content {
+                width: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-content {
+                width: 100%;
+                /* Takes full width for small screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Learn more<h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

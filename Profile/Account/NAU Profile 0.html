@@ -1,4 +1,6 @@
-<html><head>
+<html>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
@@ -50,8 +52,7 @@
             z-index: 1;
         }
 
-        .profile-content .section 
-        .profile-content .activities {
+        .profile-content .section .profile-content .activities {
             margin-bottom: 20px;
         }
 
@@ -61,8 +62,7 @@
             margin-bottom: 20px;
         }
 
-        .profile-content .section p 
-        .profile-content .activities p {
+        .profile-content .section p .profile-content .activities p {
             font-size: 16px;
             margin: 0;
             line-height: 1.6;
@@ -82,15 +82,16 @@
             width: calc(50% - 15px);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+
         .profile-content .activities ul {
             list-style: none;
             padding: 0;
         }
+
         .profile-content .courses .course-card h3 {
             margin-top: 0;
         }
-        
+
         .profile-content .activities ul li {
             background: #f9f9f9;
             padding: 10px;
@@ -106,6 +107,7 @@
         .profile-content .courses .course-card a:hover {
             text-decoration: underline;
         }
+
         .edit-button {
             display: inline-block;
             background: #333;
@@ -115,14 +117,16 @@
             text-decoration: none;
             margin-top: 10px;
         }
+
         .edit-button:hover {
             background: #555;
         }
     </style>
 </head>
+
 <body>
     <header>
-        <div class="logo">NAU</div>
+        <div class="logo">NAS</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -139,13 +143,16 @@
         <div class="profile-header">
             <img src="profile-pic.jpg" alt="Profile Picture">
             <h1>John Doe</h1>
-            <p class="bio">Aspiring Data Scientist and Enthusiast of Machine Learning. Currently exploring AI for business applications.</p>
+            <p class="bio">Aspiring Data Scientist and Enthusiast of Machine Learning. Currently exploring AI for
+                business applications.</p>
         </div>
 
         <div class="profile-content">
             <div class="section">
                 <h2>About Me</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec risus vel felis laoreet bibendum. Vivamus ultricies, odio et cursus egestas, arcu elit fermentum mi, ut vulputate lacus ligula ut libero.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec risus vel felis laoreet bibendum.
+                    Vivamus ultricies, odio et cursus egestas, arcu elit fermentum mi, ut vulputate lacus ligula ut
+                    libero.</p>
             </div>
 
             <div class="section">
@@ -168,78 +175,83 @@
             <div class="section">
                 <h2>Recent Activities</h2>
                 <p>Details about recent activities, achievements, or milestones.</p>
-            <ul>
-                <li>Completed Module 4 of Data Analysis</li>
-                <li>Participated in Web Dev Workshop</li>
-                <li>Submitted Project for Python Programming</li>
-            </ul>
+                <ul>
+                    <li>Completed Module 4 of Data Analysis</li>
+                    <li>Participated in Web Dev Workshop</li>
+                    <li>Submitted Project for Python Programming</li>
+                </ul>
             </div>
             <a href="edit-profile.html" class="edit-button">Edit Profile</a>
         </div>
     </main>
-        
+
     </div>
     <footer>
-        <p>© 2024 New Age University. All rights reserved.</p>
+        <p>© 2024 New Age Skillsphere. All rights reserved.</p>
     </footer>
 
 
 
-<style id="dcoder_stylesheet">/* Global Styles for Sign-Up Page */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+    <style id="dcoder_stylesheet">
+        /* Global Styles for Sign-Up Page */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-}
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
 
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
 
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-footer {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-}
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
 
-footer p {
-    margin: 0;
-}
-</style><script id="dcoder_script">// script.js
+        footer p {
+            margin: 0;
+        }
+    </style>
+    <script id="dcoder_script">// script.js
 
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const toggleBtn = document.querySelector('.toggle-btn');
-    
-    if (sidebar.style.width === '0px' || sidebar.style.width === '') {
-        sidebar.style.width = '250px';
-        toggleBtn.innerHTML = '&#9664;'; // Left arrow
-    } else {
-        sidebar.style.width = '0';
-        toggleBtn.innerHTML = '&#9654;'; // Right arrow
-    }
-}
-</script></body></html>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const toggleBtn = document.querySelector('.toggle-btn');
+
+            if (sidebar.style.width === '0px' || sidebar.style.width === '') {
+                sidebar.style.width = '250px';
+                toggleBtn.innerHTML = '&#9664;'; // Left arrow
+            } else {
+                sidebar.style.width = '0';
+                toggleBtn.innerHTML = '&#9654;'; // Right arrow
+            }
+        }
+    </script>
+</body>
+
+</html>

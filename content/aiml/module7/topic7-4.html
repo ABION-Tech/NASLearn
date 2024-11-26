@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7: Deep Learning and Neural Networks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #0d6efd;
+            /* Bootstrap primary blue */
+        }
+
+        .content-section {
+            padding: 20px;
+            margin: 10px 0;
+            border-left: 4px solid #0d6efd;
+            /* Blue accent */
+        }
+
+        .content-section h3 {
+            margin-top: 0;
+        }
+
+        .important {
+            font-weight: bold;
+            color: #0d6efd;
+            /* Highlight important concepts */
+        }
+
+        .list-group-item {
+            background-color: #f8f9fa;
+            /* Light background for list items */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="content-section">
+            <h1>Week 7: Deep Learning and Neural Networks</h1>
+            <h2>Training Neural Networks: Backpropagation and Optimization</h2>
+            <p><strong>Training</strong> is the process of teaching a neural network to learn patterns and relationships
+                in the data. It involves repeatedly feeding the data through the network and updating the weights and
+                biases to minimize the error.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>1. Backpropagation</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="important">Chain rule:</span> The chain rule is used to calculate the gradients of the
+                    loss function with respect to the weights and biases.
+                </li>
+                <li class="list-group-item">
+                    <span class="important">Error propagation:</span> The error is propagated backward through the
+                    network, starting from the output layer and moving to the input layer.
+                </li>
+                <li class="list-group-item">
+                    <span class="important">Weight update:</span> The weights and biases are updated using gradient
+                    descent or a variant of it.
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>2. Optimization Algorithms</h3>
+            <p>Optimization algorithms play a crucial role in training neural networks by adjusting weights based on the
+                error gradient. Here are the key algorithms:</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="important">Gradient descent:</span> The most basic optimization algorithm, which
+                    updates the weights and biases in the direction of the steepest descent of the loss function.
+                </li>
+                <li class="list-group-item">
+                    <span class="important">Stochastic gradient descent (SGD):</span> A variant of gradient descent that
+                    updates the weights and biases using a single data point at a time, instead of the entire dataset.
+                </li>
+                <li class="list-group-item">
+                    <span class="important">Mini-batch gradient descent:</span> Updates the weights and biases using a
+                    small batch of data points.
+                </li>
+                <li class="list-group-item">
+                    <span class="important">Adaptive optimization algorithms:</span> Algorithms that adjust the learning
+                    rate during training, such as Adam and RMSprop.
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>3. Learning Rate</h3>
+            <p>
+                The learning rate is the step size used to update the weights and biases during training. A well-chosen
+                learning rate is crucial for effective training. Here’s how to approach it:
+            </p>
+            <ul class="list-group">
+                <li class="list-group-item">Experiment with different learning rates to find the optimal value.</li>
+                <li class="list-group-item">A learning rate that is too high can lead to overshooting the minimum, while
+                    a rate that is too low can slow down convergence.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>4. Batch Size</h3>
+            <p>
+                The batch size refers to the number of data points used to update the weights and biases in each
+                iteration. Consider the following:
+            </p>
+            <ul class="list-group">
+                <li class="list-group-item">A larger batch size can reduce noise and improve convergence.</li>
+                <li class="list-group-item">However, larger batches are computationally expensive and can lead to poorer
+                    generalization.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>5. Epochs</h3>
+            <p>
+                An epoch represents one complete pass through the entire training dataset. The number of epochs needed
+                varies based on:
+            </p>
+            <ul class="list-group">
+                <li class="list-group-item">The complexity of the problem being solved.</li>
+                <li class="list-group-item">The desired level of accuracy; overfitting can occur if too many epochs are
+                    used.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>6. Regularization</h3>
+            <p>
+                Regularization techniques are vital for preventing overfitting. Common methods include:
+            </p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="important">L1 regularization (Lasso):</span> Adds a penalty term to the loss function
+                    proportional to the absolute value of the weights.
+                </li>
+                <li class="list-group-item">
+                    <span class="important">L2 regularization (Ridge):</span> Adds a penalty term proportional to the
+                    squared magnitude of the weights, effectively shrinking them.
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>7. Early Stopping</h3>
+            <p>
+                Early stopping is a method used to prevent overfitting by:
+            </p>
+            <ul class="list-group">
+                <li class="list-group-item">Monitoring the performance of the model on a validation set.</li>
+                <li class="list-group-item">Stopping training when performance starts to deteriorate, indicating that
+                    the model has begun to overfit the training data.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>Conclusion</h3>
+            <p>
+                By understanding the principles of backpropagation, optimization algorithms, learning rates, batch
+                sizes, epochs, regularization, and early stopping, you can effectively train neural networks and achieve
+                good performance on various tasks. Each of these elements plays a critical role in the successful
+                implementation of deep learning models, ensuring that they can learn and generalize well from the data.
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

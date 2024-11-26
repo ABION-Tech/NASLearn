@@ -1,342 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAU Course Page</title>
-    
+    <title>NAS Course Page</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-   /* General styles */
-   header{
-    z-index: 1800 !important;
-  }
-  .header {
-    display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space out the logo and the navbar */
-}
+    <style>
+        /* General styles */
+        header {
+            z-index: 1800 !important;
+        }
 
-/* Basic styles for header */
-#header {
-    display: flex;
-    justify-content: space-between; /* Space between logo and navbar */
-    align-items: center; /* Vertically center items */
-    padding: 20px; /* Padding around the header */
-    background-color: #333; /* Background color */
-    color: #fff; /* Text color */
-}
+        .header {
+            display: flex;
+            align-items: center;
+            /* Center items vertically */
+            justify-content: space-between;
+            /* Space out the logo and the navbar */
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: white;
-    color: black;
-}
+        /* Basic styles for header */
+        #header {
+            display: flex;
+            justify-content: space-between;
+            /* Space between logo and navbar */
+            align-items: center;
+            /* Vertically center items */
+            padding: 20px;
+            /* Padding around the header */
+            background-color: #333;
+            /* Background color */
+            color: #fff;
+            /* Text color */
+        }
 
-/* Header styles */
-.navbar {
-    background-color: white !important;
-    border-bottom: 2px solid black;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: white;
+            color: black;
+        }
+
+        /* Header styles */
+        .navbar {
+            background-color: white !important;
+            border-bottom: 2px solid black;
+        }
 
 
-/* Navbar styles */
-.navbar ul {
-    display: flex; /* Horizontal layout for navbar items */
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-}
+        /* Navbar styles */
+        .navbar ul {
+            display: flex;
+            /* Horizontal layout for navbar items */
+            list-style: none;
+            /* Remove bullet points */
+            padding: 0;
+            /* Remove default padding */
+            margin: 0;
+            /* Remove default margin */
+        }
 
-/* Navbar item styles */
-.navbar li {
-    margin: 0 15px; /* Space between items */
-}
+        /* Navbar item styles */
+        .navbar li {
+            margin: 0 15px;
+            /* Space between items */
+        }
 
-/* Navbar link styles */
-.navbar a {
-    color: rgb(8, 8, 8); /* Link color */
-    text-decoration: none; /* Remove underline */
-}
+        /* Navbar link styles */
+        .navbar a {
+            color: rgb(8, 8, 8);
+            /* Link color */
+            text-decoration: none;
+            /* Remove underline */
+        }
 
-/* Mobile menu toggle styles */
-.menu-toggle {
-    display: none; /* Hide toggle by default */
-    flex-direction: column; /* Vertical layout */
-    cursor: pointer; /* Pointer on hover */
-}
+        /* Mobile menu toggle styles */
+        .menu-toggle {
+            display: none;
+            /* Hide toggle by default */
+            flex-direction: column;
+            /* Vertical layout */
+            cursor: pointer;
+            /* Pointer on hover */
+        }
 
-.navbar-toggler {
-    flex: 0 0 10%;
-}
+        .navbar-toggler {
+            flex: 0 0 10%;
+        }
 
-.bar {
-    height: 3px; /* Height of the bar */
-    width: 25px; /* Width of the bar */
-    background-color: rgb(8, 8, 8); /* Bar color */
-    margin: 3px 0; /* Space between bars */
-}
-.navbar-brand {
-    flex: 0 0 10%;
-}
+        .bar {
+            height: 3px;
+            /* Height of the bar */
+            width: 25px;
+            /* Width of the bar */
+            background-color: rgb(8, 8, 8);
+            /* Bar color */
+            margin: 3px 0;
+            /* Space between bars */
+        }
 
-.navbar-brand img {
-    height: 70px;
-}
+        .navbar-brand {
+            flex: 0 0 10%;
+        }
 
-#courseTitle {
-    color: black;
-    font-size: 40px; /* Adjust as necessary for larger screens */
-}
+        .navbar-brand img {
+            height: 70px;
+        }
 
-#courseTitleAbbr {
-    font-size: 32px; /* Adjust as necessary for mobile screens */
-    display: none; /* Hide by default */
-    color: black;
-    flex-grow: 0 0 80%; /* Allow the text to take up available space */
-    text-align: center; /* Center the abbreviation text */
-}
+        #courseTitle {
+            color: black;
+            font-size: 40px;
+            /* Adjust as necessary for larger screens */
+        }
 
-/* Notification icon and badge */
-.notification-icon {
-    position: relative;
-    cursor: pointer;
-    font-size: 2.5;
-}
+        #courseTitleAbbr {
+            font-size: 32px;
+            /* Adjust as necessary for mobile screens */
+            display: none;
+            /* Hide by default */
+            color: black;
+            flex-grow: 0 0 80%;
+            /* Allow the text to take up available space */
+            text-align: center;
+            /* Center the abbreviation text */
+        }
 
-#notificationCount {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.75rem;
-    line-height: 1; /* Ensure it aligns well */
-}
+        /* Notification icon and badge */
+        .notification-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 2.5;
+        }
 
-/* Wrapper for main content and sidebar */
-.wrapper {
-    display: flex;
-    flex: 1;
-    margin-top: 76px; /* Adjust based on your header height */
-}
+        #notificationCount {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            line-height: 1;
+            /* Ensure it aligns well */
+        }
 
-/* Sidebar styles */
-#sidebar {
-    min-width: 300px;
-    width: 250px;
-    background-color: #f8f9fa;
-    border-right: 1px solid #dee2e6;
-    padding: 20px;
-    overflow-y: auto;
-    height: calc(100vh - 50px - 10px); /* Adjust based on header and footer height */
-    position: fixed;
-    left: 0;  /* Keep left at 0 to prevent negative positioning issues */
-    top: 90px; /* Align with bottom of header */
-    bottom: 50px;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
-    z-index: 1000 !important; /* High z-index to ensure it's on top of the content */
-    padding-bottom: 100px; 
-    box-sizing: border-box;
-}
+        /* Wrapper for main content and sidebar */
+        .wrapper {
+            display: flex;
+            flex: 1;
+            margin-top: 76px;
+            /* Adjust based on your header height */
+        }
 
-#sidebar.collapsed {
-    transform: translateX(-300px); /* Move sidebar off-screen when collapsed */
-    opacity: 0; 
-}
+        /* Sidebar styles */
+        #sidebar {
+            min-width: 300px;
+            width: 250px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            padding: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 50px - 10px);
+            /* Adjust based on header and footer height */
+            position: fixed;
+            left: 0;
+            /* Keep left at 0 to prevent negative positioning issues */
+            top: 90px;
+            /* Align with bottom of header */
+            bottom: 50px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            /* Smooth transition */
+            z-index: 1000 !important;
+            /* High z-index to ensure it's on top of the content */
+            padding-bottom: 100px;
+            box-sizing: border-box;
+        }
 
-#sidebar h2 {
-    color: black;
-}
-.module-header {
-    font-size: 24px;
-    font-weight: bold;
-    background-color: #f8f9fa; /* Light grey background */
-    padding: 10px;
-    border-bottom: 2px solid #dee2e6; /* Add a bottom border */
-    color: #333; /* Darker text for visibility */
-    text-align: center;
-}
+        #sidebar.collapsed {
+            transform: translateX(-300px);
+            /* Move sidebar off-screen when collapsed */
+            opacity: 0;
+        }
 
-.module-list {
-    padding-left: 0;
-    font-size: 14px;
-    padding-bottom: 100px;
-}
+        #sidebar h2 {
+            color: black;
+        }
 
-.module-item {
-    background-color: #ffffff; /* White background for card effect */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 7px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.module-item:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-}
-/* Active Module */
-.module-item.active {
-    background-color: #f0f4ff; /* Light blue background for active module */
-}
+        .module-header {
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #f8f9fa;
+            /* Light grey background */
+            padding: 10px;
+            border-bottom: 2px solid #dee2e6;
+            /* Add a bottom border */
+            color: #333;
+            /* Darker text for visibility */
+            text-align: center;
+        }
 
-.module-title {
-    cursor: pointer;
-    font-weight: bold;
-    color: #007bff; /* Blue text to match a primary theme */
-}
+        .module-list {
+            padding-left: 0;
+            font-size: 14px;
+            padding-bottom: 100px;
+        }
 
-.module-header{
-    font-size: 24px;
-}
+        .module-item {
+            background-color: #ffffff;
+            /* White background for card effect */
+            border-radius: 8px;
+            /* Rounded corners */
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+            padding: 7px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.topic-list {
-    display: none;
-    padding-left: 20px;
-    font-size: 13px;
-}
+        .module-item:hover {
+            transform: translateY(-5px);
+            /* Lift effect on hover */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            /* Stronger shadow on hover */
+        }
 
-.topic-item {
-    cursor: pointer;
-}
-.module-title:last-child,
-.topic-list:last-child {
-    margin-bottom: 5px; /* Add margin below the last item */
-}
+        /* Active Module */
+        .module-item.active {
+            background-color: #f0f4ff;
+            /* Light blue background for active module */
+        }
 
-/* Main content area */
-#main-content {
-    flex: 1;
-    padding: 20px;
-    transition: margin-left 0.3s ease, width 0.3s ease;
-    width: 100%;
-    margin-left: 250px; /* Start with space for the sidebar */
-    width: calc(100% - 250px); /* Start with reduced width to accommodate sidebar */
-}
+        .module-title {
+            cursor: pointer;
+            font-weight: bold;
+            color: #007bff;
+            /* Blue text to match a primary theme */
+        }
 
-#main-content.expanded {
-    transform: translateX(0); /* Shift back to full screen when the sidebar is hidden */
-    width: 100%; /* Ensure it takes up the whole width */
-}
+        .module-header {
+            font-size: 24px;
+        }
 
-#main-content.full {
-    margin-left: 0; /* Full width when sidebar is hidden */
-    width: 100%; /* Ensure it takes up the whole space */
-}
-/* Footer styles */
-footer {
-    background-color: #f8f9fa;
-    text-align: center;
-    padding: 10px;
-    border-top: 1px solid #dee2e6;
-    position: relative; /* Ensure it stays in its place */
-    z-index: 1500; /* Make sure footer is below the sidebar */
-}
-/* Toggle button styles */
-#toggle-btn {
-    position: fixed;
-    left: 10px;
-    top: 67px;
-    z-index: 1100; /* Highest z-index to be on top of everything */
-    background-color: black;
-    border-radius: 5px;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 10px;
-}
+        .topic-list {
+            display: none;
+            padding-left: 20px;
+            font-size: 13px;
+        }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    #main-content {
-        margin-left: 0;
-    }
-    .navbar ul {
-        display: none; /* Hide navbar by default on mobile */
-        flex-direction: column; /* Stack items vertically */
-        width: 100%; /* Full width for dropdown */
-        background-color: #333; /* Background color */
-        position: absolute; /* Position relative to the header */
-        top: 60px; /* Position below the header */
-        left: 0; /* Align to the left */
-        padding: 10px 0; /* Padding for dropdown */
-    }
+        .topic-item {
+            cursor: pointer;
+            background-color: #f7f5f5;
+            /* White background for card effect */
+            border-radius: 8px;
+            /* Rounded corners */
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow */
+            padding: 5px;
+            margin-bottom: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .navbar ul.active {
-        display: flex; /* Show navbar when active */
-    }
 
-    .menu-toggle {
-        display: flex; /* Show toggle button on mobile */
-    }
-    #courseTitle {
-        display: none; /* Hide full title on mobile */
-    }
+        .topic-item:hover {
+            transform: translateY(-5px);
+            /* Lift effect on hover */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            /* Stronger shadow on hover */
+        }
 
-    #courseTitleAbbr {
-        display: block; /* Show abbreviation on mobile */
-        font-size: 32px;
-        font-weight: bold;
-    }
-    .navbar-brand{
-        padding-right: 0%;
-        margin-left: 0%;
-    }
-}
 
-/* Ensure main content is a single column */
-#main-content > * {
-    max-width: 100%;
-}
+        .module-title:last-child,
+        .topic-list:last-child {
+            margin-bottom: 5px;
+            /* Add margin below the last item */
+        }
 
-/* Modal styles */
-.modal-content {
-    background-color: white;
-    color: black;
-}
+        /* Main content area */
+        #main-content {
+            flex: 1;
+            padding: 20px;
+            transition: margin-left 0.3s ease, width 0.3s ease;
+            width: 100%;
+            margin-left: 250px;
+            /* Start with space for the sidebar */
+            width: calc(100% - 250px);
+            /* Start with reduced width to accommodate sidebar */
+        }
 
-.modal-header {
-    background-color: black;
-    color: white;
-}
+        #main-content.expanded {
+            transform: translateX(0);
+            /* Shift back to full screen when the sidebar is hidden */
+            width: 100%;
+            /* Ensure it takes up the whole width */
+        }
 
-.btn-primary {
-    background-color: black;
-    border-color: black;
-}
+        #main-content.full {
+            margin-left: 0;
+            /* Full width when sidebar is hidden */
+            width: 100%;
+            /* Ensure it takes up the whole space */
+        }
 
-.btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
-        </style>
-    </head>
-    
+        /* Footer styles */
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #dee2e6;
+            position: relative;
+            /* Ensure it stays in its place */
+            z-index: 1500;
+            /* Make sure footer is below the sidebar */
+        }
+
+        /* Toggle button styles */
+        #toggle-btn {
+            position: fixed;
+            left: 10px;
+            top: 67px;
+            z-index: 1100;
+            /* Highest z-index to be on top of everything */
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            #main-content {
+                margin-left: 0;
+            }
+
+            .navbar ul {
+                display: none;
+                /* Hide navbar by default on mobile */
+                flex-direction: column;
+                /* Stack items vertically */
+                width: 100%;
+                /* Full width for dropdown */
+                background-color: #333;
+                /* Background color */
+                position: absolute;
+                /* Position relative to the header */
+                top: 60px;
+                /* Position below the header */
+                left: 0;
+                /* Align to the left */
+                padding: 10px 0;
+                /* Padding for dropdown */
+            }
+
+            .navbar ul.active {
+                display: flex;
+                /* Show navbar when active */
+            }
+
+            .menu-toggle {
+                display: flex;
+                /* Show toggle button on mobile */
+            }
+
+            #courseTitle {
+                display: none;
+                /* Hide full title on mobile */
+            }
+
+            #courseTitleAbbr {
+                display: block;
+                /* Show abbreviation on mobile */
+                font-size: 32px;
+                font-weight: bold;
+            }
+
+            .navbar-brand {
+                padding-right: 0%;
+                margin-left: 0%;
+            }
+        }
+
+        /* Ensure main content is a single column */
+        #main-content>* {
+            max-width: 100%;
+        }
+
+        /* Modal styles */
+        .modal-content {
+            background-color: white;
+            color: black;
+        }
+
+        .modal-header {
+            background-color: black;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: black;
+            border-color: black;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+    </style>
+</head>
+
 <body>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid" class="header">
             <a class="navbar-brand" href="#">
-                <img src="../Assets/Images/NAU1.png" alt="NAU Logo" style="height: 70px;">
+                <img src="/learn/Assets/Images/NAU1.png" alt="NAS Logo" style="height: 70px;">
             </a>
             <h1 class="navbar-text d-none d-lg-block" id="courseTitle">Corporate Gorvenance</h1>
-            <h1 class="navbar-text d-lg-none" id="courseTitleAbbr">AI</h1> <!-- Abbreviation for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <h1 class="navbar-text d-lg-none" id="courseTitleAbbr">Governance</h1> <!-- Abbreviation for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/learn/components/student-dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="/learn/components/student-dashboard.html">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Learn</a></li>
                     <li class="nav-item"><a class="nav-link" href="/learn/login.html">Logout</a></li>
                     <li class="nav-item notification-icon" data-bs-toggle="modal" data-bs-target="#notificationModal">
@@ -346,7 +444,7 @@ footer {
                         <i class="fas fa-bell"></i> <!-- Your notification icon -->
                         <span id="notificationCount">3</span> <!-- Badge showing the count -->
                     </div>
-                    
+
                 </ul>
             </div>
         </div>
@@ -359,101 +457,218 @@ footer {
             <ul class="module-list list-unstyled">
                 <li class="module-item">
                     <div class="module-title" data-course="gov" data-module="Introduction">Introduction</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="gov" data-module="Introduction" data-topic="topic1-1">Topic 1.1: Overview</li>
-                    <li class="topic-item" data-course="gov" data-module="Introduction" data-topic="topic1-2">Topic 1.2: Getting Started</li>
-                </ul>
-            </li>
-        <li class="module-item">
-            <div class="module-title" data-course="gov" data-module="module1">Module 1: Basics</div>
-            <ul class="topic-list">
-                <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-1">Topic 1.1: HTML & CSS</li>
-                <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-2">Topic 1.2: JavaScript Basics</li>
-                <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-1">Topic 1.1: HTML & CSS</li>
-                <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-2">Topic 1.2: JavaScript Basics</li>
-                <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-1">Topic 1.1: HTML & CSS</li>
-                <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-2">Topic 1.2: JavaScript Basics</li>
-            </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="gov" data-module="module2">Module 2: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="gov" data-module="module3">Module 3: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>                    <li class="topic-item" data-module="module3" data-topic="topic2-2">Topic 2.2: Case Studies</li>                    <li class="topic-item" data-module="module3" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="gov" data-module="module4">Module 4: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="gov" data-module="module5">Module 5: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="gov" data-module="module6">Module 6: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-2">Topic 2.2: Case Studies</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="gov" data-module="module7">Module 7: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="gov" data-module="module8">Module 8: Advanced Concepts</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="gov" data-module="module8" data-topic="topic8-1">Topic 2.1: Deep Dive</li>
-                    <li class="topic-item" data-course="gov" data-module="module8" data-topic="topic8-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-course="gov" data-module="module8" data-topic="topic8-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
-            <li class="module-item">
-                <div class="module-title" data-course="gov" data-module="resources">Resources</div>
-                <ul class="topic-list">
-                    <li class="topic-item" data-course="gov" data-module="resources" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
-                </ul>
-            </li>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="Introduction" data-topic="topic1-1">
+                            1.1: Overview</li>
+                        <li class="topic-item" data-course="gov" data-module="Introduction" data-topic="topic1-2">
+                            1.2: Getting Started</li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module1">Module 1: Web Dev Basics</div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-1">1.1:
+                            Intro to Web Dev</li>
+                        <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-2">1.2:
+                            Front-End vs Back-End</li>
+                        <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-3">1.3:
+                            Development Environment</li>
+                        <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-4">1.4:
+                            HTML Basics</li>
+                        <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-5">1.5:
+                            Introduction to CSS</li>
+                        <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-6">1.6:
+                            JavaScript Basics</li>
+                        <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-7">1.7:
+                            Hands-On Practice</li>
+                        <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-8">
+                            Conclusion</li>
+                        <li class="topic-item" data-course="gov" data-module="module1" data-topic="topic1-9"> Weekly
+                            Quiz</li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module2">Module 2: Intro to CSS and
+                        Responsive Web Design</div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-1">2.1:
+                            Understanding CSS</li>
+                        <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-2">2.2:
+                            Styling Text and Fonts</li>
+                        <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-3">2.3: CSS
+                            Box Model</li>
+                        <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-4">2.4: CSS
+                            Layout Techniques</li>
+                        <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-5">2.5:
+                            Responsive Web Design</li>
+                        <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-6">2.6:
+                            Hands-On Practice</li>
+                        <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-7">
+                            Conclusion</li>
+                        <li class="topic-item" data-course="gov" data-module="module2" data-topic="topic2-8"> Weekly
+                            Quiz</li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module3">Module 3: Advance HTML and CSS
+                    </div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-1">3.1:
+                            Advance HTML</li>
+                        <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-2">3.2:
+                            HTML Frameworks & library</li>
+                        <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-3">3.3:
+                            Advance CSS</li>
+                        <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-4">3.4: CSS
+                            Frameworks & library</li>
+                        <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-5">3.5:
+                            Bootstrap</li>
+                        <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-6">3.6:
+                            Hands-On Practice</li>
+                        <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-7">
+                            Conclusion</li>
+                        <li class="topic-item" data-course="gov" data-module="module3" data-topic="topic3-8"> Weekly
+                            Quiz</li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module4">Module 4: JavaScript</div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-1">4.1:
+                            Understanding JavaScript</li>
+                        <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-2">4.2:
+                            JavaScript Syntax and Basics</li>
+                        <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-3">4.3:
+                            Functions</li>
+                        <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-4">4.4: The
+                            Document Object Model (DOM)</li>
+                        <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-5">4.5:
+                            Events in JavaScript</li>
+                        <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-6">4.6:
+                            Hands-On Practice</li>
+                        <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-7">
+                            Conclusion</li>
+                        <li class="topic-item" data-course="gov" data-module="module4" data-topic="topic4-8"> Weekly
+                            Quiz</li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module5">Module 5: Advanced JavaScript
+                        and Front-End Libraries</div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-1">5.1:
+                            Advanced JavaScript Concepts</li>
+                        <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-2">5.2: JS
+                            Frameworks & library</li>
+                        <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-3">5.3:
+                            Introduction to jQuery</li>
+                        <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-4">5.4:
+                            Introduction to React</li>
+                        <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-5">5.5:
+                            Hands-On Practice</li>
+                        <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-6">
+                            Conclusion</li>
+                        <li class="topic-item" data-course="gov" data-module="module5" data-topic="topic5-7"> Weekly
+                            Quiz</li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module6">Module 6: Introduction to
+                        Back-End Development</div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-1">6.1:
+                            Overview of Back-End Dev</li>
+                        <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-2">6.2:
+                            Setting Up a Server</li>
+                        <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-3">6.3:
+                            Working with Databases</li>
+                        <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-4">6.4:
+                            Hands-On Practice</li>
+                        <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-5">
+                            Conclusion</li>
+                        <li class="topic-item" data-course="gov" data-module="module6" data-topic="topic6-6"> Weekly
+                            Quiz</li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module7">Module 7: Advanced Back-End
+                        Development</div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-1">7.1:
+                            User Authentication</li>
+                        <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-2">7.2:
+                            RESTful API Development</li>
+                        <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-3">7.1:
+                            Error Handling and Security</li>
+                        <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-4">7.2:
+                            Testing and Debugging</li>
+                        <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-5">7.1:
+                            Deployment and Environment Config</li>
+                        <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-6">7.2:
+                            Hands-On Practice</li>
+                        <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-7">
+                            Conclusion</li>
+                        <li class="topic-item" data-course="gov" data-module="module7" data-topic="topic7-8"> Weekly
+                            Quiz</li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module8">Module 8: Full-Stack
+                        Development</div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module8" data-topic="topic8-1">8.1:
+                            Integrating Front-End and Back-End</li>
+                        <li class="topic-item" data-course="gov" data-module="module8" data-topic="topic8-2">8.2:
+                            Deployment</li>
+                        <li class="topic-item" data-course="gov" data-module="module8" data-topic="topic8-3">8.3:
+                            Version Control with Git</li>
+                        <li class="topic-item" data-course="gov" data-module="module8" data-topic="topic8-4">8.4:
+                            Hands-On Practice</li>
+                        <li class="topic-item" data-course="gov" data-module="module8" data-topic="topic8-5">
+                            Conclusion</li>
+                        <li class="topic-item" data-course="gov" data-module="module8" data-topic="topic8-6"> Weekly
+                            Quiz
+                        <li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module9">Module 9: Advanced Concepts
+                    </div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module9" data-topic="topic9-1">9.1:
+                            Deep Dive</li>
+                        <li class="topic-item" data-course="gov" data-module="module9" data-topic="topic9-2">9.2:
+                            Case Studies</li>
+                        <li class="topic-item" data-course="gov" data-module="module9" data-topic="topic9-3">9.1:
+                            Deep Dive</li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module10">Module 10: Captsone Project
+                    </div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module10" data-topic="topic10-1">10.1:
+                            Project Development</li>
+                        <li class="topic-item" data-course="gov" data-module="module10" data-topic="topic10-2">10.2:
+                            Project Presentation and Review</li>
+                        <li class="topic-item" data-course="gov" data-module="module10" data-topic="topic10-3">10.3:
+                            Final Review and Next Steps</li>
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="module11">Congratulations</div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="module11" data-topic="topic11-1">
+                            Congratulatory-message
+                    </ul>
+                </li>
+                <li class="module-item">
+                    <div class="module-title" data-course="gov" data-module="resources">Resources</div>
+                    <ul class="topic-list">
+                        <li class="topic-item" data-course="gov" data-module="resources" data-topic="resource1-1">
+                            Additional Resources
+                    </ul>
+                </li>
                 <!-- Add more modules here -->
             </ul>
         </aside>
@@ -470,11 +685,12 @@ footer {
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 NAU. All rights reserved.</p>
+        <p>&copy; 2024 NAS. All rights reserved.</p>
     </footer>
 
     <!-- Notification Modal -->
-    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -496,167 +712,168 @@ footer {
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const sidebar = document.getElementById('sidebar');
-    const toggleBtn = document.getElementById('toggle-btn');
-    const mainContent = document.getElementById('main-content');
-    const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
-    const notificationCount = document.getElementById('notificationCount');
-    const notificationList = document.getElementById('notificationList');
-    const clearNotificationsBtn = document.getElementById('clearNotifications');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.getElementById('sidebar');
+            const toggleBtn = document.getElementById('toggle-btn');
+            const mainContent = document.getElementById('main-content');
+            const notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
+            const notificationCount = document.getElementById('notificationCount');
+            const notificationList = document.getElementById('notificationList');
+            const clearNotificationsBtn = document.getElementById('clearNotifications');
 
 
-    function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        const mainContent = document.getElementById('main-content');
-        
-        sidebar.classList.toggle('collapsed');
-        if (sidebar.classList.contains('collapsed')) {
-            mainContent.classList.remove('shifted');
-            mainContent.classList.add('full');
-        } else {
-            mainContent.classList.remove('full');
-            mainContent.classList.add('shifted');
-        }
-    }
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const mainContent = document.getElementById('main-content');
 
-    // Toggle sidebar
-    toggleBtn.addEventListener('click', function () {
-        // Toggle sidebar visibility
-        sidebar.classList.toggle('collapsed');
-        mainContent.classList.toggle('expanded');
-        
-        // Update toggle button icon
-        this.textContent = sidebar.classList.contains('collapsed') ? '☰' : '☰';
-
-        // Adjust sidebar for small screens
-        if (!sidebar.classList.contains('collapsed')) {
-            sidebar.style.transform = 'translateX(0)';
-            sidebar.style.zIndex = '1050'; // Ensure it's above other content
-        } else {
-            sidebar.style.transform = 'translateX(-100%)';
-        }
-    });
-
-    // Handle responsive sidebar on window resize
-    function handleResponsiveSidebar() {
-        if (window.innerWidth <= 768) {
-            sidebar.classList.add('collapsed');
-            mainContent.classList.add('expanded');
-            toggleBtn.textContent = '☰';
-        } else {
-            sidebar.classList.remove('collapsed');
-            mainContent.classList.remove('expanded');
-            toggleBtn.textContent = '☰';
-        }
-    }
-
-    handleResponsiveSidebar();
-    window.addEventListener('resize', handleResponsiveSidebar);
-
-    // Toggle module topics
-    document.querySelectorAll('.module-title').forEach(moduleTitle => {
-        moduleTitle.addEventListener('click', function () {
-            const parentModule = this.parentElement;
-            const topicsList = parentModule.querySelector('.topic-list');
-
-            if (topicsList) {
-                // Toggle visibility of topics list
-                if (topicsList.style.display === 'none' || topicsList.style.display === '') {
-                    topicsList.style.display = 'block';
+                sidebar.classList.toggle('collapsed');
+                if (sidebar.classList.contains('collapsed')) {
+                    mainContent.classList.remove('shifted');
+                    mainContent.classList.add('full');
                 } else {
-                    topicsList.style.display = 'none';
-                }
-                // Toggle arrow icon
-                const arrow = this.querySelector('.arrow');
-                if (arrow) {
-                    arrow.classList.toggle('down');
+                    mainContent.classList.remove('full');
+                    mainContent.classList.add('shifted');
                 }
             }
 
-            // Toggle active class for parent module
-            parentModule.classList.toggle('active');
-        });
-    });
+            // Toggle sidebar
+            toggleBtn.addEventListener('click', function () {
+                // Toggle sidebar visibility
+                sidebar.classList.toggle('collapsed');
+                mainContent.classList.toggle('expanded');
 
-    // Load content when a topic is clicked
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('topic-item')) {
-            e.preventDefault();
-            const course = e.target.getAttribute('data-course');
-            const module = e.target.getAttribute('data-module');
-            const topic = e.target.getAttribute('data-topic');
-            loadContent(course, module, topic);
+                // Update toggle button icon
+                this.textContent = sidebar.classList.contains('collapsed') ? '☰' : '☰';
 
-            // Close sidebar on mobile after selecting a topic
-            if (window.innerWidth <= 768) {
-                sidebar.classList.add('collapsed');
-                mainContent.classList.add('expanded');
-                toggleBtn.textContent = '☰';
-                sidebar.style.transform = 'translateX(-100%)';
-            }
-        }
-    });
-
-    function loadContent(course, module, topic) {
-        const filePath = `content/${course}/${module}/${topic}.html`;
-        fetch(filePath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to load content');
+                // Adjust sidebar for small screens
+                if (!sidebar.classList.contains('collapsed')) {
+                    sidebar.style.transform = 'translateX(0)';
+                    sidebar.style.zIndex = '1050'; // Ensure it's above other content
+                } else {
+                    sidebar.style.transform = 'translateX(-100%)';
                 }
-                return response.text();
-            })
-            .then(data => {
-                mainContent.innerHTML = data;
-            })
-            .catch(error => {
-                mainContent.innerHTML = `
+            });
+
+            // Handle responsive sidebar on window resize
+            function handleResponsiveSidebar() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.add('collapsed');
+                    mainContent.classList.add('expanded');
+                    toggleBtn.textContent = '☰';
+                } else {
+                    sidebar.classList.remove('collapsed');
+                    mainContent.classList.remove('expanded');
+                    toggleBtn.textContent = '☰';
+                }
+            }
+
+            handleResponsiveSidebar();
+            window.addEventListener('resize', handleResponsiveSidebar);
+
+            // Toggle module topics
+            document.querySelectorAll('.module-title').forEach(moduleTitle => {
+                moduleTitle.addEventListener('click', function () {
+                    const parentModule = this.parentElement;
+                    const topicsList = parentModule.querySelector('.topic-list');
+
+                    if (topicsList) {
+                        // Toggle visibility of topics list
+                        if (topicsList.style.display === 'none' || topicsList.style.display === '') {
+                            topicsList.style.display = 'block';
+                        } else {
+                            topicsList.style.display = 'none';
+                        }
+                        // Toggle arrow icon
+                        const arrow = this.querySelector('.arrow');
+                        if (arrow) {
+                            arrow.classList.toggle('down');
+                        }
+                    }
+
+                    // Toggle active class for parent module
+                    parentModule.classList.toggle('active');
+                });
+            });
+
+            // Load content when a topic is clicked
+            document.addEventListener('click', function (e) {
+                if (e.target.classList.contains('topic-item')) {
+                    e.preventDefault();
+                    const course = e.target.getAttribute('data-course');
+                    const module = e.target.getAttribute('data-module');
+                    const topic = e.target.getAttribute('data-topic');
+                    loadContent(course, module, topic);
+
+                    // Close sidebar on mobile after selecting a topic
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.add('collapsed');
+                        mainContent.classList.add('expanded');
+                        toggleBtn.textContent = '☰';
+                        sidebar.style.transform = 'translateX(-100%)';
+                    }
+                }
+            });
+
+            function loadContent(course, module, topic) {
+                const filePath = `content/${course}/${module}/${topic}.html`;
+                fetch(filePath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to load content');
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        mainContent.innerHTML = data;
+                    })
+                    .catch(error => {
+                        mainContent.innerHTML = `
                     <h2>Error Loading Content</h2>
                     <p>We encountered an issue loading the content. Please try again later.</p>
                 `;
-                console.error('Error:', error);
+                        console.error('Error:', error);
+                    });
+
+                // Save last selected topic
+                localStorage.setItem('lastCourse', course);
+                localStorage.setItem('lastModule', module);
+                localStorage.setItem('lastTopic', topic);
+            }
+
+            // Handle notifications
+            document.querySelector('.notification-icon').addEventListener('click', checkNotifications);
+
+            function checkNotifications() {
+                // Simulated notifications
+                const notifications = [
+                    "New course available",
+                    "Assignment deadline approaching",
+                    "General announcement"
+                ];
+
+                notificationList.innerHTML = notifications.map(notification => `<li>${notification}</li>`).join('');
+                notificationCount.style.display = 'inline';
+                notificationCount.textContent = notifications.length;
+                notificationModal.show();
+            }
+
+            clearNotificationsBtn.addEventListener('click', function () {
+                notificationList.innerHTML = '';
+                notificationCount.style.display = 'none';
+                notificationModal.hide();
             });
 
-        // Save last selected topic
-        localStorage.setItem('lastCourse', course);
-        localStorage.setItem('lastModule', module);
-        localStorage.setItem('lastTopic', topic);
-    }
-
-    // Handle notifications
-    document.querySelector('.notification-icon').addEventListener('click', checkNotifications);
-
-    function checkNotifications() {
-        // Simulated notifications
-        const notifications = [
-            "New course available",
-            "Assignment deadline approaching",
-            "General announcement"
-        ];
-
-        notificationList.innerHTML = notifications.map(notification => `<li>${notification}</li>`).join('');
-        notificationCount.style.display = 'inline';
-        notificationCount.textContent = notifications.length;
-        notificationModal.show();
-    }
-
-    clearNotificationsBtn.addEventListener('click', function() {
-        notificationList.innerHTML = '';
-        notificationCount.style.display = 'none';
-        notificationModal.hide();
-    });
-
-    // Load last selected topic on page load
-    const lastCourse = localStorage.getItem('lastCourse');
-    const lastModule = localStorage.getItem('lastModule');
-    const lastTopic = localStorage.getItem('lastTopic');
-    if (lastCourse && lastModule && lastTopic) {
-        loadContent(lastCourse, lastModule, lastTopic);
-    }
-});
+            // Load last selected topic on page load
+            const lastCourse = localStorage.getItem('lastCourse');
+            const lastModule = localStorage.getItem('lastModule');
+            const lastTopic = localStorage.getItem('lastTopic');
+            if (lastCourse && lastModule && lastTopic) {
+                loadContent(lastCourse, lastModule, lastTopic);
+            }
+        });
 
     </script>
 </body>
+
 </html>

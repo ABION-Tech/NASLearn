@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling and Security in Node.js</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 60px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .code-box {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #007bff;
+        }
+
+        .code-box pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Error Handling Section -->
+        <section id="error-handling" class="mt-5">
+            <h2 class="mb-4">Error Handling in Node.js</h2>
+            <p>Effective error handling ensures your application gracefully handles unexpected situations. Below are
+                examples of basic and custom error handling methods:</p>
+
+            <!-- Basic Error Handling -->
+            <div class="code-box">
+                <h5>Basic Error Handling</h5>
+                <pre><code class="javascript">
+// Basic error handling
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+                </code></pre>
+                <p><strong>Explanation:</strong> The middleware catches any errors and sends a response with a 500
+                    status code.</p>
+            </div>
+
+            <!-- 404 Error Handling -->
+            <div class="code-box">
+                <h5>Handling 404 Errors</h5>
+                <pre><code class="javascript">
+// 404 error handling
+app.use((req, res, next) => {
+    res.status(404).send('Page not found');
+});
+                </code></pre>
+                <p><strong>Explanation:</strong> This middleware sends a 404 error response when a requested route is
+                    not found.</p>
+            </div>
+        </section>
+
+        <!-- Security Practices Section -->
+        <section id="security-practices" class="mt-5">
+            <h2 class="mb-4">Basic Security Practices for Web Applications</h2>
+            <p>Security is essential to protect your application and its data. Below are common practices to secure your
+                Node.js application.</p>
+
+            <!-- Preventing SQL Injection -->
+            <h4>1. Preventing SQL Injection</h4>
+            <p>Use parameterized queries or ORM methods to prevent SQL injection attacks.</p>
+
+            <!-- Implementing HTTPS -->
+            <h4>2. Implementing HTTPS</h4>
+            <p>Ensure all communications between the server and clients are encrypted using HTTPS.</p>
+
+            <!-- Securing HTTP Headers -->
+            <div class="code-box">
+                <h5>Securing HTTP Headers with Helmet</h5>
+                <pre><code class="javascript">
+// Use helmet to secure HTTP headers
+const helmet = require('helmet');
+app.use(helmet());
+                </code></pre>
+                <p><strong>Explanation:</strong> Helmet sets various HTTP headers to improve the security of your
+                    Express.js app.</p>
+            </div>
+
+            <!-- XSS and CSRF Protection -->
+            <h4>3. XSS and CSRF Protection</h4>
+
+            <!-- XSS Protection -->
+            <div class="code-box">
+                <h5>Protecting Against XSS</h5>
+                <pre><code class="javascript">
+// Prevent XSS attacks by sanitizing inputs
+const xss = require('xss-clean');
+app.use(xss());
+                </code></pre>
+                <p><strong>Explanation:</strong> The <code>xss-clean</code> middleware sanitizes user inputs to prevent
+                    cross-site scripting attacks.</p>
+            </div>
+
+            <!-- CSRF Protection -->
+            <div class="code-box">
+                <h5>CSRF Protection</h5>
+                <pre><code class="javascript">
+// CSRF protection using csurf
+const csrf = require('csurf');
+const csrfProtection = csrf({ cookie: true });
+
+app.use(csrfProtection);
+
+app.get('/form', (req, res) => {
+    res.render('form', { csrfToken: req.csrfToken() });
+});
+                </code></pre>
+                <p><strong>Explanation:</strong> The <code>csurf</code> middleware provides CSRF protection by
+                    generating and validating tokens for state-changing requests.</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

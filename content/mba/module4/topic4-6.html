@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Exercises</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            /* White background */
+            color: #000000;
+            /* Black text */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+            /* Blue accent for headings */
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            /* Blue accent for left border */
+            background-color: #f8f9fa;
+            /* Light gray background for exercises */
+        }
+
+        ul {
+            margin-left: 20px;
+            /* Indentation for list */
+        }
+
+        .formula {
+            background-color: #e9ecef;
+            /* Light background for formulas */
+            padding: 10px;
+            border-radius: 5px;
+            /* Rounded corners */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Practice Exercises</h1>
+
+        <div class="exercise">
+            <h2>1. Exercise 1:</h2>
+            <p>Given the following financial data for a hypothetical company, calculate key ratios:</p>
+            <ul>
+                <li><strong>Current Assets:</strong> $150,000</li>
+                <li><strong>Current Liabilities:</strong> $100,000</li>
+                <li><strong>Net Income:</strong> $50,000</li>
+                <li><strong>Shareholders’ Equity:</strong> $250,000</li>
+                <li><strong>Total Debt:</strong> $120,000</li>
+            </ul>
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li><strong>Current Ratio:</strong> <code>150,000 / 100,000 = 1.5</code></li>
+                <li><strong>Return on Equity (ROE):</strong> <code>50,000 / 250,000 = 20%</code></li>
+                <li><strong>Debt-to-Equity Ratio:</strong> <code>120,000 / 250,000 = 0.48 (or 48%)</code></li>
+            </ul>
+        </div>
+
+        <div class="exercise">
+            <h2>2. Exercise 2:</h2>
+            <p>A company is evaluating two investment opportunities:</p>
+            <ul>
+                <li><strong>Project A:</strong> Requires an initial investment of $100,000 and generates cash flows of
+                    $30,000 annually for 5 years.</li>
+                <li><strong>Project B:</strong> Requires an initial investment of $150,000 and generates cash flows of
+                    $40,000 annually for 5 years.</li>
+            </ul>
+            <p>Calculate the <strong>NPV</strong> for both projects assuming a discount rate of 8%.</p>
+            <p><strong>Solution:</strong></p>
+            <p>Use the NPV formula:</p>
+            <div class="formula">
+                <p>
+                    <strong>NPV =</strong>
+                    <span>∑ <code>Cash Flow / (1 + r)<sup>t</sup></code></span>
+                    <strong> - Initial Investment</strong>
+                </p>
+            </div>
+            <p>(Detailed calculation of NPV provided in-class.)</p>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

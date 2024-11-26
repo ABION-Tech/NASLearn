@@ -1,0 +1,48 @@
+<div class="video-container">
+        <iframe 
+        src="https://www.youtube.com/embed/OyEHnIC45Zk" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+        </iframe>
+</div>
+<div class="video-credit">Credit: Your YouTube Channel</div>
+<div class="credit">Video by: Your YouTube Channel Name</div>
+</div>
+
+<style>
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 ratio */
+        height: 0;
+        width: 100%;
+        max-width: 400px; /* Mini-player size on larger screens */
+        margin: 0 auto; /* Centering on larger screens */
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: #000;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .video-credit {
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .video-container {
+            max-width: 100%; /* Full width on mobile */
+        }
+    }
+</style>

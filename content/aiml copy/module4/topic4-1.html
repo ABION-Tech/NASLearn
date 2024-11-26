@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4: Supervised Learning - Classification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            /* Blue accent */
+        }
+
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight {
+            background-color: #e7f0ff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .metric-table {
+            margin: 20px 0;
+        }
+
+        .project-steps {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .project-steps li {
+            background: #e9ecef;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section text-center">
+            <h1>Week 4: Supervised Learning - Classification</h1>
+        </div>
+
+        <div class="section">
+            <h2>Introduction to Classification</h2>
+            <p>
+                <strong>Classification</strong> is a supervised learning task aimed at predicting a <strong>categorical
+                    variable</strong>. In this process, a model is trained on labeled data, enabling it to learn the
+                relationship between input features and output categories.
+            </p>
+            <h3>Key Concepts:</h3>
+            <ul>
+                <li><strong>Categorical variable:</strong> A variable with a limited number of discrete values (e.g.,
+                    "yes" or "no," "spam" or "not spam").</li>
+                <li><strong>Classification models:</strong> Algorithms designed to map input features to output
+                    categories.</li>
+                <li><strong>Evaluation metrics:</strong> Measures used to assess model performance.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Common Classification Algorithms</h2>
+            <ul>
+                <li><strong>Logistic Regression:</strong> A statistical model predicting the probability of a particular
+                    category.</li>
+                <li><strong>k-Nearest Neighbors (k-NN):</strong> Classifies data points based on the majority class of
+                    their k nearest neighbors.</li>
+                <li><strong>Decision Trees:</strong> Constructs a tree-like structure for making predictions based on a
+                    series of rules.</li>
+                <li><strong>Random Forests:</strong> An ensemble of decision trees that improves accuracy and reduces
+                    overfitting.</li>
+                <li><strong>Support Vector Machines (SVMs):</strong> Identifies a hyperplane that separates data into
+                    distinct classes.</li>
+                <li><strong>Naive Bayes:</strong> A probabilistic model based on Bayes' theorem, assuming independence
+                    between features.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Logistic Regression</h2>
+            <p>The logistic regression model predicts the probability of an instance belonging to a certain class using
+                the following formula:</p>
+            <p class="highlight">P(y = 1 | x) = 1 / (1 + exp(-z))</p>
+            <p>Where:
+            <ul>
+                <li><strong>P(y = 1 | x):</strong> Probability of class 1 given input features x.</li>
+                <li><strong>z:</strong> A linear combination of input features.</li>
+            </ul>
+            </p>
+            <p><strong>Sigmoid function:</strong> This function maps the linear combination to a probability between 0
+                and 1.</p>
+            <p><strong>Decision boundary:</strong> The threshold value used to classify data points.</p>
+        </div>
+
+        <div class="section">
+            <h2>k-Nearest Neighbors (k-NN)</h2>
+            <p><strong>Algorithm:</strong></p>
+            <ol>
+                <li>Identify the k nearest neighbors of a new data point.</li>
+                <li>Assign the class label based on the majority class of the k neighbors.</li>
+            </ol>
+            <p><strong>Choosing k:</strong> The value of k impacts model performance. A small k may lead to overfitting,
+                while a large k may cause underfitting.</p>
+        </div>
+
+        <div class="section">
+            <h2>Evaluation Metrics</h2>
+            <div class="metric-table">
+                <h3>Key Metrics:</h3>
+                <ul>
+                    <li><strong>Accuracy:</strong> The proportion of correct predictions.</li>
+                    <li><strong>Precision:</strong> The proportion of positive predictions that were correct.</li>
+                    <li><strong>Recall:</strong> The proportion of actual positive instances correctly predicted.</li>
+                    <li><strong>F1-score:</strong> The harmonic mean of precision and recall.</li>
+                    <li><strong>Confusion matrix:</strong> A table displaying correct and incorrect predictions for each
+                        class.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Next Week's Topics</h2>
+            <p>Next week, we will explore more advanced classification algorithms, including decision trees, random
+                forests, and support vector machines. Additionally, we will discuss techniques for handling imbalanced
+                datasets and evaluating classification models effectively.</p>
+        </div>
+
+        <div class="section">
+            <h2>Project: Build a Classification Model</h2>
+            <p>For this week's project, you will build a classification model using a relevant dataset. Here’s how:</p>
+            <h3>Steps:</h3>
+            <ul class="project-steps">
+                <li><strong>Dataset Selection:</strong> Choose a dataset relevant to classification. Examples include:
+                </li>
+                <ul>
+                    <li><a href="https://www.kaggle.com/c/titanic" target="_blank">Titanic Survival Dataset</a></li>
+                    <li><a href="https://www.kaggle.com/c/creditcard-fraud" target="_blank">Credit Card Fraud Detection
+                            Dataset</a></li>
+                    <li><a href="https://www.kaggle.com/c/spambase" target="_blank">Spam Email Detection Dataset</a>
+                    </li>
+                </ul>
+                <li><strong>Load and Explore the Data:</strong> Import the dataset into a Pandas DataFrame and explore
+                    its features.</li>
+                <li><strong>Data Preprocessing:</strong> Handle missing values, outliers, and categorical variables.
+                </li>
+                <li><strong>Feature Selection:</strong> Identify relevant independent variables to include in your
+                    model.</li>
+                <li><strong>Split the Data:</strong> Divide the dataset into training and testing sets.</li>
+                <li><strong>Train the Model:</strong> Select a classification algorithm (e.g., logistic regression,
+                    k-NN) and train it on the training data.</li>
+                <li><strong>Evaluate the Model:</strong> Assess the model's performance on the testing set using metrics
+                    like accuracy, precision, recall, and F1-score.</li>
+                <li><strong>Fine-tune the Model:</strong> Experiment with hyperparameters to enhance the model's
+                    accuracy.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
