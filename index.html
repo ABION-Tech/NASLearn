@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<<meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAS Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
@@ -331,272 +332,178 @@
             }
         }
     </style>
-    </head>
+</head>
 
-    <body>
-        <div class="login-card">
-            <h1>Welcome to NAS</h1>
-            <form id="loginForm">
-                <!-- Email -->
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                </div>
+<body>
+    <div class="login-card">
+        <h1>Welcome to NAS</h1>
+        <form id="loginForm">
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
 
-                <!-- Password -->
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password"
-                        required>
-                    <button type="button" id="togglePassword" class="eye-btn" aria-label="Show password">
-                        <i id="toggleIcon" class="fas fa-eye-slash"></i>
-                    </button>
-                </div>
+            <!-- Password -->
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                <button type="button" id="togglePassword" class="eye-btn" aria-label="Show password">
+                    <i id="toggleIcon" class="fas fa-eye-slash"></i>
+                </button>
+            </div>
 
 
-                <!-- Multi-Factor Authentication
+            <!-- Multi-Factor Authentication
             <div class="mb-3 d-none" id="mfaSection">
                 <label for="mfaCode" class="form-label">Authentication Code</label>
                 <input type="text" class="form-control" id="mfaCode" placeholder="Enter the 6-digit code" required>
             </div> -->
 
-                <!-- Forgot Password -->
-                <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
+            <!-- Forgot Password -->
+            <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
 
-                <!-- reCAPTCHA
+            <!-- reCAPTCHA
             <div class="recaptcha-container">
                 <div id="recaptcha"></div>
             </div> -->
 
-                <!-- Login Button -->
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-            </form>
+            <!-- Login Button -->
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
 
-            <!-- Footer -->
-            <div class="login-footer">
-                © 2024 NAS | <a href="#">Privacy Policy</a>
-            </div>
+        <!-- Footer -->
+        <div class="login-footer">
+            © 2024 NAS | <a href="#">Privacy Policy</a>
         </div>
+    </div>
 
-
-
-        <!-- Firebase App and Auth SDKs -->
-        <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js"></script>
-
-        <script>
-            // Firebase Configuration
+    <!-- Joy Is COmin -->
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
+    <script>
+        // Firebase Wrapper: Encapsulate Firebase initialization
+        (function initFirebase() {
             const firebaseConfig = {
-                apiKey: "AIzaSyC4uGqQZBx-a2VxFarIa9Q4Ao4nqSCxk48",
+                apiKey: "AIzaSyDzDvkAG_mPxvgqOXkYRalMPylbia_jG_A",
                 authDomain: "nas-learn.firebaseapp.com",
-                databaseURL: "https://nas-learn-default-rtdb.firebaseio.com",
                 projectId: "nas-learn",
                 storageBucket: "nas-learn.firebasestorage.app",
                 messagingSenderId: "41710884796",
                 appId: "1:41710884796:web:c37c5830d96dedf291fdb9",
-                measurementId: "G-MBYLYZVQE5",
+                measurementId: "G-HS6YHRZ32Z"
             };
 
-            // Initialize Firebase
-            const app = firebase.initializeApp(firebaseConfig);
-            const auth = firebase.auth();
-            const analytics = firebase.analytics();
+            try {
+                // Initialize Firebase
+                const app = firebase.initializeApp(firebaseConfig);
+                const auth = firebase.auth();
+                console.log("Firebase initialized:", app);
+                console.log("Auth initialized:", auth);
 
-            // Sign-in function
-            async function signIn(email, password) {
-                try {
-                    const userCredential = await auth.signInWithEmailAndPassword(email, password);
-                    console.log(`User signed in: ${userCredential.user.email}`);
-                    window.location.href = "student-dashboard.html";
-                } catch (error) {
-                    console.error("Error signing in:", error.message);
-                }
+                // Update Firebase Wrapper Status
+                const firebaseWrapper = document.getElementById('firebase-wrapper');
+                firebaseWrapper.style.display = "block";
+                firebaseWrapper.textContent = "Firebase Initialized Successfully!";
+            } catch (error) {
+                console.error("Error initializing Firebase:", error);
             }
-
-            // Forgot password
-            async function resetPassword() {
-                const email = prompt("Enter your email:");
-                if (email) {
-                    try {
-                        await auth.sendPasswordResetEmail(email);
-                        alert("Password reset email sent!");
-                    } catch (error) {
-                        console.error("Error resetting password:", error.message);
-                    }
-                }
-            }
-
-            // Example usage
-            document.getElementById("signInButton").addEventListener("click", () => {
-                const email = document.getElementById("email").value;
-                const password = document.getElementById("password").value;
-                signIn(email, password);
-            });
-
-            document.getElementById("forgotPasswordButton").addEventListener("click", resetPassword);
-        </script>
-
-
-
-
-
-
-        // // Import the functions you need from the SDKs you need
-        // import { initializeApp } from "firebase/app";
-        // import { getAnalytics } from "firebase/analytics";
-        // // Firebase Wrapper: Encapsulate Firebase initialization
-        // (function initFirebase() {
-        // // TODO: Add SDKs for Firebase products that you want to use
-        // // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // // Your web app's Firebase configuration
-        // // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        // const firebaseConfig = {
-        // apiKey: "AIzaSyC4uGqQZBx-a2VxFarIa9Q4Ao4nqSCxk48",
-        // authDomain: "nas-learn.firebaseapp.com",
-        // databaseURL: "https://nas-learn-default-rtdb.firebaseio.com",
-        // projectId: "nas-learn",
-        // storageBucket: "nas-learn.firebasestorage.app",
-        // messagingSenderId: "41710884796",
-        // appId: "1:41710884796:web:c37c5830d96dedf291fdb9",
-        // measurementId: "G-MBYLYZVQE5"
-        // };
-
-        // // Initialize Firebase
-        // const app = initializeApp(firebaseConfig);
-        // const analytics = getAnalytics(app);
-
-        // try {
-        // // Initialize Firebase
-        // const app = firebase.initializeApp(firebaseConfig);
-        // const auth = firebase.auth();
-        // console.log("Firebase initialized:", app);
-        // console.log("Auth initialized:", auth);
-
-        // // Update Firebase Wrapper Status
-        // const firebaseWrapper = document.getElementById('firebase-wrapper');
-        // firebaseWrapper.style.display = "block";
-        // firebaseWrapper.textContent = "Firebase Initialized Successfully!";
-        // } catch (error) {
-        // console.error("Error initializing Firebase:", error);
-        // }
-        // })();
+        })();
 
         // Password Wrapper: Encapsulate Toggle Password Functionality
         (function initTogglePassword() {
-        const toggleButton = document.querySelector("#togglePassword");
-        const passwordField = document.querySelector("#password");
-        const toggleIcon = document.querySelector("#toggleIcon");
+            const toggleButton = document.querySelector("#togglePassword");
+            const passwordField = document.querySelector("#password");
+            const toggleIcon = document.querySelector("#toggleIcon");
 
-        toggleButton.addEventListener("click", function () {
-        const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
-        passwordField.setAttribute("type", type);
+            toggleButton.addEventListener("click", function () {
+                const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+                passwordField.setAttribute("type", type);
 
-        // Toggle the icon class
-        toggleIcon.classList.toggle("fa-eye");
-        toggleIcon.classList.toggle("fa-eye-slash");
-        });
+                // Toggle the icon class
+                toggleIcon.classList.toggle("fa-eye");
+                toggleIcon.classList.toggle("fa-eye-slash");
+            });
         })();
 
+        // Login functionality (async)
+        (function initAuth() {
+            const auth = firebase.auth();
 
-        // // Login functionality (async)
-        // document.getElementById('loginForm').addEventListener('submit', async (e) => {
-        // e.preventDefault();
+            // Sign-In Logic
+            const signInButton = document.getElementById("signIn");
+            const emailField = document.getElementById("email");
+            const passwordField = document.getElementById("password");
+            const authMessage = document.getElementById("authMessage");
 
-        // const email = document.getElementById('email').value;
-        // const password = document.getElementById('password').value;
+            // Assuming your form has the ID 'loginForm'
+            const loginForm = document.getElementById('loginForm');
 
-        // try {
-        // const userCredential = await auth.signInWithEmailAndPassword(email, password);
-        // alert(`Welcome, ${userCredential.user.email}`);
-        // // Redirect to dashboard or handle session logic
-        // window.location.href = 'C:\Users\NCAC COOPERATIVE\Desktop\learn\Dash.html'; // Replace with your dashboard
-        page
-        // } catch (error) {
-        // alert(error.message); // Display error message on failure
-        // }
-        // });
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = emailField.value;
+                const password = passwordField.value;
 
+                try {
+                    // Sign in with Firebase
+                    const userCredential = await auth.signInWithEmailAndPassword(email, password);
+                    const user = userCredential.user;
 
-        // (function initAuth() {
-        // const auth = firebase.auth();
+                    // Successful sign-in
+                    authMessage.style.color = "green";
+                    authMessage.textContent = `Welcome, ${user.email}!`;  // Fixed string interpolation
+                    console.log("Signed in user:", user);
 
-        // // Sign-In Logic
-        // const signInButton = document.getElementById("signIn");
-        // const emailField = document.getElementById("email");
-        // const passwordField = document.getElementById("password");
-        // const authMessage = document.getElementById("authMessage");
+                    // Redirect after validation
+                    window.location.href = "student-dashboard.html"; // Correct URL format
+                } catch (error) {
+                    // Handle errors
+                    authMessage.style.color = "red";
+                    authMessage.textContent = `Error: ${error.message}`;  // Fixed string interpolation
+                    console.error("Sign-in error:", error);
+                }
+            });
+        })();
 
-        // // document.getElementById('loginForm').addEventListener('submit', async (e) => {
-        // // e.preventDefault();
-        // signInButton.addEventListener('submit', async (e) => {
-        // e.preventDefault();
-        // const email = emailField.value;
-        // const password = passwordField.value;
-
-        // try {
-        // // Sign in with Firebase
-        // const userCredential = await auth.signInWithEmailAndPassword(email, password);
-        // const user = userCredential.user;
-
-        // // Successful sign-in
-        // authMessage.style.color = "green";
-        // authMessage.textContent = `Welcome, ${user.email}!`;
-        // console.log("Signed in user:", user);
-        // // Redirect after validation
-        // window.location.href = "student-dasboard.html"; // Replace with your dashboard page
-        // } catch (error) {
-
-        // // Handle errors
-        // authMessage.style.color = "red";
-        // authMessage.textContent = `Error: ${error.message}`;
-        // console.error("Sign-in error:", error);
-        // }
-        // });
-        // })();
-
-
-
-
-        // // Forgot Password Functionality
-        // document.getElementById('forgotPassword').addEventListener('click', async () => {
-        // const email = prompt('Enter your email address to reset your password:');
-        // if (email) {
-        // try {
-        // await auth.sendPasswordResetEmail(email);
-        // alert('Password reset email sent!');
-        // } catch (error) {
-        // alert(error.message);
-        // }
-        // } else {
-        // // alert('Email is required.');
-        // // }
-        // });
+        // Forgot Password Functionality
+        document.getElementById('forgotPassword').addEventListener('click', async () => {
+            const email = prompt('Enter your email address to reset your password:');
+            if (email) {
+                try {
+                    await auth.sendPasswordResetEmail(email);
+                    alert('Password reset email sent!');
+                } catch (error) {
+                    alert(error.message);
+                }
+            } else {
+                alert('Email is required.');
+            }
+        });
 
         // Session Management
         auth.onAuthStateChanged((user) => {
-        if (user) {
-        console.log('User logged in:', user.email);
-        // You can handle user-specific logic here
-        } else {
-        console.log('No user logged in.');
-        }
+            if (user) {
+                console.log('User logged in:', user.email);
+                // You can handle user-specific logic here
+            } else {
+                console.log('No user logged in.');
+            }
         });
 
         // Logout Functionality
         function logout() {
-        auth.signOut()
-        .then(() => {
-        alert('Logged out successfully.');
-        window.location.href = 'Login.html'; // Replace with your login page
-        })
-        .catch((error) => {
-        alert(error.message);
-        });
+            auth.signOut()
+                .then(() => {
+                    alert('Logged out successfully.');
+                    window.location.href = 'Login.html'; // Correct URL format
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
         }
 
-        </script>
-    </body>
+    </script>
+</body>
 
 </html>
