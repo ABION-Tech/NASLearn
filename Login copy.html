@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAS Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .login-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .login-card h1 {
+            font-size: 1.8rem;
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-label {
+            color: #777;
+        }
+
+        .form-control {
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .form-control:focus {
+            border-color: #888;
+            box-shadow: 0 0 5px rgba(136, 136, 136, 0.3);
+        }
+
+        .btn-primary {
+            background-color: #666;
+            border-color: #555;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #555;
+            border-color: #444;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: right;
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            color: #555;
+            text-decoration: underline;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .toggle-password:hover {
+            color: #555;
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 1rem;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .login-card {
+                width: 90%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-card">
+        <h1>NAS Login</h1>
+        <form id="loginForm">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                <div id="emailError" class="error-message">Please enter a valid email address</div>
+            </div>
+
+            <div class="mb-3 password-container">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                <button type="button" class="toggle-password" id="togglePassword"
+                    aria-label="Toggle password visibility">
+                    <i class="far fa-eye"></i>
+                </button>
+                <div id="passwordError" class="error-message">Password must be at least 6 characters</div>
+            </div>
+
+            <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
+
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+
+        <div class="login-footer">
+            © 2024 NAS | <a href="#" style="color: #777;">Privacy Policy</a>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDzDvkAG_mPxvgqOXkYRalMPylbia_jG_A",
+            authDomain: "newagekillsphere.firebaseapp.com",
+            projectId: "newagekillsphere",
+            storageBucket: "newagekillsphere.firebasestorage.app",
+            messagingSenderId: "172533894406",
+            appId: "1:172533894406:web:3baf5597ca960650b86287",
+            measurementId: "G-HS6YHRZ32Z"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // DOM Elements
+        const loginForm = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const togglePasswordBtn = document.getElementById('togglePassword');
+        const forgotPasswordLink = document.getElementById('forgotPassword');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+
+        // Password Visibility Toggle
+        togglePasswordBtn.addEventListener('click', function () {
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+
+            // Toggle eye icon
+            this.innerHTML = type === 'password'
+                ? '<i class="far fa-eye"></i>'
+                : '<i class="far fa-eye-slash"></i>';
+        });
+
+        // Email Validation
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        // Password Validation
+        function validatePassword(password) {
+            return password.length >= 6;
+        }
+
+        // Show Error Message
+        function showError(errorElement, show = true) {
+            errorElement.style.display = show ? 'block' : 'none';
+        }
+
+        // Form Validation
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Reset previous error states
+            showError(emailError, false);
+            showError(passwordError, false);
+
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+
+            // Validate Email
+            if (!validateEmail(email)) {
+                showError(emailError);
+                return;
+            }
+
+            // Validate Password
+            if (!validatePassword(password)) {
+                showError(passwordError);
+                return;
+            }
+
+            try {
+                // Firebase Authentication
+                const userCredential = await auth.signInWithEmailAndPassword(email, password);
+                alert(`Welcome, ${userCredential.user.email}`);
+                // Redirect to dashboard or next page
+                window.location.href = 'dashboard.html'; // Update with your actual dashboard page
+            } catch (error) {
+                // Handle specific Firebase authentication errors
+                let errorMessage = 'Login failed. Please check your credentials.';
+
+                switch (error.code) {
+                    case 'auth/invalid-email':
+                        errorMessage = 'Invalid email address.';
+                        break;
+                    case 'auth/user-disabled':
+                        errorMessage = 'This user account has been disabled.';
+                        break;
+                    case 'auth/user-not-found':
+                        errorMessage = 'No user found with this email.';
+                        break;
+                    case 'auth/wrong-password':
+                        errorMessage = 'Incorrect password.';
+                        break;
+                }
+
+                alert(errorMessage);
+            }
+        });
+
+        // Forgot Password Handler
+        forgotPasswordLink.addEventListener('click', async () => {
+            const email = prompt('Enter your email address to reset your password:');
+            if (email && validateEmail(email)) {
+                try {
+                    await auth.sendPasswordResetEmail(email);
+                    alert('Password reset email sent! Check your inbox.');
+                } catch (error) {
+                    alert('Error sending password reset email: ' + error.message);
+                }
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+
+        // Optional: Session Management
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                console.log('User logged in:', user.email);
+                // Optionally handle user-specific logic here
+            } else {
+                console.log('No user logged in.');
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.eye-btn {
+
+all: unset;
+/* Reset all inherited styles */
+position: absolute;
+/* Allows positioning relative to parent */
+right: 10px;
+/* Positions the button inside the input field */
+top: 70%;
+/* Aligns the button vertically */
+transform: translateY(-50%);
+/* Centers the button vertically */
+font-size: 1.2rem;
+/* Adjusts size for readability */
+color: #6c757d;
+/* Matches neutral colors for consistency */
+padding: 5px;
+/* Optional: Adds padding for easier clickability */
+background-color: transparent;
+/* Ensures no background */
+border: none;
+/* Removes any default borders */
+z-index: 100;
+visibility: visible;
+
+}
+
+.eye-btn:focus {
+outline: none;
+/* Removes focus outline for a cleaner design */
+}
+
+.mb-3 {
+position: relative;
+/* Enables positioning for the eye button */
+}
+
+.eye-btn:hover {
+color: #000;
+/* Darken color on hover for feedback */
+}
+
+#password {
+padding-right: 30px;
+/* Adds space for the eye button */
+}

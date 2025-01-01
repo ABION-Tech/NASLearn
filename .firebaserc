@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "new-age-university"
-  }
+    "default": "nas-learn",
+    "Learn": "nas-learn"
+  },
+  "targets": {},
+  "etags": {}
 }

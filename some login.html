@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Password with Icons</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div id="auth-wrapper">
+        <h3>Sign In</h3>
+        <input type="email" id="email" placeholder="Enter email" />
+        <input type="password" id="password" placeholder="Enter password" />
+        <button id="signIn">Sign In</button>
+        <p id="authMessage" style="color: red;"></p>
+    </div>
+
+
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+
+    <script>
+        // Firebase Wrapper: Encapsulate Firebase initialization
+        (function initFirebase() {
+            const firebaseConfig = {
+                apiKey: "your-api-key",
+                authDomain: "your-auth-domain",
+                projectId: "your-project-id",
+                storageBucket: "your-storage-bucket",
+                messagingSenderId: "your-messaging-sender-id",
+                appId: "your-app-id"
+            };
+
+            try {
+                // Initialize Firebase
+                const app = firebase.initializeApp(firebaseConfig);
+                const auth = firebase.auth();
+                console.log("Firebase initialized:", app);
+                console.log("Auth initialized:", auth);
+
+                // Update Firebase Wrapper Status
+                const firebaseWrapper = document.getElementById('firebase-wrapper');
+                firebaseWrapper.style.display = "block";
+                firebaseWrapper.textContent = "Firebase Initialized Successfully!";
+            } catch (error) {
+                console.error("Error initializing Firebase:", error);
+            }
+        })();
+
+        (function initAuth() {
+            const auth = firebase.auth();
+
+            // Sign-In Logic
+            const signInButton = document.getElementById("signIn");
+            const emailField = document.getElementById("email");
+            const passwordField = document.getElementById("password");
+            const authMessage = document.getElementById("authMessage");
+
+            signInButton.addEventListener("click", async () => {
+                const email = emailField.value;
+                const password = passwordField.value;
+
+                try {
+                    // Sign in with Firebase
+                    const userCredential = await auth.signInWithEmailAndPassword(email, password);
+                    const user = userCredential.user;
+
+                    // Successful sign-in
+                    authMessage.style.color = "green";
+                    authMessage.textContent = `Welcome, ${user.email}!`;
+                    console.log("Signed in user:", user);
+                } catch (error) {
+                    // Handle errors
+                    authMessage.style.color = "red";
+                    authMessage.textContent = `Error: ${error.message}`;
+                    console.error("Sign-in error:", error);
+                }
+            });
+        })();
+
+
+        // Password Wrapper: Encapsulate Toggle Password Functionality
+        (function initTogglePassword() {
+            const toggleButton = document.querySelector("#togglePassword");
+            const passwordField = document.querySelector("#password");
+            const toggleIcon = document.querySelector("#toggleIcon");
+
+            toggleButton.addEventListener("click", function () {
+                // Toggle the password type
+                const isPassword = passwordField.getAttribute("type") === "password";
+                passwordField.setAttribute("type", isPassword ? "text" : "password");
+
+                // Toggle the icon class
+                toggleIcon.classList.toggle("fa-eye");
+                toggleIcon.classList.toggle("fa-eye-slash");
+            });
+        })();
+    </script>
+</body>
+
+</html>
