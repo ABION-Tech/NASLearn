@@ -20,7 +20,7 @@ Types of AI: Narrow vs. General AI and
 
 
 ---
-
+ 
 
 ### **Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)**
 - **Topics:**
@@ -41,7 +41,7 @@ Statistical Analysis: Correlation and Distribution
 
 
 
-### **Week 3: Supervised Learning – Regression**
+### **Week 3: Supervised Learning ï¿½ Regression**
 - **Topics:**
   - Introduction to Supervised Learning.
   - Linear Regression: Simple and Multiple Linear Regression.
@@ -53,7 +53,7 @@ Statistical Analysis: Correlation and Distribution
 
 ---
 
-### **Week 4: Supervised Learning – Classification**
+### **Week 4: Supervised Learning ï¿½ Classification**
 - **Topics:**
   - Introduction to Classification: Logistic Regression, k-Nearest Neighbors (KNN).
   - Decision Trees, SVM, k-NN and Random Forests.
@@ -64,7 +64,7 @@ Statistical Analysis: Correlation and Distribution
 
 ---
 
-### **Week 5: Unsupervised Learning – Clustering**
+### **Week 5: Unsupervised Learning ï¿½ Clustering**
 - **Topics:**
   - Introduction to Unsupervised Learning.
   - K-Means Clustering and Hierarchical Clustering.
@@ -137,7 +137,7 @@ work 5 times harder to fully fleshed out
 ### **Week 10: Capstone Project and Presentation**
 
 
-Capstone Preparation – Problem Selection and Data Gathering**
+Capstone Preparation ï¿½ Problem Selection and Data Gathering**
 - **Topics:**
   - Introduction to the Capstone Project: Problem definition and scoping.
   - Dataset collection, cleaning, and feature engineering.

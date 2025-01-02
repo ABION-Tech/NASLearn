@@ -204,6 +204,107 @@
             transform: scale(1.05);
         }
 
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            /* Adds more space between buttons */
+            margin-top: 15px;
+            /* Slightly larger top margin */
+            margin-bottom: 20px;
+            /* Space beneath the buttons */
+        }
+
+        .btn-google,
+        .btn-facebook {
+            padding: 12px 25px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            /* Adds a shadow for dimension */
+            transition: transform 0.2s, box-shadow 0.2s;
+            /* Adds smooth hover effect */
+        }
+
+        .btn-google {
+            background-color: #4285f4;
+            /* Google blue */
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-google:hover {
+            background-color: #357ae8;
+            /* Darker shade on hover */
+            transform: translateY(-2px);
+            /* Lifts the button slightly */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+            /* Deeper shadow on hover */
+        }
+
+        .btn-facebook {
+            background-color: #3b5998;
+            /* Facebook blue */
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px;
+            padding: 10px;
+        }
+
+        .btn-facebook:hover {
+            background-color: #2d4373;
+            /* Darker shade on hover */
+            transform: translateY(-2px);
+            /* Lifts the button slightly */
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+            /* Deeper shadow on hover */
+        }
+
+        .btn-google i,
+        .btn-facebook i {
+            margin-right: 10px;
+            /* Adds space between the icon and text */
+        }
+
+        .divider {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #666;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background-color: #ddd;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+
+
         .forgot-password {
             font-size: 0.9rem;
             color: #0056b3;
@@ -360,13 +461,22 @@
                 <input type="text" class="form-control" id="mfaCode" placeholder="Enter the 6-digit code" required>
             </div> -->
 
+
+            <!-- reCAPTCHA Divider
+            <div class="divider">OR</div>
+
+            Social Login Buttons 
+            <div class="social-login">
+                <button id="googleSignIn" class="btn-google">
+                    <i class="fab fa-google"></i> Sign in with Google
+                </button>
+                <button id="facebookSignIn" class="btn-facebook">
+                    <i class="fab fa-facebook-f"></i> Sign in with Facebook
+                </button>
+            </div> -->
+
             <!-- Forgot Password -->
             <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
-
-            <!-- reCAPTCHA
-            <div class="recaptcha-container">
-                <div id="recaptcha"></div>
-            </div> -->
 
             <!-- Login Button -->
             <button type="submit" class="btn btn-primary w-100">Login</button>
@@ -382,7 +492,9 @@
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
+
     <script>
+
         // Firebase Wrapper: Encapsulate Firebase initialization
         (function initFirebase() {
             const firebaseConfig = {
@@ -456,7 +568,7 @@
                     console.log("Signed in user:", user);
 
                     // Redirect after validation
-                    window.location.href = "student-dashboard.html"; // Correct URL format
+                    window.location.href = "https://newageskills.com.ng/student-dashboard.html"; // Correct URL format
                 } catch (error) {
                     // Handle errors
                     authMessage.style.color = "red";
@@ -496,13 +608,35 @@
             auth.signOut()
                 .then(() => {
                     alert('Logged out successfully.');
-                    window.location.href = 'Login.html'; // Correct URL format
+                    window.location.href = "https://newageskills.com.ng/"; // Correct URL format
                 })
                 .catch((error) => {
                     alert(error.message);
                 });
         }
+        // // Google Sign-In
+        // document.getElementById('googleSignIn').addEventListener('click', () => {
+        //     const provider = new GoogleAuthProvider();
+        //     signInWithPopup(auth, provider)
+        //         .then(result => {
+        //             const user = result.user;
+        //             console.log('Google User:', user);
+        //             alert(`Welcome ${user.displayName}!`);
+        //         })
+        //         .catch(error => console.error('Google Auth Error:', error));
+        // });
 
+        // // Facebook Sign-In
+        // document.getElementById('facebookSignIn').addEventListener('click', () => {
+        //     const provider = new FacebookAuthProvider();
+        //     signInWithPopup(auth, provider)
+        //         .then(result => {
+        //             const user = result.user;
+        //             console.log('Facebook User:', user);
+        //             alert(`Welcome ${user.displayName}!`);
+        //         })
+        //         .catch(error => console.error('Facebook Auth Error:', error));
+        // });
     </script>
 </body>
 
