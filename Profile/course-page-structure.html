@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +17,12 @@
             transition: 0.5s;
             padding-top: 60px;
         }
+
         .sidebar.collapsed {
             width: 0;
             overflow: hidden;
         }
+
         .main-content {
             margin-left: 300px;
             margin-top: 40px;
@@ -27,16 +30,20 @@
             transition: 0.5s;
             grid-area: main-content;
             flex-grow: 1;
-            padding: 50px; /* Adjust for header */
+            padding: 50px;
+            /* Adjust for header */
             background-color: #ffffff;
             transition: margin-left 0.3s ease;
             overflow-y: auto;
             flex: 1s;
-            margin-top: 20px; /* Adjust for header */
+            margin-top: 20px;
+            /* Adjust for header */
         }
+
         .main-content.full-width {
             margin-left: 0;
         }
+
         #toggle-btn {
             position: fixed;
             left: 310px;
@@ -57,27 +64,31 @@
             border-radius: 5px;
             transition: left 0.3s ease;
         }
-        .sidebar.collapsed + #toggle-btn {
+
+        .sidebar.collapsed+#toggle-btn {
             left: 10px;
         }
+
         .module-title {
             cursor: pointer;
         }
+
         .topic-list {
             display: none;
         }
+
         .module-item.active .topic-list {
             display: block;
-        }    
-
-    
+        }
     </style>
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">New Age Skillsphere</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -110,7 +121,8 @@
                 <div class="module-title" data-module="Introduction">Introduction</div>
                 <ul class="topic-list">
                     <li class="topic-item" data-module="Introduction" data-topic="topic1-1">Topic 1.1: Overview</li>
-                    <li class="topic-item" data-module="Introduction" data-topic="topic1-2">Topic 1.2: Getting Started</li>
+                    <li class="topic-item" data-module="Introduction" data-topic="topic1-2">Topic 1.2: Getting Started
+                    </li>
                 </ul>
             </li>
             <li class="module-item">
@@ -141,7 +153,9 @@
                 <ul class="topic-list">
                     <li class="topic-item" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>
                     <li class="topic-item" data-module="module3" data-topic="topic3-2">Topic 2.2: Case Studies</li>
-                    <li class="topic-item" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>                    <li class="topic-item" data-module="module3" data-topic="topic2-2">Topic 2.2: Case Studies</li>                    <li class="topic-item" data-module="module3" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-module="module3" data-topic="topic2-2">Topic 2.2: Case Studies</li>
+                    <li class="topic-item" data-module="module3" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
                     <li class="topic-item" data-module="module3" data-topic="topic3-2">Topic 2.2: Case Studies</li>
                     <li class="topic-item" data-module="module3" data-topic="topic3-1">Topic 2.1: Deep Dive</li>
                 </ul>
@@ -200,14 +214,15 @@
             <li class="module-item">
                 <div class="module-title" data-module="Resources">Resources</div>
                 <ul class="topic-list">
-                    <li class="topic-item" data-module="additional resources" data-topic="topic2-1">Topic 2.1: Deep Dive</li>
+                    <li class="topic-item" data-module="additional resources" data-topic="topic2-1">Topic 2.1: Deep Dive
+                    </li>
                 </ul>
             </li>
             <!-- Additional modules can be added here -->
         </ul>
     </div>
-        </ul>
-        
+    </ul>
+
 
 
 
@@ -215,14 +230,15 @@
         <h2>Welcome to the Course</h2>
         <p>Select a module from the sidebar to start learning.</p>
     </div>
-   <div>
+    <div>
         <footer>
-            <p>© 2024 New Age Skillsphere. All rights reserved.</p>
-        </footer>    
+            <p>© 2025 New Age Skillsphere. All rights reserved.</p>
+        </footer>
     </div>
     <script src="js\bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="course-data.js"></script>
     <script src="main-js.js"></script>
 </body>
+
 </html>

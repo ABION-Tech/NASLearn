@@ -454,27 +454,6 @@
                 </button>
             </div>
 
-
-            <!-- Multi-Factor Authentication
-            <div class="mb-3 d-none" id="mfaSection">
-                <label for="mfaCode" class="form-label">Authentication Code</label>
-                <input type="text" class="form-control" id="mfaCode" placeholder="Enter the 6-digit code" required>
-            </div> -->
-
-
-            <!-- reCAPTCHA Divider
-            <div class="divider">OR</div>
-
-            Social Login Buttons 
-            <div class="social-login">
-                <button id="googleSignIn" class="btn-google">
-                    <i class="fab fa-google"></i> Sign in with Google
-                </button>
-                <button id="facebookSignIn" class="btn-facebook">
-                    <i class="fab fa-facebook-f"></i> Sign in with Facebook
-                </button>
-            </div> -->
-
             <!-- Forgot Password -->
             <a href="#" class="forgot-password" id="forgotPassword">Forgot password?</a>
 
@@ -488,156 +467,55 @@
         </div>
     </div>
 
-    <!-- Joy Is COmin -->
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script>
-
     <script>
+        // Load credentials from a separate file
+        let users = [];
 
-        // Firebase Wrapper: Encapsulate Firebase initialization
-        (function initFirebase() {
-            const firebaseConfig = {
-                apiKey: "AIzaSyDzDvkAG_mPxvgqOXkYRalMPylbia_jG_A",
-                authDomain: "nas-learn.firebaseapp.com",
-                projectId: "nas-learn",
-                storageBucket: "nas-learn.firebasestorage.app",
-                messagingSenderId: "41710884796",
-                appId: "1:41710884796:web:c37c5830d96dedf291fdb9",
-                measurementId: "G-HS6YHRZ32Z"
-            };
+        // Fetch user credentials from users.js
+        fetch("https://newageskills.com.ng/users.js")  // Adjust the path if necessary
+            .then(response => response.json())
+            .then(data => users = data)
+            .catch(error => console.error("Error loading user data:", error));
 
-            try {
-                // Initialize Firebase
-                const app = firebase.initializeApp(firebaseConfig);
-                const auth = firebase.auth();
-                console.log("Firebase initialized:", app);
-                console.log("Auth initialized:", auth);
+        // Toggle password visibility
+        document.getElementById("togglePassword").addEventListener("click", function () {
+            const passwordInput = document.getElementById("password");
+            const toggleIcon = document.getElementById("toggleIcon");
+            const isPasswordVisible = passwordInput.type === "password";
 
-                // Update Firebase Wrapper Status
-                const firebaseWrapper = document.getElementById('firebase-wrapper');
-                firebaseWrapper.style.display = "block";
-                firebaseWrapper.textContent = "Firebase Initialized Successfully!";
-            } catch (error) {
-                console.error("Error initializing Firebase:", error);
-            }
-        })();
-
-        // Password Wrapper: Encapsulate Toggle Password Functionality
-        (function initTogglePassword() {
-            const toggleButton = document.querySelector("#togglePassword");
-            const passwordField = document.querySelector("#password");
-            const toggleIcon = document.querySelector("#toggleIcon");
-
-            toggleButton.addEventListener("click", function () {
-                const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
-                passwordField.setAttribute("type", type);
-
-                // Toggle the icon class
-                toggleIcon.classList.toggle("fa-eye");
-                toggleIcon.classList.toggle("fa-eye-slash");
-            });
-        })();
-
-        // Login functionality (async)
-        (function initAuth() {
-            const auth = firebase.auth();
-
-            // Sign-In Logic
-            const signInButton = document.getElementById("signIn");
-            const emailField = document.getElementById("email");
-            const passwordField = document.getElementById("password");
-            const authMessage = document.getElementById("authMessage");
-
-            // Assuming your form has the ID 'loginForm'
-            const loginForm = document.getElementById('loginForm');
-
-            loginForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const email = emailField.value;
-                const password = passwordField.value;
-
-                try {
-                    // Sign in with Firebase
-                    const userCredential = await auth.signInWithEmailAndPassword(email, password);
-                    const user = userCredential.user;
-
-                    // Successful sign-in
-                    authMessage.style.color = "green";
-                    authMessage.textContent = `Welcome, ${user.email}!`;  // Fixed string interpolation
-                    console.log("Signed in user:", user);
-
-                    // Redirect after validation
-                    window.location.href = "https://newageskills.com.ng/student-dashboard.html"; // Correct URL format
-                } catch (error) {
-                    // Handle errors
-                    authMessage.style.color = "red";
-                    authMessage.textContent = `Error: ${error.message}`;  // Fixed string interpolation
-                    console.error("Sign-in error:", error);
-                }
-            });
-        })();
-
-        // Forgot Password Functionality
-        document.getElementById('forgotPassword').addEventListener('click', async () => {
-            const email = prompt('Enter your email address to reset your password:');
-            if (email) {
-                try {
-                    await auth.sendPasswordResetEmail(email);
-                    alert('Password reset email sent!');
-                } catch (error) {
-                    alert(error.message);
-                }
-            } else {
-                alert('Email is required.');
-            }
+            passwordInput.type = isPasswordVisible ? "text" : "password";
+            toggleIcon.className = isPasswordVisible ? "fas fa-eye" : "fas fa-eye-slash";
         });
 
-        // Session Management
-        auth.onAuthStateChanged((user) => {
+        // Authenticate user on form submit
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+
+            const hashedPassword = sha1(password);  // Hash the input password
+            const user = users.find(u => u.email === email && u.password === hashedPassword);
+
             if (user) {
-                console.log('User logged in:', user.email);
-                // You can handle user-specific logic here
+                alert("Login successful!");
+                window.location.href = "https://newageskills.com.ng/student-dashboard.html"; // Redirect to dashboard
             } else {
-                console.log('No user logged in.');
+                alert("Invalid email or password.");
             }
         });
 
-        // Logout Functionality
-        function logout() {
-            auth.signOut()
-                .then(() => {
-                    alert('Logged out successfully.');
-                    window.location.href = "https://newageskills.com.ng/"; // Correct URL format
-                })
-                .catch((error) => {
-                    alert(error.message);
-                });
-        }
-        // // Google Sign-In
-        // document.getElementById('googleSignIn').addEventListener('click', () => {
-        //     const provider = new GoogleAuthProvider();
-        //     signInWithPopup(auth, provider)
-        //         .then(result => {
-        //             const user = result.user;
-        //             console.log('Google User:', user);
-        //             alert(`Welcome ${user.displayName}!`);
-        //         })
-        //         .catch(error => console.error('Google Auth Error:', error));
-        // });
+        // SHA1 hashing function
+        function sha1(message) {
+            const msgBuffer = new TextEncoder().encode(message);
 
-        // // Facebook Sign-In
-        // document.getElementById('facebookSignIn').addEventListener('click', () => {
-        //     const provider = new FacebookAuthProvider();
-        //     signInWithPopup(auth, provider)
-        //         .then(result => {
-        //             const user = result.user;
-        //             console.log('Facebook User:', user);
-        //             alert(`Welcome ${user.displayName}!`);
-        //         })
-        //         .catch(error => console.error('Facebook Auth Error:', error));
-        // });
+            return crypto.subtle.digest("SHA-1", msgBuffer).then(hashBuffer => {
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            });
+        }
     </script>
+
 </body>
 
 </html>
