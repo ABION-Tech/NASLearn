@@ -1,11 +1,14 @@
 ﻿I need you to develop this course lecture content expand upon the details and concepts within, 
+work 3 times harder to fully fleshed out  adding and explanations where necessary
+
+I need you to develop this course lecture content expand upon the details and concepts within, 
 work 5 times harder to fully fleshed out  adding codes and explanations where necessary
 
 misconceptions about all the above generally 
 
 add the disclaimer encourage creativity, and problem solving
 
-I need you to generate a new well styled and mordern looking UI bootstrap webpage with no header or footer, for the following content, you can customize it too with embeded custom css, it should be predominately white, and black text, with blue accent I need you to develop this content of these course and expand upon the content and concepts within, 
+I need you to generate a new well styled and mordern looking UI bootstrap webpage with no header or footer, for the following content, you ca   n customize it too with embeded custom css, it should be predominately white, and black text, with blue accent I need you to develop this content of these course and expand upon the content and concepts within, 
 work 3 times harder to fully flesh out
 
 

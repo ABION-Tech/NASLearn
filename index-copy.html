@@ -467,12 +467,15 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.js"></script>
+    <!-- Include CryptoJS library -->
+
     <script>
         // Load credentials from a separate file
         let users = [];
 
-        // Fetch user credentials from users.js
-        fetch("https://newageskills.com.ng/users.js")  // Adjust the path if necessary
+        // Fetch user credentials from user.js (stored online)
+        fetch("user.js")  // Adjust the path if necessary
             .then(response => response.json())
             .then(data => users = data)
             .catch(error => console.error("Error loading user data:", error));
@@ -487,35 +490,32 @@
             toggleIcon.className = isPasswordVisible ? "fas fa-eye" : "fas fa-eye-slash";
         });
 
-        // Authenticate user on form submit
-        document.getElementById("loginForm").addEventListener("submit", function (event) {
-            event.preventDefault();
 
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value;
+        // Handle form submission
+        document.getElementById('login-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-            const hashedPassword = sha1(password);  // Hash the input password
-            const user = users.find(u => u.email === email && u.password === hashedPassword);
+            // Find the user by email
+            const user = users.find(user => user.email === email);
+            if (!user) {
+                alert('Invalid email or password.');
+                return;
+            }
 
-            if (user) {
-                alert("Login successful!");
-                window.location.href = "https://newageskills.com.ng/student-dashboard.html"; // Redirect to dashboard
+            // Compare the entered password with the stored hash using bcrypt
+            const match = await bcrypt.compare(password, user.password);
+            if (match) {
+                alert('Login successful!');
+                // Optionally store user data in localStorage or sessionStorage
+                localStorage.setItem('user', JSON.stringify(user));
+                // Redirect to another page or perform additional logic
             } else {
-                alert("Invalid email or password.");
+                alert('Invalid email or password.');
             }
         });
-
-        // SHA1 hashing function
-        function sha1(message) {
-            const msgBuffer = new TextEncoder().encode(message);
-
-            return crypto.subtle.digest("SHA-1", msgBuffer).then(hashBuffer => {
-                const hashArray = Array.from(new Uint8Array(hashBuffer));
-                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-            });
-        }
     </script>
-
 </body>
 
 </html>
