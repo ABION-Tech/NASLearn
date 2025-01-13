@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment: A Minimalist Composition</title>
+    <title>Version Control with Git and GitHub</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -64,93 +64,93 @@
 </head>
 
 <body>
-    <div class="container content">
-        <h1>Assignment: A Minimalist Composition</h1>
+    <div class="container mt-5">
+        <div class="content-section">
+            <h2 class="section-title">Version Control with Git and GitHub</h2>
+            <p><strong>Overview</strong></p>
+            <p>Version control is a system that records changes to a file or set of files over time so you can recall
+                specific versions later. Git is a popular distributed version control system, and GitHub is a
+                cloud-based platform for hosting and managing Git repositories.</p>
 
-        <h2>Goal</h2>
-        <p>To create a simple yet impactful composition using basic shapes and design principles that highlights the
-            philosophy of minimalism.</p>
-
-        <h2>Prompt</h2>
-        <p>Choose a concept or idea to convey through your design. For this exercise, we'll focus on
-            <strong>minimalism</strong>. Minimalism is a design approach that emphasizes simplicity, clean lines, and
-            negative space. It allows the audience to focus on the essence of the design without distraction.</p>
-
-        <h2>Materials</h2>
-        <ul>
-            <li>Paper (white or colored)</li>
-            <li>Pencil or pen</li>
-            <li>Ruler</li>
-            <li>Markers or colored pencils (optional)</li>
-        </ul>
-
-        <h2>Steps</h2>
-        <ol>
-            <li>
-                <strong>Brainstorm:</strong> Think about a simple concept or idea that you want to communicate. Examples
-                could include:
-                <ul>
-                    <li><strong>Calmness:</strong> Use soft, rounded shapes and a peaceful color palette.</li>
-                    <li><strong>Energy:</strong> Use sharp, angular shapes and vibrant colors.</li>
-                    <li><strong>Balance:</strong> Create a composition that is visually balanced using symmetrical or
-                        asymmetrical arrangements.</li>
-                    <li><strong>Movement:</strong> Use lines and arrows to create a sense of direction or flow.</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Sketch:</strong> Start by sketching out your composition using basic shapes like squares,
-                circles, triangles, and lines. Experiment with different arrangements and sizes to find a composition
-                that effectively conveys your idea.
-            </li>
-            <li>
-                <strong>Choose Colors:</strong> Select a color palette that complements your concept. For minimalism, a
-                limited color palette of black, white, and gray is often used. You can also experiment with other color
-                combinations that create a sense of simplicity and elegance.
-            </li>
-            <li>
-                <strong>Finalize Your Design:</strong> Once you're satisfied with your sketch, refine your design by
-                adding details, adjusting the proportions, and ensuring that the elements are balanced and aligned.
-            </li>
-            <li>
-                <strong>Create Your Composition:</strong> Transfer your final design to a clean sheet of paper. Use
-                markers or colored pencils to fill in the shapes and add any necessary details.
-            </li>
-        </ol>
-
-        <div class="tips">
-            <h3>Additional Tips</h3>
+            <h3 class="section-subtitle">What is Git?</h3>
+            <p>Git is a powerful tool for tracking changes in source code during software development. Key features of
+                Git include:</p>
             <ul>
-                <li><strong>Negative Space:</strong> Utilize negative space effectively to create a sense of simplicity
-                    and elegance.</li>
-                <li><strong>Typography:</strong> Consider using a clean, sans-serif font that complements your design.
+                <li><strong>Distributed Version Control:</strong> Every developer has a complete copy of the repository.
                 </li>
-                <li><strong>Texture:</strong> Experiment with different textures to add depth and visual interest to
-                    your composition.</li>
+                <li><strong>Branching and Merging:</strong> Create isolated branches for features or fixes and merge
+                    them later.</li>
+                <li><strong>Commit History:</strong> Keep a detailed history of changes.</li>
+            </ul>
+            <div class="code-container">
+                <pre>
+// Example: Common Git Commands
+git init        // Initialize a new Git repository
+git status      // Check the status of your repository
+git add .       // Stage changes for commit
+git commit -m "Initial commit" // Commit changes with a message
+git log         // View commit history
+                </pre>
+            </div>
+
+            <h3 class="section-subtitle">What is GitHub?</h3>
+            <p>GitHub is a platform for hosting and collaborating on Git repositories. It allows teams to share, review,
+                and manage code efficiently. Key features include:</p>
+            <ul>
+                <li><strong>Repositories:</strong> Centralized storage for project code.</li>
+                <li><strong>Collaboration:</strong> Teams can work together with pull requests and code reviews.</li>
+                <li><strong>Integration:</strong> Tools like CI/CD, project management, and documentation.</li>
+            </ul>
+            <div class="code-container">
+                <pre>
+// Example: Connect a Local Repository to GitHub
+git remote add origin https://github.com/username/repository.git
+git push -u origin main
+                </pre>
+            </div>
+
+            <h3 class="section-subtitle">Basic Git Workflow</h3>
+            <p>Follow these steps to manage your code using Git:</p>
+            <ol>
+                <li>Initialize a Git repository using <code>git init</code>.</li>
+                <li>Make changes to your code and use <code>git add</code> to stage them.</li>
+                <li>Commit the changes with a descriptive message using <code>git commit</code>.</li>
+                <li>Push your changes to a remote repository like GitHub using <code>git push</code>.</li>
+            </ol>
+
+            <h3 class="section-subtitle">Branches and Pull Requests</h3>
+            <p>Branches allow you to work on different features or bug fixes without affecting the main codebase. Once a
+                branch is ready, create a pull request to merge it into the main branch.</p>
+            <div class="code-container">
+                <pre>
+// Example: Branch Workflow
+git branch feature-login      // Create a new branch
+git checkout feature-login    // Switch to the new branch
+git push origin feature-login // Push the branch to GitHub
+                </pre>
+            </div>
+
+            <h3 class="section-subtitle">Collaboration Tips</h3>
+            <ul>
+                <li><strong>Write Clear Commit Messages:</strong> Summarize changes in a single sentence.</li>
+                <li><strong>Use Pull Requests:</strong> Review and discuss changes before merging.</li>
+                <li><strong>Resolve Conflicts:</strong> Work through merge conflicts carefully.</li>
+            </ul>
+
+            <h3 class="section-subtitle">Next Steps</h3>
+            <p>To advance your skills in version control:</p>
+            <ul>
+                <li>Learn about advanced Git commands (e.g., rebase, stash).</li>
+                <li>Explore GitHub Actions for automation.</li>
+                <li>Practice with open-source projects on GitHub.</li>
             </ul>
         </div>
 
-        <div class="rubric">
-            <h3>Grading Rubric</h3>
-            <ul>
-                <li><strong>Concept Clarity:</strong> Does the composition effectively convey the chosen concept?</li>
-                <li><strong>Design Principles:</strong> Are the basic design principles (balance, contrast, emphasis,
-                    etc.) applied effectively?</li>
-                <li><strong>Compositional Strength:</strong> Is the composition visually appealing and well-executed?
-                </li>
-                <li><strong>Originality:</strong> Does the composition demonstrate creativity and originality?</li>
-                <li><strong>Technical Skill:</strong> Are the shapes, lines, and colors used skillfully?</li>
-            </ul>
-        </div>
 
-        <h2>Conclusion</h2>
-        <p>By following these steps and applying the principles of minimalism, you can create a visually striking and
-            meaningful composition. Embrace the process of exploration and creativity as you bring your minimalist idea
-            to life.</p>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

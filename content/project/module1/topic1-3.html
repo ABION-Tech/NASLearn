@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Setting Up a Development Environment - New Age Skillsphere</title>
+  <title>New Age Skillsphere</title>
 
   <!-- Embedding CodeMirror for Code Editing -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
@@ -127,59 +127,59 @@
 </head>
 
 <body>
-  <div class="container mt-4">
-    <h1 class="display-4 mb-4">Setting Up a Development Environment</h1>
+  <div class="container">
+    <h1 class="text-center text-primary">Module 1: Introduction to Project Management</h1>
 
-    <section id="choosing-code-editor" class="mb-5">
-      <h2 class="h3 mb-3">4.1. Choosing a Code Editor</h2>
-      <p>A code editor is a specialized text editor designed for writing and editing code. Some popular choices include:
-      </p>
-      <ul>
-        <li><strong>Visual Studio Code (VS Code):</strong> A free, open-source code editor with a rich ecosystem of
-          extensions.</li>
-        <li><strong>Sublime Text:</strong> A fast, lightweight editor with powerful features.</li>
-        <li><strong>Atom:</strong> A free, open-source editor developed by GitHub.</li>
-      </ul>
+    <div class="card">
+      <div class="card-body">
+        <h2 class="text-primary">3. The Project Life Cycle</h2>
 
-      <h4>Example: Installing Visual Studio Code</h4>
-      <ol>
-        <li>Visit the <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code website</a>.</li>
-        <li>Download the version appropriate for your operating system.</li>
-        <li>Install the software following the on-screen instructions.</li>
-      </ol>
-    </section>
+        <p>The Project Life Cycle is a series of phases that a project goes through from start to finish. It provides a
+          structured approach to managing projects and ensures that each stage is thoroughly planned and executed. The
+          phases of the Project Life Cycle include:</p>
 
-    <section id="setting-up-project" class="mb-5">
-      <h2 class="h3 mb-3">4.2. Setting Up Your First Project</h2>
-      <ol>
-        <li><strong>Create a Project Folder:</strong> Organize your project files in a dedicated folder.</li>
-        <li><strong>Create an HTML File:</strong> Open your code editor and create a new file named
-          <code>index.html</code>.
-        </li>
-        <li><strong>Basic HTML Structure:</strong> Write the basic HTML structure in <code>index.html</code>.</li>
-        <li><strong>Open in Browser:</strong> Save the file and open it in your web browser to see the results.</li>
-      </ol>
+        <h3 class="text-primary">Phases of a Project:</h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Initiation:</strong> This phase involves defining the project, its objectives, and its scope. It
+            also includes identifying stakeholders and obtaining project approval. Key deliverables include the Project
+            Charter and stakeholder list.
+          </li>
+          <li class="list-group-item">
+            <strong>Planning:</strong> Detailed planning takes place in this phase, where the project’s goals, tasks,
+            resources, and timeline are laid out. Key deliverables include the Project Plan, Work Breakdown Structure
+            (WBS), schedule, and budget.
+          </li>
+          <li class="list-group-item">
+            <strong>Execution:</strong> This phase involves carrying out the tasks outlined in the project plan.
+            Resources are allocated, and teams are formed to implement the work. Key deliverables include progress
+            reports, updates to stakeholders, and completed project tasks.
+          </li>
+          <li class="list-group-item">
+            <strong>Monitoring:</strong> During execution, continuous monitoring is necessary to ensure the project
+            stays on track. Performance against the plan is assessed, and corrective actions are taken when necessary.
+            Key deliverables include performance reports, risk assessments, and changes to the schedule or budget.
+          </li>
+          <li class="list-group-item">
+            <strong>Closing:</strong> This phase involves completing the project, obtaining formal acceptance from
+            stakeholders, and finalizing all activities. Key deliverables include the project’s final report,
+            documentation, and lessons learned.
+          </li>
+        </ul>
 
-      <h4>Example:</h4>
-      <!-- Embedding CodeMirror for Interactive HTML Example -->
-      <textarea id="html-project-editor" class="CodeMirror" name=" code">
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My First Web Project</title>
-  </head>
-  <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a simple web page created during Week 1.</p>
-  </body>
-</html>
-    </textarea>
-
-      <p>After saving the file, open it in a browser by double-clicking or using the "Open With" feature to see the
-        result.</p>
-    </section>
+        <h3 class="text-primary">Importance of Flexibility and Adaptability:</h3>
+        <p>While the project life cycle provides a structured approach, it is essential to remain flexible and
+          adaptable. Projects often encounter unforeseen challenges, changes in scope, or evolving stakeholder
+          requirements. The ability to adapt to these changes without losing sight of the project’s overall goals is key
+          to ensuring its success.</p>
+        <p>Flexibility during the life cycle allows project managers to make informed decisions, adjust timelines, and
+          reallocate resources as necessary to achieve the desired outcomes. It also helps in dealing with risks and
+          uncertainties, keeping the project on track even when faced with challenges.</p>
+      </div>
+    </div>
   </div>
-  <div class="video-container">
+
+  <!-- <div class="video-container">
     <div class="gradient-border">
       <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -189,7 +189,7 @@
         <h4>Channel Name<h4>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- CodeMirror Initialization -->
   <script>
     var projectEditor = CodeMirror.fromTextArea(document.getElementById("html-project-editor"), {

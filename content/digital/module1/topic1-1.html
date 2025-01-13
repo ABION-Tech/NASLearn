@@ -37,6 +37,87 @@
             border-radius: 5px;
             margin-bottom: 15px;
         }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
 </head>
 
@@ -46,31 +127,139 @@
         <h1>Overview of Digital Marketing</h1>
 
         <h2>Definition and Scope:</h2>
-        <p>Digital marketing encompasses all marketing efforts that use the internet or an electronic device. It
-            includes a variety of tactics and channels to connect with potential customers where they spend much of
-            their time: online.</p>
+        <p>Digital marketing covers everything from social media marketing to email marketing, content creation, and
+            more, using online channels to reach customers where they spend much of their time: online. Unlike
+            traditional marketing, digital marketing offers more targeted and measurable approaches, allowing businesses
+            to reach a wider audience in a more cost-effective way. The scope of digital marketing includes a variety of
+            tactics and channels aimed at attracting, engaging, and retaining customers. It’s not limited to traditional
+            ads but includes interactive, data-driven strategies that offer businesses the ability to track and measure
+            results in real-time. This approach allows brands to connect with customers on multiple levels, from
+            awareness and consideration to conversion and retention.</p>
 
         <h2>Key Channels:</h2>
         <div class="key-channels">
             <div class="channel-item">
                 <h4>Search Engine Optimization (SEO):</h4>
-                <p>Enhances visibility on search engines to attract organic traffic.</p>
+                <p>SEO increases your website’s visibility on search engines by ensuring your content is discoverable
+                    when users search for specific terms. By improving factors like keyword relevance, site structure,
+                    mobile optimization, and content quality, SEO helps websites rank higher in organic search results.
+                    The ultimate goal is to drive more organic (non-paid) traffic to the site, enhancing the chances of
+                    converting visitors into customers. A successful SEO strategy requires focusing on three main
+                    aspects:</p>
+                <ul>
+                    <li><strong>Technical SEO:</strong> This involves optimizing website structure and performance,
+                        ensuring fast load times, and ensuring the site is mobile-friendly.</li>
+                    <li><strong>On-page SEO:</strong> This focuses on content quality, keyword usage, title tags, and
+                        meta descriptions, which make your content more relevant to search queries.</li>
+                    <li><strong>Off-page SEO:</strong> Building backlinks from other authoritative websites to improve
+                        your site's credibility in search engine rankings.</li>
+                </ul>
+                <p>SEO is a long-term strategy, and results often take time to manifest but lead to sustainable, organic
+                    traffic that can drive business growth over time.</p>
             </div>
+
             <div class="channel-item">
                 <h4>Pay-Per-Click (PPC):</h4>
-                <p>Paid advertisements that appear on search engine results pages.</p>
+                <p>PPC is a type of online advertising where businesses pay a fee each time their ad is clicked. This
+                    model is often used in search engines like Google through platforms like Google Ads, where
+                    advertisers bid on keywords relevant to their product or service. The ads are displayed on search
+                    engine result pages or across the internet, usually targeting users based on search queries or
+                    demographics. PPC campaigns can be highly effective for driving immediate traffic and visibility,
+                    especially for businesses looking to compete in saturated markets or introduce new products.</p>
+                <p>Successful PPC campaigns require continuous refinement and optimization. The key components to focus
+                    on include:</p>
+                <ul>
+                    <li><strong>Keyword Targeting:</strong> Choosing relevant keywords that align with the products or
+                        services you offer.</li>
+                    <li><strong>Ad Copy Optimization:</strong> Crafting compelling and relevant ad copy that encourages
+                        users to click.</li>
+                    <li><strong>Bid Management:</strong> Strategically bidding on keywords to ensure the right balance
+                        between cost and exposure.</li>
+                    <li><strong>Retargeting Strategies:</strong> Targeting users who have interacted with your ads or
+                        visited your website but did not convert, encouraging them to return and complete their actions.
+                    </li>
+                </ul>
+                <p>One of the most popular PPC platforms is Google Ads, which allows businesses to bid on keywords and
+                    display ads in search results, helping drive more immediate traffic to websites.</p>
             </div>
+
             <div class="channel-item">
                 <h4>Social Media Marketing:</h4>
-                <p>Engaging with users on platforms like Facebook, Instagram, and Twitter.</p>
+                <p>Social media marketing is all about building relationships with customers through engagement on
+                    platforms like Facebook, Instagram, Twitter, LinkedIn, and TikTok. This channel leverages the power
+                    of social networks to drive brand awareness, foster customer loyalty, and promote content. Social
+                    media marketing can take various forms, including organic social media posts, paid ads, influencer
+                    collaborations, and social media contests.</p>
+                <p>Engaging customers with meaningful content—whether through images, videos, or text—builds trust and
+                    strengthens brand loyalty. Key strategies for social media marketing include:</p>
+                <ul>
+                    <li><strong>Organic Content:</strong> Sharing content that resonates with your audience and
+                        encourages interaction through likes, comments, and shares.</li>
+                    <li><strong>Paid Social Ads:</strong> Running paid campaigns to target specific user demographics
+                        and drive traffic or conversions.</li>
+                    <li><strong>Influencer Marketing:</strong> Partnering with influencers to promote your brand and
+                        expand reach to their followers.</li>
+                    <li><strong>Engagement Campaigns:</strong> Running contests, promotions, or surveys to boost user
+                        interaction and community involvement.</li>
+                </ul>
+                <p>Social media is also a powerful tool for customer service, allowing brands to respond to inquiries,
+                    solve problems, and show a human side to their business.</p>
             </div>
+
             <div class="channel-item">
                 <h4>Content Marketing:</h4>
-                <p>Creating valuable content to attract and engage target audiences.</p>
+                <p>Content marketing is a strategic approach to creating and distributing valuable, relevant, and
+                    consistent content to attract and engage a specific target audience. The goal is to drive profitable
+                    customer action by providing value through blog posts, videos, infographics, whitepapers, eBooks,
+                    case studies, and more. Content marketing helps build brand authority, nurture leads, and improve
+                    SEO.</p>
+                <p>Unlike traditional advertising, content marketing focuses on delivering educational, entertaining, or
+                    problem-solving content that appeals to your audience's interests. The key to successful content
+                    marketing is:</p>
+                <ul>
+                    <li><strong>Understanding Your Audience:</strong> Identifying your target audience's needs,
+                        challenges, and desires to create content that resonates with them.</li>
+                    <li><strong>Delivering Value:</strong> Offering helpful information or entertainment rather than
+                        overtly pushing a product or service.</li>
+                    <li><strong>Consistency:</strong> Regularly publishing content to stay top of mind with your
+                        audience.</li>
+                </ul>
+                <p>By establishing thought leadership and building trust, content marketing can lead to long-term
+                    customer relationships and stronger brand loyalty.</p>
             </div>
+
             <div class="channel-item">
                 <h4>Email Marketing:</h4>
-                <p>Direct communication with customers through email to build relationships and drive sales.</p>
+                <p>Email marketing allows businesses to directly communicate with customers, offering tailored messaging
+                    that appeals to their specific needs, behaviors, or preferences. It’s a powerful tool for nurturing
+                    leads, providing valuable updates, re-engaging inactive customers, and driving conversions.
+                    Successful email marketing campaigns often involve:</p>
+                <ul>
+                    <li><strong>Segmentation:</strong> Dividing your email list into smaller groups based on specific
+                        criteria like location, interests, or past behaviors, and sending tailored messages to each
+                        segment.</li>
+                    <li><strong>Personalization:</strong> Adding personal touches to emails, such as the recipient's
+                        name or product recommendations based on previous purchases.</li>
+                    <li><strong>Automation:</strong> Using email marketing platforms to automatically send targeted
+                        messages based on user actions, such as welcome emails, abandoned cart reminders, and
+                        post-purchase follow-ups.</li>
+                </ul>
+                <p>Metrics like open rates, click-through rates, conversion rates, and unsubscribe rates help gauge the
+                    effectiveness of email campaigns, allowing marketers to refine their approach over time. Email
+                    marketing remains one of the most cost-effective and high-ROI strategies in digital marketing.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/h95cQkEWBx0?si=SK679Jz0z-YC9TnB"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <div class="video-links">
+                <h4>Channel Name</h4>
             </div>
         </div>
     </div>

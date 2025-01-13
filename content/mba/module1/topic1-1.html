@@ -36,6 +36,87 @@
             /* Blue accent for example highlight */
             margin-top: 10px;
         }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
 </head>
 
@@ -43,54 +124,154 @@
     <div class="container">
         <h1>Understanding Business Environments</h1>
 
+        <!-- Introduction to MBA Essentials -->
         <div class="section">
-            <h2>The Role of Businesses in the Economy</h2>
-            <h4>Explanation:</h4>
+            <h2>What is an MBA (Master of Business Administration)?</h2>
+            <h4>Definition:</h4>
             <p>
-                Businesses are the backbone of economies, generating goods and services, creating jobs, and driving
-                economic growth. They contribute to GDP, innovation, and social well-being.
+                An MBA (Master of Business Administration) is a graduate-level degree designed to provide students with
+                the knowledge, skills, and tools necessary for success in business and management. MBA programs
+                typically focus on leadership, strategic thinking, marketing, accounting, finance, organizational
+                behavior, and human resources, among other key business disciplines.
+            </p>
+            <h4>Why is an MBA Important?</h4>
+            <p>
+                An MBA is considered one of the most versatile and valuable graduate degrees in the world. It prepares
+                students to lead and manage organizations, make critical business decisions, and drive growth. The
+                degree opens doors to high-paying jobs, career advancement, and a broad network of industry
+                professionals.
+            </p>
+            <p>
+                Through an MBA, students acquire a comprehensive understanding of business operations, strategic
+                decision-making, financial management, and the ability to analyze and solve complex business challenges.
+                These skills are crucial for anyone aspiring to climb the corporate ladder, run a startup, or make
+                meaningful contributions to the global economy.
             </p>
             <h4>Real-World Example:</h4>
             <div class="real-world-example">
-                Consider <strong>Apple Inc.</strong>. It not only produces valuable consumer products but also
-                contributes significantly to the global economy through job creation, technology advancement, and
-                corporate taxation.
+                Many renowned executives, such as <strong>Satya Nadella</strong> (CEO of Microsoft) and <strong>Indra
+                    Nooyi</strong> (Former CEO of PepsiCo), hold MBA degrees. Their education allowed them to apply
+                advanced business concepts to lead some of the world’s largest companies, navigate complex global
+                markets, and drive transformative business strategies.
             </div>
+        </div>
+
+        <!-- The Role of Businesses in the Economy -->
+        <div class="section">
+            <h2>The Role of Businesses in the Economy</h2>
+
+            <h4>Explanation:</h4>
+            <p>
+                Businesses form the backbone of any economy. They create goods and services that meet the needs and
+                wants of consumers, which in turn drives economic growth and job creation. By facilitating trade,
+                employment, and innovation, businesses are critical to the prosperity of individuals, communities, and
+                nations.
+            </p>
+            <p>
+                Businesses influence several key aspects of the economy, including:
+            </p>
+            <ul>
+                <li><strong>Gross Domestic Product (GDP):</strong> Businesses contribute significantly to GDP by
+                    producing goods and services that are consumed within the economy.</li>
+                <li><strong>Employment Creation:</strong> By operating in various industries, businesses provide
+                    millions of jobs, thereby enabling people to earn income and participate in economic activities.
+                </li>
+                <li><strong>Innovation and Technology:</strong> Businesses foster innovation by developing new products,
+                    services, and technologies that improve efficiency and quality of life.</li>
+                <li><strong>Global Trade:</strong> Businesses engage in international trade, which allows countries to
+                    import and export goods and services, boosting economic exchange and growth.</li>
+            </ul>
+
+            <h4>Real-World Example:</h4>
+            <div class="real-world-example">
+                <strong>Apple Inc.</strong> is an excellent example of a business that has reshaped the global economy.
+                Beyond its iconic products such as the iPhone, Apple has driven technological advancements, transformed
+                supply chains, and created millions of jobs worldwide. The company's market influence extends beyond the
+                consumer electronics industry, contributing to global stock markets and supply chains.
+            </div>
+
             <h4>Significance:</h4>
             <p>
-                Understanding the broader role of businesses in the economy helps future business leaders recognize
-                their impact on society, the importance of ethical business practices, and the value of sustainable
-                growth.
+                Understanding the role of businesses in the economy is fundamental for both aspiring entrepreneurs and
+                business leaders. It highlights the importance of economic drivers like innovation, job creation, and
+                the global marketplace. Furthermore, businesses must adopt sustainable and ethical practices to create
+                value that lasts and positively impacts society and the environment.
             </p>
         </div>
 
+        <!-- Types of Business Entities and Structures -->
         <div class="section">
             <h2>Types of Business Entities and Structures</h2>
+
             <h4>Explanation:</h4>
             <p>
-                Businesses can take different forms, each with distinct legal and operational implications. Key types
-                include:
+                Choosing the right business structure is crucial for entrepreneurs, as it determines how a business is
+                organized, taxed, and regulated. The legal structure you choose will affect your liabilities, taxes, and
+                the overall management of the business. In the MBA curriculum, understanding these structures is key to
+                strategic business planning and decision-making.
+            </p>
+            <p>
+                The primary types of business entities include:
             </p>
             <ul>
-                <li><strong>Sole Proprietorship:</strong> A business owned by a single individual with unlimited
-                    liability.</li>
-                <li><strong>Partnership:</strong> A business owned by two or more individuals who share profits, losses,
-                    and liabilities.</li>
-                <li><strong>Corporation:</strong> A legal entity separate from its owners, offering limited liability to
-                    shareholders.</li>
-                <li><strong>LLC (Limited Liability Company):</strong> A hybrid structure offering the benefits of both a
-                    corporation and a partnership.</li>
+                <li><strong>Sole Proprietorship:</strong> This is the simplest form of business structure, where a
+                    single individual owns and operates the business. While the owner has complete control and receives
+                    all profits, they are also personally liable for the business’s debts and obligations.</li>
+                <li><strong>Partnership:</strong> In a partnership, two or more people share ownership and management of
+                    the business. This structure can be general, where all partners are equally responsible, or limited,
+                    where some partners have limited liability and input in management. Partnerships are common among
+                    small businesses.</li>
+                <li><strong>Corporation:</strong> A corporation is a separate legal entity that provides limited
+                    liability protection to its shareholders. It has the ability to raise capital through the issuance
+                    of stock and can continue to exist indefinitely, independent of its owners. Corporations are often
+                    larger businesses that seek significant capital or need to protect their owners from liabilities.
+                </li>
+                <li><strong>LLC (Limited Liability Company):</strong> An LLC is a hybrid structure that combines the
+                    limited liability features of a corporation with the tax flexibility of a partnership. Owners
+                    (called members) are not personally liable for the company’s debts, and the business can choose
+                    between being taxed as a corporation or a partnership.</li>
+                <li><strong>Cooperative:</strong> A cooperative (co-op) is a business owned and operated by a group of
+                    individuals for their mutual benefit. Co-ops are typically seen in industries like agriculture,
+                    retail, and housing. The members share profits and have voting power in decision-making.</li>
             </ul>
+
             <h4>Real-World Example:</h4>
             <div class="real-world-example">
-                Amazon started as a sole proprietorship but later transitioned to a corporation as it grew, benefiting
-                from limited liability and the ability to raise capital through the stock market.
+                Take the example of <strong>Amazon</strong>, which started as a sole proprietorship but transitioned to
+                a corporation as it expanded. By doing so, it gained access to large-scale capital through stock
+                offerings and was able to limit the personal liability of its shareholders. Today, Amazon is a
+                multi-trillion-dollar corporation that continues to lead in e-commerce, cloud computing, and media
+                services.
             </div>
+
             <h4>Significance:</h4>
             <p>
-                Choosing the right business structure is crucial for legal protection, tax benefits, and operational
-                efficiency.
+                The choice of business structure has long-term implications for tax, liability, and operations. An
+                entrepreneur's decision regarding their company’s legal structure affects not only their personal
+                liability but also the business’s ability to raise capital, enter into contracts, and attract investors.
+                An LLC, for instance, provides flexibility and protection, whereas a corporation may be better suited
+                for larger, capital-intensive businesses.
             </p>
+            <p>
+                For MBA students, understanding the nuances of business entities is critical for making informed
+                strategic decisions. Whether you're managing a startup or leading a large corporation, knowledge of
+                legal structures will influence how you approach partnerships, investments, and long-term goals.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/RwWlKQSrXsk?si=oBisvJUAh-GVyRC7"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <div class="video-links">
+                <h4>Channel Name</h4>
+            </div>
         </div>
     </div>
 

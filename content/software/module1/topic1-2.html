@@ -49,103 +49,87 @@
 
 <body>
 
-    <div class="container mt-5">
-        <div class="content-section">
-            <h2 class="section-title">HTML, CSS, and the Basics of Web Development: A Hands-On Guide</h2>
-            <p><strong>Introduction</strong></p>
-            <p>HTML (Hypertext Markup Language) and CSS (Cascading Style Sheets) are the fundamental building blocks of the modern web. Together, they provide the structure and style for web pages. This guide will introduce you to the basics of HTML and CSS, and provide hands-on examples to help you start creating your own web pages.</p>
+    <body>
+        <div class="container mt-5">
+            <div class="content-section">
+                <h2 class="section-title">HTML, CSS, and the Basics of Web Development: A Hands-On Guide</h2>
+                <p><strong>Introduction</strong></p>
+                <p>HTML (Hypertext Markup Language) and CSS (Cascading Style Sheets) are the fundamental building blocks
+                    of the modern web. Together, they provide the structure and style for web pages. This guide will
+                    introduce you to the basics of HTML and CSS and provide hands-on examples to help you start creating
+                    your own web pages.</p>
 
-            <h3 class="section-subtitle">HTML: The Building Blocks</h3>
-            <p>HTML is used to define the structure of a web page. It consists of elements, which are enclosed in opening and closing tags. Here are some essential HTML elements:</p>
-            <ul>
-                <li><strong><span class="highlight">
-                    <div class="code-container">
-            <pre>
-                * **`<html>`:** The root element of an HTML document.
-                    * **`<head>`:** Contains metadata about the page, such as the title and stylesheet links.
-                    * **`<title>`:** Defines the title of the page, which appears in the browser's tab.
-                    * **`<body>`:** Contains the visible content of the page.
-                    * **`<h1>` to `<h6>`:** Defines headings of different levels.
-                    * **`<p>`:** Defines a paragraph.
-                    * **`<a>`:** Defines a hyperlink.
-                    * **`<img>`:** Defines an image.
-                    * **`<ul>` and `<ol>`:** Define unordered and ordered lists.
-                    * **`<li>`:** Defines a list item.
-                    
-        </pre>
+                <h3 class="section-subtitle">HTML: The Building Blocks</h3>
+                <p>HTML defines the structure of a web page. It uses elements enclosed in opening and closing tags.
+                    Below are some essential HTML elements:</p>
+                <ul>
+                    <li><strong>&lt;html&gt;</strong>: The root element of an HTML document.</li>
+                    <li><strong>&lt;head&gt;</strong>: Contains metadata about the page, such as the title and
+                        stylesheet links.</li>
+                    <li><strong>&lt;title&gt;</strong>: Defines the title of the page, shown in the browser tab.</li>
+                    <li><strong>&lt;body&gt;</strong>: Contains the visible content of the page.</li>
+                    <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong>: Defines headings of different levels.</li>
+                    <li><strong>&lt;p&gt;</strong>: Defines a paragraph.</li>
+                    <li><strong>&lt;a&gt;</strong>: Defines a hyperlink.</li>
+                    <li><strong>&lt;img&gt;</strong>: Embeds an image.</li>
+                    <li><strong>&lt;ul&gt; and &lt;ol&gt;</strong>: Define unordered and ordered lists.</li>
+                    <li><strong>&lt;li&gt;</strong>: Represents a list item.</li>
+                </ul>
+
+                <h3 class="section-subtitle">CSS: Adding Style</h3>
+                <p>CSS is used to style and layout web pages. Below is an example of a basic CSS snippet:</p>
+                <div class="code-container">
+                    <pre>
+    /* Styling an HTML element */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+    
+    h1 {
+        color: #333;
+    }
+    
+    a {
+        text-decoration: none;
+        color: blue;
+    }
+                    </pre>
+                </div>
+
+                <h3 class="section-subtitle">Hands-On Example</h3>
+                <p>Here’s a simple example of a basic web page:</p>
+                <div class="code-container">
+                    <pre>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>My First Web Page</title>
+    </head>
+    <body>
+        <h1>Welcome to My Website</h1>
+        <p>This is a paragraph of text.</p>
+        <a href="https://example.com">Visit Example</a>
+    </body>
+    </html>
+                    </pre>
+                </div>
+
+                <h3 class="section-subtitle">Next Steps</h3>
+                <p>Once you are comfortable with the basics, explore advanced topics like:</p>
+                <ul>
+                    <li>CSS Flexbox and Grid for layouts</li>
+                    <li>JavaScript to add interactivity</li>
+                    <li>Responsive design using media queries</li>
+                    <li>Frameworks like Bootstrap for faster development</li>
+                </ul>
+            </div>
+
+            <footer>
+                &copy; 2025 Hands-On Web Development. All rights reserved.
+            </footer>
         </div>
-                    
-                    
-                    
-                    
-                    `<html>`</span>:</strong> A The root element of an HTML document.</li>
-                <li><strong>Shape:</strong> A <span class="highlight">shape</span> is a defined area, either geometric
-                    or organic. Geometric shapes like squares and triangles convey structure, while organic shapes feel
-                    natural and freeform.</li>
-                <li><strong>Color:</strong> <span class="highlight">Color</span> is a powerful tool for setting tone and
-                    emotion in design. Understanding color theory helps in creating contrast, mood, and harmony. Red
-                    evokes passion, blue signifies calmness, and yellow brings energy.</li>
-                <li><strong>Texture:</strong> <span class="highlight">Texture</span> refers to how a surface feels or
-                    appears to feel. In digital media, texture is an illusion that adds depth and realism, while in
-                    physical design, texture is tangible.</li>
-                <li><strong>Space:</strong> <span class="highlight">Space</span> is the area around design elements.
-                    Positive space is filled with content, while negative space gives the design room to breathe,
-                    enhancing clarity.</li>
-                <li><strong>Form:</strong> <span class="highlight">Form</span> adds three-dimensionality, making objects
-                    feel solid through perspective, shading, or layer techniques.</li>
-            </ul>
-
-            <h3 class="section-subtitle">Design Principles</h3>
-            <ul>
-                <li><strong>Balance:</strong> The distribution of visual weight in a design. <span
-                        class="highlight">Symmetrical balance</span> creates stability, while asymmetry brings dynamic
-                    energy.</li>
-                <li><strong>Contrast:</strong> The deliberate juxtaposition of different elements (e.g., dark vs light,
-                    rough vs smooth) to create visual interest and hierarchy.</li>
-                <li><strong>Emphasis:</strong> Using contrast, scale, or color to direct the viewer’s attention to a
-                    specific element or focal point in the design.</li>
-                <li><strong>Movement:</strong> Lines and shapes can direct a viewer’s eye across the design in a
-                    specific path, guiding them to key areas.</li>
-                <li><strong>Pattern & Repetition:</strong> Repeated use of design elements to create consistency and
-                    rhythm. Repetition can bring unity, while patterns offer texture and interest.</li>
-                <li><strong>Rhythm:</strong> A sense of movement created through repeated visual patterns or elements.
-                </li>
-                <li><strong>Unity:</strong> The harmony of elements working together cohesively to present a seamless,
-                    consistent message.</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h3 class="section-title">Expanding the Concepts</h3>
-
-            <p><strong>The Golden Ratio:</strong> Designers often use the Golden Ratio (1:1.618) to achieve balanced and
-                aesthetically pleasing compositions. It’s found in nature and used in everything from art to
-                architecture.</p>
-
-            <p><strong>Color Theory:</strong> Dive deeper into the psychology of color. For example, brands use specific
-                colors to influence perception. Red evokes urgency and passion, while blue signifies trustworthiness,
-                frequently seen in financial institutions. Understanding the color wheel, complementary and analogous
-                colors are crucial for harmonious design.</p>
-
-            <p><strong>Typography:</strong> Typography is more than just choosing a font. Considerations include
-                legibility, personality, and function. For instance, sans-serif fonts are modern and clean, whereas
-                serif fonts evoke tradition and formality. Pay attention to kerning (spacing between letters) and
-                leading (spacing between lines).</p>
-
-            <p><strong>Design Styles:</strong> Minimalism is all about stripping away excess to focus on key elements,
-                while Bauhaus emphasizes functionality and simplicity. Art Deco incorporates bold geometric patterns and
-                rich colors, often seen in 1920s architecture and branding.</p>
-
-            <p><strong>Design Software:</strong> Tools like Adobe Creative Suite, Sketch, Figma, and Canva allow
-                designers to bring their ideas to life. Photoshop and Illustrator are essential for manipulating images
-                and creating scalable vector graphics, while Figma is gaining popularity for UI/UX design due to its
-                collaborative features.</p>
-
-            <p><strong>Case Studies:</strong> Analyze famous designs like Apple’s branding, which emphasizes minimalism
-                and user-centered design. Another great case study is Nike’s “Just Do It” campaign, which uses bold
-                typography, contrasting colors, and emotive imagery to reinforce their brand message.</p>
-        </div>
-    </div>
+    </body>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

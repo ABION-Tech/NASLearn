@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essential Tools for Graphic Designers</title>
+    <title>Introduction to JavaScript and TypeScript</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -79,81 +79,112 @@
 </head>
 
 <body>
-
-    <div class="container">
+    <div class="container mt-5">
         <div class="content-section">
-            <h1>Tools of the Trade: Essential Software and Hardware for Graphic Designers</h1>
-            <p>Graphic designers rely on a variety of software and hardware tools to bring their creative visions to
-                life. Understanding these tools is critical to ensuring smooth workflow, high productivity, and
-                professional results. This section explores the most widely used software and hardware tools in the
-                graphic design industry and delves into additional considerations for optimizing a designer's toolkit.
-            </p>
-        </div>
+            <h2 class="section-title">Introduction to JavaScript and TypeScript</h2>
+            <p><strong>Overview</strong></p>
+            <p>JavaScript and TypeScript are powerful programming languages widely used in web development. JavaScript
+                adds interactivity to web pages, while TypeScript, built on JavaScript, enhances it with optional static
+                typing and modern features.</p>
 
-        <div class="software-section">
-            <h2>Software</h2>
-            <p>Graphic designers need a variety of specialized software for different tasks. Here are some of the most
-                essential tools:</p>
+            <h3 class="section-subtitle">JavaScript: Adding Interactivity</h3>
+            <p>JavaScript is a versatile scripting language used to add interactivity and dynamic behavior to web pages.
+                It is supported by all modern browsers and works seamlessly with HTML and CSS. Below are key JavaScript
+                concepts:</p>
             <ul>
-                <li><span class="highlight">Adobe Illustrator:</span> A vector graphics editor that excels at creating
-                    logos, illustrations, and icons with precise control over shapes, lines, and text.</li>
-                <li><span class="highlight">Adobe Photoshop:</span> A raster graphics editor used for photo editing,
-                    image manipulation, and compositing. Ideal for both digital painting and photo editing.</li>
-                <li><span class="highlight">Canva:</span> An online, user-friendly design tool offering templates,
-                    elements, and fonts. Suitable for creating social media graphics, presentations, and posters.</li>
-                <li><span class="highlight">Figma:</span> A cloud-based, real-time collaborative design tool popular for
-                    UI/UX design and prototyping.</li>
-                <li><span class="highlight">Affinity Designer:</span> A professional-grade vector graphics editor
-                    offering many Illustrator-like features at a more affordable price.</li>
-                <li><span class="highlight">Affinity Photo:</span> A high-quality raster graphics editor, similar to
-                    Photoshop but more cost-effective.</li>
-                <li><span class="highlight">CorelDRAW:</span> A popular alternative to Illustrator for vector design and
-                    illustration.</li>
-                <li><span class="highlight">GIMP:</span> A free, open-source raster graphics editor with capabilities
-                    comparable to Photoshop.</li>
-                <li><span class="highlight">Inkscape:</span> A free, open-source alternative to Illustrator for vector
-                    design and drawing.</li>
+                <li><strong>Variables</strong>: Store data values. Use <code>var</code>, <code>let</code>, or
+                    <code>const</code>.
+                </li>
+                <li><strong>Functions</strong>: Define reusable blocks of code.</li>
+                <li><strong>Events</strong>: Respond to user actions like clicks or keystrokes.</li>
+                <li><strong>DOM Manipulation</strong>: Access and modify HTML elements dynamically.</li>
+            </ul>
+            <div class="code-container">
+                <pre>
+// Example: JavaScript Basics
+let name = "John";
+function greet() {
+    alert("Hello, " + name);
+}
+greet();
+                </pre>
+            </div>
+
+            <h3 class="section-subtitle">TypeScript: JavaScript with Superpowers</h3>
+            <p>TypeScript is a superset of JavaScript that introduces static typing and modern features, making it
+                easier to write and maintain complex applications. TypeScript code is transpiled into plain JavaScript
+                to run in the browser.</p>
+            <ul>
+                <li><strong>Static Typing</strong>: Helps catch errors during development.</li>
+                <li><strong>Interfaces</strong>: Define object structures for better code organization.</li>
+                <li><strong>Modules</strong>: Support modular code development.</li>
+                <li><strong>Type Annotations</strong>: Specify data types for variables and functions.</li>
+            </ul>
+            <div class="code-container">
+                <pre>
+// Example: TypeScript Basics
+let age: number = 25;
+function displayAge(userAge: number): void {
+    console.log(`Age is ${userAge}`);
+}
+displayAge(age);
+                </pre>
+            </div>
+
+            <h3 class="section-subtitle">Key Differences Between JavaScript and TypeScript</h3>
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>JavaScript</th>
+                        <th>TypeScript</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dynamically typed.</td>
+                        <td>Statically typed (optional).</td>
+                    </tr>
+                    <tr>
+                        <td>No compilation needed.</td>
+                        <td>Requires compilation to JavaScript.</td>
+                    </tr>
+                    <tr>
+                        <td>Used for small and medium-scale projects.</td>
+                        <td>Preferred for large-scale applications.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="section-subtitle">Hands-On Example: TypeScript to JavaScript</h3>
+            <p>TypeScript code:</p>
+            <div class="code-container">
+                <pre>
+let message: string = "Hello, TypeScript!";
+console.log(message);
+                </pre>
+            </div>
+            <p>Transpiled JavaScript code:</p>
+            <div class="code-container">
+                <pre>
+var message = "Hello, TypeScript!";
+console.log(message);
+                </pre>
+            </div>
+
+            <h3 class="section-subtitle">Next Steps</h3>
+            <p>After mastering JavaScript and TypeScript basics, explore advanced topics like:</p>
+            <ul>
+                <li>Asynchronous programming (Promises, async/await)</li>
+                <li>Modern JavaScript features (ES6+)</li>
+                <li>Frameworks like React, Angular, or Vue.js</li>
+                <li>TypeScript configuration and advanced types</li>
             </ul>
         </div>
 
-        <div class="hardware-section">
-            <h2>Hardware</h2>
-            <p>Hardware plays a significant role in a designer's workflow. From powerful computers to specialized input
-                devices, here are the key tools:</p>
-            <ul>
-                <li><span class="highlight">Computer:</span> A high-performance computer with ample processing power and
-                    a high-resolution display is critical. Both desktops and laptops are suitable depending on mobility
-                    needs.</li>
-                <li><span class="highlight">Graphics Tablet:</span> This tool allows designers to draw directly on the
-                    screen using a stylus for more natural control. Ideal for illustration, sketching, and digital
-                    painting.</li>
-                <li><span class="highlight">Digital Pen:</span> Paired with a graphics tablet, a digital pen offers
-                    pressure sensitivity and tilt features that enhance the design process.</li>
-                <li><span class="highlight">Printer:</span> A high-quality printer, preferably a laser printer, is
-                    essential for producing sharp, vibrant prints of designs.</li>
-                <li><span class="highlight">Scanner:</span> Useful for digitizing physical artwork or photos for further
-                    editing in digital design software.</li>
-                <li><span class="highlight">External Hard Drive:</span> Essential for storing large design files and
-                    backups. Design files can occupy significant disk space, making external storage a must-have.</li>
-            </ul>
-        </div>
-
-        <div class="expansion-section">
-            <h3>Expanding on the Content</h3>
-            <p>To deepen your understanding of design tools, it's crucial to consider the following topics:</p>
-            <ul>
-                <li><span class="highlight">Choosing the Right Tools:</span> Factors such as budget, project scale, and
-                    personal workflow preferences should influence your selection of software and hardware.</li>
-                <li><span class="highlight">Workflow Optimization:</span> Using keyboard shortcuts, customizing tool
-                    settings, and organizing project files effectively can significantly boost productivity.</li>
-                <li><span class="highlight">Emerging Trends:</span> Keep an eye on AI-powered tools and
-                    virtual/augmented reality design applications that are transforming the design industry.</li>
-                <li><span class="highlight">Learning Resources:</span> Platforms like YouTube, Coursera, Udemy, and
-                    design communities (e.g., Dribbble, Behance) are invaluable for learning new techniques.</li>
-            </ul>
-        </div>
+        <footer>
+            &copy; 2025 Hands-On Web Development. All rights reserved.
+        </footer>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

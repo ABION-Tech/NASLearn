@@ -86,129 +86,66 @@
 </head>
 
 <body>
-  <div class="container mt-5">
-    <h1 class="custom-heading accent-blue">Week 1: Introduction to Machine Learning</h1>
+  <div class="container">
+    <h1 class="text-center text-primary">Module 1: Introduction to Writing</h1>
 
-    <!-- Lecture Material Section -->
-    <div class="content-box">
-      <h2 class="lecture-material-title">Lecture Material</h2>
+    <div class="card">
+      <div class="card-body">
+        <h2 class="text-primary">3. Essential Skills for Writers</h2>
 
-      <h3 class="section-heading">Types of Machine Learning</h3>
+        <p>Writing is a craft that requires a blend of technical skill, creativity, and practice. Whether you're
+          crafting a novel, drafting an article, or writing a report, certain fundamental skills are essential for
+          effective communication and expression. In this section, we will explore key skills that every writer needs to
+          develop in order to create clear, engaging, and polished content.</p>
 
-      <p><strong>Machine Learning (ML)</strong> algorithms can be categorized into three main types: supervised,
-        unsupervised, and reinforcement learning, each with its own unique characteristics and applications.</p>
+        <h3 class="text-primary">Importance of Grammar, Punctuation, and Vocabulary:</h3>
+        <p>Grammar, punctuation, and vocabulary are the building blocks of good writing. They ensure that your ideas are
+          conveyed accurately and effectively. Without these essential components, your writing can become confusing or
+          unclear, diminishing its impact on readers.</p>
 
-      <h4 class="accent-blue">1. Supervised Learning</h4>
-      <p><strong>Definition:</strong> Supervised learning algorithms are trained on a labeled dataset, where each data
-        point has an associated target label. The algorithm learns to map input features to output labels.</p>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Grammar:</strong> Proper grammar ensures that your writing follows the
+            conventions of the language, making it easier for readers to understand. It involves correct sentence
+            structure, verb tense, subject-verb agreement, and more.</li>
+          <li class="list-group-item"><strong>Punctuation:</strong> Punctuation marks guide the reader through your
+            writing by indicating pauses, emphasis, and the structure of your sentences. Correct punctuation helps
+            clarify meaning and prevents ambiguity.</li>
+          <li class="list-group-item"><strong>Vocabulary:</strong> A strong vocabulary allows you to choose the right
+            words for your ideas, making your writing more precise and engaging. Expanding your vocabulary can also help
+            you avoid repetition and enhance your style.</li>
+        </ul>
 
-      <p><strong>Types:</strong></p>
-      <ul>
-        <li><strong>Regression:</strong> Predicting continuous values, e.g., predicting house prices or stock values.
-        </li>
-        <li><strong>Classification:</strong> Predicting categorical values, e.g., spam detection, disease diagnosis.
-        </li>
-      </ul>
+        <h3 class="text-primary">Developing Clarity and Coherence in Writing:</h3>
+        <p>Clarity and coherence are vital for keeping your writing accessible and easy to follow. Without clarity, your
+          message may become lost or misunderstood, and without coherence, your ideas may seem disconnected.</p>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Clarity:</strong> Writing with clarity involves expressing your ideas in a
+            straightforward, concise manner. Avoiding jargon, unnecessary complexity, and ambiguous wording ensures that
+            your message is easily understood.</li>
+          <li class="list-group-item"><strong>Coherence:</strong> Coherence refers to the logical flow of your writing.
+            To achieve coherence, ensure that your sentences and paragraphs are well-organized, with each idea or
+            argument leading smoothly into the next.</li>
+        </ul>
 
-      <h5>Examples:</h5>
-      <ul>
-        <li>Linear Regression: Predicting house prices based on features.</li>
-        <li>Logistic Regression: Classifying emails as spam or not.</li>
-        <li>Support Vector Machines: Class separation using hyperplanes.</li>
-      </ul>
+        <h3 class="text-primary">Enhancing Creativity and Originality in Written Expression:</h3>
+        <p>Creativity and originality are key to making your writing stand out and capturing the reader's interest.
+          While technical skills are important, creativity allows you to bring fresh perspectives and innovative ideas
+          to your work.</p>
 
-      <h4 class="accent-blue">2. Unsupervised Learning</h4>
-      <p><strong>Definition:</strong> Unsupervised learning algorithms are trained on unlabeled data, learning to find
-        patterns or structures.</p>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Creativity:</strong> Creativity involves thinking outside the box and
+            approaching your writing from new angles. It's about finding original ways to express familiar ideas and
+            exploring different formats and styles.</li>
+          <li class="list-group-item"><strong>Originality:</strong> Originality refers to bringing your unique voice and
+            perspective to your writing. Avoiding clichés and overused phrases, and instead, creating something fresh,
+            can help your work stand out.</li>
+        </ul>
 
-      <p><strong>Types:</strong></p>
-      <ul>
-        <li><strong>Clustering:</strong> Grouping similar data points.</li>
-        <li><strong>Dimensionality Reduction:</strong> Reducing features to the most important ones.</li>
-      </ul>
-
-      <h5>Examples:</h5>
-      <ul>
-        <li>K-means Clustering: Grouping data into K clusters.</li>
-        <li>Principal Component Analysis: Reducing data dimensions while preserving variance.</li>
-      </ul>
-
-      <h4 class="accent-blue">3. Reinforcement Learning</h4>
-      <p><strong>Definition:</strong> Reinforcement learning algorithms learn through trial and error, interacting with
-        an environment and receiving rewards or penalties for actions.</p>
-
-      <p><strong>Key Components:</strong></p>
-      <ul>
-        <li><strong>Agent:</strong> The entity that makes decisions.</li>
-        <li><strong>Environment:</strong> The external system the agent interacts with.</li>
-        <li><strong>Rewards:</strong> Signals for action success or failure.</li>
-      </ul>
-
-      <h5>Examples:</h5>
-      <ul>
-        <li>Game Playing: AlphaGo and robotics applications.</li>
-        <li>Autonomous Driving: Learning to navigate environments safely.</li>
-      </ul>
-
-      <!-- Table Comparison -->
-      <table class="table table-bordered table-custom mt-4">
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>Supervised Learning</th>
-            <th>Unsupervised Learning</th>
-            <th>Reinforcement Learning</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Labels</td>
-            <td>Provided</td>
-            <td>Not provided</td>
-            <td>Not provided</td>
-          </tr>
-          <tr>
-            <td>Goal</td>
-            <td>Predict target variable</td>
-            <td>Find patterns</td>
-            <td>Maximize rewards</td>
-          </tr>
-          <tr>
-            <td>Feedback</td>
-            <td>Immediate</td>
-            <td>No feedback</td>
-            <td>Delayed feedback</td>
-          </tr>
-          <tr>
-            <td>Applications</td>
-            <td>Classification, Regression</td>
-            <td>Clustering, Dimensionality Reduction</td>
-            <td>Game Playing, Robotics</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-    <!-- Discussion Section -->
-    <div class="discussion-section mt-5">
-      <h2 class="lecture-material-title">Discussion Questions</h2>
-      <ol>
-        <li>When is supervised learning appropriate, and when is unsupervised learning more suitable?</li>
-        <li>What are the challenges of reinforcement learning?</li>
-        <li>How can machine learning algorithms be combined to solve complex problems?</li>
-        <li>What are the ethical implications of using machine learning for decision-making?</li>
-      </ol>
-    </div>
-
-    <!-- Practice Exercises -->
-    <div class="content-box mt-5">
-      <h2 class="lecture-material-title">Practice Exercises</h2>
-      <ul>
-        <li>Implement a simple linear regression model using Scikit-learn.</li>
-        <li>Explore clustering algorithms and evaluate performance.</li>
-        <li>Create a reinforcement learning environment and train an agent to solve a task.</li>
-      </ul>
+        <p>By mastering these essential skills—grammar, punctuation, vocabulary, clarity, coherence, creativity, and
+          originality—you'll be able to write more effectively and express yourself more confidently. Writing is a
+          process that improves with practice, and these skills will serve as the foundation for all your written
+          endeavors.</p>
+      </div>
     </div>
   </div>
 

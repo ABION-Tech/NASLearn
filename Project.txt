@@ -17,7 +17,7 @@ Here's a detailed 10-week curriculum designed to teach Project Management, culmi
   - Group discussion on the impact of effective project management in various industries.
   - Quiz on key concepts and terminology.
 
----
+--- 
 
 #### **Week 2: Project Initiation**
 - **Objectives:**
@@ -143,7 +143,7 @@ Here's a detailed 10-week curriculum designed to teach Project Management, culmi
 
 ### Resources
 - **Textbooks:**
-  - "A Guide to the Project Management Body of Knowledge (PMBOK® Guide)" by PMI.
+  - "A Guide to the Project Management Body of Knowledge (PMBOKï¿½ Guide)" by PMI.
   - "Scrum: The Art of Doing Twice the Work in Half the Time" by Jeff Sutherland.
 - **Software Tools:**
   - Microsoft Project, Trello, Asana, or equivalent project management software.
@@ -234,7 +234,7 @@ This curriculum is designed to equip learners with practical skills and knowledg
 **Lecture Material:**
 1. **Developing a Project Charter**
    - Components: Objectives, stakeholders, scope, budget, timeline.
-   - Purpose: Serves as the project’s foundational document.
+   - Purpose: Serves as the projectï¿½s foundational document.
 
 2. **Identifying Stakeholders**
    - Techniques: Interviews, brainstorming, stakeholder maps.
