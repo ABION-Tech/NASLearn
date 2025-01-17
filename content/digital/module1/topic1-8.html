@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 & 2: Web Development Course</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header"></div>
+    <style>
+        /* Container for form */
+        #form-container {
+            padding: 20px;
+            margin-top: 80px;
+            /* Adjust margin to ensure space from header */
+            margin-bottom: 80px;
+            /* Adjust margin to ensure space from footer */
+        }
+
+        /* Ensure form is responsive */
+        iframe {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            #form-container {
+                margin-top: 60px;
+                /* Adjust as needed for smaller screens */
+                margin-bottom: 60px;
+            }
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 80px;
+            /* Adjust based on header height */
+            padding-bottom: 60px;
+            /* Adjust based on footer height */
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            /* Ensure it is above other content */
+        }
+
+        iframe {
+            border: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header,
+        .footer {
+            position: relative;
+            z-index: 10;
+            /* Ensure header and footer are above the form */
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="form-container">
+            <!-- Google Form embed -->
+
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdnkyemir_zbHmj0_-xmsyBsV_Gzhvet24OU5rWeKipxP40Jg/viewform?embedded=true"
+                width="700" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+        </script>
+    </body>
+
+</html>
