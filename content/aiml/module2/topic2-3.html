@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Sources: Structured vs. Unstructured Data</title>
+    <title>Model Evaluation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -21,15 +21,15 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        h2 {
-            color: #007BFF;
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #007bff;
+            /* Blue accent */
         }
 
-        h3 {
-            color: #007BFF;
-        }
-
-        .table th,
+        s .table th,
         .table td {
             vertical-align: middle;
         }
@@ -55,130 +55,127 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="content-section">
-            <h1 class="text-center">Data Sources: Structured vs. Unstructured Data</h1>
-            <p class="lead text-center">Data is the fuel that powers machine learning models. Understanding the
-                different types of data sources is essential for effectively collecting and utilizing data for your
-                projects.</p>
-
-            <h2>1. Structured Data</h2>
-            <div class="highlight">
-                <h3>Definition</h3>
-                <p>Structured data is organized in a predefined format, typically in tables with rows and columns. Each
-                    column represents a specific attribute or feature, and each row represents a data point or instance.
-                    This type of data is easy to enter, store, query, and analyze, making it essential for many
-                    data-driven applications.</p>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4 text-center">Topic 3: Model Evaluation</h1>
+                <p class="lead text-center">Understanding How to Evaluate Machine Learning Models</p>
             </div>
+        </div>
 
-            <h3>Examples</h3>
-            <ul>
-                <li>CSV (Comma-Separated Values) files</li>
-                <li>Excel spreadsheets</li>
-                <li>Databases (e.g., SQL, NoSQL)</li>
-                <li>Relational databases (e.g., MySQL, PostgreSQL)</li>
-                <li>NoSQL databases (e.g., MongoDB, Cassandra)</li>
-            </ul>
-
-            <h2>2. Unstructured Data</h2>
-            <div class="highlight">
-                <h3>Definition</h3>
-                <p>Unstructured data is not organized in a predefined format and lacks a clear structure. It is
-                    typically text-heavy or multimedia-based, presenting unique challenges for data processing and
-                    analysis.</p>
-            </div>
-
-            <h3>Examples</h3>
-            <ul>
-                <li>Text documents (e.g., emails, articles, social media posts)</li>
-                <li>Images</li>
-                <li>Audio files</li>
-                <li>Video files</li>
-                <li>Social media data</li>
-                <li>Sensor data</li>
-            </ul>
-
-            <h2>Key Differences</h2>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Structured Data</th>
-                        <th>Unstructured Data</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Organization</td>
-                        <td>Clear rows and columns</td>
-                        <td>No predefined structure</td>
-                    </tr>
-                    <tr>
-                        <td>Processing</td>
-                        <td>Relatively straightforward</td>
-                        <td>Requires complex techniques</td>
-                    </tr>
-                    <tr>
-                        <td>Analysis</td>
-                        <td>Traditional data analysis methods</td>
-                        <td>Natural language processing, computer vision, etc.</td>
-                    </tr>
-                    <tr>
-                        <td>Tools</td>
-                        <td>SQL, data mining tools</td>
-                        <td>Text mining, image processing tools</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>Challenges and Opportunities</h2>
-            <h3>Structured Data</h3>
-            <div class="highlight">
-                <h4>Advantages</h4>
-                <p>Easier to process and analyze using traditional data analysis techniques. Provides clear insights and
-                    allows for straightforward reporting.</p>
-                <h4>Challenges</h4>
-                <p>May not capture the full complexity of real-world data. Limited in representing non-numeric
-                    information.</p>
-            </div>
-
-            <h3>Unstructured Data</h3>
-            <div class="highlight">
-                <h4>Advantages</h4>
-                <p>Offers richer information content and can provide deeper insights into customer behavior,
-                    preferences, and trends. It is capable of revealing hidden patterns that structured data may miss.
+        <div class="row mt-4">
+            <div class="col-12">
+                <p>
+                    Evaluating the performance of machine learning models is crucial to ensure they produce accurate,
+                    reliable, and actionable results. This section covers key evaluation metrics and the confusion
+                    matrix, which collectively offer insights into a model's strengths and weaknesses.
                 </p>
-                <h4>Challenges</h4>
-                <p>Requires advanced techniques for processing and analysis, which can be resource-intensive and
-                    time-consuming.</p>
             </div>
+        </div>
 
-            <h2>Handling Structured vs. Unstructured Data</h2>
-            <h3>Structured Data</h3>
-            <ul>
-                <li><strong>Cleaning:</strong> Removing duplicates, handling missing values, and correcting
-                    inconsistencies.</li>
-                <li><strong>Transformation:</strong> Normalizing, scaling, and encoding features as needed.</li>
-                <li><strong>Analysis:</strong> Using SQL, data mining tools, and statistical techniques to derive
-                    insights.</li>
-            </ul>
+        <div class="row mt-4">
+            <div class="col-12">
+                <h3>1. Evaluation Metrics</h3>
+                <p>Evaluation metrics quantify a model’s predictive performance, particularly for classification tasks.
+                    Below are the most commonly used metrics:</p>
 
-            <h3>Unstructured Data</h3>
-            <ul>
-                <li><strong>Preprocessing:</strong> Text cleaning (e.g., tokenization, stemming, lemmatization), image
-                    preprocessing (e.g., resizing, normalization), and feature extraction.</li>
-                <li><strong>Analysis:</strong> Utilizing natural language processing (NLP), computer vision, and other
-                    specialized techniques to extract insights.</li>
-            </ul>
+                <div class="mb-4">
+                    <h5>a. Accuracy</h5>
+                    <p><strong>Definition:</strong> Proportion of correctly predicted instances out of the total number
+                        of instances.</p>
+                    <p><strong>Formula:</strong></p>
+                    <pre><code>Accuracy = (Number of correct predictions) / (Total number of predictions)</code></pre>
+                    <p><strong>Example Use Case:</strong> Useful for balanced datasets where the number of positive and
+                        negative outcomes is roughly equal.</p>
+                    <p><strong>Limitations:</strong> Can be misleading for imbalanced datasets (e.g., predicting rare
+                        diseases).</p>
+                </div>
 
-            <h2>Conclusion</h2>
-            <p>Both structured and unstructured data play vital roles in machine learning. Understanding the
-                characteristics and challenges of each type is essential for effectively collecting, preprocessing, and
-                analyzing data. By leveraging the strengths of both structured and unstructured data, you can extract
-                valuable insights and build powerful machine learning models. Mastery over these data types enables you
-                to unlock the full potential of your projects and drive informed decision-making.</p>
+                <div class="mb-4">
+                    <h5>b. Precision</h5>
+                    <p><strong>Definition:</strong> The proportion of positive predictions that are actually correct.
+                        Precision emphasizes the quality of positive predictions.</p>
+                    <p><strong>Formula:</strong></p>
+                    <pre><code>Precision = True Positives (TP) / (True Positives (TP) + False Positives (FP))</code></pre>
+                    <p><strong>Example Use Case:</strong> Important in applications like spam detection, where false
+                        positives (non-spam flagged as spam) must be minimized.</p>
+                </div>
+
+                <div class="mb-4">
+                    <h5>c. Recall (Sensitivity)</h5>
+                    <p><strong>Definition:</strong> The proportion of actual positive instances correctly identified by
+                        the model. Recall focuses on capturing all relevant instances.</p>
+                    <p><strong>Formula:</strong></p>
+                    <pre><code>Recall = True Positives (TP) / (True Positives (TP) + False Negatives (FN))</code></pre>
+                    <p><strong>Example Use Case:</strong> Critical in medical diagnostics, where failing to identify a
+                        positive case (e.g., a disease) can have severe consequences.</p>
+                </div>
+
+                <div class="mb-4">
+                    <h5>d. F1 Score</h5>
+                    <p><strong>Definition:</strong> The harmonic mean of precision and recall, offering a balanced
+                        evaluation metric for imbalanced datasets.</p>
+                    <p><strong>Formula:</strong></p>
+                    <pre><code>F1 Score = 2 * (Precision * Recall) / (Precision + Recall)</code></pre>
+                    <p><strong>Example Use Case:</strong> Effective when both false positives and false negatives are
+                        costly, such as in fraud detection.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <h3>2. Confusion Matrix</h3>
+                <p>The confusion matrix is a powerful visualization tool that compares actual outcomes with predicted
+                    outcomes. It provides a detailed breakdown of model performance.</p>
+
+                <p><strong>Structure:</strong></p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Predicted Positive</th>
+                            <th>Predicted Negative</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Actual Positive</strong></td>
+                            <td>True Positive (TP)</td>
+                            <td>False Negative (FN)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Actual Negative</strong></td>
+                            <td>False Positive (FP)</td>
+                            <td>True Negative (TN)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Key Insights from the Confusion Matrix:</strong></p>
+                <ul>
+                    <li><strong>True Positives (TP):</strong> Correctly identified positive instances.</li>
+                    <li><strong>True Negatives (TN):</strong> Correctly identified negative instances.</li>
+                    <li><strong>False Positives (FP):</strong> Incorrectly classified negative instances as positive.
+                    </li>
+                    <li><strong>False Negatives (FN):</strong> Missed positive instances classified as negative.</li>
+                </ul>
+
+                <p><strong>Example Use Case:</strong> In credit card fraud detection, the confusion matrix helps
+                    identify how many fraudulent transactions were caught (TP), missed (FN), or incorrectly flagged
+                    (FP).</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <p>By combining evaluation metrics and the confusion matrix, machine learning practitioners can
+                    comprehensively assess model performance, identify shortcomings, and refine algorithms to enhance
+                    accuracy and reliability.</p>
+            </div>
         </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

@@ -4,19 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Conclusion of Week 2</title>
+    <title>Python Loops</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
+            background-color: white;
+            color: black;
             font-family: Arial, sans-serif;
         }
 
-        .conclusion-container {
-            margin-top: 20px;
+        .blue-accent {
+            color: blue;
         }
 
-        .conclusion-header {
-            margin-bottom: 20px;
+        .content {
+            padding: 20px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid lightgray;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
         }
 
         /* Basic Reset */
@@ -119,34 +129,66 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="bg-primary text-white text-center py-3">
-        <h1>Conclusion of Week 2</h1>
-    </header>
 
-    <!-- Main Content -->
-    <main class="container conclusion-container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="conclusion-header">
-                    <h2>Week 2 Summary</h2>
-                </div>
-                <p>Good job on getting to the end of Week 2, you should have a strong understanding of CSS and its role
-                    in creating visually appealing and responsive web pages. you should be familiar with various CSS
-                    properties, the box model, layout techniques, and responsive design principles. The hands-on
-                    practice must have provided the opportunity to apply these concepts and build a responsive web page
-                    that adapts to different devices. This knowledge will be crucial as you move on to more advanced
-                    topics in web development.</p>
-                <hr>
-                <p>This concludes the lecture for Week 2. As you progress, continue experimenting with different CSS
-                    properties and layouts to refine your design skills and improve your ability to create
-                    professional-looking web pages.</p>
-                <p>Now take the Quiz and move to the next Module</p>
+    <div class="container-fluid content">
+        <h3 class="blue-accent">Loops in Python</h3>
+        <p>Loops allow you to repeat a block of code multiple times, making it easier to perform repetitive tasks.</p>
+
+        <h5 class="blue-accent">`for` Loop:</h5>
+        <p>Used when you know how many times you want to iterate (e.g., over a sequence like a list, string, or range).
+        </p>
+        <p><strong>Example:</strong></p>
+        <pre><code>for i in range(5):
+    print("This is iteration number", i)
+</code></pre>
+        <p>- <strong>`range()` function</strong>: Generates a sequence of numbers. For example, <code>range(5)</code>
+            generates numbers 0 through 4.</p>
+
+        <h5 class="blue-accent">`while` Loop:</h5>
+        <p>Used when you want to repeat a block of code as long as a condition is true.</p>
+        <p><strong>Example:</strong></p>
+        <pre><code>counter = 0
+while counter &lt; 5:
+    print("Counter is:", counter)
+    counter += 1
+</code></pre>
+
+        <h5 class="blue-accent">Loop Control Statements:</h5>
+        <ol>
+            <li><strong>`break`</strong>: Exits the loop prematurely.</li>
+            <li><strong>`continue`</strong>: Skips the rest of the loop’s current iteration and moves to the next
+                iteration.</li>
+            <li><strong>`else` clause with loops</strong>: Executes after the loop completes unless the loop is
+                terminated by <code>break</code>.</li>
+        </ol>
+        <p><strong>Examples:</strong></p>
+        <pre><code># break example
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+
+# continue example
+for i in range(5):
+    if i == 3:
+        continue
+    print(i)
+</code></pre>
+    </div>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
             </div>
         </div>
-    </main>
-
-
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

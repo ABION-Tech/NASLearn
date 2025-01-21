@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Preprocessing and EDA</title>
+    <title>Core Algorithms</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -64,126 +64,116 @@
 </head>
 
 <body>
+    <div class="container mt-5">
+        <h1 class="text-center">Artificial Intelligence (ML): Module 2: Machine Learning Fundamentals</h1>
+        <h3 class="text-center">Topic 2: Core Algorithms</h3>
 
-    <div class="content-section">
-        <h1 class="course-title">Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
-
-        <h2>Understanding Datasets: Types of Data</h2>
-        <p><strong>Data</strong> is the foundation of machine learning. It is the raw material that fuels machine
-            learning algorithms. Without understanding its types, quality, and structure, no machine learning model can
-            be effective. The two major types of data include:</p>
-
-        <div class="section-title">1. Numerical Data</div>
-        <ul class="custom-list">
-            <li><strong>Continuous:</strong> Values that can take any range. For example, <span
-                    class="highlight">age</span>, <span class="highlight">height</span>, or <span
-                    class="highlight">income</span>.</li>
-            <li><strong>Discrete:</strong> Values restricted to specific numbers, often integers. Examples include <span
-                    class="highlight">number of items</span> or <span class="highlight">shoe size</span>.</li>
-        </ul>
-
-        <div class="section-title">2. Categorical Data</div>
-        <ul class="custom-list">
-            <li><strong>Nominal:</strong> No inherent order. Examples include <span class="highlight">color</span> or
-                <span class="highlight">gender</span>.</li>
-            <li><strong>Ordinal:</strong> Has a natural order. Examples include <span class="highlight">education
-                    levels</span> or <span class="highlight">customer satisfaction ratings</span>.</li>
-        </ul>
-
-        <h2>Common Data Formats</h2>
-        <p>Data comes in various formats. Understanding how data is stored and accessed will help you choose the
-            appropriate method for processing and analyzing it:</p>
-        <table class="table table-striped data-format-table">
-            <thead>
-                <tr>
-                    <th>Format</th>
-                    <th>Description</th>
-                    <th>Use Case</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>CSV</td>
-                    <td>Comma-Separated Values, used to store tabular data in a text file.</td>
-                    <td>Commonly used for storing and transferring datasets.</td>
-                </tr>
-                <tr>
-                    <td>Excel</td>
-                    <td>A spreadsheet application for data manipulation.</td>
-                    <td>Used for manual data entry and small-scale analysis.</td>
-                </tr>
-                <tr>
-                    <td>JSON</td>
-                    <td>Lightweight data format, commonly used for structured data exchange in web apps.</td>
-                    <td>Best for working with APIs or structured data.</td>
-                </tr>
-                <tr>
-                    <td>XML</td>
-                    <td>A markup language used for storing and transferring data.</td>
-                    <td>Common in configurations and document exchange.</td>
-                </tr>
-                <tr>
-                    <td>Database</td>
-                    <td>A structured collection of data stored in a DBMS.</td>
-                    <td>Used for large datasets requiring fast access and management.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>Data Quality Considerations</h2>
-        <p>Data quality directly impacts the accuracy and reliability of machine learning models. Key issues to address
-            include:</p>
-        <ul class="custom-list">
-            <li><strong>Missing Values:</strong> Occurs when some data points are incomplete. Techniques like <span
-                    class="highlight">imputation</span> or <span class="highlight">removal</span> are used to handle
-                this.</li>
-            <li><strong>Outliers:</strong> Extreme values that skew data distribution. These can be handled by <span
-                    class="highlight">removal</span> or <span class="highlight">transformation</span>.</li>
-            <li><strong>Inconsistencies:</strong> Mismatches in formats or units. Data needs to be standardized for
-                consistency.</li>
-            <li><strong>Noise:</strong> Random variations or errors that obscure real patterns. Filtering or
-                transformation can reduce noise.</li>
-        </ul>
-
-        <h2>Data Exploration and Visualization</h2>
-        <p>Before diving into modeling, exploring and visualizing your data helps you uncover hidden patterns and
-            identify potential issues. Here are common techniques:</p>
-
-        <div class="section-title">1. Histograms</div>
-        <p>Used to visualize the distribution of numerical data:</p>
-        <div class="visualization-techniques">
-            <img src="https://via.placeholder.com/450x250.png" alt="Histogram Example">
+        <div class="section-title mt-4">Page 2: Understanding Key Machine Learning Algorithms</div>
+        <div class="content-block">
+            <p>Machine learning relies on algorithms to identify patterns, make predictions, and group data. Below, we
+                explore three foundational algorithms—linear regression, decision trees, and K-means
+                clustering—highlighting their use cases, advantages, and limitations.</p>
         </div>
 
-        <div class="section-title">2. Box Plots</div>
-        <p>Useful for comparing distributions and identifying outliers:</p>
-        <div class="visualization-techniques">
-            <img src="https://via.placeholder.com/450x250.png" alt="Box Plot Example">
+        <div class="section-title mt-4">1. Linear Regression</div>
+        <div class="content-block">
+            <h4>Overview</h4>
+            <p>Linear regression is a supervised learning algorithm used for predicting continuous values. It assumes a
+                linear relationship between the input variables (features) and the output variable (target).</p>
+            <h5>Formula</h5>
+            <p>The model predicts the output (\( Y \)) based on the equation:</p>
+            <pre><code>Y = mX + b</code></pre>
+            <p>Where:</p>
+            <ul>
+                <li><strong>m:</strong> Slope of the line (how changes in \( X \) affect \( Y \)).</li>
+                <li><strong>X:</strong> Independent variable (feature).</li>
+                <li><strong>b:</strong> Intercept (the value of \( Y \) when \( X \) is 0).</li>
+            </ul>
+            <h5>Example Use Case</h5>
+            <ul>
+                <li><strong>Sales Forecasting:</strong> Predicting future sales based on advertising spend, past trends,
+                    or seasonal factors.</li>
+            </ul>
+            <h5>Advantages</h5>
+            <ul>
+                <li>Simple to implement and interpret.</li>
+                <li>Works well with linearly related data.</li>
+            </ul>
+            <h5>Limitations</h5>
+            <ul>
+                <li>Struggles with non-linear relationships.</li>
+                <li>Sensitive to outliers, which can skew the regression line.</li>
+            </ul>
         </div>
 
-        <div class="section-title">3. Scatter Plots</div>
-        <p>Show relationships between two numerical variables:</p>
-        <div class="visualization-techniques">
-            <img src="https://via.placeholder.com/450x250.png" alt="Scatter Plot Example">
+        <div class="section-title mt-4">2. Decision Trees</div>
+        <div class="content-block">
+            <h4>Overview</h4>
+            <p>Decision trees are versatile algorithms used for classification and regression tasks. They resemble a
+                flowchart, where decisions are made at each node based on feature values.</p>
+            <h5>How It Works</h5>
+            <ul>
+                <li>Data is split into branches based on decision rules.</li>
+                <li>Each branch leads to an outcome, either a predicted value or a class label.</li>
+            </ul>
+            <h5>Example Use Case</h5>
+            <ul>
+                <li><strong>Loan Approval:</strong> Classifying loan applications as approved or denied based on
+                    criteria like income, credit score, and employment history.</li>
+            </ul>
+            <h5>Advantages</h5>
+            <ul>
+                <li>Intuitive and easy to interpret.</li>
+                <li>Handles both numerical and categorical data.</li>
+            </ul>
+            <h5>Limitations</h5>
+            <ul>
+                <li>Prone to <strong>overfitting</strong>, especially with small datasets.</li>
+                <li>May require pruning or ensemble methods (e.g., Random Forests) to improve generalization.</li>
+            </ul>
         </div>
 
-        <div class="section-title">4. Bar Charts</div>
-        <p>Great for visualizing categorical data:</p>
-        <div class="visualization-techniques">
-            <img src="https://via.placeholder.com/450x250.png" alt="Bar Chart Example">
+        <div class="section-title mt-4">3. K-Means Clustering</div>
+        <div class="content-block">
+            <h4>Overview</h4>
+            <p>K-Means is an unsupervised learning algorithm that groups data into \( k \) clusters based on feature
+                similarity. It minimizes the distance between data points and their cluster centroids.</p>
+            <h5>How It Works</h5>
+            <ol>
+                <li>Initialize \( k \) cluster centroids randomly.</li>
+                <li>Assign each data point to the nearest centroid.</li>
+                <li>Recalculate centroids based on the mean position of assigned points.</li>
+                <li>Repeat until the centroids stabilize.</li>
+            </ol>
+            <h5>Example Use Case</h5>
+            <ul>
+                <li><strong>Customer Segmentation:</strong> Grouping customers based on purchasing behavior to tailor
+                    marketing strategies.</li>
+            </ul>
+            <h5>Advantages</h5>
+            <ul>
+                <li>Efficient for large datasets.</li>
+                <li>Provides clear and distinct clusters.</li>
+            </ul>
+            <h5>Limitations</h5>
+            <ul>
+                <li>Requires the number of clusters (\( k \)) to be predefined.</li>
+                <li>Sensitive to initial centroid positions and outliers.</li>
+            </ul>
         </div>
 
-        <div class="section-title">5. Pie Charts</div>
-        <p>Show proportions of categories:</p>
-        <div class="visualization-techniques">
-            <img src="https://via.placeholder.com/450x250.png" alt="Pie Chart Example">
+        <div class="section-title mt-4">Conclusion</div>
+        <div class="content-block">
+            <p>By understanding these core algorithms, learners can tackle diverse machine learning problems, from
+                predicting outcomes to uncovering hidden patterns in data. Practical applications and experience with
+                these methods will deepen comprehension and skill.</p>
         </div>
-
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
+
 
 </html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Conclusion of Week 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .conclusion-container {
+            margin-top: 20px;
+        }
+
+        .conclusion-header {
+            margin-bottom: 20px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h4 class="text-center mb-4">Web Development: Module 2: Intro to CSS and Responsive Web Design</h4>
+
+        <section class="my-5">
+            <h5>1: CSS Basics</h5>
+            <p>Cascading Style Sheets (CSS) is used to style and visually enhance HTML content. CSS defines how elements
+                on a webpage should appear, including layout, colors, fonts, and spacing. By separating structure (HTML)
+                from styling (CSS), you can create more maintainable and visually appealing web pages. With CSS, you can
+                ensure consistency across your website and easily modify the look of your content by editing just one
+                file, making web development both efficient and flexible.</p>
+        </section>
+
+        <section class="my-5">
+            <h5>What Is CSS?</h5>
+            <p><strong>Definition:</strong> Cascading Style Sheets (CSS) is a style sheet language used to define the
+                presentation of a web page written in HTML or XML. CSS controls the layout of multiple web pages at
+                once, including aspects like colors, fonts, margins, padding, and more.</p>
+            <p>CSS is a powerful tool for designers, offering control over web page aesthetics without altering the
+                underlying HTML structure. This separation of content and design ensures easier maintenance and
+                scalability for websites.</p>
+        </section>
+
+        <section class="my-5">
+            <h5>Core Concepts:</h5>
+            <ul>
+                <li><strong>Selectors:</strong>
+                    <p>CSS selectors are used to target specific HTML elements to apply styles. They help define which
+                        elements on the webpage will be styled. Below are some common selectors:</p>
+                    <ul>
+                        <li><code>p</code>: Targets all <code>&lt;p&gt;</code> tags. Example:
+                            <code>p { color: red; }</code></li>
+                        <li><code>.class</code>: Targets elements with a specific class attribute. Example:
+                            <code>.class { color: blue; }</code></li>
+                        <li><code>#id</code>: Targets a unique element with an <code>id</code> attribute. Example:
+                            <code>#id { color: green; }</code></li>
+                    </ul>
+                </li>
+                <li><strong>Properties:</strong>
+                    <p>CSS properties define how selected elements should look. They are paired with values to style
+                        elements. Here are a few important CSS properties:</p>
+                    <ul>
+                        <li><code>color</code>: Defines the color of text. Example: <code>color: red;</code></li>
+                        <li><code>font-size</code>: Adjusts the size of text. Example: <code>font-size: 16px;</code>
+                        </li>
+                        <li><code>margin</code>: Adds space around elements. Example: <code>margin: 20px;</code></li>
+                        <li><code>padding</code>: Adds space inside elements. Example: <code>padding: 10px;</code></li>
+                        <li><code>background-color</code>: Sets the background color of an element. Example:
+                            <code>background-color: lightblue;</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="my-5">
+            <h5>Example Styling:</h5>
+            <p>Here’s a basic example that demonstrates how CSS can enhance a webpage’s appearance by controlling the
+                background color, text color, and font family:</p>
+            <pre>
+<code>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Sets a light gray background */
+}
+
+h1 {
+  color: #333; /* Sets text color to dark gray */
+}
+</code>
+            </pre>
+            <p>In the example above, the <code>body</code> tag has a light gray background, and all
+                <code>&lt;h1&gt;</code> tags will have a dark gray color. The <code>font-family</code> property changes
+                the font for the body text to Arial or sans-serif, depending on availability.</p>
+        </section>
+
+        <section class="my-5">
+            <h5>CSS Box Model:</h5>
+            <p>The CSS Box Model is an essential concept that affects the layout of elements. It consists of the
+                following parts:</p>
+            <ul>
+                <li><strong>Content:</strong> The actual content of the box, where text and images are placed.</li>
+                <li><strong>Padding:</strong> Space between the content and the border. It creates space inside the
+                    element.</li>
+                <li><strong>Border:</strong> Surrounds the padding (if any) and content. The border can have different
+                    styles, colors, and thicknesses.</li>
+                <li><strong>Margin:</strong> Space outside the border, creating distance between the element and other
+                    elements.</li>
+            </ul>
+            <p>Understanding the box model is critical for controlling layouts, as it determines the total width and
+                height of an element, including padding, borders, and margins.</p>
+        </section>
+
+        <section class="my-5">
+            <h5>Conclusion:</h5>
+            <p>CSS is a vital tool for styling web pages, and mastering its core concepts such as selectors, properties,
+                and the box model is essential for creating attractive, functional websites. With CSS, you have the
+                flexibility to control the visual appearance of any element on a page, making it a powerful tool for web
+                designers and developers.</p>
+        </section>
+    </div>
+
+</body>
+
+
+</html>

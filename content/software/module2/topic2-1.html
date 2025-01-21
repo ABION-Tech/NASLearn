@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Typography</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+        }
+
+        .section-title {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .course-content {
+            margin: 30px 0;
+        }
+
+        .card {
+            margin: 20px 0;
+            border: 1px solid #007bff;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <section class="mb-5">
+            <h1>Software Development: Module 2 - Programming Basics</h1>
+            <p>
+                This module introduces the fundamental building blocks of programming, focusing on loops, conditionals,
+                and functions. These concepts form the backbone of logical problem-solving in software development.
+            </p>
+        </section>
+
+        <section class="mb-5">
+            <h2>Topic 1: Conditionals</h2>
+            <p>
+                Conditionals are programming tools that allow decisions to be made based on specific conditions. By
+                using conditionals, programs can execute different pieces of code depending on the situation.
+            </p>
+
+            <h3>What Are Conditionals?</h3>
+            <p>
+                Conditionals are essential for controlling the flow of a program. They help implement logic by
+                executing certain blocks of code only when a given condition is met.
+            </p>
+            <div class="alert alert-info">
+                <strong>Example:</strong> A basic program to check if a person is eligible to vote.
+                <pre><code class="language-python">
+if age >= 18:
+    print("You can vote.")
+else:
+    print("You cannot vote.")
+                </code></pre>
+            </div>
+
+            <h3>Syntax of If-Else</h3>
+            <p>The basic structure of a conditional statement in Python is:</p>
+            <pre><code class="language-python">
+if condition:
+    # Code block to execute if condition is True
+elif another_condition:  # Optional
+    # Code block to execute if the elif condition is True
+else:  # Optional
+    # Code block to execute if all conditions are False
+            </code></pre>
+
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><strong>if:</strong> Checks the given condition. If it evaluates to True, the associated code block
+                    is executed.</li>
+                <li><strong>elif:</strong> Checks another condition if the previous one was False. Multiple `elif`
+                    blocks can be used.</li>
+                <li><strong>else:</strong> Executes the default block of code if all preceding conditions are False.
+                </li>
+            </ul>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li>Use proper indentation for readability and to avoid syntax errors.</li>
+                <li>Avoid deep nesting of conditionals. Instead, use logical operators or functions for better
+                    readability.</li>
+                <li>Use meaningful variable names to make the code self-explanatory.</li>
+            </ul>
+
+            <h3>Example 1: Grading System</h3>
+            <p>A program to assign grades based on a student's score:</p>
+            <pre><code class="language-python">
+score = 85
+
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+elif score >= 70:
+    print("Grade: C")
+elif score >= 60:
+    print("Grade: D")
+else:
+    print("Grade: F")
+            </code></pre>
+
+            <h3>Example 2: Multiple Conditions</h3>
+            <p>A program to check if a number is positive, negative, or zero:</p>
+            <pre><code class="language-python">
+number = int(input("Enter a number: "))
+
+if number > 0:
+    print("The number is positive.")
+elif number < 0:
+    print("The number is negative.")
+else:
+    print("The number is zero.")
+            </code></pre>
+        </section>
+
+        <section class="mb-5">
+            <h2>Practice Problems</h2>
+            <ol>
+                <li>
+                    Write a program that checks if a person is eligible to drive based on their age. (Assume the legal
+                    driving age is 16.)
+                </li>
+                <li>
+                    Create a program that checks whether a number is divisible by both 3 and 5, divisible by only one of
+                    them, or divisible by neither.
+                </li>
+                <li>
+                    Write a program that asks the user for their annual income and calculates the applicable tax based
+                    on the following:
+                    <ul>
+                        <li>Income below $10,000: No tax.</li>
+                        <li>Income between $10,000 and $50,000: 10% tax.</li>
+                        <li>Income above $50,000: 20% tax.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+    </div>
+</body>
+
+
+</html>

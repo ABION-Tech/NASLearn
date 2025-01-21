@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Basics</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .concept-section {
+            margin-top: 40px;
+        }
+
+        .concept-section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .history-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+</head>
+
+<body>
+    <div class="container my-5">
+        <h2 class="text-center">Excel for Data Analysis: Pivot Tables</h2>
+
+        <!-- Purpose and Benefits Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Purpose and Benefits</h5>
+            </div>
+            <div class="card-body">
+                <p>Pivot tables are one of Excel's most powerful tools for dynamic data analysis. They enable users to:
+                </p>
+                <ul>
+                    <li><strong>Group and Summarize Data:</strong> Quickly condense large datasets into digestible
+                        summaries without altering the raw data.</li>
+                    <li><strong>Spot Trends and Patterns:</strong> By reorganizing data in various ways, pivot tables
+                        make it easy to uncover insights.</li>
+                    <li><strong>Time-Efficient Analysis:</strong> Simplify complex calculations, saving significant time
+                        compared to manual methods.</li>
+                </ul>
+                <p><strong>Example Scenarios:</strong></p>
+                <ul>
+                    <li>Summarizing sales by <strong>region</strong> to identify high-performing areas.</li>
+                    <li>Breaking down revenue by <strong>product category</strong> to analyze demand trends.</li>
+                    <li>Tracking performance of individual <strong>sales representatives</strong> to reward top
+                        performers.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Key Features of Pivot Tables Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Key Features of Pivot Tables</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Filtering and Sorting:</strong>
+                        <ul>
+                            <li>Filter data to focus on specific subsets, such as a particular product or time period.
+                            </li>
+                            <li>Sort values (e.g., by highest sales) for easier interpretation.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Summarization Options:</strong>
+                        <ul>
+                            <li>Perform calculations like:
+                                <ul>
+                                    <li><strong>Sum:</strong> Total sales in a region.</li>
+                                    <li><strong>Average:</strong> Average order value.</li>
+                                    <li><strong>Count:</strong> Number of transactions.</li>
+                                    <li><strong>Percentages:</strong> Proportion of total sales contributed by each
+                                        product category.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Grouping Data:</strong>
+                        <ul>
+                            <li>Group data by:
+                                <ul>
+                                    <li><strong>Categories:</strong> Product type or customer demographics.</li>
+                                    <li><strong>Dates:</strong> Analyze monthly, quarterly, or yearly trends.</li>
+                                    <li><strong>Numeric Ranges:</strong> Segment customers by spending tiers.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Practical Example Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Practical Example</h5>
+            </div>
+            <div class="card-body">
+                <p>Imagine you have a dataset of <strong>monthly sales records</strong> for a national retail chain.
+                    Columns include:</p>
+                <ul>
+                    <li><strong>Region</strong> (e.g., North, South, East, West).</li>
+                    <li><strong>Product Category</strong> (e.g., Electronics, Furniture, Clothing).</li>
+                    <li><strong>Sales Amount</strong> and <strong>Date</strong>.</li>
+                </ul>
+
+                <h6>Step-by-Step Use Case:</h6>
+                <ol>
+                    <li>Insert a pivot table from the dataset.</li>
+                    <li>Drag <strong>Region</strong> to the rows field and <strong>Sales Amount</strong> to the values
+                        field.
+                        <ul>
+                            <li><em>Result:</em> A summary of total sales by region.</li>
+                        </ul>
+                    </li>
+                    <li>Add <strong>Product Category</strong> to the columns field to see regional sales broken down by
+                        category.</li>
+                    <li>Apply filters to focus on specific months or product lines for detailed analysis.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Conclusion</h5>
+            </div>
+            <div class="card-body">
+                <p>Pivot tables transform raw data into actionable insights, making them indispensable for effective
+                    business decision-making.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

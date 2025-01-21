@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Preprocessing and EDA - Week 2</title>
+    <title>Week 2</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -52,85 +52,143 @@
 </head>
 
 <body>
-
     <div class="container">
-        <h1>Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
-        <h2>Data Transformation: Feature Scaling, Normalization, and Standardization</h2>
+        <h2>Assignment: Linear Regression Implementation</h2>
+        <p><strong>Page 5: Applying Linear Regression in Python with Scikit-Learn</strong></p>
 
-        <p>Data transformation is a crucial step in data preprocessing, especially when dealing with numerical features.
-            It involves scaling or normalizing the data to a common range, which can significantly enhance the
-            performance of many machine learning algorithms.</p>
+        <hr>
 
-        <h3>1. Feature Scaling</h3>
-        <p>Feature scaling transforms numerical features to a common scale, which is essential as many ML algorithms are
-            sensitive to the scale of features.</p>
+        <h3>Objective:</h3>
+        <p>Develop a simple linear regression model using Python's scikit-learn library to predict a continuous outcome,
+            evaluate its performance, and visualize the results.</p>
 
+        <hr>
+
+        <h3>Steps to Complete the Assignment:</h3>
+
+        <h4>1. Prepare the Data:</h4>
         <ul>
-            <li><strong>Min-max scaling:</strong> This technique scales features to a specific range, typically between
-                0 and 1.</li>
-        </ul>
-        <pre><code>from sklearn.preprocessing import MinMaxScaler
-
-scaler = MinMaxScaler()
-X_scaled = scaler.fit_transform(X)</code></pre>
-
-        <ul>
-            <li><strong>Robust scaling:</strong> Utilizes the interquartile range (IQR) to scale features, making it
-                less sensitive to outliers.</li>
-        </ul>
-        <pre><code>from sklearn.preprocessing import RobustScaler
-
-scaler = RobustScaler()
-X_scaled = scaler.fit_transform(X)</code></pre>
-
-        <h3>2. Normalization</h3>
-        <p>Normalization transforms features to have a mean of 0 and a standard deviation of 1. This is particularly
-            useful for algorithms that assume normally distributed data.</p>
-
-        <ul>
-            <li><strong>StandardScaler:</strong> This technique scales features using the mean and standard deviation.
+            <li><strong>Dataset Selection:</strong> Choose or create a small dataset, such as predicting house prices
+                based on square footage, or use a pre-existing dataset like
+                <code>sklearn.datasets.fetch_california_housing</code>.
+            </li>
+            <li><strong>Data Splitting:</strong> Divide the dataset into <strong>training</strong> and <strong>test
+                    sets</strong> using <code>train_test_split</code> from scikit-learn (e.g., 80% training, 20%
+                testing).</li>
+            <li><strong>Data Exploration:</strong> Check for missing values, outliers, and basic descriptive statistics.
             </li>
         </ul>
-        <pre><code>from sklearn.preprocessing import StandardScaler
 
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)</code></pre>
-
-        <h3>3. Standardization</h3>
-        <p>Standardization is similar to normalization but employs the mean and standard deviation of the entire dataset
-            instead of those of each feature. This can be advantageous when features exhibit different variances.</p>
-
-        <ul>
-            <li><strong>StandardScaler:</strong> This can also be used for standardization.</li>
-        </ul>
-
-        <h3>Choosing the Right Technique</h3>
-        <p>The selection of scaling or normalization technique is contingent on the specific characteristics of your
-            data and the ML algorithm employed. Consider the following:</p>
-        <ul>
-            <li><strong>Algorithm requirements:</strong> Some algorithms, like linear regression and support vector
-                machines, may gain from feature scaling.</li>
-            <li><strong>Data distribution:</strong> If your data is normally distributed, normalization may be the best
-                approach.</li>
-            <li><strong>Outliers:</strong> Robust scaling can be beneficial for datasets that contain outliers.</li>
-        </ul>
-
-        <h3>Additional Considerations</h3>
-        <p>When performing data transformation, consider these additional factors:</p>
-        <ul>
-            <li><strong>Handle categorical features:</strong> Ensure categorical features are encoded before scaling or
-                normalization.</li>
-            <li><strong>Avoid scaling target variables:</strong> If your target variable is numerical, refrain from
-                scaling it unless absolutely necessary.</li>
-            <li><strong>Experiment and evaluate:</strong> Test various scaling techniques and assess their impact on
-                model performance.</li>
-        </ul>
-
-        <div class="note">
-            <strong>Note:</strong> By applying appropriate data transformation techniques, you can enhance the
-            convergence of your machine learning algorithms and bolster overall model performance.
+        <h5>Example Code:</h5>
+        <div class="code-snippet">
+            <pre><code>
+  from sklearn.model_selection import train_test_split
+  import pandas as pd
+  
+  # Example dataset
+  data = {
+      'SquareFootage': [850, 900, 1200, 1500, 1800, 2000],
+      'Price': [180000, 200000, 250000, 300000, 350000, 400000]
+  }
+  df = pd.DataFrame(data)
+  
+  # Splitting the data
+  X = df[['SquareFootage']]
+  y = df['Price']
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        </code></pre>
         </div>
+
+        <h4>2. Build the Model:</h4>
+        <ul>
+            <li>Use scikit-learn's <code>LinearRegression</code> class to train a linear regression model on the
+                training set.</li>
+        </ul>
+
+        <h5>Example Code:</h5>
+        <div class="code-snippet">
+            <pre><code>
+  from sklearn.linear_model import LinearRegression
+  
+  # Initializing and training the model
+  model = LinearRegression()
+  model.fit(X_train, y_train)
+        </code></pre>
+        </div>
+
+        <h4>3. Evaluate Performance:</h4>
+        <ul>
+            <li>Predict prices for the test set using <code>model.predict()</code>.</li>
+            <li>Compute evaluation metrics such as <strong>Mean Squared Error (MSE)</strong> and <strong>R²
+                    Score</strong> to gauge the model's accuracy.</li>
+        </ul>
+
+        <h5>Example Code:</h5>
+        <div class="code-snippet">
+            <pre><code>
+  from sklearn.metrics import mean_squared_error, r2_score
+  
+  # Making predictions
+  y_pred = model.predict(X_test)
+  
+  # Evaluating performance
+  mse = mean_squared_error(y_test, y_pred)
+  r2 = r2_score(y_test, y_pred)
+  
+  print(f"Mean Squared Error: {mse}")
+  print(f"R² Score: {r2}")
+        </code></pre>
+        </div>
+
+        <h4>4. Visualize Results:</h4>
+        <ul>
+            <li>Create a scatter plot of the test data with the predicted regression line overlaid.</li>
+        </ul>
+
+        <h5>Example Code:</h5>
+        <div class="code-snippet">
+            <pre><code>
+  import matplotlib.pyplot as plt
+  
+  # Scatter plot
+  plt.scatter(X_test, y_test, color='blue', label='Actual Data')
+  plt.plot(X_test, y_pred, color='red', label='Regression Line')
+  plt.xlabel('Square Footage')
+  plt.ylabel('Price')
+  plt.title('Linear Regression: Price vs. Square Footage')
+  plt.legend()
+  plt.show()
+        </code></pre>
+        </div>
+
+        <hr>
+
+        <h3>Submission Requirements:</h3>
+        <ul>
+            <li><strong>Python Code:</strong> Include clear and concise comments to explain each step.</li>
+            <li><strong>Dataset Description:</strong> Provide a brief explanation of the dataset, its features, and the
+                target variable.</li>
+            <li><strong>Results Summary:</strong> Describe the evaluation metrics (e.g., MSE and R²) and what they
+                indicate about the model's performance.</li>
+            <li><strong>Visualization:</strong> Submit a scatter plot image showing the test data and the regression
+                line.</li>
+        </ul>
+
+        <hr>
+
+        <h3>Evaluation Criteria:</h3>
+        <ul>
+            <li><strong>Accuracy:</strong> How well the model fits the data based on evaluation metrics.</li>
+            <li><strong>Clarity:</strong> Clear and well-documented code with logical structure.</li>
+            <li><strong>Visualization Quality:</strong> A clear, labeled scatter plot with the regression line.</li>
+            <li><strong>Insights:</strong> A thoughtful explanation of the dataset and results, demonstrating an
+                understanding of linear regression.</li>
+        </ul>
+
+        <p>This assignment integrates foundational concepts in machine learning with practical skills, ensuring a strong
+            understanding of how linear regression operates in real-world scenarios.</p>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>

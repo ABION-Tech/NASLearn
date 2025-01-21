@@ -6,52 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel Project</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .concept-section {
+            margin-top: 40px;
+        }
+
+        .concept-section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .history-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>Excel Project</h1>
-    </header>
+    <div class="container mt-4">
+        <h1 class="text-center">Discussion Questions: Excel for Data Analysis</h1>
 
-    <main>
-        <section id="project-description">
-            <h2>Project Description</h2>
-            <p><strong>Objective:</strong></p>
-            <p>
-                Apply the skills learned throughout the week to analyze a real-world dataset, create visualizations, and
-                present findings in a comprehensive report.
-            </p>
-        </section>
-
-        <section id="dataset">
-            <h2>Dataset</h2>
-            <p>
-                Use a provided dataset (e.g., sales data, customer feedback data, financial data) for analysis.
-            </p>
-        </section>
-
-        <section id="tasks">
-            <h2>Tasks</h2>
+        <section class="mt-5">
+            <h2>1. Excel vs. BI Tools</h2>
+            <p><strong>Question:</strong> How does Excel compare to modern BI tools like Tableau or Power BI for data
+                analysis?</p>
+            <p><strong>Points to Consider:</strong></p>
             <ul>
-                <li><strong>Data Cleaning and Preparation:</strong> Clean and prepare the dataset for analysis.</li>
-                <li><strong>Data Analysis:</strong> Perform data analysis using pivot tables, formulas, and advanced
-                    techniques.</li>
-                <li><strong>Data Visualization:</strong> Create effective charts and design a dashboard to present
-                    findings.</li>
-                <li><strong>Report Writing:</strong> Write a report summarizing the analysis process, results, and
-                    insights.</li>
+                <li><strong>Accessibility and Familiarity:</strong> Excel is widely used and familiar to most
+                    professionals, making it accessible for basic to intermediate analysis.</li>
+                <li><strong>Functionality:</strong> While Excel excels in calculations and small-scale analyses, tools
+                    like Tableau or Power BI are superior for handling large datasets and creating advanced, interactive
+                    visualizations.</li>
+                <li><strong>Collaboration:</strong> BI tools often offer better cloud integration and team collaboration
+                    capabilities.</li>
+                <li><strong>Cost and Scalability:</strong> Excel is cost-effective for smaller organizations, while BI
+                    tools may require more investment but are scalable for enterprise-level analytics.</li>
             </ul>
         </section>
 
-        <section id="presentation">
-            <h2>Presentation</h2>
-            <p>
-                Prepare a presentation to share the findings with peers, demonstrating the use of Excel for data
-                analysis and visualization.
-            </p>
+        <section class="mt-5">
+            <h2>2. Efficiency</h2>
+            <p><strong>Question:</strong> What are the limitations of using Excel for large datasets?</p>
+            <p><strong>Points to Consider:</strong></p>
+            <ul>
+                <li><strong>Performance:</strong> Excel can become slow or unresponsive with datasets exceeding hundreds
+                    of thousands of rows.</li>
+                <li><strong>Data Size Limitations:</strong> Excel has a row limit of 1,048,576, which may not
+                    accommodate larger datasets.</li>
+                <li><strong>Data Integrity:</strong> Managing links, formulas, and large files can increase the risk of
+                    errors and crashes.</li>
+                <li><strong>Scalability:</strong> Unlike databases or BI tools, Excel struggles with real-time data
+                    updates and integration with external systems.</li>
+            </ul>
         </section>
-    </main>
 
+        <section class="mt-5">
+            <h2>3. Visualization Challenges</h2>
+            <p><strong>Question:</strong> What are common mistakes when creating charts, and how can they be avoided?
+            </p>
+            <p><strong>Points to Consider:</strong></p>
+            <ul>
+                <li><strong>Overloading with Data:</strong> Avoid cluttering charts with too many data points or
+                    categories. Use filters or separate visuals if necessary.</li>
+                <li><strong>Mismatched Chart Types:</strong> Select chart types appropriate for the data (e.g., avoid
+                    pie charts for datasets with numerous categories).</li>
+                <li><strong>Poor Labeling:</strong> Ensure axes, legends, and titles are clear and concise to avoid
+                    misinterpretation.</li>
+                <li><strong>Overuse of Colors and Effects:</strong> Keep designs simple and professional by using
+                    consistent color schemes and avoiding unnecessary 3D effects.</li>
+            </ul>
+        </section>
+
+        <section class="mt-5">
+            <h2>4. Practical Use Cases</h2>
+            <p><strong>Question:</strong> Share examples of scenarios where Excel's data analysis tools were
+                particularly impactful.</p>
+            <p><strong>Points to Consider:</strong></p>
+            <ul>
+                <li><strong>Budgeting and Forecasting:</strong> Use pivot tables and charts to project budgets or track
+                    monthly expenses.</li>
+                <li><strong>Sales Analysis:</strong> Create dashboards to evaluate regional or product-based performance
+                    trends.</li>
+                <li><strong>Customer Insights:</strong> Leverage VLOOKUP and pivot tables to analyze customer behavior
+                    and identify high-value segments.</li>
+                <li><strong>Inventory Management:</strong> Monitor stock levels and identify supply chain inefficiencies
+                    using Excel’s conditional formatting and visualization tools.</li>
+            </ul>
+        </section>
+    </div>
 </body>
+
 
 </html>

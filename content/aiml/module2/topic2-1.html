@@ -71,80 +71,101 @@
 
 <body>
     <div class="container mt-5">
-        <div class="content-section">
-            <h1 class="text-center">Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
+        <h1 class="text-center">Artificial Intelligence (ML): Module 2: Machine Learning Fundamentals</h1>
+        <h3 class="text-center">Topic 1: Key Concepts in Machine Learning</h3>
 
-            <div class="section-title">
-                <h2>The Importance of Data in Machine Learning</h2>
-            </div>
-            <p>Data is the cornerstone of machine learning. The quality, quantity, and relevance of the data used to
-                train a model significantly impact its performance. A well-curated and prepared dataset is essential for
-                building accurate and reliable models.</p>
-
-            <div class="best-practice">
-                <h3 class="key-point">Key Points:</h3>
-                <ul>
-                    <li><span class="highlight">Data is the fuel for ML models:</span> ML algorithms learn patterns and
-                        relationships from data. The more relevant and high-quality data a model has, the better it can
-                        learn and make accurate predictions.</li>
-                    <li><span class="highlight">Data quality matters:</span> Poor data quality, such as missing values,
-                        outliers, or inconsistencies, can introduce noise and bias into the model, leading to inaccurate
-                        results.</li>
-                    <li><span class="highlight">Data quantity is important:</span> Generally, more data is better than
-                        less. However, the quality of the data is just as crucial as its volume.</li>
-                    <li><span class="highlight">Data diversity is essential:</span> A diverse dataset representing
-                        different scenarios helps models generalize better, reducing overfitting.</li>
-                    <li><span class="highlight">Data collection and acquisition:</span> Obtaining data from public
-                        datasets, web scraping, APIs, or gathering data directly.</li>
-                    <li><span class="highlight">Data governance and management:</span> Ensuring data quality, security,
-                        and compliance with regulations is paramount.</li>
-                </ul>
-            </div>
-
-            <div class="section-title">
-                <h2>Challenges and Considerations</h2>
-            </div>
-            <div class="challenges">
-                <p>Working with data in machine learning comes with several challenges. Recognizing these challenges
-                    helps us anticipate and mitigate potential issues that could affect model performance.</p>
-                <ul>
-                    <li><strong>Data scarcity:</strong> In some industries or specific use cases, collecting enough
-                        relevant data may be difficult.</li>
-                    <li><strong>Data privacy and ethics:</strong> Adhering to regulations, such as GDPR, is essential
-                        when collecting and processing data.</li>
-                    <li><strong>Data bias:</strong> Models trained on biased data can perpetuate those biases, leading
-                        to unequal treatment or skewed predictions.</li>
-                    <li><strong>Data labeling:</strong> For supervised learning, correctly labeled data is crucial.
-                        Inconsistent or incorrect labels can degrade model accuracy.</li>
-                </ul>
-            </div>
+        <div class="section-title mt-4">Page 1: Understanding the Core Types of Machine Learning</div>
+        <div class="content-block">
+            <p><strong>Machine Learning (ML)</strong> is the backbone of artificial intelligence, empowering systems to
+                make predictions, identify patterns, and adapt to new data. Below, we explore the three main types of
+                machine learning, along with the critical role data plays in the process.</p>
         </div>
 
-        <div class="content-section">
-            <div class="section-title">
-                <h2>Best Practices for Data Handling in Machine Learning</h2>
-            </div>
-            <p>To optimize data for machine learning, it is important to follow a structured approach to data
-                management, preprocessing, and exploration. Below are some best practices to help you get the most out
-                of your data.</p>
-            <div class="best-practices">
-                <ul>
-                    <li><strong>Data cleaning and preprocessing:</strong> Handle missing values, outliers, and
-                        inconsistencies to improve the quality of your data.</li>
-                    <li><strong>Data exploration and visualization:</strong> Conduct Exploratory Data Analysis (EDA) to
-                        uncover hidden patterns and insights in your data.</li>
-                    <li><strong>Data augmentation:</strong> Increase dataset diversity and size by creating new data
-                        points from existing data (e.g., rotating images, creating synthetic samples).</li>
-                    <li><strong>Data quality assessment:</strong> Regularly evaluate your data's quality and take
-                        corrective action as necessary.</li>
-                    <li><strong>Data governance:</strong> Ensure your data processes adhere to legal and ethical
-                        guidelines for privacy and security.</li>
-                </ul>
-            </div>
+        <div class="section-title mt-4">1. Types of Machine Learning</div>
+        <div class="content-block">
+            <h4>1. Supervised Learning</h4>
+            <ul>
+                <li><strong>Definition:</strong> Supervised learning involves training a model using labeled datasets,
+                    where the output (target) is already known.</li>
+                <li><strong>How It Works:</strong> The model learns to map inputs to the correct outputs by minimizing
+                    error. Over time, the model generalizes to predict outcomes for new data.</li>
+                <li><strong>Examples:</strong>
+                    <ul>
+                        <li>Predicting house prices based on features like size, location, and number of bedrooms.</li>
+                        <li>Classifying emails as spam or not spam based on keywords and metadata.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h4>2. Unsupervised Learning</h4>
+            <ul>
+                <li><strong>Definition:</strong> Unlike supervised learning, unsupervised learning works with unlabeled
+                    data. The model identifies underlying structures, groupings, or patterns.</li>
+                <li><strong>How It Works:</strong> Algorithms analyze data to uncover clusters, associations, or hidden
+                    relationships without human-defined labels.</li>
+                <li><strong>Examples:</strong>
+                    <ul>
+                        <li>Customer segmentation for personalized marketing.</li>
+                        <li>Detecting fraudulent transactions in banking through anomaly detection.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h4>3. Reinforcement Learning</h4>
+            <ul>
+                <li><strong>Definition:</strong> In reinforcement learning, agents learn by interacting with an
+                    environment and receiving rewards or penalties based on their actions.</li>
+                <li><strong>How It Works:</strong> The agent’s goal is to maximize cumulative rewards by exploring the
+                    environment and refining its strategies over time.</li>
+                <li><strong>Examples:</strong>
+                    <ul>
+                        <li>Training AI to play games like Chess or Go.</li>
+                        <li>Programming robots to navigate complex environments autonomously.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-title mt-4">2. The Importance of Data in Machine Learning</div>
+        <div class="content-block">
+            <h4>1. Data Quality</h4>
+            <ul>
+                <li>High-quality data with accurate labels ensures that the model learns effectively. Errors in data can
+                    propagate into poor predictions and decisions.</li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h4>2. Data Quantity</h4>
+            <ul>
+                <li>Machine learning models often require large datasets to generalize well. Insufficient data can lead
+                    to overfitting, where the model performs well on training data but poorly on new inputs.</li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h4>3. Data Diversity</h4>
+            <ul>
+                <li>Diverse data helps models account for a wide range of scenarios, reducing bias and improving
+                    robustness. For instance, training a facial recognition model requires images of people with varying
+                    skin tones, ages, and facial features.</li>
+            </ul>
+        </div>
+
+        <div class="section-title mt-4">Conclusion</div>
+        <div class="content-block">
+            <p>By mastering these foundational concepts, learners can appreciate the mechanisms behind ML models and the
+                importance of data in driving accurate and meaningful insights.</p>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

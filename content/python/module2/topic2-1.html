@@ -129,75 +129,81 @@
 </head>
 
 <body>
+    <div class="container mt-4">
+        <h1 class="text-center">Python Programming: Module 2: Variables and Data Types</h1>
+        <h4 class="text-center mt-3"> 1: Working with Variables</h4>
+        <!-- <h5 class="text-center">Page 1</h5> -->
 
-    <div class="container-fluid content">
-        <h3 class="blue-accent">Control Flow Statements in Python</h3>
-
-        <h5 class="blue-accent">Conditional Statements:</h5>
-        <ul>
-            <li><strong>`if` statement</strong>: Executes a block of code if a condition is <code>True</code>.</li>
-            <li><strong>`elif` statement</strong>: Specifies a new condition to test if the previous condition was
-                <code>False</code>.
-            </li>
-            <li><strong>`else` statement</strong>: Executes a block of code if none of the preceding conditions were
-                <code>True</code>.
-            </li>
-        </ul>
-        <p><strong>Example:</strong></p>
-        <pre><code>age = int(input("Enter your age: "))
-
-if age &gt;= 18:
-    print("You are an adult.")
-elif age &gt;= 13:
-    print("You are a teenager.")
-else:
-    print("You are a child.")
-</code></pre>
-
-        <h5 class="blue-accent">Logical Operators:</h5>
-        <ul>
-            <li><strong>`and`</strong>: True if both operands are true.</li>
-            <li><strong>`or`</strong>: True if at least one operand is true.</li>
-            <li><strong>`not`</strong>: Inverts the truth value.</li>
-        </ul>
-        <p><strong>Example:</strong></p>
-        <pre><code>num = int(input("Enter a number: "))
-
-if num &gt; 0 and num &lt; 100:
-    print("The number is between 0 and 100.")
-else:
-    print("The number is not between 0 and 100.")
-</code></pre>
-
-        <h5 class="blue-accent">Nested Conditions:</h5>
-        <p>Conditional statements can be nested inside one another to evaluate multiple layers of conditions.</p>
-        <p><strong>Example:</strong></p>
-        <pre><code>score = int(input("Enter your score: "))
-
-if score &gt;= 50:
-    if score &gt;= 75:
-        print("You passed with distinction!")
-    else:
-        print("You passed!")
-else:
-    print("You failed.")
-</code></pre>
-    </div>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
+        <section class="mt-5">
+            <h3>What Are Variables?</h3>
+            <p>Variables are containers used to store data values, which can later be referenced and manipulated.</p>
+            <div class="bg-light p-3 border rounded">
+                <pre><code class="language-python">length = 5</code></pre>
             </div>
-        </div>
-    </div>
+            <p>This statement assigns the value <code>5</code> to the variable <code>length</code>.</p>
+        </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <section class="mt-5">
+            <h3>Naming Conventions</h3>
+            <h4>1. Rules for Naming Variables:</h4>
+            <ul>
+                <li>Must start with a <strong>letter</strong> (a-z, A-Z) or an <strong>underscore</strong> (_).</li>
+                <li>Can contain letters, numbers (0-9), and underscores.</li>
+                <li>Cannot use Python <strong>keywords</strong> like <code>if</code>, <code>for</code>,
+                    <code>while</code>, etc.</li>
+            </ul>
+            <h4>2. Good Practices:</h4>
+            <ul>
+                <li>Use descriptive names to make the code readable: <code>customer_name</code>,
+                    <code>total_price</code>.</li>
+                <li>Follow consistent styles, such as snake_case: <code>item_count</code>.</li>
+            </ul>
+        </section>
+
+        <section class="mt-5">
+            <h3>Variable Scope</h3>
+            <h4>1. Global Variables:</h4>
+            <p>Accessible anywhere in the program.</p>
+            <div class="bg-light p-3 border rounded">
+                <pre><code class="language-python">x = 10  # Global variable
+
+def print_global():
+    print(f"Global variable x: {x}")
+
+print_global()  # Outputs: Global variable x: 10</code></pre>
+            </div>
+
+            <h4>2. Local Variables:</h4>
+            <p>Defined and accessible only within a function or specific block.</p>
+            <div class="bg-light p-3 border rounded">
+                <pre><code class="language-python">def calculate_area():
+    length = 5  # Local variable
+    breadth = 10
+    area = length * breadth
+    print(f"The area of the rectangle is {area}")
+
+calculate_area()
+# length and breadth are not accessible outside this function.</code></pre>
+            </div>
+        </section>
+
+        <section class="mt-5">
+            <h3>Example Code: Calculating Area of a Rectangle</h3>
+            <div class="bg-light p-3 border rounded">
+                <pre><code class="language-python">length = 5
+breadth = 10
+area = length * breadth
+print(f"The area of the rectangle is {area}")</code></pre>
+            </div>
+            <p><strong>Output:</strong></p>
+            <div class="bg-light p-3 border rounded">
+                <pre>The area of the rectangle is 50</pre>
+            </div>
+            <p>Understanding variables and their scope is essential to building functional and organized Python
+                programs.</p>
+        </section>
+    </div>
 </body>
+
 
 </html>

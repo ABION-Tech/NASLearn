@@ -69,85 +69,119 @@
 </head>
 
 <body>
-    <div class="container mt-5">
-        <div class="content-section">
-            <h1>Typography in Layouts: Guiding the Viewer's Attention</h1>
-            <p>Typography plays a crucial role in creating effective and visually appealing layouts. By understanding
-                how to use typography to guide the viewer's attention, designers can enhance the readability,
-                legibility, and overall impact of their work.</p>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Software Development: Module 2</h1>
+        <h2 class="mb-3">Programming Basics</h2>
+        <h3 class="mt-4">Topic 3: Functions</h3>
+        <hr>
 
-            <h2>Visual Hierarchy</h2>
-            <p>Visual hierarchy refers to the arrangement of elements in a design to create a sense of importance or
-                prominence. Typography is a powerful tool for establishing visual hierarchy. By using different font
-                sizes, weights, styles, and colors, designers can direct the viewer's eye to the most important elements
-                of a layout.</p>
+        <section class="my-4">
+            <h4>1. What Are Functions?</h4>
+            <p>Functions are reusable blocks of code designed to perform specific tasks. They allow developers to write
+                cleaner, more modular, and maintainable code.</p>
+        </section>
 
-            <h3>Key Techniques for Using Typography to Guide Attention</h3>
+        <section class="my-4">
+            <h4>Syntax Example:</h4>
+            <pre class="bg-light p-3 rounded">
+<code>def greet(name):  # Define the function with 'name' as a parameter
+    return f"Hello, {name}!"  # Returns a greeting message
+
+print(greet("Alice"))  # Output: Hello, Alice!
+</code>
+            </pre>
+            <h5>Explanation:</h5>
             <ul>
-                <li><strong>Size:</strong> Larger fonts are naturally more prominent than smaller fonts. Use different
-                    sizes to create a clear hierarchy of information.</li>
-                <li><strong>Weight:</strong> Bold or heavier fonts are more attention-grabbing than regular fonts. Use
-                    bold fonts for headings and subheadings to emphasize their importance.</li>
-                <li><strong>Style:</strong> Italics, all caps, or small caps can be used to create visual interest and
-                    highlight specific elements.</li>
-                <li><strong>Color:</strong> Contrast is key when using color to create visual hierarchy. Choose colors
-                    that stand out from the background to draw attention to important elements.</li>
-                <li><strong>Placement:</strong> Where you place text on a page can also affect its prominence. Elements
-                    placed at the top or center of a page are generally perceived as more important.</li>
+                <li><code>def</code> marks the start of the function definition.</li>
+                <li><code>name</code> is an <strong>argument</strong> (input) provided when calling the function.</li>
+                <li><code>return</code> specifies the output of the function.</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="content-section">
-            <h2>Typography in Print Media</h2>
-            <p>In print media, typography plays a critical role in ensuring that the content is easy to read and
-                understand. Consider the following techniques when using typography in print layouts:</p>
-            <ul>
-                <li><strong>Line Length:</strong> The length of each line of text should be appropriate for the font
-                    size and typeface. Too long or too short lines can make the text difficult to read.</li>
-                <li><strong>Leading:</strong> The space between lines of text, also known as line spacing. Adequate
-                    leading is essential for readability.</li>
-                <li><strong>Tracking:</strong> The space between individual letters. Adjusting tracking can help to
-                    improve the appearance and readability of text.</li>
-            </ul>
-        </div>
+        <section class="my-4">
+            <h4>2. Components of a Function</h4>
+            <div>
+                <h5>1. Definition:</h5>
+                <p>Starts with the keyword <code>def</code> followed by the function name and parentheses
+                    <code>()</code>.</p>
+                <pre class="bg-light p-3 rounded">
+<code>def function_name():
+    # Code block
+</code>
+                </pre>
+            </div>
+            <div>
+                <h5>2. Arguments:</h5>
+                <p>Inputs passed to the function for processing.</p>
+                <pre class="bg-light p-3 rounded">
+<code>def add(a, b):  # a and b are arguments
+    return a + b
+print(add(3, 5))  # Output: 8
+</code>
+                </pre>
+            </div>
+            <div>
+                <h5>3. Return Statement:</h5>
+                <p>Specifies the value the function sends back to the caller.</p>
+                <pre class="bg-light p-3 rounded">
+<code>def square(num):
+    return num * num
+print(square(4))  # Output: 16
+</code>
+                </pre>
+            </div>
+        </section>
 
-        <div class="content-section">
-            <h2>Typography in Digital Media</h2>
-            <p>Typography in digital media presents unique challenges and opportunities. Consider the following factors
-                when using typography on websites, mobile apps, and other digital platforms:</p>
-            <ul>
-                <li><strong>Responsiveness:</strong> Ensure that your typography is responsive to different screen sizes
-                    and devices. Use relative units (e.g., em, rem) for font sizes and spacing.</li>
-                <li><strong>Web-Safe Fonts:</strong> Choose fonts that are widely available on most devices to ensure
-                    consistency across platforms.</li>
-                <li><strong>Accessibility:</strong> Use typography that is accessible to people with visual impairments.
-                    Consider factors like font size, contrast, and readability.</li>
-            </ul>
-        </div>
+        <section class="my-4">
+            <h4>3. Why Use Functions?</h4>
+            <div>
+                <h5>• Avoid Redundancy:</h5>
+                <p>Write the code once and reuse it.</p>
+                <pre class="bg-light p-3 rounded">
+<code>def multiply_by_two(n):
+    return n * 2
+print(multiply_by_two(5))  # Output: 10
+print(multiply_by_two(10))  # Output: 20
+</code>
+                </pre>
+            </div>
+            <div>
+                <h5>• Improved Readability:</h5>
+                <p>Functions with descriptive names make code easier to understand.</p>
+                <pre class="bg-light p-3 rounded">
+<code>def calculate_area(length, width):
+    return length * width
+</code>
+                </pre>
+            </div>
+            <div>
+                <h5>• Modularity:</h5>
+                <p>Break programs into smaller, manageable pieces.</p>
+            </div>
+        </section>
 
-        <div class="expanding-section">
-            <h2>Expanding on the Content</h2>
-            <p>To further explore the topic of typography in layouts, consider discussing the following:</p>
-            <ul>
-                <li><strong>The Role of Typography in Branding:</strong> How typography can be used to reinforce a
-                    brand's identity and messaging.</li>
-                <li><strong>Typography and User Experience:</strong> The impact of typography on user experience,
-                    particularly in web design and mobile app development.</li>
-                <li><strong>Typography Trends:</strong> Emerging trends in typography, such as the use of custom fonts
-                    and experimental typographic treatments.</li>
-                <li><strong>Typography and Culture:</strong> How cultural factors can influence the use of typography in
-                    different regions.</li>
-            </ul>
-        </div>
+        <section class="my-4">
+            <h4>Practical Example:</h4>
+            <p>Create a function to calculate the factorial of a number:</p>
+            <pre class="bg-light p-3 rounded">
+<code>def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+</code>
+            </pre>
+            <p>By using functions, programmers can write efficient, modular, and scalable code, simplifying complex
+                problems into manageable tasks.</p>
+        </section>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2025 Typography Course | All Rights Reserved</p>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+</html>
+
 
 </html>

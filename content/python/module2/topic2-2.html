@@ -129,66 +129,133 @@
 </head>
 
 <body>
+    <div class="container mt-4">
+        <h1 class="text-center">Python Programming: Module 2: Variables and Data Types</h1>
+        <h4 class="text-center mt-3">Topic 2: Data Types Overview</h4>
+        <h5 class="text-center">Page 2</h5>
 
-    <div class="container-fluid content">
-        <h3 class="blue-accent">Loops in Python</h3>
-        <p>Loops allow you to repeat a block of code multiple times, making it easier to perform repetitive tasks.</p>
+        <section class="mt-5">
+            <h3>Primary Data Types in Python</h3>
+            <ol>
+                <li>
+                    <strong>Strings</strong>
+                    <p><strong>Definition:</strong> A sequence of characters.</p>
+                    <p><strong>Example:</strong> <code>"Hello, World!"</code></p>
+                    <p><strong>Operations:</strong></p>
+                    <ul>
+                        <li>Concatenation: <code>"Hello" + " World"</code> → <code>"Hello World"</code></li>
+                        <li>Slicing: <code>"Python"[0:3]</code> → <code>"Pyt"</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Integers</strong>
+                    <p><strong>Definition:</strong> Whole numbers without a decimal point.</p>
+                    <p><strong>Example:</strong> <code>10</code>, <code>-5</code>, <code>1000</code></p>
+                </li>
+                <li>
+                    <strong>Floats</strong>
+                    <p><strong>Definition:</strong> Numbers with decimal points.</p>
+                    <p><strong>Example:</strong> <code>10.5</code>, <code>-3.14</code>, <code>0.001</code></p>
+                </li>
+                <li>
+                    <strong>Lists</strong>
+                    <p><strong>Definition:</strong> Ordered collection of items, mutable (can be changed).</p>
+                    <p><strong>Example:</strong> <code>[1, 2, 3, 'Python']</code></p>
+                    <p><strong>Operations:</strong></p>
+                    <ul>
+                        <li>Adding: <code>my_list.append(4)</code></li>
+                        <li>Removing: <code>my_list.remove(2)</code></li>
+                        <li>Sorting: <code>my_list.sort()</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Tuples</strong>
+                    <p><strong>Definition:</strong> Ordered collection of items, immutable (cannot be changed).</p>
+                    <p><strong>Example:</strong> <code>(1, 2, 3)</code></p>
+                    <p><strong>Usage:</strong> Useful for fixed data sets.</p>
+                </li>
+                <li>
+                    <strong>Dictionaries</strong>
+                    <p><strong>Definition:</strong> A collection of key-value pairs.</p>
+                    <p><strong>Example:</strong></p>
+                    <div class="bg-light p-3 border rounded">
+                        <pre><code class="language-python">{'name': 'Alice', 'age': 25}</code></pre>
+                    </div>
+                    <p><strong>Operations:</strong></p>
+                    <ul>
+                        <li>Add Key-Value Pair: <code>student['grade'] = 'A'</code></li>
+                        <li>Retrieve Value: <code>print(student['name'])</code> → <code>"Alice"</code></li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
 
-        <h5 class="blue-accent">`for` Loop:</h5>
-        <p>Used when you know how many times you want to iterate (e.g., over a sequence like a list, string, or range).
-        </p>
-        <p><strong>Example:</strong></p>
-        <pre><code>for i in range(5):
-    print("This is iteration number", i)
-</code></pre>
-        <p>- <strong>`range()` function</strong>: Generates a sequence of numbers. For example, <code>range(5)</code>
-            generates numbers 0 through 4.</p>
+        <section class="mt-5">
+            <h3>Common Operations on Data Types</h3>
+            <ol>
+                <li>
+                    <strong>Strings:</strong>
+                    <ul>
+                        <li>Concatenation: <code>"Python" + " Programming"</code> → <code>"Python Programming"</code>
+                        </li>
+                        <li>Slicing: <code>"Learning"[0:4]</code> → <code>"Learn"</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Lists:</strong>
+                    <ul>
+                        <li>Adding Elements:</li>
+                        <div class="bg-light p-3 border rounded">
+                            <pre><code class="language-python">my_list = [1, 2, 3]
+my_list.append(4)  # [1, 2, 3, 4]</code></pre>
+                        </div>
+                        <li>Sorting:</li>
+                        <div class="bg-light p-3 border rounded">
+                            <pre><code class="language-python">my_list = [3, 1, 2]
+my_list.sort()  # [1, 2, 3]</code></pre>
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Dictionaries:</strong>
+                    <ul>
+                        <li>Accessing Values:</li>
+                        <div class="bg-light p-3 border rounded">
+                            <pre><code class="language-python">student = {'name': 'John', 'age': 20}
+print(student['name'])  # Output: John</code></pre>
+                        </div>
+                        <li>Updating Values:</li>
+                        <div class="bg-light p-3 border rounded">
+                            <pre><code class="language-python">student['age'] = 21  # {'name': 'John', 'age': 21}</code></pre>
+                        </div>
+                    </ul>
+                </li>
+            </ol>
+        </section>
 
-        <h5 class="blue-accent">`while` Loop:</h5>
-        <p>Used when you want to repeat a block of code as long as a condition is true.</p>
-        <p><strong>Example:</strong></p>
-        <pre><code>counter = 0
-while counter &lt; 5:
-    print("Counter is:", counter)
-    counter += 1
-</code></pre>
+        <section class="mt-5">
+            <h3>Example Code: Using Data Types</h3>
+            <div class="bg-light p-3 border rounded">
+                <pre><code class="language-python"># Define a dictionary
+student = {'name': 'John', 'age': 20}
 
-        <h5 class="blue-accent">Loop Control Statements:</h5>
-        <ol>
-            <li><strong>`break`</strong>: Exits the loop prematurely.</li>
-            <li><strong>`continue`</strong>: Skips the rest of the loop’s current iteration and moves to the next
-                iteration.</li>
-            <li><strong>`else` clause with loops</strong>: Executes after the loop completes unless the loop is
-                terminated by <code>break</code>.</li>
-        </ol>
-        <p><strong>Examples:</strong></p>
-        <pre><code># break example
-for i in range(10):
-    if i == 5:
-        break
-    print(i)
+# Access a value
+print(student['name'])  # Output: John
 
-# continue example
-for i in range(5):
-    if i == 3:
-        continue
-    print(i)
-</code></pre>
-    </div>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
+# Modify the dictionary
+student['age'] = 21
+print(student)  # Output: {'name': 'John', 'age': 21}
+
+# Work with a list
+grades = [85, 90, 78]
+grades.append(92)
+print(grades)  # Output: [85, 90, 78, 92]</code></pre>
             </div>
-        </div>
+            <p>Understanding Python's data types is critical for effectively managing and manipulating data in your
+                programs.</p>
+        </section>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 
 </html>

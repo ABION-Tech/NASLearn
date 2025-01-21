@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Assignment on Week 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .conclusion-container {
+            margin-top: 20px;
+        }
+
+        .conclusion-header {
+            margin-bottom: 20px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 40px;
+        }
+
+        .container {
+            padding: 20px;
+            padding-top: 5px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Assignment: AI-Powered Marketing Campaign</h1>
+
+        <div class="section-title mt-4">Objective</div>
+        <div class="content-block">
+            <p><strong>Leverage AI text generation tools to design an engaging and persuasive marketing email for a
+                    product launch.</strong></p>
+        </div>
+
+        <div class="section-title mt-4">Steps</div>
+        <div class="content-block">
+            <h4>1. Research</h4>
+            <ul>
+                <li><strong>Identify a Product:</strong> Choose a product (real or fictional) to promote in your email
+                    campaign.</li>
+                <li><strong>Define Target Audience:</strong> Specify key audience characteristics, such as demographics,
+                    interests, and pain points.</li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h4>2. Generate</h4>
+            <ul>
+                <li><strong>Use an AI Tool:</strong> Utilize a text generation platform such as ChatGPT, Jasper, or any
+                    similar tool to create the first draft of your email.</li>
+                <li><strong>Include Key Elements:</strong> Ensure your draft has the following:
+                    <ul>
+                        <li>A compelling headline to grab attention.</li>
+                        <li>A brief, engaging introduction.</li>
+                        <li>Clear and persuasive product benefits.</li>
+                        <li>A strong call-to-action (CTA).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h4>3. Refine</h4>
+            <ul>
+                <li><strong>Edit for Effectiveness:</strong> Adjust the AI-generated draft to better align with your
+                    target audience. Focus on tone, clarity, and accuracy.</li>
+                <li><strong>Tailor to Brand Voice:</strong> Ensure consistency with the imagined brand’s style and
+                    identity.</li>
+                <li><strong>Enhance Readability:</strong> Optimize structure, remove redundancy, and strengthen the CTA.
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h4>4. Submit</h4>
+            <ul>
+                <li><strong>Deliverables:</strong>
+                    <ol>
+                        <li>The original AI-generated draft.</li>
+                        <li>The revised and finalized version of the email.</li>
+                        <li>A one-paragraph explanation detailing the edits made, with justification for the changes.
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-title mt-4">Evaluation Criteria</div>
+        <div class="content-block">
+            <h4>Creativity and Audience Relevance</h4>
+            <ul>
+                <li>Does the email address the target audience’s needs and interests effectively?</li>
+                <li>Is the content engaging and original?</li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h4>Clarity and Persuasiveness</h4>
+            <ul>
+                <li>Is the message clear and easy to understand?</li>
+                <li>Does the email use persuasive language to encourage action?</li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h4>Explanation of Edits</h4>
+            <ul>
+                <li>Are the changes justified with logical reasoning?</li>
+                <li>Do the edits demonstrate a thoughtful improvement over the AI-generated draft?</li>
+            </ul>
+        </div>
+
+        <div class="section-title mt-4">Conclusion</div>
+        <div class="content-block">
+            <p>This assignment is designed to enhance your skills in integrating AI technology with human creativity,
+                ensuring the output is both innovative and audience-centric.</p>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

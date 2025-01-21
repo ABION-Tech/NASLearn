@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #007bff;
+            /* Blue accent */
+        }
+
+        .conclusion-container {
+            margin-top: 20px;
+        }
+
+        .conclusion-header {
+            margin-bottom: 20px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="my-4">Content Development: Module 2: Understanding Your Audience</h1>
+        <h2>Topic 1: Defining Target Audiences</h2>
+
+        <hr>
+
+        <h3>Understanding Target Audiences</h3>
+        <p>A well-defined target audience is essential for creating compelling content that resonates. Target audiences
+            are segmented based on <strong>demographics</strong>, <strong>psychographics</strong>, and
+            <strong>behavioral traits</strong> to ensure content addresses their needs, interests, and behaviors
+            effectively.
+        </p>
+
+        <h4>1. Demographics</h4>
+        <p>Demographics provide measurable data about an audience, offering insights into their basic characteristics.
+        </p>
+
+        <ul>
+            <li><strong>Key Demographic Factors:</strong></li>
+            <li><strong>Age:</strong> Different age groups have distinct preferences and priorities.
+                <em>Example:</em> A skincare product may appeal to women aged <strong>25–40</strong> who seek anti-aging
+                benefits.
+            </li>
+            <li><strong>Gender:</strong> Certain products or content may cater more effectively to specific genders.
+                <em>Example:</em> A fitness app targeting men aged <strong>20–35</strong> interested in strength
+                training.
+            </li>
+            <li><strong>Income and Occupation:</strong> Disposable income influences purchasing decisions.
+                <em>Example:</em> Luxury travel services targeting high-income professionals.
+            </li>
+            <li><strong>Education and Location:</strong> Educational background and regional differences can shape how
+                audiences interact with content.</li>
+        </ul>
+
+        <h5>Case Study:</h5>
+        <p>A financial planning service targeting <strong>millennials</strong> with college degrees, aged
+            <strong>25–35</strong>, living in urban areas, might create content focused on managing student loans and
+            saving for a first home.
+        </p>
+
+        <h4>2. Psychographics</h4>
+        <p>Psychographics delve deeper into the audience’s values, interests, and lifestyles. This approach is more
+            nuanced than demographics, focusing on <em>why</em> people make decisions.</p>
+
+        <ul>
+            <li><strong>Key Psychographic Factors:</strong></li>
+            <li><strong>Interests and Hobbies:</strong> Aligning content with popular activities or pastimes.
+                <em>Example:</em> A blog for fitness enthusiasts offering tips on sustainable workout gear.
+            </li>
+            <li><strong>Values and Beliefs:</strong> Reflecting shared principles to build trust.
+                <em>Example:</em> Marketing eco-friendly products to environmentally-conscious consumers.
+            </li>
+            <li><strong>Lifestyles:</strong> Tailoring messaging to busy professionals, stay-at-home parents, or digital
+                nomads.</li>
+        </ul>
+
+        <h5>Example Application:</h5>
+        <p>For a <strong>sustainable fashion brand</strong>, focus on individuals who value <strong>ethical
+                production</strong> and seek eco-friendly alternatives to fast fashion.</p>
+
+        <h4>3. Behavioral Traits</h4>
+        <p>Behavioral segmentation focuses on observable actions, such as purchasing patterns, engagement habits, and
+            loyalty levels.</p>
+
+        <ul>
+            <li><strong>Key Behavioral Insights:</strong></li>
+            <li><strong>Purchase Behavior:</strong> What, how often, and why people buy.
+                <em>Example:</em> Frequent online shoppers who prioritize <strong>free shipping</strong> and
+                <strong>fast delivery</strong>.
+            </li>
+            <li><strong>Product Usage:</strong> Frequency and context of product use.
+                <em>Example:</em> Coffee lovers who purchase high-end brewing equipment for daily use.
+            </li>
+            <li><strong>Brand Loyalty:</strong> Identifying repeat customers and their motivations.
+                <em>Example:</em> A loyalty rewards program tailored to customers making frequent purchases.
+            </li>
+        </ul>
+
+        <h5>Case Study:</h5>
+        <p>An e-commerce store selling home goods might target <strong>first-time homeowners</strong> searching for
+            affordable furniture.</p>
+
+        <h4>Real-World Example:</h4>
+        <p>A travel company creating a campaign for eco-tourism packages:</p>
+        <ul>
+            <li><strong>Demographics:</strong> Adults aged <strong>30–50</strong> with moderate to high income.</li>
+            <li><strong>Psychographics:</strong> Environmentally-conscious travelers seeking unique experiences.</li>
+            <li><strong>Behavioral Traits:</strong> Users searching for vacation options that include <strong>carbon
+                    offsets</strong> and <strong>sustainable accommodations</strong>.</li>
+        </ul>
+
+        <h4>Conclusion:</h4>
+        <p>By analyzing demographics, psychographics, and behavioral traits, businesses can tailor content strategies to
+            reach the right audience effectively. This foundational knowledge ensures alignment between audience needs
+            and messaging, driving engagement and conversions.</p>
+    </div>
+
+    <!-- Section: Video Content -->
+    <!-- <div class="video-container mt-4">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/bw-NvGvLHtM?si=yTTZLQVKl50WvH5v"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+                        picture-in-picture" allowfullscreen>
+            </iframe>
+            <p class="mt-2">Watch the video above to deepen your understanding of audience research techniques
+                and their
+                applications.</p>
+        </div>
+    </div> -->
+
+    <!-- Section: Discussion -->
+    <div class="card mt-4">
+        <div class="card-body">
+            <h2 class="text-primary">4. Discussion Page</h2>
+            <p>Share your thoughts, ask questions, or discuss insights with fellow
+                learners.
+                Join the conversation on WhatsApp and collaborate!</p>
+        </div>
+    </div>
+    </div> -->
+
+    </main>
+
+
+</body>
+
+</html>

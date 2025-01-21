@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> CSS Box Model</title>
+    <title> Week 2
+    </title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,6 +14,14 @@
             font-size: 2.6rem;
             color: black;
             font-weight: 400;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #007bff;
+            /* Blue accent */
         }
 
         .lead {
@@ -123,138 +132,125 @@
 </head>
 
 <body>
-    <div class="container my-5">
-        <!-- Page Title -->
-        <div class="text-center mb-4">
-            <h1 class="display-4"> CSS Box Model</h1>
-            <p class="lead">Understand how the box model works and how to adjust padding, borders, and margins for
-                precise layout control.</p>
-        </div>
+    <div class="container mt-5">
+        <h1 class="text-center">Content Development: Module 2: Understanding Your Audience</h1>
+        <h2>Topic 3: Creating Personas</h2>
+        <hr>
 
-        <!-- CSS Box Model Section -->
-        <section id="css-box-model" class="mb-5">
-            <div class="card p-4 shadow-sm">
-                <h2 class="h4 mb-3">3. CSS Box Model</h2>
-                <p>The CSS Box Model is a crucial concept in web development. It defines how the size and spacing of
-                    every HTML element on a page are calculated, making it important to understand for precise control
-                    over layout and design.</p>
+        <p>Creating personas is an essential step in understanding your audience on a deeper level. Personas are
+            fictional, detailed representations of your ideal customers, built using data and research. They help guide
+            content strategy, product design, and marketing decisions by keeping the audience's needs and preferences in
+            focus.</p>
 
-                <!-- Understanding the Box Model -->
-                <h3 class="h5 mt-4">3.1. Understanding the Box Model</h3>
-                <p>Every element on a web page is treated as a rectangular box by the browser. The <strong>CSS Box
-                        Model</strong> is a structure that defines how elements are displayed and how their total width
-                    and height are calculated. The model consists of four key areas:</p>
+        <h3>1. Components of an Effective Persona</h3>
+        <p>A well-rounded persona incorporates several key aspects to ensure relevance and utility:</p>
 
+        <ul>
+            <li><strong>Demographics:</strong>
                 <ul>
-                    <li><strong>Content:</strong> The actual content of the element, such as text, images, or other
-                        media.</li>
-                    <li><strong>Padding:</strong> The space between the content and the element’s border.</li>
-                    <li><strong>Border:</strong> The boundary line around the padding (optional).</li>
-                    <li><strong>Margin:</strong> The space outside the border, separating the element from other
-                        elements on the page.</li>
+                    <li>Include attributes like age, gender, location, education level, occupation, and income.</li>
+                    <li>Helps define the "who" of the audience and allows for targeted messaging.</li>
+                    <li><em>Example:</em> A luxury travel agency might target professionals aged 35–50 with high
+                        disposable incomes.</li>
                 </ul>
+            </li>
+            <li><strong>Goals and Motivations:</strong>
+                <ul>
+                    <li>What does your audience want to achieve?</li>
+                    <li>Identifying aspirations ensures your content aligns with their desires.</li>
+                    <li><em>Example:</em> A fitness app persona might be motivated by the goal of improving overall
+                        health and achieving specific fitness milestones.</li>
+                </ul>
+            </li>
+            <li><strong>Challenges and Pain Points:</strong>
+                <ul>
+                    <li>Pinpoint the obstacles your audience faces and how they relate to your product or service.</li>
+                    <li><em>Example:</em> An online learning platform might address time constraints and difficulty
+                        finding high-quality resources.</li>
+                </ul>
+            </li>
+            <li><strong>Preferred Communication Channels:</strong>
+                <ul>
+                    <li>Determine where your audience prefers to interact, such as social media platforms, email, blogs,
+                        or face-to-face communication.</li>
+                    <li><em>Example:</em> Tech-savvy younger audiences might prefer Instagram or TikTok, while
+                        professionals may lean toward LinkedIn.</li>
+                </ul>
+            </li>
+        </ul>
 
-                <div class="alert alert-info">
-                    <p class="mb-0"><strong>Important:</strong> The total width and height of an element are affected by
-                        its content width, padding, border, and margin. Understanding how these properties interact
-                        helps in creating well-structured layouts.</p>
-                </div>
+        <h3>2. Example Persona: Sarah, "The Eco-Friendly Consumer"</h3>
 
-                <!-- Example of the Box Model -->
-                <h4 class="h6 mt-3">Example: Basic Box Model</h4>
-                <p>In the following example, a <code>div</code> element has a content width of 200px, padding, a border,
-                    and margin applied to it:</p>
-                <div class="card bg-light p-3">
-                    <pre class="bg-dark text-white p-3">
-div {
-    width: 200px;         /* Content width */
-    padding: 10px;        /* Space between content and border */
-    border: 2px solid black; /* Border around the padding */
-    margin: 20px;         /* Space outside the border */
-}
-                </pre>
-                    <p class="mb-0"><strong>Explanation:</strong> The <code>div</code> has a content width of 200px,
-                        10px of padding, a 2px solid black border, and 20px of margin. This makes the total element
-                        size: <br>
-                        <strong>Total Width:</strong> 200px (content) + 10px (left padding) + 10px (right padding) + 2px
-                        (left border) + 2px (right border) + 20px (left margin) + 20px (right margin) = 264px
-                    </p>
-                </div>
-            </div>
-        </section>
+        <p><strong>Name:</strong> Sarah</p>
+        <ul>
+            <li><strong>Demographics:</strong>
+                <ul>
+                    <li>32 years old, female, urban resident.</li>
+                    <li>Annual income: $60,000.</li>
+                    <li>College-educated, single, lives in a mid-sized apartment in a metropolitan area.</li>
+                </ul>
+            </li>
+            <li><strong>Goals and Motivations:</strong>
+                <ul>
+                    <li>Wants to live a more sustainable lifestyle by minimizing her carbon footprint.</li>
+                    <li>Seeks high-quality, eco-friendly products that align with her values.</li>
+                </ul>
+            </li>
+            <li><strong>Challenges and Pain Points:</strong>
+                <ul>
+                    <li>Finds it difficult to access affordable sustainable products.</li>
+                    <li>Struggles to verify the authenticity of brands' eco-friendly claims.</li>
+                </ul>
+            </li>
+            <li><strong>Preferred Communication Channels:</strong>
+                <ul>
+                    <li>Frequently engages with sustainability-focused Instagram accounts and blogs.</li>
+                    <li>Subscribes to newsletters from eco-conscious brands.</li>
+                </ul>
+            </li>
+        </ul>
 
-        <!-- Adjusting the Box Model Section -->
-        <section id="adjusting-box-model" class="mb-5">
-            <div class="card p-4 shadow-sm">
-                <h3 class="h5 mb-3">3.2. Adjusting the Box Model</h3>
-                <p>CSS provides flexibility to modify the box model's individual components—padding, border, and
-                    margin—to achieve the desired layout. Here's how you can adjust each part:</p>
+        <h3>3. Building Personas from Research</h3>
+        <p>Use insights gathered through surveys, interviews, and analytics tools to create personas like Sarah. Tailor
+            personas to your specific industry and audience needs:</p>
 
-                <!-- Padding -->
-                <h4 class="h6 mt-3">• Padding</h4>
-                <p>The <code>padding</code> property adds space between the content of an element and its border, making
-                    the content more readable by creating breathing room around it.</p>
-                <div class="card bg-light p-3">
-                    <pre class="bg-dark text-white p-3">
-p {
-    padding: 15px;
-}
-                </pre>
-                    <p class="mb-0"><strong>Explanation:</strong> The above CSS adds 15px of padding to all sides of the
-                        paragraph (<code>&lt;p&gt;</code>) content. This will make the text appear more spaced out
-                        within its container, enhancing readability.</p>
-                </div>
+        <ul>
+            <li>Combine <strong>demographic data</strong> (e.g., from Google Analytics) with <strong>psychographic
+                    insights</strong> (e.g., interests and values derived from social media trends).</li>
+            <li>Refine personas with <strong>qualitative insights</strong> from customer interviews.</li>
+            <li>Update personas periodically as trends and behaviors evolve.</li>
+        </ul>
 
-                <!-- Border -->
-                <h4 class="h6 mt-4">• Border</h4>
-                <p>The <code>border</code> property is used to create a line around the element. You can customize the
-                    thickness, style (e.g., solid, dashed), and color of the border.</p>
-                <div class="card bg-light p-3">
-                    <pre class="bg-dark text-white p-3">
-img {
-    border: 5px solid #ccc;
-}
-                </pre>
-                    <p class="mb-0"><strong>Explanation:</strong> This CSS applies a 5px thick solid border with a light
-                        gray color (<code>#ccc</code>) around the image (<code>&lt;img&gt;</code>). The border visually
-                        frames the image, making it stand out.</p>
-                </div>
+        <h3>Practical Application Example</h3>
+        <p>Let’s say you’re launching a subscription service for sustainable home goods. Your personas might include:
+        </p>
 
-                <!-- Margin -->
-                <h4 class="h6 mt-4">• Margin</h4>
-                <p>The <code>margin</code> property creates space around an element, outside its border. You can control
-                    margins individually for the top, right, bottom, and left sides of an element.</p>
-                <div class="card bg-light p-3">
-                    <pre class="bg-dark text-white p-3">
-h1 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-                </pre>
-                    <p class="mb-0"><strong>Explanation:</strong> The example above adds a 20px margin above the
-                        <code>&lt;h1&gt;</code> heading and a 10px margin below it. This spacing separates the heading
-                        from other elements, improving readability and layout aesthetics.
-                    </p>
-                </div>
+        <ul>
+            <li><strong>Alex, "The Budget-Conscious Student"</strong>
+                <ul>
+                    <li><strong>Demographics:</strong> 21, male, college student.</li>
+                    <li><strong>Motivations:</strong> Wants affordable ways to practice sustainability.</li>
+                    <li><strong>Challenges:</strong> Limited budget and knowledge of eco-friendly options.</li>
+                </ul>
+            </li>
+            <li><strong>Lisa, "The Busy Professional Parent"</strong>
+                <ul>
+                    <li><strong>Demographics:</strong> 38, female, working mother.</li>
+                    <li><strong>Motivations:</strong> Prioritizes convenience and health for her family.</li>
+                    <li><strong>Challenges:</strong> Lack of time to research sustainable brands.</li>
+                </ul>
+            </li>
+        </ul>
 
-                <!-- Margin Shorthand -->
-                <h4 class="h6 mt-4">• Margin Shorthand</h4>
-                <p>CSS also provides a shorthand notation to define all four margins (top, right, bottom, and left) in
-                    one line. Here's how:</p>
-                <div class="card bg-light p-3">
-                    <pre class="bg-dark text-white p-3">
-div {
-    margin: 20px 15px 10px 5px; /* Top, Right, Bottom, Left */
-}
-                </pre>
-                    <p class="mb-0"><strong>Explanation:</strong> This shorthand notation sets the top margin to 20px,
-                        right margin to 15px, bottom margin to 10px, and left margin to 5px for the <code>div</code>
-                        element.</p>
-                </div>
-            </div>
-        </section>
+        <h3>Conclusion</h3>
+        <p>Personas like Sarah, Alex, and Lisa help focus your content strategy, ensuring it resonates with the intended
+            audience. By addressing their goals, pain points, and preferred channels, you can create meaningful
+            connections and drive engagement.</p>
     </div>
-    <div class="video-container">
+
+    </section>
+    </div>
+    <!-- <div class="video-container">
         <div class="gradient-border">
             <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -264,7 +260,7 @@ div {
                 <h4>Channel Name<h4>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

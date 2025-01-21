@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Week 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .concept-section {
+            margin-top: 40px;
+        }
+
+        .concept-section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .history-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .conclusion-container {
+            margin-top: 20px;
+        }
+
+        .conclusion-header {
+            margin-bottom: 20px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Assignment: Sales Data Analysis and Dashboard Creation</h1>
+
+        <section class="mt-5">
+            <h2>Objective</h2>
+            <p>Use Microsoft Excel to analyze a sales dataset and design a dynamic dashboard that visualizes key
+                business insights.</p>
+        </section>
+
+        <section class="mt-5">
+            <h2>Steps to Complete the Assignment</h2>
+
+            <h3>1. Dataset Preparation</h3>
+            <p><strong>Acquire Data:</strong></p>
+            <ul>
+                <li>Use a provided dataset or download a simple sales dataset online.</li>
+                <li>Ensure the dataset includes the following fields:</li>
+                <ul>
+                    <li><strong>Date:</strong> Transaction date.</li>
+                    <li><strong>Region:</strong> Location of the sale.</li>
+                    <li><strong>Product Category:</strong> Group or type of product sold.</li>
+                    <li><strong>Sales Amount:</strong> Revenue generated per transaction.</li>
+                </ul>
+            </ul>
+
+            <h3>2. Data Analysis</h3>
+            <p><strong>Create Pivot Tables:</strong></p>
+            <ul>
+                <li>Summarize sales data by:</li>
+                <ul>
+                    <li><strong>Region:</strong> Total sales per geographic location.</li>
+                    <li><strong>Product Category:</strong> Revenue by product type.</li>
+                    <li><strong>Time Period:</strong> Monthly or quarterly sales trends.</li>
+                </ul>
+                <li>Include calculations such as total sales, average sales, and percentage contribution to overall
+                    revenue.</li>
+            </ul>
+
+            <h3>3. Dashboard Creation</h3>
+            <p><strong>Design Layout:</strong></p>
+            <ul>
+                <li>Use a clean, professional layout that includes:</li>
+                <ul>
+                    <li>A title and clear section labels.</li>
+                    <li>Organized visual elements for ease of understanding.</li>
+                </ul>
+            </ul>
+
+            <p><strong>Interactive Slicers:</strong></p>
+            <ul>
+                <li>Add slicers to allow filtering by:</li>
+                <ul>
+                    <li>Product category.</li>
+                    <li>Time period (e.g., months or quarters).</li>
+                </ul>
+            </ul>
+
+            <p><strong>Charts for Visualization:</strong></p>
+            <ul>
+                <li>Include at least three types of charts to showcase:</li>
+                <ul>
+                    <li><strong>Sales Trends:</strong> Line chart for monthly or quarterly sales performance.</li>
+                    <li><strong>Regional Comparison:</strong> Bar or column chart for sales by region.</li>
+                    <li><strong>Product Breakdown:</strong> Pie chart for percentage contribution by product category.
+                    </li>
+                </ul>
+            </ul>
+
+            <h3>4. Submission Requirements</h3>
+            <ul>
+                <li>Submit a single Excel file that includes:</li>
+                <ul>
+                    <li><strong>Pivot Tables:</strong> All tables used for summarizing data.</li>
+                    <li><strong>Dynamic Dashboard:</strong> The completed dashboard with slicers and charts.</li>
+                    <li><strong>Written Insights:</strong> A brief explanation (150–200 words) addressing the following:
+                    </li>
+                    <ul>
+                        <li>Key trends observed in the sales data.</li>
+                        <li>Insights into which regions or products performed best.</li>
+                        <li>Suggestions for improving sales or focusing on high-performing areas.</li>
+                    </ul>
+                </ul>
+            </ul>
+
+            <h3>Evaluation Criteria</h3>
+            <ul>
+                <li><strong>Data Analysis:</strong> Accuracy and relevance of the pivot tables.</li>
+                <li><strong>Dashboard Design:</strong> Professional, clear layout with intuitive slicers and
+                    well-labeled charts.</li>
+                <li><strong>Insights and Explanation:</strong> Depth of insights derived from the data and the relevance
+                    to potential business decisions.</li>
+            </ul>
+        </section>
+
+        <section class="mt-5">
+            <h2>Assignment Overview</h2>
+            <p>This assignment emphasizes hands-on experience with Excel’s data analysis and visualization features
+                while reinforcing skills in deriving actionable business insights.</p>
+        </section>
+    </div>
+</body>
+
+
+</html>

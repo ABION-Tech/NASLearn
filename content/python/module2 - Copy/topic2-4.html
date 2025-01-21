@@ -4,19 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Conclusion of Week 2</title>
+    <title>Python Lambda Functions</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
+            background-color: white;
+            color: black;
             font-family: Arial, sans-serif;
         }
 
-        .conclusion-container {
-            margin-top: 20px;
+        .blue-accent {
+            color: blue;
         }
 
-        .conclusion-header {
-            margin-bottom: 20px;
+        .content {
+            padding: 20px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid lightgray;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
         }
 
         /* Basic Reset */
@@ -119,34 +129,53 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="bg-primary text-white text-center py-3">
-        <h1>Conclusion of Week 2</h1>
-    </header>
 
-    <!-- Main Content -->
-    <main class="container conclusion-container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="conclusion-header">
-                    <h2>Week 2 Summary</h2>
-                </div>
-                <p>Good job on getting to the end of Week 2, you should have a strong understanding of CSS and its role
-                    in creating visually appealing and responsive web pages. you should be familiar with various CSS
-                    properties, the box model, layout techniques, and responsive design principles. The hands-on
-                    practice must have provided the opportunity to apply these concepts and build a responsive web page
-                    that adapts to different devices. This knowledge will be crucial as you move on to more advanced
-                    topics in web development.</p>
-                <hr>
-                <p>This concludes the lecture for Week 2. As you progress, continue experimenting with different CSS
-                    properties and layouts to refine your design skills and improve your ability to create
-                    professional-looking web pages.</p>
-                <p>Now take the Quiz and move to the next Module</p>
+    <div class="container-fluid content">
+        <h3 class="blue-accent">Lambda Functions in Python</h3>
+
+        <h5 class="blue-accent">What are Lambda Functions?</h5>
+        <p><strong>Lambda functions</strong> are small anonymous functions defined using the <code>lambda</code>
+            keyword. They can have any number of arguments but only one expression.</p>
+
+        <h5 class="blue-accent">Syntax:</h5>
+        <pre><code>lambda arguments: expression</code></pre>
+
+        <h5 class="blue-accent">Example:</h5>
+        <pre><code># Regular function
+def add(x, y):
+    return x + y
+
+# Lambda function
+add_lambda = lambda x, y: x + y
+
+print(add(2, 3))  # Outputs: 5
+print(add_lambda(2, 3))  # Outputs: 5
+</code></pre>
+
+        <p>Lambda functions are useful when you need a simple function for a short period of time, such as in sorting or
+            filtering data.</p>
+
+        <h5 class="blue-accent">Use Case Example:</h5>
+        <pre><code># Sorting a list of tuples by the second value using a lambda function
+my_list = [(1, 'apple'), (3, 'banana'), (2, 'cherry')]
+my_list.sort(key=lambda x: x[1])
+print(my_list)  # Outputs: [(1, 'apple'), (3, 'banana'), (2, 'cherry')]
+</code></pre>
+    </div>
+    <div class=" video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
             </div>
         </div>
-    </main>
-
-
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

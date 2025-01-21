@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Preprocessing and EDA - Week 2</title>
+    <title>Week 2</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -52,89 +52,76 @@
 </head>
 
 <body>
+    <div class="container my-5">
+        <section class="mb-5">
+            <h2>Assignment: Sentence Rewriting</h2>
+            <p><strong>Objective:</strong> Transform poorly written sentences into clear and grammatically correct ones.
+            </p>
+        </section>
 
-    <div class="container">
-        <h1>Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
-        <h2>Data Transformation: Feature Scaling, Normalization, and Standardization</h2>
+        <section class="mb-5">
+            <h3>Instructions:</h3>
+            <p>1. <strong>Rewrite the following sentences:</strong></p>
 
-        <p>Data transformation is a crucial step in data preprocessing, especially when dealing with numerical features.
-            It involves scaling or normalizing the data to a common range, which can significantly enhance the
-            performance of many machine learning algorithms.</p>
+            <ul>
+                <li><strong>Original:</strong> *The report was written by John and is being reviewed by Sarah.*<br>
+                    <strong>Error:</strong> Overuse of passive voice.<br>
+                    <strong>Rewrite:</strong> John wrote the report, and Sarah is reviewing it.<br>
+                    <strong>Explanation:</strong> Rewriting in active voice makes the sentence clearer and more concise.
+                    Active voice gives a direct, straightforward approach to communication.
+                </li>
+                <li><strong>Original:</strong> *During the meeting, we discussed project updates, however, we didn’t
+                    make any decisions.*<br>
+                    <strong>Error:</strong> Incorrect use of a comma instead of a semicolon before "however."<br>
+                    <strong>Rewrite:</strong> During the meeting, we discussed project updates; however, we didn’t make
+                    any decisions.<br>
+                    <strong>Explanation:</strong> A semicolon is necessary to separate two independent clauses when
+                    using "however." This helps avoid comma splices and ensures proper sentence structure.
+                </li>
+                <li><strong>Original:</strong> *He don’t have no idea about the new policies.*<br>
+                    <strong>Error:</strong> Double negative and incorrect verb form.<br>
+                    <strong>Rewrite:</strong> He doesn’t have any idea about the new policies.<br>
+                    <strong>Explanation:</strong> Corrected the double negative ("don’t" and "no") to avoid confusion
+                    and used the appropriate conjugation of "do" for the third-person singular subject ("doesn't").
+                </li>
+                <li><strong>Original:</strong> *The cake baked by my sister, it was delicious.*<br>
+                    <strong>Error:</strong> Sentence fragment due to a misplaced clause.<br>
+                    <strong>Rewrite:</strong> The cake baked by my sister was delicious.<br>
+                    <strong>Explanation:</strong> Removing the comma and connecting the subject with the predicate makes
+                    the sentence grammatically complete. The sentence now properly expresses a single, coherent thought.
+                </li>
+                <li><strong>Original:</strong> *I have went to the store already.*<br>
+                    <strong>Error:</strong> Incorrect verb form ("went" instead of "gone").<br>
+                    <strong>Rewrite:</strong> I have gone to the store already.<br>
+                    <strong>Explanation:</strong> "Gone" is the correct past participle form of "go" used with the
+                    present perfect tense ("have gone"), whereas "went" is the simple past tense, which doesn’t work
+                    with "have."
+                </li>
+            </ul>
 
-        <h3>1. Feature Scaling</h3>
-        <p>Feature scaling transforms numerical features to a common scale, which is essential as many ML algorithms are
-            sensitive to the scale of features.</p>
+            <p>2. <strong>For each correction:</strong></p>
+            <ul>
+                <li>Highlight the grammar error.</li>
+                <li>Explain why the change improves the sentence.</li>
+            </ul>
 
-        <ul>
-            <li><strong>Min-max scaling:</strong> This technique scales features to a specific range, typically between
-                0 and 1.</li>
-        </ul>
-        <pre><code>from sklearn.preprocessing import MinMaxScaler
+        </section>
 
-scaler = MinMaxScaler()
-X_scaled = scaler.fit_transform(X)</code></pre>
+        <section class="mb-5">
+            <h3>Submission Requirements:</h3>
+            <p>- Submit the rewritten sentences and explanations as a Word document or PDF.</p>
+        </section>
 
-        <ul>
-            <li><strong>Robust scaling:</strong> Utilizes the interquartile range (IQR) to scale features, making it
-                less sensitive to outliers.</li>
-        </ul>
-        <pre><code>from sklearn.preprocessing import RobustScaler
-
-scaler = RobustScaler()
-X_scaled = scaler.fit_transform(X)</code></pre>
-
-        <h3>2. Normalization</h3>
-        <p>Normalization transforms features to have a mean of 0 and a standard deviation of 1. This is particularly
-            useful for algorithms that assume normally distributed data.</p>
-
-        <ul>
-            <li><strong>StandardScaler:</strong> This technique scales features using the mean and standard deviation.
-            </li>
-        </ul>
-        <pre><code>from sklearn.preprocessing import StandardScaler
-
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)</code></pre>
-
-        <h3>3. Standardization</h3>
-        <p>Standardization is similar to normalization but employs the mean and standard deviation of the entire dataset
-            instead of those of each feature. This can be advantageous when features exhibit different variances.</p>
-
-        <ul>
-            <li><strong>StandardScaler:</strong> This can also be used for standardization.</li>
-        </ul>
-
-        <h3>Choosing the Right Technique</h3>
-        <p>The selection of scaling or normalization technique is contingent on the specific characteristics of your
-            data and the ML algorithm employed. Consider the following:</p>
-        <ul>
-            <li><strong>Algorithm requirements:</strong> Some algorithms, like linear regression and support vector
-                machines, may gain from feature scaling.</li>
-            <li><strong>Data distribution:</strong> If your data is normally distributed, normalization may be the best
-                approach.</li>
-            <li><strong>Outliers:</strong> Robust scaling can be beneficial for datasets that contain outliers.</li>
-        </ul>
-
-        <h3>Additional Considerations</h3>
-        <p>When performing data transformation, consider these additional factors:</p>
-        <ul>
-            <li><strong>Handle categorical features:</strong> Ensure categorical features are encoded before scaling or
-                normalization.</li>
-            <li><strong>Avoid scaling target variables:</strong> If your target variable is numerical, refrain from
-                scaling it unless absolutely necessary.</li>
-            <li><strong>Experiment and evaluate:</strong> Test various scaling techniques and assess their impact on
-                model performance.</li>
-        </ul>
-
-        <div class="note">
-            <strong>Note:</strong> By applying appropriate data transformation techniques, you can enhance the
-            convergence of your machine learning algorithms and bolster overall model performance.
-        </div>
+        <section class="mb-5">
+            <h3>Evaluation Criteria:</h3>
+            <ul>
+                <li>Grammar accuracy.</li>
+                <li>Sentence clarity.</li>
+                <li>Thoroughness of explanations.</li>
+            </ul>
+        </section>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 
 </html>

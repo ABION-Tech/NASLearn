@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-On Python Exercises</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .blue-accent {
+            color: blue;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid lightgray;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .editor {
+            height: 200px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+        }
+
+        .result {
+            border: 1px solid lightgray;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid content">
+        <h3 class="blue-accent">Hands-On Exercises</h3>
+
+        <h5 class="blue-accent">Exercise 1: Function to Calculate Factorial</h5>
+        <p>Write a function to calculate the factorial of a number. Factorial is defined as:</p>
+        <pre><code>n! = n × (n - 1) × (n - 2) × ... × 1</code></pre>
+        <h6>Code:</h6>
+        <pre><code>def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Outputs: 120</code></pre>
+
+        <h5 class="blue-accent">Exercise 2: Function to Find Largest Number in a List</h5>
+        <p>Write a function that takes a list of numbers and returns the largest number.</p>
+        <h6>Code:</h6>
+        <pre><code>def find_largest(numbers):
+    largest = numbers[0]
+    for number in numbers:
+        if number > largest:
+            largest = number
+    return largest
+
+nums = [3, 7, 2, 8, 4]
+print(find_largest(nums))  # Outputs: 8</code></pre>
+
+        <h5 class="blue-accent">Exercise 3: Control Flow with Nested Conditions</h5>
+        <p>Write a program that takes a user’s input and prints a different message depending on the input value using
+            nested conditions.</p>
+        <h6>Code:</h6>
+        <pre><code>age = int(input("Enter your age: "))
+
+if age > 0:
+    if age < 18:
+        print("You are a minor.")
+    elif age < 60:
+        print("You are an adult.")
+    else:
+        print("You are a senior citizen.")
+else:
+    print("Invalid age.")</code></pre>
+
+        <h5 class="blue-accent">Exercise 4: Loop and Break Statement</h5>
+        <p>Write a program that continuously asks the user for input and breaks the loop if the input is "stop".</p>
+        <h6>Code:</h6>
+        <pre><code>while True:
+    user_input = input("Enter something (type 'stop' to exit): ")
+    if user_input == 'stop':
+        break
+    else:
+        print("You entered:", user_input)</code></pre>
+
+        <h5 class="blue-accent">Try It Out:</h5>
+        <div class="editor" id="editor"></div>
+        <button class="btn btn-primary mt-2" id="run-code">Run Code</button>
+        <div class="result mt-3" id="result"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+    <script>
+        // Initialize CodeMirror
+        const editor = CodeMirror(document.getElementById("editor"), {
+            mode: "python",
+            lineNumbers: true,
+            theme: "default"
+        });
+
+        // Run code and display result
+        document.getElementById("run-code").onclick = function () {
+            const code = editor.getValue();
+            try {
+                const output = eval(code); // Use with caution, eval can execute arbitrary code
+                document.getElementById("result").innerText = output || "Code executed successfully!";
+            } catch (error) {
+                document.getElementById("result").innerText = "Error: " + error.message;
+            }
+        };
+    </script>
+</body>
+
+</html>

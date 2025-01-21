@@ -6,58 +6,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Excel Techniques</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .concept-section {
+            margin-top: 40px;
+        }
+
+        .concept-section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .history-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+
 </head>
 
 <body>
-    <header>
-        <h1>Advanced Excel Techniques</h1>
-    </header>
+    <div class="container my-5">
+        <h2 class="text-center">Excel for Data Analysis: Advanced Functions</h2>
 
-    <main>
-        <section id="data-analysis-tools">
-            <h2>Data Analysis Tools</h2>
-            <p>Excel provides several built-in tools for data analysis:</p>
-            <ul>
-                <li><strong>Solver:</strong> An optimization tool that finds the best solution for decision problems.
-                </li>
-                <li><strong>Analysis ToolPak:</strong> A collection of data analysis tools for statistical and
-                    engineering analysis.</li>
-            </ul>
-        </section>
+        <!-- VLOOKUP and HLOOKUP Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>VLOOKUP and HLOOKUP</h5>
+            </div>
+            <div class="card-body">
+                <p>These functions are essential for searching and retrieving specific data from structured tables.</p>
+                <h6><strong>VLOOKUP (Vertical Lookup):</strong></h6>
+                <p>Searches for a value in the first column of a table and retrieves information from a specified column
+                    in the same row.</p>
+                <ul>
+                    <li><strong>Syntax:</strong> `=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])`
+                    </li>
+                    <li><strong>Example:</strong> You have a table of products with columns: <strong>SKU</strong>,
+                        <strong>Product Name</strong>, and <strong>Price</strong>.
+                        <ul>
+                            <li>Use VLOOKUP to find the price of a product based on its <strong>SKU</strong>.</li>
+                            <li>Formula: `=VLOOKUP("12345", A2:C10, 3, FALSE)`</li>
+                        </ul>
+                    </li>
+                </ul>
 
-        <section id="macros">
-            <h2>Macros</h2>
-            <p>
-                Macros are sequences of instructions that automate repetitive tasks in Excel. They are written in Visual
-                Basic for Applications (VBA), allowing users to perform complex operations with a single click.
-            </p>
-        </section>
+                <h6><strong>HLOOKUP (Horizontal Lookup):</strong></h6>
+                <p>Similar to VLOOKUP but searches in the first row and retrieves data from a specified row.</p>
+                <ul>
+                    <li><strong>Use Case:</strong> Extract quarterly revenue from a dataset where quarters are listed
+                        horizontally.</li>
+                </ul>
+            </div>
+        </div>
 
-        <section id="vba-basics">
-            <h2>VBA Basics</h2>
-            <p>
-                VBA is a programming language used to create macros in Excel. It allows users to automate tasks, create
-                custom functions, and interact with Excel objects programmatically.
-            </p>
-        </section>
+        <!-- INDEX and MATCH Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>INDEX and MATCH</h5>
+            </div>
+            <div class="card-body">
+                <p>This combination offers a more flexible alternative to VLOOKUP/HLOOKUP, especially for non-standard
+                    table structures.</p>
+                <h6><strong>INDEX Function:</strong></h6>
+                <p>Retrieves a value at a specific row and column intersection within a table.</p>
+                <ul>
+                    <li><strong>Syntax:</strong> `=INDEX(array, row_num, [column_num])`</li>
+                </ul>
 
-        <section id="advanced-formulas">
-            <h2>Advanced Formulas</h2>
-            <p>
-                Advanced formulas include array formulas, nested functions, and custom formulas using VBA. These
-                techniques enable more complex and powerful data analysis.
-            </p>
-        </section>
+                <h6><strong>MATCH Function:</strong></h6>
+                <p>Returns the relative position of a value in a row or column.</p>
+                <ul>
+                    <li><strong>Syntax:</strong> `=MATCH(lookup_value, lookup_array, [match_type])`</li>
+                </ul>
 
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p>
-                <strong>Hands-On Practice:</strong> Use the Solver and Analysis ToolPak for data analysis. Create and
-                run macros to automate tasks and write simple VBA scripts.
-            </p>
-        </section>
-    </main>
+                <h6><strong>Example:</strong></h6>
+                <p>You have a dataset with columns for <strong>Employee ID</strong>, <strong>Name</strong>, and
+                    <strong>Department</strong>.</p>
+                <ul>
+                    <li>Find the department of an employee using their <strong>Employee ID</strong>.</li>
+                    <li><strong>Steps:</strong></li>
+                    <ul>
+                        <li>Use `MATCH` to locate the row number of the employee.</li>
+                        <li>Use `INDEX` to retrieve the department name based on the row number.</li>
+                    </ul>
+                    <li><strong>Formula:</strong> `=INDEX(C2:C10, MATCH("E123", A2:A10, 0))`</li>
+                </ul>
+            </div>
+        </div>
 
+        <!-- Nested IF Statements Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Nested IF Statements</h5>
+            </div>
+            <div class="card-body">
+                <p>Nested IFs allow you to implement multiple conditional checks within a single formula.</p>
+                <ul>
+                    <li><strong>Syntax:</strong> `=IF(condition1, result1, IF(condition2, result2, result_if_false))`
+                    </li>
+                </ul>
+
+                <h6><strong>Example:</strong></h6>
+                <p>Assign letter grades based on scores:</p>
+                <ul>
+                    <li><strong>90–100:</strong> A</li>
+                    <li><strong>80–89:</strong> B</li>
+                    <li><strong>70–79:</strong> C</li>
+                    <li><strong>Below 70:</strong> F</li>
+                </ul>
+                <p><strong>Formula:</strong></p>
+                <pre>=IF(A1>=90, "A", IF(A1>=80, "B", IF(A1>=70, "C", "F")))</pre>
+            </div>
+        </div>
+
+        <!-- Practical Applications Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Practical Applications</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>Product Pricing:</strong> Use VLOOKUP to retrieve product prices for invoices.</li>
+                    <li><strong>Employee Database:</strong> Use INDEX and MATCH to quickly locate details like job
+                        titles or departments.</li>
+                    <li><strong>Dynamic Reports:</strong> Implement nested IFs to classify sales data into categories
+                        like "High," "Medium," or "Low."</li>
+                </ul>
+                <p>Mastering these functions enhances the ability to process, analyze, and interpret data efficiently,
+                    making them invaluable for business intelligence tasks.</p>
+            </div>
+        </div>
+    </div>
 </body>
+
 
 </html>

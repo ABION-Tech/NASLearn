@@ -28,6 +28,10 @@ noe for pagr 2 its titled getting started, you know what to do, develop this pag
 
 
 
+each topic is as page, add discussion page, for weekly dicusioins, Though prokoving questions with likely multiple views and opinions in the subject matter
+
+
+
 
 
 # Weekly Course Content Generation Prompt

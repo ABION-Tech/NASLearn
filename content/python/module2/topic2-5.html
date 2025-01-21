@@ -47,91 +47,92 @@
 </head>
 
 <body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Python Programming: Module 2</h1>
+        <h2 class="mb-3">Variables and Data Types</h2>
+        <h3 class="mt-4">Assignment: Average Calculator</h3>
+        <hr>
 
-    <div class="container-fluid content">
-        <h3 class="blue-accent">Hands-On Exercises</h3>
+        <section class="my-4">
+            <h4>Objective</h4>
+            <p>Develop a Python script to calculate and display the average of five user-entered numbers.</p>
+        </section>
 
-        <h5 class="blue-accent">Exercise 1: Function to Calculate Factorial</h5>
-        <p>Write a function to calculate the factorial of a number. Factorial is defined as:</p>
-        <pre><code>n! = n × (n - 1) × (n - 2) × ... × 1</code></pre>
-        <h6>Code:</h6>
-        <pre><code>def factorial(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
+        <section class="my-4">
+            <h4>Instructions</h4>
+            <ol>
+                <li><strong>Input Collection:</strong>
+                    <ul>
+                        <li>Use the <code>input()</code> function to prompt the user to enter five numbers.</li>
+                        <li>Convert each input to an appropriate data type (<code>float</code> or <code>int</code>).
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Calculations:</strong>
+                    <ul>
+                        <li>Sum the entered numbers.</li>
+                        <li>Divide the sum by 5 to find the average.</li>
+                    </ul>
+                </li>
+                <li><strong>Output Display:</strong>
+                    <ul>
+                        <li>Print the result in a user-friendly format, explaining what the output represents.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
 
-print(factorial(5))  # Outputs: 120</code></pre>
+        <section class="my-4">
+            <h4>Example Code</h4>
+            <pre class="bg-light p-3 rounded">
+<code># Collecting input from the user
+num1 = float(input("Enter number 1: "))
+num2 = float(input("Enter number 2: "))
+num3 = float(input("Enter number 3: "))
+num4 = float(input("Enter number 4: "))
+num5 = float(input("Enter number 5: "))
 
-        <h5 class="blue-accent">Exercise 2: Function to Find Largest Number in a List</h5>
-        <p>Write a function that takes a list of numbers and returns the largest number.</p>
-        <h6>Code:</h6>
-        <pre><code>def find_largest(numbers):
-    largest = numbers[0]
-    for number in numbers:
-        if number > largest:
-            largest = number
-    return largest
+# Calculating the sum and average
+total = num1 + num2 + num3 + num4 + num5
+average = total / 5
 
-nums = [3, 7, 2, 8, 4]
-print(find_largest(nums))  # Outputs: 8</code></pre>
+# Displaying the result
+print(f"The average of the numbers is {average:.2f}")
+</code>
+            </pre>
+        </section>
 
-        <h5 class="blue-accent">Exercise 3: Control Flow with Nested Conditions</h5>
-        <p>Write a program that takes a user’s input and prints a different message depending on the input value using
-            nested conditions.</p>
-        <h6>Code:</h6>
-        <pre><code>age = int(input("Enter your age: "))
+        <section class="my-4">
+            <h4>Expected Output</h4>
+            <pre class="bg-light p-3 rounded">
+<code>Enter number 1: 10
+Enter number 2: 20
+Enter number 3: 30
+Enter number 4: 40
+Enter number 5: 50
+The average of the numbers is 30.00
+</code>
+            </pre>
+        </section>
 
-if age > 0:
-    if age < 18:
-        print("You are a minor.")
-    elif age < 60:
-        print("You are an adult.")
-    else:
-        print("You are a senior citizen.")
-else:
-    print("Invalid age.")</code></pre>
+        <section class="my-4">
+            <h4>Evaluation Criteria</h4>
+            <ul>
+                <li><strong>Variable and Data Type Usage:</strong> Correctly handles numeric input and performs
+                    arithmetic operations.</li>
+                <li><strong>Code Readability:</strong> Uses meaningful variable names and proper indentation.</li>
+                <li><strong>Accuracy:</strong> Ensures correct computation of the average.</li>
+                <li><strong>User-Friendly Output:</strong> Provides clear prompts and formatted results.</li>
+            </ul>
+        </section>
 
-        <h5 class="blue-accent">Exercise 4: Loop and Break Statement</h5>
-        <p>Write a program that continuously asks the user for input and breaks the loop if the input is "stop".</p>
-        <h6>Code:</h6>
-        <pre><code>while True:
-    user_input = input("Enter something (type 'stop' to exit): ")
-    if user_input == 'stop':
-        break
-    else:
-        print("You entered:", user_input)</code></pre>
-
-        <h5 class="blue-accent">Try It Out:</h5>
-        <div class="editor" id="editor"></div>
-        <button class="btn btn-primary mt-2" id="run-code">Run Code</button>
-        <div class="result mt-3" id="result"></div>
+        <p class="text-muted mt-4">This assignment reinforces the concepts of variables, data types, and input/output in
+            Python while encouraging good coding practices.</p>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
-    <script>
-        // Initialize CodeMirror
-        const editor = CodeMirror(document.getElementById("editor"), {
-            mode: "python",
-            lineNumbers: true,
-            theme: "default"
-        });
-
-        // Run code and display result
-        document.getElementById("run-code").onclick = function () {
-            const code = editor.getValue();
-            try {
-                const output = eval(code); // Use with caution, eval can execute arbitrary code
-                document.getElementById("result").innerText = output || "Code executed successfully!";
-            } catch (error) {
-                document.getElementById("result").innerText = "Error: " + error.message;
-            }
-        };
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+</html>
 
 </html>

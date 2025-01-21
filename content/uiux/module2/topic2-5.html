@@ -22,6 +22,37 @@
             border: 1px solid #ddd;
         }
 
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        h4 {
+            font-size: 22px;
+        }
+
+        ul {
+            font-size: 16px;
+        }
+
+        .table-responsive {
+            margin-top: 20px;
+        }
+
+        .table {
+            font-size: 14px;
+        }
+
+        .my-5 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+
         .flexible-image {
             max-width: 100%;
             height: auto;
@@ -140,99 +171,125 @@
 
 <body>
     <div class="container my-5">
-        <!-- Page Title -->
-        <div class="text-center mb-4">
-            <h1 class="display-4"> Responsive Web Design</h1>
-            <p class="lead">Learn how to make your web pages responsive, ensuring they look great on any device.</p>
-        </div>
+        <h1 class="text-center mb-4">Assignment: Persona Creation</h1>
 
-        <!-- Responsive Web Design Section -->
-        <section id="responsive-web-design" class="mb-5">
-            <div class="card p-4 shadow-sm">
-                <h2 class="h4 mb-3">5. Responsive Web Design</h2>
-                <p>Responsive Web Design (RWD) is an approach to web design aimed at crafting websites that provide an
-                    optimal viewing experience across a wide range of devices. This involves using fluid grids, flexible
-                    images, and media queries to adapt the layout and content of a web page based on the device's screen
-                    size.</p>
+        <section class="my-5">
+            <h4>Objective:</h4>
+            <p class="lead">Conduct a mock user interview and create a detailed user persona based on the insights
+                gathered.</p>
+        </section>
 
-                <!-- What is Responsive Web Design? -->
-                <h3 class="h5 mt-4">5.1. What is Responsive Web Design?</h3>
-                <p>Responsive web design ensures that web pages render well on various devices and screen sizes. The
-                    goal is to provide a smooth and enjoyable user experience, regardless of whether the visitor is
-                    using a smartphone, tablet, or desktop computer.</p>
-
-                <!-- Media Queries -->
-                <h3 class="h5 mt-4">5.2. Media Queries</h3>
-                <p>Media queries are used to apply different styles depending on the device's characteristics, such as
-                    its screen width. This allows for a tailored design that adapts to various screen sizes.</p>
-
-                <!-- Example of Media Query -->
-                <div class="card bg-light p-3">
-                    <pre class="bg-dark text-white p-3">
-@media (max-width: 768px) {
-    body {
-        background-color: lightblue;
-    }
-    .container {
-        width: 100%;
-    }
-}
-                </pre>
-                    <p>This media query sets the background color to light blue and adjusts the container width to 100%
-                        when the screen width is 768px or less. You can experiment with different breakpoints to target
-                        various device sizes.</p>
+        <section class="my-5">
+            <h4>Instructions:</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>1. Interview:</h5>
+                    <ul>
+                        <li><strong>Identify a target user:</strong> Choose a person who fits the intended audience for
+                            your design.</li>
+                        <li><strong>Ask questions:</strong> Focus on their goals, challenges, behaviors, and
+                            preferences. Example questions include:
+                            <ul>
+                                <li>What are your main goals when using [a specific type of product/service]?</li>
+                                <li>What challenges do you face with current options?</li>
+                                <li>What features or aspects would improve your experience?</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-
-                <!-- Fluid Grids -->
-                <h3 class="h5 mt-4">5.3. Fluid Grids</h3>
-                <p>Fluid grids use percentage-based widths rather than fixed pixel values. This allows layout elements
-                    to resize proportionally based on the screen size.</p>
-
-                <!-- Example of Fluid Grid -->
-                <div class="card bg-light p-3">
-                    <pre class="bg-dark text-white p-3">
-.column {
-    width: 50%;
-}
-                </pre>
-                    <p class="fluid-grid-example">This column takes up 50% of the available width, adjusting dynamically
-                        as the screen size changes. You can use fluid grids to create flexible layouts that adapt to
-                        different screen sizes.</p>
-                </div>
-
-                <!-- Flexible Images -->
-                <h3 class="h5 mt-4">Flexible Images</h3>
-                <p>Flexible images scale with the size of their container. This ensures that images do not overflow
-                    their containers and maintain their aspect ratio across different devices.</p>
-
-                <!-- Example of Flexible Image -->
-                <div class="card bg-light p-3">
-                    <pre class="bg-dark text-white p-3">
-img {
-    max-width: 100%;
-    height: auto;
-}
-                </pre>
-                    <p>Here’s an example of a flexible image that scales with the width of its container while
-                        preserving its aspect ratio.</p>
-                    <img src="https://via.placeholder.com/800x400" alt="Sample Image" class="flexible-image">
+                <div class="col-md-6">
+                    <h5>2. Create the Persona:</h5>
+                    <ul>
+                        <li><strong>Compile the data:</strong> Synthesize the interview findings into a persona
+                            template.</li>
+                        <li><strong>Include details:</strong>
+                            <ul>
+                                <li><strong>Name:</strong> Provide a fictional but relatable name.</li>
+                                <li><strong>Photo:</strong> Use an image that represents the persona (stock photo or
+                                    illustration).</li>
+                                <li><strong>Demographics:</strong> Age, location, occupation, etc.</li>
+                                <li><strong>Goals:</strong> Primary objectives related to the product or service.</li>
+                                <li><strong>Challenges:</strong> Key pain points or obstacles faced by the user.</li>
+                                <li><strong>Behaviors and preferences:</strong> Relevant habits and expectations.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
-    </div>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
+
+        <section class="my-5">
+            <h4>Deliverable:</h4>
+            <p>The persona should be submitted in one of the following formats:</p>
+            <ul>
+                <li><strong>A written document:</strong> A detailed write-up in Word or PDF format.</li>
+                <li><strong>A presentation:</strong> A visually engaging slide deck.</li>
+            </ul>
+        </section>
+
+        <section class="my-5">
+            <h4>Example Template:</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th><strong>Persona Detail</strong></th>
+                            <th><strong>Example</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Name</strong></td>
+                            <td>Sarah Johnson</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Age</strong></td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Location</strong></td>
+                            <td>New York</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Occupation</strong></td>
+                            <td>Marketing Manager</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Goals</strong></td>
+                            <td>Simplify shopping for eco-friendly products.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Challenges</strong></td>
+                            <td>Difficulty navigating e-commerce platforms.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Behaviors and Preferences</strong></td>
+                            <td>Prefers mobile-friendly designs, values sustainability, seeks curated recommendations.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
+        </section>
+
+        <section class="my-5">
+            <h4>Evaluation Criteria:</h4>
+            <ul>
+                <li><strong>Quality of the interview questions:</strong> Were they relevant and insightful?</li>
+                <li><strong>Clarity and depth of the persona:</strong> Does the persona effectively represent a target
+                    user?</li>
+                <li><strong>Relevance of insights to design solutions:</strong> Are the goals and challenges tied to
+                    actionable design ideas?</li>
+            </ul>
+        </section>
+
+        <section class="my-5">
+            <h4>Need Help?</h4>
+            <p>If you would like guidance on crafting interview questions or designing the persona template, feel free
+                to reach out.</p>
+        </section>
     </div>
-    <!-- Bootstrap JS (Optional for additional functionalities) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

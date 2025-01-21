@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 2: Data Preprocessing and EDA</title>
+    <title>Week 2</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -62,83 +62,107 @@
 
 <body>
     <div class="container">
-        <div class="section">
-            <h1>Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
-            <p>Data preprocessing and exploratory data analysis are critical steps in the machine learning pipeline.
-                These processes help ensure that the data is clean, accurate, and ready for analysis. In this week, we
-                will focus on handling missing data, dealing with outliers, and encoding categorical data.</p>
-        </div>
+        <h2>Discussion Questions</h2>
+        <p><strong>Page 4: Engaging with Machine Learning Fundamentals</strong></p>
 
-        <div class="section">
-            <h2>1. Handling Missing Data</h2>
-            <p>Missing data is a common issue in real-world datasets and can arise due to various reasons such as data
-                entry errors, sensor failures, or privacy concerns. Addressing missing values is essential to prevent
-                biases in your models.</p>
-            <div class="highlight">
-                <strong>Identifying Missing Values:</strong> Utilize functions like <code>isnull()</code> or
-                <code>isna()</code> in Python to detect missing values in your dataset.
-            </div>
-            <h3>Imputation Techniques</h3>
-            <ul>
-                <li><strong>Mean/Median/Mode Imputation:</strong> Replace missing values with the mean, median, or mode
-                    of the respective column.</li>
-                <li><strong>K-Nearest Neighbors Imputation:</strong> Impute missing values based on the values of nearby
-                    data points.</li>
-                <li><strong>Interpolation:</strong> Use interpolation methods to estimate missing values, particularly
-                    useful for time series data.</li>
-                <li><strong>Multiple Imputation:</strong> Generate multiple complete datasets by imputing missing values
-                    with various methods and combine the results for robust analysis.</li>
-            </ul>
-        </div>
+        <hr>
 
-        <div class="section">
-            <h2>2. Dealing with Outliers</h2>
-            <p>Outliers are data points that significantly deviate from the rest of the data. They can distort the
-                results of statistical analyses and negatively impact model performance.</p>
-            <div class="highlight">
-                <strong>Identification Methods:</strong> Employ statistical methods like Z-scores, interquartile range
-                (IQR), or visualization techniques (e.g., box plots) to identify outliers.
-            </div>
-            <h3>Treatment Strategies</h3>
-            <ul>
-                <li><strong>Removal:</strong> Discard outliers if they are erroneous or disproportionately influence the
-                    model.</li>
-                <li><strong>Capping:</strong> Replace outliers with a set maximum or minimum value.</li>
-                <li><strong>Winsorization:</strong> Substitute outliers with the nearest non-outlier value to minimize
-                    their influence.</li>
-            </ul>
-        </div>
+        <h3>1. Algorithm Selection:</h3>
+        <p><strong>Question:</strong><br>
+            What are the key considerations when choosing between regression, classification, and clustering algorithms?
+        </p>
 
-        <div class="section">
-            <h2>3. Encoding Categorical Data</h2>
-            <p>Categorical data cannot be directly used by most machine learning algorithms. It needs to be converted
-                into a numerical format for analysis.</p>
-            <h3>Encoding Techniques</h3>
-            <ul>
-                <li><strong>One-Hot Encoding:</strong> Create binary features for each category, enabling algorithms to
-                    process the data effectively.</li>
-                <li><strong>Label Encoding:</strong> Assign unique integers to each category, suitable for ordinal data.
-                </li>
-                <li><strong>Ordinal Encoding:</strong> Assign integers based on the order of categories, capturing
-                    relationships between them.</li>
-            </ul>
-        </div>
+        <h4>Discussion Points:</h4>
+        <ul>
+            <li><strong>Nature of the Problem:</strong> Determine whether the task involves predicting a continuous
+                value (regression), categorizing data into predefined classes (classification), or grouping data based
+                on similarity without predefined labels (clustering).</li>
+            <li><strong>Data Type and Structure:</strong> Consider if the dataset contains labeled or unlabeled data and
+                its dimensionality.</li>
+            <li><strong>Scalability:</strong> Assess the algorithm's performance with large datasets.</li>
+            <li><strong>Interpretability:</strong> Prioritize algorithms that are easy to understand and explain when
+                working in sensitive domains like healthcare or finance.</li>
+        </ul>
 
-        <div class="section">
-            <h2>Best Practices</h2>
-            <p>When handling missing data and outliers, keep these best practices in mind:</p>
-            <ul>
-                <li><strong>Choose Appropriate Techniques:</strong> Select methods based on the specific characteristics
-                    of your dataset and the ML algorithm you are using.</li>
-                <li><strong>Consider the Impact on Model Performance:</strong> Experiment with different techniques and
-                    evaluate their effects on model accuracy and generalization.</li>
-                <li><strong>Document Your Choices:</strong> Maintain clear documentation of the methods used for
-                    handling missing data and outliers to ensure reproducibility in your analysis.</li>
-            </ul>
-            <p>By effectively addressing these data quality issues, you can enhance the quality and reliability of your
-                machine learning models.</p>
-        </div>
+        <hr>
+
+        <h3>2. Evaluation Metrics:</h3>
+        <p><strong>Question:</strong><br>
+            Why is accuracy sometimes insufficient as a performance metric, and when should other metrics like precision
+            and recall be prioritized?
+        </p>
+
+        <h4>Discussion Points:</h4>
+        <ul>
+            <li><strong>Imbalanced Datasets:</strong> Accuracy can be misleading when one class significantly outweighs
+                the other (e.g., fraud detection where only 1% of transactions are fraudulent).</li>
+            <li><strong>Cost of Errors:</strong> In scenarios like medical diagnostics, a false negative may have far
+                graver consequences than a false positive. In such cases, <strong>recall</strong> is prioritized.</li>
+            <li><strong>Specificity vs. Sensitivity:</strong> Metrics like <strong>precision</strong> are critical when
+                minimizing false positives, such as in spam filtering.</li>
+        </ul>
+
+        <hr>
+
+        <h3>3. Data Challenges:</h3>
+        <p><strong>Question:</strong><br>
+            How does data quality impact model performance, and what strategies can be employed to improve it?
+        </p>
+
+        <h4>Discussion Points:</h4>
+        <ul>
+            <li><strong>Impact on Performance:</strong> Poor-quality data (e.g., noisy, incomplete, or biased datasets)
+                leads to inaccurate models.</li>
+            <li><strong>Strategies for Improvement:</strong>
+                <ul>
+                    <li><strong>Data Cleaning:</strong> Handle missing values, remove duplicates, and eliminate
+                        outliers.</li>
+                    <li><strong>Data Augmentation:</strong> Generate synthetic data to balance datasets.</li>
+                    <li><strong>Bias Mitigation:</strong> Ensure diversity in training data to reduce algorithmic bias.
+                    </li>
+                    <li><strong>Feature Engineering:</strong> Transform raw data into meaningful features to improve
+                        model accuracy.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h3>4. Applications of ML Types:</h3>
+        <p><strong>Question:</strong><br>
+            Provide examples of real-world scenarios for supervised, unsupervised, and reinforcement learning.
+        </p>
+
+        <h4>Discussion Points:</h4>
+        <ul>
+            <li><strong>Supervised Learning:</strong>
+                <ul>
+                    <li>Predicting housing prices based on features like square footage and location.</li>
+                    <li>Email spam classification using labeled examples of spam and non-spam messages.</li>
+                </ul>
+            </li>
+            <li><strong>Unsupervised Learning:</strong>
+                <ul>
+                    <li>Customer segmentation in marketing to identify distinct buyer personas.</li>
+                    <li>Anomaly detection in network traffic to identify potential cyber threats.</li>
+                </ul>
+            </li>
+            <li><strong>Reinforcement Learning:</strong>
+                <ul>
+                    <li>Training autonomous vehicles to navigate through traffic.</li>
+                    <li>Optimizing supply chain operations using reward-based decision-making.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr>
+
+        <p>These discussion questions encourage you to critically engage with machine learning concepts, fostering a
+            deeper understanding of how algorithms, metrics, and data quality interact to create impactful AI solutions.
+        </p>
     </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

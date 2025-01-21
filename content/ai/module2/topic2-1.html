@@ -55,6 +55,83 @@
                     border-left: 5px solid #007BFF;
                     background-color: #f8f9fa;
                 }
+
+                /* Video container to hold everything */
+                .video-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding-bottom: 100px;
+                }
+
+                /* Gradient border container */
+                .gradient-border {
+                    padding: 5px;
+                    background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+                    border-radius: 10px;
+                }
+
+                /* Video or content inside the border */
+                .video-content {
+                    border-radius: 10px;
+                    display: block;
+                }
+
+                .video-links {
+                    color: grey;
+                    font-size: 0.8rem;
+                    text-align: center;
+                    margin-top: 5px;
+                }
+
+                /* Ensure responsive width and height for the video */
+                iframe {
+                    width: 100%;
+                    height: 400px;
+                    border-radius: 10px;
+                }
+
+                /* Responsiveness */
+                @media (min-width: 1200px) {
+                    iframe {
+                        width: 800px;
+                        height: 450px;
+                    }
+                }
+
+                @media (max-width: 1200px) {
+                    iframe {
+                        width: 800px;
+                        height: 350px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    iframe {
+                        width: 500px;
+                        height: 200px;
+                    }
+                }
+
+                /* For mobile screens, to avoid the box-like appearance */
+                @media (max-width: 360px) {
+                    .video-content {
+                        width: 280px;
+                        /* Take full width */
+                        height: 200px;
+                        /* Adjust height to give a more rectangular shape */
+                    }
+
+                    /* For mobile screens, to avoid the box-like appearance */
+                    @media (max-width: 256px) {
+                        .video-content {
+                            width: 1080px;
+                            /* Take full width */
+                            height: 300px;
+                            /* Adjust height to give a more rectangular shape */
+                        }
+                    }
+                }
             </style>
         </head>
 
@@ -159,104 +236,22 @@
             <blockquote>"The rise of GPT has revolutionized natural language processing, but it is essential to remain
                 aware of its limitations and ensure ethical and responsible use in society."</blockquote>
         </section>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
-Design</title>
-
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container my-5">
-        <!-- Page Title -->
-        <div class="text-center mb-4">
-            <h1 class="display-4">Week 2: Introduction to CSS and Responsive Web Design</h1>
-            <p class="lead">Learn how to enhance the visual appeal of your web pages using CSS and create responsive
-                designs that look great on all devices.</p>
+        <!--    <div class="video-container">
+            <div class="gradient-border">
+                <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <div class="video-links">
+                    <h4>Channel Name<h4>
+                </div>
+            </div>
         </div>
+    </div> -->
 
-        <!-- Overview Section -->
-        <section id="overview" class="mb-5">
-            <div class="card p-4 shadow-sm">
-                <h2 class="h4 mb-3">Overview</h2>
-                <p>In Week 2, students will dive deeper into CSS (Cascading Style Sheets) to enhance the look and feel
-                    of web pages. This week will cover styling techniques, layout control using CSS, and an introduction
-                    to responsive web design to ensure web pages look good on all devices. By the end of this week,
-                    students will be able to create visually appealing, well-structured, and responsive web pages.</p>
-            </div>
-        </section>
-
-        <!-- Topics Covered -->
-        <section id="topics-covered" class="mb-5">
-            <h2 class="h4 mb-3">Topics Covered</h2>
-            <div class="row">
-                <!-- Topic 1 -->
-                <div class="col-md-6 mb-3">
-                    <div class="card h-100 p-3 shadow-sm">
-                        <h3 class="h5">1. Definitions and Key Roles</h3>
-                        <p>Understanding fundamental concepts and roles of CSS in web design, such as inline, internal,
-                            and external styles.</p>
-                    </div>
-                </div>
-
-                <!-- Topic 2 -->
-                <div class="col-md-6 mb-3">
-                    <div class="card h-100 p-3 shadow-sm">
-                        <h3 class="h5">2. Data Types and Collection Methods</h3>
-                        <p>Overview of CSS properties and values, along with methods to collect information for styling
-                            decisions.</p>
-                    </div>
-                </div>
-
-                <!-- Topic 3 -->
-                <div class="col-md-6 mb-3">
-                    <div class="card h-100 p-3 shadow-sm">
-                        <h3 class="h5">3. Data Quality and Cleaning</h3>
-                        <p>Ensuring accurate and high-quality data by cleaning and validating CSS styles and rules.</p>
-                    </div>
-                </div>
-
-                <!-- Topic 4 -->
-                <div class="col-md-6 mb-3">
-                    <div class="card h-100 p-3 shadow-sm">
-                        <h3 class="h5">4. Introduction to Tools and Software</h3>
-                        <p>Introducing tools like browser developer tools and CSS frameworks like Bootstrap for faster
-                            styling.</p>
-                    </div>
-                </div>
-
-                <!-- Topic 5 -->
-                <div class="col-md-6 mb-3">
-                    <div class="card h-100 p-3 shadow-sm">
-                        <h3 class="h5">5. Real-World Applications</h3>
-                        <p>Learn how CSS is applied in real-world projects to create dynamic, responsive web pages that
-                            enhance user experience.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
-
-
-
-<h2>Introduction: Overview</h2>
-<p>Welcome to the Web Development Course! In this overview, we'll cover:</p>
-<ul>
-    <li>Course objectives</li>
-    <li>What you'll learn</li>
-    <li>Prerequisites</li>
-    <li>Course structure</li>
-</ul>
-<p>Let's get started on your journey to becoming a web developer!</p>

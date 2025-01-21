@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 2: Data Preprocessing and EDA</title>
+    <title>Week 2</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -61,88 +61,43 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="section">
-            <h1>Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
-            <p>Data preprocessing and exploratory data analysis are critical steps in the machine learning pipeline.
-                These processes help ensure that the data is clean, accurate, and ready for analysis. In this week, we
-                will focus on handling missing data, dealing with outliers, and encoding categorical data.</p>
-        </div>
+    <div class="container my-5">
+        <section class="mb-5">
+            <h2>Discussion Questions</h2>
+        </section>
 
-        <div class="section">
-            <h2>1. Handling Missing Data</h2>
-            <p>Missing data is a common issue in real-world datasets and can arise due to various reasons such as data
-                entry errors, sensor failures, or privacy concerns. Addressing missing values is essential to prevent
-                biases in your models.</p>
-            <div class="highlight">
-                <strong>Identifying Missing Values:</strong> Utilize functions like <code>isnull()</code> or
-                <code>isna()</code> in Python to detect missing values in your dataset.
-            </div>
-            <h3>Imputation Techniques</h3>
-            <ul>
-                <li><strong>Mean/Median/Mode Imputation:</strong> Replace missing values with the mean, median, or mode
-                    of the respective column.</li>
-                <li><strong>K-Nearest Neighbors Imputation:</strong> Impute missing values based on the values of nearby
-                    data points.</li>
-                <li><strong>Interpolation:</strong> Use interpolation methods to estimate missing values, particularly
-                    useful for time series data.</li>
-                <li><strong>Multiple Imputation:</strong> Generate multiple complete datasets by imputing missing values
-                    with various methods and combine the results for robust analysis.</li>
-            </ul>
-        </div>
+        <section class="mb-5">
+            <h3>1. Grammar in Communication</h3>
+            <p><strong>How does proper grammar impact the credibility of a message in professional settings?</strong>
+            </p>
+            <p>Discuss the role of grammatical accuracy in establishing professionalism, trust, and authority in
+                business communication.</p>
+        </section>
 
-        <div class="section">
-            <h2>2. Dealing with Outliers</h2>
-            <p>Outliers are data points that significantly deviate from the rest of the data. They can distort the
-                results of statistical analyses and negatively impact model performance.</p>
-            <div class="highlight">
-                <strong>Identification Methods:</strong> Employ statistical methods like Z-scores, interquartile range
-                (IQR), or visualization techniques (e.g., box plots) to identify outliers.
-            </div>
-            <h3>Treatment Strategies</h3>
-            <ul>
-                <li><strong>Removal:</strong> Discard outliers if they are erroneous or disproportionately influence the
-                    model.</li>
-                <li><strong>Capping:</strong> Replace outliers with a set maximum or minimum value.</li>
-                <li><strong>Winsorization:</strong> Substitute outliers with the nearest non-outlier value to minimize
-                    their influence.</li>
-            </ul>
-        </div>
+        <section class="mb-5">
+            <h3>2. Clarity in Writing</h3>
+            <p><strong>Why is clarity essential in business emails or reports?</strong></p>
+            <p>Explore how clear and concise writing aids in effective decision-making, avoids misunderstandings, and
+                improves productivity.</p>
+        </section>
 
-        <div class="section">
-            <h2>3. Encoding Categorical Data</h2>
-            <p>Categorical data cannot be directly used by most machine learning algorithms. It needs to be converted
-                into a numerical format for analysis.</p>
-            <h3>Encoding Techniques</h3>
-            <ul>
-                <li><strong>One-Hot Encoding:</strong> Create binary features for each category, enabling algorithms to
-                    process the data effectively.</li>
-                <li><strong>Label Encoding:</strong> Assign unique integers to each category, suitable for ordinal data.
-                </li>
-                <li><strong>Ordinal Encoding:</strong> Assign integers based on the order of categories, capturing
-                    relationships between them.</li>
-            </ul>
-        </div>
+        <section class="mb-5">
+            <h3>3. Active vs. Passive Voice</h3>
+            <p><strong>What are some situations where passive voice might be more appropriate than active
+                    voice?</strong></p>
+            <p>Consider cases like scientific writing, emphasizing actions or results, or when the actor is unknown or
+                unimportant.</p>
+        </section>
 
-        <div class="section">
-            <h2>Best Practices</h2>
-            <p>When handling missing data and outliers, keep these best practices in mind:</p>
-            <ul>
-                <li><strong>Choose Appropriate Techniques:</strong> Select methods based on the specific characteristics
-                    of your dataset and the ML algorithm you are using.</li>
-                <li><strong>Consider the Impact on Model Performance:</strong> Experiment with different techniques and
-                    evaluate their effects on model accuracy and generalization.</li>
-                <li><strong>Document Your Choices:</strong> Maintain clear documentation of the methods used for
-                    handling missing data and outliers to ensure reproducibility in your analysis.</li>
-            </ul>
-            <p>By effectively addressing these data quality issues, you can enhance the quality and reliability of your
-                machine learning models.</p>
-        </div>
+        <section class="mb-5">
+            <h3>4. Common Errors</h3>
+            <p><strong>What strategies can you use to identify and correct grammar mistakes in your writing?</strong>
+            </p>
+            <p>Share techniques like proofreading, using grammar-check tools, reading aloud, or peer reviews to improve
+                accuracy.</p>
+        </section>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 
 </html>
