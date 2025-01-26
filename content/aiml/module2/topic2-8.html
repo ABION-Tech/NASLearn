@@ -4,165 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Preprocessing and EDA</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
-        }
+    <title>Week 1 & 2: Web Development Course</title>
 
-        h1,
-        h2,
-        h3 {
-            color: #007bff;
-            /* Blue accent color */
-        }
-
-        .container {
-            padding: 30px;
-        }
-
-        .section-title {
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        pre {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
+    <div id="header"></div>
+    <style>
+        /* Container for form */
+        #form-container {
+            padding: 20px;
+            margin-top: 80px;
+            /* Adjust margin to ensure space from header */
+            margin-bottom: 80px;
+            /* Adjust margin to ensure space from footer */
+        }
 
-    <div class="container">
-        <h1 class="text-center">Week 2: Data Preprocessing and Exploratory Data Analysis (EDA)</h1>
+        /* Ensure form is responsive */
+        iframe {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
 
-        <h2 class="section-title">Identifying Patterns and Trends in Data</h2>
-        <p>Once you have cleaned, preprocessed, and visualized your data, the next step is to identify patterns and
-            trends that can provide valuable insights. This involves analyzing the data for correlations, relationships,
-            and anomalies.</p>
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            #form-container {
+                margin-top: 60px;
+                /* Adjust as needed for smaller screens */
+                margin-bottom: 60px;
+            }
+        }
 
-        <h3>1. Correlation Analysis</h3>
-        <p>The correlation analysis helps in understanding the relationships between variables in your dataset.</p>
-        <ul>
-            <li><strong>Correlation coefficient:</strong> A measure of the strength and direction of the linear
-                relationship between two variables.</li>
-            <li><strong>Pearson correlation:</strong> Measures the linear relationship between two continuous variables.
-            </li>
-            <li><strong>Spearman correlation:</strong> Measures the monotonic relationship between two variables,
-                regardless of their linearity.</li>
-            <li><strong>Correlation matrix:</strong> A table that shows the correlation coefficients between all pairs
-                of variables in a dataset.</li>
-        </ul>
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 80px;
+            /* Adjust based on header height */
+            padding-bottom: 60px;
+            /* Adjust based on footer height */
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            /* Ensure it is above other content */
+        }
 
-        <h3>2. Regression Analysis</h3>
-        <p>Regression analysis is used to predict outcomes and assess the strength of relationships between variables.
-        </p>
-        <ul>
-            <li><strong>Simple linear regression:</strong> Models the relationship between a dependent variable and an
-                independent variable using a linear equation.</li>
-            <li><strong>Multiple linear regression:</strong> Models the relationship between a dependent variable and
-                multiple independent variables, allowing for more complex relationships.</li>
-        </ul>
+        iframe {
+            border: none;
+        }
 
-        <h3>3. Time Series Analysis</h3>
-        <p>Time series analysis involves analyzing data collected over time to identify trends and patterns.</p>
-        <ul>
-            <li><strong>Time series data:</strong> Data collected over time, which may contain trends, seasonality, and
-                cyclic patterns.</li>
-            <li><strong>Trend analysis:</strong> Identifying upward or downward trends in the data over time.</li>
-            <li><strong>Seasonality:</strong> Identifying patterns that repeat at regular intervals, such as monthly or
-                yearly.</li>
-            <li><strong>Stationarity:</strong> Determining if the statistical properties of the data remain constant
-                over time, crucial for certain analyses.</li>
-        </ul>
+        body {
+            margin: 0;
+            padding: 0;
+        }
 
-        <h3>4. Anomaly Detection</h3>
-        <p>Anomaly detection focuses on identifying unusual data points that differ significantly from the rest of the
-            data.</p>
-        <ul>
-            <li><strong>Outliers:</strong> Data points that deviate significantly from the other observations in the
-                dataset.</li>
-            <li><strong>Anomaly detection techniques:</strong>
-                <ul>
-                    <li>Statistical methods (e.g., Z-scores, IQR)</li>
-                    <li>Machine learning algorithms (e.g., isolation forests, one-class SVM)</li>
-                    <li>Time series anomaly detection (e.g., statistical methods, machine learning algorithms)</li>
-                </ul>
-            </li>
-        </ul>
+        .header,
+        .footer {
+            position: relative;
+            z-index: 10;
+            /* Ensure header and footer are above the form */
+        }
+    </style>
+    </head>
 
-        <h3>5. Clustering</h3>
-        <p>Clustering is used to group similar data points and uncover natural groupings in the data.</p>
-        <ul>
-            <li><strong>Grouping similar data points:</strong> Identifying natural clusters or groups within the data
-                based on similarity.</li>
-            <li><strong>Clustering algorithms:</strong>
-                <ul>
-                    <li><strong>K-means clustering:</strong> A partitioning method that divides data into K distinct
-                        clusters based on feature similarity.</li>
-                    <li><strong>Hierarchical clustering:</strong> Creates a tree of clusters by successively merging or
-                        splitting existing clusters.</li>
-                    <li><strong>Density-based clustering (DBSCAN):</strong> Groups together points that are closely
-                        packed together, marking points in low-density regions as outliers.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3>6. Dimensionality Reduction</h3>
-        <p>Dimensionality reduction techniques simplify the data while retaining essential information.</p>
-        <ul>
-            <li><strong>Reducing the number of features:</strong> Simplifying the data while preserving important
-                information to improve model performance.</li>
-            <li><strong>Techniques:</strong>
-                <ul>
-                    <li><strong>Principal Component Analysis (PCA):</strong> A technique that transforms the data into a
-                        new coordinate system, emphasizing variance.</li>
-                    <li><strong>t-SNE (t-distributed Stochastic Neighbor Embedding):</strong> A technique for
-                        visualizing high-dimensional data by reducing dimensions while preserving local similarities.
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3>Visualization Tools</h3>
-        <p>Effective visualization helps in understanding the relationships and patterns in the data.</p>
-        <ul>
-            <li><strong>Scatter plots:</strong> Visualize relationships between two numerical variables to identify
-                trends and correlations.</li>
-            <li><strong>Heatmaps:</strong> Visualize correlation matrices to quickly identify strong and weak
-                relationships.</li>
-            <li><strong>Line plots:</strong> Ideal for visualizing time series data and observing trends over time.</li>
-            <li><strong>Parallel coordinate plots:</strong> Used to visualize high-dimensional data by representing each
-                feature as a vertical axis.</li>
-        </ul>
-
-        <h3>Best Practices</h3>
-        <p>To maximize insights from your data analysis, consider the following best practices:</p>
-        <ul>
-            <li><strong>Combine multiple techniques:</strong> Use a combination of correlation analysis, regression
-                analysis, time series analysis, anomaly detection, clustering, and dimensionality reduction for a
-                comprehensive understanding of your data.</li>
-            <li><strong>Consider the context:</strong> Interpret the results of your analysis in the context of your
-                domain and research question to derive meaningful conclusions.</li>
-            <li><strong>Validate findings:</strong> Use additional techniques or domain knowledge to validate your
-                findings and ensure robustness.</li>
-        </ul>
-
-        <p>By effectively identifying patterns and trends in your data, you can gain valuable insights and make informed
-            decisions.</p>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    <body>
+        <div class="form-container">
+            <!-- Google Form embed -->
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeLoFjdMwROlp2SbegfU1hCNzwUiDdemGoHRK4QwRQV8zZGQw/viewform?embedded=true"
+                width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+        </script>
+    </body>
 
 </html>
