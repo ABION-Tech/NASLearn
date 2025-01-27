@@ -1,0 +1,239 @@
+AI
+*Week 3: Prompt Engineering Basics**
+
+#### **Overview:**
+Learn the fundamentals of prompt engineering and its importance in optimizing AI tool performance.
+
+#### **Topics Covered:**
+1. **What is Prompt Engineering?**
+   - Definition and significance in AI applications.
+
+2. **Crafting Effective Prompts**
+   - Techniques for designing prompts that elicit desired AI responses.
+   - Best practices for clarity and specificity.
+
+3. **Common Use Cases**
+   - Examples of effective prompts in various business contexts.
+
+4. **Tools for Prompt Engineering**
+   - Overview of platforms that support prompt engineering (e.g., OpenAI, Hugging Face).
+
+5. **Practical Exercise**
+   - Designing prompts for different business scenarios.
+
+#### **Activities:**
+- Workshop: Craft prompts for specific tasks (e.g., customer service inquiries, report generation).
+- Peer review: Share prompts with classmates for feedback and improvement.
+
+----------------
+
+AI ML
+Module 3: Supervised Learning  : Regression and Classification
+Understanding supervised learning techniques such as regression and classification.
+
+- **Topics:**
+  - Introduction to Supervised Learning.
+  - Linear Regression: Simple and Multiple Linear Regression.
+  - Model evaluation metrics: R-squared, Mean Squared Error (MSE).
+  - Overfitting and underfitting: Cross-validation techniques.
+  - Introduction to Classification: Logistic Regression, k-Nearest Neighbors (KNN).
+  - Decision Trees, SVM, k-NN and Random Forests.
+  - Model Evaluation: Accuracy, Precision, Recall, F1 Score, ROC curve, and AUC.
+
+- **Project:** Build a regression model on a dataset (e.g., predicting house prices) and evaluate it.
+- **Project:** Develop a classification model (e.g., predicting if a customer will churn) and assess its performance.
+
+
+
+
+----------------
+Business consult
+
+*Week 3: Strategic Planning and Business Development**
+- **Goal:** Teach participants to guide businesses in creating growth strategies.
+  
+  #### Key Topics:
+  1. **Strategic Planning Overview**
+     - Short-term vs long-term planning
+     - Vision, mission, and goal-setting
+  2. **Business Development Strategies**
+     - Identifying new markets, partnerships, and growth opportunities
+  3. **Competitive Analysis**
+     - How to analyze competitors and create competitive advantages
+  4. **Market Entry and Expansion Strategies**
+     - Domestic vs. international market expansion
+  5. **Risk Management in Strategy**
+     - Assessing and mitigating risks when forming business strategies
+
+  #### Learning Outcomes:
+  - Develop skills in helping businesses craft strategic growth plans.
+  - Learn how to conduct competitive and market analysis for business expansion.
+----------------
+Content Dev
+ **Week 3: Content Strategy Development**
+- **Topics Covered:**
+  - Components of a Content Strategy
+  - Setting SMART Goals for Content
+  - Content Calendars and Scheduling
+  - Integrating SEO into Content Strategy
+- **Learning Objectives:**
+  - Understand how to create a comprehensive content strategy aligned with business goals.
+  - Learn the importance of SEO in content planning.
+- **Assignments:**
+  - Create a content strategy outline for a fictional brand.
+  - Develop a monthly content calendar with suggested topics and formats.
+----------------
+Data Analysis
+Module 3: SQL and Database Management
+Get hands-on experience with SQL queries to extract, manipulate, and analyze data from databases effectively.
+
+----------------
+
+mba
+
+*Week 3: Marketing Management**
+- **Marketing Fundamentals**
+  - The marketing mix: Product, Price, Place, Promotion.
+- **Market Research Techniques**
+  - Qualitative vs. quantitative research methods.
+  - Analyzing consumer behavior and segmentation.
+- **Branding and Positioning**
+  - Developing a brand strategy.
+  - Case studies of successful brands.
+- **Assignments:**
+  - Create a marketing plan for a hypothetical product.
+
+
+-----------------
+
+Digital markerting
+Week 3: Pay-Per-Click (PPC) Advertising
+- **Objectives:**
+  - Understand PPC advertising and how to create effective campaigns.
+- **Topics:**
+  - Introduction to Google Ads and Bing Ads
+  - Ad Creation and Optimization
+  - Budgeting and Bidding Strategies
+- **Activities:**
+  - Create a mock PPC campaign using Google Ads.
+  - Analyze performance metrics and ROI.
+
+----------------
+Graphics
+*Week 3: Color Theory and Application**
+- **Color Models and Systems:** Introduction to RGB and CMYK color systems, and when to use each (print vs. digital).
+- **Color Theory:** Explore the color wheel, complementary and analogous color schemes, and the psychological effects of color in design.
+- **Working with Color in Design:** Best practices for creating color palettes, using color for branding, and ensuring accessibility (e.g., for colorblind users).
+- **Assignment:** Design a brand color palette for a hypothetical brand, and apply it to a set of three posters for consistency.
+
+----------------
+
+
+
+
+
+
+----------------
+Project Management
+**Week 3: Project Planning**
+- **Objectives:**
+  - Understand the planning phase and its importance.
+- **Content:**
+  - Developing a project management plan: components and importance.
+  - Work breakdown structure (WBS): creating and using WBS.
+  - Resource planning: identifying and allocating resources.
+  - Risk management: identifying, analyzing, and planning for risks.
+- **Activities:**
+  - Workshop to develop a WBS for a chosen project.
+  - Group activity to identify potential risks and create a risk management plan.
+
+---
+
+Python Programming
+Module 3: Control Structures
+Master Python's control structures like loops (for, while) and conditionals (if-else) for making decisions and repetitions.
+
+
+----------------
+
+
+
+
+
+
+----------------
+
+
+UI UX
+**Week 3: Wireframing and Prototyping**
+
+#### **3.1 Wireframing Techniques and Best Practices**
+- **Introduction to Wireframes:**  
+  A wireframe is a blueprint or skeletal framework of your design, focusing on layout and user flow without colors or detailed content.
+
+- **Best Practices:**  
+  Start with low-fidelity wireframes to outline the structure, and gradually move to high-fidelity wireframes for detailed design.
+
+#### **3.2 Tools for Wireframing**
+- **Overview of Popular Tools:**  
+  - **Figma:** Collaborative interface design tool with excellent wireframing and prototyping capabilities.
+  - **Sketch:** A widely-used UI/UX design tool for macOS.
+  - **Adobe XD:** A vector-based tool used for designing and prototyping user experiences for web and mobile apps.
+
+#### **3.3 Prototyping for Interaction**
+- **Low-Fidelity vs. High-Fidelity Prototypes:**  
+  Low-fidelity prototypes are simple and often static, while high-fidelity prototypes are interactive and closely resemble the final product.
+  
+- **When to Use Each:**  
+  Use low-fidelity prototypes for quick validation of ideas, and high-fidelity prototypes for detailed user testing and stakeholder presentations.
+
+---
+
+
+
+
+----------------
+
+Video Editing
+
+# Week 3: **Transitions and Effects**
+- **Objective**: Understand and apply transitions and basic effects to enhance storytelling and smooth scene changes.
+- **Topics Covered**:
+  - **Types of Transitions**: Learn about different transitions (cut, dissolve, fade, wipe) and when to use them.
+  - **Customizing Transitions**: Adjusting the duration and style of transitions for smoother edits.
+  - **Applying Basic Effects**: Introduction to effects like blur, sharpening, and color correction tools in editing software.
+  - **Working with Keyframes**: Introduction to keyframing for dynamic transitions and animation effects.
+
+- **Practical Task**: Add appropriate transitions to a 1-minute sequence and use keyframing to animate a simple effect.
+
+
+----------------
+
+Software
+*Week 3: Back-End Development with Node.js and Express**
+   - **Key Topics:**
+     - Introduction to **Node.js** and its event-driven architecture.
+     - Setting up a **REST API** with **Express.js**.
+     - Working with HTTP requests (GET, POST, PUT, DELETE).
+     - Handling middleware, authentication, and basic security (JWT, bcrypt).
+   - **Project:** Build a basic API with CRUD functionality and integrate it with the Week 2 front-end app.
+   - **Outcome:** Students will learn how to build scalable back-end services and connect them to front-end applications.
+
+
+
+----------------
+writing 
+*Week 3: Tools for Writers**
+- **Creative Writing Tools:**
+  - Using writing software (Scrivener, Grammarly, etc.).
+  - Mind-mapping for story and idea development.
+- **Technical Writing Tools:**
+  - Mastering technical writing tools (Markdown, LaTeX, XML, etc.).
+- **Copywriting Tools:**
+  - Keyword research, SEO basics, and headline analyzers.
+- **Assignment:** Create a 2-page technical document using technical writing tools and a creative blog post using mind maps.
+
+-------------
+Web DEv
+Module 3: Responsive Web Design
+Learn how to design websites that adapt to different screen sizes and devices using responsive web design techniques.
