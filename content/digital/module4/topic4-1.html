@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Types of Content</title>
+    <title>Content Marketing Strategy</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -19,7 +19,9 @@
             margin-bottom: 50px;
         }
 
-        h1 {
+        h1,
+        h2,
+        h3 {
             color: #007BFF;
             /* Blue accent for main heading */
         }
@@ -42,54 +44,173 @@
             font-style: italic;
             color: #333;
         }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container">
-        <h1>Types of Content</h1>
+        <h1>Content Marketing Strategy</h1>
 
         <div class="content-section">
-            <h5>Blogs:</h5>
-            <p><strong>Definition:</strong> Written content published on a website, typically providing information,
-                insights, or entertainment related to a specific topic.</p>
-            <p><strong>Significance:</strong> Blogs can establish authority, improve SEO, and drive traffic. They are
-                essential for building relationships with the audience.</p>
-            <p class="real-world-example"><strong>Real-World Example:</strong> HubSpot’s blog offers valuable marketing
-                insights, attracting leads and establishing the brand as an industry leader.</p>
+            <h2 class="section-title">Introduction to Content Marketing Strategy</h2>
+            <p>
+                Content marketing is a strategic approach to creating and distributing valuable, relevant, and
+                consistent content to attract and retain a clearly defined audience. Instead of directly promoting a
+                brand,
+                content marketing focuses on providing useful information, solving problems, and building trust with
+                potential customers.
+                A strong content marketing strategy helps businesses establish authority in their industry, improve
+                customer engagement,
+                and drive profitable actions.
+            </p>
         </div>
 
         <div class="content-section">
-            <h5>Videos:</h5>
-            <p><strong>Definition:</strong> Visual content that engages audiences through storytelling, demonstrations,
-                or informational pieces.</p>
-            <p><strong>Significance:</strong> Videos are highly shareable and can convey complex ideas quickly, leading
-                to higher engagement rates.</p>
-            <p class="real-world-example"><strong>Real-World Example:</strong> Nike's YouTube channel showcases
-                inspiring athlete stories, which enhances brand loyalty and engagement.</p>
+            <h2 class="section-title">Key Elements of a Content Marketing Strategy</h2>
+            <ul>
+                <li><strong>Defining Goals:</strong> Understanding the objectives, such as brand awareness, lead
+                    generation, or customer retention.</li>
+                <li><strong>Knowing the Target Audience:</strong> Creating buyer personas to tailor content to their
+                    interests and needs.</li>
+                <li><strong>Content Planning & Creation:</strong> Developing high-quality, engaging content that aligns
+                    with business goals.</li>
+                <li><strong>Distribution Channels:</strong> Using platforms like websites, social media, and email
+                    marketing to reach audiences.</li>
+                <li><strong>Performance Measurement:</strong> Tracking key metrics (engagement, traffic, conversions) to
+                    optimize future content.</li>
+            </ul>
         </div>
 
         <div class="content-section">
-            <h5>Infographics:</h5>
-            <p><strong>Definition:</strong> Visual representations of information or data that make complex information
-                easy to understand.</p>
-            <p><strong>Significance:</strong> Infographics can be highly shareable, driving traffic and backlinks while
-                providing valuable information at a glance.</p>
-            <p class="real-world-example"><strong>Real-World Example:</strong> BuzzFeed often utilizes infographics to
-                present data in an engaging manner, driving social media shares.</p>
-        </div>
+            <h2 class="section-title">Types of Content in Digital Marketing</h2>
+            <h3>1. Blog Posts & Articles</h3>
+            <p>Written content that educates, informs, or entertains readers. Optimized for search engines (SEO) to
+                drive organic traffic.</p>
+            <p><strong>Example:</strong> A tech blog writing about "Top 10 AI Trends in 2025."</p>
 
-        <div class="content-section">
-            <h5>Case Studies:</h5>
-            <p><strong>Definition:</strong> Detailed examinations of a project or campaign to highlight success stories,
-                processes, and results.</p>
-            <p><strong>Significance:</strong> Case studies build trust by showcasing real results and demonstrating
-                expertise.</p>
-            <p class="real-world-example"><strong>Real-World Example:</strong> Salesforce shares customer success
-                stories, showing how their solutions have helped various businesses thrive.</p>
-        </div>
+            <h3>2. Video Content</h3>
+            <p>Highly engaging format for storytelling and tutorials. Used on platforms like YouTube, TikTok, and
+                Instagram Reels.</p>
+            <p><strong>Example:</strong> A brand demonstrating product usage through a short video.</p>
 
+            <h3>3. Infographics & Visual Content</h3>
+            <p>Combines graphics and data to present information in a visually appealing way. Ideal for social media
+                sharing.</p>
+            <p><strong>Example:</strong> An infographic showing "The Evolution of Digital Marketing."</p>
+
+            <h3>4. Social Media Posts</h3>
+            <p>Short, engaging content to interact with audiences in real time. Can include text, images, polls, or
+                user-generated content.</p>
+            <p><strong>Example:</strong> A LinkedIn post sharing industry insights.</p>
+
+            <h3>5. Email Newsletters</h3>
+            <p>Personalized content sent directly to subscribers. Used for nurturing leads and keeping customers
+                informed.</p>
+            <p><strong>Example:</strong> A weekly newsletter featuring marketing tips.</p>
+
+            <h3>6. Ebooks & Whitepapers</h3>
+            <p>In-depth, downloadable content offering valuable insights. Often used for lead generation by requiring
+                email sign-ups.</p>
+            <p><strong>Example:</strong> A whitepaper on "The Future of AI in Marketing."</p>
+
+            <h3>7. Case Studies & Testimonials</h3>
+            <p>Real-life examples showcasing success stories of a brand. Builds credibility and trust with potential
+                customers.</p>
+            <p><strong>Example:</strong> A case study on how a business increased sales using a new strategy.</p>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0R_3iarc8IA?si=Nxnz7vPJgCFx2bo6"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
     </div>
 
     <!-- Bootstrap JS (optional) -->

@@ -8,20 +8,105 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
         }
 
         .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
+            padding: 20px;
         }
 
-        h1 {
-            color: #007BFF;
-            /* Blue accent for main heading */
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
 
         .section-title {
@@ -30,65 +115,173 @@
             /* Blue accent for section titles */
         }
 
-        .content-section {
-            margin-top: 20px;
-            padding: 15px;
-            border-left: 5px solid #007BFF;
-            /* Blue accent border */
-            background-color: #f8f9fa;
-            /* Light gray background for sections */
-        }
-
-        ul {
-            margin-top: 10px;
+        h1,
+        h2 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Introduction to Google Ads and Bing Ads</h1>
+    <div class="container my-5">
+        <h1>Comprehensive Guide to Pay-Per-Click (PPC) Advertising</h1>
 
         <div class="content-section">
             <h2 class="section-title">Definition and Functionality:</h2>
-            <p>Pay-Per-Click (PPC) advertising is an online marketing model where advertisers pay each time a user
-                clicks on their ad. This model enables businesses to drive traffic to their websites quickly and
-                effectively.</p>
+            <p>Pay-Per-Click (PPC) advertising is a digital marketing model where advertisers pay a fee each time a user
+                clicks on their ad. This model enables businesses to drive targeted traffic to their websites quickly,
+                making it an essential tool for online marketing. Unlike organic traffic, which takes time to build
+                through search engine optimization (SEO), PPC allows businesses to achieve immediate visibility.</p>
         </div>
 
         <div class="content-section">
-            <h2 class="section-title">Google Ads Overview:</h2>
-            <p>Google Ads is the largest PPC platform, allowing advertisers to create ads that appear on Google’s search
-                engine results pages (SERPs) and its partner sites.</p>
-            <h3>Ad Formats:</h3>
+            <h2 class="section-title">How PPC Advertising Works:</h2>
+            <p>PPC operates through an auction-based system where advertisers bid on specific keywords relevant to their
+                business. When a user searches for those keywords, search engines determine which ads appear based on
+                factors like bid amount, ad quality, and relevance.</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Types of PPC Advertising:</h2>
+            <h3>Search Engine Advertising (Google Ads & Bing Ads)</h3>
+            <p>Displays text-based ads at the top of search engine results pages (SERPs). Based on keyword intent, ads
+                appear when users search for specific terms.</p>
+
+            <h3>Display Advertising</h3>
+            <p>Visual banner ads appear on partner websites, mobile apps, and YouTube. Useful for brand awareness and
+                retargeting users.</p>
+
+            <h3>Social Media Advertising</h3>
+            <p>Ads appear in users’ feeds based on interests, behaviors, and demographics. Platforms include Facebook,
+                Instagram, LinkedIn, and Twitter.</p>
+
+            <h3>Shopping Ads</h3>
+            <p>Show product images, prices, and reviews directly in search results. Best for e-commerce businesses
+                selling tangible goods.</p>
+
+            <h3>Remarketing Ads</h3>
+            <p>Re-engage users who previously visited a website but didn’t convert, reminding them of products or
+                services they showed interest in.</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Key Elements of a Successful PPC Campaign:</h2>
             <ul>
-                <li>Text ads</li>
-                <li>Display ads</li>
-                <li>Shopping ads</li>
-                <li>Video ads</li>
-                <li>App ads</li>
+                <li><strong>Keyword Selection:</strong> Choose relevant keywords that match user search queries.</li>
+                <li><strong>Ad Copy & Creatives:</strong> Create compelling, concise ads with a clear call-to-action
+                    (CTA).</li>
+                <li><strong>Landing Pages:</strong> Direct users to optimized pages that encourage conversions.</li>
+                <li><strong>Bid Strategy:</strong> Set maximum cost-per-click (CPC) or use automated bidding strategies.
+                </li>
+                <li><strong>Quality Score:</strong> Search engines assign a score based on relevance, CTR, and landing
+                    page experience.</li>
             </ul>
         </div>
 
         <div class="content-section">
-            <h2 class="section-title">Bing Ads Overview:</h2>
-            <p>Bing Ads, now known as Microsoft Advertising, allows businesses to reach users on Bing, Yahoo, and AOL.
-            </p>
-            <p>Though less popular than Google, Bing Ads can often provide a lower cost per click (CPC) and less
-                competition for certain keywords.</p>
+            <h2 class="section-title">Benefits of PPC Advertising:</h2>
+            <ul>
+                <li><strong>Immediate Results:</strong> Unlike SEO, PPC can drive traffic instantly.</li>
+                <li><strong>Highly Targeted:</strong> Advertisers can target users based on demographics and behaviors.
+                </li>
+                <li><strong>Budget Control:</strong> Set daily or monthly budgets, adjust bids, and pause campaigns
+                    anytime.</li>
+                <li><strong>Measurable & Scalable:</strong> Track clicks, impressions, conversions, and ROI with
+                    analytics.</li>
+                <li><strong>Brand Visibility:</strong> Even if users don’t click, appearing in search results boosts
+                    brand awareness.</li>
+            </ul>
         </div>
 
         <div class="content-section">
-            <h2 class="section-title">Key Concepts:</h2>
+            <h2 class="section-title">Challenges & Common Mistakes in PPC:</h2>
             <ul>
-                <li><strong>Quality Score:</strong> A metric used by Google Ads that affects ad ranking and CPC. It is
-                    determined by the ad's relevance, click-through rate (CTR), and landing page experience.</li>
-                <li><strong>Ad Rank:</strong> Determines the position of your ad in the search results and is calculated
-                    based on bid amount and Quality Score.</li>
+                <li><strong>High Costs Without Optimization:</strong> Poorly managed campaigns can be expensive.</li>
+                <li><strong>Ignoring Negative Keywords:</strong> Not filtering irrelevant searches leads to wasted ad
+                    spend.</li>
+                <li><strong>Poor Landing Pages:</strong> Bad user experience reduces conversions.</li>
+                <li><strong>Not Tracking Conversions:</strong> Without tracking, measuring success is difficult.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Best Practices for a Successful PPC Campaign:</h2>
+            <ul>
+                <li><strong>Conduct Keyword Research:</strong> Use tools like Google Keyword Planner, Ahrefs, or
+                    SEMrush.</li>
+                <li><strong>Write Engaging Ad Copy:</strong> Highlight unique selling points (USPs) and strong CTAs.
+                </li>
+                <li><strong>A/B Testing:</strong> Test different versions of ads and landing pages.</li>
+                <li><strong>Monitor & Adjust Bids:</strong> Regularly optimize CPC bids and budget allocations.</li>
+                <li><strong>Utilize Retargeting:</strong> Convert lost visitors by showing them personalized ads.</li>
             </ul>
         </div>
     </div>
+
+
+
+
+
+    <h1>Introduction to Google Ads and Bing Ads</h1>
+
+    <div class="content-section">
+        <h2 class="section-title">Definition and Functionality:</h2>
+        <p>Pay-Per-Click (PPC) advertising is an online marketing model where advertisers pay each time a user
+            clicks on their ad. This model enables businesses to drive traffic to their websites quickly and
+            effectively.</p>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Google Ads Overview:</h2>
+        <p>Google Ads is the largest PPC platform, allowing advertisers to create ads that appear on Google’s search
+            engine results pages (SERPs) and its partner sites.</p>
+        <h3>Ad Formats:</h3>
+        <ul>
+            <li>Text ads</li>
+            <li>Display ads</li>
+            <li>Shopping ads</li>
+            <li>Video ads</li>
+            <li>App ads</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Bing Ads Overview:</h2>
+        <p>Bing Ads, now known as Microsoft Advertising, allows businesses to reach users on Bing, Yahoo, and AOL.
+        </p>
+        <p>Though less popular than Google, Bing Ads can often provide a lower cost per click (CPC) and less
+            competition for certain keywords.</p>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Key Concepts:</h2>
+        <ul>
+            <li><strong>Quality Score:</strong> A metric used by Google Ads that affects ad ranking and CPC. It is
+                determined by the ad's relevance, click-through rate (CTR), and landing page experience.</li>
+            <li><strong>Ad Rank:</strong> Determines the position of your ad in the search results and is calculated
+                based on bid amount and Quality Score.</li>
+        </ul>
+    </div>
+    </div>
+    <div class="content-section">
+        <h2 class="section-title">Final Thoughts</h2>
+        <p>PPC advertising is a powerful digital marketing tool that, when executed correctly, can drive traffic,
+            increase conversions, and provide a strong return on investment. Whether you're running search ads, display
+            ads, or social media ads, success depends on careful strategy, regular optimization, and data-driven
+            decision-making.</p>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/A37YIpTU9Z0?si=v0DjYmF-qGMpIJIQ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
 
     <!-- Bootstrap JS (optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

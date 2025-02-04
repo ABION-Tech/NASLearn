@@ -4,133 +4,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4: Unsupervised Learning - Clustering</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #ffffff;
-            color: #333333;
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
 
         h1,
         h2,
         h3 {
             color: #007bff;
+            /* Blue accent color */
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 2.5rem;
         }
 
         h2 {
-            margin-top: 30px;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            font-size: 2rem;
         }
 
         h3 {
-            margin-top: 25px;
-            margin-bottom: 15px;
+            margin-top: 15px;
+            font-size: 1.5rem;
         }
 
-        .metric {
-            background-color: #f8f9fa;
-            border-left: 4px solid #007bff;
-            padding: 15px;
+        p {
+            margin: 10px 0;
+        }
+
+        ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+
+        .container {
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        .card {
             margin-bottom: 20px;
-            border-radius: 5px;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .formula {
-            background-color: #e9ecef;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: monospace;
+        .card-header {
+            background-color: #007bff;
+            /* Blue accent color */
+            color: white;
+            font-weight: bold;
         }
 
-        .note {
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-
-        .mt-5 {
-            margin-top: 3rem !important;
+        .section {
+            margin-bottom: 30px;
         }
     </style>
-    <title>Week 4: Supervised Learning - Classification</title>
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1>Week 4: Supervised Learning - Classification</h1>
 
-        <h2>Model Evaluation: Accuracy, Precision, Recall, F1-Score, ROC Curve, and AUC</h2>
-        <p>Evaluating the performance of a classification model is crucial to ensure its accuracy and reliability.
-            Several metrics can be used to assess the model's effectiveness.</p>
+    <div class="container">
 
-        <div class="metric">
-            <h3>1. Accuracy</h3>
-            <p><strong>Definition:</strong> The proportion of correct predictions out of the total number of
-                predictions.</p>
-            <p class="formula">Accuracy = (TP + TN) / (TP + TN + FP + FN)</p>
-            <p><strong>Where:</strong></p>
-            <ul>
-                <li><strong>TP:</strong> True positives</li>
-                <li><strong>TN:</strong> True negatives</li>
-                <li><strong>FP:</strong> False positives</li>
-                <li><strong>FN:</strong> False negatives</li>
-            </ul>
-            <p><strong>Limitations:</strong> Can be misleading in imbalanced datasets.</p>
+        <div class="section">
+            <h1>Week 4: Unsupervised Learning - Clustering</h1>
         </div>
 
-        <div class="metric">
-            <h3>2. Precision</h3>
-            <p><strong>Definition:</strong> The proportion of positive predictions that were actually correct.</p>
-            <p class="formula">Precision = TP / (TP + FP)</p>
-            <p><strong>Interpretation:</strong> Measures the model's ability to avoid false positives.</p>
+        <div class="card">
+            <div class="card-header">Clustering Overview</div>
+            <div class="card-body">
+                <p>Clustering is a powerful technique used to group similar data points together, allowing for better
+                    analysis and interpretation of complex datasets. It helps in uncovering hidden patterns and
+                    structures within the data.</p>
+                <p>Two popular algorithms for clustering are:</p>
+                <ul>
+                    <li><strong>K-Means Clustering</strong></li>
+                    <li><strong>Hierarchical Clustering</strong></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="metric">
-            <h3>3. Recall</h3>
-            <p><strong>Definition:</strong> The proportion of actual positive instances that were correctly predicted.
-            </p>
-            <p class="formula">Recall = TP / (TP + FN)</p>
-            <p><strong>Interpretation:</strong> Measures the model's ability to avoid false negatives.</p>
+        <div class="card">
+            <div class="card-header">1. K-Means Clustering</div>
+            <div class="card-body">
+                <h3>Algorithm:</h3>
+                <ol>
+                    <li>Initialize K random points as cluster centroids.</li>
+                    <li>Assign each data point to the nearest centroid.</li>
+                    <li>Recompute the centroids as the mean of the assigned data points.</li>
+                    <li>Repeat steps 2 and 3 until convergence.</li>
+                </ol>
+                <h3>Advantages:</h3>
+                <ul>
+                    <li>Simple and efficient for large datasets.</li>
+                    <li>Can be easily parallelized to enhance performance.</li>
+                </ul>
+                <h3>Disadvantages:</h3>
+                <ul>
+                    <li>Requires specifying the number of clusters (K) beforehand.</li>
+                    <li>Sensitive to the initial placement of centroids.</li>
+                    <li>May struggle with non-spherical or unevenly sized clusters.</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="metric">
-            <h3>4. F1-Score</h3>
-            <p><strong>Definition:</strong> The harmonic mean of precision and recall.</p>
-            <p class="formula">F1-score = 2 * (Precision * Recall) / (Precision + Recall)</p>
-            <p><strong>Interpretation:</strong> Provides a balanced measure of precision and recall, useful when the
-                class distribution is uneven.</p>
+        <div class="card">
+            <div class="card-header">2. Hierarchical Clustering</div>
+            <div class="card-body">
+                <h3>Algorithm:</h3>
+                <ol>
+                    <li>Start with each data point as a separate cluster.</li>
+                    <li>Merge the two closest clusters.</li>
+                    <li>Repeat step 2 until only one cluster remains.</li>
+                </ol>
+                <h3>Types:</h3>
+                <ul>
+                    <li><strong>Agglomerative Clustering:</strong> Starts with individual clusters and merges them.</li>
+                    <li><strong>Divisive Clustering:</strong> Begins with one large cluster and divides it into smaller
+                        clusters.</li>
+                </ul>
+                <h3>Distance Metrics:</h3>
+                <ul>
+                    <li>Euclidean distance</li>
+                    <li>Manhattan distance</li>
+                    <li>Cosine similarity</li>
+                </ul>
+                <h3>Linkage Methods:</h3>
+                <ul>
+                    <li>Single-linkage</li>
+                    <li>Complete-linkage</li>
+                    <li>Average-linkage</li>
+                    <li>Centroid-linkage</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="metric">
-            <h3>5. ROC Curve (Receiver Operating Characteristic Curve)</h3>
-            <p><strong>Definition:</strong> A plot that shows the true positive rate (TPR) against the false positive
-                rate (FPR) for different classification thresholds.</p>
-            <p><strong>AUC (Area Under the Curve):</strong> The area under the ROC curve, which quantifies the overall
-                ability of the model to discriminate between classes.</p>
-            <p><strong>Interpretation:</strong></p>
-            <ul>
-                <li>A higher AUC indicates better performance.</li>
-                <li>An AUC of 1 represents perfect classification, while an AUC of 0.5 represents random guessing.</li>
-            </ul>
+        <div class="card">
+            <div class="card-header">Choosing the Right Algorithm</div>
+            <div class="card-body">
+                <p>The choice of clustering algorithm depends on various factors, including:</p>
+                <ul>
+                    <li><strong>Number of Clusters:</strong> If the number of clusters is known, K-means may be
+                        suitable.</li>
+                    <li><strong>Cluster Shape:</strong> Hierarchical clustering can handle clusters of different shapes
+                        more effectively.</li>
+                    <li><strong>Computational Resources:</strong> K-means is generally more efficient for large datasets
+                        compared to hierarchical clustering.</li>
+                </ul>
+            </div>
         </div>
 
-        <h2>Choosing the Right Metrics</h2>
-        <p>The choice of evaluation metrics depends on the specific requirements of your problem. Consider the following
-            factors:</p>
-        <ul>
-            <li><strong>Class imbalance:</strong> If the classes are imbalanced, precision, recall, and F1-score may be
-                more informative than accuracy.</li>
-            <li><strong>Cost of misclassification:</strong> If false positives or false negatives have different costs,
-                you may want to prioritize precision or recall accordingly.</li>
-            <li><strong>Trade-off between precision and recall:</strong> The choice between precision and recall depends
-                on the specific application. For example, in a medical diagnosis problem, you might prioritize recall to
-                avoid false negatives.</li>
-        </ul>
-        <p class="note">By understanding and using these evaluation metrics, you can effectively assess the performance
-            of your classification models and make informed decisions about model selection and tuning.</p>
+        <div class="card">
+            <div class="card-header">Evaluation Metrics</div>
+            <div class="card-body">
+                <p>To assess the effectiveness of clustering results, the following metrics can be used:</p>
+                <ul>
+                    <li><strong>Silhouette Coefficient:</strong> Measures how similar a data point is to its own cluster
+                        compared to others.</li>
+                    <li><strong>Calinski-Harabasz Index:</strong> Evaluates the ratio of between-cluster variance to
+                        within-cluster variance.</li>
+                    <li><strong>Davies-Bouldin Index:</strong> Measures the average similarity between each cluster and
+                        its nearest neighbor.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Visualization Techniques</div>
+            <div class="card-body">
+                <p>Effective visualization aids in understanding clustering results. Common visualization techniques
+                    include:</p>
+                <ul>
+                    <li><strong>Dendrogram:</strong> A tree-like diagram representing the hierarchical structure of
+                        clusters.</li>
+                    <li><strong>Scatter Plots:</strong> Visualize clusters in two-dimensional space for better
+                        interpretability.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Applications of Clustering in Real-World Scenarios</h2>
+            <p>Clustering is a powerful technique with numerous applications across various domains. Here are some
+                real-world examples:</p>
+
+            <div class="card">
+                <div class="card-header">1. Customer Segmentation</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Identifying Customer Segments:</strong> Grouping customers based on demographics,
+                            behavior, and preferences.</li>
+                        <li><strong>Targeted Marketing:</strong> Tailoring marketing campaigns to specific customer
+                            segments.</li>
+                        <li><strong>Customer Churn Prediction:</strong> Identifying customers at risk of churning.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">2. Image Segmentation</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Dividing Images into Regions:</strong> Identifying objects, scenes, or features
+                            within images.</li>
+                        <li><strong>Object Detection:</strong> Locating objects of interest in images.</li>
+                        <li><strong>Image Compression:</strong> Reducing the size of images by clustering similar
+                            pixels.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">3. Anomaly Detection</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Identifying Outliers:</strong> Detecting unusual data points that deviate from the
+                            norm.</li>
+                        <li><strong>Fraud Detection:</strong> Identifying fraudulent transactions in financial data.
+                        </li>
+                        <li><strong>Network Intrusion Detection:</strong> Detecting malicious activity in network
+                            traffic.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">4. Social Network Analysis</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Community Detection:</strong> Identifying groups of people with similar interests or
+                            connections.</li>
+                        <li><strong>Link Prediction:</strong> Predicting new connections between individuals.</li>
+                        <li><strong>Influence Analysis:</strong> Identifying influential individuals in a network.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">5. Recommendation Systems</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Suggesting Items or Content:</strong> Recommending products, movies, articles, or
+                            other items based on user preferences or similarities to other users.</li>
+                        <li><strong>Collaborative Filtering:</strong> Using the preferences of similar users to make
+                            recommendations.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">6. Bioinformatics</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Gene Expression Analysis:</strong> Identifying groups of genes with similar
+                            expression patterns.</li>
+                        <li><strong>Protein Structure Prediction:</strong> Predicting the 3D structure of proteins based
+                            on sequence information.</li>
+                        <li><strong>Drug Discovery:</strong> Identifying potential drug targets.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">7. Market Research</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Market Segmentation:</strong> Identifying different market segments with distinct
+                            needs and preferences.</li>
+                        <li><strong>New Product Development:</strong> Identifying opportunities for new products or
+                            services.</li>
+                        <li><strong>Competitive Analysis:</strong> Analyzing competitors' strengths and weaknesses.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">8. Urban Planning</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Land Use Planning:</strong> Identifying areas with similar land use characteristics.
+                        </li>
+                        <li><strong>Transportation Planning:</strong> Optimizing transportation networks based on
+                            population density and traffic patterns.</li>
+                        <li><strong>Crime Analysis:</strong> Identifying crime hotspots and predicting future crime
+                            trends.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.11/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 

@@ -4,45 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 4: Supervised Learning - Classification</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Unsupervised Learning - Clustering</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            font-family: 'Arial', sans-serif;
         }
 
         h1,
         h2,
         h3 {
             color: #007BFF;
-            /* Blue accent */
         }
 
-        .section {
+        .content-section {
             margin-bottom: 40px;
-            border-bottom: 2px solid #007BFF;
-            padding-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .algorithm {
-            background-color: #f8f9fa;
-            /* Light background for algorithms */
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+        .highlight {
+            background-color: #f1f8ff;
+            border-left: 4px solid #007BFF;
+            padding: 10px 15px;
+            margin: 15px 0;
         }
 
-        .advantages,
-        .disadvantages {
+        .algorithm-list {
             list-style-type: none;
             padding-left: 0;
         }
 
-        .advantages li,
-        .disadvantages li {
-            margin-bottom: 10px;
+        .algorithm-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .evaluation-metrics,
+        .visualization {
+            margin-top: 20px;
+        }
+
+        .metric-item {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #007BFF;
+            border-radius: 5px;
+            background: #e9f7ff;
+        }
+
+        .footer {
+            font-size: 0.9em;
+            color: #777;
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -50,113 +70,106 @@
 <body>
 
     <div class="container mt-5">
+        <div class="content-section">
+            <h1>Week 4: Unsupervised Learning - Clustering</h1>
 
-        <div class="section">
-            <h1>Week 4: Supervised Learning - Classification</h1>
-            <h2>Decision Trees, SVM, k-NN, and Random Forests</h2>
-            <p>In addition to logistic regression, several other classification algorithms are widely used in machine
-                learning. These include decision trees, support vector machines (SVMs), k-nearest neighbors (k-NN), and
-                random forests.</p>
-        </div>
+            <h2>K-Means Clustering and Hierarchical Clustering</h2>
+            <p>Clustering is a technique used to group similar data points together. K-means clustering and hierarchical
+                clustering are two popular algorithms for clustering.</p>
 
-        <div class="section algorithm">
-            <h3>1. Decision Trees</h3>
-            <p><strong>Model:</strong> A tree-like structure where each node represents a decision based on a feature,
-                and each branch represents a possible outcome.</p>
-            <p><strong>How it works:</strong></p>
-            <ol>
-                <li>Start at the root node.</li>
-                <li>Evaluate the feature at the current node.</li>
-                <li>Follow the branch corresponding to the outcome.</li>
-                <li>Repeat until a leaf node is reached, which represents the predicted class.</li>
-            </ol>
-            <p><strong>Advantages:</strong></p>
-            <ul class="advantages">
-                <li>Easy to interpret and explain.</li>
-                <li>Can handle both numerical and categorical features.</li>
-                <li>Can capture non-linear relationships.</li>
-            </ul>
-            <p><strong>Disadvantages:</strong></p>
-            <ul class="disadvantages">
-                <li>Can be prone to overfitting, especially with deep trees.</li>
-            </ul>
-        </div>
+            <h3>1. K-Means Clustering</h3>
+            <div class="highlight">
+                <strong>Algorithm:</strong>
+                <ol class="algorithm-list">
+                    <li>Initialize K random points as cluster centroids.</li>
+                    <li>Assign each data point to the nearest centroid.</li>
+                    <li>Recompute the centroids as the mean of the assigned data points.</li>
+                    <li>Repeat steps 2 and 3 until convergence.</li>
+                </ol>
+            </div>
+            <div class="highlight">
+                <strong>Advantages:</strong>
+                <ul>
+                    <li>Simple and efficient for large datasets.</li>
+                    <li>Can be easily parallelized.</li>
+                </ul>
+            </div>
+            <div class="highlight">
+                <strong>Disadvantages:</strong>
+                <ul>
+                    <li>Requires specifying the number of clusters beforehand.</li>
+                    <li>Sensitive to the choice of initial centroids.</li>
+                    <li>May not work well with non-spherical clusters.</li>
+                </ul>
+            </div>
 
-        <div class="section algorithm">
-            <h3>2. Support Vector Machines (SVMs)</h3>
-            <p><strong>Model:</strong> Find a hyperplane that separates the data into different classes with the maximum
-                margin.</p>
-            <p><strong>Kernel trick:</strong> Map the data to a higher-dimensional space to find a separating
-                hyperplane.</p>
-            <p><strong>Types:</strong></p>
+            <h3>2. Hierarchical Clustering</h3>
+            <div class="highlight">
+                <strong>Algorithm:</strong>
+                <ol class="algorithm-list">
+                    <li>Start with each data point as a separate cluster.</li>
+                    <li>Merge the two closest clusters.</li>
+                    <li>Repeat step 2 until there is only one cluster.</li>
+                </ol>
+            </div>
+            <div class="highlight">
+                <strong>Types:</strong>
+                <ul>
+                    <li><strong>Agglomerative clustering:</strong> Starts with individual clusters and merges them.</li>
+                    <li><strong>Divisive clustering:</strong> Starts with one large cluster and divides it into smaller
+                        clusters.</li>
+                </ul>
+            </div>
+            <div class="highlight">
+                <strong>Distance metrics:</strong> Euclidean distance, Manhattan distance, cosine similarity, etc.
+                <br>
+                <strong>Linkage methods:</strong> Single-linkage, complete-linkage, average-linkage, centroid-linkage.
+            </div>
+
+            <h3>Choosing the Right Algorithm</h3>
+            <p>The choice of clustering algorithm depends on the characteristics of your data and the specific goals of
+                your analysis. Consider the following factors:</p>
             <ul>
-                <li>Linear SVM: For linearly separable data.</li>
-                <li>Nonlinear SVM: Uses kernel functions to handle non-linear relationships.</li>
+                <li><strong>Number of clusters:</strong> If you have a known number of clusters, K-means clustering may
+                    be appropriate.</li>
+                <li><strong>Cluster shape:</strong> Hierarchical clustering can handle clusters of different shapes.
+                </li>
+                <li><strong>Computational resources:</strong> K-means clustering is generally more efficient than
+                    hierarchical clustering for large datasets.</li>
             </ul>
-            <p><strong>Advantages:</strong></p>
-            <ul class="advantages">
-                <li>Effective for high-dimensional data.</li>
-                <li>Robust to outliers.</li>
-            </ul>
-            <p><strong>Disadvantages:</strong></p>
-            <ul class="disadvantages">
-                <li>Can be computationally expensive for large datasets.</li>
-            </ul>
-        </div>
 
-        <div class="section algorithm">
-            <h3>3. k-Nearest Neighbors (k-NN)</h3>
-            <p><strong>Model:</strong> Classify new data points based on the majority class of their k nearest neighbors
-                in the training set.</p>
-            <p><strong>Choosing k:</strong> The value of k can affect the model's performance. A small k can lead to
-                overfitting, while a large k can lead to underfitting.</p>
-            <p><strong>Advantages:</strong></p>
-            <ul class="advantages">
-                <li>Simple to implement.</li>
-                <li>No training required.</li>
-                <li>Can handle non-linear relationships.</li>
-            </ul>
-            <p><strong>Disadvantages:</strong></p>
-            <ul class="disadvantages">
-                <li>Can be computationally expensive for large datasets.</li>
-                <li>Sensitive to the choice of distance metric.</li>
-            </ul>
-        </div>
+            <h3>Evaluation Metrics</h3>
+            <div class="evaluation-metrics">
+                <div class="metric-item"><strong>Silhouette coefficient:</strong> Measures how similar a data point is
+                    to its own cluster compared to other clusters.</div>
+                <div class="metric-item"><strong>Calinski-Harabasz index:</strong> Measures the ratio of between-cluster
+                    variance to within-cluster variance.</div>
+                <div class="metric-item"><strong>Davies-Bouldin index:</strong> Measures the average similarity between
+                    each cluster and its nearest cluster.</div>
+            </div>
 
-        <div class="section algorithm">
-            <h3>4. Random Forests</h3>
-            <p><strong>Model:</strong> An ensemble of decision trees, each trained on a random subset of the data and
-                features.</p>
-            <p><strong>Advantages:</strong></p>
-            <ul class="advantages">
-                <li>Reduces overfitting by averaging the predictions of multiple trees.</li>
-                <li>Can handle both numerical and categorical features.</li>
-                <li>Can capture non-linear relationships.</li>
-            </ul>
-            <p><strong>Disadvantages:</strong></p>
-            <ul class="disadvantages">
-                <li>Can be computationally expensive for large datasets.</li>
-            </ul>
-        </div>
+            <h3>Visualization</h3>
+            <div class="visualization">
+                <ul>
+                    <li><strong>Dendrogram:</strong> A tree-like diagram that represents the hierarchical structure of
+                        clusters.</li>
+                    <li><strong>Scatter plots:</strong> Visualize the clusters in two-dimensional space.</li>
+                </ul>
+            </div>
 
-        <div class="section">
-            <h2>Choosing the Right Algorithm</h2>
-            <p>The best classification algorithm depends on the characteristics of your data and the specific
-                requirements of your problem. Consider the following factors:</p>
-            <ul>
-                <li><strong>Data type:</strong> Numerical, categorical, or a combination.</li>
-                <li><strong>Number of features:</strong> The dimensionality of the data.</li>
-                <li><strong>Class balance:</strong> Whether the classes are balanced or imbalanced.</li>
-                <li><strong>Computational resources:</strong> The available computing power.</li>
-            </ul>
-            <p>By understanding these classification algorithms and their strengths and weaknesses, you can select the
-                most appropriate algorithm for your specific task.</p>
+            <h3>Conclusion</h3>
+            <p>By understanding K-means clustering and hierarchical clustering, you can effectively group data points
+                and discover meaningful patterns within your dataset. Mastering these techniques opens the door to
+                advanced analytics, providing valuable insights into your data.</p>
         </div>
+    </div>
 
+    <div class="footer">
+        <p>© 2025 Unsupervised Learning Course</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 

@@ -1,0 +1,32 @@
+Tools for Prompt Engineering
+
+Complex Prompt Structures
+
+
+Contextual Prompting
+
+
+Iterative Prompt Testing
+
+
+Customizing AI Responses
+
+ Misconceptions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

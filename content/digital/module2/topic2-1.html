@@ -8,15 +8,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
+        .container h1 {
+            font-size: 2.3rem;
         }
 
-        .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         h1,
@@ -26,19 +26,94 @@
             /* Blue accent */
         }
 
-        .section {
-            margin-top: 20px;
-            padding: 15px;
-            border-left: 5px solid #007BFF;
-            /* Blue accent border */
-            background-color: #f8f9fa;
-            /* Light gray background for sections */
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
         }
 
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            /* Indentation for list items */
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
 </head>
@@ -140,7 +215,15 @@
                     enhance website visibility and drive business growth.</p>
             </section>
         </div>
-
+        <!-- Video Section -->
+        <div class="video-container">
+            <div class="gradient-border">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5Zz8VbFixOI?si=B0_i9xI53eBgEeEe"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
         <!-- Bootstrap JS (optional) -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

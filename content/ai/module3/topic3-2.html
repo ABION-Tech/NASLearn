@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Image Creation</title>
+    <title>Week 3: Prompt Engineering Basics to Advance</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -33,108 +33,73 @@
 
 <body>
 
-    <div class="container">
-        <div class="section">
-            <h2>AI-Powered Image Creation: A Deep Dive into DALL·E, MidJourney, and RunwayML</h2>
-        </div>
+    <section class="mb-5">
+        <h1>Week 3: Prompt Engineering Basics to Advance</h1>
+        <p>
+            This module explores the fundamentals of prompt engineering, advanced techniques, and the importance of
+            designing effective prompts to optimize AI tool performance. It covers real-world applications, guidelines,
+            and iterative methods for refining AI interactions.
+        </p>
+    </section>
 
-        <div class="section">
-            <h3>DALL·E</h3>
-            <p>DALL·E is a powerful AI model developed by OpenAI that can generate images from text descriptions. It
-                employs a combination of deep learning techniques to create highly detailed and realistic images based
-                on provided prompts.</p>
+    <!-- Crafting Effective Prompts -->
+    <section class="mb-5">
+        <h2>2. Crafting Effective Prompts</h2>
+        <p>
+            Crafting effective prompts is essential for ensuring accurate and relevant responses from AI models. This
+            section provides guidelines, examples, and techniques for writing clear, concise, and task-oriented prompts.
+        </p>
 
-            <h4>Key Features:</h4>
-            <ul>
-                <li><strong>Text-to-Image Generation:</strong> DALL·E can generate images from a wide range of text
-                    prompts, including detailed descriptions, styles, and even abstract concepts.</li>
-                <li><strong>Image Editing:</strong> DALL·E can also edit existing images, adding or removing elements,
-                    changing styles, or creating variations.</li>
-                <li><strong>High-Quality Output:</strong> DALL·E produces high-resolution images with detail often
-                    indistinguishable from human-created art.</li>
-            </ul>
+        <!-- Guidelines for Writing Prompts -->
+        <h3>Guidelines for Writing Clear and Concise Prompts</h3>
+        <p>Follow these best practices for crafting effective prompts:</p>
+        <ul>
+            <li><strong>Clear:</strong> Avoid ambiguity by being specific and direct.</li>
+            <li><strong>Concise:</strong> Keep prompts brief to prevent confusion and ensure focused responses.</li>
+            <li><strong>Task-Oriented:</strong> Include clear instructions for the AI to perform a specific action.</li>
+        </ul>
+        <p><strong>Example:</strong></p>
+        <ul>
+            <li><em>Less Effective Prompt:</em> "Tell me about programming."</li>
+            <li><em>Better Prompt:</em> "Explain the concept of object-oriented programming with an example in Python."
+            </li>
+        </ul>
 
-            <h4>Expanded Insights:</h4>
-            <p>DALL·E's unique ability to generate complex imagery from textual input has significant implications for
-                various industries. It empowers artists by serving as a source of inspiration, enabling them to
-                visualize concepts that might otherwise remain abstract. Moreover, its potential for image editing can
-                streamline workflows in creative fields, allowing rapid prototyping of ideas and iterative design
-                processes.</p>
-        </div>
+        <!-- Experimentation with Examples -->
+        <h3>Experimentation with Examples</h3>
+        <p>Varying the specificity and context of prompts can refine the AI's responses. Here are examples of different
+            prompt styles:</p>
+        <ul>
+            <li><strong>General Prompt:</strong> “Tell me about the weather today.”</li>
+            <li><strong>Specific Prompt:</strong> “What’s the weather forecast for New York City today, including
+                temperature, precipitation, and wind conditions?”</li>
+            <li><strong>Conversational Prompt:</strong> “Can you explain how the weather has been affecting the city’s
+                transportation today?”</li>
+        </ul>
+        <p>Adjusting prompt structure and context helps achieve the desired level of detail and relevance.</p>
 
-        <div class="section">
-            <h3>Midjourney</h3>
-            <p>Midjourney is a popular AI-powered image generation tool that allows users to create images from text
-                prompts using a diffusion model, which gradually transforms noise into coherent images.</p>
+        <!-- Fine-Tuning Responses -->
+        <h3>Fine-Tuning Responses by Prompt Variations</h3>
+        <p>
+            Iterative refinement of prompts enhances AI performance. Slight changes in phrasing or context can yield
+            better results. This process involves testing and observing how responses vary.
+        </p>
+        <p><strong>Example:</strong></p>
+        <ul>
+            <li><strong>Prompt A:</strong> "Summarize the article."</li>
+            <li><strong>Prompt B:</strong> "Give me a brief summary of the key points in the article."</li>
+            <li><strong>Prompt C:</strong> "What are the three main takeaways from the article?"</li>
+        </ul>
+        <p>By comparing outputs, you can identify the prompt variation that delivers the most relevant results.</p>
 
-            <h4>Key Features:</h4>
-            <ul>
-                <li><strong>Community-Driven:</strong> Midjourney boasts a strong user community that shares creations
-                    and provides feedback, fostering collaboration and innovation.</li>
-                <li><strong>Customization:</strong> Users can adjust various parameters, such as style, aspect ratio,
-                    and detail level to tailor their images.</li>
-                <li><strong>Integration with Discord:</strong> Primarily accessed through a Discord server, Midjourney
-                    facilitates collaboration and easy sharing among users.</li>
-            </ul>
-
-            <h4>Expanded Insights:</h4>
-            <p>The community aspect of Midjourney not only enhances user engagement but also drives creativity. By
-                sharing their work and techniques, users can learn from one another, leading to a collective improvement
-                in the quality of generated images. Additionally, the ability to customize outputs allows for greater
-                artistic expression and aligns the generated images with individual styles.</p>
-        </div>
-
-        <div class="section">
-            <h3>RunwayML</h3>
-            <p>RunwayML is a platform that offers a collection of AI models for various tasks, including image
-                generation, with a user-friendly interface for experimentation.</p>
-
-            <h4>Key Features:</h4>
-            <ul>
-                <li><strong>Multiple Models:</strong> Users have access to several image generation models, allowing
-                    them to select the best fit for their needs.</li>
-                <li><strong>Customization:</strong> RunwayML allows users to experiment with different parameters,
-                    enhancing the creativity of the output.</li>
-                <li><strong>Integration with Other Tools:</strong> The platform integrates with creative tools like
-                    Adobe Photoshop and Illustrator, enriching the creative process.</li>
-            </ul>
-
-            <h4>Expanded Insights:</h4>
-            <p>RunwayML's approach to accessibility and integration exemplifies how AI can complement traditional
-                artistic workflows. By providing easy access to advanced AI models, it democratizes the tools of
-                creation, enabling individuals without technical expertise to harness the power of AI. Its compatibility
-                with popular design software further enhances its utility, allowing seamless transitions between
-                AI-generated content and traditional design processes.</p>
-        </div>
-
-        <div class="section">
-            <h3>Applications of AI-Powered Image Creation</h3>
-            <p>AI-powered image creation tools are transforming various industries by enabling innovative approaches to
-                visual content.</p>
-
-            <h4>Areas of Application:</h4>
-            <ul>
-                <li><strong>Art and Design:</strong> Tools can inspire new styles and genres by creating unique artistic
-                    pieces.</li>
-                <li><strong>Product Design:</strong> Designers can visualize new concepts and assess multiple design
-                    options rapidly.</li>
-                <li><strong>Game Development:</strong> AI can generate realistic environments and characters, enhancing
-                    gameplay experiences.</li>
-                <li><strong>Education:</strong> AI-generated visuals can make educational content more engaging and
-                    accessible.</li>
-                <li><strong>Entertainment:</strong> These tools can create visual effects and marketing materials,
-                    elevating storytelling.</li>
-            </ul>
-
-            <h4>Future Trends:</h4>
-            <p>As AI technology continues to evolve, we can expect even more impressive applications of image
-                generation. The integration of AI tools in creative processes will likely redefine artistic boundaries,
-                making art more collaborative and inclusive. As these technologies mature, ethical considerations
-                surrounding their use will become increasingly critical, necessitating a balance between creativity and
-                responsible application.</p>
-        </div>
+        <!-- Key Takeaway -->
+        <h3>Key Takeaway</h3>
+        <p>
+            Crafting effective prompts requires balancing specificity, clarity, and conciseness. Experimentation and
+            iterative refinement are critical for achieving tailored and relevant AI responses.
+        </p>
+    </section>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

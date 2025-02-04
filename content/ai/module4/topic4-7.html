@@ -4,266 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 3 Conclusion</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>AI in Audio Editing: Enhancing Sound Quality</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            padding: 50px;
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
         }
 
         h1,
-        h2 {
-            text-align: center;
-            color: #1f1f1f;
-        }
-
-        .conclusion-section {
-            margin-top: 30px;
-        }
-
-        .card-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .card {
-            width: 250px;
-            perspective: 1000px;
-        }
-
-        .card-inner {
-            position: relative;
-            width: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .card-front,
-        .card-back {
-            position: absolute;
-            width: 100%;
-            height: 250px;
-            backface-visibility: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: white;
-            font-size: 18px;
-        }
-
-        .card-front {
-            background-color: #66fcf1;
-        }
-
-        .card-back {
-            background-color: #1f1f1f;
-            transform: rotateY(180deg);
-            text-align: center;
-            font-size: 16px;
-            padding: 25px;
-        }
-
-        .card-back p {
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .card {
-                width: 100%;
-            }
-        }
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
+        h2,
+        h3 {
+            color: #007bff;
+            /* Blue accent color */
         }
 
         .container {
-            padding: 20px;
+            margin-top: 20px;
         }
 
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
+        .feature {
+            border: 1px solid #007bff;
+            /* Blue accent border */
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            /* Light gray background */
         }
 
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
-
-        /* Video or content inside the border */
-        .video-content {
-            border-radius: 10px;
-            display: block;
-        }
-
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
+        .benefits {
+            background-color: #e9ecef;
+            /* Slightly darker gray for benefits section */
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <h1 class="text-center">AI in Audio Editing: Enhancing Sound Quality</h1>
 
-    <div class="container conclusion-section">
-        <h1>Week 4 Conclusion</h1>
-        <h2>Key Takeaways</h2>
-        <div class="card-container">
-            <!-- Card 1 -->
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <p>Understanding Variables</p>
-                    </div>
-                    <div class="card-back">
-                        <p>In Week 4, students learned how to declare and use variables in JavaScript to store data,
-                            including different types such as numbers, strings, and booleans.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <p>Functions in JavaScript</p>
-                    </div>
-                    <div class="card-back">
-                        <p>Functions are reusable blocks of code. Students explored how to declare and invoke functions,
-                            pass parameters, and return values.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <p>Control Structures</p>
-                    </div>
-                    <div class="card-back">
-                        <p>Control structures like if-else statements and loops were introduced to control the flow of
-                            the program based on different conditions.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <p>DOM Manipulation</p>
-                    </div>
-                    <div class="card-back">
-                        <p>Students learned how to dynamically update web pages by selecting and manipulating elements
-                            using the DOM API.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <p>Event Handling</p>
-                    </div>
-                    <div class="card-back">
-                        <p>JavaScript events like clicks and keypresses were handled using event listeners, making pages
-                            interactive and responsive to user actions.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="feature">
+            <h2>Audacity: A Free and Powerful Tool with AI Features</h2>
+            <p>Audacity is a popular open-source audio editor that incorporates several AI-powered features to enhance
+                audio quality. While Audacity doesn't have built-in AI models, it can leverage external plugins and
+                scripts to harness the power of AI.</p>
+            <h3>Key AI-Powered Features:</h3>
+            <ul>
+                <li><strong>Noise Reduction:</strong> Audacity can use AI-based noise reduction algorithms to remove
+                    unwanted background noise from audio recordings.</li>
+                <li><strong>Audio Restoration:</strong> AI can be used to restore damaged or degraded audio files, such
+                    as those affected by clicks, pops, or hisses.</li>
+                <li><strong>Pitch Correction:</strong> AI-powered pitch correction tools can help correct intonation and
+                    pitch errors in vocal recordings.</li>
+                <li><strong>Audio Effects:</strong> Audacity supports a variety of AI-powered audio effects, such as
+                    equalization, compression, and reverb.</li>
+            </ul>
         </div>
 
-        <div class="text-center mt-5">
-            <p>This concludes Week 4. Continue to build projects using JavaScript fundamentals. Practice manipulating
-                the DOM and handling events to create more interactive web applications. These foundational skills are
-                essential for diving into advanced topics, frameworks, and libraries in the future.</p>
+        <div class="feature">
+            <h2>Adobe Audition: A Professional Tool with Advanced AI Features</h2>
+            <p>Adobe Audition is a professional audio editing software that offers a range of AI-powered features to
+                improve audio quality and streamline workflows.</p>
+            <h3>Key AI-Powered Features:</h3>
+            <ul>
+                <li><strong>Automatic Speech Alignment:</strong> Audition can automatically align speech with text,
+                    making it easier to edit and manipulate audio recordings.</li>
+                <li><strong>Essential Sound Panel:</strong> The Essential Sound Panel provides a collection of
+                    AI-powered presets for common audio tasks, such as noise reduction, equalization, and compression.
+                </li>
+                <li><strong>Adaptive Noise Reduction:</strong> Audition's adaptive noise reduction algorithm can
+                    effectively remove noise from audio recordings, even in challenging conditions.</li>
+                <li><strong>Audio Restoration:</strong> Audition offers advanced tools for restoring damaged or degraded
+                    audio files, including click and pop removal, declipping, and spectral repair.</li>
+            </ul>
         </div>
+
+        <div class="feature">
+            <h2>AI-Powered Audio Editing Techniques</h2>
+            <ul>
+                <li><strong>Machine Learning for Noise Reduction:</strong> AI algorithms can learn to identify and
+                    remove noise patterns from audio recordings, even in complex environments.</li>
+                <li><strong>Deep Learning for Audio Restoration:</strong> Deep learning models can be used to restore
+                    damaged audio files by analyzing patterns and structures in the audio data.</li>
+                <li><strong>AI-Powered Audio Effects:</strong> AI can be used to create innovative and creative audio
+                    effects, such as generating new sounds or altering existing ones.</li>
+            </ul>
+        </div>
+
+        <div class="benefits">
+            <h2>Benefits of Using AI for Audio Editing</h2>
+            <ul>
+                <li><strong>Improved Audio Quality:</strong> AI can help to improve the overall quality of audio
+                    recordings by reducing noise, restoring damaged audio, and enhancing clarity.</li>
+                <li><strong>Increased Efficiency:</strong> AI-powered features can automate time-consuming tasks, saving
+                    editors time and effort.</li>
+                <li><strong>Creative Possibilities:</strong> AI can open up new creative possibilities by generating
+                    unique sounds and effects.</li>
+            </ul>
+        </div>
+
+        <p>By leveraging AI-powered features in tools like Audacity and Adobe Audition, audio editors can achieve
+            higher-quality results and streamline their workflows. As AI technology continues to advance, we can expect
+            to see even more innovative and powerful applications in the field of audio editing.</p>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -19,7 +19,9 @@
             margin-bottom: 50px;
         }
 
-        h1 {
+        h1,
+        h2,
+        h3 {
             color: #007BFF;
             /* Blue accent for main heading */
         }
@@ -50,40 +52,190 @@
             font-style: italic;
             color: #333;
         }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container">
-        <h1>The Content Creation Process</h1>
+        <h1>Content Creation Process</h1>
 
         <div class="content-section">
-            <h5>Planning:</h5>
-            <div class="key-steps">Key Steps: Identify target audience, define goals, and determine content types and
-                formats.</div>
-            <div class="significance">Significance: Proper planning ensures that content aligns with audience needs and
-                marketing objectives.</div>
+            <h2 class="section-title">Introduction</h2>
+            <p>The content creation process is a structured approach to planning, developing, and publishing content
+                that aligns with business goals and audience needs. A well-defined process ensures consistency,
+                efficiency, and effectiveness in content marketing.</p>
         </div>
 
         <div class="content-section">
-            <h5>Writing:</h5>
-            <div class="key-components">Key Components: Crafting compelling headlines, maintaining a consistent voice,
-                and incorporating storytelling elements.</div>
-            <div class="significance">Significance: Effective writing captures attention and encourages readers to
-                engage with the content.</div>
+            <h2 class="section-title">Step 1: Research and Ideation</h2>
+            <p>Before creating content, it's crucial to research your target audience, industry trends, and competitors.
+                This helps generate content ideas that are relevant and valuable.</p>
+            <h3>Key Activities:</h3>
+            <ul>
+                <li>Identify audience pain points and interests.</li>
+                <li>Conduct keyword research for SEO optimization.</li>
+                <li>Analyze competitors' content for inspiration.</li>
+                <li>Use tools like Google Trends, BuzzSumo, and AnswerThePublic.</li>
+            </ul>
         </div>
 
         <div class="content-section">
-            <h5>Editing:</h5>
-            <div class="key-considerations">Key Considerations: Grammar, clarity, flow, and adherence to brand
-                guidelines.</div>
-            <div class="significance">Significance: Polished content reflects professionalism and credibility, enhancing
-                user trust.</div>
+            <h2 class="section-title">Step 2: Content Planning</h2>
+            <p>Planning ensures that content aligns with marketing goals and follows a structured schedule.</p>
+            <h3>Key Activities:</h3>
+            <ul>
+                <li>Define content objectives (brand awareness, lead generation, engagement).</li>
+                <li>Choose content formats (blogs, videos, infographics, social media posts).</li>
+                <li>Create an editorial calendar for consistency.</li>
+            </ul>
         </div>
 
+        <div class="content-section">
+            <h2 class="section-title">Step 3: Content Creation</h2>
+            <p>In this stage, content is produced with a focus on quality, clarity, and engagement.</p>
+            <h3>Best Practices:</h3>
+            <ul>
+                <li>Write compelling headlines and introductions.</li>
+                <li>Ensure readability with short paragraphs and bullet points.</li>
+                <li>Incorporate visuals such as images, videos, and infographics.</li>
+                <li>Optimize for SEO using keywords and internal linking.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Step 4: Editing and Optimization</h2>
+            <p>Reviewing and refining content improves its quality, accuracy, and effectiveness.</p>
+            <h3>Key Activities:</h3>
+            <ul>
+                <li>Proofread for grammar, spelling, and readability.</li>
+                <li>Use SEO tools like Yoast or SurferSEO for optimization.</li>
+                <li>Ensure brand consistency in tone and style.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Step 5: Publishing and Distribution</h2>
+            <p>Once content is finalized, it needs to be published and promoted to reach the intended audience.</p>
+            <h3>Distribution Channels:</h3>
+            <ul>
+                <li>Company website or blog.</li>
+                <li>Social media platforms (Facebook, Twitter, LinkedIn, Instagram).</li>
+                <li>Email marketing campaigns.</li>
+                <li>Paid promotion (Google Ads, sponsored posts).</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Step 6: Performance Analysis</h2>
+            <p>Analyzing content performance helps refine future strategies and maximize ROI.</p>
+            <h3>Key Metrics:</h3>
+            <ul>
+                <li>Engagement metrics (likes, shares, comments).</li>
+                <li>Traffic analytics (page views, bounce rate).</li>
+                <li>Conversion rates (leads, sales, sign-ups).</li>
+                <li>SEO performance (ranking, organic traffic).</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Conclusion</h2>
+            <p>The content creation process is an ongoing cycle of research, planning, execution, and analysis. By
+                following a structured approach, businesses can produce high-quality content that resonates with their
+                audience and drives measurable results.</p>
+        </div>
     </div>
 
+    <!-- Video Section -->
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TcdbemNhlyI?si=w-Qo9OL06w1AjlOs"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
     <!-- Bootstrap JS (optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

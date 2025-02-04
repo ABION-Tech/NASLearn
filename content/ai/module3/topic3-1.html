@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How AI Generates Images: A Deep Dive into GANs and Beyond</title>
+    <title> Prompt Engineering Basics - Week 3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Custom CSS */
@@ -64,102 +64,109 @@
 </head>
 
 <body>
+    <div class="container my-5">
+        <!-- Week Overview Section -->
+        <section class="mb-5">
+            <h1>Week 3: Prompt Engineering Basics - Advanced</h1>
+            <p>
+                The objective of this week is to explore the fundamentals of prompt engineering, delve into advanced
+                techniques, and understand its role in refining and optimizing AI tool performance.
+                Mastering this skill can significantly improve the quality and accuracy of AI outputs.
+            </p>
+        </section>
 
-    <div class="container">
-        <!-- Title Section -->
-        <h1 class="text-center">How AI Generates Images: A Deep Dive into GANs and Beyond</h1>
-        <p class="text-center lead">Exploring the innovative technologies behind AI image generation.</p>
+        <!-- Introduction to Prompt Engineering -->
+        <section class="mb-5">
+            <h2>1. Introduction to Prompt Engineering</h2>
+            <h3>Definition and Overview</h3>
+            <p>
+                Prompt engineering is the practice of designing inputs (prompts) for AI systems to elicit specific and
+                useful responses.
+                It is a critical skill for leveraging the full potential of AI tools, particularly large language models
+                (LLMs) like ChatGPT.
+                The aim is to create prompts that align with the task and generate accurate, relevant, and coherent
+                outputs.
+            </p>
 
-        <!-- Section: Generative Adversarial Networks (GANs) -->
-        <div class="section-title">
-            <h2>Generative Adversarial Networks (GANs)</h2>
-        </div>
-        <p>One of the most powerful and widely used techniques for image generation is <span
-                class="highlight">Generative Adversarial Networks (GANs)</span>. GANs consist of two neural networks: a
-            generator and a discriminator.</p>
+            <h3>The Role of Prompts in AI/ML Models</h3>
+            <p>
+                Prompts act as the bridge between human input and machine learning models. In tools like ChatGPT, they
+                guide the model's understanding of the task, whether it's answering questions, generating text, or
+                performing specialized tasks.
+                The quality of a prompt significantly impacts the output:
+            </p>
+            <ul>
+                <li><strong>Poorly designed prompts:</strong> Lead to irrelevant or incorrect results.</li>
+                <li><strong>Well-crafted prompts:</strong> Optimize model performance, producing precise and useful
+                    responses.</li>
+            </ul>
+        </section>
 
-        <ul class="feature-list">
-            <li><strong>Generator:</strong> This network generates new images based on random noise as input. Its goal
-                is to create images that are indistinguishable from real images.</li>
-            <li><strong>Discriminator:</strong> This network is trained to distinguish between real and generated
-                images. It acts as a critic, evaluating the quality of the generated images.</li>
-        </ul>
+        <!-- Real-World Example -->
+        <section class="mb-5">
+            <h2>2. Real-World Example</h2>
+            <p>
+                In customer service chatbots, the quality of prompts can directly affect user experience:
+            </p>
+            <ul>
+                <li><strong>Poor prompt:</strong> "Help me" – This may lead to vague or ambiguous responses.</li>
+                <li><strong>Well-crafted prompt:</strong> "Help me with resetting my password" – Guides the AI to
+                    provide specific and relevant assistance.</li>
+            </ul>
+        </section>
 
-        <p>The generator and discriminator are trained in a competitive process. The generator tries to fool the
-            discriminator by producing more realistic images, while the discriminator attempts to accurately identify
-            fake images. This adversarial process leads to continuous improvement in the generator's ability to create
-            high-quality images.</p>
+        <!-- Common Applications in Industries -->
+        <section class="mb-5">
+            <h2>3. Common Applications in Industries</h2>
+            <p>Prompt engineering is widely used across various sectors:</p>
+            <ul>
+                <li><strong>Customer Service:</strong> AI chatbots use prompts to resolve customer queries efficiently.
+                    Well-designed prompts enhance user satisfaction, while poor ones can frustrate users.</li>
+                <li><strong>Education:</strong> AI tutors can generate personalized explanations, quizzes, or study
+                    plans based on detailed prompts, improving learning outcomes.</li>
+                <li><strong>Creative Writing:</strong> Writers use prompts to brainstorm ideas, generate content, or
+                    refine creative pieces like stories, poetry, or outlines.</li>
+            </ul>
+        </section>
 
-        <div class="section-divider"></div>
+        <!-- Key Takeaway -->
+        <section class="mb-5">
+            <h2>4. Key Takeaway</h2>
+            <p>
+                The ability to design prompts effectively is critical for improving the efficiency and accuracy of AI
+                systems.
+                This skill is increasingly valuable across industries such as healthcare, education, finance, and
+                entertainment.
+                Mastering prompt engineering can unlock the full potential of AI, enhancing its usefulness and relevance
+                in real-world applications.
+            </p>
+        </section>
 
-        <!-- Section: Other Image Generation Techniques -->
-        <div class="section-title">
-            <h2>Other Image Generation Techniques</h2>
-        </div>
-        <p>Besides GANs, several other image generation techniques exist:</p>
-
-        <ul class="feature-list">
-            <li><strong>Autoencoders:</strong> Autoencoders are neural networks trained to reconstruct input data. They
-                can generate images by encoding and decoding them.</li>
-            <li><strong>Variational Autoencoders (VAEs):</strong> VAEs use probabilistic models to generate images based
-                on a latent space representation, allowing for a variety of generated images.</li>
-            <li><strong>Flow-based Models:</strong> These models learn a bijective mapping between the latent space and
-                the data space, enabling high-quality image generation.</li>
-            <li><strong>StyleGAN:</strong> A variant of GAN that employs a style-based architecture to control image
-                generation, producing a wide range of styles and variations.</li>
-        </ul>
-
-        <div class="section-divider"></div>
-
-        <!-- Section: Applications of Image Generation -->
-        <div class="section-title">
-            <h2>Applications of Image Generation</h2>
-        </div>
-        <p>AI-generated images have numerous applications across various fields, including:</p>
-
-        <ul class="feature-list">
-            <li><strong>Art and Design:</strong> AI-generated images can create unique and artistic pieces, allowing for
-                innovative expressions in visual arts.</li>
-            <li><strong>Product Design:</strong> Designers can leverage AI to generate new product concepts and designs,
-                enhancing creativity and efficiency.</li>
-            <li><strong>Gaming:</strong> AI can generate realistic game environments and characters, improving immersive
-                experiences for players.</li>
-            <li><strong>Medical Imaging:</strong> AI can produce synthetic medical images for training and testing
-                medical imaging algorithms, advancing healthcare technology.</li>
-            <li><strong>Entertainment:</strong> AI can generate realistic faces and voices for movies and TV shows,
-                transforming the entertainment industry.</li>
-        </ul>
-
-        <div class="section-divider"></div>
-
-        <!-- Section: Challenges and Limitations -->
-        <div class="section-title">
-            <h2>Challenges and Limitations</h2>
-        </div>
-        <p>While AI image generation offers exciting possibilities, there are also significant challenges and
-            limitations:</p>
-
-        <ul class="feature-list">
-            <li><strong>Ethical Considerations:</strong> AI-generated images can be misused, such as in creating
-                deepfakes. It is crucial to address these ethical concerns to ensure responsible use.</li>
-            <li><strong>Quality and Realism:</strong> Despite advances, limitations remain in detail, texture, and
-                consistency of generated images.</li>
-            <li><strong>Creativity:</strong> AI-generated images are often bound by the data they are trained on,
-                meaning human creativity and intuition remain essential for unique artistic endeavors.</li>
-        </ul>
-
-        <div class="section-divider"></div>
-
-        <!-- Conclusion Section -->
-        <p>As AI technology continues to advance, we can expect to see even more impressive and innovative applications
-            of image generation. By understanding the underlying techniques and addressing ethical challenges, we can
-            harness the power of AI to create beautiful and meaningful visual content.</p>
-
-        <div class="important-note">
-            <p><strong>Note:</strong> Engaging in dialogue about the ethical implications of AI-generated content will
-                pave the way for responsible and creative advancements in the field.</p>
-        </div>
+        <!-- Practice Tasks Section -->
+        <section class="mb-5">
+            <h2>5. Practice Tasks</h2>
+            <ol>
+                <li>
+                    Write a prompt for an AI assistant to create a detailed report on sustainable energy solutions.
+                    Refine it for clarity and specificity.
+                </li>
+                <li>
+                    Experiment with a generic prompt ("Help me") and a refined prompt ("Help me schedule a meeting with
+                    my team for next Monday at 10 AM").
+                    Compare the outputs and note the differences.
+                </li>
+                <li>
+                    Develop prompts for the following scenarios:
+                    <ul>
+                        <li>Generating a list of blog ideas for a finance website.</li>
+                        <li>Explaining a complex topic (e.g., quantum mechanics) in simple terms for students.</li>
+                        <li>Drafting a professional email to pitch a new business idea.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

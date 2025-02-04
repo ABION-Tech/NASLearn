@@ -4,172 +4,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 4: Supervised Learning - Classification</title>
+    <title>Week 4: Unsupervised Learning - Clustering</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #ffffff;
-            color: #000000;
+            background-color: white;
+            color: black;
             font-family: Arial, sans-serif;
-        }
-
-        .content-section {
-            margin: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         h1,
         h2,
         h3 {
             color: #007bff;
-            /* Blue accent color */
+            /* Bootstrap primary color */
         }
 
-        h2 {
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
+        .card {
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        ul {
-            margin-left: 20px;
+        .card-header {
+            background-color: #007bff;
+            color: white;
         }
 
-        .project-steps {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #f8f9fa;
+        .highlight {
+            background-color: #f0f8ff;
+            /* Light blue background for emphasis */
             border-left: 5px solid #007bff;
+            padding: 10px;
+        }
+
+        .steps-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .steps-list li {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .steps-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            /* Blue bullet point */
+        }
+
+        .footer {
+            padding: 20px 0;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="content-section">
-            <h1>Week 4: Supervised Learning - Classification</h1>
+    <div class="container mt-5">
 
-            <h2>Practical Applications</h2>
-            <p>Classification algorithms have a wide range of real-world applications across various industries. Here
-                are some detailed examples:</p>
-            <ul>
-                <li><strong>Healthcare:</strong>
-                    <ul>
-                        <li><em>Disease diagnosis:</em> Identifying diseases from patient data using algorithms to
-                            enhance diagnostic accuracy.</li>
-                        <li><em>Patient risk stratification:</em> Classifying patients based on risk factors to provide
-                            tailored treatment plans.</li>
-                        <li><em>Predicting patient outcomes:</em> Using historical data to predict recovery rates or
-                            potential complications.</li>
-                    </ul>
-                </li>
-                <li><strong>Finance:</strong>
-                    <ul>
-                        <li><em>Fraud detection:</em> Classifying transactions as legitimate or fraudulent to protect
-                            customer assets.</li>
-                        <li><em>Customer churn prediction:</em> Identifying customers likely to leave based on behavior
-                            and usage patterns.</li>
-                        <li><em>Credit risk assessment:</em> Evaluating the creditworthiness of individuals and
-                            businesses.</li>
-                    </ul>
-                </li>
-                <li><strong>Marketing:</strong>
-                    <ul>
-                        <li><em>Customer segmentation:</em> Grouping customers based on purchasing behavior to tailor
-                            marketing strategies.</li>
-                        <li><em>Lead scoring:</em> Classifying potential customers based on their likelihood to convert.
-                        </li>
-                        <li><em>Sentiment analysis:</em> Classifying public sentiment towards brands or products using
-                            social media data.</li>
-                    </ul>
-                </li>
-                <li><strong>Manufacturing:</strong>
-                    <ul>
-                        <li><em>Quality control:</em> Classifying products based on quality checks to minimize defects.
-                        </li>
-                        <li><em>Defect detection:</em> Using computer vision to identify defective items on the assembly
-                            line.</li>
-                        <li><em>Predictive maintenance:</em> Classifying equipment health to predict failures before
-                            they occur.</li>
-                    </ul>
-                </li>
-                <li><strong>Natural Language Processing (NLP):</strong>
-                    <ul>
-                        <li><em>Sentiment analysis:</em> Classifying text data to gauge public opinion.</li>
-                        <li><em>Text classification:</em> Organizing documents into predefined categories for better
-                            management.</li>
-                        <li><em>Machine translation:</em> Classifying phrases in one language and translating them into
-                            another.</li>
-                    </ul>
-                </li>
-            </ul>
+        <h1 class="text-center mb-4">Week 4: Unsupervised Learning - Clustering</h1>
 
-            <h2>Common Misconceptions</h2>
-            <p>Understanding classification models requires dispelling some common misconceptions:</p>
-            <ul>
-                <li><strong>Accuracy is always the most important metric:</strong> While accuracy is useful, it may not
-                    reflect model performance in imbalanced datasets. Metrics like precision and recall provide better
-                    insights in such cases.</li>
-                <li><strong>All classification algorithms are equal:</strong> The effectiveness of an algorithm varies
-                    based on data characteristics and the problem being addressed. Selecting the appropriate algorithm
-                    is essential.</li>
-                <li><strong>Classification models are always perfect:</strong> No model is infallible. Continuous
-                    evaluation and adjustment are necessary to maintain and improve performance.</li>
-            </ul>
+        <div class="card">
+            <div class="card-header">Dimensionality Reduction: Principal Component Analysis (PCA)</div>
+            <div class="card-body">
+                <p>
+                    Dimensionality reduction is a powerful technique used to reduce the number of features in a dataset
+                    while preserving its most essential information. This process is beneficial for several reasons:
+                </p>
+                <div class="highlight">
+                    <ul>
+                        <li><strong>Improving computational efficiency:</strong> By reducing the dimensionality of data,
+                            machine learning algorithms can run faster and more efficiently.</li>
+                        <li><strong>Visualizing data:</strong> High-dimensional data can be challenging to visualize;
+                            dimensionality reduction allows for clearer insights in lower-dimensional spaces.</li>
+                        <li><strong>Reducing noise:</strong> This technique can help eliminate noise and irrelevant
+                            features from the dataset, leading to improved model performance.</li>
+                    </ul>
+                </div>
 
-            <h2>Recap and Preview</h2>
-            <p>This week, we have explored the fundamentals of classification, including common algorithms such as:</p>
-            <ul>
-                <li>Logistic Regression</li>
-                <li>Decision Trees</li>
-                <li>Support Vector Machines (SVM)</li>
-                <li>K-Nearest Neighbors (k-NN)</li>
-                <li>Random Forests</li>
-            </ul>
-            <p>Additionally, we discussed evaluation metrics like accuracy, precision, recall, F1-score, ROC curve, and
-                AUC.</p>
-            <p>Next week, we will delve into <strong>Unsupervised Learning</strong> with a specific focus on
-                <strong>Clustering</strong>, examining various algorithms, their applications, and performance
-                evaluation metrics.</p>
+                <h2>PCA Explained</h2>
+                <p>
+                    Principal Component Analysis (PCA) is one of the most widely used dimensionality reduction
+                    techniques. It identifies the principal components of a dataset, which are linear combinations of
+                    the original features that capture the most variance in the data.
+                </p>
 
-            <h2>Project: Develop a Classification Model and Assess Its Performance</h2>
-            <div class="project-steps">
-                <h3>Dataset:</h3>
-                <p>Select a relevant dataset for classification:</p>
+                <h3>Steps for Performing PCA</h3>
+                <ol class="steps-list">
+                    <li><strong>Standardize the data:</strong> Ensure all features have a mean of 0 and a standard
+                        deviation of 1.</li>
+                    <li><strong>Calculate the covariance matrix:</strong> Compute the covariance matrix of the
+                        standardized data to understand the relationships between the variables.</li>
+                    <li><strong>Compute eigenvectors and eigenvalues:</strong> Identify the eigenvectors (directions of
+                        variance) and eigenvalues (magnitude of variance) of the covariance matrix.</li>
+                    <li><strong>Select principal components:</strong> Choose eigenvectors corresponding to the largest
+                        eigenvalues. These represent the directions with maximum variance.</li>
+                    <li><strong>Project the data:</strong> Transform the original data into a lower-dimensional space
+                        using the selected eigenvectors.</li>
+                </ol>
+
+                <h3>Choosing the Number of Principal Components</h3>
+                <p>
+                    Determining how many principal components to retain is crucial for effective dimensionality
+                    reduction. Several methods can help in making this decision:
+                </p>
                 <ul>
-                    <li><a href="https://www.kaggle.com/c/titanic" target="_blank">Titanic Survival Dataset</a></li>
-                    <li><a href="https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset" target="_blank">SMS
-                            Spam Collection Dataset</a></li>
+                    <li><strong>Explained variance ratio:</strong> Analyze the proportion of variance each principal
+                        component captures.</li>
+                    <li><strong>Scree plot:</strong> Plot eigenvalues in descending order and identify the elbow point
+                        where the slope of the curve decreases significantly.</li>
+                    <li><strong>Cumulative explained variance:</strong> Calculate the cumulative variance explained by
+                        the first k principal components to assess the total variance captured.</li>
                 </ul>
 
-                <h3>Steps:</h3>
-                <ol>
-                    <li><strong>Load and Explore the Data:</strong> Utilize a Pandas DataFrame to load and explore the
-                        dataset's characteristics using Exploratory Data Analysis (EDA) techniques.</li>
-                    <li><strong>Preprocess the Data:</strong> Handle missing values, outliers, and encode categorical
-                        variables as needed to prepare the data for modeling.</li>
-                    <li><strong>Feature Engineering:</strong> Create new features or transform existing ones to enhance
-                        model performance through techniques like normalization or polynomial feature expansion.</li>
-                    <li><strong>Split the Data:</strong> Divide the dataset into training and testing sets to ensure
-                        unbiased model evaluation.</li>
-                    <li><strong>Train the Model:</strong> Select an appropriate classification algorithm (e.g., logistic
-                        regression, decision tree, random forest) and train it on the training set.</li>
-                    <li><strong>Evaluate the Model:</strong> Use metrics like accuracy, precision, recall, and F1-score
-                        to assess the model's performance on the testing set.</li>
-                    <li><strong>Fine-tune the Model:</strong> Experiment with different hyperparameters and optimization
-                        techniques such as Grid Search or Random Search to improve model performance.</li>
-                </ol>
-            </div>
+                <h3>Applications of PCA</h3>
+                <p>
+                    PCA has a wide range of applications across various fields, including:
+                </p>
+                <ul>
+                    <li><strong>Data visualization:</strong> Transforming high-dimensional data for better visual
+                        insights.</li>
+                    <li><strong>Feature engineering:</strong> Creating new features as linear combinations of the
+                        original ones to enhance model performance.</li>
+                    <li><strong>Noise reduction:</strong> Filtering out noise and irrelevant features from the data.
+                    </li>
+                    <li><strong>Image compression:</strong> Compressing images by reducing their dimensionality while
+                        maintaining essential information.</li>
+                    <li><strong>Natural language processing:</strong> Reducing dimensionality in word embeddings for
+                        better computational efficiency.</li>
+                </ul>
 
-            <p>By completing this project, you will gain practical experience in building and evaluating classification
-                models, which are essential skills in data science.</p>
+                <p>
+                    By understanding the principles of PCA, you can effectively reduce the dimensionality of your data,
+                    leading to more efficient and interpretable machine learning models.
+                </p>
+            </div>
         </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.11/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
