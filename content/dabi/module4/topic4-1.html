@@ -4,52 +4,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to Python for Data Analysis</title>
+    <title>Introduction to Data Visualization</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+         body {
+      background-color: white;
+      color: black;
+    }
+
+    h1, h2, h3, .blue-accent {
+      color: rgb(33, 33, 253);
+    }
+
+    #editor {
+      height: 100vh;
+      width: 100%;
+      overflow: auto;
+      border: 1px solid lightgray;
+      background-color: #f8f9fa;
+      resize: both;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #output {
+      height: 100vh;
+      width: 100%;
+      overflow: auto;
+      border: 1px solid lightgray;
+      background-color: #f8f9fa;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
+        }
+      }
+    }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>Introduction to Python for Data Analysis</h1>
-    </header>
-
-    <main>
-        <section id="python-basics">
-            <h2>Python Basics</h2>
-            <p>
-                Python is a high-level programming language known for its simplicity and readability. It offers rich
-                libraries and tools for data analysis, making it popular among data scientists and analysts.
-            </p>
-        </section>
-
-        <section id="setting-up-environment">
-            <h2>Setting up the Environment</h2>
-            <p>
-                Setting up Python for data analysis involves installing <strong>Anaconda</strong>, a distribution of
-                Python that includes data science packages such as Pandas, NumPy, Matplotlib, and more. <strong>Jupyter
-                    Notebooks</strong> are commonly used for interactive data analysis and visualization.
-            </p>
-        </section>
-
-        <section id="syntax-data-structures">
-            <h2>Syntax and Data Structures</h2>
+<main>
+    <div class="container">
+        <h1>Introduction to Data Visualization & Its Importance</h1>
+    
+        <div class="content-section">
+            <h2>What is Data Visualization?</h2>
+            <p>Data visualization is the process of representing data in a visual format using elements such as charts, graphs, and maps. It helps transform complex datasets into intuitive visuals that make data easier to interpret, analyze, and communicate.</p>
+            <p>By presenting information visually, businesses, researchers, and analysts can quickly identify trends, correlations, and outliers that might be difficult to spot in raw numerical data.</p>
+            <p>Whether it's a simple bar chart comparing sales figures or a complex heatmap illustrating regional customer behavior, visualization allows businesses, researchers, and analysts to make sense of raw data and extract meaningful conclusions.</p>
+        </div>
+    
+        <div class="content-section">
+            <h2>Why is Data Visualization Important?</h2>
+            <p>The importance of data visualization cannot be overstated, especially in today’s data-driven world. Here are some key reasons why it is essential:</p>
             <ul>
-                <li><strong>Variables and Data Types:</strong> Integers, floats, strings, lists, tuples, dictionaries.
+                <li><strong>Enhanced Data Interpretation:</strong> Visuals make it easier to detect trends, correlations, and outliers that might be difficult to spot in raw numerical data.</li>
+                <li>
+                    Helps businesses and analysts quickly identify patterns that influence decision-making.
                 </li>
-                <li><strong>Control Flow:</strong> Conditional statements (if, else), loops (for, while).</li>
-                <li><strong>Functions:</strong> Defining and calling functions to reuse code.</li>
+                <li><strong>Faster and More Informed Decision-Making:</strong> Decision-makers can quickly grasp complex information, leading to faster responses to opportunities and challenges.</li>
+                <li>
+                    Organizations use visual dashboards to track performance metrics in real-time, reducing reliance on lengthy reports.
+                </li>
+
+                <li><strong>Improved Communication & Storytelling:</strong> Data visualization simplifies communication between analysts, executives, and stakeholders by presenting insights in a clear and compelling manner.
+                </li>
+                <li>
+                    Visual storytelling allows companies to share findings effectively, making presentations more engaging and persuasive.
+                </li>
+                <li><strong>Identifying Trends & Predicting Future Outcomes:</strong> Businesses can use historical data visualizations to forecast future trends, helping with strategic planning and resource allocation.</li>
             </ul>
+        </div>
+    
+        <div class="content-section">
+            <h2>Common Data Visualization Techniques</h2>
+            <p>There are various visualization techniques, each suited for different types of data and analytical needs. Some of the most commonly used methods include:</p>
+            <ul>
+                <li><strong>Bar Charts:</strong> Best for comparing different categories, such as sales figures across regions.</li>
+                <li><strong>Line Graphs:</strong> Ideal for tracking trends over time, such as revenue growth.</li>
+                <li><strong>Pie Charts:</strong> Used to show proportions within a whole, such as market share distribution.</li>
+                <li><strong>Heatmaps:</strong> Uses color intensity to display variations in data, such as website traffic density.</li>
+                <li><strong>Scatter Plots:</strong> Helps identify relationships between two variables, such as advertising spend vs. revenue.</li>
+            </ul>
+        </div>
+    
+        <div class="content-section">
+            <h2>Real-World Example</h2>
+            <p>A sales team tracking monthly performance can utilize data visualization to gain insights.</p>
+            <ul>
+                <li><strong>Line Chart:</strong> Displays sales trends over time, making it easy to see patterns.</li>
+                <li><strong>Heatmap:</strong> Highlights regions with the highest revenue, helping optimize sales strategies.</li>
+                <li><strong>Bar Chart:</strong> Compares sales of different product categories side by side.</li>
+            </ul>
+            <p>By leveraging these visual tools, businesses can enhance their strategies and drive better results.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Conclusion</h2>
+            <p>Data visualization plays a crucial role in transforming raw data into actionable insights. Whether for business intelligence, academic research, or financial forecasting, using the right visualization techniques ensures that information is not just seen but understood. As organizations continue to generate vast amounts of data, the ability to visualize and interpret it effectively will remain a key competitive advantage.</p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</main>
+    <!-- <main>
+        <section id="overview">
+            <h2>Relational Databases</h2>
+            <p>
+                Relational databases store data in tables, which consist of rows and columns. Each table represents a
+                different entity, and relationships between tables are defined using primary and foreign keys.
+            </p>
+        </section>
+
+        <section id="sql-overview">
+            <h2>SQL Overview</h2>
+            <p>
+                SQL is a standard language for querying and manipulating databases. It allows users to perform various
+                operations, such as retrieving data, inserting new records, updating existing records, and deleting
+                records.
+            </p>
+        </section>
+
+        <section id="basic-sql-queries">
+            <h2>Basic SQL Queries</h2>
+            <ul>
+                <li>
+                    <strong>SELECT:</strong> Retrieves data from one or more tables.
+                    <pre><code>SELECT column1, column2 FROM table_name;</code></pre>
+                </li>
+                <li>
+                    <strong>FROM:</strong> Specifies the table from which to retrieve data.
+                </li>
+                <li>
+                    <strong>WHERE:</strong> Filters records based on specified conditions.
+                    <pre><code>SELECT * FROM customers WHERE country = 'USA';</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section id="data-types">
+            <h2>Data Types</h2>
+            <p>
+                SQL supports various data types, including integers, floats, strings, dates, and more. Understanding
+                data types is crucial for designing tables and writing accurate queries.
+            </p>
         </section>
 
         <section id="practical-exercise">
             <h2>Practical Exercise</h2>
             <p>
-                <strong>Hands-On Practice:</strong> Install Anaconda, create a Jupyter Notebook, and write Python code
-                to perform basic operations (e.g., arithmetic operations, string manipulation).
+                <strong>Hands-On Practice:</strong> Write basic SQL queries to retrieve data from sample databases.
+                Practice using the SELECT, FROM, and WHERE clauses to filter and sort data.
             </p>
         </section>
-    </main>
-
+    </main> -->
+<!-- Video Section -->
+<div class="video-container">
+    <div class="gradient-border">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</div>
 </body>
 
 </html>
