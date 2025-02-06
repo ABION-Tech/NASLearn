@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Events</title>
+    <title>Discussions</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -187,89 +187,41 @@
 </head>
 
 <body>
+    <div class="discussion-section">
+        <h2>Discussion Questions</h2>
+        <p>Explore the following discussion questions to deepen your understanding of data visualization tools and their
+            applications.</p>
 
-    <div class="main-container">
-        <h1>JavaScript Events</h1>
-        <p>JavaScript events are actions or occurrences that happen in the browser, like clicks, keypresses, and page
-            loads. You can write code that responds to these events, making your web page interactive.</p>
+        <ul class="discussion-list">
+            <li class="discussion-item" data-course="dabi" data-module="module4" data-topic="topic4-1">
+                <strong>4.1: Introduction to Data Visualization & Its Importance</strong>
+                <p>How does effective data visualization contribute to better decision-making in businesses?</p>
+            </li>
 
-        <h2 class="section-title">5.1 What are Events?</h2>
-        <p>Events in JavaScript represent user interactions or system-generated occurrences that you can capture and
-            handle with JavaScript.</p>
+            <li class="discussion-item" data-course="dabi" data-module="module4" data-topic="topic4-2">
+                <strong>4.2: Power BI</strong>
+                <p>What are the key advantages of using Power BI over traditional Excel-based reporting?</p>
+            </li>
 
-        <ul>
-            <li><strong>onclick:</strong> Triggered when an element is clicked.</li>
-            <li><strong>onmouseover:</strong> Triggered when the mouse pointer hovers over an element.</li>
-            <li><strong>onkeyup:</strong> Triggered when a key is released after being pressed.</li>
+            <li class="discussion-item" data-course="dabi" data-module="module4" data-topic="topic4-3">
+                <strong>4.3: Tableau</strong>
+                <p>How can Tableau be leveraged to create dynamic and interactive dashboards for business intelligence?
+                </p>
+            </li>
+
+            <li class="discussion-item" data-course="dabi" data-module="module4" data-topic="topic4-4">
+                <strong>4.4: Data Visualization with Matplotlib and Seaborn</strong>
+                <p>What are the key differences between Matplotlib and Seaborn, and when should each be used?</p>
+            </li>
+
+            <li class="discussion-item" data-course="dabi" data-module="module4" data-topic="topic4-general">
+                <strong>General Discussion</strong>
+                <p>How can data visualization tools be misused, leading to misleading insights, and how can this be
+                    avoided?</p>
+            </li>
         </ul>
-
-        <h2 class="section-title">5.2 Event Listeners</h2>
-        <p>Event listeners allow you to define custom behaviors that occur when a specific event is triggered. You can
-            add and remove event listeners dynamically using JavaScript.</p>
-
-        <h4>1. Adding Event Listeners:</h4>
-        <p>The <span class="highlight">addEventListener</span> method lets you define what happens when an event occurs
-            on an element. Here’s an example:</p>
-
-        <div class="code-container">
-            <pre>
-let button = document.getElementById("myButton");
-button.addEventListener("click", function() {
-    alert("Button was clicked!");
-});
-        </pre>
-        </div>
-
-        <button id="myButton" class="btn btn-custom">Click Me</button>
-
-        <h4>2. Removing Event Listeners:</h4>
-        <p>The <span class="highlight">removeEventListener</span> method lets you stop listening for a specific event on
-            an element. Example:</p>
-
-        <div class="code-container">
-            <pre>
-function handleClick() {
-    alert("Button was clicked!");
-}
-
-button.addEventListener("click", handleClick);
-
-// Later in the code:
-button.removeEventListener("click", handleClick);
-        </pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="removeListener()">Remove Event Listener</button>
-
-        <h2 class="section-title">YouTube Video Explanation</h2>
-        <p>Watch the video below to get a more in-depth understanding of how JavaScript events and event listeners work.
-        </p>
-
-        <div class="iframe-container">
-            <iframe src="https://www.youtube.com/embed/your-video-id-here" allowfullscreen></iframe>
-        </div>
-
-
     </div>
 
-    <script>
-        // Adding an Event Listener
-        let button = document.getElementById("myButton");
-        button.addEventListener("click", function () {
-            alert("Button was clicked!");
-        });
-
-        // Function to remove an event listener
-        function removeListener() {
-            button.removeEventListener("click", handleClick);
-            alert("Event listener removed.");
-        }
-
-        // Function to be removed
-        function handleClick() {
-            alert("This won't fire after removal!");
-        }
-    </script>
 
 </body>
 

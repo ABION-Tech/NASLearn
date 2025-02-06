@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: Content Strategy Development</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+
+    <!-- Discussion Hero Section -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Discussion: Content Strategy Development</h1>
+            <p>Engage with your peers and explore key questions on content strategy.</p>
+        </div>
+    </header>
+
+    <!-- Discussion Section -->
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Discussion Questions -->
+                <div class="card mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5>Discussion Questions</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>1. How can understanding your audience improve the effectiveness of your content
+                                    strategy?</strong>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>2. What are the key elements of a successful content framework?</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Comment Section -->
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5>Join the Discussion on WhatsApp</h5>
+                    </div>
+                    <!-- <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="comment" class="form-label">Your Response</label>
+                                <textarea class="form-control" id="comment" rows="3" placeholder="Write your thoughts..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Display Comments 
+                <div class="mt-4">
+                    <h5>Recent Responses</h5>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6 class="card-title">Jane Doe</h6>
+                            <p class="card-text">Understanding your audience allows you to tailor content to their needs, making it more engaging and relevant.</p>
+                            <small class="text-muted">Posted 5 minutes ago</small>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6 class="card-title">John Smith</h6>
+                            <p class="card-text">A successful content framework includes research, planning, execution, and performance tracking.</p>
+                            <small class="text-muted">Posted 10 minutes ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+                    <!-- Sidebar -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header bg-warning text-dark">Tips for Engaging Discussions</div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Be respectful and constructive.</li>
+                                    <li>Support your points with examples.</li>
+                                    <li>Engage with other responses for deeper discussions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script
+                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

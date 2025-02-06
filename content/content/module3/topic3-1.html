@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: Content Strategy Development</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <!-- Header -->
+        <header class="mb-4 text-center">
+            <h1>Module 3: Content Strategy Development</h1>
+            <p class="text-muted">Learn to create a comprehensive content strategy aligned with business goals.</p>
+        </header>
+
+        <!-- Section 1: Foundations of Content Strategy -->
+        <section class="mb-5">
+            <h2>1. Foundations of Content Strategy</h2>
+            <p>
+                <strong>What is Content Strategy?</strong> Content strategy is the planning, development, and management
+                of content to meet business goals.
+                It’s not just about creating content but ensuring it is effective, relevant, and aligned with a brand’s
+                voice, objectives, and audience needs.
+            </p>
+            <p>
+                A strong content strategy allows businesses to <strong>drive engagement, increase brand
+                    awareness,</strong> and achieve desired outcomes such as sales and lead generation.
+            </p>
+
+            <h3>Key Elements of a Strong Content Strategy:</h3>
+            <ul>
+                <li><strong>Consistency:</strong> Ensuring content aligns with the brand’s voice and objectives.</li>
+                <li><strong>Relevance:</strong> Delivering value to the target audience.</li>
+                <li><strong>Purpose:</strong> Content should serve a specific business goal (e.g., lead generation,
+                    customer education).</li>
+            </ul>
+
+            <h3>Real-World Example:</h3>
+            <p>
+                <strong>HubSpot:</strong> HubSpot has an extensive content strategy focused on providing free, valuable
+                content
+                (blogs, ebooks, and webinars) to educate their target audience (small and medium businesses) on
+                marketing automation and inbound marketing.
+            </p>
+        </section>
+
+        <!-- Section 2: Understanding Audience Personas -->
+        <section class="mb-5">
+            <h2>2. Understanding Audience Personas & Target Segments</h2>
+            <p>
+                A content strategy is only effective if it speaks to the right audience. <strong>Audience
+                    personas</strong> are semi-fictional representations
+                of ideal customers based on real data and insights. These help define the tone, type, and delivery
+                method for content.
+            </p>
+
+            <h3>Steps to Create Audience Personas:</h3>
+            <ul>
+                <li><strong>Demographic Information:</strong> Age, gender, location, job role.</li>
+                <li><strong>Psychographics:</strong> Interests, values, challenges, motivations.</li>
+                <li><strong>Behavior:</strong> Buying habits, content consumption preferences.</li>
+            </ul>
+
+            <h3>Example:</h3>
+            <p>
+                <strong>Nike’s Audience Persona:</strong> Nike’s personas include athletes, fitness enthusiasts, and
+                individuals looking for stylish athletic apparel.
+                Their content speaks directly to the motivations and challenges of each persona, using storytelling,
+                social proof, and performance-driven messaging.
+            </p>
+        </section>
+
+        <!-- Section 3: Business Objectives and Content Alignment -->
+        <section class="mb-5">
+            <h2>3. Business Objectives and Content Alignment</h2>
+            <p>
+                Aligning content with business objectives is the foundation of an effective content strategy. Whether
+                the goal is to <strong>increase traffic, generate leads,
+                    or improve brand awareness</strong>, content must be crafted to support these goals.
+            </p>
+
+            <h3>Example:</h3>
+            <p>
+                <strong>E-commerce Store Strategy:</strong> If the business goal is to increase product sales,
+                the content strategy may focus on:
+            </p>
+            <ul>
+                <li>Customer testimonials</li>
+                <li>Product demo videos</li>
+                <li>Educational content about product usage</li>
+            </ul>
+        </section>
+
+        <!-- Section 4: Key Takeaways -->
+        <section class="mb-5">
+            <h2>4. Key Takeaways</h2>
+            <p>
+                ✅ A content strategy is most effective when it is:
+            </p>
+            <ul>
+                <li><strong>Audience-focused:</strong> Understand your audience and tailor content accordingly.</li>
+                <li><strong>Goal-driven:</strong> Ensure that content aligns with business objectives.</li>
+                <li><strong>Adaptable:</strong> Content strategies should evolve with audience needs and market trends.
+                </li>
+            </ul>
+        </section>
+        <div class="video-container">
+            <div class="gradient-border">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/HXV3zeQKqGY?si=ndAXy0_9mIZzpdgS"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

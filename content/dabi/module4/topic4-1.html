@@ -7,9 +7,211 @@
     <title>Introduction to Python for Data Analysis</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #000000;
+        font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #007BFF;
+        /* Blue accent */
+    }
+
+    .content-container {
+        margin: 50px auto;
+        max-width: 900px;
+    }
+
+    .custom-section {
+        margin-bottom: 40px;
+    }
+
+    .custom-section p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+        margin-left: 20px;
+    }
+
+    .custom-section ul li {
+        margin-bottom: 10px;
+    }
+
+    blockquote {
+        font-size: 1.1em;
+        padding: 15px;
+        border-left: 5px solid #007BFF;
+        background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+        padding: 5px;
+        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+        border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+        border-radius: 10px;
+        display: block;
+    }
+
+    .video-links {
+        color: grey;
+        font-size: 0.8rem;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+        iframe {
+            width: 800px;
+            height: 450px;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        iframe {
+            width: 800px;
+            height: 350px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        iframe {
+            width: 500px;
+            height: 200px;
+        }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+        .video-content {
+            width: 280px;
+            /* Take full width */
+            height: 200px;
+            /* Adjust height to give a more rectangular shape */
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 256px) {
+            .video-content {
+                width: 1080px;
+                /* Take full width */
+                height: 300px;
+                /* Adjust height to give a more rectangular shape */
+            }
+        }
+    }
+</style>
 
 <body>
-    <header>
+    <div class="container">
+        <h1>Introduction to Data Visualization & Its Importance</h1>
+
+        <div class="content-section">
+            <h2>What is Data Visualization?</h2>
+            <p>Data visualization is the graphical representation of data and information using visual elements like
+                charts, graphs, and maps.</p>
+            <p>It transforms complex datasets into intuitive visuals, making data easier to understand, analyze, and
+                communicate.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Why is Data Visualization Important?</h2>
+            <ul>
+                <li><strong>Better Data Interpretation:</strong> Helps identify patterns, correlations, and trends.</li>
+                <li><strong>Faster Decision-Making:</strong> Enables quick, informed business decisions.</li>
+                <li><strong>Improved Communication:</strong> Makes it easier to present data-driven insights to
+                    stakeholders.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Common Data Visualization Techniques</h2>
+            <ul>
+                <li><strong>Bar Charts:</strong> Compare different categories.</li>
+                <li><strong>Line Graphs:</strong> Show trends over time.</li>
+                <li><strong>Pie Charts:</strong> Display proportions of a whole.</li>
+                <li><strong>Heatmaps:</strong> Highlight variations using color intensity.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Real-World Example</h2>
+            <p>A sales team uses data visualization to track monthly sales performance.</p>
+            <p>Instead of analyzing raw numbers, they create a line chart showing sales trends and a heatmap
+                highlighting regions with the highest revenue.</p>
+        </div>
+    </div>
+    <h2 class="section-title">YouTube Video Explanation</h2>
+    <p>Watch the video below to get a more in-depth understanding on Data Visualization.
+    </p>
+
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/loYuxWSsLNc?si=0QMJzEPoH6zC6N4W"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <header>
         <h1>Introduction to Python for Data Analysis</h1>
     </header>
 
@@ -48,7 +250,7 @@
                 to perform basic operations (e.g., arithmetic operations, string manipulation).
             </p>
         </section>
-    </main>
+    </main> -->
 
 </body>
 

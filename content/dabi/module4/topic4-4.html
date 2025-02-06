@@ -4,289 +4,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript DOM Manipulation</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: white;
-            font-family: 'Arial', sans-serif;
-        }
+    <title>Data Visualization with Matplotlib and Seaborn</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #000000;
+        font-family: Arial, sans-serif;
+    }
 
-        .main-container {
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
+    h1,
+    h2,
+    h3 {
+        color: #007BFF;
+        /* Blue accent */
+    }
 
-        h1,
-        h2 {
-            color: #007bff;
-        }
+    .content-container {
+        margin: 50px auto;
+        max-width: 900px;
+    }
 
-        p {
-            color: #333;
-        }
+    .custom-section {
+        margin-bottom: 40px;
+    }
 
-        .code-container {
-            background-color: #f8f9fa;
-            border-left: 4px solid #007bff;
-            padding: 15px;
-            margin-bottom: 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 16px;
-            color: #343a40;
-        }
+    .custom-section p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
 
-        .code-container pre {
-            margin: 0;
-        }
+    .custom-section ul {
+        margin-left: 20px;
+    }
 
-        .highlight {
-            background-color: #007bff;
-            color: white;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
+    .custom-section ul li {
+        margin-bottom: 10px;
+    }
 
-        .btn-custom {
-            background-color: #007bff;
-            color: white;
-            border-radius: 50px;
-            padding: 10px 20px;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
-        }
+    blockquote {
+        font-size: 1.1em;
+        padding: 15px;
+        border-left: 5px solid #007BFF;
+        background-color: #f8f9fa;
+    }
 
-        .btn-custom:hover {
-            background-color: #007BFF;
-        }
+    /* Video container to hold everything */
+    .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 100px;
+    }
 
-        .note {
-            font-size: 0.9em;
-            color: #6c757d;
-            margin-top: -10px;
-        }
+    /* Gradient border container */
+    .gradient-border {
+        padding: 5px;
+        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+        border-radius: 10px;
+    }
 
-        .section-title {
-            margin-top: 40px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            color: #007bff;
-        }
+    /* Video or content inside the border */
+    .video-content {
+        border-radius: 10px;
+        display: block;
+    }
 
+    .video-links {
+        color: grey;
+        font-size: 0.8rem;
+        text-align: center;
+        margin-top: 5px;
+    }
 
+    /* Ensure responsive width and height for the video */
+    iframe {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+    }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
-
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
-
-        /* Video or content inside the border */
-        .video-content {
-            border-radius: 10px;
-            display: block;
-        }
-
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        /* Ensure responsive width and height for the video */
+    /* Responsiveness */
+    @media (min-width: 1200px) {
         iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
+            width: 800px;
+            height: 450px;
         }
+    }
 
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
+    @media (max-width: 1200px) {
+        iframe {
+            width: 800px;
+            height: 350px;
         }
+    }
 
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
+    @media (max-width: 768px) {
+        iframe {
+            width: 500px;
+            height: 200px;
         }
+    }
 
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+        .video-content {
+            width: 280px;
+            /* Take full width */
+            height: 200px;
+            /* Adjust height to give a more rectangular shape */
         }
 
         /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
+        @media (max-width: 256px) {
             .video-content {
-                width: 280px;
+                width: 1080px;
                 /* Take full width */
-                height: 200px;
+                height: 300px;
                 /* Adjust height to give a more rectangular shape */
             }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
         }
-    </style>
-</head>
+    }
+</style>
 
 <body>
+    <header>
+        <h1>Data Visualization with Matplotlib and Seaborn</h1>
+    </header>
 
-    <div class="main-container">
-        <h1>The Document Object Model (DOM)</h1>
-        <p>The Document Object Model (DOM) is a programming interface that allows JavaScript to interact with and
-            manipulate HTML documents. It represents a document as a tree of objects and nodes that can be dynamically
-            modified.</p>
+    <main>
 
-        <h2 class="section-title">4.1 What is the DOM?</h2>
-        <p>The DOM allows developers to interact with a webpage's structure programmatically. It represents the
-            document's structure as a tree of nodes, where each node is an element in the document.</p>
+        <!-- Introduction to Matplotlib -->
+        <section id="introduction-to-matplotlib" class="content-section mb-5">
+            <h2>Introduction to Matplotlib</h2>
+            <p>
+                <strong>Matplotlib</strong> is a widely-used data visualization library in Python that allows users to
+                create <strong>static, animated, and interactive</strong> visualizations. It provides a MATLAB-like
+                interface for generating high-quality plots and charts.
+            </p>
+            <p>
+                With Matplotlib, users can generate a variety of plots, including <strong>line charts, bar graphs,
+                    scatter plots, histograms, and pie charts</strong>. It offers extensive customization options, such
+                as modifying colors, labels, grid styles, and annotations.
+            </p>
+            <p>
+                <strong>Why use Matplotlib?</strong>
+            </p>
+            <ul>
+                <li>Provides extensive control over plot appearance.</li>
+                <li>Supports multiple output formats (PNG, SVG, PDF).</li>
+                <li>Can be integrated with pandas and NumPy for seamless data visualization.</li>
+            </ul>
+        </section>
 
-        <ul>
-            <li><strong>DOM Tree:</strong> Every element in an HTML document becomes a node in the DOM tree.</li>
-            <li><strong>Manipulating the DOM:</strong> JavaScript can add, remove, or modify DOM elements.</li>
-        </ul>
+        <!-- Basic Plots with Matplotlib -->
+        <section id="basic-plots-with-matplotlib" class="content-section mb-5">
+            <h2>Basic Plots with Matplotlib</h2>
+            <p>Matplotlib provides several fundamental types of plots for different types of data analysis:</p>
+            <ul>
+                <li><strong>Line Plot:</strong> Used for visualizing trends over time.</li>
+                <p><strong>Example:</strong> Showing the increase in website traffic over months.</p>
 
-        <h2 class="section-title">4.2 Selecting Elements</h2>
-        <p>Before you can manipulate an element, you need to select it from the DOM. Here are a few ways to select
-            elements:</p>
+                <li><strong>Bar Plot:</strong> Ideal for comparing categorical data.</li>
+                <p><strong>Example:</strong> Comparing sales revenue for different products.</p>
 
-        <h4>1. Using <span class="highlight">getElementById</span>:</h4>
-        <p>Use <span class="highlight">getElementById</span> to select an element by its unique ID.</p>
+                <li><strong>Scatter Plot:</strong> Used to examine relationships between variables.</li>
+                <p><strong>Example:</strong> Analyzing the correlation between marketing spend and customer engagement.
+                </p>
+            </ul>
 
-        <div class="code-container">
-            <pre>let element = document.getElementById("header");</pre>
+            <h4>Example Code for a Simple Line Plot</h4>
+            <pre>
+    import matplotlib.pyplot as plt
+    
+    # Sample Data
+    x = [1, 2, 3, 4, 5]
+    y = [10, 20, 25, 30, 50]
+    
+    # Creating a Line Plot
+    plt.plot(x, y, marker='o', linestyle='-', color='blue', label="Sales Over Time")
+    
+    # Customizing Plot
+    plt.xlabel("Months")
+    plt.ylabel("Sales ($)")
+    plt.title("Monthly Sales Data")
+    plt.legend()
+    plt.grid(True)
+    
+    # Display Plot
+    plt.show()
+                </pre>
+        </section>
+
+        <!-- Introduction to Seaborn -->
+        <section id="introduction-to-seaborn" class="content-section mb-5">
+            <h2>Introduction to Seaborn</h2>
+            <p>
+                <strong>Seaborn</strong> is a statistical data visualization library built on top of Matplotlib. It
+                simplifies the process of creating complex visualizations and makes it easier to discover patterns in
+                data.
+            </p>
+            <p>
+                Unlike Matplotlib, Seaborn comes with built-in themes and functions to create aesthetically appealing
+                visualizations with minimal code.
+            </p>
+
+            <p><strong>Key Features of Seaborn:</strong></p>
+            <ul>
+                <li>Built-in support for complex visualizations such as <strong>heatmaps, violin plots, and pair
+                        plots</strong>.</li>
+                <li>Seamless integration with pandas DataFrames.</li>
+                <li>Pre-set color themes and styles for better readability.</li>
+            </ul>
+        </section>
+
+        <!-- Advanced Visualizations with Seaborn -->
+        <section id="advanced-visualizations-with-seaborn" class="content-section mb-5">
+            <h2>Advanced Visualizations with Seaborn</h2>
+            <p>Seaborn provides powerful methods for generating insightful visualizations:</p>
+            <ul>
+                <li><strong>Histograms and Density Plots:</strong> Used to analyze the distribution of numerical data.
+                </li>
+                <p><strong>Example:</strong> Understanding the age distribution of customers in a dataset.</p>
+
+                <li><strong>Pair Plots and Heatmaps:</strong> Useful for exploring relationships and correlations
+                    between variables.</li>
+                <p><strong>Example:</strong> Analyzing the relationship between advertising spend and customer
+                    acquisition.</p>
+            </ul>
+
+            <h4>Example Code for a Pair Plot</h4>
+            <pre>
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import pandas as pd
+    
+    # Sample Data
+    df = sns.load_dataset("iris")
+    
+    # Creating a Pair Plot
+    sns.pairplot(df, hue="species", palette="husl")
+    
+    # Show the Plot
+    plt.show()
+                </pre>
+        </section>
+
+        <!-- Practical Exercise -->
+        <section id="practical-exercise" class="content-section mb-5">
+            <h2>Practical Exercise</h2>
+            <p><strong>Hands-On Practice:</strong> Implement the following exercises to get hands-on experience with
+                Matplotlib and Seaborn.</p>
+
+            <h4>Task 1: Create a Line Chart</h4>
+            <p>Plot a line chart showing monthly revenue growth for a company. Add axis labels, a title, and a legend.
+            </p>
+
+            <h4>Task 2: Build a Histogram</h4>
+            <p>Use Seaborn to create a histogram visualizing the distribution of employee salaries in an organization.
+            </p>
+
+            <h4>Task 3: Generate a Heatmap</h4>
+            <p>Using a sample dataset, create a correlation heatmap showing relationships between different features.
+            </p>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="content-section mb-5">
+            <h2>Conclusion</h2>
+            <p>Both <strong>Matplotlib</strong> and <strong>Seaborn</strong> are essential tools for data visualization
+                in Python. Understanding their capabilities allows analysts to:</p>
+            <ul>
+                <li>Communicate insights through visual representations of data.</li>
+                <li>Identify trends, patterns, and relationships between variables.</li>
+                <li>Improve decision-making through effective data storytelling.</li>
+            </ul>
+            <p>By mastering these tools, you can enhance your ability to create powerful visualizations and make
+                data-driven decisions!</p>
+        </section>
         </div>
-
-        <h4>2. Using <span class="highlight">getElementsByClassName</span>:</h4>
-        <p>Use <span class="highlight">getElementsByClassName</span> to select elements by their class name. This
-            returns a collection of elements.</p>
-
-        <div class="code-container">
-            <pre>let elements = document.getElementsByClassName("item");</pre>
+    </main>
+    <h2 class="section-title">YouTube Video Explanation</h2>
+    <p>Watch the video below to learn more about Matplotlib & Seaborn.
+    </p>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FN78JowwpSY?si=fD6hWa40R9haon73"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-
-        <h4>3. Using <span class="highlight">querySelector</span>:</h4>
-        <p>Use <span class="highlight">querySelector</span> to select the first element that matches a CSS selector.</p>
-
-        <div class="code-container">
-            <pre>let element = document.querySelector(".menu");</pre>
-        </div>
-
-        <h2 class="section-title">4.3 Manipulating Elements</h2>
-        <p>Once you've selected an element, you can manipulate it in various ways such as changing its content, styles,
-            or adding/removing it from the document.</p>
-
-        <h4>1. Changing Content:</h4>
-        <p>Use <span class="highlight">textContent</span> or <span class="highlight">innerHTML</span> to change the
-            content of an element.</p>
-
-        <div class="code-container">
-            <pre>let header = document.getElementById("header");</pre>
-            <pre>header.textContent = "Welcome!";</pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="changeContent();">Change Header Content</button>
-
-        <h4>2. Changing Styles:</h4>
-        <p>Use JavaScript to change the style of an element directly. For example, you can change its color, font size,
-            and more.</p>
-
-        <div class="code-container">
-            <pre>header.style.color = "blue";</pre>
-            <pre>header.style.fontSize = "24px";</pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="changeStyles();">Change Header Style</button>
-
-        <h4>3. Adding/Removing Elements:</h4>
-        <p>You can dynamically create new elements and add them to the DOM, or remove existing ones. Here’s how to add a
-            new paragraph to the page:</p>
-
-        <div class="code-container">
-            <pre>let newElement = document.createElement("p");</pre>
-            <pre>newElement.textContent = "This is a new paragraph.";</pre>
-            <pre>document.body.appendChild(newElement);</pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="addElement();">Add New Paragraph</button>
     </div>
-
-    <script>
-        // Function to change header content
-        function changeContent() {
-            let header = document.getElementById("header");
-            if (header) {
-                header.textContent = "You changed the content!";
-            } else {
-                alert('Header element not found!');
-            }
-        }
-
-        // Function to change header style
-        function changeStyles() {
-            let header = document.getElementById("header");
-            if (header) {
-                header.style.color = "blue";
-                header.style.fontSize = "24px";
-            } else {
-                alert('Header element not found!');
-            }
-        }
-
-        // Function to add a new paragraph
-        function addElement() {
-            let newElement = document.createElement("p");
-            newElement.textContent = "This is a dynamically added paragraph.";
-            document.body.appendChild(newElement);
-        }
-    </script>
-
 </body>
 
 </html>
@@ -305,8 +314,7 @@
 
 
 
-
-
+<!-- 
 
 
 
@@ -319,6 +327,126 @@
     <title>Python Project: Data Analysis</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #000000;
+        font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #007BFF;
+        /* Blue accent */
+    }
+
+    .content-container {
+        margin: 50px auto;
+        max-width: 900px;
+    }
+
+    .custom-section {
+        margin-bottom: 40px;
+    }
+
+    .custom-section p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+        margin-left: 20px;
+    }
+
+    .custom-section ul li {
+        margin-bottom: 10px;
+    }
+
+    blockquote {
+        font-size: 1.1em;
+        padding: 15px;
+        border-left: 5px solid #007BFF;
+        background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+        padding: 5px;
+        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+        border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+        border-radius: 10px;
+        display: block;
+    }
+
+    .video-links {
+        color: grey;
+        font-size: 0.8rem;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+        iframe {
+            width: 800px;
+            height: 450px;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        iframe {
+            width: 800px;
+            height: 350px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        iframe {
+            width: 500px;
+            height: 200px;
+        }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+        .video-content {
+            width: 280px;
+            /* Take full width */
+            height: 200px;
+            /* Adjust height to give a more rectangular shape */
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 256px) {
+            .video-content {
+                width: 1080px;
+                /* Take full width */
+                height: 300px;
+                /* Adjust height to give a more rectangular shape */
+            }
+        }
+    }
+</style>
 
 <body>
     <header>
@@ -365,6 +493,11 @@
         </section>
     </main>
 
+    <div class="video-container">
+        <div class="gradient-border">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r-uOLxNrNk8?si=7vf6-DBf_2fPLJIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
 </body>
 
-</html>
+</html> -->

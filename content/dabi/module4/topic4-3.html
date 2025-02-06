@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Functions</title>
+    <title>Tableau</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -19,7 +19,8 @@
         }
 
         h1,
-        h2 {
+        h2,
+        h3 {
             color: #007bff;
         }
 
@@ -176,156 +177,122 @@
 
 <body>
 
-    <div class="main-container">
-        <h1>JavaScript Functions</h1>
-        <p>Functions in JavaScript are one of the most powerful features, allowing you to define reusable code blocks
-            that can execute specific tasks. They make the code more modular, flexible, and scalable.</p>
+    <div class="container my-5">
+        <h1 class="mb-4">Tableau: Data Visualization & Business Intelligence</h1>
 
-        <h2 class="section-title">3.1 Defining and Calling Functions</h2>
-        <p>A function is defined using the <span class="highlight">function</span> keyword, followed by a name, a set of
-            parentheses, and a block of code. Here's how you define and call functions:</p>
-
-        <div class="code-container">
-            <pre>function greet() {</pre>
-            <pre>    console.log("Hello, World!");</pre>
-            <pre>}</pre>
-            <pre>greet(); // Calls the function</pre>
+        <!-- What is Tableau? -->
+        <div class="content-section mb-5">
+            <h2>What is Tableau?</h2>
+            <p>Tableau is a <strong>leading data visualization and business intelligence tool</strong> that helps users
+                transform raw data into meaningful insights through interactive dashboards and analytics.</p>
+            <p>With Tableau, users can:</p>
+            <ul>
+                <li>Connect to multiple data sources (Excel, databases, cloud platforms).</li>
+                <li>Organize and manipulate data efficiently.</li>
+                <li>Create interactive graphs, charts, and reports.</li>
+                <li>Analyze trends, patterns, and correlations without coding.</li>
+                <li>Share reports and dashboards with teams or stakeholders.</li>
+            </ul>
         </div>
 
-        <p>In the above example, the function <span class="highlight">greet()</span> is defined to print a message. When
-            called, it executes the code inside it. Functions can take input values (parameters) and return a result.
-        </p>
+        <!-- Key Features -->
+        <div class="content-section mb-5">
+            <h2>Key Features of Tableau</h2>
 
-        <h2 class="section-title">Function Parameters and Return Values</h2>
-        <p>Functions often need inputs to work with, and they return outputs. You can pass values to a function via
-            <span class="highlight">parameters</span>. The <span class="highlight">return</span> keyword sends back the
-            result of a function.
-        </p>
+            <h4>1. Drag-and-Drop Interface</h4>
+            <p>No need for programming skills! Users can simply drag and drop elements to create reports and dashboards.
+            </p>
+            <p><strong>Example:</strong> A marketing analyst can visualize website traffic trends using a line chart.
+            </p>
 
-        <div class="code-container">
-            <pre>function add(a, b) {</pre>
-            <pre>    return a + b;</pre>
-            <pre>}</pre>
-            <pre>let result = add(5, 10); // 15</pre>
+            <h4>2. Data Blending</h4>
+            <p>Allows users to <strong>combine multiple datasets</strong> from different sources (e.g., Excel + SQL
+                database).</p>
+            <p><strong>Example:</strong> A company blends sales data with customer demographics to analyze buying
+                behavior.</p>
+
+            <h4>3. Calculated Fields</h4>
+            <p>Perform advanced calculations within Tableau using custom formulas.</p>
+            <p><strong>Example:</strong> A finance team calculates profit margin using:</p>
+            <code>Profit Margin = (Total Revenue - Total Cost) / Total Revenue</code>
+
+            <h4>4. Storytelling with Data</h4>
+            <p>Tableau allows users to create <strong>story points</strong> that guide viewers through data insights.
+            </p>
+            <p><strong>Example:</strong> A sales manager presents quarterly revenue trends with interactive visuals.</p>
+
+            <h4>5. Real-Time Data Updates</h4>
+            <p>Tableau can integrate with <strong>live data sources</strong> to ensure real-time dashboard updates.</p>
+            <p><strong>Example:</strong> A stock trading firm visualizes live stock price fluctuations.</p>
         </div>
 
-        <p>Here, the function <span class="highlight">add()</span> takes two parameters <span class="highlight">a</span>
-            and <span class="highlight">b</span>, adds them, and returns the result. The result is stored in the
-            variable <span class="highlight">result</span>.</p>
+        <!-- Steps to Create a Dashboard -->
+        <div class="content-section mb-5">
+            <h2>Steps to Create a Dashboard in Tableau</h2>
+            <p>Follow these simple steps to build an interactive Tableau dashboard:</p>
 
-        <button class="btn btn-custom" onclick="alert('The result is: ' + add(5, 10));">Run the Function</button>
+            <h4>Step 1: Connect to Data</h4>
+            <p>Import data from Excel, SQL databases, or cloud platforms.</p>
+            <p><strong>Example:</strong> A retail store connects to a database to analyze sales trends.</p>
 
-        <h2 class="section-title">3.2 Arrow Functions</h2>
-        <p>Arrow functions provide a more concise way of writing functions. They are particularly useful when dealing
-            with functions that are short and anonymous.</p>
+            <h4>Step 2: Build Visualizations</h4>
+            <p>Use the drag-and-drop interface to create graphs and charts.</p>
+            <ul>
+                <li><strong>Bar Chart:</strong> Compare product sales.</li>
+                <li><strong>Line Graph:</strong> Show revenue growth over time.</li>
+                <li><strong>Heatmap:</strong> Highlight regional sales performance.</li>
+            </ul>
 
-        <div class="code-container">
-            <pre>const multiply = (a, b) => a * b;</pre>
-            <pre>console.log(multiply(2, 3)); // 6</pre>
+            <h4>Step 3: Create Dashboards</h4>
+            <p>Combine multiple visualizations into a single dashboard.</p>
+            <p><strong>Example:</strong> A dashboard showing sales trends, customer demographics, and product
+                performance.</p>
+
+            <h4>Step 4: Publish & Share</h4>
+            <p>Share dashboards via Tableau Public, Tableau Server, or Tableau Online.</p>
+            <p><strong>Example:</strong> A financial report is shared with executives via Tableau Online.</p>
         </div>
 
-        <p>In this example, the function <span class="highlight">multiply()</span> is defined using arrow function
-            syntax. It takes two parameters, multiplies them, and returns the result.</p>
+        <!-- Real-World Example -->
+        <div class="content-section mb-5">
+            <h2>Real-World Example: How a Retail Company Uses Tableau</h2>
+            <p>A large retail chain wants to track customer purchases. They use Tableau to:</p>
+            <ol>
+                <li><strong>Connect to Data:</strong> Import sales data from stores and e-commerce platforms.</li>
+                <li><strong>Visualize Trends:</strong> Create a line graph showing revenue changes.</li>
+                <li><strong>Use Heatmaps:</strong> Display sales performance by region.</li>
+                <li><strong>Apply Filters:</strong> Add customer demographics to analyze behavior.</li>
+                <li><strong>Share Reports:</strong> The dashboard is shared with managers for business decisions.</li>
+            </ol>
+            <p><strong>Outcome:</strong> By identifying low-performing regions, the company reallocates marketing
+                budgets to boost sales.</p>
+        </div>
 
-        <button class="btn btn-custom" onclick="alert('The result is: ' + multiply(2, 3));">Test Arrow Function</button>
-
-        <h2 class="section-title">Why Use Functions?</h2>
-        <p>Functions make your code more organized and easier to maintain. They help you avoid repetition by allowing
-            you to reuse code. Functions also make your code more modular, allowing you to break complex tasks into
-            smaller, manageable pieces.</p>
-
-        <p>Key benefits of using functions:</p>
-        <ul>
-            <li>Improved code readability and structure</li>
-            <li>Reusability of code blocks</li>
-            <li>Reduced code duplication</li>
-            <li>Ease of maintenance and testing</li>
-        </ul>
+        <!-- Conclusion -->
+        <div class="content-section mb-5">
+            <h2>Conclusion</h2>
+            <p>Tableau is a game-changer for businesses looking to make data-driven decisions.</p>
+            <ul>
+                <li>It simplifies data analysis with <strong>interactive dashboards</strong>.</li>
+                <li>It enhances <strong>collaboration</strong> by allowing easy sharing of insights.</li>
+                <li>It <strong>saves time</strong> by automating reports and real-time data updates.</li>
+            </ul>
+            <p><strong>Master Tableau to transform raw data into actionable insights!</strong></p>
+        </div>
     </div>
 
-    <script>
-        // Function examples
-        function greet() {
-            console.log("Hello, World!");
-        }
+    <h2 class="section-title">YouTube Video Explanation</h2>
+    <p>Watch the video below to get a more in-depth understanding of how Tableau works.
+    </p>
 
-        function add(a, b) {
-            return a + b;
-        }
-
-        const multiply = (a, b) => a * b;
-    </script>
-
-</body>
-
-</html>
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Visualization with Matplotlib and Seaborn</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-    <header>
-        <h1>Data Visualization with Matplotlib and Seaborn</h1>
-    </header>
-
-    <main>
-        <section id="introduction-to-matplotlib">
-            <h2>Introduction to Matplotlib</h2>
-            <p>
-                Matplotlib is a plotting library for Python, used to create static, animated, and interactive
-                visualizations. It provides a MATLAB-like interface for plotting.
-            </p>
-        </section>
-
-        <section id="basic-plots-with-matplotlib">
-            <h2>Basic Plots with Matplotlib</h2>
-            <ul>
-                <li><strong>Line Plot:</strong> Visualizing trends over time.</li>
-                <li><strong>Bar Plot:</strong> Comparing categorical data.</li>
-                <li><strong>Scatter Plot:</strong> Examining relationships between variables.</li>
-            </ul>
-        </section>
-
-        <section id="introduction-to-seaborn">
-            <h2>Introduction to Seaborn</h2>
-            <p>
-                Seaborn is a statistical data visualization library based on Matplotlib. It provides a higher-level
-                interface for drawing attractive and informative statistical graphics.
-            </p>
-        </section>
-
-        <section id="advanced-visualizations-with-seaborn">
-            <h2>Advanced Visualizations with Seaborn</h2>
-            <ul>
-                <li><strong>Histograms and Density Plots:</strong> Visualizing distributions of data.</li>
-                <li><strong>Pair Plots and Heatmaps:</strong> Exploring relationships and correlations between
-                    variables.</li>
-            </ul>
-        </section>
-
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p>
-                <strong>Hands-On Practice:</strong> Use Matplotlib and Seaborn to create various types of plots (e.g.,
-                line plots, bar plots, scatter plots, histograms) using sample datasets. Customize plots with titles,
-                labels, legends, and color schemes.
-            </p>
-        </section>
-    </main>
-
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/j8FSP8XuFyk?si=4qNP2AF8aqtojKOv"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
 </body>
 
 </html>
