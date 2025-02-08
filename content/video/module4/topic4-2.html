@@ -4,57 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Syntax and Basics</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: rgb(255, 255, 255);
-            color: black;
-            padding: 20px;
-            margin: 0;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
-            top: 80px;
         }
 
+        h1,
         h2,
         h3 {
-            color: #007bff;
-            /* Bootstrap blue color */
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        code {
-            background-color: #dadadb;
-            padding: 2px 4px;
-            font-size: 95%;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        pre {
-            background-color: #dadadb;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 95%;
+        .custom-section {
+            margin-bottom: 40px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .alert {
-            background-color: #007bff;
-            color: white;
-            border-radius: 0;
+        .custom-section ul {
+            margin-left: 20px;
         }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .custom-section ul li {
+            margin-bottom: 10px;
         }
 
-        .container {
-            padding: 20px;
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -134,84 +126,27 @@
             }
         }
     </style>
-</head>
 
 <body>
+    <main>
 
-    <div class="container">
-        <h2>JavaScript Syntax and Basics</h2>
 
-        <h3>2.1. Variables and Data Types</h3>
-        <p>Variables store data that can be used and manipulated within your program. JavaScript supports various data
-            types, including strings, numbers, booleans, arrays, and objects.</p>
-        <p><strong>Declaring Variables:</strong></p>
-        <pre><code>let name = "John";
-const pi = 3.14;
-var age = 25;</code></pre>
 
-        <p><strong>Data Types:</strong></p>
-        <pre><code>let isStudent = true;   // Boolean
-let score = 85;         // Number
-let firstName = "Jane"; // String</code></pre>
 
-        <p><strong>Choosing <code>var</code>, <code>let</code>, or <code>const</code>:</strong></p>
-        <ul>
-            <li><code>let</code>: For variables that may change.</li>
-            <li><code>const</code>: For variables that should not change.</li>
-            <li><code>var</code>: The old way of declaring variables (use <code>let</code> or <code>const</code>
-                instead).</li>
-        </ul>
 
-        <h3>2.2. Operators</h3>
-        <p>Operators perform operations on variables and values.</p>
-        <p><strong>Arithmetic Operators:</strong></p>
-        <pre><code>let sum = 10 + 5;  // 15
-let product = 10 * 5; // 50</code></pre>
 
-        <p><strong>Assignment Operators:</strong></p>
-        <pre><code>let x = 10;
-x += 5;  // x is now 15</code></pre>
 
-        <p><strong>Comparison Operators:</strong></p>
-        <pre><code>let isEqual = (10 == "10"); // true
-let isIdentical = (10 === "10"); // false</code></pre>
-
-        <h3>2.3. Control Structures</h3>
-        <p>Control structures allow you to control the flow of your program based on conditions and loops.</p>
-
-        <p><strong>Conditional Statements:</strong></p>
-        <pre><code>let age = 18;
-
-if (age >= 18) {
-    console.log("You are an adult.");
-} else {
-    console.log("You are not an adult.");
-}</code></pre>
-
-        <p><strong>Loops:</strong></p>
-        <p><strong>For Loop:</strong></p>
-        <pre><code>for (let i = 0; i &lt; 5; i++) {
-    console.log("Number: " + i);
-}</code></pre>
-
-        <p><strong>While Loop:</strong></p>
-        <pre><code>let i = 0;
-while (i &lt; 5) {
-    console.log("Number: " + i);
-    i++;
-}</code></pre>
-    </div>
-    <div class="video-container">
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
         <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
         </div>
-    </div>
+    </div>-->
 </body>
 
 </html>
