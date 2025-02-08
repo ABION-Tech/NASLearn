@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Theory: The Psychology and Application of Color</title>
+    <title>Classes and Objects in OOP</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -48,113 +48,163 @@
 </head>
 
 <body>
+    <div class="container my-5">
+        <h1 class="mb-4">Classes and Objects in Object-Oriented Programming</h1>
 
-    <div class="container mt-5">
-
-        <div class="section">
-            <h1>Color Theory: The Psychology and Application of Color</h1>
+        <div class="content-section mb-4">
+            <h2>Understanding Classes and Objects</h2>
+            <p>
+                In Object-Oriented Programming (OOP), a <strong>class</strong> is a blueprint for creating objects, and an 
+                <strong>object</strong> is an instance of a class. Classes define attributes (data) and methods (behavior) that objects can use.
+            </p>
+            <p>
+                Think of a class as a blueprint for a house, and an object as the actual house built using that blueprint.
+            </p>
         </div>
 
-        <div class="section">
-            <h2>Understanding the Color Wheel</h2>
-            <p>The color wheel is a circular diagram that organizes colors based on their hue, saturation, and
-                brightness. It serves as a fundamental tool for understanding color relationships and creating
-                harmonious color palettes.</p>
+        <div class="content-section mb-4">
+            <h2>Defining a Class in Python</h2>
+            <p>In Python, a class is created using the <code>class</code> keyword.</p>
+            <pre class="bg-light p-3">
+                <code>
+# Defining a simple class
+class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def display_info(self):
+        return f"{self.year} {self.brand} {self.model}"
+                </code>
+            </pre>
+        </div>
+
+        <div class="content-section mb-4">
+            <h2>Creating Objects from a Class</h2>
+            <p>
+                Once a class is defined, objects can be created using the class as a template. 
+                Each object has its own unique values for the class attributes.
+            </p>
+            <pre class="bg-light p-3">
+                <code>
+# Creating an object (instance) of the Car class
+car1 = Car("Toyota", "Corolla", 2022)
+car2 = Car("Honda", "Civic", 2023)
+
+print(car1.display_info())  # Output: 2022 Toyota Corolla
+print(car2.display_info())  # Output: 2023 Honda Civic
+                </code>
+            </pre>
+        </div>
+
+        <div class="content-section mb-4">
+            <h2>Class Attributes vs. Instance Attributes</h2>
+            <p>
+                - <strong>Class attributes</strong> are shared among all instances of a class.  
+                - <strong>Instance attributes</strong> are unique to each object.
+            </p>
+            <pre class="bg-light p-3">
+                <code>
+class Dog:
+    species = "Canine"  # Class attribute
+
+    def __init__(self, name, breed):
+        self.name = name  # Instance attribute
+        self.breed = breed  # Instance attribute
+
+dog1 = Dog("Buddy", "Labrador")
+dog2 = Dog("Max", "Beagle")
+
+print(dog1.species)  # Output: Canine
+print(dog2.species)  # Output: Canine
+print(dog1.name)  # Output: Buddy
+                </code>
+            </pre>
+        </div>
+
+        <div class="content-section mb-4">
+            <h2>Methods in Classes</h2>
+            <p>
+                Methods are functions that belong to a class and can operate on its data. There are three types:
+            </p>
             <ul>
-                <li><strong>Primary Colors:</strong> Red, yellow, and blue are the primary colors because they cannot be
-                    created by mixing other colors.</li>
-                <li><strong>Secondary Colors:</strong> Orange, green, and purple are created by mixing two primary
-                    colors.</li>
-                <li><strong>Tertiary Colors:</strong> Created by mixing a primary color with a secondary color,
-                    resulting in hues like red-orange and yellow-green.</li>
+                <li><strong>Instance Methods:</strong> Operate on instance data (most common type).</li>
+                <li><strong>Class Methods:</strong> Work with class attributes and use the <code>@classmethod</code> decorator.</li>
+                <li><strong>Static Methods:</strong> Independent of class or instance data, using the <code>@staticmethod</code> decorator.</li>
+            </ul>
+            <pre class="bg-light p-3">
+                <code>
+class Animal:
+    species = "Mammal"
+
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return f"{self.name} makes a sound"
+
+    @classmethod
+    def get_species(cls):
+        return cls.species
+
+    @staticmethod
+    def is_animal():
+        return True
+
+dog = Animal("Dog")
+print(dog.speak())  # Output: Dog makes a sound
+print(Animal.get_species())  # Output: Mammal
+print(Animal.is_animal())  # Output: True
+                </code>
+            </pre>
+        </div>
+
+        <div class="content-section mb-4">
+            <h2>Encapsulation in Classes</h2>
+            <p>
+                Encapsulation is the principle of restricting access to certain details and only exposing necessary functionality.
+                In Python, we use underscores to indicate private attributes and methods.
+            </p>
+            <pre class="bg-light p-3">
+                <code>
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+account = BankAccount(1000)
+account.deposit(500)
+print(account.get_balance())  # Output: 1500
+print(account.__balance)  # AttributeError: 'BankAccount' object has no attribute '__balance'
+                </code>
+            </pre>
+        </div>
+
+        <div class="content-section mb-4">
+            <h2>Real-World Applications of Classes and Objects</h2>
+            <p>Classes and objects are used in various domains, such as:</p>
+            <ul>
+                <li><strong>Web Development:</strong> Creating user authentication systems.</li>
+                <li><strong>Game Development:</strong> Representing characters and NPCs.</li>
+                <li><strong>Data Science:</strong> Structuring machine learning models.</li>
+                <li><strong>Finance:</strong> Managing transactions and accounts.</li>
             </ul>
         </div>
 
-        <div class="section">
-            <h2>Color Schemes</h2>
-            <div class="color-scheme">
-                <h3>Complementary Colors</h3>
-                <p>Colors that are opposite each other on the color wheel. These create high contrast and can be used to
-                    create bold and attention-grabbing designs.</p>
-            </div>
-            <div class="color-scheme">
-                <h3>Analogous Colors</h3>
-                <p>Colors that are adjacent to each other on the color wheel. They create harmonious and soothing
-                    palettes, perfect for designs that need a calm appearance.</p>
-            </div>
-            <div class="color-scheme">
-                <h3>Triadic Colors</h3>
-                <p>Colors that form an equilateral triangle on the color wheel. They create vibrant and visually
-                    interesting palettes, making designs dynamic and lively.</p>
-            </div>
-            <div class="color-scheme">
-                <h3>Split-Complementary Colors</h3>
-                <p>A variation of complementary colors where one of the complementary colors is replaced with its
-                    adjacent color. This offers a balance of contrast and harmony.</p>
-            </div>
+        <div class="content-section mb-4">
+            <h2>Conclusion</h2>
+            <p>
+                Classes and objects form the foundation of Object-Oriented Programming. By understanding how to define classes, create objects, and use instance/class/static methods, developers can build robust and scalable software solutions.
+            </p>
         </div>
-
-        <div class="section">
-            <h2>Psychological Effects of Color</h2>
-            <p>Colors can evoke different emotions and significantly impact our perception of design. Here are some
-                common psychological effects of color:</p>
-            <ul>
-                <li><strong>Red:</strong> Energy, passion, excitement; can also be aggressive or intense.</li>
-                <li><strong>Blue:</strong> Calmness, trustworthiness, reliability; can also be cold or distant.</li>
-                <li><strong>Yellow:</strong> Happiness, optimism, warmth; can be perceived as cheerful or energetic.
-                </li>
-                <li><strong>Green:</strong> Nature, growth, harmony; can be calming or refreshing.</li>
-                <li><strong>Purple:</strong> Royalty, luxury, creativity; can be mysterious or mystical.</li>
-                <li><strong>Black:</strong> Power, elegance, sophistication; can be negative or depressing.</li>
-                <li><strong>White:</strong> Purity, innocence, cleanliness; can be simple or minimalist.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Color in Design</h2>
-            <p>Color plays a crucial role in design, affecting the overall mood, atmosphere, and effectiveness of a
-                composition. Here are some tips for using color effectively:</p>
-            <div class="tip">
-                <strong>Consider the Target Audience:</strong> Different colors can appeal to different demographics;
-                research your audience's preferences.
-            </div>
-            <div class="tip">
-                <strong>Create a Color Palette:</strong> Choose a color scheme that complements your design's overall
-                aesthetic and purpose.
-            </div>
-            <div class="tip">
-                <strong>Use Color for Emphasis:</strong> Highlight important elements using contrasting colors to draw
-                attention.
-            </div>
-            <div class="tip">
-                <strong>Consider Color Accessibility:</strong> Ensure that your color choices are accessible to people
-                with color vision deficiencies; use tools to check color contrast.
-            </div>
-            <div class="tip">
-                <strong>Experiment and Iterate:</strong> Don't hesitate to experiment with different color combinations
-                and iterate on your designs based on feedback.
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Expanding on Color Theory</h2>
-            <p>To deepen your understanding of color theory and its applications, consider exploring the following
-                concepts:</p>
-            <ul>
-                <li><strong>Color Gamuts:</strong> The range of colors that can be represented by a particular color
-                    model, such as RGB or CMYK.</li>
-                <li><strong>Color Management:</strong> The process of ensuring that colors appear consistent across
-                    different devices and media, which is crucial in professional design workflows.</li>
-                <li><strong>Color Conversion:</strong> The process of converting colors from one color model to another
-                    (e.g., RGB to CMYK), essential for print design.</li>
-                <li><strong>Color Profiles:</strong> Standard profiles that define the color space of different devices
-                    and media, ensuring accurate color reproduction.</li>
-                <li><strong>Color Theory and Color Psychology:</strong> Understanding how these theories can influence
-                    the choice of colors in design to evoke desired emotional responses.</li>
-            </ul>
-        </div>
-
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>

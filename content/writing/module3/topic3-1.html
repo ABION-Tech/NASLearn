@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 3: Supervised Learning - Regression</title>
+    <title>Week 3: Introduction to Writing for Different Mediums</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -13,7 +13,7 @@
             font-family: Arial, sans-serif;
         }
 
-        h1,
+        h1, 
         h2,
         h3 {
             color: #007bff;
@@ -56,89 +56,127 @@
 
 <body>
 
-    <div class="container">
-        <div class="content">
-            <h1 class="text-center">Week 3: Supervised Learning - Regression</h1>
+    <div class="container my-5">
+        <!-- Page Header -->
+        <header class="mb-4">
+            <h1 class="text-center">Introduction to Writing for Different Mediums</h1>
+            <p class="text-center text-muted">Understanding how to adapt your writing style to fit different platforms and audiences.</p>
+        </header>
 
-            <div class="section">
-                <h2 class="section-title">Introduction to Supervised Learning</h2>
-                <p>Supervised learning is a fundamental type of machine learning where algorithms are trained using
-                    labeled datasets. Each data point in the training set corresponds to a known outcome or label,
-                    enabling the model to learn and make predictions on unseen data.</p>
+        <!-- Section: Importance of Adapting Writing Style -->
+        <section class="mb-5">
+            <h2>Why Writing Adaptability Matters</h2>
+            <p>
+                Writing is a powerful tool for communication, but different platforms require different styles, tones, and structures. 
+                Whether you're writing for a website, a blog, a newspaper, or social media, understanding the nuances of each medium ensures 
+                that your message is clear, engaging, and effective.
+            </p>
+            <p>
+                For example, a long-form article on a website allows for detailed explanations, while a tweet requires you to be concise 
+                and impactful in just a few words. Learning to adapt your writing to different mediums is key to becoming an effective communicator.
+            </p>
+        </section>
 
-                <h3>Key Concepts</h3>
-                <ul>
-                    <li><strong>Features:</strong> The independent variables or attributes of the data.</li>
-                    <li><strong>Labels:</strong> The dependent variable or target output.</li>
-                    <li><strong>Training set:</strong> A dataset used to train the model.</li>
-                    <li><strong>Testing set:</strong> A dataset used to evaluate the model's performance on unseen data.
-                    </li>
-                    <li><strong>Model:</strong> A mathematical representation that learns from the data.</li>
-                    <li><strong>Loss function:</strong> A function that measures the error between the model's
-                        predictions and the true labels.</li>
-                    <li><strong>Optimization:</strong> The process of finding the optimal values of the model's
-                        parameters that minimize the loss function.</li>
-                </ul>
+        <!-- Section: Key Differences Between Writing Mediums -->
+        <section class="mb-5">
+            <h2>Key Differences in Writing for Various Mediums</h2>
+            <p>Here’s a quick breakdown of how writing changes based on the medium:</p>
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Medium</th>
+                        <th>Purpose</th>
+                        <th>Key Writing Characteristics</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Blogs & Websites</strong></td>
+                        <td>To educate, inform, or entertain an online audience.</td>
+                        <td>Conversational, structured with headings, SEO-focused, and engaging.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Social Media</strong></td>
+                        <td>To engage audiences quickly and promote interactions.</td>
+                        <td>Concise, catchy, platform-specific, includes hashtags and visuals.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Print Media (Magazines, Newspapers, Brochures)</strong></td>
+                        <td>To inform and persuade readers in a physical format.</td>
+                        <td>Formal or journalistic, structured with columns, fact-based, attention-grabbing headlines.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Video Scripts & Ads</strong></td>
+                        <td>To convey messages through visual storytelling.</td>
+                        <td>Short, impactful, written for voiceovers and visuals, structured with timing cues.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-                <h3>Types of Supervised Learning</h3>
-                <ul>
-                    <li><strong>Regression:</strong> Predicting a continuous numerical value.</li>
-                    <li><strong>Classification:</strong> Predicting a categorical value.</li>
-                </ul>
+        <!-- Section: Tips for Adapting Writing Style -->
+        <section class="mb-5">
+            <h2>How to Adapt Your Writing for Different Mediums</h2>
+            <ul>
+                <li><strong>Know Your Audience:</strong> Understand who will read your content and tailor your tone accordingly.</li>
+                <li><strong>Consider the Platform’s Purpose:</strong> A blog post educates, while a tweet grabs attention. Write accordingly.</li>
+                <li><strong>Use the Right Formatting:</strong> Online content benefits from bullet points and images, while print media requires structured paragraphs.</li>
+                <li><strong>Optimize for Engagement:</strong> Social media writing should include call-to-actions (CTAs), while website articles should have SEO keywords.</li>
+            </ul>
+        </section>
+
+        <!-- Section: Real-World Example -->
+        <section class="mb-5">
+            <h2>Real-World Example: Blog vs. Social Media Post</h2>
+            <p>Consider this scenario: You are promoting a new product launch.</p>
+            <div class="card p-3 mb-3">
+                <h4>Blog Post:</h4>
+                <p>
+                    "Our latest smartwatch is here! Featuring advanced health tracking, seamless connectivity, and a stylish 
+                    design, it’s the perfect companion for your active lifestyle. Learn more about its features and how it 
+                    compares to other models in our detailed review."
+                </p>
             </div>
-
-            <div class="section">
-                <h2 class="section-title">Regression Analysis</h2>
-                <p>Regression analysis is a powerful statistical technique for modeling the relationship between a
-                    dependent variable and one or more independent variables. It's widely used for prediction,
-                    forecasting, and identifying relationships within data.</p>
-
-                <h3>Common Types of Regression</h3>
-                <ul>
-                    <li><strong>Simple Linear Regression:</strong> Models the relationship between a single independent
-                        variable and a dependent variable using a linear equation.</li>
-                    <li><strong>Multiple Linear Regression:</strong> Extends simple linear regression to include
-                        multiple independent variables.</li>
-                </ul>
-
-                <h3>Popular Regression Models</h3>
-                <ul>
-                    <li><strong>Linear Regression:</strong> Assumes a linear relationship between variables.</li>
-                    <li><strong>Polynomial Regression:</strong> Models non-linear relationships using polynomial
-                        functions.</li>
-                    <li><strong>Generalized Linear Models (GLMs):</strong> Handle various types of dependent variables
-                        (e.g., Poisson regression for count data).</li>
-                    <li><strong>Support Vector Regression (SVR):</strong> Utilizes support vectors to identify the
-                        optimal fit line.</li>
-                    <li><strong>Decision Trees:</strong> Uses a tree-like model to make predictions based on rules.</li>
-                    <li><strong>Random Forests:</strong> An ensemble of decision trees for enhanced accuracy and reduced
-                        overfitting.</li>
-                </ul>
+            <div class="card p-3">
+                <h4>Social Media Post (Twitter):</h4>
+                <p>
+                    "🚀 The future of smartwatches is here! Track your health, stay connected, and look stylish. Pre-order now! 
+                    #SmartwatchRevolution #TechTrends"
+                </p>
             </div>
+            <p>Notice how the blog post is more detailed, while the tweet is concise and action-driven.</p>
+        </section>
 
-            <div class="section">
-                <h2 class="section-title">Evaluation Metrics</h2>
-                <p>To assess the performance of regression models, various evaluation metrics are used:</p>
-                <ul>
-                    <li><strong>Mean Squared Error (MSE):</strong> Average of the squares of the errors— the average
-                        squared difference between predicted and actual values.</li>
-                    <li><strong>Root Mean Squared Error (RMSE):</strong> The square root of the MSE, providing an
-                        interpretable measure of error.</li>
-                    <li><strong>Mean Absolute Error (MAE):</strong> Average of the absolute differences between
-                        predicted and actual values.</li>
-                    <li><strong>R-squared:</strong> The proportion of variance in the dependent variable explained by
-                        the independent variables.</li>
-                </ul>
-            </div>
-
-            <div class="section highlight">
-                <h3>Next Week's Topics</h3>
-                <p>In the upcoming week, we will dive deeper into regression analysis. We will explore various
-                    regression models in greater detail, including their applications in real-world scenarios and the
-                    evaluation metrics used to assess their effectiveness.</p>
-            </div>
-        </div>
+        <!-- Section: Key Takeaways -->
+        <section class="mb-5">
+            <h2>Key Takeaways</h2>
+            <p>Mastering different writing styles will make you a more versatile and effective communicator.</p>
+            <ul>
+                <li>Each medium has its own unique tone, structure, and expectations.</li>
+                <li>Writing for digital platforms often requires brevity and SEO optimization.</li>
+                <li>Traditional media writing follows formal journalistic principles.</li>
+                <li>Understanding your audience and medium is the key to impactful writing.</li>
+            </ul>
+        </section>
+ <!-- Video Section -->
+ <div class="video-container">
+    <div class="gradient-border">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/mYX4oZ-iFVc?si=7l_WDBnao9UfGXDe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
+</div>
+        <!-- Next Steps -->
+        <section>
+            <h2>What’s Next?</h2>
+            <p>Now that you've learned the fundamentals of adapting writing for different mediums, we’ll explore writing for specific platforms in depth in the following sections:</p>
+            <ul>
+                <li><strong>Page 2:</strong> Writing for Blogs and Websites</li>
+                <li><strong>Page 3:</strong> Writing for Social Media</li>
+                <li><strong>Page 4:</strong> Writing for Print Media</li>
+                <li><strong>Page 5:</strong> Writing for Video Scripts and Advertisements</li>
+            </ul>
+        </section>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Theory: The Psychology and Application of Color</title>
+    <title>Inheritance and Polymorphism in OOP</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -33,86 +33,156 @@
 
 <body>
 
-    <div class="container">
-        <div class="section">
-            <h1>Color Theory: The Psychology and Application of Color</h1>
-            <p>Color is a powerful element in design, influencing emotions, behaviors, and perceptions. Understanding
-                color theory can enhance creativity and improve communication through visual means. This course explores
-                the fundamental aspects of color, including its psychological impact and practical applications in
-                design.</p>
+    <div class="container my-5">
+        <h1 class="mb-4">Inheritance and Polymorphism in Object-Oriented Programming</h1>
+
+        <div class="content-section mb-4">
+            <h2>Understanding Inheritance</h2>
+            <p>
+                Inheritance is a fundamental OOP concept where a child class derives properties and behaviors 
+                from a parent class. It promotes reusability and a hierarchical relationship between classes.
+            </p>
+            <p>Example: A <strong>Vehicle</strong> class can be a parent to subclasses like <strong>Car</strong> and <strong>Bike</strong>.</p>
         </div>
 
-        <div class="section">
-            <h2>Understanding the Color Wheel</h2>
-            <p>The color wheel is a circular diagram that organizes colors based on their hue, saturation, and
-                brightness. It is a fundamental tool for understanding color relationships and creating harmonious color
-                palettes.</p>
+        <div class="content-section mb-4">
+            <h2>Implementing Inheritance in Python</h2>
+            <pre class="bg-light p-3">
+                <code>
+# Base class (Parent)
+class Vehicle:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
 
-            <div class="highlight">
-                <h3>Types of Colors</h3>
-                <ul>
-                    <li><strong>Primary Colors:</strong> Red, yellow, and blue cannot be created by mixing other colors.
-                        They are the foundation of the color wheel.</li>
-                    <li><strong>Secondary Colors:</strong> Orange, green, and purple are created by mixing two primary
-                        colors. They offer a wider range of choices for design.</li>
-                    <li><strong>Tertiary Colors:</strong> Created by mixing a primary color with a secondary color,
-                        these colors provide even more nuance and variation.</li>
-                </ul>
-            </div>
+    def display_info(self):
+        return f"{self.brand} {self.model}"
+
+# Derived class (Child)
+class Car(Vehicle):
+    def __init__(self, brand, model, doors):
+        super().__init__(brand, model)  # Inherit from Vehicle
+        self.doors = doors
+
+    def car_details(self):
+        return f"{self.display_info()} with {self.doors} doors"
+
+# Creating an object of Car
+car1 = Car("Toyota", "Corolla", 4)
+print(car1.car_details())  # Output: Toyota Corolla with 4 doors
+                </code>
+            </pre>
         </div>
 
-        <div class="section">
-            <h2>Color Schemes</h2>
-            <p>Color schemes help in creating a visual hierarchy and emotional response. Here are key types:</p>
+        <div class="content-section mb-4">
+            <h2>Types of Inheritance</h2>
             <ul>
-                <li><strong>Complementary Colors:</strong> Colors opposite each other on the wheel (e.g., blue and
-                    orange). They create high contrast and bold designs.</li>
-                <li><strong>Analogous Colors:</strong> Colors next to each other (e.g., blue, blue-green, and green).
-                    They create harmonious and soothing palettes.</li>
-                <li><strong>Triadic Colors:</strong> Colors that form an equilateral triangle (e.g., red, yellow, blue).
-                    They are vibrant and visually stimulating.</li>
-                <li><strong>Split-Complementary Colors:</strong> A variation where one of the complementary colors is
-                    replaced with an adjacent color, providing contrast and harmony.</li>
+                <li><strong>Single Inheritance:</strong> One child class inherits from a single parent class.</li>
+                <li><strong>Multiple Inheritance:</strong> A child class inherits from multiple parent classes.</li>
+                <li><strong>Multilevel Inheritance:</strong> A child class inherits from another derived class.</li>
+                <li><strong>Hierarchical Inheritance:</strong> Multiple child classes inherit from the same parent.</li>
             </ul>
         </div>
 
-        <div class="section">
-            <h2>Psychological Effects of Color</h2>
-            <p>Colors evoke different emotions and impact perception in design:</p>
+        <div class="content-section mb-4">
+            <h2>Understanding Polymorphism</h2>
+            <p>
+                Polymorphism allows objects of different classes to be treated as objects of a common superclass.
+                This enables flexibility and dynamic method execution.
+            </p>
+        </div>
+
+        <div class="content-section mb-4">
+            <h2>Method Overriding in Python</h2>
+            <p>
+                Method Overriding allows a child class to redefine a method from the parent class.
+            </p>
+            <pre class="bg-light p-3">
+                <code>
+class Animal:
+    def speak(self):
+        return "Some generic sound"
+
+class Dog(Animal):
+    def speak(self):  # Overriding the parent method
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):  # Overriding the parent method
+        return "Meow!"
+
+dog = Dog()
+cat = Cat()
+print(dog.speak())  # Output: Woof!
+print(cat.speak())  # Output: Meow!
+                </code>
+            </pre>
+        </div>
+
+        <div class="content-section mb-4">
+            <h2>Operator Overloading</h2>
+            <p>
+                Operator Overloading allows built-in operators to have custom behaviors for user-defined objects.
+            </p>
+            <pre class="bg-light p-3">
+                <code>
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):  # Overloading the '+' operator
+        return Point(self.x + other.x, self.y + other.y)
+
+p1 = Point(2, 3)
+p2 = Point(4, 5)
+result = p1 + p2  # Uses the __add__ method
+print(result.x, result.y)  # Output: 6 8
+                </code>
+            </pre>
+        </div>
+
+        <div class="content-section mb-4">
+            <h2>Abstract Classes and Methods</h2>
+            <p>
+                Abstract classes provide a blueprint for other classes. Methods defined in abstract classes must be implemented in derived classes.
+            </p>
+            <pre class="bg-light p-3">
+                <code>
+from abc import ABC, abstractmethod
+
+class Shape(ABC):  # Abstract Class
+    @abstractmethod
+    def area(self):
+        pass  # Method must be implemented in derived classes
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+circle = Circle(5)
+print(circle.area())  # Output: 78.5
+                </code>
+            </pre>
+        </div>
+
+        <div class="content-section mb-4">
+            <h2>Real-World Applications of Inheritance and Polymorphism</h2>
             <ul>
-                <li><strong>Red:</strong> Energy, passion, excitement, but can appear aggressive.</li>
-                <li><strong>Blue:</strong> Calmness, trust, reliability, but may seem distant.</li>
-                <li><strong>Yellow:</strong> Happiness, optimism, warmth, can be overly stimulating.</li>
-                <li><strong>Green:</strong> Nature, growth, harmony, refreshing and calming.</li>
-                <li><strong>Purple:</strong> Royalty, luxury, creativity, mysterious and mystical.</li>
-                <li><strong>Black:</strong> Power, elegance, sophistication, can also feel negative.</li>
-                <li><strong>White:</strong> Purity, innocence, cleanliness, simple and minimalist.</li>
+                <li><strong>Web Development:</strong> Reusable templates for different web pages.</li>
+                <li><strong>Game Development:</strong> Base character classes with unique abilities.</li>
+                <li><strong>Finance:</strong> Banking applications with different account types.</li>
             </ul>
         </div>
 
-        <div class="section">
-            <h2>Color in Design</h2>
-            <p>Color plays a crucial role in design, affecting mood, atmosphere, and effectiveness. Here are some
-                essential tips for using color effectively:</p>
-            <ul>
-                <li><strong>Consider the Target Audience:</strong> Different demographics respond uniquely to colors.
-                </li>
-                <li><strong>Create a Color Palette:</strong> Develop a cohesive color scheme that enhances your design’s
-                    aesthetic.</li>
-                <li><strong>Use Color for Emphasis:</strong> Highlight important elements with contrasting colors to
-                    draw attention.</li>
-                <li><strong>Consider Color Accessibility:</strong> Ensure color choices are accessible to people with
-                    color vision deficiencies.</li>
-                <li><strong>Experiment and Iterate:</strong> Don't hesitate to try different combinations and refine
-                    your designs based on feedback.</li>
-            </ul>
-        </div>
-
-        <div class="section">
+        <div class="content-section mb-4">
             <h2>Conclusion</h2>
-            <p>By understanding color theory and its psychological effects, you can create more effective and impactful
-                designs that resonate with your target audience. The careful selection of colors can not only elevate
-                your design aesthetic but also enhance communication, evoke emotions, and create lasting impressions.
+            <p>
+                Inheritance and Polymorphism are key OOP principles that enhance code reusability and flexibility.
+                By using inheritance, we avoid redundancy, and with polymorphism, we achieve dynamic method execution.
             </p>
         </div>
     </div>
