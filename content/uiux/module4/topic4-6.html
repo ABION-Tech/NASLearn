@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Web Page Practice</title>
+    <title>Design Consistency</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -23,9 +23,10 @@
         }
 
         h1,
-        h2 {
-            color: #000000;
-            margin-bottom: 20px;
+        h2,
+        h3 {
+            color: #007bff;
+            /* Blue accents for headings */
         }
 
         .section-title {
@@ -197,84 +198,89 @@
 
 <body>
 
-    <div class="main-container">
-        <h1>Interactive Web Page Practice</h1>
-        <p>In this hands-on practice, you will create a simple interactive web page that includes buttons, text inputs,
-            and dynamic content updates using JavaScript.</p>
+    <div class="container">
+        <div class="section">
+            <h1>Design Consistency and Standards</h1>
 
-        <h2 class="section-title">6.1 Creating a Simple Web Page</h2>
+            <div class="consistency-in-design section">
+                <h2>Consistency in Design</h2>
+                <p><strong>Consistency</strong> is a fundamental principle in UI/UX design. It refers to the use of
+                    consistent elements, such as color schemes, typography, and layouts, throughout a product or
+                    service. Consistency helps to create a cohesive and familiar user experience, making it easier for
+                    users to navigate and interact with the product.</p>
 
-        <h4>Step 1: Create an HTML structure</h4>
-        <div class="code-container">
-            <pre>
-&lt;div id="container"&gt;
-    &lt;h2&gt;Welcome to My Interactive Web Page!&lt;/h2&gt;
-    &lt;button onclick="showAlert()"&gt;Click Me&lt;/button&gt;
-    &lt;p id="dynamicText"&gt;Hello, World!&lt;/p&gt;
-&lt;/div&gt;
-        </pre>
-        </div>
+                <h3>Key Elements of Consistency:</h3>
+                <ul>
+                    <li><strong>Color Schemes:</strong> Using a consistent color palette throughout the design
+                        establishes visual harmony and brand identity.</li>
+                    <li><strong>Typography:</strong> Selecting consistent fonts, sizes, and styles across all platforms
+                        ensures readability and visual coherence.</li>
+                    <li><strong>Layout:</strong> Implementing a consistent layout structure for different pages or
+                        screens aids in user familiarity and ease of use.</li>
+                    <li><strong>Iconography:</strong> Utilizing consistent icons and symbols enhances recognition and
+                        quick comprehension of functions.</li>
+                    <li><strong>Branding:</strong> Maintaining a consistent brand identity through logos, colors, and
+                        typography reinforces brand presence and trust.</li>
+                </ul>
 
-        <h4>Step 2: Style the Page with CSS</h4>
-        <div class="code-container">
-            <pre>
-#container {
-    background-color: #282828;
-    color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-}
-button {
-    background-color: #66fcf1;
-    color: #1f1f1f;
-    padding: 10px;
-    border: none;
-    border-radius: 50px;
-}
-button:hover {
-    background-color: #45a29e;
-}
-        </pre>
-        </div>
+                <h3>Benefits of Consistency:</h3>
+                <ul>
+                    <li><strong>Improved User Experience:</strong> Consistent design elements make it easier for users
+                        to navigate and understand the product, leading to a smoother user journey.</li>
+                    <li><strong>Enhanced Brand Recognition:</strong> A cohesive brand identity fosters familiarity,
+                        which builds trust and loyalty among users.</li>
+                    <li><strong>Increased Efficiency:</strong> Utilizing consistent design elements can streamline the
+                        design process and reduce development time, as designers can reuse established components.</li>
+                </ul>
 
-        <h4>Step 3: Use JavaScript for Interactivity</h4>
-        <div class="code-container">
-            <pre>
-function showAlert() {
-    alert("Button clicked!");
-}
-        </pre>
-        </div>
+                <div class="example">
+                    <strong>Real-World Example:</strong>
+                    <p>Apple is known for its consistent design language across its products, from iPhones to MacBooks.
+                        This consistency creates a unified and familiar user experience, making it easier for users to
+                        switch between devices seamlessly.</p>
+                </div>
+            </div>
 
-        <h2 class="section-title">Try it Yourself: Code Editor</h2>
-        <p>Enter your HTML, CSS, and JavaScript below to build a simple interactive web page. Click the button to
-            preview your code!</p>
+            <div class="design-standards-and-systems section">
+                <h2>Design Standards and Systems</h2>
+                <p><strong>Design standards</strong> are a set of guidelines that define how design elements should be
+                    used within a product or organization. <strong>Design systems</strong> are collections of reusable
+                    components, patterns, and guidelines that help teams create consistent and scalable designs.</p>
 
-        <!-- Code Editor Section -->
-        <div class="editor-container">
-            <textarea id="editor" placeholder="Write your HTML, CSS, and JS here..."></textarea>
-            <br>
-            <button class="btn" onclick="updatePreview()">Preview Code</button>
-        </div>
+                <h3>Key Components of Design Systems:</h3>
+                <ul>
+                    <li><strong>Atomic Design:</strong> A methodology for breaking down design elements into smaller,
+                        reusable components, facilitating easier updates and scalability.</li>
+                    <li><strong>Style Guides:</strong> A document that outlines the rules for using color, typography,
+                        and other design elements, providing a reference point for designers.</li>
+                    <li><strong>Component Libraries:</strong> A collection of reusable design components, such as
+                        buttons, icons, and input fields, which enhances design consistency across products.</li>
+                    <li><strong>Pattern Libraries:</strong> A collection of common design patterns, such as navigation
+                        menus, forms, and cards, which can be reused in various applications.</li>
+                </ul>
 
-        <!-- Preview Section -->
-        <div class="preview-box" id="preview">
-            <!-- This is where the user code will be rendered -->
-            <h2>Live Preview Area</h2>
-            <p>Your live preview will appear here.</p>
+                <h3>Benefits of Design Systems:</h3>
+                <ul>
+                    <li><strong>Increased Efficiency:</strong> Design systems streamline the design process by providing
+                        reusable components and established guidelines, saving time and resources.</li>
+                    <li><strong>Consistency:</strong> They help ensure consistency across different products and
+                        platforms, reinforcing brand identity.</li>
+                    <li><strong>Scalability:</strong> Design systems can be easily scaled to accommodate new features or
+                        products, ensuring future growth is manageable.</li>
+                    <li><strong>Collaboration:</strong> Design systems facilitate collaboration between designers,
+                        developers, and other stakeholders, ensuring everyone is on the same page.</li>
+                </ul>
+
+                <div class="example">
+                    <strong>Real-World Example:</strong>
+                    <p>Google's Material Design system provides a comprehensive set of guidelines and components for
+                        designing Android apps. This system helps developers create consistent and visually appealing
+                        apps that adhere to Google's design principles, making the user experience intuitive and
+                        cohesive.</p>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- JavaScript to handle live preview -->
-    <script>
-        function updatePreview() {
-            const code = document.getElementById('editor').value;
-            const previewFrame = document.getElementById('preview');
-
-            // Update the preview box with the user's code
-            previewFrame.innerHTML = code;
-        }
-    </script>
 
 </body>
 

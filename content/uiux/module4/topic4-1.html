@@ -55,15 +55,7 @@
             /* For custom bullet styling */
         }
 
-        li:before {
-            content: "✔️";
-            /* Custom bullet point */
-            position: absolute;
-            left: -20px;
-            /* Adjust position */
-            color: #007bff;
-            /* Blue bullet */
-        }
+
 
         .example {
             background-color: #f8f9fa;
@@ -78,97 +70,85 @@
 
 <body>
 
-    <div class="container">
-        <div class="section">
-            <h1>4.1 Color Theory and Typography</h1>
+    <section id="introduction">
+        <h1>Introduction to Visual Design Principles</h1>
+        <p>
+            Visual design is more than just aesthetics—it's about creating an intuitive and user-friendly experience.
+            By understanding key design principles, you can craft interfaces that are both visually appealing and
+            functional.
+        </p>
+    </section>
 
-            <h2>Color Theory Basics</h2>
-            <p>Color is a powerful tool in visual design that can influence emotions, perceptions, and user behavior.
-                Understanding color theory can help you create visually appealing and effective designs.</p>
+    <section id="core-principles">
+        <h2>Core Visual Design Principles</h2>
+        <p>These fundamental principles guide how elements are arranged to create balance and clarity.</p>
 
-            <h3>Color Wheel:</h3>
-            <p>The color wheel is a visual representation of colors arranged in a circular pattern. It helps designers
-                understand color relationships and select harmonious color schemes.</p>
-            <ul>
-                <li><span class="important">Primary Colors:</span> Red, yellow, and blue.</li>
-                <li><span class="important">Secondary Colors:</span> Orange, green, and purple (created by mixing
-                    primary colors).</li>
-                <li><span class="important">Tertiary Colors:</span> Created by mixing primary and secondary colors.</li>
-            </ul>
+        <h3>1. Balance</h3>
+        <p>Balance ensures that elements are distributed evenly across a layout, creating a sense of stability.</p>
+        <ul>
+            <li><strong>Symmetrical Balance:</strong> Elements are mirrored on both sides of the design.</li>
+            <li><strong>Asymmetrical Balance:</strong> Different elements create equilibrium without exact symmetry.
+            </li>
+        </ul>
 
-            <h3>Color Harmonies:</h3>
-            <ul>
-                <li><span class="important">Complementary Colors:</span> Colors opposite each other on the color wheel,
-                    creating high contrast and visual interest.</li>
-                <li><span class="important">Analogous Colors:</span> Colors adjacent to each other on the color wheel,
-                    creating a harmonious and soothing effect.</li>
-                <li><span class="important">Triadic Colors:</span> Colors evenly spaced on the color wheel, forming an
-                    equilateral triangle, creating a balanced and visually appealing composition.</li>
-            </ul>
+        <h3>2. Contrast</h3>
+        <p>Contrast enhances readability and draws attention to important elements.</p>
+        <ul>
+            <li>Use color contrast to differentiate between background and text.</li>
+            <li>Contrast in font weight and size improves content hierarchy.</li>
+            <li>Contrast in shapes and textures adds visual interest.</li>
+        </ul>
 
-            <h3>Color Psychology:</h3>
-            <p>Different colors can evoke specific emotions and reactions:</p>
-            <ul>
-                <li><span class="important">Red:</span> Energy, excitement, passion, urgency.</li>
-                <li><span class="important">Blue:</span> Trust, reliability, calmness, professionalism.</li>
-                <li><span class="important">Green:</span> Growth, nature, harmony, balance.</li>
-                <li><span class="important">Yellow:</span> Happiness, optimism, warmth, attention.</li>
-                <li><span class="important">Orange:</span> Enthusiasm, creativity, friendliness, energy.</li>
-                <li><span class="important">Purple:</span> Royalty, luxury, wisdom, spirituality.</li>
-            </ul>
+        <h3>3. Hierarchy</h3>
+        <p>Visual hierarchy organizes content in a way that guides users through the interface naturally.</p>
+        <ul>
+            <li><strong>Size and Scale:</strong> Larger elements appear more important.</li>
+            <li><strong>Color and Contrast:</strong> Bright or high-contrast elements grab attention.</li>
+            <li><strong>Positioning:</strong> Items placed higher or in central locations appear more significant.</li>
+        </ul>
 
-            <h3>Real-World Example:</h3>
-            <p class="example">A healthcare website might use shades of blue to convey trust and professionalism, while
-                an e-commerce website might use bright colors like red or orange to create a sense of urgency and
-                excitement.</p>
-        </div>
+        <h3>4. Alignment</h3>
+        <p>Proper alignment creates order and improves readability.</p>
+        <ul>
+            <li><strong>Left-aligned text:</strong> Easiest to read in most languages.</li>
+            <li><strong>Centered alignment:</strong> Works well for short blocks of text, like headings.</li>
+            <li><strong>Grid-based layouts:</strong> Maintain consistency in design.</li>
+        </ul>
 
-        <div class="section">
-            <h2>Typography Basics</h2>
-            <p>Typography is the art of selecting and arranging typefaces to enhance readability, convey brand
-                personality, and create visual hierarchy.</p>
-            <ul>
-                <li><span class="important">Fonts:</span> Different fonts have distinct characteristics and can evoke
-                    different emotions.</li>
-                <li><span class="important">Serif Fonts:</span> Have small lines or strokes at the ends of letters
-                    (e.g., Times New Roman, Georgia).</li>
-                <li><span class="important">Sans-Serif Fonts:</span> Do not have serifs (e.g., Arial, Helvetica).</li>
-                <li><span class="important">Display Fonts:</span> Designed for headlines and large-scale text.</li>
-                <li><span class="important">Monospace Fonts:</span> Have characters of equal width (e.g., Courier New).
-                </li>
-                <li><span class="important">Font Size:</span> Determines the legibility and impact of text.</li>
-                <li><span class="important">Font Weight:</span> The thickness or thinness of the font (e.g., light,
-                    regular, bold).</li>
-                <li><span class="important">Line Spacing:</span> The vertical distance between lines of text, affecting
-                    readability.</li>
-            </ul>
+        <h3>5. Proximity</h3>
+        <p>Grouping related elements together improves clarity and reduces visual clutter.</p>
+        <ul>
+            <li>Keep related elements (like buttons and labels) close together.</li>
+            <li>Increase spacing between unrelated sections.</li>
+        </ul>
 
-            <h3>Real-World Example:</h3>
-            <p class="example">A news website might use a bold serif font for headlines to create a sense of importance,
-                while a smaller sans-serif font might be used for body text to ensure readability.</p>
-        </div>
+        <h3>6. Repetition</h3>
+        <p>Repetition creates familiarity and strengthens branding.</p>
+        <ul>
+            <li>Use consistent colors, fonts, and icon styles.</li>
+            <li>Maintain a consistent layout across all pages.</li>
+        </ul>
 
-        <div class="section">
-            <h2>Applying Color and Typography in UI Designs</h2>
-            <p>Combining color and typography effectively is crucial for creating user interfaces that are not only
-                functional but also aesthetically pleasing. Here are some key considerations:</p>
-            <ul>
-                <li><span class="important">Color Contrast:</span> Ensure sufficient contrast between foreground and
-                    background colors to improve readability.</li>
-                <li><span class="important">Typography Hierarchy:</span> Use different font sizes, weights, and styles
-                    to create a visual hierarchy and guide the user's attention.</li>
-                <li><span class="important">Color Psychology:</span> Select colors that align with the brand's
-                    personality and evoke the desired emotions in users.</li>
-                <li><span class="important">Typography Consistency:</span> Maintain consistency in font choices, sizes,
-                    and styles throughout the design.</li>
-                <li><span class="important">White Space:</span> Use white space effectively to create a clean and
-                    uncluttered design.</li>
-            </ul>
+        <h3>7. White Space</h3>
+        <p>White space (negative space) improves readability and focus.</p>
+        <ul>
+            <li>Increases clarity by separating content.</li>
+            <li>Gives the design a modern, clean feel.</li>
+        </ul>
+    </section>
 
-            <p>By effectively combining color and typography, designers can create visually appealing and engaging user
-                interfaces that enhance the overall user experience.</p>
-        </div>
-    </div>
+    <section id="visual-impact">
+        <h2>How Visual Design Affects User Experience</h2>
+        <p>
+            A well-designed interface enhances usability, accessibility, and brand perception.
+            Poor visual design leads to confusion, frustration, and user drop-off.
+        </p>
+        <ul>
+            <li>Clear contrast improves readability.</li>
+            <li>Good hierarchy directs users to key actions.</li>
+            <li>Proper alignment makes content easier to scan.</li>
+        </ul>
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

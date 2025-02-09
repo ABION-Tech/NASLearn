@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframing Techniques and Best Practices</title>
+    <title>Module 3: Wireframing and Prototyping</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -38,78 +38,219 @@
             color: #007bff;
             /* Important text in blue */
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        .container {
+            max-width: 900px;
+        }
+
+        .next-section {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="section">
-            <h1>3.1 Wireframing Techniques and Best Practices</h1>
-
-            <h2>Introduction to Wireframes</h2>
-            <p><span class="important">Definition:</span> Wireframes are simplified, low-fidelity representations of a
+    <div class="container my-5">
+        <section id="intro" class="mb-4">
+            <h1 class="text-primary">Module 3: Wireframing and Prototyping</h1>
+            <h2>Introduction</h2>
+            <p> Wireframes are simplified, low-fidelity representations of a
                 user interface (UI) that focus on layout, structure, and functionality. They are typically created using
                 simple shapes, lines, and text to represent elements such as buttons, navigation menus, and content
                 areas.</p>
+            <p>
+                Wireframing and prototyping are crucial steps in UI/UX design, helping designers plan, test, and refine
+                digital products before development begins. They provide a blueprint for functionality, usability,
+                and user experience.
+            </p>
+        </section>
 
-            <h3>Importance of Wireframing:</h3>
+        <section id="importance" class="mb-4">
+            <h2>Why Are Wireframing & Prototyping Important?</h2>
             <ul>
-                <li><span class="important">Early-Stage Feedback:</span> Wireframes allow for early-stage feedback from
-                    stakeholders and users, helping to identify potential issues and areas for improvement.</li>
-                <li><span class="important">Focus on Structure:</span> Wireframes help designers focus on the overall
-                    structure and layout of the UI, rather than getting bogged down in details like color and
-                    typography.</li>
-                <li><span class="important">Efficient Iteration:</span> Wireframes are easy to modify and iterate on,
-                    allowing designers to experiment with different layouts and features.</li>
-                <li><span class="important">Cost-Effective:</span> Wireframes are less expensive to create than
-                    high-fidelity prototypes, making them a valuable tool for testing ideas and concepts.</li>
+                <li><span class="important">Visual Clarity:</span> Provides a clear structure before coding begins.</li>
+                <li><span class="important">Improved UX:</span> Identifies usability issues early.</li>
+                <li><span class="important">Saves Time & Costs:</span> Reduces rework by refining concepts early.</li>
+                <li><span class="important">Better Collaboration:</span> Helps designers, developers, and stakeholders
+                    align.</li>
+            </ul>
+        </section>
+
+        <section id="differences" class="mb-4">
+            <h2>Wireframes vs. Mockups vs. Prototypes</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Wireframe</strong></td>
+                        <td>Basic structure using simple shapes and text.</td>
+                        <td>Focuses on layout and functionality without design elements.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mockup</strong></td>
+                        <td>High-fidelity static design with colors and fonts.</td>
+                        <td>Represents the final appearance before interactivity.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prototype</strong></td>
+                        <td>Interactive version for user testing.</td>
+                        <td>Simulates user experience and interactions.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="tools" class="mb-4">
+            <h2>Popular Wireframing & Prototyping Tools</h2>
+            <ul>
+                <li><span class="important">Figma:</span> Cloud-based, collaborative design tool.</li>
+                <li><span class="important">Adobe XD:</span> Powerful UI/UX design and prototyping software.</li>
+                <li><span class="important">Sketch:</span> MacOS tool for wireframes and high-fidelity designs.</li>
+                <li><span class="important">Balsamiq:</span> Low-fidelity, sketch-style wireframing tool.</li>
+                <li><span class="important">Axure RP:</span> Advanced tool with complex interactions.</li>
+            </ul>
+        </section>
+
+        <section id="wireframing" class="mb-4">
+            <h2>3.1 Wireframing Techniques & Best Practices</h2>
+            <h3>Key Concepts</h3>
+            <ul>
+                <li><span class="important">Low-Fidelity Wireframes:</span> Simple sketches or digital outlines.</li>
+                <li><span class="important">High-Fidelity Wireframes:</span> Detailed blueprints with exact dimensions.
+                </li>
+                <li><span class="important">Wireframing Tools:</span> Software like Figma, Sketch, or Balsamiq.</li>
             </ul>
 
-            <h3>Key Concepts:</h3>
+            <h3>Best Practices</h3>
             <ul>
-                <li><span class="important">Low-Fidelity Wireframes:</span> Simple sketches or diagrams that outline the
-                    basic structure and layout of the UI.</li>
-                <li><span class="important">High-Fidelity Wireframes:</span> More detailed wireframes that include
-                    specific information about elements such as size, placement, and interactions.</li>
-                <li><span class="important">Wireframing Tools:</span> Software tools that can be used to create
-                    wireframes, such as Balsamiq, Figma, and Sketch.</li>
+                <li>Start with low-fidelity wireframes before adding details.</li>
+                <li>Iterate based on feedback from users and stakeholders.</li>
+                <li>Focus on structure and functionality, not aesthetics.</li>
+                <li>Keep designs simple and clear for easy understanding.</li>
+                <li>Use annotations to clarify features and interactions.</li>
+                <li>Ensure smooth user flow by mapping out navigation.</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>Best Practices for Wireframing</h2>
-            <ul>
-                <li><span class="important">Start with Low-Fidelity Wireframes:</span> Begin by creating simple sketches
-                    or diagrams to focus on the overall layout and structure.</li>
-                <li><span class="important">Iterate and Refine:</span> Continuously refine your wireframes based on
-                    feedback and testing.</li>
-                <li><span class="important">Involve Stakeholders:</span> Get feedback from stakeholders early in the
-                    process to ensure that the wireframes align with business goals and user needs.</li>
-                <li><span class="important">Prioritize Functionality:</span> Focus on the core functionality of the UI,
-                    rather than on aesthetics.</li>
-                <li><span class="important">Keep it Simple:</span> Avoid cluttering your wireframes with unnecessary
-                    details.</li>
-                <li><span class="important">Use Consistent Terminology:</span> Use consistent terminology throughout
-                    your wireframes to avoid confusion.</li>
-                <li><span class="important">Annotate Wireframes:</span> Add notes or annotations to explain the purpose
-                    of different elements.</li>
-                <li><span class="important">Consider User Flow:</span> Map out the user's journey through the UI to
-                    ensure a smooth and intuitive experience.</li>
-            </ul>
-        </div>
-
-        <div class="section">
+        <section id="real-world" class="mb-4">
             <h2>Real-World Application</h2>
-            <p>When designing a new mobile app, a wireframe might be used to visualize the layout of the home screen,
-                navigation menu, and product pages. By creating wireframes, designers can test different layouts and
-                features to ensure that the app is easy to use and meets the needs of the target audience.</p>
-        </div>
-    </div>
+            <p>Wireframes are widely used when designing websites, apps, or digital interfaces.
+                For example, before developing a mobile e-commerce app, designers first create
+                wireframes to test navigation, layout, and usability before coding begins.</p>
+        </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <section id="next" class="next-section">
+            <h2>Next: Wireframing – Planning & Sketching</h2>
+            <p>Proceed to Page 2 to learn how to create effective wireframes.</p>
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

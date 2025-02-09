@@ -4,63 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototyping for Interaction</title>
+    <title>Tools for Wireframing</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #ffffff;
-            /* Predominantly white background */
-            color: #000000;
-            /* Black text */
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
         }
 
         h1,
         h2,
         h3 {
-            color: #007bff;
-            /* Blue accents for headings */
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        p {
-            margin-bottom: 1rem;
-            /* Spacing between paragraphs */
+        .content-section {
+            margin-bottom: 30px;
         }
 
-        .section {
-            margin: 20px 0;
+        .highlight {
+            background-color: #e7f1ff;
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+            /* Blue accent */
+            margin-bottom: 20px;
+        }
+
+        .container {
             padding: 20px;
-            border-left: 5px solid #007bff;
-            /* Blue accent border */
         }
 
-        .important {
-            font-weight: bold;
-            color: #007bff;
-            /* Important text in blue */
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
         }
 
-        ul {
-            list-style-type: none;
-            /* Remove default list styles */
-            padding-left: 0;
-            /* Remove padding */
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
         }
 
-        li {
-            padding: 10px 0;
-            /* Space between list items */
-            position: relative;
-            /* For custom bullet styling */
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
         }
 
-        li:before {
-            content: "✔️";
-            /* Custom bullet point */
-            position: absolute;
-            left: -20px;
-            /* Adjust position */
-            color: #007bff;
-            /* Blue bullet */
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
 </head>
@@ -69,79 +119,99 @@
 
     <div class="container">
         <div class="section">
-            <h1>3.3 Prototyping for Interaction</h1>
+            <h1> Tools for Wireframing</h1>
 
-            <h2>Low-Fidelity vs. High-Fidelity Prototypes</h2>
-            <p>Prototyping is a crucial step in the design process, enabling teams to visualize and test their concepts.
-                Prototypes can be classified into two main categories: low-fidelity and high-fidelity.</p>
+            <h2>Overview of Popular Wireframing Tools</h2>
+            <p>Wireframing tools are essential for creating low-fidelity representations of user interfaces. They help
+                designers visualize the layout, structure, and functionality of a product without getting bogged down in
+                details like color and typography. Here are some of the most popular wireframing tools:</p>
 
-            <h3>Low-Fidelity Prototypes:</h3>
             <ul>
-                <li><span class="important">Definition:</span> Basic, non-interactive representations of a product that
-                    focus on the overall structure and layout.</li>
-                <li><span class="important">Purpose:</span> Used for early-stage testing, concept validation, and
-                    gathering feedback on the overall design.</li>
-                <li><span class="important">Examples:</span> Paper sketches, wireframes, click-through prototypes.</li>
-            </ul>
-
-            <h3>High-Fidelity Prototypes:</h3>
-            <ul>
-                <li><span class="important">Definition:</span> Detailed, interactive representations of a product that
-                    closely resemble the final design.</li>
-                <li><span class="important">Purpose:</span> Used for testing specific interactions, evaluating
-                    usability, and presenting to stakeholders.</li>
-                <li><span class="important">Examples:</span> Interactive prototypes created using tools like Figma,
-                    Adobe XD, or InVision.</li>
+                <li>
+                    <span class="important">Figma:</span> A cloud-based design tool that offers a collaborative
+                    workspace for teams to create wireframes, mockups, and prototypes. Figma's real-time collaboration
+                    features make it ideal for remote teams.
+                </li>
+                <li>
+                    <span class="important">Sketch:</span> A vector-based design tool that is popular among UI/UX
+                    designers. Sketch offers a variety of plugins and extensions for wireframing, prototyping, and
+                    design.
+                </li>
+                <li>
+                    <span class="important">Adobe XD:</span> A powerful design tool that includes features for
+                    wireframing, prototyping, and animation. Adobe XD is tightly integrated with Adobe's Creative Cloud,
+                    making it a good choice for designers who already use Adobe products.
+                </li>
+                <li>
+                    <span class="important">Balsamiq:</span> A simple and easy-to-use wireframing tool that focuses on
+                    creating low-fidelity prototypes. Balsamiq is a good choice for beginners or teams that need a quick
+                    and efficient way to create wireframes.
+                </li>
+                <li>
+                    <span class="important">Axure RP:</span> A comprehensive wireframing and prototyping tool that
+                    offers a wide range of features, including the ability to create interactive prototypes. Axure RP is
+                    a good choice for teams that need a powerful and flexible tool.
+                </li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>When to Use Each</h2>
-            <p>Choosing between low-fidelity and high-fidelity prototypes depends on the stage of the design process and
-                the specific goals of the testing.</p>
+            <h2>Key Features of Each Tool</h2>
+            <p>Each wireframing tool offers unique features that cater to different design needs. Here are the key
+                features of each tool:</p>
 
-            <h3>Low-Fidelity Prototypes:</h3>
+            <h3>Figma:</h3>
             <ul>
-                <li><span class="important">Early-Stage Testing:</span> When exploring different concepts and gathering
-                    initial feedback.</li>
-                <li><span class="important">Iterative Design:</span> For quickly testing and iterating on different
-                    ideas.</li>
-                <li><span class="important">Limited Resources:</span> When time or budget is limited.</li>
+                <li>Cloud-based collaboration</li>
+                <li>Real-time editing</li>
+                <li>Version control</li>
+                <li>Large community of plugins and extensions</li>
             </ul>
 
-            <h3>High-Fidelity Prototypes:</h3>
+            <h3>Sketch:</h3>
             <ul>
-                <li><span class="important">Detailed Testing:</span> For evaluating specific interactions and usability
-                    issues.</li>
-                <li><span class="important">Stakeholder Presentation:</span> To present the final design to stakeholders
-                    and obtain approval.</li>
-                <li><span class="important">User Testing:</span> For conducting in-depth usability tests with potential
-                    users.</li>
+                <li>Vector-based design</li>
+                <li>Customizable interface</li>
+                <li>Extensive plugin ecosystem</li>
+                <li>macOS-only</li>
+            </ul>
+
+            <h3>Adobe XD:</h3>
+            <ul>
+                <li>Integration with Adobe Creative Cloud</li>
+                <li>Powerful prototyping features</li>
+                <li>Animation capabilities</li>
+                <li>Easy-to-use interface</li>
+            </ul>
+
+            <h3>Balsamiq:</h3>
+            <ul>
+                <li>Simple and intuitive interface</li>
+                <li>Focus on low-fidelity wireframes</li>
+                <li>Affordable pricing</li>
+                <li>Limited prototyping capabilities</li>
+            </ul>
+
+            <h3>Axure RP:</h3>
+            <ul>
+                <li>Comprehensive wireframing and prototyping features</li>
+                <li>Customizable interface</li>
+                <li>Strong prototyping capabilities</li>
+                <li>Steep learning curve</li>
             </ul>
         </div>
 
         <div class="section">
             <h2>Real-World Application</h2>
-            <p>Prototyping is essential across various design domains. Here’s how low-fidelity and high-fidelity
-                prototypes are applied in real-world scenarios:</p>
+            <p>Design teams at various companies use wireframing tools to create prototypes and gather feedback from
+                stakeholders. For example, a team designing a new mobile app might use Figma to create wireframes of the
+                home screen, navigation menu, and product pages. These wireframes can be shared with stakeholders for
+                feedback and iterated on until the team is satisfied with the design.</p>
 
-            <h3>Mobile App Design:</h3>
-            <p>Low-fidelity prototypes can be used to test the overall layout and structure of an app, while
-                high-fidelity prototypes can be used to evaluate specific interactions, such as swiping, tapping, and
-                scrolling.</p>
-
-            <h3>Website Design:</h3>
-            <p>Low-fidelity prototypes can be used to test the navigation and information architecture of a website,
-                while high-fidelity prototypes can be used to evaluate the visual design and user experience.</p>
-
-            <h3>Product Design:</h3>
-            <p>Low-fidelity prototypes can be used to explore different design concepts, while high-fidelity prototypes
-                can be used to test the product's functionality and usability.</p>
-
-            <p>By utilizing both low-fidelity and high-fidelity prototypes throughout the design process, teams can
-                ensure that their products meet user needs and are both functional and visually appealing. This approach
-                facilitates better communication among team members and with stakeholders, ultimately leading to more
-                successful design outcomes.</p>
+            <p>In addition to mobile apps, wireframing tools are also used for web applications, dashboards, and any
+                product requiring user interface design. By using these tools, design teams can ensure that their
+                products are user-friendly and aligned with business objectives before moving into the development
+                phase.</p>
         </div>
     </div>
 

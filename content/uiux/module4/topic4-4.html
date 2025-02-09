@@ -176,126 +176,111 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="section">
+            <h1>4.4 Layout and Composition</h1>
 
-    <div class="main-container">
-        <h1>The Document Object Model (DOM)</h1>
-        <p>The Document Object Model (DOM) is a programming interface that allows JavaScript to interact with and
-            manipulate HTML documents. It represents a document as a tree of objects and nodes that can be dynamically
-            modified.</p>
+            <div class="grid-system">
+                <h2>Grid Systems</h2>
+                <p><strong>Grid systems</strong> are invisible structures that help organize and structure design
+                    elements. They provide a framework for creating consistent, balanced, and visually appealing
+                    layouts.</p>
 
-        <h2 class="section-title">4.1 What is the DOM?</h2>
-        <p>The DOM allows developers to interact with a webpage's structure programmatically. It represents the
-            document's structure as a tree of nodes, where each node is an element in the document.</p>
+                <h3>Types of Grid Systems:</h3>
+                <ul>
+                    <li><strong>Single-Column Grid:</strong> A simple grid structure that is commonly used for mobile
+                        designs or content-heavy layouts.</li>
+                    <li><strong>Multi-Column Grid:</strong> A grid structure that consists of multiple columns, allowing
+                        for a more complex and versatile layout.</li>
+                    <li><strong>Modular Grid:</strong> A grid structure that uses a repeating module or unit to create a
+                        consistent and scalable layout.</li>
+                </ul>
+                <div class="example">
+                    <strong>Real-World Example:</strong> News websites often use a multi-column grid to display
+                    articles, headlines, images, and advertisements. This grid structure helps to organize the content
+                    and create a visually appealing layout.
+                </div>
+            </div>
 
-        <ul>
-            <li><strong>DOM Tree:</strong> Every element in an HTML document becomes a node in the DOM tree.</li>
-            <li><strong>Manipulating the DOM:</strong> JavaScript can add, remove, or modify DOM elements.</li>
-        </ul>
+            <div class="visual-hierarchy">
+                <h2>Visual Hierarchy</h2>
+                <p><strong>Visual hierarchy</strong> is the intentional arrangement of design elements to guide the
+                    user's attention towards the most important information. It helps to create a clear and intuitive
+                    user experience.</p>
 
-        <h2 class="section-title">4.2 Selecting Elements</h2>
-        <p>Before you can manipulate an element, you need to select it from the DOM. Here are a few ways to select
-            elements:</p>
+                <h3>Key Elements of Visual Hierarchy:</h3>
+                <ul>
+                    <li><strong>Size:</strong> Larger elements are perceived as more important.</li>
+                    <li><strong>Color:</strong> Contrasting or brighter colors draw the eye.</li>
+                    <li><strong>Contrast:</strong> The difference in color, brightness, or size between elements.</li>
+                    <li><strong>Placement:</strong> Elements placed at the top or center of the page are typically
+                        perceived as more important.</li>
+                    <li><strong>Typography:</strong> Different font sizes, weights, and styles can be used to create
+                        visual hierarchy.</li>
+                </ul>
+                <div class="example">
+                    <strong>Real-World Example:</strong> E-commerce websites often use a large, bold headline to
+                    highlight the most important product or promotion. This creates a strong visual hierarchy, guiding
+                    the user's attention towards the desired action.
+                </div>
+            </div>
+            <section id="whitespace">
+                <h2>Whitespace: The Power of Empty Space</h2>
+                <p>
+                    Whitespace (Negative Space) improves readability, organization, and focus.
+                </p>
+                <h3>1. Macro White Space</h3>
+                <p>Large gaps around sections for visual separation.</p>
 
-        <h4>1. Using <span class="highlight">getElementById</span>:</h4>
-        <p>Use <span class="highlight">getElementById</span> to select an element by its unique ID.</p>
+                <h3>2. Micro White Space</h3>
+                <p>Smaller gaps between buttons, text, and UI elements.</p>
 
-        <div class="code-container">
-            <pre>let element = document.getElementById("header");</pre>
-        </div>
+                <h3>3. Active vs Passive White Space</h3>
+                <p>Active: Used to create emphasis. Passive: Natural spacing from typography.</p>
+            </section>
+            <div class="balance-alignment">
+                <h2>Balance and Alignment</h2>
+                <p><strong>Balance</strong> refers to the distribution of visual weight within a design. It ensures that
+                    the layout feels harmonious and visually pleasing.</p>
 
-        <h4>2. Using <span class="highlight">getElementsByClassName</span>:</h4>
-        <p>Use <span class="highlight">getElementsByClassName</span> to select elements by their class name. This
-            returns a collection of elements.</p>
+                <h3>Types of Balance:</h3>
+                <h2>Visual Balance: Achieving Harmony in UI</h2>
+                <ul>
+                    <li><strong>Symmetrical Balance:</strong> Elements are arranged in a symmetrical or mirrored
+                        pattern.</li>
+                    <li><strong>Asymmetrical Balance:</strong> Elements are arranged in an unequal distribution, but
+                        still create a sense of balance.</li>
+                    <li><strong>Radial Balance</strong> Elements radiate from a central point (e.g., circular logos).
+                    </li>
+                </ul>
 
-        <div class="code-container">
-            <pre>let elements = document.getElementsByClassName("item");</pre>
-        </div>
+                <h3>Alignment:</h3>
+                <p><strong>Alignment</strong> refers to the placement of design elements in relation to each other. It
+                    helps to create a sense of order and consistency.</p>
+                <ul>
+                    <li><strong>Left Alignment:</strong> Elements are aligned to the left side of the page.</li>
+                    <li><strong>Right Alignment:</strong> Elements are aligned to the right side of the page.</li>
+                    <li><strong>Centered Alignment:</strong> Elements are centered on the page.</li>
+                    <li><strong>Justified Alignment:</strong> Elements are aligned to both the left and right margins.
+                    </li>
+                </ul>
+                <div class="example">
+                    <strong>Real-World Example:</strong> A website with a symmetrical layout can create a sense of
+                    formality and professionalism, while an asymmetrical layout can add a touch of dynamism and
+                    creativity.
+                </div>
 
-        <h4>3. Using <span class="highlight">querySelector</span>:</h4>
-        <p>Use <span class="highlight">querySelector</span> to select the first element that matches a CSS selector.</p>
-
-        <div class="code-container">
-            <pre>let element = document.querySelector(".menu");</pre>
-        </div>
-
-        <h2 class="section-title">4.3 Manipulating Elements</h2>
-        <p>Once you've selected an element, you can manipulate it in various ways such as changing its content, styles,
-            or adding/removing it from the document.</p>
-
-        <h4>1. Changing Content:</h4>
-        <p>Use <span class="highlight">textContent</span> or <span class="highlight">innerHTML</span> to change the
-            content of an element.</p>
-
-        <div class="code-container">
-            <pre>let header = document.getElementById("header");</pre>
-            <pre>header.textContent = "Welcome!";</pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="changeContent();">Change Header Content</button>
-
-        <h4>2. Changing Styles:</h4>
-        <p>Use JavaScript to change the style of an element directly. For example, you can change its color, font size,
-            and more.</p>
-
-        <div class="code-container">
-            <pre>header.style.color = "blue";</pre>
-            <pre>header.style.fontSize = "24px";</pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="changeStyles();">Change Header Style</button>
-
-        <h4>3. Adding/Removing Elements:</h4>
-        <p>You can dynamically create new elements and add them to the DOM, or remove existing ones. Here’s how to add a
-            new paragraph to the page:</p>
-
-        <div class="code-container">
-            <pre>let newElement = document.createElement("p");</pre>
-            <pre>newElement.textContent = "This is a new paragraph.";</pre>
-            <pre>document.body.appendChild(newElement);</pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="addElement();">Add New Paragraph</button>
-    </div>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
+                <section id="layout-best-practices">
+                    <h2>Best Practices for Layout & Composition</h2>
+                    <ul>
+                        <li>✔ Use a grid system for consistency.</li>
+                        <li>✔ Ensure clear alignment for readability.</li>
+                        <li>✔ Apply whitespace strategically for emphasis.</li>
+                        <li>✔ Maintain visual balance to guide the user's eye.</li>
+                    </ul>
             </div>
         </div>
     </div>
-    <script>
-        // Function to change header content
-        function changeContent() {
-            let header = document.getElementById("header");
-            if (header) {
-                header.textContent = "You changed the content!";
-            } else {
-                alert('Header element not found!');
-            }
-        }
-
-        // Function to change header style
-        function changeStyles() {
-            let header = document.getElementById("header");
-            if (header) {
-                header.style.color = "blue";
-                header.style.fontSize = "24px";
-            } else {
-                alert('Header element not found!');
-            }
-        }
-
-        // Function to add a new paragraph
-        function addElement() {
-            let newElement = document.createElement("p");
-            newElement.textContent = "This is a dynamically added paragraph.";
-            document.body.appendChild(newElement);
-        }
-    </script>
 
 </body>
 

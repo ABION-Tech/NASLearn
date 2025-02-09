@@ -125,15 +125,207 @@
                 }
             }
         }
+
+
+
+
+        /* Laptop Mockup */
+        .device {
+            width: 800px;
+            height: 500px;
+            background-color: black;
+            border-radius: 20px;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .navigation {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .hero {
+            background-color: #007bff;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 24px;
+        }
+
+        .content-blocks {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .block {
+            background-color: white;
+            width: 30%;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+
+        .footer {
+            background-color: #222;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Mobile View */
+        @media (max-width: 600px) {
+            .device {
+                width: 375px;
+                height: 500px;
+            }
+
+            .content-blocks {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .block {
+                width: 80%;
+                margin-bottom: 10px;
+            }
+        }
     </style>
 
 <body>
     <main>
 
+        <section id="wireframing-intro">
+            <h1>Wireframing – Planning and Sketching</h1>
+            <p>
+                Wireframing is the foundation of the UI/UX design process. It involves planning and sketching the layout
+                of a digital product
+                to define structure, functionality, and user flow before applying visual design elements.
+            </p>
+            <p>
+                In this section, we will cover the steps to create an effective wireframe, from understanding user
+                needs to sketching the layout.
+            </p>
+        </section>
 
+        <section id="planning-wireframe">
+            <h2>Step 1: Understanding the Requirements</h2>
+            <p>
+                Before sketching a wireframe, it’s essential to gather all necessary information about the project.
+            </p>
+            <ul>
+                <li><strong>Define the Purpose:</strong> What problem is the product solving?</li>
+                <li><strong>Identify Target Users:</strong> Who will use the product?</li>
+                <li><strong>Outline Key Features:</strong> What are the essential functionalities?</li>
+                <li><strong>Research Competitors:</strong> Analyze existing solutions to identify strengths and
+                    weaknesses.</li>
+            </ul>
+        </section>
 
+        <section id="sketching-wireframe">
+            <h2>Step 2: Sketching the Layout</h2>
+            <p>
+                The initial wireframe sketches should be quick and simple, focusing on layout and user interaction
+                rather than visual details.
+                Sketching can be done with pen and paper or using digital tools.
+            </p>
 
+            <h3>Elements of a Wireframe:</h3>
+            <ul>
+                <li><strong>Header:</strong> Usually contains the logo, navigation menu, and sometimes a search bar.
+                </li>
+                <li><strong>Main Content Area:</strong> The central part of the screen where the most important
+                    information is displayed.</li>
+                <li><strong>Sidebar:</strong> Used for navigation, filters, or additional information.</li>
+                <li><strong>Footer:</strong> Contains links to important pages like contact, privacy policy, and terms
+                    of service.</li>
+            </ul>
 
+            <h3>Example Sketch:</h3>
+            <p>Below is a simple wireframe structure for a basic webpage:</p>
+
+            <!-- Laptop or Mobile Mockup -->
+            <div class="device">
+                <div class="screen">
+                    <div class="navigation">
+                        Navigation (Logo, Menu, User Profile)
+                    </div>
+                    <div class="hero">
+                        <h1>Hero Section</h1>
+                        <p>Heading, Subtext, Call to Action</p>
+                    </div>
+                    <div class="content-blocks">
+                        <div class="block">Content Block 1 (Image, Text, Feature)</div>
+                        <div class="block">Content Block 2 (Image, Text, Feature)</div>
+                        <div class="block">Content Block 3 (Image, Text, Feature)</div>
+                    </div>
+                    <div class="footer">
+                        Footer (Social Links, Contact, Privacy Policy)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="best-practices">
+            <h2>Step 3: Best Practices for Wireframing</h2>
+            <ul>
+                <li><strong>Start with Low-Fidelity Wireframes:</strong> Focus on layout and structure before adding
+                    details.</li>
+                <li><strong>Use Placeholder Content:</strong> Avoid focusing on text and images early on; use boxes and
+                    dummy text.</li>
+                <li><strong>Keep It Simple:</strong> Don’t overcomplicate the wireframe; focus on usability.</li>
+                <li><strong>Consider User Flow:</strong> Ensure smooth navigation and logical placement of elements.
+                </li>
+                <li><strong>Gather Feedback Early:</strong> Share sketches with teammates or clients for initial
+                    feedback.</li>
+            </ul>
+        </section>
+
+        <section id="wireframing-tools">
+            <h2>Step 4: Choosing a Wireframing Tool</h2>
+            <p>
+                While sketching on paper is great for brainstorming, digital wireframing tools offer better
+                collaboration and refinement.
+                Some recommended tools include:
+            </p>
+            <ul>
+                <li><strong>Balsamiq:</strong> Best for quick, low-fidelity wireframes.</li>
+                <li><strong>Figma:</strong> Allows for real-time collaboration and prototyping.</li>
+                <li><strong>Adobe XD:</strong> Provides smooth integration with other Adobe products.</li>
+                <li><strong>Sketch:</strong> Popular for macOS users, great for UI design.</li>
+            </ul>
+        </section>
+
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>
+                Wireframing starts with understanding user requirements, followed by sketching a basic layout.
+                Best practices ensure clear, functional wireframes that guide the design process. Digital tools help
+                refine wireframes
+                for better collaboration and iteration.
+            </p>
+        </section>
 
 
     </main>
