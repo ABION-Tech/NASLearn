@@ -4,63 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript and jQuery Concepts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: #333;
-            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
+        h1,
         h2,
         h3 {
             color: #007BFF;
-            margin-top: 20px;
+            /* Blue accent */
         }
 
-        p,
-        code {
-            font-size: 16px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
             line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .section {
-            margin-bottom: 50px;
+        .custom-section ul {
+            margin-left: 20px;
         }
 
-        pre {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 14px;
-            overflow-x: auto;
-        }
-
-        .code-title {
+        .custom-section ul li {
             margin-bottom: 10px;
-            font-weight: bold;
         }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -139,137 +125,151 @@
                 }
             }
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+            transition: 0.3s;
+        }
     </style>
-</head>
 
 <body>
+    <main>
 
-    <!-- JavaScript Section -->
-    <div class="container mt-5">
-        <h2>Advanced JavaScript Concepts</h2>
+        <body>
+            <header>
+                <h1>Module 5: Risk Management</h1>
+                <h2>Identifying and Assessing Risks</h2>
+            </header>
 
-        <div class="section">
-            <h3>1.1 ES6 Features (ECMAScript 2015)</h3>
-            <p><strong>let and const:</strong></p>
-            <pre><code>let age = 25;
-const pi = 3.14;</code></pre>
+            <section>
+                <h3>Step 1: Risk Identification</h3>
+                <p>Risk identification is the first step in the risk management process. It involves recognizing
+                    potential threats and
+                    opportunities that could affect the project. This process should be ongoing and include input from
+                    all project stakeholders.</p>
 
-            <p><strong>Arrow Functions:</strong></p>
-            <pre><code>const multiply = (a, b) => a * b;</code></pre>
+                <h4>Methods for Identifying Risks</h4>
+                <ul>
+                    <li><strong>Brainstorming Sessions:</strong> Involve team members to discuss potential risks.</li>
+                    <li><strong>Expert Judgment:</strong> Consulting experienced professionals for insights on possible
+                        risks.</li>
+                    <li><strong>SWOT Analysis:</strong> Identifying project strengths, weaknesses, opportunities, and
+                        threats.</li>
+                    <li><strong>Checklists:</strong> Using predefined lists of common project risks.</li>
+                    <li><strong>Historical Data Review:</strong> Examining past projects to identify recurring risks.
+                    </li>
+                </ul>
 
-            <p><strong>Template Literals:</strong></p>
-            <pre><code>const name = "John";
-const greeting = `Hello, ${name}! Welcome to ES6.`;</code></pre>
+                <h4>Types of Risks</h4>
+                <ul>
+                    <li><strong>Known Risks:</strong> Risks that can be identified and planned for in advance.</li>
+                    <li><strong>Unknown Risks:</strong> Unforeseen risks that emerge during the project.</li>
+                    <li><strong>Internal Risks:</strong> Risks within the project’s control, such as resource
+                        availability.</li>
+                    <li><strong>External Risks:</strong> Risks outside the project’s control, such as market conditions
+                        or natural disasters.</li>
+                </ul>
+            </section>
 
-            <p><strong>Destructuring Assignment:</strong></p>
-            <pre><code>const person = { name: "Jane", age: 30 };
-const { name, age } = person;</code></pre>
+            <section>
+                <h3>Step 2: Risk Assessment</h3>
+                <p>After identifying risks, they must be assessed to determine their impact and likelihood. This helps
+                    prioritize risks
+                    based on their severity and probability.</p>
 
-            <p><strong>Default Parameters:</strong></p>
-            <pre><code>function greet(name = "Guest") {
-    console.log(`Hello, ${name}!`);
-}</code></pre>
+                <h4>Qualitative Risk Assessment</h4>
+                <p>This approach categorizes risks based on likelihood and impact, often using a risk matrix.</p>
+                <table border="1">
+                    <tr>
+                        <th>Likelihood</th>
+                        <th>Low Impact</th>
+                        <th>Medium Impact</th>
+                        <th>High Impact</th>
+                    </tr>
+                    <tr>
+                        <td>Low</td>
+                        <td>Monitor</td>
+                        <td>Monitor</td>
+                        <td>Mitigate</td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td>Monitor</td>
+                        <td>Mitigate</td>
+                        <td>Plan Response</td>
+                    </tr>
+                    <tr>
+                        <td>High</td>
+                        <td>Mitigate</td>
+                        <td>Plan Response</td>
+                        <td>Immediate Action</td>
+                    </tr>
+                </table>
 
-            <p><strong>Spread and Rest Operators:</strong></p>
-            <pre><code>const numbers = [1, 2, 3];
-console.log(...numbers); // Outputs: 1 2 3</code></pre>
-        </div>
+                <h4>Quantitative Risk Assessment</h4>
+                <p>This method assigns numerical values to risks to measure their potential impact.</p>
+                <ul>
+                    <li><strong>Expected Monetary Value (EMV):</strong> Calculates the cost of risks using probability
+                        and impact.</li>
+                    <li><strong>Decision Tree Analysis:</strong> Uses scenarios to determine possible outcomes.</li>
+                    <li><strong>Monte Carlo Simulation:</strong> Uses computational models to assess risk probabilities.
+                    </li>
+                </ul>
+            </section>
 
-        <div class="section">
-            <h3>1.2 Asynchronous JavaScript</h3>
-            <p><strong>Callbacks:</strong></p>
-            <pre><code>function fetchData(callback) {
-    setTimeout(() => {
-        callback("Data received!");
-    }, 2000);
-}
+            <section>
+                <h3>Step 3: Risk Prioritization</h3>
+                <p>Once risks are assessed, they must be prioritized to ensure the most critical ones are managed first.
+                </p>
+                <ol>
+                    <li><strong>High-Priority Risks:</strong> Require immediate mitigation plans.</li>
+                    <li><strong>Medium-Priority Risks:</strong> Need proactive management and monitoring.</li>
+                    <li><strong>Low-Priority Risks:</strong> Should be tracked but may not need immediate action.</li>
+                </ol>
+            </section>
 
-fetchData((message) => {
-    console.log(message);
-});</code></pre>
+            <footer>
+                <p>Next: Developing Risk Response Strategies →</p>
+            </footer>
+        </body>
 
-            <p><strong>Promises:</strong></p>
-            <pre><code>const fetchData = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("Data received!");
-    }, 2000);
-});
-
-fetchData.then((message) => {
-    console.log(message);
-});</code></pre>
-
-            <p><strong>Async/Await:</strong></p>
-            <pre><code>async function fetchData() {
-    const data = await new Promise((resolve) => {
-        setTimeout(() => {
-            resolve("Data received!");
-        }, 2000);
-    });
-    console.log(data);
-}
-
-fetchData();</code></pre>
-        </div>
-
-        <!-- jQuery Section -->
-        <h2>Introduction to jQuery</h2>
-
-        <div class="section">
-            <h3>2.1 What is jQuery?</h3>
-            <p>jQuery is a fast, small, and feature-rich JavaScript library. It simplifies tasks like DOM manipulation,
-                event handling, and animation, making it easier to build dynamic and interactive web pages.</p>
-
-            <p><strong>Why Use jQuery?</strong></p>
-            <ul>
-                <li>Cross-browser compatibility.</li>
-                <li>Simplifies complex JavaScript tasks.</li>
-                <li>Extensive plugin ecosystem.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>2.2 Basic jQuery Syntax</h3>
-            <p><strong>Selecting Elements:</strong></p>
-            <pre><code>$(document).ready(function() {
-    $("p").click(function() {
-        $(this).hide();
-    });
-});</code></pre>
-
-            <p><strong>Event Handling:</strong></p>
-            <pre><code>$("button").click(function() {
-    alert("Button clicked!");
-});</code></pre>
-
-            <p><strong>DOM Manipulation:</strong></p>
-            <pre><code>$("#myDiv").text("Hello, jQuery!");</code></pre>
-        </div>
-
-        <div class="section">
-            <h3>2.3 jQuery Animations</h3>
-            <p><strong>Basic Animation:</strong></p>
-            <pre><code>$("#myDiv").fadeOut();</code></pre>
-
-            <p><strong>Chaining Animations:</strong></p>
-            <pre><code>$("#myDiv").slideUp().slideDown().fadeOut();</code></pre>
-        </div>
-    </div>
-    <div class="video-container">
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
         <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
         </div>
-    </div>
-    <!-- Bootstrap JS and jQuery (for demonstration purposes) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    </div>-->
 </body>
 
 </html>

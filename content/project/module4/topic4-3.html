@@ -4,95 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Functions</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .main-container {
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 1200px;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
         h1,
-        h2 {
-            color: #007bff;
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        p {
-            color: #333;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .code-container {
-            background-color: #f8f9fa;
-            border-left: 4px solid #007bff;
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
-            margin-bottom: 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 16px;
-            color: #343a40;
-        }
-
-        .code-container pre {
-            margin: 0;
-        }
-
-        .highlight {
-            background-color: #007bff;
-            color: white;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-
-        .btn-custom {
-            background-color: #007bff;
-            color: white;
-            border-radius: 50px;
-            padding: 10px 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-custom:hover {
-            background-color: #007BFF;
-        }
-
-        .note {
-            font-size: 0.9em;
-            color: #6c757d;
-            margin-top: -10px;
-        }
-
-        .section-title {
-            margin-top: 40px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            color: #007bff;
-        }
-
-
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -172,100 +126,140 @@
             }
         }
     </style>
-</head>
 
 <body>
+    <main>
 
-    <div class="main-container">
-        <h1>JavaScript Functions</h1>
-        <p>Functions in JavaScript are one of the most powerful features, allowing you to define reusable code blocks
-            that can execute specific tasks. They make the code more modular, flexible, and scalable.</p>
+        <body>
 
-        <h2 class="section-title">3.1 Defining and Calling Functions</h2>
-        <p>A function is defined using the <span class="highlight">function</span> keyword, followed by a name, a set of
-            parentheses, and a block of code. Here's how you define and call functions:</p>
+            <header>
+                <h1>Module 4: Time and Cost Management</h1>
+                <h2>Page 3: Cost Estimation Techniques</h2>
+            </header>
 
-        <div class="code-container">
-            <pre>function greet() {</pre>
-            <pre>    console.log("Hello, World!");</pre>
-            <pre>}</pre>
-            <pre>greet(); // Calls the function</pre>
-        </div>
+            <main>
 
-        <p>In the above example, the function <span class="highlight">greet()</span> is defined to print a message. When
-            called, it executes the code inside it. Functions can take input values (parameters) and return a result.
-        </p>
+                <section id="introduction">
+                    <h2>Introduction</h2>
+                    <p>Cost estimation is a critical aspect of project management that helps in budgeting and financial
+                        planning.
+                        Accurate cost estimation ensures that projects are completed within budget and resources are
+                        allocated efficiently.</p>
+                </section>
 
-        <h2 class="section-title">Function Parameters and Return Values</h2>
-        <p>Functions often need inputs to work with, and they return outputs. You can pass values to a function via
-            <span class="highlight">parameters</span>. The <span class="highlight">return</span> keyword sends back the
-            result of a function.
-        </p>
+                <section id="techniques">
+                    <h2>Common Cost Estimation Techniques</h2>
 
-        <div class="code-container">
-            <pre>function add(a, b) {</pre>
-            <pre>    return a + b;</pre>
-            <pre>}</pre>
-            <pre>let result = add(5, 10); // 15</pre>
-        </div>
+                    <article>
+                        <h3>1. Analogous Estimating</h3>
+                        <p>This technique uses historical data from similar past projects to estimate costs. It is a
+                            quick and cost-effective method.</p>
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>Fast and straightforward approach.</li>
+                            <li>Useful when detailed project data is unavailable.</li>
+                            <li>Based on real-world experience.</li>
+                        </ul>
+                        <p><strong>Limitations:</strong></p>
+                        <ul>
+                            <li>Less accurate for unique or complex projects.</li>
+                            <li>Depends on the quality of past project data.</li>
+                        </ul>
+                    </article>
 
-        <p>Here, the function <span class="highlight">add()</span> takes two parameters <span class="highlight">a</span>
-            and <span class="highlight">b</span>, adds them, and returns the result. The result is stored in the
-            variable <span class="highlight">result</span>.</p>
+                    <article>
+                        <h3>2. Parametric Estimating</h3>
+                        <p>Uses statistical relationships between cost drivers (e.g., cost per unit, labor hours per
+                            task) to estimate project costs.</p>
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>More accurate than analogous estimating.</li>
+                            <li>Uses quantitative data for precise calculations.</li>
+                            <li>Scalable for large projects.</li>
+                        </ul>
+                        <p><strong>Limitations:</strong></p>
+                        <ul>
+                            <li>Requires detailed historical and industry data.</li>
+                            <li>Not effective for projects with unique requirements.</li>
+                        </ul>
+                    </article>
 
-        <button class="btn btn-custom" onclick="alert('The result is: ' + add(5, 10));">Run the Function</button>
+                    <article>
+                        <h3>3. Bottom-Up Estimating</h3>
+                        <p>Breaks down the project into smaller components, estimates each component individually, and
+                            sums them up for total cost.</p>
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>Highly detailed and accurate.</li>
+                            <li>Allows for precise budget planning.</li>
+                            <li>Useful for large-scale projects with multiple components.</li>
+                        </ul>
+                        <p><strong>Limitations:</strong></p>
+                        <ul>
+                            <li>Time-consuming and labor-intensive.</li>
+                            <li>Requires extensive data collection.</li>
+                        </ul>
+                    </article>
 
-        <h2 class="section-title">3.2 Arrow Functions</h2>
-        <p>Arrow functions provide a more concise way of writing functions. They are particularly useful when dealing
-            with functions that are short and anonymous.</p>
+                    <article>
+                        <h3>4. Three-Point Estimating</h3>
+                        <p>Uses three scenarios—Optimistic, Most Likely, and Pessimistic—to calculate a weighted average
+                            cost estimate.</p>
+                        <p><strong>Formula:</strong> (Optimistic + 4 × Most Likely + Pessimistic) / 6</p>
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>Accounts for uncertainty and risk.</li>
+                            <li>Provides a balanced cost estimate.</li>
+                            <li>Reduces the impact of extreme values.</li>
+                        </ul>
+                        <p><strong>Limitations:</strong></p>
+                        <ul>
+                            <li>Requires accurate probability assessments.</li>
+                            <li>Can be complex to implement.</li>
+                        </ul>
+                    </article>
 
-        <div class="code-container">
-            <pre>const multiply = (a, b) => a * b;</pre>
-            <pre>console.log(multiply(2, 3)); // 6</pre>
-        </div>
+                </section>
 
-        <p>In this example, the function <span class="highlight">multiply()</span> is defined using arrow function
-            syntax. It takes two parameters, multiplies them, and returns the result.</p>
+                <section id="best-practices">
+                    <h2>Best Practices for Cost Estimation</h2>
+                    <ul>
+                        <li>Use multiple estimation techniques for accuracy.</li>
+                        <li>Consider inflation, market trends, and unforeseen risks.</li>
+                        <li>Regularly update cost estimates as the project progresses.</li>
+                        <li>Engage financial experts for complex projects.</li>
+                        <li>Document all assumptions and calculations.</li>
+                    </ul>
+                </section>
 
-        <button class="btn btn-custom" onclick="alert('The result is: ' + multiply(2, 3));">Test Arrow Function</button>
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+                    <p>Cost estimation plays a vital role in project success by ensuring that financial resources are
+                        efficiently allocated.
+                        The next section will focus on cost control strategies to maintain financial discipline
+                        throughout the project lifecycle.</p>
+                </section>
 
-        <h2 class="section-title">Why Use Functions?</h2>
-        <p>Functions make your code more organized and easier to maintain. They help you avoid repetition by allowing
-            you to reuse code. Functions also make your code more modular, allowing you to break complex tasks into
-            smaller, manageable pieces.</p>
+            </main>
 
-        <p>Key benefits of using functions:</p>
-        <ul>
-            <li>Improved code readability and structure</li>
-            <li>Reusability of code blocks</li>
-            <li>Reduced code duplication</li>
-            <li>Ease of maintenance and testing</li>
-        </ul>
-    </div>
-    <div class="video-container">
+            <footer>
+                <p>Next: <a href="page4.html">Cost Control Strategies</a></p>
+            </footer>
+
+        </body>
+
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
         <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
         </div>
-    </div>
-    <script>
-        // Function examples
-        function greet() {
-            console.log("Hello, World!");
-        }
-
-        function add(a, b) {
-            return a + b;
-        }
-
-        const multiply = (a, b) => a * b;
-    </script>
-
+    </div>-->
 </body>
 
 </html>

@@ -113,42 +113,42 @@ print(set1.intersection(set2))  # Intersection
 print(set1.difference(set2))  # Difference</code></pre>
         </div>
 
-        <div class="code-editor-container">
+        <!-- <div class="code-editor-container">
             <textarea id="code-editor" class="code-editor" placeholder="Write your Python code here..."></textarea>
             <div id="output-viewport" class="output-viewport">Output will appear here...</div>
         </div>
 
         <button id="run-button" class="btn btn-primary">Run Code</button>
-    </div>
+    </div> -->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.getElementById("run-button").onclick = function () {
-            const code = document.getElementById("code-editor").value;
-            const outputViewport = document.getElementById("output-viewport");
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            document.getElementById("run-button").onclick = function () {
+                const code = document.getElementById("code-editor").value;
+                const outputViewport = document.getElementById("output-viewport");
 
-            // Clear previous output
-            outputViewport.innerHTML = '';
+                // Clear previous output
+                outputViewport.innerHTML = '';
 
-            try {
-                // Create a new function from the code and execute it
-                const func = new Function(code);
-                const originalLog = console.log;
+                try {
+                    // Create a new function from the code and execute it
+                    const func = new Function(code);
+                    const originalLog = console.log;
 
-                // Capture console.log output
-                console.log = function (message) {
-                    outputViewport.innerHTML += message + '<br>';
-                };
+                    // Capture console.log output
+                    console.log = function (message) {
+                        outputViewport.innerHTML += message + '<br>';
+                    };
 
-                func(); // Run the code
-                console.log = originalLog; // Restore original console.log
-            } catch (e) {
-                outputViewport.innerHTML = 'Error: ' + e.message; // Display error
-            }
-        };
-    </script>
+                    func(); // Run the code
+                    console.log = originalLog; // Restore original console.log
+                } catch (e) {
+                    outputViewport.innerHTML = 'Error: ' + e.message; // Display error
+                }
+            };
+        </script>
 </body>
 
 </html>

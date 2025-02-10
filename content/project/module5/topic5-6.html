@@ -4,83 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 4 Conclusion</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-            color: #333;
-        }
-
-        .container {
-            margin-top: 30px;
-        }
-
-        .card {
-            transition: transform 0.2s;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .back {
-            display: none;
-        }
-
-        .card-flip {
-            perspective: 1000px;
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 10px;
-        }
-
-        .flip-card-back {
-            transform: rotateY(180deg);
-            background-color: #007bff;
-            color: white;
-        }
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
-            top: 80px;
         }
 
-        .container {
-            padding: 20px;
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -160,132 +126,115 @@
             }
         }
     </style>
-</head>
 
 <body>
+    <main>
 
-    <div class="container">
-        <h1 class="text-center mb-4">Conclusion of Week 5</h1>
-        <p>As we conclude Week 4 of our course, it’s essential to reflect on the significant advancements made in our
-            understanding and application of JavaScript, as well as the front-end libraries that are pivotal in modern
-            web development.</p>
+        <body>
+            <header>
+                <h1>Module 5: Risk Management</h1>
+                <h2>Discussion Questions & Assignments</h2>
+            </header>
 
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Mastering Asynchronous JavaScript</h5>
-                                <p class="card-text">Gained understanding of Promises, async/await, and Fetch API.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Asynchronous programming is essential for managing complex tasks
-                                    efficiently and enhancing user experiences in applications.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Introduction to jQuery</h5>
-                                <p class="card-text">Learned jQuery for simplified DOM manipulation and event handling.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Using jQuery, students can create more interactive web applications
-                                    with less complex JavaScript code.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">React Fundamentals</h5>
-                                <p class="card-text">Explored React's component-based architecture and JSX syntax.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">React allows developers to build efficient and interactive user
-                                    interfaces, making web development more dynamic.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <section>
+                <h3>Discussion Questions</h3>
+                <p>Reflect on the concepts learned in this module and discuss the following questions with your peers:
+                </p>
+
+                <ol>
+                    <li><strong>Risk Identification:</strong>
+                        What are the most common risks in project management? Provide examples from different
+                        industries.</li>
+
+                    <li><strong>Proactive vs. Reactive Risk Management:</strong>
+                        Compare proactive and reactive risk management approaches. When is each approach more effective?
+                    </li>
+
+                    <li><strong>Risk Prioritization:</strong>
+                        How do you determine which risks need immediate attention? Discuss different risk assessment
+                        techniques such as risk matrices.</li>
+
+                    <li><strong>Risk Mitigation Strategies:</strong>
+                        Share examples of effective risk mitigation strategies you have encountered in real-life
+                        projects or case studies.</li>
+
+                    <li><strong>Failure & Lessons Learned:</strong>
+                        Discuss a project that failed due to poor risk management. What lessons can be learned from it?
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>Assignment: Risk Management Plan Development</h3>
+                <p>For this assignment, you will create a **Risk Management Plan** for a hypothetical or real project.
+                </p>
+
+                <h4>Task 1: Project Selection</h4>
+                <p>Choose a project (either a real-life project or a hypothetical one) in one of the following
+                    industries:</p>
+                <ul>
+                    <li>Technology (e.g., software development, AI implementation)</li>
+                    <li>Construction (e.g., building a residential complex)</li>
+                    <li>Healthcare (e.g., launching a new medical device)</li>
+                    <li>Finance (e.g., introducing a new banking service)</li>
+                </ul>
+
+                <h4>Task 2: Risk Identification</h4>
+                <p>Identify at least **five** potential risks associated with your selected project.</p>
+
+                <h4>Task 3: Risk Assessment</h4>
+                <p>For each identified risk, assess the **likelihood** (Low, Medium, High) and **impact** (Minor,
+                    Moderate, Critical) using a risk matrix.</p>
+
+                <h4>Task 4: Risk Mitigation Strategies</h4>
+                <p>Develop a mitigation plan for each risk, detailing:</p>
+                <ul>
+                    <li>Preventive actions to reduce risk probability.</li>
+                    <li>Contingency plans in case the risk occurs.</li>
+                    <li>Key stakeholders responsible for risk management.</li>
+                </ul>
+
+                <h4>Task 5: Risk Monitoring Plan</h4>
+                <p>Outline how you will monitor risks throughout the project lifecycle. Include:</p>
+                <ul>
+                    <li>Review frequency (weekly, monthly, or milestone-based).</li>
+                    <li>Reporting structure (who reports to whom).</li>
+                    <li>Response triggers (at what point action should be taken).</li>
+                </ul>
+
+                <h4>Submission Format</h4>
+                <p>Submit a structured document (PDF or Word) with the following sections:</p>
+                <ol>
+                    <li>Project Overview</li>
+                    <li>Identified Risks</li>
+                    <li>Risk Assessment Table</li>
+                    <li>Mitigation Strategies</li>
+                    <li>Monitoring Plan</li>
+                    <li>Conclusion & Key Takeaways</li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>Bonus Challenge: Risk Response Simulation</h3>
+                <p>In groups, simulate a project risk scenario where an unexpected issue occurs. One team acts as the
+                    project team, while the other plays the role of stakeholders. How do you manage the situation?</p>
+            </section>
+
+            <footer>
+                <p>End of Module 5: Risk Management</p>
+            </footer>
+        </body>
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
         </div>
-
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Hands-On Project</h5>
-                                <p class="card-text">Developed a simple React application for personalized greetings.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">This project reinforced learning about components, state, and event
-                                    handling while boosting creative problem-solving skills.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Styling and Deployment</h5>
-                                <p class="card-text">Learned about CSS styling and integrating frameworks like
-                                    Bootstrap.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Understanding deployment strategies ensures that applications are
-                                    accessible to users, transitioning from development to production.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Looking Ahead</h5>
-                        <p class="card-text">The skills gained this week prepare students for full-stack development in
-                            the upcoming weeks.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h4 class="text-center mt-5">Final Thoughts</h4>
-        <p>Embrace the journey of learning and building. Each concept mastered brings you one step closer to becoming a
-            proficient developer. Keep pushing your boundaries, stay curious, and let your creativity flow!</p>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>-->
 </body>
 
 </html>

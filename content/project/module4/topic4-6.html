@@ -4,116 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Web Page Practice</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fffefe;
-            color: #121212;
-            margin: 0;
-            padding: 0;
-        }
-
-        .main-container {
-            padding: 30px;
-            margin: 0 auto;
-            max-width: 1200px;
-            text-align: center;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
         h1,
-        h2 {
-            color: #000000;
-            margin-bottom: 20px;
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        .section-title {
-            margin-top: 40px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #6554fd;
-            color: #000000;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .code-container,
-        .editor-container {
-            background-color: #1f1f1f;
-            border-left: 4px solid #007bff;
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
-            margin-bottom: 30px;
-            color: #fff;
-            text-align: left;
-        }
-
-        pre {
-            margin: 0;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        .editor-container {
-            text-align: center;
-        }
-
-        #editor {
-            width: 100%;
-            height: 200px;
-            font-size: 14px;
-            color: #f0f0f0;
-            background-color: #1f1f1f;
-            border: none;
-            padding: 15px;
-            box-sizing: border-box;
-            resize: none;
-        }
-
-        .btn {
-            background-color: #007bff;
-            color: #1f1f1f;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 50px;
-            margin-top: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #3067a5;
-        }
-
-        .preview-box {
-            margin-top: 30px;
-            background-color: #e0e0e0;
-            padding: 20px;
-            color: #1f1f1f;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .main-container {
-                padding: 15px;
-            }
-        }
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -193,89 +126,115 @@
             }
         }
     </style>
-</head>
 
 <body>
+    <main>
 
-    <div class="main-container">
-        <h1>Interactive Web Page Practice</h1>
-        <p>In this hands-on practice, you will create a simple interactive web page that includes buttons, text inputs,
-            and dynamic content updates using JavaScript.</p>
+        <body>
 
-        <h2 class="section-title">6.1 Creating a Simple Web Page</h2>
+            <header>
+                <h1>Module 4: Time and Cost Management</h1>
+                <h2>Page 6: Discussion and Assignments</h2>
+            </header>
 
-        <h4>Step 1: Create an HTML structure</h4>
-        <div class="code-container">
-            <pre>
-&lt;div id="container"&gt;
-    &lt;h2&gt;Welcome to My Interactive Web Page!&lt;/h2&gt;
-    &lt;button onclick="showAlert()"&gt;Click Me&lt;/button&gt;
-    &lt;p id="dynamicText"&gt;Hello, World!&lt;/p&gt;
-&lt;/div&gt;
-        </pre>
+            <main>
+
+                <section id="discussion">
+                    <h2>Discussion Questions</h2>
+                    <p>Consider the following questions and discuss them with your peers to deepen your understanding of
+                        time and cost management strategies.</p>
+
+                    <ul>
+                        <li><strong>1. Time-Cost Trade-Off:</strong> How do project managers decide whether to
+                            prioritize cost savings or faster completion? Provide examples of real-world scenarios where
+                            each approach might be preferred.</li>
+
+                        <li><strong>2. Critical Path Adjustments:</strong> If a project is falling behind schedule, what
+                            are the advantages and disadvantages of using crashing or fast-tracking techniques?</li>
+
+                        <li><strong>3. Agile vs. Traditional Approaches:</strong> In what types of projects would Agile
+                            methodologies be more effective than traditional cost and time management strategies?
+                            Provide reasoning based on project complexity and stakeholder involvement.</li>
+
+                        <li><strong>4. Budget Contingency Planning:</strong> How much buffer should be allocated in a
+                            project’s budget to accommodate unforeseen risks? What factors influence this decision?</li>
+
+                        <li><strong>5. Risk Management:</strong> How can a project team proactively identify and
+                            mitigate risks that could impact both time and cost? Provide a framework or steps for
+                            effective risk assessment.</li>
+
+                        <li><strong>6. Real-World Examples:</strong> Research and share an example of a project that
+                            suffered from poor time and cost management. What were the consequences, and how could they
+                            have been prevented?</li>
+                    </ul>
+                </section>
+
+                <section id="assignments">
+                    <h2>Assignments</h2>
+                    <p>Complete the following assignments to apply the concepts of time and cost management in practical
+                        scenarios.</p>
+
+                    <article>
+                        <h3>Assignment 1: Project Time-Cost Analysis</h3>
+                        <p><strong>Task:</strong> Select a real or hypothetical project and create a time-cost trade-off
+                            analysis. Identify which tasks are on the critical path and propose strategies to optimize
+                            both time and cost.</p>
+                        <p><strong>Guidelines:</strong></p>
+                        <ul>
+                            <li>Define project objectives, scope, and constraints.</li>
+                            <li>Use a simple Gantt chart or timeline to map tasks.</li>
+                            <li>Identify cost implications for accelerating or delaying tasks.</li>
+                            <li>Submit a brief report with your analysis and recommendations.</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>Assignment 2: Budgeting and Risk Assessment</h3>
+                        <p><strong>Task:</strong> Develop a project budget that includes a risk contingency plan.
+                            Outline how you would allocate resources to manage time and cost uncertainties.</p>
+                        <p><strong>Guidelines:</strong></p>
+                        <ul>
+                            <li>Create an estimated budget breakdown for major project components.</li>
+                            <li>Identify potential risks that could impact costs and timelines.</li>
+                            <li>Define buffer amounts and justify why they are necessary.</li>
+                            <li>Submit a detailed budget plan with risk mitigation strategies.</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>Assignment 3: Case Study Analysis</h3>
+                        <p><strong>Task:</strong> Research a well-documented project failure caused by poor time and
+                            cost management. Analyze what went wrong and propose an alternative approach that could have
+                            led to better outcomes.</p>
+                        <p><strong>Guidelines:</strong></p>
+                        <ul>
+                            <li>Summarize the project’s objectives and initial budget/timeline.</li>
+                            <li>Identify key mistakes that led to delays and cost overruns.</li>
+                            <li>Suggest improvements that could have prevented failure.</li>
+                            <li>Submit a case study report with insights and lessons learned.</li>
+                        </ul>
+                    </article>
+
+                </section>
+                <p>Pick one Assignment to answer, but study all 3</p>
+            </main>
+
+
+
+
+        </body>
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
         </div>
-
-        <h4>Step 2: Style the Page with CSS</h4>
-        <div class="code-container">
-            <pre>
-#container {
-    background-color: #282828;
-    color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-}
-button {
-    background-color: #66fcf1;
-    color: #1f1f1f;
-    padding: 10px;
-    border: none;
-    border-radius: 50px;
-}
-button:hover {
-    background-color: #45a29e;
-}
-        </pre>
-        </div>
-
-        <h4>Step 3: Use JavaScript for Interactivity</h4>
-        <div class="code-container">
-            <pre>
-function showAlert() {
-    alert("Button clicked!");
-}
-        </pre>
-        </div>
-
-        <h2 class="section-title">Try it Yourself: Code Editor</h2>
-        <p>Enter your HTML, CSS, and JavaScript below to build a simple interactive web page. Click the button to
-            preview your code!</p>
-
-        <!-- Code Editor Section -->
-        <div class="editor-container">
-            <textarea id="editor" placeholder="Write your HTML, CSS, and JS here..."></textarea>
-            <br>
-            <button class="btn" onclick="updatePreview()">Preview Code</button>
-        </div>
-
-        <!-- Preview Section -->
-        <div class="preview-box" id="preview">
-            <!-- This is where the user code will be rendered -->
-            <h2>Live Preview Area</h2>
-            <p>Your live preview will appear here.</p>
-        </div>
-    </div>
-
-    <!-- JavaScript to handle live preview -->
-    <script>
-        function updatePreview() {
-            const code = document.getElementById('editor').value;
-            const previewFrame = document.getElementById('preview');
-
-            // Update the preview box with the user's code
-            previewFrame.innerHTML = code;
-        }
-    </script>
-
+    </div>-->
 </body>
 
 </html>

@@ -4,64 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript and jQuery Concepts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: #333;
-            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
+        h1,
         h2,
         h3 {
             color: #007BFF;
-            margin-top: 20px;
+            /* Blue accent */
         }
 
-        p,
-        code {
-            font-size: 16px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
             line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .section {
-            margin-bottom: 50px;
+        .custom-section ul {
+            margin-left: 20px;
         }
 
-        pre {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 14px;
-            overflow-x: auto;
-        }
-
-        .code-title {
+        .custom-section ul li {
             margin-bottom: 10px;
-            font-weight: bold;
         }
 
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -141,70 +126,128 @@
             }
         }
     </style>
-</head>
 
 <body>
+    <main>
+
+        <body>
+            <header>
+                <h1>Module 5: Risk Management</h1>
+                <h2>Developing Risk Response Strategies</h2>
+            </header>
+
+            <section>
+                <h3>Step 1: Understanding Risk Response Strategies</h3>
+                <p>Once risks are identified and assessed, appropriate response strategies must be developed. These
+                    strategies ensure that
+                    potential threats are mitigated and opportunities are maximized.</p>
+
+                <h4>Categories of Risk Response Strategies</h4>
+                <ul>
+                    <li><strong>Threat-Focused Strategies:</strong> Used to manage negative risks (threats).</li>
+                    <li><strong>Opportunity-Focused Strategies:</strong> Used to capitalize on positive risks
+                        (opportunities).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Step 2: Response Strategies for Negative Risks (Threats)</h3>
+                <p>These strategies aim to reduce or eliminate the impact of potential risks.</p>
+
+                <h4>Avoidance</h4>
+                <p>This strategy eliminates the risk entirely by changing the project plan or scope.</p>
+                <ul>
+                    <li>Example: Choosing a more stable vendor to prevent supply chain disruptions.</li>
+                    <li>Best for: High-impact risks that can be removed through an alternative approach.</li>
+                </ul>
+
+                <h4>Mitigation</h4>
+                <p>Mitigation reduces the probability or impact of a risk by taking preventive measures.</p>
+                <ul>
+                    <li>Example: Adding extra testing phases to reduce software defects.</li>
+                    <li>Best for: Risks that cannot be avoided but can be managed with proactive actions.</li>
+                </ul>
+
+                <h4>Transfer</h4>
+                <p>Risk is transferred to a third party, such as insurance companies or subcontractors.</p>
+                <ul>
+                    <li>Example: Purchasing project insurance to cover financial losses from equipment damage.</li>
+                    <li>Best for: Financial and liability risks that can be outsourced.</li>
+                </ul>
+
+                <h4>Acceptance</h4>
+                <p>Some risks must simply be accepted if their impact is low or unavoidable.</p>
+                <ul>
+                    <li>Example: Accepting minor delays in a project schedule due to unpredictable weather.</li>
+                    <li>Best for: Low-impact risks where mitigation costs exceed the risk impact.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Step 3: Response Strategies for Positive Risks (Opportunities)</h3>
+                <p>These strategies focus on leveraging opportunities that arise in the project.</p>
+
+                <h4>Exploitation</h4>
+                <p>Ensuring that an opportunity is fully realized by taking immediate action.</p>
+                <ul>
+                    <li>Example: Assigning more resources to a high-potential project to maximize gains.</li>
+                    <li>Best for: High-value opportunities that can provide a competitive advantage.</li>
+                </ul>
+
+                <h4>Enhancement</h4>
+                <p>Increasing the probability or impact of an opportunity.</p>
+                <ul>
+                    <li>Example: Extending marketing efforts to expand a product’s reach.</li>
+                    <li>Best for: Opportunities with moderate potential that can be optimized.</li>
+                </ul>
+
+                <h4>Sharing</h4>
+                <p>Partnering with external organizations to mutually benefit from an opportunity.</p>
+                <ul>
+                    <li>Example: Co-developing a product with another company to reduce costs.</li>
+                    <li>Best for: Opportunities that require collaboration for full realization.</li>
+                </ul>
+
+                <h4>Acceptance</h4>
+                <p>Taking no specific action but being prepared to leverage an opportunity if it arises.</p>
+                <ul>
+                    <li>Example: Allowing new market trends to develop before investing in them.</li>
+                    <li>Best for: Opportunities that are uncertain but may bring benefits.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Step 4: Developing a Risk Response Plan</h3>
+                <p>A structured plan ensures that risk response strategies are effectively implemented.</p>
+
+                <h4>Key Elements of a Risk Response Plan</h4>
+                <ul>
+                    <li><strong>Risk Description:</strong> A summary of the identified risk.</li>
+                    <li><strong>Risk Owner:</strong> The person responsible for monitoring and addressing the risk.</li>
+                    <li><strong>Response Strategy:</strong> The chosen method for managing the risk.</li>
+                    <li><strong>Triggers:</strong> Signs that indicate when action should be taken.</li>
+                    <li><strong>Contingency Plan:</strong> Backup plans in case the primary response fails.</li>
+                    <li><strong>Monitoring Plan:</strong> Methods to track risk developments over time.</li>
+                </ul>
+            </section>
+
+            <footer>
+                <p>Next: Monitoring and Controlling Risks →</p>
+            </footer>
+        </body>
 
 
-    <div class="container mt-5">
-        <!-- jQuery Section -->
-        <h1>Introduction to jQuery</h1>
-
-        <div class="section">
-            <h3>2.1 What is jQuery?</h3>
-            <p>jQuery is a fast, small, and feature-rich JavaScript library. It simplifies tasks like DOM manipulation,
-                event handling, and animation, making it easier to build dynamic and interactive web pages.</p>
-
-            <p><strong>Why Use jQuery?</strong></p>
-            <ul>
-                <li>Cross-browser compatibility.</li>
-                <li>Simplifies complex JavaScript tasks.</li>
-                <li>Extensive plugin ecosystem.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>2.2 Basic jQuery Syntax</h3>
-            <p><strong>Selecting Elements:</strong></p>
-            <pre><code>$(document).ready(function() {
-    $("p").click(function() {
-        $(this).hide();
-    });
-});</code></pre>
-
-            <p><strong>Event Handling:</strong></p>
-            <pre><code>$("button").click(function() {
-    alert("Button clicked!");
-});</code></pre>
-
-            <p><strong>DOM Manipulation:</strong></p>
-            <pre><code>$("#myDiv").text("Hello, jQuery!");</code></pre>
-        </div>
-
-        <div class="section">
-            <h3>2.3 jQuery Animations</h3>
-            <p><strong>Basic Animation:</strong></p>
-            <pre><code>$("#myDiv").fadeOut();</code></pre>
-
-            <p><strong>Chaining Animations:</strong></p>
-            <pre><code>$("#myDiv").slideUp().slideDown().fadeOut();</code></pre>
-        </div>
-    </div>
-    <div class="video-container">
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
         <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
         </div>
-    </div>
-    <!-- Bootstrap JS and jQuery (for demonstration purposes) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    </div>-->
 </body>
 
 </html>

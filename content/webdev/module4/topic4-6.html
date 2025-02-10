@@ -257,24 +257,24 @@ function showAlert() {
             <button class="btn" onclick="updatePreview()">Preview Code</button>
         </div>
 
-        <!-- Preview Section -->
+        <!-- Preview Section
         <div class="preview-box" id="preview">
-            <!-- This is where the user code will be rendered -->
+            This is where the user code will be rendered 
             <h2>Live Preview Area</h2>
             <p>Your live preview will appear here.</p>
         </div>
-    </div>
+    </div> -->
 
-    <!-- JavaScript to handle live preview -->
-    <script>
-        function updatePreview() {
-            const code = document.getElementById('editor').value;
-            const previewFrame = document.getElementById('preview');
+        <!-- JavaScript to handle live preview -->
+        <script>
+            function updatePreview() {
+                const code = document.getElementById('editor').value;
+                const previewFrame = document.getElementById('preview');
 
-            // Update the preview box with the user's code
-            previewFrame.innerHTML = code;
-        }
-    </script>
+                // Update the preview box with the user's code
+                previewFrame.innerHTML = code;
+            }
+        </script>
 
 </body>
 

@@ -4,96 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript DOM Manipulation</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .main-container {
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 1200px;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
         h1,
-        h2 {
-            color: #007bff;
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        p {
-            color: #333;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .code-container {
-            background-color: #f8f9fa;
-            border-left: 4px solid #007bff;
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
-            margin-bottom: 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 16px;
-            color: #343a40;
-        }
-
-        .code-container pre {
-            margin: 0;
-        }
-
-        .highlight {
-            background-color: #007bff;
-            color: white;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-
-        .btn-custom {
-            background-color: #007bff;
-            color: white;
-            border-radius: 50px;
-            padding: 10px 20px;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .btn-custom:hover {
-            background-color: #007BFF;
-        }
-
-        .note {
-            font-size: 0.9em;
-            color: #6c757d;
-            margin-top: -10px;
-        }
-
-        .section-title {
-            margin-top: 40px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            color: #007bff;
-        }
-
-
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -173,130 +126,121 @@
             }
         }
     </style>
-</head>
 
 <body>
+    <main>
 
-    <div class="main-container">
-        <h1>The Document Object Model (DOM)</h1>
-        <p>The Document Object Model (DOM) is a programming interface that allows JavaScript to interact with and
-            manipulate HTML documents. It represents a document as a tree of objects and nodes that can be dynamically
-            modified.</p>
+        <body>
 
-        <h2 class="section-title">4.1 What is the DOM?</h2>
-        <p>The DOM allows developers to interact with a webpage's structure programmatically. It represents the
-            document's structure as a tree of nodes, where each node is an element in the document.</p>
+            <header>
+                <h1>Module 4: Time and Cost Management</h1>
+                <h2>Page 4: Cost Control Strategies</h2>
+            </header>
 
-        <ul>
-            <li><strong>DOM Tree:</strong> Every element in an HTML document becomes a node in the DOM tree.</li>
-            <li><strong>Manipulating the DOM:</strong> JavaScript can add, remove, or modify DOM elements.</li>
-        </ul>
+            <main>
 
-        <h2 class="section-title">4.2 Selecting Elements</h2>
-        <p>Before you can manipulate an element, you need to select it from the DOM. Here are a few ways to select
-            elements:</p>
+                <section id="introduction">
+                    <h2>Introduction</h2>
+                    <p>Cost control is essential for ensuring that projects remain within budget and financial risks are
+                        minimized.
+                        Effective cost control strategies allow project managers to track expenses, identify variances,
+                        and implement corrective actions.</p>
+                </section>
 
-        <h4>1. Using <span class="highlight">getElementById</span>:</h4>
-        <p>Use <span class="highlight">getElementById</span> to select an element by its unique ID.</p>
+                <section id="cost-control-methods">
+                    <h2>Key Cost Control Strategies</h2>
 
-        <div class="code-container">
-            <pre>let element = document.getElementById("header");</pre>
-        </div>
+                    <article>
+                        <h3>1. Budget Monitoring and Forecasting</h3>
+                        <p>Regularly tracking project expenses against the initial budget helps in identifying potential
+                            overruns before they escalate.</p>
+                        <p><strong>Best Practices:</strong></p>
+                        <ul>
+                            <li>Use real-time tracking tools to monitor expenses.</li>
+                            <li>Compare actual costs with budgeted estimates.</li>
+                            <li>Forecast future spending based on current trends.</li>
+                        </ul>
+                    </article>
 
-        <h4>2. Using <span class="highlight">getElementsByClassName</span>:</h4>
-        <p>Use <span class="highlight">getElementsByClassName</span> to select elements by their class name. This
-            returns a collection of elements.</p>
+                    <article>
+                        <h3>2. Earned Value Management (EVM)</h3>
+                        <p>EVM is a project performance measurement technique that integrates cost, schedule, and scope
+                            to assess project health.</p>
+                        <p><strong>Key Metrics:</strong></p>
+                        <ul>
+                            <li><strong>Planned Value (PV):</strong> The estimated budget for scheduled tasks.</li>
+                            <li><strong>Earned Value (EV):</strong> The budgeted cost of completed tasks.</li>
+                            <li><strong>Actual Cost (AC):</strong> The actual expenditure for completed tasks.</li>
+                            <li><strong>Cost Performance Index (CPI):</strong> <code>CPI = EV / AC</code> (A CPI < 1
+                                    indicates cost overrun).</li>
+                        </ul>
+                    </article>
 
-        <div class="code-container">
-            <pre>let elements = document.getElementsByClassName("item");</pre>
-        </div>
+                    <article>
+                        <h3>3. Change Control Management</h3>
+                        <p>Uncontrolled changes in project scope can lead to budget overruns. A structured change
+                            control process helps mitigate this risk.</p>
+                        <p><strong>Steps in Change Control:</strong></p>
+                        <ul>
+                            <li>Document change requests formally.</li>
+                            <li>Assess the financial impact of changes.</li>
+                            <li>Approve or reject changes based on cost-benefit analysis.</li>
+                            <li>Update the budget and project plan accordingly.</li>
+                        </ul>
+                    </article>
 
-        <h4>3. Using <span class="highlight">querySelector</span>:</h4>
-        <p>Use <span class="highlight">querySelector</span> to select the first element that matches a CSS selector.</p>
+                    <article>
+                        <h3>4. Cost Reduction Techniques</h3>
+                        <p>Implementing cost-saving measures without compromising quality is crucial for financial
+                            stability.</p>
+                        <p><strong>Common Cost Reduction Methods:</strong></p>
+                        <ul>
+                            <li>Negotiating better rates with vendors.</li>
+                            <li>Utilizing shared resources to reduce overhead costs.</li>
+                            <li>Identifying and eliminating unnecessary expenses.</li>
+                        </ul>
+                    </article>
 
-        <div class="code-container">
-            <pre>let element = document.querySelector(".menu");</pre>
-        </div>
+                    <article>
+                        <h3>5. Regular Financial Reviews and Audits</h3>
+                        <p>Conducting periodic financial assessments ensures transparency and accountability.</p>
+                        <p><strong>Benefits of Regular Audits:</strong></p>
+                        <ul>
+                            <li>Identifies financial discrepancies early.</li>
+                            <li>Ensures compliance with budgetary constraints.</li>
+                            <li>Improves cost efficiency and resource allocation.</li>
+                        </ul>
+                    </article>
 
-        <h2 class="section-title">4.3 Manipulating Elements</h2>
-        <p>Once you've selected an element, you can manipulate it in various ways such as changing its content, styles,
-            or adding/removing it from the document.</p>
+                </section>
 
-        <h4>1. Changing Content:</h4>
-        <p>Use <span class="highlight">textContent</span> or <span class="highlight">innerHTML</span> to change the
-            content of an element.</p>
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+                    <p>Effective cost control strategies are vital for project success. By implementing proactive
+                        monitoring, structured change control, and cost-saving measures,
+                        project managers can maintain financial discipline and deliver projects within budget.</p>
+                    <p>Next, we will discuss strategies for balancing time and cost constraints effectively.</p>
+                </section>
 
-        <div class="code-container">
-            <pre>let header = document.getElementById("header");</pre>
-            <pre>header.textContent = "Welcome!";</pre>
-        </div>
+            </main>
 
-        <button class="btn btn-custom" onclick="changeContent();">Change Header Content</button>
+            <footer>
+                <p>Next: <a href="page5.html">Balancing Time and Cost Constraints</a></p>
+            </footer>
 
-        <h4>2. Changing Styles:</h4>
-        <p>Use JavaScript to change the style of an element directly. For example, you can change its color, font size,
-            and more.</p>
+        </body>
 
-        <div class="code-container">
-            <pre>header.style.color = "blue";</pre>
-            <pre>header.style.fontSize = "24px";</pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="changeStyles();">Change Header Style</button>
-
-        <h4>3. Adding/Removing Elements:</h4>
-        <p>You can dynamically create new elements and add them to the DOM, or remove existing ones. Here’s how to add a
-            new paragraph to the page:</p>
-
-        <div class="code-container">
-            <pre>let newElement = document.createElement("p");</pre>
-            <pre>newElement.textContent = "This is a new paragraph.";</pre>
-            <pre>document.body.appendChild(newElement);</pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="addElement();">Add New Paragraph</button>
-    </div>
-    <div class="video-container">
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
         <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
         </div>
-    </div>
-    <script>
-        // Function to change header content
-        function changeContent() {
-            let header = document.getElementById("header");
-            if (header) {
-                header.textContent = "You changed the content!";
-            } else {
-                alert('Header element not found!');
-            }
-        }
-
-        // Function to change header style
-        function changeStyles() {
-            let header = document.getElementById("header");
-            if (header) {
-                header.style.color = "blue";
-                header.style.fontSize = "24px";
-            } else {
-                alert('Header element not found!');
-            }
-        }
-
-        // Function to add a new paragraph
-        function addElement() {
-            let newElement = document.createElement("p");
-            newElement.textContent = "This is a dynamically added paragraph.";
-            document.body.appendChild(newElement);
-        }
-    </script>
-
+    </div>-->
 </body>
 
 </html>

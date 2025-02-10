@@ -4,74 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript, jQuery, and React Concepts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: #333;
-            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
+        h1,
         h2,
         h3 {
             color: #007BFF;
-            margin-top: 20px;
+            /* Blue accent */
         }
 
-        p,
-        code {
-            font-size: 16px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
             line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .section {
-            margin-bottom: 50px;
+        .custom-section ul {
+            margin-left: 20px;
         }
 
-        pre {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 14px;
-            overflow-x: auto;
-        }
-
-        .code-title {
+        .custom-section ul li {
             margin-bottom: 10px;
-            font-weight: bold;
         }
 
-        .editor-container {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .editor {
-            height: 300px;
-        }
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -151,106 +126,121 @@
             }
         }
     </style>
-</head>
 
 <body>
+    <main>
 
-    <div class="container mt-5">
-        <h2>Advanced JavaScript Concepts</h2>
-        <!-- Previous sections (JavaScript and jQuery) remain here -->
+        <body>
+            <header>
+                <h1>Module 5: Risk Management</h1>
+                <h2>Case Studies and Best Practices</h2>
+            </header>
 
-        <!-- React Section -->
-        <h2>Introduction to React</h2>
-        <!-- Previous React sections remain here -->
+            <section>
+                <h3>Step 1: Learning from Real-World Projects</h3>
+                <p>Studying past projects can provide valuable insights into effective risk management strategies. Below
+                    are case studies from different industries showcasing how risks were successfully managed.</p>
+            </section>
 
-        <!-- Hands-On Practice Section -->
-        <h2>Hands-On Practice: Building a Small Project Using React</h2>
+            <section>
+                <h3>Case Study 1: NASA’s Apollo 11 Mission</h3>
+                <p><strong>Project Summary:</strong> The Apollo 11 mission was the first successful moon landing, with
+                    high risks involving technology, safety, and budget constraints.</p>
 
-        <div class="section">
-            <h3>4.1 Setting Up the Project</h3>
-            <ul>
-                <li><strong>Install Node.js and npm:</strong> Ensure you have Node.js and npm installed on your machine.
-                </li>
-                <li><strong>Create a React App:</strong> Use create-react-app to quickly set up a new React project.
-                </li>
-            </ul>
-            <pre><code>npx create-react-app my-react-app
-cd my-react-app
-npm start</code></pre>
-        </div>
+                <h4>Key Risks:</h4>
+                <ul>
+                    <li>Technical failures in the spacecraft and lunar module.</li>
+                    <li>Human safety during launch, space travel, and landing.</li>
+                    <li>Communication disruptions between Earth and the crew.</li>
+                </ul>
 
-        <div class="section">
-            <h3>4.2 Developing the Project</h3>
-            <p>Students will create a simple React application that allows users to input their name and see a
-                personalized greeting. The project will involve:</p>
-            <ul>
-                <li><strong>Creating Components:</strong> Break down the UI into reusable components.</li>
-                <li><strong>Managing State:</strong> Use React's state to manage user input and display dynamic content.
-                </li>
-                <li><strong>Handling Events:</strong> Implement event handlers for user interactions.</li>
-            </ul>
-        </div>
+                <h4>Risk Management Strategies:</h4>
+                <ul>
+                    <li>Extensive simulations and training to prepare astronauts for emergencies.</li>
+                    <li>Backup communication systems in case of failure.</li>
+                    <li>Multiple layers of technical redundancy in spacecraft design.</li>
+                </ul>
 
-        <div class="section">
-            <h3>4.3 Styling the Application</h3>
-            <p>Use CSS to style the React components.</p>
-            <p>Explore using a CSS framework like Bootstrap with React.</p>
-        </div>
+                <p><strong>Outcome:</strong> The mission was successful, demonstrating the importance of proactive risk
+                    management.</p>
+            </section>
 
-        <div class="section">
-            <h3>4.4 Deploying the Project</h3>
-            <p>Deploy the React application using a platform like GitHub Pages, Vercel, or Netlify.</p>
-        </div>
+            <section>
+                <h3>Case Study 2: Toyota’s Lean Manufacturing System</h3>
+                <p><strong>Project Summary:</strong> Toyota revolutionized automobile production with its Lean
+                    Manufacturing System, which focused on reducing waste and improving efficiency.</p>
 
-        <div class="section">
-            <h3>Code Editor</h3>
-            <p>Below is a simple in-page code editor where you can experiment with your React code for this project:</p>
-            <div class="editor-container">
-                <textarea id="code-editor" class="editor"></textarea>
-            </div>
-            <button id="run-code" class="btn btn-primary mt-3">Run Code</button>
-            <h4 class="mt-4">Output:</h4>
-            <div id="output" class="border rounded p-2"></div>
-        </div>
-    </div>
-    <div class="video-container">
+                <h4>Key Risks:</h4>
+                <ul>
+                    <li>Production bottlenecks due to supply chain issues.</li>
+                    <li>Defective parts affecting vehicle quality.</li>
+                    <li>Financial losses due to inefficiencies in manufacturing.</li>
+                </ul>
+
+                <h4>Risk Management Strategies:</h4>
+                <ul>
+                    <li>Adopted the Just-in-Time (JIT) inventory system to minimize waste.</li>
+                    <li>Implemented continuous improvement (Kaizen) to address quality issues quickly.</li>
+                    <li>Developed strong supplier relationships to ensure steady raw material flow.</li>
+                </ul>
+
+                <p><strong>Outcome:</strong> Toyota became an industry leader in efficiency and quality, proving that
+                    risk management can lead to long-term success.</p>
+            </section>
+
+            <section>
+                <h3>Best Practices in Risk Management</h3>
+                <p>From these case studies, we can extract fundamental risk management principles applicable to any
+                    project.</p>
+
+                <h4>1. Risk Identification Should Be Ongoing</h4>
+                <p>New risks emerge at different project phases. Regular risk assessments help maintain control.</p>
+
+                <h4>2. Proactive Planning Reduces Uncertainty</h4>
+                <p>Anticipating risks and preparing mitigation strategies prevents delays and financial losses.</p>
+
+                <h4>3. Communication is Critical</h4>
+                <p>Keeping stakeholders informed ensures risks are addressed promptly and collaboratively.</p>
+
+                <h4>4. Continuous Improvement Enhances Resilience</h4>
+                <p>Learning from past projects helps refine risk management strategies over time.</p>
+            </section>
+
+            <section>
+                <h3>Interactive Exercise: Risk Scenario Analysis</h3>
+                <p>Review the following hypothetical project scenarios and determine the best risk response strategies.
+                </p>
+
+                <h4>Scenario 1: Software Development Delay</h4>
+                <p>Your development team is behind schedule due to unforeseen technical difficulties. How would you
+                    handle this risk?</p>
+
+                <h4>Scenario 2: Budget Overrun in a Construction Project</h4>
+                <p>Unforeseen material costs have pushed your project over budget. What adjustments should be made?</p>
+
+                <h4>Scenario 3: Cybersecurity Threats in a Financial Institution</h4>
+                <p>Your company has detected vulnerabilities in its online banking platform. How can this risk be
+                    mitigated?</p>
+
+                <p>Discuss these scenarios with your team and propose mitigation plans for each.</p>
+            </section>
+
+            <footer>
+                <p>Next: Discussion Questions & Assignments →</p>
+            </footer>
+        </body>
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
         <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
         </div>
-    </div>
-    <!-- Bootstrap JS, jQuery, and CodeMirror -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/javascript/javascript.min.js"></script>
-
-    <script>
-        // Initialize CodeMirror
-        var editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
-            lineNumbers: true,
-            mode: "javascript",
-            theme: "default",
-            height: "300px",
-        });
-
-        // Function to run the code in the editor
-        document.getElementById("run-code").addEventListener("click", function () {
-            const userCode = editor.getValue();
-            try {
-                const result = eval(userCode); // Run user code (be cautious with eval)
-                document.getElementById("output").innerText = result;
-            } catch (error) {
-                document.getElementById("output").innerText = error.message;
-            }
-        });
-    </script>
-
+    </div>-->
 </body>
 
 </html>

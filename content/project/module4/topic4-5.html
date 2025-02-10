@@ -4,88 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Events</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #f9f9f9;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .main-container {
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 1200px;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
         h1,
-        h2 {
-            color: #007bff;
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        p {
-            color: #333;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .code-container {
-            background-color: #f8f9fa;
-            border-left: 4px solid #007bff;
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
-            margin-bottom: 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 16px;
-            color: #343a40;
-        }
-
-        .code-container pre {
-            margin: 0;
-        }
-
-        .highlight {
-            background-color: #007bff;
-            color: white;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-
-        .btn-custom {
-            background-color: #007bff;
-            color: white;
-            border-radius: 50px;
-            padding: 10px 20px;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .btn-custom:hover {
-            background-color: #007BFF;
-        }
-
-        .section-title {
-            margin-top: 40px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            color: #007bff;
-        }
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -165,106 +126,131 @@
             }
         }
     </style>
-</head>
 
 <body>
+    <main>
 
-    <div class="main-container">
-        <h1>JavaScript Events</h1>
-        <p>JavaScript events are actions or occurrences that happen in the browser, like clicks, keypresses, and page
-            loads. You can write code that responds to these events, making your web page interactive.</p>
+        <body>
 
-        <h2 class="section-title">5.1 What are Events?</h2>
-        <p>Events in JavaScript represent user interactions or system-generated occurrences that you can capture and
-            handle with JavaScript.</p>
+            <header>
+                <h1>Module 4: Time and Cost Management</h1>
+                <h2>Page 5: Balancing Time and Cost Constraints</h2>
+            </header>
 
-        <ul>
-            <li><strong>onclick:</strong> Triggered when an element is clicked.</li>
-            <li><strong>onmouseover:</strong> Triggered when the mouse pointer hovers over an element.</li>
-            <li><strong>onkeyup:</strong> Triggered when a key is released after being pressed.</li>
-        </ul>
+            <main>
 
-        <h2 class="section-title">5.2 Event Listeners</h2>
-        <p>Event listeners allow you to define custom behaviors that occur when a specific event is triggered. You can
-            add and remove event listeners dynamically using JavaScript.</p>
+                <section id="introduction">
+                    <h2>Introduction</h2>
+                    <p>Balancing time and cost constraints is a critical challenge in project management. Delays can
+                        increase costs, while cost-cutting measures can lead to compromised timelines.
+                        A strategic approach is required to optimize both factors effectively.</p>
+                </section>
 
-        <h4>1. Adding Event Listeners:</h4>
-        <p>The <span class="highlight">addEventListener</span> method lets you define what happens when an event occurs
-            on an element. Here’s an example:</p>
+                <section id="strategies">
+                    <h2>Strategies for Balancing Time and Cost</h2>
 
-        <div class="code-container">
-            <pre>
-let button = document.getElementById("myButton");
-button.addEventListener("click", function() {
-    alert("Button was clicked!");
-});
-        </pre>
+                    <article>
+                        <h3>1. Trade-Off Analysis</h3>
+                        <p>Trade-off analysis helps project managers make informed decisions when faced with conflicting
+                            time and cost demands.</p>
+                        <p><strong>Key Considerations:</strong></p>
+                        <ul>
+                            <li>Determining whether additional costs are justified to accelerate project completion.
+                            </li>
+                            <li>Assessing the impact of extending deadlines on overall expenses.</li>
+                            <li>Identifying critical activities where adjustments can be made without major disruptions.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>2. Critical Path Method (CPM) Adjustments</h3>
+                        <p>CPM helps identify essential tasks that determine the project timeline. Adjusting these tasks
+                            can impact both time and cost.</p>
+                        <p><strong>Techniques for Optimization:</strong></p>
+                        <ul>
+                            <li><strong>Crashing:</strong> Adding extra resources to shorten the duration of critical
+                                tasks.</li>
+                            <li><strong>Fast Tracking:</strong> Performing dependent activities in parallel instead of
+                                sequentially.</li>
+                            <li><strong>Resource Smoothing:</strong> Adjusting resource allocation to maintain budget
+                                limits without delaying the project.</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>3. Agile and Lean Project Management</h3>
+                        <p>Using Agile and Lean methodologies can improve efficiency by prioritizing critical
+                            deliverables and reducing waste.</p>
+                        <p><strong>Agile Principles for Time-Cost Balance:</strong></p>
+                        <ul>
+                            <li>Breaking projects into smaller, manageable iterations.</li>
+                            <li>Delivering high-priority features first to maximize value.</li>
+                            <li>Encouraging continuous feedback and improvement.</li>
+                        </ul>
+                        <p><strong>Lean Techniques for Cost Reduction:</strong></p>
+                        <ul>
+                            <li>Eliminating non-value-adding activities.</li>
+                            <li>Streamlining processes to reduce unnecessary costs.</li>
+                            <li>Using automation to minimize manual efforts.</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>4. Risk-Based Decision Making</h3>
+                        <p>Evaluating potential risks associated with time and cost constraints can help in making
+                            proactive adjustments.</p>
+                        <p><strong>Risk Mitigation Strategies:</strong></p>
+                        <ul>
+                            <li>Identifying high-impact risks related to budget overruns or delays.</li>
+                            <li>Developing contingency plans to address unforeseen issues.</li>
+                            <li>Allocating buffer time and funds for critical uncertainties.</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>5. Stakeholder Communication and Expectation Management</h3>
+                        <p>Keeping stakeholders informed helps align their expectations with project realities, reducing
+                            unnecessary cost and time pressures.</p>
+                        <p><strong>Best Practices:</strong></p>
+                        <ul>
+                            <li>Providing transparent progress updates.</li>
+                            <li>Discussing trade-offs and obtaining approvals when necessary.</li>
+                            <li>Ensuring alignment between project goals and resource availability.</li>
+                        </ul>
+                    </article>
+
+                </section>
+
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+                    <p>Balancing time and cost constraints requires a structured approach that incorporates trade-off
+                        analysis, CPM adjustments, Agile methodologies, risk management, and stakeholder engagement.
+                        By implementing these strategies, project managers can ensure that projects stay on track
+                        without exceeding budget limits.</p>
+                    <p>Next, we will explore discussion questions and assignments related to Time and Cost Management.
+                    </p>
+                </section>
+
+            </main>
+
+            <footer>
+                <p>Next: <a href="page6.html">Discussion and Assignments</a></p>
+            </footer>
+
+        </body>
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
         </div>
-
-        <button id="myButton" class="btn btn-custom">Click Me</button>
-
-        <h4>2. Removing Event Listeners:</h4>
-        <p>The <span class="highlight">removeEventListener</span> method lets you stop listening for a specific event on
-            an element. Example:</p>
-
-        <div class="code-container">
-            <pre>
-function handleClick() {
-    alert("Button was clicked!");
-}
-
-button.addEventListener("click", handleClick);
-
-// Later in the code:
-button.removeEventListener("click", handleClick);
-        </pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="removeListener()">Remove Event Listener</button>
-
-        <h2 class="section-title">YouTube Video Explanation</h2>
-        <p>Watch the video below to get a more in-depth understanding of how JavaScript events and event listeners work.
-        </p>
-
-
-        <h2 class="section-title">YouTube Video Explanation</h2>
-        <p>Watch the video below to get a more in-depth understanding.
-        </p>
-
-
-        <div class="video-container">
-            <div class="gradient-border">
-                <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-                <div class="video-links">
-                    <h4>Channel Name<h4>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        // Adding an Event Listener
-        let button = document.getElementById("myButton");
-        button.addEventListener("click", function () {
-            alert("Button was clicked!");
-        });
-
-        // Function to remove an event listener
-        function removeListener() {
-            button.removeEventListener("click", handleClick);
-            alert("Event listener removed.");
-        }
-
-        // Function to be removed
-        function handleClick() {
-            alert("This won't fire after removal!");
-        }
-    </script>
-
+    </div>-->
 </body>
 
 </html>
