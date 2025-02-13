@@ -4,438 +4,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript and jQuery Concepts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Week 4: Supervised Learning - Classification</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             background-color: white;
-            color: #333;
-            font-family: 'Arial', sans-serif;
+            color: black;
+            font-family: Arial, sans-serif;
         }
 
+        h1,
         h2,
         h3 {
             color: #007BFF;
-            margin-top: 20px;
-        }
-
-        p,
-        code {
-            font-size: 16px;
-            line-height: 1.6;
+            /* Blue accent */
         }
 
         .section {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 20px;
         }
 
-        pre {
+        .algorithm {
             background-color: #f8f9fa;
+            /* Light background for algorithms */
             padding: 15px;
-            border: 1px solid #e0e0e0;
             border-radius: 5px;
-            font-size: 14px;
-            overflow-x: auto;
+            margin-bottom: 20px;
         }
 
-        .code-title {
+        .advantages,
+        .disadvantages {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .advantages li,
+        .disadvantages li {
             margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
-
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
-
-        /* Video or content inside the border */
-        .video-content {
-            border-radius: 10px;
-            display: block;
-        }
-
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- JavaScript Section -->
-    <div class="container mt-5">
-        <h2>Advanced JavaScript Concepts</h2>
-
-        <div class="section">
-            <h3>1.1 ES6 Features (ECMAScript 2015)</h3>
-            <p><strong>let and const:</strong></p>
-            <pre><code>let age = 25;
-const pi = 3.14;</code></pre>
-
-            <p><strong>Arrow Functions:</strong></p>
-            <pre><code>const multiply = (a, b) => a * b;</code></pre>
-
-            <p><strong>Template Literals:</strong></p>
-            <pre><code>const name = "John";
-const greeting = `Hello, ${name}! Welcome to ES6.`;</code></pre>
-
-            <p><strong>Destructuring Assignment:</strong></p>
-            <pre><code>const person = { name: "Jane", age: 30 };
-const { name, age } = person;</code></pre>
-
-            <p><strong>Default Parameters:</strong></p>
-            <pre><code>function greet(name = "Guest") {
-    console.log(`Hello, ${name}!`);
-}</code></pre>
-
-            <p><strong>Spread and Rest Operators:</strong></p>
-            <pre><code>const numbers = [1, 2, 3];
-console.log(...numbers); // Outputs: 1 2 3</code></pre>
-        </div>
-
-        <div class="section">
-            <h3>1.2 Asynchronous JavaScript</h3>
-            <p><strong>Callbacks:</strong></p>
-            <pre><code>function fetchData(callback) {
-    setTimeout(() => {
-        callback("Data received!");
-    }, 2000);
-}
-
-fetchData((message) => {
-    console.log(message);
-});</code></pre>
-
-            <p><strong>Promises:</strong></p>
-            <pre><code>const fetchData = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("Data received!");
-    }, 2000);
-});
-
-fetchData.then((message) => {
-    console.log(message);
-});</code></pre>
-
-            <p><strong>Async/Await:</strong></p>
-            <pre><code>async function fetchData() {
-    const data = await new Promise((resolve) => {
-        setTimeout(() => {
-            resolve("Data received!");
-        }, 2000);
-    });
-    console.log(data);
-}
-
-fetchData();</code></pre>
-        </div>
-
-        <!-- jQuery Section -->
-        <h2>Introduction to jQuery</h2>
-
-        <div class="section">
-            <h3>2.1 What is jQuery?</h3>
-            <p>jQuery is a fast, small, and feature-rich JavaScript library. It simplifies tasks like DOM manipulation,
-                event handling, and animation, making it easier to build dynamic and interactive web pages.</p>
-
-            <p><strong>Why Use jQuery?</strong></p>
-            <ul>
-                <li>Cross-browser compatibility.</li>
-                <li>Simplifies complex JavaScript tasks.</li>
-                <li>Extensive plugin ecosystem.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>2.2 Basic jQuery Syntax</h3>
-            <p><strong>Selecting Elements:</strong></p>
-            <pre><code>$(document).ready(function() {
-    $("p").click(function() {
-        $(this).hide();
-    });
-});</code></pre>
-
-            <p><strong>Event Handling:</strong></p>
-            <pre><code>$("button").click(function() {
-    alert("Button clicked!");
-});</code></pre>
-
-            <p><strong>DOM Manipulation:</strong></p>
-            <pre><code>$("#myDiv").text("Hello, jQuery!");</code></pre>
-        </div>
-
-        <div class="section">
-            <h3>2.3 jQuery Animations</h3>
-            <p><strong>Basic Animation:</strong></p>
-            <pre><code>$("#myDiv").fadeOut();</code></pre>
-
-            <p><strong>Chaining Animations:</strong></p>
-            <pre><code>$("#myDiv").slideUp().slideDown().fadeOut();</code></pre>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS and jQuery (for demonstration purposes) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creating Visualizations in Tableau</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-        background-color: #ffffff;
-        color: #000000;
-        font-family: Arial, sans-serif;
-    }
-
-    h1,
-    h2,
-    h3 {
-        color: #007BFF;
-        /* Blue accent */
-    }
-
-    .content-container {
-        margin: 50px auto;
-        max-width: 900px;
-    }
-
-    .custom-section {
-        margin-bottom: 40px;
-    }
-
-    .custom-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .custom-section ul {
-        margin-left: 20px;
-    }
-
-    .custom-section ul li {
-        margin-bottom: 10px;
-    }
-
-    blockquote {
-        font-size: 1.1em;
-        padding: 15px;
-        border-left: 5px solid #007BFF;
-        background-color: #f8f9fa;
-    }
-
-    /* Video container to hold everything */
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 100px;
-    }
-
-    /* Gradient border container */
-    .gradient-border {
-        padding: 5px;
-        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-        border-radius: 10px;
-    }
-
-    /* Video or content inside the border */
-    .video-content {
-        border-radius: 10px;
-        display: block;
-    }
-
-    .video-links {
-        color: grey;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    /* Ensure responsive width and height for the video */
-    iframe {
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-    }
-
-    /* Responsiveness */
-    @media (min-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 450px;
-        }
-    }
-
-    @media (max-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 350px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        iframe {
-            width: 500px;
-            height: 200px;
-        }
-    }
-
-    /* For mobile screens, to avoid the box-like appearance */
-    @media (max-width: 360px) {
-        .video-content {
-            width: 280px;
-            /* Take full width */
-            height: 200px;
-            /* Adjust height to give a more rectangular shape */
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 256px) {
-            .video-content {
-                width: 1080px;
-                /* Take full width */
-                height: 300px;
-                /* Adjust height to give a more rectangular shape */
-            }
-        }
-    }
-</style>
-
-<body>
     <header>
-        <h1>Creating Visualizations in Tableau</h1>
+        <h1>Statistical Analysis and Predictive Modeling</h1>
+        <h2>Essential Statistical Techniques for Data Analysis</h2>
     </header>
 
-    <main>
-        <section id="visualizations">
-            <h2>Charts and Graphs in Tableau</h2>
-            <p>
-                Tableau offers a wide range of visualization types to represent data effectively:
-            </p>
-            <ul>
-                <li><strong>Bar Charts, Line Charts, Area Charts:</strong> Visualizing trends and comparisons.</li>
-                <li><strong>Pie Charts, Scatter Plots:</strong> Showing distributions and relationships.</li>
-                <li><strong>Maps:</strong> Geographical data visualization using maps.</li>
-            </ul>
-        </section>
+    <section id="descriptive-statistics">
+        <h3>1. Descriptive Statistics</h3>
+        <p>Descriptive statistics summarize and describe key aspects of a dataset, helping analysts understand its
+            structure before making decisions.</p>
+        <p><strong>Key Measures:</strong></p>
+        <ul>
+            <li><strong>Mean (Average):</strong> Sum of all values divided by the number of observations.</li>
+            <li><strong>Median:</strong> The middle value when data is sorted in ascending order.</li>
+            <li><strong>Mode:</strong> The most frequently occurring value in the dataset.</li>
+            <li><strong>Standard Deviation:</strong> Measures the spread of data from the mean.</li>
+            <li><strong>Variance:</strong> The square of standard deviation, showing data dispersion.</li>
+        </ul>
+        <p><strong>Example:</strong> If a business wants to analyze average sales, they will calculate the mean, median,
+            and standard deviation of past sales data.</p>
+    </section>
 
-        <section id="formatting-customization">
-            <h2>Formatting and Customization</h2>
-            <p>
-                Enhance the clarity and impact of your visualizations with the following customization options:
-            </p>
-            <ul>
-                <li><strong>Color, Size, Shape:</strong> Customizing visual elements to enhance clarity and emphasis.
-                </li>
-                <li><strong>Labels, Tooltips:</strong> Adding annotations and interactive elements to visualizations.
-                </li>
-            </ul>
-        </section>
+    <section id="inferential-statistics">
+        <h3>2. Inferential Statistics</h3>
+        <p>Inferential statistics allow analysts to draw conclusions from a sample dataset and generalize findings to a
+            larger population.</p>
+        <p><strong>Common Techniques:</strong></p>
+        <ul>
+            <li><strong>Hypothesis Testing:</strong> Determines if a claim about a population is statistically valid.
+            </li>
+            <li><strong>Confidence Intervals:</strong> Estimates the range in which a population parameter is likely to
+                fall.</li>
+            <li><strong>p-Value:</strong> Measures the probability of obtaining observed results under a null
+                hypothesis.</li>
+            <li><strong>Correlation Analysis:</strong> Examines relationships between two or more variables.</li>
+        </ul>
+        <p><strong>Example:</strong> A company wants to test if increasing marketing spend leads to higher sales. They
+            use hypothesis testing and correlation analysis.</p>
+    </section>
 
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p>
-                <strong>Hands-On Practice:</strong> Create various types of visualizations in Tableau using sample
-                datasets. Customize visualizations by adjusting colors, labels, and adding interactive features (e.g.,
-                tooltips, filters).
-            </p>
-        </section>
-    </main>
+    <section id="regression-analysis">
+        <h3>3. Regression Analysis</h3>
+        <p>Regression analysis is used to examine relationships between dependent and independent variables, making it
+            crucial for predictive modeling.</p>
+        <p><strong>Types of Regression:</strong></p>
+        <ul>
+            <li><strong>Linear Regression:</strong> Predicts numerical outcomes using a straight-line relationship.</li>
+            <li><strong>Multiple Regression:</strong> Uses multiple independent variables to predict a dependent
+                variable.</li>
+            <li><strong>Logistic Regression:</strong> Used for classification problems (e.g., predicting whether a
+                customer will buy or not).</li>
+        </ul>
+        <p><strong>Example:</strong> A retail store uses linear regression to predict future sales based on past
+            performance and marketing budget.</p>
+    </section>
 
+    <section id="time-series-analysis">
+        <h3>4. Time Series Analysis</h3>
+        <p>Time series analysis studies data points collected over time to identify patterns, trends, and seasonality.
+        </p>
+        <p><strong>Methods Used:</strong></p>
+        <ul>
+            <li><strong>Moving Averages:</strong> Smooths data by averaging values over a set period.</li>
+            <li><strong>ARIMA (AutoRegressive Integrated Moving Average):</strong> A powerful forecasting model.</li>
+            <li><strong>Exponential Smoothing:</strong> Assigns exponentially decreasing weights to past observations.
+            </li>
+        </ul>
+        <p><strong>Example:</strong> A bank analyzes past loan defaults using time series to predict future trends in
+            credit risk.</p>
+    </section>
+
+    <section id="data-visualization">
+        <h3>5. Data Visualization in Statistical Analysis</h3>
+        <p>Visualizing statistical data helps in better interpretation and decision-making.</p>
+        <p><strong>Common Visualization Techniques:</strong></p>
+        <ul>
+            <li><strong>Histograms:</strong> Show frequency distribution.</li>
+            <li><strong>Box Plots:</strong> Visualize data spread and outliers.</li>
+            <li><strong>Scatter Plots:</strong> Illustrate relationships between variables.</li>
+            <li><strong>Bar Charts:</strong> Compare different categories.</li>
+        </ul>
+        <p><strong>Example:</strong> A social media company uses scatter plots to analyze the relationship between ad
+            spend and engagement rates.</p>
+    </section>
+
+    <footer>
+        <p>Next: <a href="page3.html">Building Predictive Models →</a></p>
+    </footer>
 </body>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 </html>

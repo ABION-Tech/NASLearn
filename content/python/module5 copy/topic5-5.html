@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Hands-On Exercises</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        h2,
+        h4 {
+            color: #007BFF;
+            /* Blue accent color */
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            /* Light background for code blocks */
+            border-left: 4px solid #007BFF;
+            /* Blue accent for the left border */
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            /* Ensure long lines are scrollable */
+        }
+    </style>
+   
+</head>
+
+<body>
+    <div class="container my-5">
+        <h2>Hands-On Exercises</h2>
+
+        <h4>Exercise 1: Exploratory Data Analysis (EDA)</h4>
+        <p>Load a sample dataset using <code>pandas</code>. For example, use a CSV file or load a built-in dataset like
+            the <strong>Iris dataset</strong> from <code>seaborn</code>:</p>
+        <pre><code>import seaborn as sns
+
+df = sns.load_dataset('iris')
+print(df.head())</code></pre>
+
+        <h4>Exercise 2: Data Cleaning</h4>
+        <p>Identify and handle missing values in the dataset. Try different strategies for dealing with missing values
+            (e.g., removing rows, filling with the mean).</p>
+        <p>Remove any duplicates from the dataset.</p>
+
+        <h4>Exercise 3: Data Transformation</h4>
+        <p>Group the data by a categorical feature (e.g., species in the Iris dataset) and calculate the mean of each
+            numerical column for each group.</p>
+        <p>Apply a custom function to transform a numerical column (e.g., scaling the values).</p>
+
+        <h4>Exercise 4: Data Filtering and Selection</h4>
+        <p>Filter the dataset to include only rows where a specific condition is met (e.g., petal length greater than a
+            certain value).</p>
+        <p>Use <code>loc[]</code> or <code>iloc[]</code> to select a subset of the DataFrame by rows and columns.</p>
+
+        <h4>Exercise 5: Merging Data</h4>
+        <p>Create two smaller DataFrames from the main dataset and merge them back using a common column (e.g.,
+            <code>species</code>).</p>
+        <p>Perform a join operation on DataFrames with different indexes.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -64,93 +64,133 @@
 </head>
 
 <body>
+    <div class="module">
+        <header class="module-header">
+            <h1>Module 5: Neural Networks & Deep Learning</h1>
+            <h2>Page 4: Evaluating and Improving Neural Networks</h2>
+        </header>
 
-    <div class="container mt-5">
+        <section class="content">
+            <article class="introduction">
+                <h2>Why is Evaluation Important?</h2>
+                <p>After training a neural network, it's crucial to evaluate how well it performs. A model might fit the
+                    training data well but still perform poorly on new data. Evaluation helps ensure the model
+                    generalizes effectively.</p>
+            </article>
 
-        <h1 class="text-center mb-4">Week 5: Unsupervised Learning - Clustering</h1>
+            <article class="evaluation-metrics">
+                <h2>1. Key Evaluation Metrics</h2>
+                <p>Different performance metrics are used depending on the type of problem the neural network is
+                    solving.</p>
 
-        <div class="card">
-            <div class="card-header">Dimensionality Reduction: Principal Component Analysis (PCA)</div>
-            <div class="card-body">
-                <p>
-                    Dimensionality reduction is a powerful technique used to reduce the number of features in a dataset
-                    while preserving its most essential information. This process is beneficial for several reasons:
-                </p>
-                <div class="highlight">
-                    <ul>
-                        <li><strong>Improving computational efficiency:</strong> By reducing the dimensionality of data,
-                            machine learning algorithms can run faster and more efficiently.</li>
-                        <li><strong>Visualizing data:</strong> High-dimensional data can be challenging to visualize;
-                            dimensionality reduction allows for clearer insights in lower-dimensional spaces.</li>
-                        <li><strong>Reducing noise:</strong> This technique can help eliminate noise and irrelevant
-                            features from the dataset, leading to improved model performance.</li>
-                    </ul>
-                </div>
-
-                <h2>PCA Explained</h2>
-                <p>
-                    Principal Component Analysis (PCA) is one of the most widely used dimensionality reduction
-                    techniques. It identifies the principal components of a dataset, which are linear combinations of
-                    the original features that capture the most variance in the data.
-                </p>
-
-                <h3>Steps for Performing PCA</h3>
-                <ol class="steps-list">
-                    <li><strong>Standardize the data:</strong> Ensure all features have a mean of 0 and a standard
-                        deviation of 1.</li>
-                    <li><strong>Calculate the covariance matrix:</strong> Compute the covariance matrix of the
-                        standardized data to understand the relationships between the variables.</li>
-                    <li><strong>Compute eigenvectors and eigenvalues:</strong> Identify the eigenvectors (directions of
-                        variance) and eigenvalues (magnitude of variance) of the covariance matrix.</li>
-                    <li><strong>Select principal components:</strong> Choose eigenvectors corresponding to the largest
-                        eigenvalues. These represent the directions with maximum variance.</li>
-                    <li><strong>Project the data:</strong> Transform the original data into a lower-dimensional space
-                        using the selected eigenvectors.</li>
-                </ol>
-
-                <h3>Choosing the Number of Principal Components</h3>
-                <p>
-                    Determining how many principal components to retain is crucial for effective dimensionality
-                    reduction. Several methods can help in making this decision:
-                </p>
+                <h3>Classification Metrics:</h3>
                 <ul>
-                    <li><strong>Explained variance ratio:</strong> Analyze the proportion of variance each principal
-                        component captures.</li>
-                    <li><strong>Scree plot:</strong> Plot eigenvalues in descending order and identify the elbow point
-                        where the slope of the curve decreases significantly.</li>
-                    <li><strong>Cumulative explained variance:</strong> Calculate the cumulative variance explained by
-                        the first k principal components to assess the total variance captured.</li>
+                    <li><strong>Accuracy:</strong> Measures the percentage of correct predictions.</li>
+                    <li><strong>Precision:</strong> Measures how many predicted positives are actually correct.</li>
+                    <li><strong>Recall (Sensitivity):</strong> Measures how many actual positives were correctly
+                        predicted.</li>
+                    <li><strong>F1 Score:</strong> Balances precision and recall.</li>
+                    <li><strong>Confusion Matrix:</strong> Displays true positives, false positives, true negatives, and
+                        false negatives.</li>
+                    <li><strong>ROC Curve & AUC:</strong> Helps visualize classification performance.</li>
                 </ul>
 
-                <h3>Applications of PCA</h3>
-                <p>
-                    PCA has a wide range of applications across various fields, including:
-                </p>
+                <h3>Regression Metrics:</h3>
                 <ul>
-                    <li><strong>Data visualization:</strong> Transforming high-dimensional data for better visual
-                        insights.</li>
-                    <li><strong>Feature engineering:</strong> Creating new features as linear combinations of the
-                        original ones to enhance model performance.</li>
-                    <li><strong>Noise reduction:</strong> Filtering out noise and irrelevant features from the data.
+                    <li><strong>Mean Squared Error (MSE):</strong> Measures the average squared difference between
+                        actual and predicted values.</li>
+                    <li><strong>Mean Absolute Error (MAE):</strong> Measures the average absolute difference.</li>
+                    <li><strong>R² Score:</strong> Measures how well the model explains the variance in data.</li>
+                </ul>
+            </article>
+
+            <article class="train-test-split">
+                <h2>2. Train-Test Split & Cross-Validation</h2>
+                <p>To ensure a model’s generalization ability, it is split into training and testing sets:</p>
+                <ul>
+                    <li><strong>Training Set:</strong> Used to teach the model.</li>
+                    <li><strong>Validation Set:</strong> Used to tune hyperparameters.</li>
+                    <li><strong>Test Set:</strong> Used to evaluate final performance.</li>
+                </ul>
+                <p><strong>Cross-Validation:</strong> Further improves evaluation by splitting the dataset into multiple
+                    parts and training on different subsets.</p>
+            </article>
+
+            <article class="bias-variance-tradeoff">
+                <h2>3. Bias-Variance Tradeoff</h2>
+                <p>Striking a balance between bias (underfitting) and variance (overfitting) is crucial.</p>
+                <ul>
+                    <li><strong>High Bias:</strong> The model is too simple and fails to capture patterns
+                        (underfitting).</li>
+                    <li><strong>High Variance:</strong> The model memorizes training data but fails on new data
+                        (overfitting).</li>
+                    <li><strong>Solution:</strong> Use techniques like regularization, cross-validation, and collecting
+                        more data.</li>
+                </ul>
+            </article>
+
+            <article class="regularization">
+                <h2>4. Regularization Techniques</h2>
+                <p>Regularization prevents overfitting and improves generalization.</p>
+                <ul>
+                    <li><strong>L1 Regularization (Lasso):</strong> Shrinks some weights to zero, promoting sparsity.
                     </li>
-                    <li><strong>Image compression:</strong> Compressing images by reducing their dimensionality while
-                        maintaining essential information.</li>
-                    <li><strong>Natural language processing:</strong> Reducing dimensionality in word embeddings for
-                        better computational efficiency.</li>
+                    <li><strong>L2 Regularization (Ridge):</strong> Penalizes large weights, preventing excessive
+                        complexity.</li>
+                    <li><strong>Dropout:</strong> Randomly deactivates neurons during training to prevent reliance on
+                        specific features.</li>
+                    <li><strong>Batch Normalization:</strong> Normalizes inputs across mini-batches for faster and more
+                        stable training.</li>
                 </ul>
+            </article>
 
-                <p>
-                    By understanding the principles of PCA, you can effectively reduce the dimensionality of your data,
-                    leading to more efficient and interpretable machine learning models.
-                </p>
-            </div>
-        </div>
+            <article class="hyperparameter-tuning">
+                <h2>5. Hyperparameter Tuning</h2>
+                <p>Adjusting hyperparameters is key to optimizing neural network performance.</p>
+                <ul>
+                    <li><strong>Learning Rate:</strong> Controls step size in weight updates.</li>
+                    <li><strong>Number of Hidden Layers & Neurons:</strong> Determines network complexity.</li>
+                    <li><strong>Batch Size:</strong> Affects training stability and efficiency.</li>
+                    <li><strong>Number of Epochs:</strong> Impacts convergence and risk of overfitting.</li>
+                    <li><strong>Optimization Algorithm:</strong> Choice of Adam, SGD, or RMSprop affects training speed.
+                    </li>
+                </ul>
+                <p>Grid search and random search can be used to find optimal hyperparameters.</p>
+            </article>
 
+            <article class="transfer-learning">
+                <h2>6. Transfer Learning</h2>
+                <p>Instead of training a model from scratch, pre-trained models can be used to improve performance,
+                    especially when data is limited.</p>
+                <ul>
+                    <li><strong>Feature Extraction:</strong> Use existing layers of a trained model to extract features.
+                    </li>
+                    <li><strong>Fine-Tuning:</strong> Adjust the later layers of a pre-trained model to adapt to a
+                        specific task.</li>
+                    <li><strong>Common Pre-Trained Models:</strong> VGG, ResNet, and BERT (for NLP).</li>
+                </ul>
+            </article>
+
+            <article class="ensemble-learning">
+                <h2>7. Ensemble Learning</h2>
+                <p>Combining multiple models often yields better results than a single model.</p>
+                <ul>
+                    <li><strong>Bagging:</strong> Train multiple models in parallel and average their outputs (e.g.,
+                        Random Forests).</li>
+                    <li><strong>Boosting:</strong> Train models sequentially, correcting mistakes along the way (e.g.,
+                        AdaBoost, XGBoost).</li>
+                    <li><strong>Stacking:</strong> Use multiple models and a meta-model to make final predictions.</li>
+                </ul>
+            </article>
+
+            <article class="summary">
+                <h2>Summary</h2>
+                <p>To ensure a neural network performs well, evaluation metrics must be carefully examined, and
+                    techniques such as regularization, hyperparameter tuning, transfer learning, and ensemble methods
+                    should be applied. The next section will cover real-world applications of deep learning.</p>
+            </article>
+        </section>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.11/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

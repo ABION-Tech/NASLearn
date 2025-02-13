@@ -4,189 +4,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: black;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
         }
 
         h1,
         h2,
-        h3,
-        h4 {
-            color: #007bff;
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        .highlight {
-            background-color: #f7f9fc;
-            border-left: 4px solid #007bff;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
-            margin: 20px 0;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
-        .section-title {
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
         }
 
-        .content {
-            margin-bottom: 30px;
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
         }
 
-        .list-group-item {
-            border: none;
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
-    <title>Introduction to Layout Design</title>
-</head>
 
 <body>
-    <div class="container mt-5">
-        <div class="content">
-            <h1 class="section-title">Introduction to Layout Design</h1>
+    <header>
+        <h1>Module 4: Web Development Fundamentals</h1>
+        <h2>Page 1: Introduction to Web Development</h2>
+    </header>
 
-            <p>Layout design is the art and science of arranging elements on a page or screen in a visually appealing
-                and functional way. Good layout design can enhance the readability, legibility, and overall
-                effectiveness of a design.</p>
+    <section>
+        <h2>What is Web Development?</h2>
+        <p>Web development refers to the process of creating and maintaining websites. It involves various disciplines,
+            including:</p>
+        <ul>
+            <li>Structuring web pages using <strong>HTML</strong></li>
+            <li>Styling content with <strong>CSS</strong></li>
+            <li>Adding interactivity using <strong>JavaScript</strong></li>
+            <li>Managing data and server-side logic with back-end technologies</li>
+        </ul>
+    </section>
 
-            <h2>Principles of Layout Design</h2>
-            <p>Understanding the principles of layout design is crucial for creating effective and aesthetically
-                pleasing designs. Here are the key principles:</p>
-            <ul class="list-group mb-4">
-                <li class="list-group-item">
-                    <strong>Balance:</strong> The distribution of visual weight in a design. Balance can be symmetrical
-                    (equal weight on both sides) or asymmetrical (different weights that still create a sense of
-                    equilibrium).
-                </li>
-                <li class="list-group-item">
-                    <strong>Contrast:</strong> The difference between elements in a design, created through size, color,
-                    shape, texture, or placement. Effective contrast helps to highlight key areas and create visual
-                    interest.
-                </li>
-                <li class="list-group-item">
-                    <strong>Emphasis:</strong> The focal point of a design that draws the viewer’s attention. Emphasis
-                    can be achieved through size, color, placement, or contrast, ensuring that the most important
-                    elements stand out.
-                </li>
-                <li class="list-group-item">
-                    <strong>Movement:</strong> The visual path that the eye follows through a design, which can be
-                    created through lines, arrows, or the placement of elements. Effective movement leads the viewer's
-                    gaze to important areas of the layout.
-                </li>
-                <li class="list-group-item">
-                    <strong>Pattern:</strong> A repeated element or motif in a design that can create rhythm, unity, and
-                    visual interest. Patterns can enhance aesthetic appeal and provide a cohesive feel.
-                </li>
-                <li class="list-group-item">
-                    <strong>Repetition:</strong> The use of similar or identical elements in a design to create a sense
-                    of order, rhythm, and unity. Repetition reinforces brand identity and creates consistency across
-                    various media.
-                </li>
-                <li class="list-group-item">
-                    <strong>Rhythm:</strong> The flow or movement of elements in a design that can be created through
-                    repetition, variation, or progression. Rhythm helps to guide the viewer’s eye and create a dynamic
-                    layout.
-                </li>
-                <li class="list-group-item">
-                    <strong>Unity:</strong> The overall sense of harmony and cohesion in a design. Unity can be achieved
-                    through repetition, similarity, or proximity, ensuring that all elements work together to form a
-                    complete whole.
-                </li>
-            </ul>
+    <section>
+        <h2>Types of Web Development</h2>
+        <p>Web development is typically divided into three main categories:</p>
+        <ul>
+            <li><strong>Front-End Development:</strong> Focuses on the visual and interactive aspects of a website. It
+                uses HTML, CSS, and JavaScript.</li>
+            <li><strong>Back-End Development:</strong> Handles server-side logic, databases, and APIs, using
+                technologies such as Node.js, PHP, Python, and databases like MySQL or MongoDB.</li>
+            <li><strong>Full-Stack Development:</strong> Involves both front-end and back-end development.</li>
+        </ul>
+    </section>
 
-            <div class="highlight">
-                <h4>Expanding Your Knowledge:</h4>
-                <p>As you explore these principles, consider how they can be applied in various design contexts, from
-                    print media to digital interfaces.</p>
-            </div>
+    <section>
+        <h2>Key Technologies in Web Development</h2>
+        <p>The foundation of web development consists of three core technologies:</p>
+        <ul>
+            <li><strong>HTML (HyperText Markup Language):</strong> Defines the structure and layout of a webpage.</li>
+            <li><strong>CSS (Cascading Style Sheets):</strong> Controls the presentation, layout, and styling of a
+                webpage.</li>
+            <li><strong>JavaScript:</strong> Adds interactivity and dynamic elements to a website.</li>
+        </ul>
+    </section>
 
-            <h2>Grid Systems</h2>
-            <p>Grid systems are a valuable tool for creating structured and organized layouts. They provide a framework
-                for placing elements on a page or screen, ensuring a consistent design. The main types of grids include:
-            </p>
-            <ul>
-                <li><strong>Column Grids:</strong> Vertical columns that help to align content in a clear manner.</li>
-                <li><strong>Row Grids:</strong> Horizontal rows that assist in organizing content horizontally.</li>
-                <li><strong>Modular Grids:</strong> A combination of both vertical and horizontal columns, creating a
-                    flexible and versatile structure.</li>
-            </ul>
+    <section>
+        <h2>How Websites Work</h2>
+        <p>When you type a website URL into a browser, several steps occur:</p>
+        <ol>
+            <li>The browser sends a request to the web server.</li>
+            <li>The server processes the request and returns an HTML document.</li>
+            <li>The browser renders the HTML, applies CSS for styling, and runs JavaScript for interactivity.</li>
+        </ol>
+    </section>
 
-            <h2>Alignment</h2>
-            <p>Alignment refers to the placement of elements relative to each other and can significantly impact the
-                overall composition. The four basic types of alignment are:</p>
-            <ul>
-                <li><strong>Left-Aligned:</strong> Content is aligned to the left margin.</li>
-                <li><strong>Right-Aligned:</strong> Content is aligned to the right margin.</li>
-                <li><strong>Centered:</strong> Content is centered between the margins.</li>
-                <li><strong>Justified:</strong> Content is aligned along both the left and right margins, creating a
-                    clean edge on both sides.</li>
-            </ul>
+    <section>
+        <h2>Why Learn Web Development?</h2>
+        <p>Web development is a valuable skill because:</p>
+        <ul>
+            <li>It allows you to create your own websites and applications.</li>
+            <li>There is high demand for skilled developers in the job market.</li>
+            <li>It provides opportunities for freelancing and entrepreneurship.</li>
+            <li>You can contribute to open-source projects and innovate on the web.</li>
+        </ul>
+    </section>
 
-            <h2>Spacing</h2>
-            <p>Spacing refers to the amount of white space between elements in a design. Proper spacing improves
-                readability, creates a visually pleasing composition, and prevents overcrowding. Key aspects of spacing
-                include:</p>
-            <ul>
-                <li><strong>Margins:</strong> The space around the edges of a page or screen.</li>
-                <li><strong>Padding:</strong> The space between the content and the border of an element.</li>
-                <li><strong>Gutters:</strong> The space between columns in a grid layout.</li>
-            </ul>
 
-            <h2>Layout Design for Print Media</h2>
-            <p>When designing for print media, several key considerations ensure a balanced and readable layout:</p>
-            <ul>
-                <li><strong>Page Margins:</strong> Establishing appropriate margins creates a balanced layout that
-                    enhances readability.</li>
-                <li><strong>Column Width:</strong> The width of columns should be appropriate for the font size and
-                    typeface used to ensure clarity.</li>
-                <li><strong>Line Length:</strong> The length of lines of text should be optimal for readability,
-                    typically around 50-75 characters per line.</li>
-                <li><strong>Leading:</strong> The space between lines of text should be sufficient to facilitate clear
-                    reading.</li>
-                <li><strong>Gutters:</strong> The space between columns should accommodate the content and layout,
-                    ensuring no elements feel cramped.</li>
-            </ul>
 
-            <h2>Layout Design for Digital Media</h2>
-            <p>Digital media requires special considerations to enhance user experience. Key aspects include:</p>
-            <ul>
-                <li><strong>Responsiveness:</strong> Designs should adapt to different screen sizes and devices to
-                    ensure usability.</li>
-                <li><strong>User Experience:</strong> Consider how users will interact with the layout and make
-                    navigation intuitive.</li>
-                <li><strong>Navigation:</strong> Ensure that navigation elements are clear and easy to find,
-                    facilitating user movement through the content.</li>
-                <li><strong>Whitespace:</strong> Use whitespace effectively to create a clean, uncluttered layout that
-                    improves readability.</li>
-            </ul>
 
-            <h2>Expanding on the Content</h2>
-            <p>To further explore the topic of layout design, consider discussing the following:</p>
-            <ul>
-                <li><strong>The Rule of Thirds:</strong> A popular composition technique that divides a page into nine
-                    equal sections, guiding the placement of elements.</li>
-                <li><strong>Typography and Layout:</strong> How typography enhances visual hierarchy and readability,
-                    making content more engaging.</li>
-                <li><strong>Layout Trends:</strong> Emerging trends and best practices in layout design, including
-                    minimalism, bold typography, and dynamic grids.</li>
-                <li><strong>Layout Software:</strong> Popular software tools for creating layouts, such as Adobe
-                    InDesign, Figma, and Sketch, which offer powerful features for designers.</li>
-            </ul>
 
-            <div class="highlight">
-                <h4>Final Thoughts:</h4>
-                <p>By understanding and applying these principles, tools, and techniques, you will be well-equipped to
-                    create effective layouts that captivate and engage your audience.</p>
-            </div>
+
+
+
+
+    </main>
+    <!-- Video Section -->
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5YDVJaItmaY?si=6uj2smm-_hHB5vRu"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

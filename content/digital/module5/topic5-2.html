@@ -4,75 +4,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creating a Social Media Strategy</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: black;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
         }
 
-        .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        h1 {
+        h1,
+        h2,
+        h3 {
             color: #007BFF;
-            /* Blue accent for main heading */
+            /* Blue accent */
         }
 
-        h2 {
-            color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 30px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .strategy-section {
-            margin-top: 20px;
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
             border-left: 5px solid #007BFF;
-            /* Blue accent border */
             background-color: #f8f9fa;
-            /* Light gray background for each section */
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
-</head>
 
 <body>
+    <header>
+        <h1>Social Media Marketing Strategies</h1>
+        <p>Explore effective strategies to maximize brand visibility, audience engagement, and conversions.</p>
+    </header>
 
-    <div class="container">
-        <h1>Creating a Social Media Strategy</h1>
+    <section id="content-strategy">
+        <h2>1. Understanding Your Target Audience</h2>
+        <p>
+            A successful social media marketing strategy starts with a clear understanding of your audience.
+            Businesses must analyze their audience’s demographics, interests, and online behavior to create relevant
+            content.
+        </p>
+        <h3>Key Factors to Consider:</h3>
+        <ul>
+            <li><strong>Age & Gender:</strong> Tailor content to appeal to specific age groups and gender demographics.
+            </li>
+            <li><strong>Interests & Hobbies:</strong> Create content based on topics that resonate with your audience.
+            </li>
+            <li><strong>Online Behavior:</strong> Identify when and where your audience engages most on social media.
+            </li>
+            <li><strong>Challenges & Pain Points:</strong> Offer solutions that address audience concerns.</li>
+        </ul>
+    </section>
 
-        <div class="strategy-section">
-            <h2>Key Components:</h2>
-            <ul>
-                <li><strong>Define Goals:</strong> Establish clear objectives (e.g., brand awareness, lead generation,
-                    customer engagement).</li>
-                <li><strong>Identify Target Audience:</strong> Understand demographics, interests, and behaviors to
-                    tailor content effectively.</li>
-                <li><strong>Content Planning:</strong> Develop a mix of content types (e.g., educational, promotional,
-                    entertaining) aligned with audience preferences.</li>
-                <li><strong>Engagement Tactics:</strong> Plan strategies for interacting with followers, including
-                    responding to comments and participating in conversations.</li>
-                <li><strong>Metrics for Success:</strong> Determine key performance indicators (KPIs) such as engagement
-                    rate, reach, and conversions.</li>
-            </ul>
+    <section id="content-types">
+        <h2>2. Choosing the Right Content Type</h2>
+        <p>
+            Different content formats perform better on different platforms. Diversifying your content helps maintain
+            engagement.
+        </p>
+        <h3>Common Content Types:</h3>
+        <ul>
+            <li><strong>Images & Infographics:</strong> Visually appealing and easy to digest.</li>
+            <li><strong>Videos:</strong> High engagement rates, especially on platforms like TikTok and Instagram.</li>
+            <li><strong>Live Streams:</strong> Great for real-time interaction with followers.</li>
+            <li><strong>Polls & Surveys:</strong> Encourages audience participation.</li>
+            <li><strong>Blogs & Articles:</strong> Establishes authority and provides value.</li>
+            <li><strong>Memes & GIFs:</strong> Adds humor and increases shareability.</li>
+        </ul>
+    </section>
+
+    <section id="best-practices">
+        <h2>3. Best Practices for Social Media Engagement</h2>
+        <p>
+            Engagement is a critical metric that determines how well content resonates with an audience. Here are some
+            best practices to improve engagement.
+        </p>
+        <h3>Best Practices:</h3>
+        <ul>
+            <li><strong>Post Consistently:</strong> Maintain a regular posting schedule to keep your audience engaged.
+            </li>
+            <li><strong>Use Visuals:</strong> Posts with images or videos receive higher engagement than text-only
+                content.</li>
+            <li><strong>Encourage Interaction:</strong> Ask questions, create polls, and invite comments.</li>
+            <li><strong>Leverage User-Generated Content:</strong> Feature audience posts to increase brand trust.</li>
+            <li><strong>Optimize for Mobile:</strong> Ensure all content is mobile-friendly, as most users access social
+                media via smartphones.</li>
+            <li><strong>Respond Promptly:</strong> Replying to comments and messages boosts engagement and builds
+                loyalty.</li>
+        </ul>
+    </section>
+
+    <section id="posting-schedule">
+        <h2>4. Optimal Posting Times for Social Media</h2>
+        <p>
+            Posting at the right times increases visibility and engagement. Each platform has peak activity hours when
+            content is most likely to be seen.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Platform</th>
+                    <th>Best Posting Time</th>
+                    <th>Best Days</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Facebook</td>
+                    <td>9 AM - 12 PM</td>
+                    <td>Wednesday & Friday</td>
+                </tr>
+                <tr>
+                    <td>Instagram</td>
+                    <td>11 AM - 1 PM</td>
+                    <td>Tuesday & Thursday</td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td>8 AM - 10 AM</td>
+                    <td>Monday & Wednesday</td>
+                </tr>
+                <tr>
+                    <td>LinkedIn</td>
+                    <td>7 AM - 9 AM</td>
+                    <td>Tuesday & Thursday</td>
+                </tr>
+                <tr>
+                    <td>TikTok</td>
+                    <td>6 PM - 10 PM</td>
+                    <td>Friday & Saturday</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="influencer-marketing">
+        <h2>5. Leveraging Influencer Marketing</h2>
+        <p>
+            Collaborating with influencers can amplify brand reach and credibility. Influencers have loyal audiences who
+            trust their recommendations.
+        </p>
+        <h3>Types of Influencers:</h3>
+        <ul>
+            <li><strong>Micro-Influencers (1K - 50K followers):</strong> Niche audience with high engagement.</li>
+            <li><strong>Macro-Influencers (50K - 1M followers):</strong> Wider reach with decent engagement.</li>
+            <li><strong>Celebrity Influencers (1M+ followers):</strong> Massive reach but high-cost partnerships.</li>
+        </ul>
+        <h3>Best Practices:</h3>
+        <ul>
+            <li><strong>Choose the Right Influencer:</strong> Ensure their audience aligns with your brand.</li>
+            <li><strong>Encourage Authenticity:</strong> Allow influencers to create content in their style.</li>
+            <li><strong>Track Performance:</strong> Measure engagement, conversions, and ROI.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Social Media Marketing Course | All Rights Reserved</p>
+    </footer>
+
+
+
+
+
+
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
         </div>
-
-        <div class="strategy-section">
-            <h2>Significance:</h2>
-            <p>A well-structured strategy ensures cohesive messaging, targeted efforts, and measurable results.</p>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    </div>-->
 </body>
 
 </html>

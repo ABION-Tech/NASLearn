@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+            transition: 0.3s;
+        }
+    </style>
+
+<body>
+    <main>
+        <section class="module-content">
+            <h1>Understanding AI Image Generation Techniques</h1>
+            <p>
+                AI-driven image generation is powered by advanced machine learning models that analyze
+                and recreate visual data. These models utilize deep learning techniques to generate
+                high-quality images, often from textual descriptions or existing visual references.
+            </p>
+
+            <h2>Key AI Techniques for Image Creation</h2>
+
+            <h3>1. Generative Adversarial Networks (GANs)</h3>
+            <p>
+                GANs consist of two neural networks—a generator and a discriminator—that work together
+                to create highly realistic images. The generator creates images, while the discriminator
+                evaluates their authenticity, refining the results over multiple iterations.
+            </p>
+            <ul>
+                <li><strong>StyleGAN:</strong> Used for generating high-resolution human faces and art.</li>
+                <li><strong>BigGAN:</strong> Capable of producing highly detailed, large-scale images.</li>
+            </ul>
+
+            <h3>2. Diffusion Models</h3>
+            <p>
+                Diffusion models generate images by progressively refining random noise. Unlike GANs,
+                they work by reversing a "noise diffusion" process, producing realistic and complex images
+                with high fidelity.
+            </p>
+            <ul>
+                <li><strong>Stable Diffusion:</strong> Open-source model for text-to-image generation.</li>
+                <li><strong>DALL·E:</strong> Generates creative artwork based on textual prompts.</li>
+            </ul>
+
+            <h3>3. Neural Style Transfer (NST)</h3>
+            <p>
+                NST enables AI to apply artistic styles to existing images by analyzing the content and
+                structure of a reference image, then blending it with the chosen artistic style.
+            </p>
+            <ul>
+                <li><strong>Deep Dream:</strong> A Google AI experiment that enhances images into dream-like visuals.
+                </li>
+                <li><strong>Prisma:</strong> An app that applies painting styles to photos.</li>
+            </ul>
+
+            <h3>4. Text-to-Image Synthesis</h3>
+            <p>
+                Text-to-image AI models convert written prompts into fully generated images, allowing users
+                to describe a scene in words and let AI bring it to life.
+            </p>
+            <ul>
+                <li><strong>Runway ML:</strong> Used by designers and filmmakers for AI-powered media creation.</li>
+                <li><strong>DeepAI Image Generator:</strong> Creates images based on simple text inputs.</li>
+            </ul>
+
+            <h2>Comparing AI Image Generation Methods</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technique</th>
+                        <th>Strengths</th>
+                        <th>Common Use Cases</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GANs</td>
+                        <td>Highly realistic, good for faces and objects</td>
+                        <td>Portraits, photorealistic art, product design</td>
+                    </tr>
+                    <tr>
+                        <td>Diffusion Models</td>
+                        <td>High-quality, versatile in styles</td>
+                        <td>Illustrations, fantasy art, detailed designs</td>
+                    </tr>
+                    <tr>
+                        <td>Neural Style Transfer</td>
+                        <td>Applies artistic styles to photos</td>
+                        <td>Artistic filters, unique media transformation</td>
+                    </tr>
+                    <tr>
+                        <td>Text-to-Image</td>
+                        <td>Creates images from simple descriptions</td>
+                        <td>Concept art, storytelling, creative projects</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>How AI Learns to Generate Images</h2>
+            <p>
+                AI models require massive datasets to learn how to generate images. These datasets contain
+                labeled images that help the AI understand patterns, colors, textures, and object structures.
+                Over time, the AI refines its ability to generate images that appear natural and coherent.
+            </p>
+
+            <div class="call-to-action">
+                <p><strong>Next:</strong> Hands-on AI Image Creation Tools</p>
+            </div>
+        </section>
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+    </div>-->
+</body>
+
+</html>

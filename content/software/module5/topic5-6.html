@@ -4,142 +4,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recap and Preview: Layout Design</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: black;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
         }
 
         h1,
         h2,
         h3 {
-            color: #007bff;
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        h1 {
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin-top: 20px;
-            font-size: 2.5rem;
         }
 
-        h2 {
-            margin-top: 15px;
-            font-size: 2rem;
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
         }
 
-        h3 {
-            margin-top: 10px;
-            font-size: 1.5rem;
+        th {
+            background-color: #f4f4f4;
         }
 
-        .section {
-            margin-bottom: 30px;
+        /* Responsive Layout */
+        .container {
+            width: 90%;
+            margin: auto;
+            max-width: 1200px;
         }
 
-        .key-takeaway {
-            border-left: 4px solid #007bff;
-            padding-left: 15px;
-            margin-bottom: 20px;
+        .discussion,
+        .assignment {
             background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
             border-radius: 5px;
-            padding: 15px;
         }
 
-        .preview-topic {
-            border: 1px solid #007bff;
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            .discussion,
+            .assignment {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="section">
-            <h1>Recap and Preview</h1>
+    <header>
+        <h1>Module 4: Web Development Fundamentals</h1>
+        <h2>Page 6: Discussion & Assignment – Responsive Web Design</h2>
+    </header>
+
+    <section class="container">
+        <h2>Discussion Topic</h2>
+        <div class="discussion">
+            <p><strong>Question:</strong> Why is responsive web design essential in modern web development? How does it
+                impact user experience and accessibility?</p>
+            <p>Share your thoughts by discussing the advantages and challenges of implementing responsive design.
+                Consider how businesses benefit from having a mobile-friendly website.</p>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>Summary of the Week's Key Takeaways</h2>
-            <p>This week, we delved into the world of <strong>layout design</strong>. We explored the essential
-                principles that guide the arrangement of elements on a page or screen, including:</p>
-
-            <div class="key-takeaway">
-                <strong>The Principles of Layout:</strong> Balance, contrast, emphasis, movement, pattern, repetition,
-                rhythm, and unity.
-            </div>
-            <div class="key-takeaway">
-                <strong>Grid Systems:</strong> The use of grids to create structured and organized layouts. Grids help
-                maintain consistency and clarity, making designs easier to navigate.
-            </div>
-            <div class="key-takeaway">
-                <strong>Alignment and Spacing:</strong> The importance of proper alignment and spacing for readability
-                and visual appeal. Well-aligned elements create a sense of order and professionalism.
-            </div>
-            <div class="key-takeaway">
-                <strong>Layout for Print vs. Digital:</strong> The unique considerations for designing layouts for print
-                and digital media. Print requires attention to physical dimensions and ink usage, while digital needs to
-                address varying screen sizes and interactivity.
-            </div>
-            <div class="key-takeaway">
-                <strong>Visual Hierarchy:</strong> Techniques for guiding the viewer's attention and creating a clear
-                visual flow. By adjusting size, color, and placement, designers can emphasize important elements and
-                improve user engagement.
-            </div>
-
-            <p>By understanding these principles, we can create effective and visually appealing layouts that enhance
-                the overall user experience.</p>
+    <section class="container">
+        <h2>Assignment</h2>
+        <div class="assignment">
+            <p><strong>Task:</strong> Create a simple responsive webpage using HTML and CSS. The webpage should include:
+            </p>
+            <ul>
+                <li>A navigation bar that adapts to different screen sizes.</li>
+                <li>A content section with text and images that adjust based on device width.</li>
+                <li>A footer that remains at the bottom of the page on all devices.</li>
+            </ul>
+            <p>Use Flexbox or Grid for layout and include media queries for responsiveness. Submit your HTML and CSS
+                code for review.</p>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>Preview: User Interface (UI) and User Experience (UX) Design</h2>
-            <p>Next week, we will be exploring <strong>user interface (UI) and user experience (UX) design</strong>.
-                These disciplines are essential for creating digital products that are both visually appealing and easy
-                to use. We will cover the following topics:</p>
+    <section class="container">
+        <h2>Evaluation Criteria</h2>
+        <table>
+            <tr>
+                <th>Criteria</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td>Proper use of responsive design techniques</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Effective use of media queries</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Navigation adapts well to different screen sizes</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Content layout adjusts correctly</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Code structure and readability</td>
+                <td>10</td>
+            </tr>
+        </table>
+    </section>
 
-            <div class="preview-topic">
-                <strong>The Relationship Between UI and UX:</strong> Understanding the difference between UI and UX and
-                how they work together. UI focuses on the look and feel, while UX encompasses the overall experience of
-                using the product.
-            </div>
-            <div class="preview-topic">
-                <strong>User Research:</strong> Gathering insights into user needs and preferences through research
-                methods like surveys, interviews, and usability testing. Understanding user behavior helps tailor
-                designs to their expectations.
-            </div>
-            <div class="preview-topic">
-                <strong>Information Architecture:</strong> Organizing content and navigation in a way that is intuitive
-                and easy to understand. A well-structured architecture enhances usability and guides users efficiently
-                through the content.
-            </div>
-            <div class="preview-topic">
-                <strong>Wireframing and Prototyping:</strong> Creating low-fidelity and high-fidelity prototypes to
-                visualize and test design concepts. Prototyping allows for early feedback and iterative design
-                improvements.
-            </div>
-            <div class="preview-topic">
-                <strong>User Testing:</strong> Conducting usability testing to gather feedback and identify areas for
-                improvement. Testing with real users reveals pain points and areas for enhancement, ensuring the product
-                meets their needs.
-            </div>
-            <div class="preview-topic">
-                <strong>Accessibility:</strong> Designing for inclusivity and ensuring that digital products are
-                accessible to users with disabilities. Incorporating accessibility principles ensures that all users can
-                engage with the content effectively.
-            </div>
 
-            <p>Stay tuned for a more in-depth exploration of UI and UX design.</p>
+
+
+
+
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
         </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>-->
 </body>
 
 </html>

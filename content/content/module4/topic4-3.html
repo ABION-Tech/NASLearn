@@ -4,267 +4,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Functions</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: white;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .main-container {
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 1200px;
+            background-color: #ffffff;
+            color: #333333;
         }
 
         h1,
-        h2 {
+        h2,
+        h3 {
             color: #007bff;
         }
 
-        p {
-            color: #333;
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 20px;
         }
 
-        .code-container {
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .metric {
             background-color: #f8f9fa;
             border-left: 4px solid #007bff;
             padding: 15px;
             margin-bottom: 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 16px;
-            color: #343a40;
+            border-radius: 5px;
         }
 
-        .code-container pre {
-            margin: 0;
-        }
-
-        .highlight {
-            background-color: #007bff;
-            color: white;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-
-        .btn-custom {
-            background-color: #007bff;
-            color: white;
-            border-radius: 50px;
-            padding: 10px 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-custom:hover {
-            background-color: #007BFF;
+        .formula {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
         }
 
         .note {
-            font-size: 0.9em;
+            font-size: 0.9rem;
             color: #6c757d;
-            margin-top: -10px;
         }
 
-        .section-title {
-            margin-top: 40px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            color: #007bff;
-        }
-
-
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
-
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
-
-        /* Video or content inside the border */
-        .video-content {
-            border-radius: 10px;
-            display: block;
-        }
-
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
+        .mt-5 {
+            margin-top: 3rem !important;
         }
     </style>
+    <title>Week 4: Supervised Learning - Classification</title>
 </head>
 
 <body>
+    <header>
+        <h1>Module 4: Writing Compelling Content</h1>
+        <h2>Page 3: Structuring Content for Maximum Impact</h2>
+    </header>
 
-    <div class="main-container">
-        <h1>JavaScript Functions</h1>
-        <p>Functions in JavaScript are one of the most powerful features, allowing you to define reusable code blocks
-            that can execute specific tasks. They make the code more modular, flexible, and scalable.</p>
-
-        <h2 class="section-title">3.1 Defining and Calling Functions</h2>
-        <p>A function is defined using the <span class="highlight">function</span> keyword, followed by a name, a set of
-            parentheses, and a block of code. Here's how you define and call functions:</p>
-
-        <div class="code-container">
-            <pre>function greet() {</pre>
-            <pre>    console.log("Hello, World!");</pre>
-            <pre>}</pre>
-            <pre>greet(); // Calls the function</pre>
-        </div>
-
-        <p>In the above example, the function <span class="highlight">greet()</span> is defined to print a message. When
-            called, it executes the code inside it. Functions can take input values (parameters) and return a result.
+    <section id="introduction">
+        <h2>Introduction to Content Structuring</h2>
+        <p>
+            A well-structured piece of content enhances readability, engagement, and retention. Whether you're writing a
+            blog post, social media content,
+            or an article, organizing your content effectively ensures clarity and impact.
         </p>
-
-        <h2 class="section-title">Function Parameters and Return Values</h2>
-        <p>Functions often need inputs to work with, and they return outputs. You can pass values to a function via
-            <span class="highlight">parameters</span>. The <span class="highlight">return</span> keyword sends back the
-            result of a function.
+        <p>
+            In this section, we’ll explore different structuring techniques, including headline strategies, formatting
+            methods, and logical content flow.
         </p>
+    </section>
 
-        <div class="code-container">
-            <pre>function add(a, b) {</pre>
-            <pre>    return a + b;</pre>
-            <pre>}</pre>
-            <pre>let result = add(5, 10); // 15</pre>
-        </div>
-
-        <p>Here, the function <span class="highlight">add()</span> takes two parameters <span class="highlight">a</span>
-            and <span class="highlight">b</span>, adds them, and returns the result. The result is stored in the
-            variable <span class="highlight">result</span>.</p>
-
-        <button class="btn btn-custom" onclick="alert('The result is: ' + add(5, 10));">Run the Function</button>
-
-        <h2 class="section-title">3.2 Arrow Functions</h2>
-        <p>Arrow functions provide a more concise way of writing functions. They are particularly useful when dealing
-            with functions that are short and anonymous.</p>
-
-        <div class="code-container">
-            <pre>const multiply = (a, b) => a * b;</pre>
-            <pre>console.log(multiply(2, 3)); // 6</pre>
-        </div>
-
-        <p>In this example, the function <span class="highlight">multiply()</span> is defined using arrow function
-            syntax. It takes two parameters, multiplies them, and returns the result.</p>
-
-        <button class="btn btn-custom" onclick="alert('The result is: ' + multiply(2, 3));">Test Arrow Function</button>
-
-        <h2 class="section-title">Why Use Functions?</h2>
-        <p>Functions make your code more organized and easier to maintain. They help you avoid repetition by allowing
-            you to reuse code. Functions also make your code more modular, allowing you to break complex tasks into
-            smaller, manageable pieces.</p>
-
-        <p>Key benefits of using functions:</p>
+    <section id="headline-strategies">
+        <h2>Crafting Powerful Headlines</h2>
+        <p>
+            The headline is the first thing readers see. A compelling headline should be clear, engaging, and encourage
+            curiosity.
+        </p>
+        <h3>Characteristics of an Effective Headline:</h3>
         <ul>
-            <li>Improved code readability and structure</li>
-            <li>Reusability of code blocks</li>
-            <li>Reduced code duplication</li>
-            <li>Ease of maintenance and testing</li>
+            <li><strong>Clarity:</strong> The message should be easily understood.</li>
+            <li><strong>Conciseness:</strong> Keep it short and impactful.</li>
+            <li><strong>Relevance:</strong> Ensure it aligns with your audience’s interests.</li>
+            <li><strong>Emotion:</strong> Use words that evoke curiosity or urgency.</li>
         </ul>
-    </div>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
+        <h3>Examples:</h3>
+        <ul>
+            <li><strong>Weak:</strong> "How to Write Good Content"</li>
+            <li><strong>Strong:</strong> "10 Proven Strategies to Write Engaging Content That Converts"</li>
+        </ul>
+    </section>
+
+    <section id="structuring-content">
+        <h2>Content Structuring Techniques</h2>
+        <p>
+            Once the headline grabs attention, the content needs to be structured in a way that maintains engagement.
+            Here are effective methods:
+        </p>
+
+        <div class="structure-method">
+            <h3>1. The Inverted Pyramid</h3>
+            <p>
+                This journalistic approach places the most important information at the beginning, followed by
+                supporting details and background information.
+            </p>
+            <h4>Best For:</h4>
+            <ul>
+                <li>News articles</li>
+                <li>Press releases</li>
+                <li>Business reports</li>
+            </ul>
         </div>
-    </div>
-    <script>
-        // Function examples
-        function greet() {
-            console.log("Hello, World!");
-        }
 
-        function add(a, b) {
-            return a + b;
-        }
+        <div class="structure-method">
+            <h3>2. The Problem-Solution Format</h3>
+            <p>
+                Start by addressing a pain point your audience faces, then provide a clear solution.
+            </p>
+            <h4>Best For:</h4>
+            <ul>
+                <li>Blog posts</li>
+                <li>Marketing copy</li>
+                <li>Product descriptions</li>
+            </ul>
+        </div>
 
-        const multiply = (a, b) => a * b;
-    </script>
+        <div class="structure-method">
+            <h3>3. The Storytelling Approach</h3>
+            <p>
+                Humans are naturally drawn to stories. Using narratives makes content more relatable and memorable.
+            </p>
+            <h4>Best For:</h4>
+            <ul>
+                <li>Brand storytelling</li>
+                <li>Personal blogs</li>
+                <li>Case studies</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="visual-structure">
+        <h2>Enhancing Readability with Visual Formatting</h2>
+        <p>
+            Proper formatting helps break down complex ideas into digestible pieces, making it easier for readers to
+            navigate content.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Formatting Element</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Headings (H1, H2, H3)</strong></td>
+                    <td>Creates a structured hierarchy for easy navigation.</td>
+                    <td>"Top 5 Strategies for Content Writing" (H1) → "Strategy 1: Storytelling" (H2)</td>
+                </tr>
+                <tr>
+                    <td><strong>Bullet Points</strong></td>
+                    <td>Condenses information into easily scannable lists.</td>
+                    <td>✔ Fast readability, ✔ Easy comprehension</td>
+                </tr>
+                <tr>
+                    <td><strong>Bold & Italics</strong></td>
+                    <td>Emphasizes key points and adds variation.</td>
+                    <td>"The <strong>best way</strong> to improve engagement is by <em>understanding your
+                            audience</em>."</td>
+                </tr>
+                <tr>
+                    <td><strong>Whitespace</strong></td>
+                    <td>Avoids clutter and makes content visually appealing.</td>
+                    <td>Separate sections clearly instead of overwhelming text blocks.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="call-to-action">
+        <h2>Crafting a Strong Call to Action (CTA)</h2>
+        <p>
+            A well-crafted CTA guides readers on what to do next—whether it’s subscribing, purchasing, or engaging with
+            your content.
+        </p>
+        <h3>Effective CTA Strategies:</h3>
+        <ul>
+            <li><strong>Action-Oriented:</strong> Use strong verbs like "Download," "Subscribe," or "Get Started."</li>
+            <li><strong>Urgency:</strong> Create a sense of now—"Limited Offer!"</li>
+            <li><strong>Value-Driven:</strong> Highlight the benefit—"Get Your Free Guide Now."</li>
+        </ul>
+
+        <h3>Examples:</h3>
+        <ul>
+            <li><strong>Weak:</strong> "Click here for more info."</li>
+            <li><strong>Strong:</strong> "Start Your Free Trial Today & Unlock Exclusive Benefits!"</li>
+        </ul>
+    </section>
+
+    <section id="final-thoughts">
+        <h2>Final Thoughts</h2>
+        <p>
+            Structuring content effectively ensures that your message is clear, engaging, and action-driven. Whether
+            using headlines,
+            storytelling, or strategic formatting, applying these techniques will help maximize the impact of your
+            writing.
+        </p>
+        <!-- <a href="page4.html" class="button">Continue to Page 4: Optimizing Content for SEO & Engagement</a>
+        -->
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 

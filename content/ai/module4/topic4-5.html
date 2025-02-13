@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+<body>
+    <main>
+        <section class="module-content">
+            <h1>Future Trends in AI Image Creation</h1>
+            <p>
+                AI-generated images are rapidly evolving, transforming the way we create and interact with visual
+                content.
+                Future developments promise more advanced capabilities, ethical improvements, and innovative
+                applications across industries.
+            </p>
+
+            <h2>1. Increased Realism and Detail</h2>
+            <p>
+                AI models are becoming increasingly sophisticated, producing hyper-realistic images that are nearly
+                indistinguishable from real photos.
+            </p>
+            <ul>
+                <li><strong>Higher resolution:</strong> Future AI models will generate ultra-high-definition images with
+                    better textures and finer details.</li>
+                <li><strong>Improved lighting and shadows:</strong> AI will better understand depth, light refraction,
+                    and natural shading for lifelike results.</li>
+                <li><strong>Photorealistic human faces:</strong> AI-generated people will have fewer distortions, more
+                    natural expressions, and lifelike skin tones.</li>
+            </ul>
+
+            <h2>2. AI-Assisted Creativity in Design</h2>
+            <p>
+                AI is not just a tool for automation—it is also becoming a powerful assistant for artists and designers.
+            </p>
+            <ul>
+                <li><strong>AI-human collaboration:</strong> Artists will integrate AI to enhance creativity rather than
+                    replace human intuition.</li>
+                <li><strong>AI-powered design assistants:</strong> Tools will suggest compositions, color schemes, and
+                    creative elements based on user input.</li>
+                <li><strong>Customizable AI-generated art:</strong> Users will have greater control over AI outputs,
+                    modifying details in real time.</li>
+            </ul>
+
+            <h2>3. Text-to-Video and 3D Image Generation</h2>
+            <p>
+                AI is advancing beyond static images, paving the way for automated video generation and interactive 3D
+                content creation.
+            </p>
+            <ul>
+                <li><strong>Text-to-video AI:</strong> Users will be able to generate short animated sequences directly
+                    from text descriptions.</li>
+                <li><strong>AI-generated 3D models:</strong> AI will automate 3D asset creation for gaming,
+                    architecture, and virtual reality.</li>
+                <li><strong>Dynamic AI art:</strong> Interactive AI-generated images will change based on user
+                    interaction or environmental factors.</li>
+            </ul>
+
+            <h2>4. Ethical AI Development and Bias Reduction</h2>
+            <p>
+                As AI-generated visuals become more mainstream, efforts to ensure ethical and fair AI practices will
+                expand.
+            </p>
+            <ul>
+                <li><strong>Bias detection in AI training:</strong> Future models will include built-in mechanisms to
+                    detect and reduce biased outputs.</li>
+                <li><strong>Ethical AI standards:</strong> Industry-wide regulations will define fair use and
+                    responsible AI image creation.</li>
+                <li><strong>Transparent AI models:</strong> Companies will develop AI tools with clear documentation on
+                    how they generate images.</li>
+            </ul>
+
+            <h2>5. Personalized AI Image Generation</h2>
+            <p>
+                AI will move towards hyper-personalization, allowing users to generate custom images based on their
+                preferences and previous inputs.
+            </p>
+            <ul>
+                <li><strong>Adaptive AI models:</strong> AI tools will learn from user style preferences and generate
+                    images that align with personal aesthetics.</li>
+                <li><strong>Real-time AI modifications:</strong> Users will be able to tweak AI-generated images
+                    instantly with simple commands.</li>
+                <li><strong>AI-powered branding:</strong> Businesses will use AI to create unique logos, marketing
+                    visuals, and brand identity elements tailored to their needs.</li>
+            </ul>
+
+            <h2>6. AI in the Metaverse and Virtual Reality</h2>
+            <p>
+                The rise of virtual worlds and the metaverse will push AI-generated imagery into immersive digital
+                experiences.
+            </p>
+            <ul>
+                <li><strong>AI-created virtual environments:</strong> AI will design interactive virtual spaces for
+                    gaming, training, and simulations.</li>
+                <li><strong>Automated character generation:</strong> AI will produce realistic avatars and NPCs
+                    (non-player characters) for virtual experiences.</li>
+                <li><strong>Instant world-building:</strong> AI will assist in generating landscapes, architecture, and
+                    objects for VR applications.</li>
+            </ul>
+
+            <h2>7. The Future of AI Art Markets</h2>
+            <p>
+                AI-generated art is becoming a commercial asset, influencing the art industry, digital collectibles, and
+                NFTs.
+            </p>
+            <ul>
+                <li><strong>AI-powered NFT creation:</strong> AI-generated artwork will continue to dominate the digital
+                    collectibles space.</li>
+                <li><strong>AI-curated galleries:</strong> Online platforms will use AI to curate and showcase art
+                    collections tailored to user preferences.</li>
+                <li><strong>Integration with traditional art:</strong> AI-generated art will blend with traditional
+                    techniques to create hybrid masterpieces.</li>
+            </ul>
+
+            <h2>Preparing for the Future of AI Image Creation</h2>
+            <p>
+                As AI continues to evolve, staying informed about its developments and ethical implications is crucial.
+                Whether you’re an artist, designer, or business professional, understanding AI’s role in visual creation
+                will help you harness its full potential.
+            </p>
+            <ol>
+                <li>Experiment with AI image tools and understand their capabilities.</li>
+                <li>Stay updated on AI ethics and responsible image generation.</li>
+                <li>Explore AI-human collaboration in creative projects.</li>
+                <li>Consider AI’s role in emerging fields like virtual reality and the metaverse.</li>
+                <li>Balance AI automation with human creativity for innovative visual storytelling.</li>
+            </ol>
+
+            <div class="call-to-action">
+                <p><strong>Next:</strong> Discussion Questions & Assignments</p>
+            </div>
+        </section>
+    </main>
+    <!-- Video Section
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aWPvWmura8I?si=ukKA00NqW7heCpGO"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div> -->
+</body>
+
+</html>

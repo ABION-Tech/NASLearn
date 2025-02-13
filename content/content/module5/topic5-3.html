@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript and jQuery Concepts</title>
+    <title>week 5</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -144,67 +144,96 @@
 </head>
 
 <body>
+    <header>
+        <h1>Choosing the Right Visual Elements for Your Content</h1>
+        <p>Learn how to select and integrate images, colors, fonts, and other visual elements to enhance content
+            quality.</p>
+    </header>
 
+    <section id="images">
+        <h2>1. Using Images Effectively</h2>
+        <p>Images are powerful tools that enhance engagement, clarify messages, and evoke emotions.</p>
+        <ul>
+            <li><strong>High-Quality:</strong> Use clear, well-lit, and high-resolution images.</li>
+            <li><strong>Relevance:</strong> Images should directly support the content's message.</li>
+            <li><strong>Authenticity:</strong> Avoid generic stock images; opt for real or customized visuals.</li>
+            <li><strong>Consistency:</strong> Maintain a consistent style (color filters, tone, framing) across images.
+            </li>
+        </ul>
+        <img src="visual-elements-images.jpg" alt="Effective use of images in content">
+    </section>
 
-    <div class="container mt-5">
-        <!-- jQuery Section -->
-        <h1>Introduction to jQuery</h1>
+    <section id="colors">
+        <h2>2. The Psychology of Color</h2>
+        <p>Colors influence mood, perception, and decision-making. Choosing the right colors enhances brand identity and
+            audience connection.</p>
+        <table>
+            <tr>
+                <th>Color</th>
+                <th>Emotion</th>
+                <th>Usage Example</th>
+            </tr>
+            <tr>
+                <td><span style="color: red;">Red</span></td>
+                <td>Energy, passion, urgency</td>
+                <td>Sale promotions, warnings</td>
+            </tr>
+            <tr>
+                <td><span style="color: blue;">Blue</span></td>
+                <td>Trust, calm, professionalism</td>
+                <td>Corporate branding, finance websites</td>
+            </tr>
+            <tr>
+                <td><span style="color: green;">Green</span></td>
+                <td>Growth, health, nature</td>
+                <td>Eco-friendly brands, wellness products</td>
+            </tr>
+            <tr>
+                <td><span style="color: yellow;">Yellow</span></td>
+                <td>Optimism, warmth, attention</td>
+                <td>Children’s brands, food industry</td>
+            </tr>
+        </table>
+    </section>
 
-        <div class="section">
-            <h3>2.1 What is jQuery?</h3>
-            <p>jQuery is a fast, small, and feature-rich JavaScript library. It simplifies tasks like DOM manipulation,
-                event handling, and animation, making it easier to build dynamic and interactive web pages.</p>
-
-            <p><strong>Why Use jQuery?</strong></p>
-            <ul>
-                <li>Cross-browser compatibility.</li>
-                <li>Simplifies complex JavaScript tasks.</li>
-                <li>Extensive plugin ecosystem.</li>
-            </ul>
+    <section id="typography">
+        <h2>3. Typography: Choosing the Right Fonts</h2>
+        <p>Typography affects readability, branding, and user experience.</p>
+        <ul>
+            <li><strong>Serif Fonts:</strong> Traditional and professional (e.g., Times New Roman, Georgia).</li>
+            <li><strong>Sans-serif Fonts:</strong> Modern and clean (e.g., Arial, Helvetica).</li>
+            <li><strong>Script Fonts:</strong> Elegant and creative (e.g., Pacifico, Dancing Script).</li>
+            <li><strong>Display Fonts:</strong> Bold and eye-catching (e.g., Impact, Lobster).</li>
+        </ul>
+        <div class="typography-examples">
+            <p style="font-family: 'Times New Roman', serif;">Example of Serif Font</p>
+            <p style="font-family: Arial, sans-serif;">Example of Sans-serif Font</p>
+            <p style="font-family: 'Pacifico', cursive;">Example of Script Font</p>
+            <p style="font-family: 'Impact', sans-serif;">Example of Display Font</p>
         </div>
+    </section>
 
-        <div class="section">
-            <h3>2.2 Basic jQuery Syntax</h3>
-            <p><strong>Selecting Elements:</strong></p>
-            <pre><code>$(document).ready(function() {
-    $("p").click(function() {
-        $(this).hide();
-    });
-});</code></pre>
-
-            <p><strong>Event Handling:</strong></p>
-            <pre><code>$("button").click(function() {
-    alert("Button clicked!");
-});</code></pre>
-
-            <p><strong>DOM Manipulation:</strong></p>
-            <pre><code>$("#myDiv").text("Hello, jQuery!");</code></pre>
+    <section id="icons">
+        <h2>4. Icons: Enhancing Visual Communication</h2>
+        <p>Icons improve navigation and comprehension by offering quick visual cues.</p>
+        <ul>
+            <li><strong>Minimalist:</strong> Simple, clear, and easily recognizable.</li>
+            <li><strong>Consistent Style:</strong> Stick to a uniform icon set.</li>
+            <li><strong>Appropriate Use:</strong> Icons should clarify, not confuse.</li>
+        </ul>
+        <div class="icon-examples">
+            <img src="icons-navigation.jpg" alt="Navigation icons example">
+            <img src="icons-infographics.jpg" alt="Icons in infographics">
         </div>
+    </section>
 
-        <div class="section">
-            <h3>2.3 jQuery Animations</h3>
-            <p><strong>Basic Animation:</strong></p>
-            <pre><code>$("#myDiv").fadeOut();</code></pre>
 
-            <p><strong>Chaining Animations:</strong></p>
-            <pre><code>$("#myDiv").slideUp().slideDown().fadeOut();</code></pre>
-        </div>
-    </div>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
-    </div>
+
     <!-- Bootstrap JS and jQuery (for demonstration purposes) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 
 </html>

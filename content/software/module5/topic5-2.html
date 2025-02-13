@@ -4,63 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript and jQuery Concepts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: #333;
-            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
+        h1,
         h2,
         h3 {
             color: #007BFF;
-            margin-top: 20px;
+            /* Blue accent */
         }
 
-        p,
-        code {
-            font-size: 16px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
             line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .section {
-            margin-bottom: 50px;
+        .custom-section ul {
+            margin-left: 20px;
         }
 
-        pre {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 14px;
-            overflow-x: auto;
-        }
-
-        .code-title {
+        .custom-section ul li {
             margin-bottom: 10px;
-            font-weight: bold;
         }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -139,137 +125,166 @@
                 }
             }
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- JavaScript Section -->
-    <div class="container mt-5">
-        <h2>Advanced JavaScript Concepts</h2>
+    <header>
+        <h1>Module 4: Web Development Fundamentals</h1>
+        <h2>Page 2: HTML Basics</h2>
+    </header>
 
-        <div class="section">
-            <h3>1.1 ES6 Features (ECMAScript 2015)</h3>
-            <p><strong>let and const:</strong></p>
-            <pre><code>let age = 25;
-const pi = 3.14;</code></pre>
+    <section>
+        <h2>What is HTML?</h2>
+        <p>HTML (HyperText Markup Language) is the standard language for creating webpages. It provides the structure of
+            a webpage using elements enclosed in tags.</p>
+    </section>
 
-            <p><strong>Arrow Functions:</strong></p>
-            <pre><code>const multiply = (a, b) => a * b;</code></pre>
+    <section>
+        <h2>Basic Structure of an HTML Document</h2>
+        <p>An HTML document consists of the following structure:</p>
 
-            <p><strong>Template Literals:</strong></p>
-            <pre><code>const name = "John";
-const greeting = `Hello, ${name}! Welcome to ES6.`;</code></pre>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;Welcome to my first webpage.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
 
-            <p><strong>Destructuring Assignment:</strong></p>
-            <pre><code>const person = { name: "Jane", age: 30 };
-const { name, age } = person;</code></pre>
+        <p>Explanation:</p>
+        <ul>
+            <li><code>&lt;!DOCTYPE html&gt;</code> - Declares the document as an HTML5 document.</li>
+            <li><code>&lt;html&gt;</code> - The root element that wraps all content.</li>
+            <li><code>&lt;head&gt;</code> - Contains meta-information, such as character encoding and title.</li>
+            <li><code>&lt;title&gt;</code> - Sets the title displayed in the browser tab.</li>
+            <li><code>&lt;body&gt;</code> - Contains the main content of the webpage.</li>
+        </ul>
+    </section>
 
-            <p><strong>Default Parameters:</strong></p>
-            <pre><code>function greet(name = "Guest") {
-    console.log(`Hello, ${name}!`);
-}</code></pre>
+    <section>
+        <h2>Common HTML Elements</h2>
+        <p>HTML consists of various elements used to structure content. Here are some commonly used tags:</p>
 
-            <p><strong>Spread and Rest Operators:</strong></p>
-            <pre><code>const numbers = [1, 2, 3];
-console.log(...numbers); // Outputs: 1 2 3</code></pre>
-        </div>
+        <table>
+            <tr>
+                <th>Tag</th>
+                <th>Function</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>&lt;h1&gt; - &lt;h6&gt;</code></td>
+                <td>Headings (h1 is the largest, h6 is the smallest)</td>
+                <td><code>&lt;h1&gt;Hello World&lt;/h1&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;p&gt;</code></td>
+                <td>Defines a paragraph</td>
+                <td><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;a&gt;</code></td>
+                <td>Creates a hyperlink</td>
+                <td><code>&lt;a href="https://example.com"&gt;Click Here&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;img&gt;</code></td>
+                <td>Displays an image</td>
+                <td><code>&lt;img src="image.jpg" alt="Sample Image"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;ul&gt; &amp; &lt;li&gt;</code></td>
+                <td>Creates an unordered list</td>
+                <td>
+                    <code>
+                        &lt;ul&gt;<br>
+                        &nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt;<br>
+                        &lt;/ul&gt;
+                    </code>
+                </td>
+            </tr>
+        </table>
+    </section>
 
-        <div class="section">
-            <h3>1.2 Asynchronous JavaScript</h3>
-            <p><strong>Callbacks:</strong></p>
-            <pre><code>function fetchData(callback) {
-    setTimeout(() => {
-        callback("Data received!");
-    }, 2000);
-}
+    <section>
+        <h2>Forms and Input Fields</h2>
+        <p>Forms allow users to submit data to a website. A basic HTML form looks like this:</p>
 
-fetchData((message) => {
-    console.log(message);
-});</code></pre>
+        <pre>
+&lt;form action="submit.php" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
 
-            <p><strong>Promises:</strong></p>
-            <pre><code>const fetchData = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("Data received!");
-    }, 2000);
-});
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
 
-fetchData.then((message) => {
-    console.log(message);
-});</code></pre>
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+        </pre>
 
-            <p><strong>Async/Await:</strong></p>
-            <pre><code>async function fetchData() {
-    const data = await new Promise((resolve) => {
-        setTimeout(() => {
-            resolve("Data received!");
-        }, 2000);
-    });
-    console.log(data);
-}
+        <p>Key Elements:</p>
+        <ul>
+            <li><code>&lt;form&gt;</code> - Defines the form.</li>
+            <li><code>&lt;input&gt;</code> - Creates input fields (text, email, password, etc.).</li>
+            <li><code>&lt;button&gt;</code> - Submits the form.</li>
+        </ul>
+    </section>
 
-fetchData();</code></pre>
-        </div>
+    <section>
+        <h2>HTML Best Practices</h2>
+        <p>To write clean and efficient HTML, follow these best practices:</p>
+        <ul>
+            <li>Use semantic elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, and
+                <code>&lt;footer&gt;</code> instead of <code>&lt;div&gt;</code> where appropriate.</li>
+            <li>Keep code well-structured and indented for readability.</li>
+            <li>Always include the <code>alt</code> attribute in images for accessibility.</li>
+            <li>Use external stylesheets instead of inline styles.</li>
+            <li>Validate your HTML using tools like the W3C HTML Validator.</li>
+        </ul>
+    </section>
 
-        <!-- jQuery Section -->
-        <h2>Introduction to jQuery</h2>
 
-        <div class="section">
-            <h3>2.1 What is jQuery?</h3>
-            <p>jQuery is a fast, small, and feature-rich JavaScript library. It simplifies tasks like DOM manipulation,
-                event handling, and animation, making it easier to build dynamic and interactive web pages.</p>
 
-            <p><strong>Why Use jQuery?</strong></p>
-            <ul>
-                <li>Cross-browser compatibility.</li>
-                <li>Simplifies complex JavaScript tasks.</li>
-                <li>Extensive plugin ecosystem.</li>
-            </ul>
-        </div>
 
-        <div class="section">
-            <h3>2.2 Basic jQuery Syntax</h3>
-            <p><strong>Selecting Elements:</strong></p>
-            <pre><code>$(document).ready(function() {
-    $("p").click(function() {
-        $(this).hide();
-    });
-});</code></pre>
 
-            <p><strong>Event Handling:</strong></p>
-            <pre><code>$("button").click(function() {
-    alert("Button clicked!");
-});</code></pre>
 
-            <p><strong>DOM Manipulation:</strong></p>
-            <pre><code>$("#myDiv").text("Hello, jQuery!");</code></pre>
-        </div>
 
-        <div class="section">
-            <h3>2.3 jQuery Animations</h3>
-            <p><strong>Basic Animation:</strong></p>
-            <pre><code>$("#myDiv").fadeOut();</code></pre>
-
-            <p><strong>Chaining Animations:</strong></p>
-            <pre><code>$("#myDiv").slideUp().slideDown().fadeOut();</code></pre>
-        </div>
-    </div>
-    <div class="video-container">
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
         <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
         </div>
-    </div>
-    <!-- Bootstrap JS and jQuery (for demonstration purposes) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    </div>-->
 </body>
 
 </html>

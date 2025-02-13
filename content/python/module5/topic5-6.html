@@ -66,77 +66,163 @@
 </head>
 
 <body>
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Conclusion of Week 1</h2>
-        <div class="row">
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <div class="card-flip">
-                        <div class="card-front">
-                            <h5>DataFrames</h5>
-                        </div>
-                        <div class="card-back">
-                            <p>Created and manipulated DataFrames and Series for efficient data storage and analysis,
-                                allowing for complex data structures.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <div class="card-flip">
-                        <div class="card-front">
-                            <h5>Data Cleaning</h5>
-                        </div>
-                        <div class="card-back">
-                            <p>Learned techniques for cleaning and transforming data by handling missing values and
-                                duplicates to ensure data integrity.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <div class="card-flip">
-                        <div class="card-front">
-                            <h5>Data Filtering</h5>
-                        </div>
-                        <div class="card-back">
-                            <p>Filtered and selected data using conditions to extract meaningful insights from large
-                                datasets.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <div class="card-flip">
-                        <div class="card-front">
-                            <h5>Merging Data</h5>
-                        </div>
-                        <div class="card-back">
-                            <p>Combined multiple DataFrames using merging and joining techniques for cohesive data
-                                analysis across different sources.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <div class="card-flip">
-                        <div class="card-front">
-                            <h5>Hands-On Practice</h5>
-                        </div>
-                        <div class="card-back">
-                            <p>Engaged in practical exercises that solidified understanding of data manipulation
-                                concepts and techniques.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <header>
+        <h1>Module 5: Functions in Python</h1>
+        <h2>Page 6: Discussion and Assignment</h2>
+    </header>
 
+    <section>
+        <h2>Discussion Section</h2>
+        <p>Now that you've learned about functions in Python, it's time to reflect on their importance and share your
+            insights.</p>
+
+        <h3>Discussion Questions:</h3>
+        <ul>
+            <li><strong>Why do you think functions are essential in programming?</strong></li>
+            <li><strong>How does using functions make a program more efficient and maintainable?</strong></li>
+            <li><strong>Can you think of real-world examples where functions can be applied?</strong></li>
+            <li><strong>What is the most challenging part of writing functions, and how do you overcome it?</strong>
+            </li>
+            <li><strong>How does using functions contribute to the DRY (Don’t Repeat Yourself) principle?</strong></li>
+        </ul>
+
+        <p>Take some time to answer these questions and engage in discussions with your peers or instructor. Sharing
+            different perspectives can help deepen your understanding of functions.</p>
+    </section>
+
+    <section>
+        <h2>Practical Assignment</h2>
+        <p>Apply what you've learned by completing the following tasks:</p>
+
+        <h3>**Task 1: Create a Function with Proper Documentation**</h3>
+        <p>Write a Python function that calculates the Body Mass Index (BMI). The function should:</p>
+        <ul>
+            <li>Take height (in meters) and weight (in kg) as parameters.</li>
+            <li>Return the BMI value.</li>
+            <li>Include a docstring explaining its purpose, parameters, and return value.</li>
+        </ul>
+
+        <pre>
+            <code>
+def calculate_bmi(weight: float, height: float) -> float:
+    """
+    Calculate the Body Mass Index (BMI).
+
+    Parameters:
+        weight (float): The weight in kilograms.
+        height (float): The height in meters.
+
+    Returns:
+        float: The BMI value.
+    """
+    return weight / (height ** 2)
+
+print(calculate_bmi(70, 1.75))  # Example usage
+            </code>
+        </pre>
+
+        <h3>**Task 2: Implement Error Handling**</h3>
+        <p>Modify the <code>calculate_bmi</code> function to handle potential errors, such as:</p>
+        <ul>
+            <li>Zero or negative values for height or weight.</li>
+            <li>Invalid data types (e.g., string inputs instead of numbers).</li>
+        </ul>
+
+        <pre>
+            <code>
+def calculate_bmi(weight: float, height: float) -> float:
+    """
+    Calculate the Body Mass Index (BMI) with error handling.
+
+    Parameters:
+        weight (float): The weight in kilograms.
+        height (float): The height in meters.
+
+    Returns:
+        float or str: The BMI value or an error message.
+    """
+    try:
+        if weight <= 0 or height <= 0:
+            return "Error: Weight and height must be positive values."
+        return round(weight / (height ** 2), 2)
+    except TypeError:
+        return "Error: Please provide numerical values."
+
+print(calculate_bmi(70, 1.75))  # Valid input
+print(calculate_bmi(-70, 1.75)) # Invalid input
+print(calculate_bmi("seventy", 1.75)) # Type error example
+            </code>
+        </pre>
+
+        <h3>**Task 3: Write a Function that Uses a Default Parameter**</h3>
+        <p>Create a function that calculates the final price of a product after applying a discount.</p>
+        <ul>
+            <li>The function should take the original price and an optional discount percentage (default is 10%).</li>
+            <li>It should return the final price after the discount is applied.</li>
+        </ul>
+
+        <pre>
+            <code>
+def calculate_discounted_price(price: float, discount: float = 10) -> float:
+    """
+    Calculate the final price after applying a discount.
+
+    Parameters:
+        price (float): The original price of the product.
+        discount (float): The discount percentage (default is 10%).
+
+    Returns:
+        float: The final price after discount.
+    """
+    return round(price - (price * (discount / 100)), 2)
+
+print(calculate_discounted_price(100))  # Default discount (10%)
+print(calculate_discounted_price(100, 20))  # Custom discount (20%)
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h2>Bonus Challenge: Function with Multiple Return Values</h2>
+        <p>Write a function that calculates both the area and perimeter of a rectangle. The function should:</p>
+        <ul>
+            <li>Take length and width as parameters.</li>
+            <li>Return both the area and perimeter as a tuple.</li>
+        </ul>
+
+        <pre>
+            <code>
+def rectangle_properties(length: float, width: float) -> tuple:
+    """
+    Calculate the area and perimeter of a rectangle.
+
+    Parameters:
+        length (float): The length of the rectangle.
+        width (float): The width of the rectangle.
+
+    Returns:
+        tuple: A tuple containing (area, perimeter).
+    """
+    area = length * width
+    perimeter = 2 * (length + width)
+    return area, perimeter
+
+area, perimeter = rectangle_properties(5, 3)
+print(f"Area: {area}, Perimeter: {perimeter}")
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h2>Submission Guidelines</h2>
+        <p>Submit your completed assignments by following these steps:</p>
+        <ul>
+            <li>Write your code in a Python script or Jupyter Notebook.</li>
+            <li>Add comments explaining your approach.</li>
+            <li>Test your functions with different inputs to ensure they work correctly.</li>
+            <li>Upload your work to the designated platform (if applicable).</li>
+        </ul>
+    </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -4,63 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript and jQuery Concepts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: #333;
-            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
+        h1,
         h2,
         h3 {
             color: #007BFF;
-            margin-top: 20px;
+            /* Blue accent */
         }
 
-        p,
-        code {
-            font-size: 16px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
             line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .section {
-            margin-bottom: 50px;
+        .custom-section ul {
+            margin-left: 20px;
         }
 
-        pre {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 14px;
-            overflow-x: auto;
-        }
-
-        .code-title {
+        .custom-section ul li {
             margin-bottom: 10px;
-            font-weight: bold;
         }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -140,136 +126,196 @@
             }
         }
     </style>
-</head>
 
 <body>
+    <header>
+        <h1>Module 5: Digital Imaging and Software Tools</h1>
+        <h2>Page 2: Getting Started with Graphic Design Software</h2>
+    </header>
 
-    <!-- JavaScript Section -->
-    <div class="container mt-5">
-        <h2>Advanced JavaScript Concepts</h2>
+    <section>
+        <h2>Introduction to Graphic Design Software</h2>
+        <p>Graphic design software allows users to create, edit, and manipulate digital images. These tools range from
+            beginner-friendly applications to professional-grade platforms used in industries like marketing,
+            publishing, and digital art.</p>
+    </section>
 
-        <div class="section">
-            <h3>1.1 ES6 Features (ECMAScript 2015)</h3>
-            <p><strong>let and const:</strong></p>
-            <pre><code>let age = 25;
-const pi = 3.14;</code></pre>
+    <section>
+        <h2>Popular Graphic Design Software</h2>
+        <p>There are several graphic design software options available, each with unique features and capabilities:</p>
 
-            <p><strong>Arrow Functions:</strong></p>
-            <pre><code>const multiply = (a, b) => a * b;</code></pre>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Software</th>
+                    <th>Description</th>
+                    <th>Best For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Adobe Photoshop</td>
+                    <td>Industry-standard raster graphics editor used for image editing, retouching, and digital
+                        painting.</td>
+                    <td>Photo editing, digital painting, and web graphics.</td>
+                </tr>
+                <tr>
+                    <td>Adobe Illustrator</td>
+                    <td>Vector-based design software used for creating logos, icons, and illustrations.</td>
+                    <td>Logo design, branding, and scalable graphics.</td>
+                </tr>
+                <tr>
+                    <td>CorelDRAW</td>
+                    <td>A powerful vector graphics editor that offers intuitive tools for digital illustration and
+                        layout design.</td>
+                    <td>Print media, branding, and vector illustrations.</td>
+                </tr>
+                <tr>
+                    <td>GIMP</td>
+                    <td>A free, open-source alternative to Photoshop with image editing and retouching capabilities.
+                    </td>
+                    <td>Basic photo editing and design for beginners.</td>
+                </tr>
+                <tr>
+                    <td>Canva</td>
+                    <td>Online design tool with drag-and-drop features for creating social media posts, flyers, and
+                        presentations.</td>
+                    <td>Marketing content, social media graphics, and quick designs.</td>
+                </tr>
+            </tbody>
+        </table>
 
-            <p><strong>Template Literals:</strong></p>
-            <pre><code>const name = "John";
-const greeting = `Hello, ${name}! Welcome to ES6.`;</code></pre>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
 
-            <p><strong>Destructuring Assignment:</strong></p>
-            <pre><code>const person = { name: "Jane", age: 30 };
-const { name, age } = person;</code></pre>
+            th,
+            td {
+                padding: 10px;
+                text-align: left;
+            }
 
-            <p><strong>Default Parameters:</strong></p>
-            <pre><code>function greet(name = "Guest") {
-    console.log(`Hello, ${name}!`);
-}</code></pre>
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </section>
 
-            <p><strong>Spread and Rest Operators:</strong></p>
-            <pre><code>const numbers = [1, 2, 3];
-console.log(...numbers); // Outputs: 1 2 3</code></pre>
-        </div>
+    <section>
+        <h2>Choosing the Right Software</h2>
+        <p>The choice of software depends on the type of project and the user's skill level. Consider the following
+            factors:</p>
+        <ul>
+            <li><strong>Purpose:</strong> Raster-based software like Photoshop is ideal for photo editing, while
+                vector-based tools like Illustrator are best for logos and scalable designs.</li>
+            <li><strong>Skill Level:</strong> Beginners may find tools like Canva or GIMP easier to use, while
+                professionals often prefer Adobe's suite.</li>
+            <li><strong>Budget:</strong> Adobe tools require a subscription, whereas free options like GIMP and Inkscape
+                are suitable for cost-conscious users.</li>
+            <li><strong>Collaboration Features:</strong> Cloud-based tools like Canva allow teams to work together
+                remotely.</li>
+        </ul>
+    </section>
 
-        <div class="section">
-            <h3>1.2 Asynchronous JavaScript</h3>
-            <p><strong>Callbacks:</strong></p>
-            <pre><code>function fetchData(callback) {
-    setTimeout(() => {
-        callback("Data received!");
-    }, 2000);
-}
+    <section>
+        <h2>Basic Tools in Graphic Design Software</h2>
+        <p>Most graphic design software includes essential tools for creating and editing images:</p>
 
-fetchData((message) => {
-    console.log(message);
-});</code></pre>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Tool</th>
+                    <th>Function</th>
+                    <th>Common Uses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Selection Tool</td>
+                    <td>Allows users to select, move, and transform objects within a design.</td>
+                    <td>Editing specific parts of an image or layout.</td>
+                </tr>
+                <tr>
+                    <td>Brush Tool</td>
+                    <td>Used for digital painting and applying effects to images.</td>
+                    <td>Creating artistic elements in digital artwork.</td>
+                </tr>
+                <tr>
+                    <td>Pen Tool</td>
+                    <td>Creates precise vector paths and shapes.</td>
+                    <td>Logo design, illustrations, and typography.</td>
+                </tr>
+                <tr>
+                    <td>Layer System</td>
+                    <td>Organizes different elements of a design into separate, editable layers.</td>
+                    <td>Advanced editing and non-destructive design workflows.</td>
+                </tr>
+                <tr>
+                    <td>Gradient Tool</td>
+                    <td>Applies smooth transitions between colors.</td>
+                    <td>Backgrounds, shading effects, and artistic compositions.</td>
+                </tr>
+            </tbody>
+        </table>
 
-            <p><strong>Promises:</strong></p>
-            <pre><code>const fetchData = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("Data received!");
-    }, 2000);
-});
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
 
-fetchData.then((message) => {
-    console.log(message);
-});</code></pre>
+            th,
+            td {
+                padding: 10px;
+                text-align: left;
+            }
 
-            <p><strong>Async/Await:</strong></p>
-            <pre><code>async function fetchData() {
-    const data = await new Promise((resolve) => {
-        setTimeout(() => {
-            resolve("Data received!");
-        }, 2000);
-    });
-    console.log(data);
-}
+            th {
+                background-color: #e6e6e6;
+            }
+        </style>
+    </section>
 
-fetchData();</code></pre>
-        </div>
+    <section>
+        <h2>Installing and Setting Up Design Software</h2>
+        <p>To get started with graphic design software, follow these general steps:</p>
+        <ol>
+            <li>Choose a software based on your needs (Photoshop, Illustrator, GIMP, etc.).</li>
+            <li>Download and install the software from its official website.</li>
+            <li>Set up your workspace by customizing tools, panels, and preferences.</li>
+            <li>Practice using basic tools such as layers, selection tools, and brushes.</li>
+            <li>Experiment with design templates or create a simple project to familiarize yourself with the interface.
+            </li>
+        </ol>
+    </section>
 
-        <!-- jQuery Section -->
-        <h2>Introduction to jQuery</h2>
+    <section>
+        <h2>Common File Formats in Graphic Design</h2>
+        <p>Graphic design projects are saved in different file formats depending on their use case:</p>
+        <ul>
+            <li><strong>PSD:</strong> Photoshop Document, used for projects with multiple layers.</li>
+            <li><strong>AI:</strong> Adobe Illustrator format for vector graphics.</li>
+            <li><strong>PNG:</strong> High-quality images with transparent backgrounds.</li>
+            <li><strong>JPG:</strong> Compressed image format for web use.</li>
+            <li><strong>SVG:</strong> Scalable vector format used in web development.</li>
+        </ul>
+    </section>
 
-        <div class="section">
-            <h3>2.1 What is jQuery?</h3>
-            <p>jQuery is a fast, small, and feature-rich JavaScript library. It simplifies tasks like DOM manipulation,
-                event handling, and animation, making it easier to build dynamic and interactive web pages.</p>
 
-            <p><strong>Why Use jQuery?</strong></p>
-            <ul>
-                <li>Cross-browser compatibility.</li>
-                <li>Simplifies complex JavaScript tasks.</li>
-                <li>Extensive plugin ecosystem.</li>
-            </ul>
-        </div>
 
-        <div class="section">
-            <h3>2.2 Basic jQuery Syntax</h3>
-            <p><strong>Selecting Elements:</strong></p>
-            <pre><code>$(document).ready(function() {
-    $("p").click(function() {
-        $(this).hide();
-    });
-});</code></pre>
-
-            <p><strong>Event Handling:</strong></p>
-            <pre><code>$("button").click(function() {
-    alert("Button clicked!");
-});</code></pre>
-
-            <p><strong>DOM Manipulation:</strong></p>
-            <pre><code>$("#myDiv").text("Hello, jQuery!");</code></pre>
-        </div>
-
-        <div class="section">
-            <h3>2.3 jQuery Animations</h3>
-            <p><strong>Basic Animation:</strong></p>
-            <pre><code>$("#myDiv").fadeOut();</code></pre>
-
-            <p><strong>Chaining Animations:</strong></p>
-            <pre><code>$("#myDiv").slideUp().slideDown().fadeOut();</code></pre>
-        </div>
-    </div>
-    <div class="video-container">
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
         <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
         </div>
-    </div>
-    <!-- Bootstrap JS and jQuery (for demonstration purposes) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    </div>-->
 </body>
 
 </html>

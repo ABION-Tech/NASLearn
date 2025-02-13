@@ -4,167 +4,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Hierarchy in Layout</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: black;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
         }
 
         h1,
         h2,
         h3 {
-            color: #007bff;
-            /* Blue accent color */
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        .content-section {
-            margin-top: 30px;
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .highlight {
-            background-color: #e6f7ff;
-            /* Light blue background */
-            padding: 10px;
-            border-left: 5px solid #007bff;
-            /* Blue accent border */
+        .custom-section {
+            margin-bottom: 40px;
         }
 
-        .key-technique {
+        .custom-section p {
+            line-height: 1.6;
             margin-bottom: 15px;
         }
 
-        .example {
-            background-color: #ffffff;
-            border: 1px solid #007bff;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 15px;
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
-</head>
 
 <body>
+    <header>
+        <h1>Module 5: Digital Imaging and Software Tools</h1>
+        <h2>Page 3: Working with Layers and Image Editing Techniques</h2>
+    </header>
 
-    <div class="container">
-        <div class="content-section">
-            <h1>Visual Hierarchy in Layout</h1>
-            <p>
-                Visual hierarchy is the intentional arrangement of elements in a design to guide the viewer's attention.
-                By carefully considering the size, contrast, and positioning of elements, designers can create a clear
-                and engaging visual flow that enhances user experience.
-            </p>
+    <section>
+        <h2>Understanding Layers in Graphic Design</h2>
+        <p>Layers are a fundamental feature in most graphic design software, allowing designers to work on different
+            elements independently.</p>
+
+        <h3>Benefits of Using Layers:</h3>
+        <ul>
+            <li><strong>Non-Destructive Editing:</strong> Make adjustments without affecting the entire project.</li>
+            <li><strong>Organized Workflow:</strong> Work on multiple elements separately, such as text, background, and
+                images.</li>
+            <li><strong>Easy Adjustments:</strong> Modify individual elements without starting over.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Types of Layers</h2>
+        <p>Different types of layers serve different purposes in design:</p>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Layer Type</th>
+                    <th>Description</th>
+                    <th>Common Uses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Background Layer</td>
+                    <td>The base layer of an image, often locked by default.</td>
+                    <td>Setting up backgrounds for posters, banners, or web graphics.</td>
+                </tr>
+                <tr>
+                    <td>Image Layer</td>
+                    <td>Contains imported images or raster elements.</td>
+                    <td>Placing product images in advertisements.</td>
+                </tr>
+                <tr>
+                    <td>Text Layer</td>
+                    <td>Allows editable text elements.</td>
+                    <td>Adding titles, captions, or branding elements.</td>
+                </tr>
+                <tr>
+                    <td>Adjustment Layer</td>
+                    <td>Applies non-destructive effects like brightness and contrast.</td>
+                    <td>Color correction, exposure adjustments, and effects.</td>
+                </tr>
+                <tr>
+                    <td>Shape Layer</td>
+                    <td>Contains vector-based shapes that can be resized without quality loss.</td>
+                    <td>Creating logos, icons, and UI elements.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </section>
+
+    <section>
+        <h2>Blending Modes and Layer Effects</h2>
+        <p>Blending modes define how layers interact with each other. They are commonly used to create artistic effects.
+        </p>
+
+        <h3>Common Blending Modes:</h3>
+        <ul>
+            <li><strong>Normal:</strong> Default mode, no interaction between layers.</li>
+            <li><strong>Multiply:</strong> Darkens the underlying layers, often used for shadows.</li>
+            <li><strong>Screen:</strong> Brightens layers, useful for light effects.</li>
+            <li><strong>Overlay:</strong> Enhances contrast by combining Multiply and Screen modes.</li>
+            <li><strong>Soft Light:</strong> Creates a subtle lighting effect.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Essential Image Editing Techniques</h2>
+        <p>Graphic designers use various techniques to enhance and manipulate images.</p>
+
+        <h3>1. Cropping and Resizing</h3>
+        <p>Adjusts the dimensions of an image to fit design needs.</p>
+
+        <h3>2. Color Correction</h3>
+        <p>Improves the balance of colors in an image. Tools like <strong>Hue/Saturation</strong> and
+            <strong>Curves</strong> help refine tones.</p>
+
+        <h3>3. Retouching and Healing</h3>
+        <p>Used in photo editing to remove imperfections using tools like the <strong>Healing Brush</strong> and
+            <strong>Clone Stamp.</strong></p>
+
+        <h3>4. Masking</h3>
+        <p>Allows selective visibility of parts of an image without deleting any pixels.</p>
+
+        <h3>5. Filters and Effects</h3>
+        <p>Pre-set effects like <strong>Blur, Sharpen,</strong> and <strong>Grain</strong> enhance photos and graphics.
+        </p>
+    </section>
+
+    <section>
+        <h2>Step-by-Step Guide: Working with Layers</h2>
+        <ol>
+            <li><strong>Create a New Project:</strong> Open your graphic design software and start a new project.</li>
+            <li><strong>Add a Background Layer:</strong> Set up a base layer with a solid color or image.</li>
+            <li><strong>Import Images:</strong> Add an image layer and position it on the canvas.</li>
+            <li><strong>Apply Text and Shapes:</strong> Use the text and shape tools to add elements.</li>
+            <li><strong>Adjust Layer Styles:</strong> Experiment with opacity, blending modes, and effects.</li>
+            <li><strong>Organize with Layer Groups:</strong> Group related layers for a clean workflow.</li>
+        </ol>
+    </section>
+
+
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
         </div>
-
-        <div class="content-section">
-            <h2>Key Techniques for Creating Visual Hierarchy</h2>
-            <div class="highlight">
-                <h3>1. Size</h3>
-                <p>
-                    Larger elements are naturally more prominent than smaller elements. Use different sizes to create a
-                    clear hierarchy of information.
-                </p>
-            </div>
-            <div class="highlight">
-                <h3>2. Contrast</h3>
-                <p>
-                    Use contrast in color, brightness, texture, or shape to draw attention to important elements. For
-                    example, a dark element placed on a light background will stand out.
-                </p>
-            </div>
-            <div class="highlight">
-                <h3>3. Positioning</h3>
-                <p>
-                    Place important elements in prominent positions, such as the center or top of the page. Elements
-                    placed in the corners or margins are generally perceived as less important.
-                </p>
-            </div>
-            <div class="highlight">
-                <h3>4. Whitespace</h3>
-                <p>
-                    Use whitespace effectively to create visual breaks and guide the viewer's eye through the content.
-                </p>
-            </div>
-            <div class="highlight">
-                <h3>5. Typography</h3>
-                <p>
-                    Use typography to create visual hierarchy by varying font sizes, weights, and styles. A clear
-                    typeface can enhance readability.
-                </p>
-            </div>
-            <div class="highlight">
-                <h3>6. Color</h3>
-                <p>
-                    Use color to highlight important elements and create contrast. Color can evoke emotions and draw
-                    attention.
-                </p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Examples of Visual Hierarchy in Design</h2>
-            <div class="example">
-                <h3>Websites</h3>
-                <p>
-                    Use a clear hierarchy of headings, subheadings, and body text to guide the user's navigation.
-                </p>
-            </div>
-            <div class="example">
-                <h3>Print Advertisements</h3>
-                <p>
-                    Use large, bold headlines to draw attention to the main message, with supporting text in smaller
-                    fonts.
-                </p>
-            </div>
-            <div class="example">
-                <h3>Infographics</h3>
-                <p>
-                    Use visual elements like arrows, icons, and color coding to guide the viewer through the information
-                    in a clear and engaging way.
-                </p>
-            </div>
-            <div class="example">
-                <h3>Packaging Design</h3>
-                <p>
-                    Use typography and imagery to create a clear and visually appealing package that communicates the
-                    product's value.
-                </p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Expanding on the Content</h2>
-            <p>
-                To further explore the topic of visual hierarchy, we can discuss the following:
-            </p>
-            <ul>
-                <li><strong>The Rule of Thirds:</strong> A popular composition technique that divides a page into nine
-                    equal sections, guiding the placement of elements.</li>
-                <li><strong>The Z-Pattern:</strong> A common eye-tracking pattern that suggests placing important
-                    elements along a diagonal Z-shape to capture viewer attention.</li>
-                <li><strong>Visual Balance:</strong> The use of symmetry or asymmetry to create a balanced composition,
-                    enhancing aesthetic appeal.</li>
-                <li><strong>Negative Space:</strong> The effective use of white space to create visual interest, drawing
-                    attention to key elements.</li>
-                <li><strong>Typography and Visual Hierarchy:</strong> Exploring how typography can be utilized to
-                    enhance visual hierarchy and improve readability.</li>
-                <li><strong>Visual Hierarchy in Digital Design:</strong> Addressing the unique challenges and
-                    opportunities for creating visual hierarchy in digital media, including responsiveness and
-                    interaction design.</li>
-            </ul>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>-->
 </body>
 
 </html>

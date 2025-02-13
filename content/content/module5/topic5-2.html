@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript and jQuery Concepts</title>
+    <title>week 5</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -143,133 +143,92 @@
 </head>
 
 <body>
+    <header>
+        <h1>Principles of Effective Visual Design</h1>
+        <p>Master the core principles that make visual content engaging, clear, and aesthetically pleasing.</p>
+    </header>
 
-    <!-- JavaScript Section -->
-    <div class="container mt-5">
-        <h2>Advanced JavaScript Concepts</h2>
+    <section id="balance">
+        <h2>1. Balance: Creating Stability in Design</h2>
+        <p>Balance ensures that elements in a design are distributed evenly, creating a sense of stability.</p>
+        <ul>
+            <li><strong>Symmetrical Balance:</strong> Evenly weighted elements on both sides of a central axis.</li>
+            <li><strong>Asymmetrical Balance:</strong> Different elements positioned strategically to create a dynamic
+                composition.</li>
+            <li><strong>Radial Balance:</strong> Elements arranged around a central focal point.</li>
+        </ul>
+        <img src="balance-example.jpg" alt="Examples of symmetrical and asymmetrical balance">
+    </section>
 
-        <div class="section">
-            <h3>1.1 ES6 Features (ECMAScript 2015)</h3>
-            <p><strong>let and const:</strong></p>
-            <pre><code>let age = 25;
-const pi = 3.14;</code></pre>
-
-            <p><strong>Arrow Functions:</strong></p>
-            <pre><code>const multiply = (a, b) => a * b;</code></pre>
-
-            <p><strong>Template Literals:</strong></p>
-            <pre><code>const name = "John";
-const greeting = `Hello, ${name}! Welcome to ES6.`;</code></pre>
-
-            <p><strong>Destructuring Assignment:</strong></p>
-            <pre><code>const person = { name: "Jane", age: 30 };
-const { name, age } = person;</code></pre>
-
-            <p><strong>Default Parameters:</strong></p>
-            <pre><code>function greet(name = "Guest") {
-    console.log(`Hello, ${name}!`);
-}</code></pre>
-
-            <p><strong>Spread and Rest Operators:</strong></p>
-            <pre><code>const numbers = [1, 2, 3];
-console.log(...numbers); // Outputs: 1 2 3</code></pre>
+    <section id="contrast">
+        <h2>2. Contrast: Enhancing Visibility</h2>
+        <p>Contrast makes key elements stand out, helping guide the viewer’s attention.</p>
+        <ul>
+            <li><strong>Color Contrast:</strong> Using light and dark shades for better readability.</li>
+            <li><strong>Size Contrast:</strong> Enlarging important elements to create emphasis.</li>
+            <li><strong>Typography Contrast:</strong> Mixing fonts to add variety and hierarchy.</li>
+        </ul>
+        <div class="contrast-examples">
+            <img src="color-contrast.jpg" alt="Color contrast example">
+            <img src="size-contrast.jpg" alt="Size contrast example">
         </div>
+    </section>
 
-        <div class="section">
-            <h3>1.2 Asynchronous JavaScript</h3>
-            <p><strong>Callbacks:</strong></p>
-            <pre><code>function fetchData(callback) {
-    setTimeout(() => {
-        callback("Data received!");
-    }, 2000);
-}
+    <section id="hierarchy">
+        <h2>3. Visual Hierarchy: Guiding the Viewer’s Eye</h2>
+        <p>Hierarchy ensures the most important elements are noticed first, followed by supporting details.</p>
+        <table>
+            <tr>
+                <th>Technique</th>
+                <th>Purpose</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><strong>Size</strong></td>
+                <td>Large elements draw attention first.</td>
+                <td>Headlines vs. body text</td>
+            </tr>
+            <tr>
+                <td><strong>Color</strong></td>
+                <td>Bright colors attract attention more than muted ones.</td>
+                <td>Call-to-action buttons</td>
+            </tr>
+            <tr>
+                <td><strong>Alignment</strong></td>
+                <td>Grouping elements creates order and structure.</td>
+                <td>Bullet points in lists</td>
+            </tr>
+        </table>
+    </section>
 
-fetchData((message) => {
-    console.log(message);
-});</code></pre>
+    <section id="alignment">
+        <h2>4. Alignment: Organizing Elements Clearly</h2>
+        <p>Proper alignment ensures a clean, professional look and improves readability.</p>
+        <ul>
+            <li><strong>Left Alignment:</strong> Best for readability in text-heavy content.</li>
+            <li><strong>Center Alignment:</strong> Used for emphasis but should be applied sparingly.</li>
+            <li><strong>Grid-Based Alignment:</strong> Helps maintain consistency in layout design.</li>
+        </ul>
+        <img src="alignment-example.jpg" alt="Examples of different alignments">
+    </section>
 
-            <p><strong>Promises:</strong></p>
-            <pre><code>const fetchData = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("Data received!");
-    }, 2000);
-});
-
-fetchData.then((message) => {
-    console.log(message);
-});</code></pre>
-
-            <p><strong>Async/Await:</strong></p>
-            <pre><code>async function fetchData() {
-    const data = await new Promise((resolve) => {
-        setTimeout(() => {
-            resolve("Data received!");
-        }, 2000);
-    });
-    console.log(data);
-}
-
-fetchData();</code></pre>
+    <section id="repetition">
+        <h2>5. Repetition: Maintaining Consistency</h2>
+        <p>Repeating elements such as fonts, colors, and patterns reinforces brand identity and improves design
+            coherence.</p>
+        <div class="repetition-examples">
+            <img src="branding-example.jpg" alt="Example of consistent branding elements">
+            <img src="typography-example.jpg" alt="Typography consistency in design">
         </div>
+    </section>
 
-        <!-- jQuery Section -->
-        <h2>Introduction to jQuery</h2>
 
-        <div class="section">
-            <h3>2.1 What is jQuery?</h3>
-            <p>jQuery is a fast, small, and feature-rich JavaScript library. It simplifies tasks like DOM manipulation,
-                event handling, and animation, making it easier to build dynamic and interactive web pages.</p>
 
-            <p><strong>Why Use jQuery?</strong></p>
-            <ul>
-                <li>Cross-browser compatibility.</li>
-                <li>Simplifies complex JavaScript tasks.</li>
-                <li>Extensive plugin ecosystem.</li>
-            </ul>
-        </div>
 
-        <div class="section">
-            <h3>2.2 Basic jQuery Syntax</h3>
-            <p><strong>Selecting Elements:</strong></p>
-            <pre><code>$(document).ready(function() {
-    $("p").click(function() {
-        $(this).hide();
-    });
-});</code></pre>
 
-            <p><strong>Event Handling:</strong></p>
-            <pre><code>$("button").click(function() {
-    alert("Button clicked!");
-});</code></pre>
-
-            <p><strong>DOM Manipulation:</strong></p>
-            <pre><code>$("#myDiv").text("Hello, jQuery!");</code></pre>
-        </div>
-
-        <div class="section">
-            <h3>2.3 jQuery Animations</h3>
-            <p><strong>Basic Animation:</strong></p>
-            <pre><code>$("#myDiv").fadeOut();</code></pre>
-
-            <p><strong>Chaining Animations:</strong></p>
-            <pre><code>$("#myDiv").slideUp().slideDown().fadeOut();</code></pre>
-        </div>
-    </div>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
-    </div>
     <!-- Bootstrap JS and jQuery (for demonstration purposes) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>

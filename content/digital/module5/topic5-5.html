@@ -4,185 +4,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Exercises</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: black;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
         }
 
-        .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        h1 {
+        h1,
+        h2,
+        h3 {
             color: #007BFF;
-            /* Blue accent for main heading */
-            text-align: center;
-            margin-bottom: 30px;
+            /* Blue accent */
         }
 
-        h2 {
-            color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 20px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .exercise {
-            background-color: #f8f9fa;
-            /* Light gray background for exercises */
-            border-left: 5px solid #007BFF;
-            /* Blue accent border */
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
-            margin-bottom: 20px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
-        .solution {
-            background-color: #e9ecef;
-            /* Slightly darker gray for solution outlines */
-            border-left: 5px solid #007BFF;
-            /* Blue accent border */
-            padding: 10px;
-            margin-top: 10px;
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
-</head>
 
 <body>
+    <section>
+        <h1>Discussion & Assignment</h1>
 
-    <div class="container">
-        <h1>Practice Exercises</h1>
+        <h2>Discussion Questions</h2>
+        <p>Engage in the following discussions to deepen your understanding of social media marketing:</p>
+        <ol>
+            <li><strong>Data-Driven Decisions:</strong> How can businesses use social media analytics to improve
+                marketing strategies? Provide examples of companies that have successfully leveraged data for growth.
+            </li>
+            <li><strong>Content Performance:</strong> What types of content tend to perform best on different social
+                media platforms? How do engagement trends vary across Facebook, Instagram, Twitter, and LinkedIn?</li>
+            <li><strong>Social Media Pitfalls:</strong> Discuss common mistakes brands make in social media marketing.
+                How can these issues be avoided?</li>
+            <li><strong>Algorithm Influence:</strong> Social media platforms use algorithms to prioritize content. How
+                do these algorithms impact marketing efforts, and what strategies can businesses use to optimize reach?
+            </li>
+            <li><strong>Ethical Considerations:</strong> Should companies be transparent about their use of AI and
+                analytics in social media marketing? What are the ethical concerns surrounding targeted ads and data
+                collection?</li>
+        </ol>
 
-        <div class="exercise">
-            <h2>1. Campaign Design Exercise:</h2>
-            <p><strong>Task:</strong> Create a social media campaign for a fictional eco-friendly startup focusing on
-                sustainable products.</p>
-            <p><strong>Solution Outline:</strong></p>
-            <div class="solution">
-                <strong>Campaign Goals:</strong> Increase brand awareness and drive website traffic.<br>
-                <strong>Target Audience:</strong> Eco-conscious millennials aged 25-35.<br>
-                <strong>Content Plan:</strong>
-                <ul>
-                    <li>Week 1: Instagram posts showcasing product usage and benefits.</li>
-                    <li>Week 2: Facebook live session on sustainable living tips.</li>
-                    <li>Week 3: Twitter polls to engage followers on environmental issues.</li>
-                    <li>Week 4: LinkedIn articles discussing industry trends in sustainability.</li>
-                </ul>
-            </div>
+        <h2>Assignment</h2>
+        <p>Complete the following tasks to apply what you've learned about social media marketing:</p>
+
+        <h3>Part 1: Social Media Audit</h3>
+        <p>
+            Choose a brand (or your own social media profile) and conduct an audit using available analytics tools.
+        </p>
+        <ul>
+            <li>Identify key performance indicators (KPIs) such as engagement rate, reach, and conversion rate.</li>
+            <li>Analyze the types of content that perform best and why.</li>
+            <li>Evaluate audience demographics and engagement patterns.</li>
+            <li>Provide recommendations to improve content strategy based on the data.</li>
+        </ul>
+
+        <h3>Part 2: Social Media Content Strategy</h3>
+        <p>
+            Develop a one-week content strategy for a brand of your choice. Your strategy should include:
+        </p>
+        <ul>
+            <li>Target audience and platform selection.</li>
+            <li>Types of content (e.g., images, videos, infographics, polls).</li>
+            <li>Posting schedule with optimal times for engagement.</li>
+            <li>Engagement tactics (e.g., interactive content, giveaways, community engagement).</li>
+        </ul>
+
+        <h3>Part 3: Performance Prediction & Justification</h3>
+        <p>
+            Based on your content strategy, predict the potential engagement outcomes and justify your expectations
+            using social media analytics concepts.
+        </p>
+        <ul>
+            <li>Explain how algorithms might affect the reach of your posts.</li>
+            <li>Describe which metrics you will track to measure success.</li>
+            <li>Suggest any adjustments that might be needed based on the data.</li>
+        </ul>
+
+        <h2>Submission Guidelines</h2>
+        <p>Submit your completed assignment as a report or presentation, including:</p>
+        <ul>
+            <li>A detailed analysis of the chosen brand’s social media audit.</li>
+            <li>A structured content strategy outlining your plan.</li>
+            <li>A summary of expected performance and key takeaways.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>
+            This discussion and assignment will help you apply theoretical concepts to real-world social media
+            marketing,
+            reinforcing the importance of data-driven decision-making and content optimization.
+        </p>
+    </section>
+
+
+
+
+
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
         </div>
-
-        <div class="exercise">
-            <h2>2. Scheduling Tools Exercise:</h2>
-            <p><strong>Task:</strong> Use Hootsuite or Buffer to schedule three posts for a week for the fictional brand
-                created in the campaign design exercise.</p>
-            <p><strong>Solution Outline:</strong></p>
-            <div class="solution">
-                <ul>
-                    <li><strong>Post 1:</strong> Instagram image of the product with a caption highlighting its benefits
-                        (scheduled for Monday at 10 AM).</li>
-                    <li><strong>Post 2:</strong> Facebook link to a blog post about sustainable practices (scheduled for
-                        Wednesday at 2 PM).</li>
-                    <li><strong>Post 3:</strong> Twitter thread on environmental tips (scheduled for Friday at 12 PM).
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment </title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            color: #007BFF;
-            /* Blue accent for main heading */
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 20px;
-        }
-
-        .assessment {
-            background-color: #f8f9fa;
-            /* Light gray background for assessments */
-            border-left: 5px solid #007BFF;
-            /* Blue accent border */
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-
-        .project {
-            background-color: #e9ecef;
-            /* Slightly darker gray for project assignment */
-            border-left: 5px solid #007BFF;
-            /* Blue accent border */
-            padding: 10px;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-        <h1>Assessment </h1>
-
-        <div class="assessment">
-            <h2>Quiz Questions:</h2>
-            <ul>
-                <li>What are the primary goals of a social media marketing strategy?</li>
-                <li>List three different ad formats available on Facebook and Instagram.</li>
-                <li>Explain the importance of audience targeting in social media advertising.</li>
-            </ul>
-        </div>
-
-        <div class="assessment">
-            <h2>Project Assignment:</h2>
-            <p><strong>Develop a comprehensive social media marketing strategy for a local business, including a
-                    campaign design, a content calendar, and planned metrics for success. Present your strategy to the
-                    class.</strong></p>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    </div>-->
 </body>
 
 </html>

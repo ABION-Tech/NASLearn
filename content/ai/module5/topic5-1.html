@@ -31,113 +31,145 @@
         .list-group-item {
             border: none;
         }
+          /* Video container to hold everything */
+          .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="section">
-            <h1>AI-Powered Video Creation: A Revolution in Content Marketing</h1>
-            <p>The rise of AI-powered video creation tools is transforming content marketing by making video production
-                faster, easier, and more accessible to businesses and individuals alike. Below, we explore some of the
-                most notable platforms in this space, their features, and the benefits and challenges of using these
-                innovative tools.</p>
-        </div>
+    <header>
+        <h1>Week 5: Chatbots and Conversational AI</h1>
+        <h2>Introduction to Chatbots and Conversational AI</h2>
+    </header>
 
-        <div class="section">
-            <h2>Pictory</h2>
-            <p>Pictory is a powerful AI-powered video creation platform that allows users to transform text into
-                engaging videos with ease. It leverages advanced algorithms to automate various aspects of video
-                production.</p>
-            <ul class="list-group">
-                <li class="list-group-item"><strong>Automated Video Generation:</strong> Pictory can automatically
-                    generate videos from text, using AI to select relevant images, videos, and music that resonate with
-                    the content.</li>
-                <li class="list-group-item"><strong>Customization:</strong> Users can customize the generated videos by
-                    adding their own media, changing the layout, and adjusting the pacing, enabling a personalized
-                    touch.</li>
-                <li class="list-group-item"><strong>Social Media Integration:</strong> Pictory makes it easy to share
-                    videos directly to popular social media platforms like Facebook, Instagram, and Twitter,
-                    facilitating wider reach and engagement.</li>
-            </ul>
-        </div>
+    <section>
+        <h3>What Are Chatbots?</h3>
+        <p>
+            Chatbots are AI-powered software programs designed to simulate human-like conversations with users. They can be text-based or voice-based 
+            and are commonly used in customer service, marketing, and personal assistance applications.
+        </p>
+    </section>
 
-        <div class="section">
-            <h2>Lumen5</h2>
-            <p>Lumen5 is another popular AI-powered video creation tool that offers a user-friendly interface and a
-                variety of templates for different video purposes.</p>
-            <ul class="list-group">
-                <li class="list-group-item"><strong>Pre-designed Templates:</strong> Lumen5 offers a library of
-                    pre-designed templates that can be customized to fit your brand and message, reducing the time spent
-                    on design.</li>
-                <li class="list-group-item"><strong>Text-to-Video:</strong> Users can simply enter their text, and
-                    Lumen5 will automatically generate a video, selecting relevant images and music to complement the
-                    narrative.</li>
-                <li class="list-group-item"><strong>Voiceover Options:</strong> Lumen5 allows users to add their own
-                    voiceovers or choose from a library of professional voice actors, enhancing the quality of the final
-                    video.</li>
-            </ul>
-        </div>
+    <section>
+        <h3>What Is Conversational AI?</h3>
+        <p>
+            Conversational AI refers to the broader field of artificial intelligence that enables machines to understand, process, and respond to 
+            human language naturally. This includes chatbots, virtual assistants, and AI-powered customer service tools.
+        </p>
+    </section>
 
-        <div class="section">
-            <h2>Synthesia</h2>
-            <p>Synthesia is a unique AI-powered platform that allows users to create videos featuring realistic avatars
-                that speak and interact with each other. This innovative tool is ideal for various applications,
-                including training materials and product demos.</p>
-            <ul class="list-group">
-                <li class="list-group-item"><strong>Avatar Creation:</strong> Users can create custom avatars that
-                    resemble real people, making videos more relatable and engaging.</li>
-                <li class="list-group-item"><strong>Script Writing:</strong> Synthesia provides a script editor that
-                    allows users to write and edit scripts for their videos, ensuring the content is precise and
-                    impactful.</li>
-                <li class="list-group-item"><strong>Language Options:</strong> Synthesia supports a variety of
-                    languages, making it a versatile tool for global audiences and enhancing accessibility.</li>
-            </ul>
-        </div>
+    <section>
+        <h3>Key Components of a Chatbot</h3>
+        <ul>
+            <li><strong>Natural Language Processing (NLP):</strong> Allows chatbots to interpret and respond to user input.</li>
+            <li><strong>Machine Learning (ML):</strong> Enables chatbots to learn from interactions and improve over time.</li>
+            <li><strong>Knowledge Base:</strong> A database of predefined responses and information used by chatbots.</li>
+            <li><strong>Integration with APIs:</strong> Allows chatbots to connect with external services like CRM or databases.</li>
+        </ul>
+    </section>
 
-        <div class="section">
-            <h3>Benefits of Using AI-Powered Video Creation Tools</h3>
-            <ul class="list-group">
-                <li class="list-group-item"><strong>Time-Saving:</strong> These tools can significantly reduce the time
-                    it takes to create videos, allowing businesses to focus on strategy and engagement rather than
-                    production.</li>
-                <li class="list-group-item"><strong>Cost-Effective:</strong> AI-powered video creation tools are often
-                    more affordable than traditional video production methods, making high-quality video accessible to
-                    smaller businesses.</li>
-                <li class="list-group-item"><strong>Accessibility:</strong> These tools can make video creation
-                    accessible to people with limited video editing skills, democratizing content production.</li>
-                <li class="list-group-item"><strong>Consistency:</strong> AI can help ensure consistency in branding and
-                    messaging across all videos, which is crucial for brand identity.</li>
-            </ul>
-        </div>
+    <section>
+        <h3>Why Are Chatbots Important?</h3>
+        <p>
+            Businesses and individuals use chatbots to automate tasks, enhance customer engagement, and provide quick responses 
+            without requiring human intervention. They improve efficiency and can operate 24/7, making them highly valuable in various industries.
+        </p>
+    </section>
 
-        <div class="section">
-            <h3>Challenges and Considerations</h3>
-            <ul class="list-group">
-                <li class="list-group-item"><strong>Quality:</strong> While AI-powered video creation tools have
-                    improved significantly, the quality of the generated videos can still vary, requiring a critical eye
-                    during the review process.</li>
-                <li class="list-group-item"><strong>Creativity:</strong> While AI can provide a good starting point,
-                    human creativity is essential for creating truly exceptional videos that resonate with audiences.
-                </li>
-                <li class="list-group-item"><strong>Ethical Considerations:</strong> It is vital to use AI-powered video
-                    creation tools ethically and responsibly, avoiding the creation of misleading or harmful content
-                    that can damage reputations or misinform audiences.</li>
-            </ul>
+    <section>
+        <h3>Real-World Applications of Chatbots</h3>
+        <ul>
+            <li>Customer service automation (e.g., answering FAQs, handling complaints)</li>
+            <li>Personal assistants (e.g., Siri, Google Assistant, Alexa)</li>
+            <li>Healthcare (e.g., appointment scheduling, symptom checking)</li>
+            <li>E-commerce (e.g., guiding users through purchases, recommending products)</li>
+            <li>Education (e.g., tutoring, answering student queries)</li>
+        </ul>
+    </section>
+    Video Section
+    <div class="video-container">
+        <div class="gradient-border">
+           
+        
         </div>
-
-        <div class="section">
-            <h3>Conclusion</h3>
-            <p>By leveraging AI-powered video creation tools, businesses and individuals can create engaging and
-                effective videos that can help them achieve their marketing goals. As AI technology continues to
-                advance, we can expect to see even more innovative and powerful tools in this space, further
-                revolutionizing content marketing.</p>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <footer>
+        <p><em>Next: Page 2 - Types of Chatbots and Their Applications</em></p>
+    </footer>
 </body>
+
 
 </html>

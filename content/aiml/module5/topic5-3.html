@@ -71,236 +71,114 @@
 
 <body>
 
-    <div class="container">
+    <div class="module">
+        <header class="module-header">
+            <h1>Module 5: Neural Networks & Deep Learning</h1>
+            <h2>Page 3: Training Neural Networks</h2>
+        </header>
 
-        <div class="section">
-            <h1>Week 5: Unsupervised Learning - Clustering</h1>
-        </div>
+        <section class="content">
+            <article class="introduction">
+                <h2>How Do Neural Networks Learn?</h2>
+                <p>Training a neural network involves adjusting its internal parameters (weights and biases) so that it
+                    can make accurate predictions. This process requires multiple iterations of data processing, error
+                    correction, and optimization.</p>
+            </article>
 
-        <div class="card">
-            <div class="card-header">Clustering Overview</div>
-            <div class="card-body">
-                <p>Clustering is a powerful technique used to group similar data points together, allowing for better
-                    analysis and interpretation of complex datasets. It helps in uncovering hidden patterns and
-                    structures within the data.</p>
-                <p>Two popular algorithms for clustering are:</p>
+            <article class="forward-propagation">
+                <h2>1. Forward Propagation</h2>
+                <p>During forward propagation, input data passes through the network layer by layer, getting transformed
+                    by the neurons until it reaches the output layer.</p>
                 <ul>
-                    <li><strong>K-Means Clustering</strong></li>
-                    <li><strong>Hierarchical Clustering</strong></li>
+                    <li><strong>Inputs:</strong> Data is fed into the input layer.</li>
+                    <li><strong>Weights & Biases:</strong> Each connection between neurons has a weight, and each neuron
+                        has a bias.</li>
+                    <li><strong>Activation Functions:</strong> Non-linear functions (e.g., ReLU, Sigmoid, Tanh)
+                        determine neuron activation.</li>
+                    <li><strong>Output:</strong> The final prediction of the model.</li>
                 </ul>
-            </div>
-        </div>
+            </article>
 
-        <div class="card">
-            <div class="card-header">1. K-Means Clustering</div>
-            <div class="card-body">
-                <h3>Algorithm:</h3>
-                <ol>
-                    <li>Initialize K random points as cluster centroids.</li>
-                    <li>Assign each data point to the nearest centroid.</li>
-                    <li>Recompute the centroids as the mean of the assigned data points.</li>
-                    <li>Repeat steps 2 and 3 until convergence.</li>
-                </ol>
-                <h3>Advantages:</h3>
+            <article class="loss-function">
+                <h2>2. Loss Function: Measuring Errors</h2>
+                <p>After making a prediction, the network needs to measure how far off it is from the actual answer.
+                    This is done using a loss function.</p>
                 <ul>
-                    <li>Simple and efficient for large datasets.</li>
-                    <li>Can be easily parallelized to enhance performance.</li>
-                </ul>
-                <h3>Disadvantages:</h3>
-                <ul>
-                    <li>Requires specifying the number of clusters (K) beforehand.</li>
-                    <li>Sensitive to the initial placement of centroids.</li>
-                    <li>May struggle with non-spherical or unevenly sized clusters.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">2. Hierarchical Clustering</div>
-            <div class="card-body">
-                <h3>Algorithm:</h3>
-                <ol>
-                    <li>Start with each data point as a separate cluster.</li>
-                    <li>Merge the two closest clusters.</li>
-                    <li>Repeat step 2 until only one cluster remains.</li>
-                </ol>
-                <h3>Types:</h3>
-                <ul>
-                    <li><strong>Agglomerative Clustering:</strong> Starts with individual clusters and merges them.</li>
-                    <li><strong>Divisive Clustering:</strong> Begins with one large cluster and divides it into smaller
-                        clusters.</li>
-                </ul>
-                <h3>Distance Metrics:</h3>
-                <ul>
-                    <li>Euclidean distance</li>
-                    <li>Manhattan distance</li>
-                    <li>Cosine similarity</li>
-                </ul>
-                <h3>Linkage Methods:</h3>
-                <ul>
-                    <li>Single-linkage</li>
-                    <li>Complete-linkage</li>
-                    <li>Average-linkage</li>
-                    <li>Centroid-linkage</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">Choosing the Right Algorithm</div>
-            <div class="card-body">
-                <p>The choice of clustering algorithm depends on various factors, including:</p>
-                <ul>
-                    <li><strong>Number of Clusters:</strong> If the number of clusters is known, K-means may be
-                        suitable.</li>
-                    <li><strong>Cluster Shape:</strong> Hierarchical clustering can handle clusters of different shapes
-                        more effectively.</li>
-                    <li><strong>Computational Resources:</strong> K-means is generally more efficient for large datasets
-                        compared to hierarchical clustering.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">Evaluation Metrics</div>
-            <div class="card-body">
-                <p>To assess the effectiveness of clustering results, the following metrics can be used:</p>
-                <ul>
-                    <li><strong>Silhouette Coefficient:</strong> Measures how similar a data point is to its own cluster
-                        compared to others.</li>
-                    <li><strong>Calinski-Harabasz Index:</strong> Evaluates the ratio of between-cluster variance to
-                        within-cluster variance.</li>
-                    <li><strong>Davies-Bouldin Index:</strong> Measures the average similarity between each cluster and
-                        its nearest neighbor.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">Visualization Techniques</div>
-            <div class="card-body">
-                <p>Effective visualization aids in understanding clustering results. Common visualization techniques
-                    include:</p>
-                <ul>
-                    <li><strong>Dendrogram:</strong> A tree-like diagram representing the hierarchical structure of
-                        clusters.</li>
-                    <li><strong>Scatter Plots:</strong> Visualize clusters in two-dimensional space for better
-                        interpretability.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Applications of Clustering in Real-World Scenarios</h2>
-            <p>Clustering is a powerful technique with numerous applications across various domains. Here are some
-                real-world examples:</p>
-
-            <div class="card">
-                <div class="card-header">1. Customer Segmentation</div>
-                <div class="card-body">
+                    <li><strong>Common Loss Functions:</strong></li>
                     <ul>
-                        <li><strong>Identifying Customer Segments:</strong> Grouping customers based on demographics,
-                            behavior, and preferences.</li>
-                        <li><strong>Targeted Marketing:</strong> Tailoring marketing campaigns to specific customer
-                            segments.</li>
-                        <li><strong>Customer Churn Prediction:</strong> Identifying customers at risk of churning.</li>
+                        <li><em>Mean Squared Error (MSE):</em> Used for regression tasks.</li>
+                        <li><em>Cross-Entropy Loss:</em> Used for classification tasks.</li>
+                        <li><em>Hinge Loss:</em> Used in SVM-based neural networks.</li>
                     </ul>
-                </div>
-            </div>
+                    <li>The smaller the loss, the better the network’s prediction.</li>
+                </ul>
+            </article>
 
-            <div class="card">
-                <div class="card-header">2. Image Segmentation</div>
-                <div class="card-body">
-                    <ul>
-                        <li><strong>Dividing Images into Regions:</strong> Identifying objects, scenes, or features
-                            within images.</li>
-                        <li><strong>Object Detection:</strong> Locating objects of interest in images.</li>
-                        <li><strong>Image Compression:</strong> Reducing the size of images by clustering similar
-                            pixels.</li>
-                    </ul>
-                </div>
-            </div>
+            <article class="backpropagation">
+                <h2>3. Backpropagation: Adjusting Weights</h2>
+                <p>Backpropagation is the method used to adjust the neural network's weights by minimizing the loss.</p>
+                <ul>
+                    <li><strong>Step 1:</strong> Compute the gradient of the loss function with respect to each weight.
+                    </li>
+                    <li><strong>Step 2:</strong> Use these gradients to update the weights to reduce the error.</li>
+                    <li><strong>Step 3:</strong> Repeat the process for multiple training iterations.</li>
+                </ul>
+            </article>
 
-            <div class="card">
-                <div class="card-header">3. Anomaly Detection</div>
-                <div class="card-body">
+            <article class="gradient-descent">
+                <h2>4. Gradient Descent: Optimizing Learning</h2>
+                <p>Gradient descent is the algorithm that helps backpropagation find the best weights efficiently.</p>
+                <ul>
+                    <li><strong>Types of Gradient Descent:</strong></li>
                     <ul>
-                        <li><strong>Identifying Outliers:</strong> Detecting unusual data points that deviate from the
-                            norm.</li>
-                        <li><strong>Fraud Detection:</strong> Identifying fraudulent transactions in financial data.
+                        <li><em>Batch Gradient Descent:</em> Updates weights after processing the entire dataset.</li>
+                        <li><em>Stochastic Gradient Descent (SGD):</em> Updates weights after each training example.
                         </li>
-                        <li><strong>Network Intrusion Detection:</strong> Detecting malicious activity in network
-                            traffic.</li>
+                        <li><em>Mini-Batch Gradient Descent:</em> A mix of both, updating weights after a small batch of
+                            data.</li>
                     </ul>
-                </div>
-            </div>
+                    <li><strong>Challenges:</strong> Learning rate selection is crucial—too high causes instability, too
+                        low slows training.</li>
+                </ul>
+            </article>
 
-            <div class="card">
-                <div class="card-header">4. Social Network Analysis</div>
-                <div class="card-body">
+            <article class="optimization">
+                <h2>5. Optimization Techniques</h2>
+                <p>To improve training speed and accuracy, several advanced optimization algorithms are used.</p>
+                <ul>
+                    <li><strong>Adam Optimizer:</strong> Combines momentum and adaptive learning rates for faster
+                        convergence.</li>
+                    <li><strong>RMSprop:</strong> Reduces oscillations in weight updates.</li>
+                    <li><strong>Momentum:</strong> Helps prevent getting stuck in local minima.</li>
+                </ul>
+            </article>
+
+            <article class="overfitting">
+                <h2>6. Overfitting & Underfitting</h2>
+                <p>Neural networks can either memorize the training data (overfitting) or fail to learn patterns
+                    effectively (underfitting).</p>
+                <ul>
+                    <li><strong>Overfitting:</strong> The model learns noise instead of actual patterns.</li>
+                    <li><strong>Underfitting:</strong> The model is too simple and fails to capture complex patterns.
+                    </li>
+                    <li><strong>Solutions:</strong></li>
                     <ul>
-                        <li><strong>Community Detection:</strong> Identifying groups of people with similar interests or
-                            connections.</li>
-                        <li><strong>Link Prediction:</strong> Predicting new connections between individuals.</li>
-                        <li><strong>Influence Analysis:</strong> Identifying influential individuals in a network.</li>
+                        <li>Use more training data.</li>
+                        <li>Apply regularization (L1/L2).</li>
+                        <li>Introduce dropout layers to randomly deactivate neurons during training.</li>
                     </ul>
-                </div>
-            </div>
+                </ul>
+            </article>
 
-            <div class="card">
-                <div class="card-header">5. Recommendation Systems</div>
-                <div class="card-body">
-                    <ul>
-                        <li><strong>Suggesting Items or Content:</strong> Recommending products, movies, articles, or
-                            other items based on user preferences or similarities to other users.</li>
-                        <li><strong>Collaborative Filtering:</strong> Using the preferences of similar users to make
-                            recommendations.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">6. Bioinformatics</div>
-                <div class="card-body">
-                    <ul>
-                        <li><strong>Gene Expression Analysis:</strong> Identifying groups of genes with similar
-                            expression patterns.</li>
-                        <li><strong>Protein Structure Prediction:</strong> Predicting the 3D structure of proteins based
-                            on sequence information.</li>
-                        <li><strong>Drug Discovery:</strong> Identifying potential drug targets.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">7. Market Research</div>
-                <div class="card-body">
-                    <ul>
-                        <li><strong>Market Segmentation:</strong> Identifying different market segments with distinct
-                            needs and preferences.</li>
-                        <li><strong>New Product Development:</strong> Identifying opportunities for new products or
-                            services.</li>
-                        <li><strong>Competitive Analysis:</strong> Analyzing competitors' strengths and weaknesses.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">8. Urban Planning</div>
-                <div class="card-body">
-                    <ul>
-                        <li><strong>Land Use Planning:</strong> Identifying areas with similar land use characteristics.
-                        </li>
-                        <li><strong>Transportation Planning:</strong> Optimizing transportation networks based on
-                            population density and traffic patterns.</li>
-                        <li><strong>Crime Analysis:</strong> Identifying crime hotspots and predicting future crime
-                            trends.</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
+            <article class="summary">
+                <h2>Summary</h2>
+                <p>Training a neural network involves forward propagation, loss calculation, backpropagation, and
+                    optimization. Understanding these steps is key to building efficient and accurate deep learning
+                    models. In the next section, we will explore how to evaluate model performance.</p>
+            </article>
+        </section>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.11/dist/umd/popper.min.js"></script>

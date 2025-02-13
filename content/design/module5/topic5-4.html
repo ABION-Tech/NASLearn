@@ -4,156 +4,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magazine Spread Assignment</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             background-color: #ffffff;
-            color: #333333;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
         h1,
         h2,
         h3 {
-            color: #007bff;
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        .content-section {
-            margin: 40px 0;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .step {
-            margin-bottom: 30px;
+        .custom-section {
+            margin-bottom: 40px;
         }
 
-        .tip {
-            background-color: #f7f9fc;
-            border-left: 4px solid #007bff;
-            padding: 10px 15px;
-            margin-bottom: 20px;
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .grade-rubric {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 5px;
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
-</head>
 
 <body>
+    <header>
+        <h1>Module 5: Digital Imaging and Software Tools</h1>
+        <h2>Page 4: Advanced Image Manipulation Techniques</h2>
+    </header>
 
-    <div class="container">
-        <div class="content-section">
-            <h1 class="text-center">Assignment: Designing a Magazine Spread or Product Brochure</h1>
-            <h2>Goal</h2>
-            <p>To create a visually appealing and informative two-page magazine spread or product brochure using
-                effective layout principles.</p>
+    <section>
+        <h2>1. Layer Masking for Non-Destructive Editing</h2>
+        <p>Layer masking is an essential tool in digital imaging that allows selective visibility of certain parts of an
+            image without permanent deletion.</p>
+
+        <h3>Benefits of Layer Masks:</h3>
+        <ul>
+            <li><strong>Non-Destructive Editing:</strong> Hides parts of an image without erasing pixels.</li>
+            <li><strong>Refinable Adjustments:</strong> Easily modify masked areas.</li>
+            <li><strong>Blend Images Seamlessly:</strong> Used to merge multiple images smoothly.</li>
+        </ul>
+
+        <h3>How to Apply a Layer Mask:</h3>
+        <ol>
+            <li>Select the layer in your graphic software.</li>
+            <li>Click the “Add Layer Mask” button.</li>
+            <li>Use a black brush to hide parts of the image, and a white brush to reveal.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>2. Retouching and Image Restoration</h2>
+        <p>Photo retouching is used to enhance portraits, remove blemishes, and improve overall image quality.</p>
+
+        <h3>Common Retouching Tools:</h3>
+        <ul>
+            <li><strong>Clone Stamp:</strong> Duplicates part of an image to cover imperfections.</li>
+            <li><strong>Healing Brush:</strong> Blends pixels for seamless corrections.</li>
+            <li><strong>Dodge and Burn:</strong> Lightens (dodge) or darkens (burn) specific areas for contrast.</li>
+        </ul>
+
+        <h3>Steps for Retouching a Portrait:</h3>
+        <ol>
+            <li>Duplicate the original image layer to preserve the source.</li>
+            <li>Use the Healing Brush to remove minor blemishes.</li>
+            <li>Apply Dodge and Burn to refine highlights and shadows.</li>
+            <li>Adjust skin tones with selective color adjustments.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>3. Color Grading and Correction</h2>
+        <p>Color grading enhances the mood and aesthetic of an image by adjusting tones and hues.</p>
+
+        <h3>Techniques for Effective Color Grading:</h3>
+        <ul>
+            <li><strong>Curves Adjustment:</strong> Fine-tune brightness and contrast.</li>
+            <li><strong>Selective Color:</strong> Modify specific color ranges (reds, blues, greens, etc.).</li>
+            <li><strong>Gradient Mapping:</strong> Apply a custom color overlay.</li>
+            <li><strong>Split Toning:</strong> Adjust shadows and highlights separately.</li>
+        </ul>
+
+        <h3>Steps for Color Correction:</h3>
+        <ol>
+            <li>Analyze the color balance of your image.</li>
+            <li>Use Curves or Levels to adjust brightness and contrast.</li>
+            <li>Apply Selective Color adjustments to refine tones.</li>
+            <li>Use Gradient Maps for cinematic color effects.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>4. Applying Special Effects</h2>
+        <p>Special effects can add creativity and depth to digital images, making them more visually appealing.</p>
+
+        <h3>Popular Special Effects:</h3>
+        <ul>
+            <li><strong>Double Exposure:</strong> Blends two images to create a surreal effect.</li>
+            <li><strong>Glitch Effect:</strong> Mimics digital distortion for a futuristic look.</li>
+            <li><strong>Neon Glow:</strong> Adds glowing light effects for a cyberpunk feel.</li>
+            <li><strong>Motion Blur:</strong> Simulates movement for dynamic compositions.</li>
+        </ul>
+
+        <h3>Step-by-Step: Creating a Double Exposure Effect</h3>
+        <ol>
+            <li>Open two images (e.g., a portrait and a cityscape).</li>
+            <li>Place the second image on top of the first.</li>
+            <li>Set the top layer’s blending mode to "Screen" or "Multiply".</li>
+            <li>Use Layer Masks to refine areas for a natural blend.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>5. Image Manipulation with Smart Objects</h2>
+        <p>Smart Objects allow non-destructive transformations and filters.</p>
+
+        <h3>Advantages of Smart Objects:</h3>
+        <ul>
+            <li><strong>Maintain Image Quality:</strong> Resizing does not degrade quality.</li>
+            <li><strong>Editable Filters:</strong> Apply and tweak filters without losing data.</li>
+            <li><strong>Flexible Workflow:</strong> Reuse Smart Objects across multiple projects.</li>
+        </ul>
+
+        <h3>Using Smart Objects:</h3>
+        <ol>
+            <li>Right-click on a layer and select "Convert to Smart Object".</li>
+            <li>Apply transformations or filters.</li>
+            <li>Edit the Smart Object to update changes automatically.</li>
+        </ol>
+    </section>
+
+
+
+
+
+
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
         </div>
-
-        <div class="content-section">
-            <h2>Prompt</h2>
-            <p>Choose a topic or product for your design. Consider the target audience, the key message you want to
-                convey, and the overall aesthetic you want to achieve.</p>
-        </div>
-
-        <div class="content-section">
-            <h2>Materials</h2>
-            <ul>
-                <li>Paper or digital design software (e.g., Adobe InDesign, Photoshop, Canva)</li>
-                <li>Images, text, and other relevant content</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h2>Steps</h2>
-            <div class="step">
-                <h3>1. Brainstorm and Plan</h3>
-                <p>Develop a concept for your magazine spread or product brochure. Determine the main message, key
-                    points, and supporting visuals you want to include. Consider the emotions you want to evoke in your
-                    audience and how your design can achieve that.</p>
-            </div>
-            <div class="step">
-                <h3>2. Create a Wireframe</h3>
-                <p>Sketch out a basic layout for your design, including the placement of headlines, subheadings, body
-                    text, images, and other elements. This serves as a blueprint and helps in organizing your ideas.</p>
-            </div>
-            <div class="step">
-                <h3>3. Choose a Grid System</h3>
-                <p>Select a grid system that suits your design. Consider factors like the number of columns, margins,
-                    and gutters. A well-structured grid helps maintain balance and harmony throughout your design.</p>
-            </div>
-            <div class="step">
-                <h3>4. Select Typography</h3>
-                <p>Choose fonts that are appropriate for the tone and style of your design. Mix and match typefaces
-                    while maintaining readability and coherence.</p>
-            </div>
-            <div class="step">
-                <h3>5. Gather Visual Content</h3>
-                <p>Collect images, illustrations, or other visuals that support your message. Ensure they are
-                    high-quality and relevant to the content.</p>
-            </div>
-            <div class="step">
-                <h3>6. Arrange Elements</h3>
-                <p>Place the elements on the page or spread, following the principles of layout design (balance,
-                    contrast, hierarchy, etc.). Use alignment to create a sense of order.</p>
-            </div>
-            <div class="step">
-                <h3>7. Refine and Polish</h3>
-                <p>Review your design and make any necessary adjustments to improve the overall appearance and
-                    readability. Pay attention to details, as they can significantly affect the final product.</p>
-            </div>
-            <div class="step">
-                <h3>8. Print or Export</h3>
-                <p>Print or export your design in the desired format (e.g., PDF, JPEG). Ensure that the colors and
-                    details are consistent across different media.</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Grading Rubric</h2>
-            <div class="grade-rubric">
-                <p><strong>Layout Principles:</strong> Are the principles of layout design (balance, contrast,
-                    hierarchy, etc.) applied effectively?</p>
-                <p><strong>Visual Appeal:</strong> Is the design visually appealing and engaging?</p>
-                <p><strong>Readability:</strong> Is the text easy to read and understand?</p>
-                <p><strong>Information Clarity:</strong> Does the design effectively convey the intended message?</p>
-                <p><strong>Consistency:</strong> Are the elements consistent with the overall design theme?</p>
-                <p><strong>Creativity:</strong> Does the design demonstrate originality and creativity?</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Additional Tips</h2>
-            <div class="tip">
-                <strong>Consider the Target Audience:</strong> Design your layout to appeal to your target audience.
-                Understand their preferences and interests to create a meaningful connection.
-            </div>
-            <div class="tip">
-                <strong>Use White Space Effectively:</strong> White space can help improve readability and create a
-                clean, uncluttered design. It also allows important elements to stand out.
-            </div>
-            <div class="tip">
-                <strong>Test on Different Devices:</strong> If designing for digital media, ensure that the layout is
-                responsive and looks good on different screen sizes. Utilize media queries for optimal presentation.
-            </div>
-            <div class="tip">
-                <strong>Seek Feedback:</strong> Get feedback from others to identify areas for improvement. A fresh
-                perspective can provide valuable insights and enhance your design quality.
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Conclusion</h2>
-            <p>By following these steps and applying the principles of layout design, you can create a visually
-                appealing and informative magazine spread or product brochure. Embrace creativity, practice, and seek
-                feedback to refine your skills in visual communication.</p>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>-->
 </body>
 
 </html>

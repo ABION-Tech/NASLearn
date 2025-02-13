@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Introduction to Pandas</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        h2,
+        h4 {
+            color: #007BFF;
+            /* Blue accent color */
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            /* Light background for code blocks */
+            border-left: 4px solid #007BFF;
+            /* Blue accent for the left border */
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            /* Ensure long lines are scrollable */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container my-5">
+        <h2>Introduction to <code>pandas</code></h2>
+
+        <h4>What is <code>pandas</code>?</h4>
+        <p>
+            <code>pandas</code> is a Python library designed for data manipulation and analysis. It provides two key
+            data structures:
+        </p>
+        <ul>
+            <li><strong>Series</strong>: One-dimensional labeled array.</li>
+            <li><strong>DataFrame</strong>: Two-dimensional labeled data structure, like a table of data.</li>
+        </ul>
+
+        <h4>Creating DataFrames and Series</h4>
+        <p>DataFrames are essentially tables, and Series are columns of data within that table.</p>
+
+        <h5>Creating a Series</h5>
+        <pre><code>import pandas as pd
+
+# Creating a simple Series
+s = pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])
+print(s)</code></pre>
+
+        <h5>Creating a DataFrame</h5>
+        <pre><code>data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'Age': [24, 27, 22, 32],
+    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston']
+}
+
+df = pd.DataFrame(data)
+print(df)</code></pre>
+
+        <h5>Basic Operations</h5>
+        <p>Here are some basic operations you can perform with <code>pandas</code>:</p>
+
+        <h6>Accessing data by <strong>columns</strong>:</h6>
+        <pre><code>df['Name']  # Access the 'Name' column</code></pre>
+
+        <h6>Accessing data by <strong>rows</strong>:</h6>
+        <pre><code>df.loc[1]  # Access the second row</code></pre>
+
+        <h6><strong>Head and Tail</strong>:</h6>
+        <ul>
+            <li><code>df.head()</code>: Displays the first few rows.</li>
+            <li><code>df.tail()</code>: Displays the last few rows.</li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

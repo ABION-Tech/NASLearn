@@ -4,388 +4,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript, jQuery, and React Concepts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Week 4: Supervised Learning - Classification</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: white;
-            color: #333;
-            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
+        .content-section {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
         h2,
         h3 {
-            color: #007BFF;
+            color: #007bff;
+            /* Blue accent color */
+        }
+
+        h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        .project-steps {
             margin-top: 20px;
-        }
-
-        p,
-        code {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .section {
-            margin-bottom: 50px;
-        }
-
-        pre {
-            background-color: #f8f9fa;
             padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 14px;
-            overflow-x: auto;
-        }
-
-        .code-title {
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
-
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
-
-        /* Video or content inside the border */
-        .video-content {
-            border-radius: 10px;
-            display: block;
-        }
-
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
+            background-color: #f8f9fa;
+            border-left: 5px solid #007bff;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="container mt-5">
-        <!-- React Section -->
-        <h1>Introduction to React</h1>
-
-        <div class="section">
-            <h3>3.1 What is React?</h3>
-            <p>React is a popular JavaScript library for building user interfaces, especially for single-page
-                applications where you need a fast and interactive experience. React allows developers to create large
-                web applications that can update and render efficiently in response to data changes.</p>
-
-            <p><strong>Why Use React?</strong></p>
-            <ul>
-                <li>Component-based architecture.</li>
-                <li>Virtual DOM for efficient updates.</li>
-                <li>Strong community support and ecosystem.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>3.2 Components and JSX</h3>
-            <p><strong>Components:</strong></p>
-            <pre><code>function Welcome() {
-    return <h1>Hello, World!</h1>;
-}</code></pre>
-
-            <p><strong>JSX:</strong></p>
-            <pre><code>const element = <h1>Hello, React!</h1>;</code></pre>
-        </div>
-
-        <div class="section">
-            <h3>3.3 Creating Simple React Applications</h3>
-            <p><strong>Rendering Components:</strong></p>
-            <pre><code>ReactDOM.render(
-    <Welcome />,
-    document.getElementById('root')
-);</code></pre>
-
-            <p><strong>Props and State:</strong></p>
-            <pre><code>function Greeting(props) {
-    return <h1>Hello, {props.name}!</h1>;
-}
-
-ReactDOM.render(
-    <Greeting name="John" />,
-    document.getElementById('root')
-);</code></pre>
-
-            <p><strong>Handling Events:</strong></p>
-            <pre><code>function Button() {
-    function handleClick() {
-        alert('Button clicked!');
-    }
-
-    return (
-        <button onClick={handleClick}>
-            Click me
-        </button>
-    );
-}</code></pre>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS and jQuery (for demonstration purposes) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau Best Practices</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-        background-color: #ffffff;
-        color: #000000;
-        font-family: Arial, sans-serif;
-    }
-
-    h1,
-    h2,
-    h3 {
-        color: #007BFF;
-        /* Blue accent */
-    }
-
-    .content-container {
-        margin: 50px auto;
-        max-width: 900px;
-    }
-
-    .custom-section {
-        margin-bottom: 40px;
-    }
-
-    .custom-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .custom-section ul {
-        margin-left: 20px;
-    }
-
-    .custom-section ul li {
-        margin-bottom: 10px;
-    }
-
-    blockquote {
-        font-size: 1.1em;
-        padding: 15px;
-        border-left: 5px solid #007BFF;
-        background-color: #f8f9fa;
-    }
-
-    /* Video container to hold everything */
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 100px;
-    }
-
-    /* Gradient border container */
-    .gradient-border {
-        padding: 5px;
-        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-        border-radius: 10px;
-    }
-
-    /* Video or content inside the border */
-    .video-content {
-        border-radius: 10px;
-        display: block;
-    }
-
-    .video-links {
-        color: grey;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    /* Ensure responsive width and height for the video */
-    iframe {
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-    }
-
-    /* Responsiveness */
-    @media (min-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 450px;
-        }
-    }
-
-    @media (max-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 350px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        iframe {
-            width: 500px;
-            height: 200px;
-        }
-    }
-
-    /* For mobile screens, to avoid the box-like appearance */
-    @media (max-width: 360px) {
-        .video-content {
-            width: 280px;
-            /* Take full width */
-            height: 200px;
-            /* Adjust height to give a more rectangular shape */
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 256px) {
-            .video-content {
-                width: 1080px;
-                /* Take full width */
-                height: 300px;
-                /* Adjust height to give a more rectangular shape */
-            }
-        }
-    }
-</style>
-
-<body>
     <header>
-        <h1>Tableau Best Practices</h1>
+        <h1>Statistical Analysis and Predictive Modeling</h1>
+        <h2>Case Studies & Real-World Applications</h2>
     </header>
 
-    <main>
-        <section id="dashboard-design">
-            <h2>Designing Effective Dashboards</h2>
-            <ul>
-                <li><strong>Layout and Structure:</strong> Organizing visualizations for clarity and flow.</li>
-                <li><strong>Storytelling:</strong> Using dashboards to tell a compelling data-driven story.</li>
-                <li><strong>Performance Optimization:</strong> Improving dashboard performance by optimizing data
-                    queries and visual elements.</li>
-            </ul>
-        </section>
+    <section id="introduction">
+        <h3>1. Introduction to Real-World Applications</h3>
+        <p>Predictive modeling is widely used in various industries to improve decision-making, reduce risks, and
+            increase efficiency. Companies leverage statistical analysis to forecast trends, automate processes, and
+            enhance user experience.</p>
+        <p>In this section, we will explore case studies from different sectors, showcasing how businesses and
+            organizations apply predictive modeling techniques.</p>
+    </section>
 
-        <section id="interactivity-user-experience">
-            <h2>Interactivity and User Experience</h2>
-            <ul>
-                <li><strong>Actions and Filters:</strong> Adding interactivity through actions like dashboard filters
-                    and highlight actions.</li>
-                <li><strong>User Interface (UI) Design:</strong> Designing intuitive user interfaces for seamless
-                    navigation.</li>
-            </ul>
-        </section>
+    <section id="finance">
+        <h3>2. Predictive Modeling in Finance</h3>
+        <p>The financial industry heavily relies on predictive modeling for risk management, fraud detection, and
+            investment strategies.</p>
+        <p><strong>Case Study: Credit Risk Assessment</strong></p>
+        <p>A major bank used logistic regression to assess the creditworthiness of loan applicants. By analyzing past
+            loan repayment data, the model predicted the likelihood of default.</p>
+        <p><strong>Outcome:</strong></p>
+        <ul>
+            <li>Loan approval processes became faster and more accurate.</li>
+            <li>Reduction in non-performing loans by 25%.</li>
+            <li>Improved risk assessment led to better financial planning.</li>
+        </ul>
+        <p><strong>Other Applications:</strong></p>
+        <ul>
+            <li>Fraud detection using anomaly detection algorithms.</li>
+            <li>Stock market forecasting with time series analysis.</li>
+            <li>Algorithmic trading using machine learning models.</li>
+        </ul>
+    </section>
 
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p>
-                <strong>Hands-On Practice:</strong> Design and develop a comprehensive dashboard in Tableau. Incorporate
-                best practices for layout, storytelling, and interactivity. Optimize dashboard performance and user
-                experience.
-            </p>
-        </section>
-    </main>
+    <section id="healthcare">
+        <h3>3. Predictive Modeling in Healthcare</h3>
+        <p>Healthcare professionals use predictive analytics to improve patient outcomes and optimize hospital
+            operations.</p>
+        <p><strong>Case Study: Early Disease Detection</strong></p>
+        <p>A hospital implemented a predictive model using decision trees and neural networks to detect early signs of
+            sepsis in ICU patients.</p>
+        <p><strong>Outcome:</strong></p>
+        <ul>
+            <li>Detection accuracy improved by 30%, allowing earlier interventions.</li>
+            <li>Reduced ICU mortality rates by 15%.</li>
+            <li>Better resource allocation in emergency cases.</li>
+        </ul>
+        <p><strong>Other Applications:</strong></p>
+        <ul>
+            <li>Predicting patient readmission rates.</li>
+            <li>Identifying disease outbreaks using data analytics.</li>
+            <li>Personalized treatment recommendations based on predictive algorithms.</li>
+        </ul>
+    </section>
 
+    <section id="retail">
+        <h3>4. Predictive Modeling in Retail</h3>
+        <p>Retailers leverage predictive analytics for demand forecasting, personalized marketing, and inventory
+            management.</p>
+        <p><strong>Case Study: Customer Behavior Prediction</strong></p>
+        <p>An e-commerce company used clustering techniques to segment customers based on purchasing behavior, then
+            applied predictive models to recommend products.</p>
+        <p><strong>Outcome:</strong></p>
+        <ul>
+            <li>Increase in sales conversions by 40%.</li>
+            <li>Personalized recommendations led to higher customer satisfaction.</li>
+            <li>Better inventory planning, reducing stockouts and overstock.</li>
+        </ul>
+        <p><strong>Other Applications:</strong></p>
+        <ul>
+            <li>Dynamic pricing adjustments using real-time data.</li>
+            <li>Churn prediction to retain valuable customers.</li>
+            <li>Optimized supply chain management.</li>
+        </ul>
+    </section>
+
+    <section id="transportation">
+        <h3>5. Predictive Modeling in Transportation</h3>
+        <p>Transportation companies use predictive analytics for optimizing routes, maintenance planning, and reducing
+            operational costs.</p>
+        <p><strong>Case Study: Predictive Maintenance for Airlines</strong></p>
+        <p>An airline used machine learning algorithms to predict equipment failures before they occurred, reducing
+            downtime and improving safety.</p>
+        <p><strong>Outcome:</strong></p>
+        <ul>
+            <li>Maintenance costs reduced by 20%.</li>
+            <li>Flight delays due to mechanical issues decreased by 35%.</li>
+            <li>Increased aircraft lifespan through proactive maintenance.</li>
+        </ul>
+        <p><strong>Other Applications:</strong></p>
+        <ul>
+            <li>Traffic flow predictions using real-time GPS data.</li>
+            <li>Demand forecasting for ride-hailing services.</li>
+            <li>Autonomous vehicle navigation based on predictive AI models.</li>
+        </ul>
+    </section>
+
+    <section id="marketing">
+        <h3>6. Predictive Modeling in Digital Marketing</h3>
+        <p>Marketers use predictive analytics to target the right audience, optimize ad spending, and improve campaign
+            performance.</p>
+        <p><strong>Case Study: Email Campaign Optimization</strong></p>
+        <p>A digital marketing firm used a predictive model to analyze past email engagement and determine the best time
+            and content for sending emails.</p>
+        <p><strong>Outcome:</strong></p>
+        <ul>
+            <li>Email open rates increased by 50%.</li>
+            <li>Click-through rates improved, leading to higher conversions.</li>
+            <li>Reduced costs by targeting high-potential customers.</li>
+        </ul>
+        <p><strong>Other Applications:</strong></p>
+        <ul>
+            <li>Ad targeting based on customer demographics and behavior.</li>
+            <li>Lead scoring to identify high-value prospects.</li>
+            <li>Content recommendations in streaming platforms.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Next: <a href="page5.html">Developing Your Own Predictive Model →</a></p>
+    </footer>
 </body>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 </html>

@@ -4,69 +4,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <title>Data Filtering and Selection</title>
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: black;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
+        h1,
         h2,
-        h4 {
+        h3 {
             color: #007BFF;
-            /* Blue accent color */
+            /* Blue accent */
         }
 
-        pre {
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
             background-color: #f8f9fa;
-            /* Light background for code blocks */
-            border-left: 4px solid #007BFF;
-            /* Blue accent for the left border */
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-            /* Ensure long lines are scrollable */
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
-</head>
 
 <body>
-    <div class="container my-5">
-        <h2>Data Filtering and Selection</h2>
+    <header>
+        <h1>Module 5: Functions in Python</h1>
+        <h2>Page 3: Function Parameters and Return Values</h2>
+    </header>
 
-        <h4>Indexing and Slicing DataFrames</h4>
-        <p>You can filter and select subsets of your data using indexing techniques.</p>
+    <section>
+        <h2>Types of Function Parameters</h2>
+        <p>Functions in Python can have different types of parameters:</p>
+        <ul>
+            <li><strong>Positional Parameters:</strong> Arguments are matched based on their position.</li>
+            <li><strong>Keyword Parameters:</strong> Arguments are matched using the parameter name.</li>
+            <li><strong>Default Parameters:</strong> Parameters have predefined values if not provided.</li>
+            <li><strong>Arbitrary Arguments (*args):</strong> Allows multiple arguments to be passed.</li>
+            <li><strong>Arbitrary Keyword Arguments (**kwargs):</strong> Allows multiple named arguments.</li>
+        </ul>
+    </section>
 
-        <h5>Indexing by Columns</h5>
-        <pre><code>df['Age']  # Access a single column
-df[['Name', 'City']]  # Access multiple columns</code></pre>
+    <section>
+        <h2>Using Positional Parameters</h2>
+        <p>In a function call, arguments are assigned to parameters in the order they appear.</p>
+        <pre>
+            <code>
+def full_name(first_name, last_name):
+    print(first_name + " " + last_name)
 
-        <h5>Indexing by Rows with <code>loc[]</code> and <code>iloc[]</code></h5>
-        <p>
-            <code>loc[]</code>: Selects data by labels.<br>
-            <code>iloc[]</code>: Selects data by integer position.
-        </p>
-        <pre><code>df.loc[1]  # Access the second row using labels
-df.iloc[1]  # Access the second row using integer index</code></pre>
+full_name("Ayo", "Abion")  # Output: Ayo Abion
+            </code>
+        </pre>
+    </section>
 
-        <h5>Slicing Rows</h5>
-        <pre><code>df[1:3]  # Access the second and third rows</code></pre>
+    <section>
+        <h2>Using Keyword Parameters</h2>
+        <p>Keyword parameters allow you to specify arguments by name.</p>
+        <pre>
+            <code>
+def introduce(name, age):
+    print(f"My name is {name} and I am {age} years old.")
 
-        <h4>Filtering Data Based on Conditions</h4>
-        <p>You can filter a DataFrame based on one or more conditions.</p>
+introduce(age=23, name="Ayo")
+# Output: My name is Ayo and I am 23 years old.
+            </code>
+        </pre>
+    </section>
 
-        <h5>Filtering by Condition</h5>
-        <pre><code>df[df['Age'] > 25]  # Select all rows where 'Age' is greater than 25</code></pre>
+    <section>
+        <h2>Default Parameter Values</h2>
+        <p>If a function is called without an argument, a default value is used.</p>
+        <pre>
+            <code>
+def greet(name="Guest"):
+    print(f"Hello, {name}!")
 
-        <h5>Multiple Conditions</h5>
-        <p>You can combine conditions using the <code>&</code> (AND) and <code>|</code> (OR) operators.</p>
-        <pre><code>df[(df['Age'] > 25) & (df['City'] == 'New York')]  # Multiple conditions</code></pre>
-    </div>
+greet()  # Output: Hello, Guest!
+greet("Kunle")  # Output: Hello, Kunle!
+            </code>
+        </pre>
+    </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <section>
+        <h2>Using *args for Multiple Arguments</h2>
+        <p><code>*args</code> allows a function to accept any number of positional arguments.</p>
+        <pre>
+            <code>
+def sum_numbers(*numbers):
+    return sum(numbers)
+
+print(sum_numbers(2, 3, 4, 5))  # Output: 14
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h2>Using **kwargs for Multiple Named Arguments</h2>
+        <p><code>**kwargs</code> allows passing multiple named arguments to a function.</p>
+        <pre>
+            <code>
+def user_info(**info):
+    for key, value in info.items():
+        print(f"{key}: {value}")
+
+user_info(name="Ayo", age=23, country="Nigeria")
+# Output:
+# name: Ayo
+# age: 23
+# country: Nigeria
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h2>Returning Multiple Values from a Function</h2>
+        <p>A function can return multiple values as a tuple.</p>
+        <pre>
+            <code>
+def calculate(a, b):
+    return a + b, a - b, a * b, a / b
+
+add, sub, mul, div = calculate(10, 5)
+print(add, sub, mul, div)
+# Output: 15 5 50 2.0
+            </code>
+        </pre>
+    </section>
+
+
+
+
+
+
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+    </div>-->
 </body>
 
 </html>

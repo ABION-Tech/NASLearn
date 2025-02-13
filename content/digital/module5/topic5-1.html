@@ -4,94 +4,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overview of Popular Social Media Platforms</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: black;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
         }
 
-        .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        h1 {
+        h1,
+        h2,
+        h3 {
             color: #007BFF;
-            /* Blue accent for main heading */
+            /* Blue accent */
         }
 
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+<body>
+    <header>
+        <h1>Introduction to Social Media Marketing</h1>
+        <p>Engaging with users on platforms like Facebook, Instagram, and Twitter.</p>
+    </header>
+
+    <section id="overview">
+        <h2>What is Social Media Marketing?</h2>
+        <p>
+            Social media marketing (SMM) involves using social platforms to promote brands, engage with audiences,
+            and drive website traffic. It plays a crucial role in modern digital marketing strategies.
+        </p>
+        <img src="images/social-media-overview.jpg" alt="Social Media Marketing Overview" width="100%">
+    </section>
+
+    <section id="importance">
+        <h2>Why is Social Media Marketing Important?</h2>
+        <ul>
+            <li><strong>Increased Brand Awareness:</strong> Reach new audiences through viral content.</li>
+            <li><strong>Higher Engagement:</strong> Direct interaction with customers via likes, shares, and comments.
+            </li>
+            <li><strong>Cost-Effective Advertising:</strong> Organic and paid strategies to maximize reach.</li>
+            <li><strong>Website Traffic & Conversions:</strong> Social platforms act as lead generation sources.</li>
+        </ul>
+    </section>
+
+    <section id="platforms">
+        <h2>Major Social Media Platforms</h2>
+        <div class="platform-grid">
+            <div class="platform">
+                <img src="images/facebook-logo.png" alt="Facebook" width="50">
+                <h3>Facebook</h3>
+                <p>Largest social network for businesses and communities.</p>
+            </div>
+            <div class="platform">
+                <img src="images/instagram-logo.png" alt="Instagram" width="50">
+                <h3>Instagram</h3>
+                <p>Photo and video-sharing platform for visual marketing.</p>
+            </div>
+            <div class="platform">
+                <img src="images/twitter-logo.png" alt="Twitter" width="50">
+                <h3>Twitter</h3>
+                <p>Real-time engagement through short-form content.</p>
+            </div>
+            <div class="platform">
+                <img src="images/linkedin-logo.png" alt="LinkedIn" width="50">
+                <h3>LinkedIn</h3>
+                <p>Professional networking and B2B marketing.</p>
+            </div>
+            <div class="platform">
+                <img src="images/tiktok-logo.png" alt="TikTok" width="50">
+                <h3>TikTok</h3>
+                <p>Short-form video content for viral trends.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <h2>Key Benefits of Social Media Marketing</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Benefit</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brand Recognition</td>
+                    <td>Improves visibility through regular social interactions.</td>
+                </tr>
+                <tr>
+                    <td>Customer Engagement</td>
+                    <td>Encourages direct communication with customers.</td>
+                </tr>
+                <tr>
+                    <td>Website Traffic</td>
+                    <td>Drives potential customers to your website.</td>
+                </tr>
+                <tr>
+                    <td>Lead Generation</td>
+                    <td>Social media is a powerful tool for finding new clients.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Social Media Marketing Course | All Rights Reserved</p>
+    </footer>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: #3b5998;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        section {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
         h2 {
-            color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 30px;
+            color: #333;
+        }
+
+        .platform-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         .platform {
-            margin-top: 20px;
-            padding: 15px;
-            border-left: 5px solid #007BFF;
-            /* Blue accent border */
-            background-color: #f8f9fa;
-            /* Light gray background for each platform */
+            width: 18%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background: #3b5998;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #3b5998;
+            color: white;
         }
     </style>
-</head>
 
-<body>
 
-    <div class="container">
-        <h1>Overview of Popular Social Media Platforms</h1>
 
-        <div class="platform">
-            <h2>Facebook:</h2>
-            <p><strong>Description:</strong> A platform with over 2.8 billion monthly active users, Facebook offers
-                businesses a way to connect with a broad audience.</p>
-            <p><strong>Significance:</strong> It allows for targeted advertising, community building, and customer
-                engagement.</p>
-            <p><strong>Real-World Example:</strong> Coca-Cola uses Facebook to share user-generated content and engage
-                with fans through interactive posts.</p>
-        </div>
 
-        <div class="platform">
-            <h2>Instagram:</h2>
-            <p><strong>Description:</strong> A visual-centric platform popular for its photo and video sharing
-                capabilities, boasting over 1 billion users.</p>
-            <p><strong>Significance:</strong> Ideal for brands focusing on aesthetics and storytelling, Instagram is
-                effective for influencer marketing and direct engagement.</p>
-            <p><strong>Real-World Example:</strong> Glossier effectively utilizes Instagram to showcase products and
-                foster a community of beauty enthusiasts.</p>
-        </div>
 
-        <div class="platform">
-            <h2>Twitter:</h2>
-            <p><strong>Description:</strong> A microblogging platform where users share short messages (tweets),
-                facilitating real-time conversation.</p>
-            <p><strong>Significance:</strong> Twitter is powerful for brand updates, customer service, and trend
-                engagement due to its fast-paced nature.</p>
-            <p><strong>Real-World Example:</strong> Wendy's leverages Twitter for witty engagement and real-time
-                customer interactions, boosting brand personality.</p>
-        </div>
-
-        <div class="platform">
-            <h2>LinkedIn:</h2>
-            <p><strong>Description:</strong> A professional networking site with over 800 million members, LinkedIn is
-                focused on business and career-oriented content.</p>
-            <p><strong>Significance:</strong> It's essential for B2B marketing, professional branding, and recruiting
-                talent.</p>
-            <p><strong>Real-World Example:</strong> Microsoft uses LinkedIn to share industry insights and promote its
-                corporate culture, enhancing employer branding.</p>
+    </main>
+    <!-- Video Section -->
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kXtZ_vyGtQI?si=GaOPmXzfRjs7O2D0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>

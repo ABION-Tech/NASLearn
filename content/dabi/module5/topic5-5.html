@@ -4,54 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript, jQuery, and React Concepts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
+    <title>JavaScript Events</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: white;
-            color: #333;
+            background-color: #f9f9f9;
             font-family: 'Arial', sans-serif;
         }
 
-        h2,
-        h3 {
-            color: #007BFF;
-            margin-top: 20px;
+        .main-container {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
         }
 
-        p,
-        code {
-            font-size: 16px;
-            line-height: 1.6;
+        h1,
+        h2 {
+            color: #007bff;
         }
 
-        .section {
-            margin-bottom: 50px;
+        p {
+            color: #333;
         }
 
-        pre {
+        .code-container {
             background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
             padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 14px;
-            overflow-x: auto;
+            margin-bottom: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            color: #343a40;
         }
 
-        .code-title {
-            margin-bottom: 10px;
-            font-weight: bold;
+        .code-container pre {
+            margin: 0;
         }
 
-        .editor-container {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: 20px;
+        .highlight {
+            background-color: #007bff;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
         }
 
-        .editor {
-            height: 300px;
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-radius: 50px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-custom:hover {
+            background-color: #007BFF;
+        }
+
+        .section-title {
+            margin-top: 40px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            color: #007bff;
         }
 
         /* Basic Reset */
@@ -154,276 +168,179 @@
 </head>
 
 <body>
+    <header>
+        <h1>Statistical Analysis and Predictive Modeling</h1>
+        <h2>Developing Your Own Predictive Model</h2>
+    </header>
 
-    <div class="container mt-5">
-        <h2>Advanced JavaScript Concepts</h2>
-        <!-- Previous sections (JavaScript and jQuery) remain here -->
+    <section id="introduction">
+        <h3>1. Introduction to Building Predictive Models</h3>
+        <p>Now that we've explored real-world applications of predictive modeling, it's time to learn how to build your
+            own model. The process involves several key steps, including data collection, preprocessing, model
+            selection, training, evaluation, and deployment.</p>
+        <p>This guide will take you through each phase using Python and key machine learning libraries like
+            **scikit-learn**, **pandas**, and **matplotlib**.</p>
+    </section>
 
-        <!-- React Section -->
-        <h2>Introduction to React</h2>
-        <!-- Previous React sections remain here -->
+    <section id="step1">
+        <h3>2. Step 1: Data Collection</h3>
+        <p>Predictive modeling starts with high-quality data. Your dataset should contain historical information
+            relevant to the prediction you want to make.</p>
+        <p><strong>Example:</strong> If you're predicting customer churn, your dataset may include past transactions,
+            customer demographics, and interaction history.</p>
+        <p><strong>Data Sources:</strong></p>
+        <ul>
+            <li>Public datasets (Kaggle, UCI Machine Learning Repository)</li>
+            <li>Internal company databases</li>
+            <li>APIs and web scraping</li>
+        </ul>
+        <p><strong>Code Example:</strong> Importing a dataset in Python</p>
+        <pre>
+import pandas as pd
 
-        <!-- Hands-On Practice Section -->
-        <h2>Hands-On Practice: Building a Small Project Using React</h2>
+# Load dataset
+data = pd.read_csv('customer_churn.csv')
 
-        <div class="section">
-            <h3>4.1 Setting Up the Project</h3>
-            <ul>
-                <li><strong>Install Node.js and npm:</strong> Ensure you have Node.js and npm installed on your machine.
-                </li>
-                <li><strong>Create a React App:</strong> Use create-react-app to quickly set up a new React project.
-                </li>
-            </ul>
-            <pre><code>npx create-react-app my-react-app
-cd my-react-app
-npm start</code></pre>
-        </div>
+# Display first few rows
+print(data.head())
+        </pre>
+    </section>
 
-        <div class="section">
-            <h3>4.2 Developing the Project</h3>
-            <p>Students will create a simple React application that allows users to input their name and see a
-                personalized greeting. The project will involve:</p>
-            <ul>
-                <li><strong>Creating Components:</strong> Break down the UI into reusable components.</li>
-                <li><strong>Managing State:</strong> Use React's state to manage user input and display dynamic content.
-                </li>
-                <li><strong>Handling Events:</strong> Implement event handlers for user interactions.</li>
-            </ul>
-        </div>
+    <section id="step2">
+        <h3>3. Step 2: Data Preprocessing</h3>
+        <p>Raw data is often messy. Cleaning and transforming it is crucial for accurate predictions.</p>
+        <p><strong>Common preprocessing steps:</strong></p>
+        <ul>
+            <li>Handling missing values</li>
+            <li>Encoding categorical variables</li>
+            <li>Feature scaling (normalization/standardization)</li>
+            <li>Splitting the dataset into training and testing sets</li>
+        </ul>
+        <p><strong>Code Example:</strong> Handling missing values and splitting data</p>
+        <pre>
+from sklearn.model_selection import train_test_split
 
-        <div class="section">
-            <h3>4.3 Styling the Application</h3>
-            <p>Use CSS to style the React components.</p>
-            <p>Explore using a CSS framework like Bootstrap with React.</p>
-        </div>
+# Fill missing values
+data.fillna(method='ffill', inplace=True)
 
-        <div class="section">
-            <h3>4.4 Deploying the Project</h3>
-            <p>Deploy the React application using a platform like GitHub Pages, Vercel, or Netlify.</p>
-        </div>
+# Convert categorical variables into numerical format
+data = pd.get_dummies(data, drop_first=True)
 
-        <div class="section">
-            <h3>Code Editor</h3>
-            <p>Below is a simple in-page code editor where you can experiment with your React code for this project:</p>
-            <div class="editor-container">
-                <textarea id="code-editor" class="editor"></textarea>
-            </div>
-            <button id="run-code" class="btn btn-primary mt-3">Run Code</button>
-            <h4 class="mt-4">Output:</h4>
-            <div id="output" class="border rounded p-2"></div>
+# Split into training and testing sets
+X = data.drop('Churn', axis=1)
+y = data['Churn']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        </pre>
+    </section>
+
+    <section id="step3">
+        <h3>4. Step 3: Model Selection & Training</h3>
+        <p>Choosing the right model depends on the type of problem:</p>
+        <ul>
+            <li><strong>Regression:</strong> Predicting continuous values (e.g., sales forecasting).</li>
+            <li><strong>Classification:</strong> Predicting categories (e.g., fraud detection, churn prediction).</li>
+        </ul>
+        <p>For this example, we will train a logistic regression model for customer churn prediction.</p>
+        <p><strong>Code Example:</strong> Training a logistic regression model</p>
+        <pre>
+from sklearn.linear_model import LogisticRegression
+
+# Initialize model
+model = LogisticRegression()
+
+# Train model
+model.fit(X_train, y_train)
+        </pre>
+    </section>
+
+    <section id="step4">
+        <h3>5. Step 4: Model Evaluation</h3>
+        <p>After training, we evaluate the model’s performance using metrics such as accuracy, precision, recall, and
+            F1-score.</p>
+        <p><strong>Code Example:</strong> Evaluating the model</p>
+        <pre>
+from sklearn.metrics import accuracy_score, classification_report
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Calculate accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
+
+# Display classification report
+print(classification_report(y_test, y_pred))
+        </pre>
+        <p><strong>Key Metrics:</strong></p>
+        <ul>
+            <li>**Accuracy:** Overall correctness of the model.</li>
+            <li>**Precision:** How often the model correctly predicts a positive case.</li>
+            <li>**Recall:** How well the model identifies actual positive cases.</li>
+            <li>**F1-score:** Balances precision and recall.</li>
+        </ul>
+    </section>
+
+    <section id="step5">
+        <h3>6. Step 5: Model Deployment</h3>
+        <p>Once satisfied with the model’s performance, you can deploy it using a web application or integrate it into
+            existing systems.</p>
+        <p><strong>Deployment Options:</strong></p>
+        <ul>
+            <li>Flask or FastAPI for web-based deployment.</li>
+            <li>Cloud platforms like AWS, Azure, or Google Cloud.</li>
+            <li>Embedding into business applications for real-time predictions.</li>
+        </ul>
+        <p><strong>Code Example:</strong> Deploying with Flask</p>
+        <pre>
+from flask import Flask, request, jsonify
+import pickle
+
+# Load trained model
+model = pickle.load(open('churn_model.pkl', 'rb'))
+
+app = Flask(__name__)
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.get_json()
+    prediction = model.predict([data['features']])
+    return jsonify({'prediction': int(prediction[0])})
+
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)
+        </pre>
+    </section>
+
+    <section id="conclusion">
+        <h3>7. Conclusion</h3>
+        <p>Building a predictive model requires a structured approach, from data collection to deployment. By following
+            these steps, you can create models that provide valuable insights and improve decision-making.</p>
+        <p>Now, it's time to apply these concepts! Complete the assignment below to build your own predictive model.</p>
+    </section>
+
+    <section id="assignment">
+        <h3>8. Assignment</h3>
+        <p><strong>Task:</strong> Use the dataset of your choice and apply the five steps discussed to build a
+            predictive model. Submit a Jupyter Notebook file with:</p>
+        <ul>
+            <li>Data preprocessing steps</li>
+            <li>Model selection and training</li>
+            <li>Evaluation metrics</li>
+            <li>Key findings from the model</li>
+        </ul>
+        <p><strong>Bonus:</strong> Deploy your model using Flask and provide the API endpoint.</p>
+    </section>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/H_od47aWu-s?si=0TggGjRJbxcUpAbT"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
 
-    <!-- Bootstrap JS, jQuery, and CodeMirror -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/javascript/javascript.min.js"></script>
-
-    <script>
-        // Initialize CodeMirror
-        var editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
-            lineNumbers: true,
-            mode: "javascript",
-            theme: "default",
-            height: "300px",
-        });
-
-        // Function to run the code in the editor
-        document.getElementById("run-code").addEventListener("click", function () {
-            const userCode = editor.getValue();
-            try {
-                const result = eval(userCode); // Run user code (be cautious with eval)
-                document.getElementById("output").innerText = result;
-            } catch (error) {
-                document.getElementById("output").innerText = error.message;
-            }
-        });
-    </script>
-
 </body>
 
-</html>
 
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau Project</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-        background-color: #ffffff;
-        color: #000000;
-        font-family: Arial, sans-serif;
-    }
-
-    h1,
-    h2,
-    h3 {
-        color: #007BFF;
-        /* Blue accent */
-    }
-
-    .content-container {
-        margin: 50px auto;
-        max-width: 900px;
-    }
-
-    .custom-section {
-        margin-bottom: 40px;
-    }
-
-    .custom-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .custom-section ul {
-        margin-left: 20px;
-    }
-
-    .custom-section ul li {
-        margin-bottom: 10px;
-    }
-
-    blockquote {
-        font-size: 1.1em;
-        padding: 15px;
-        border-left: 5px solid #007BFF;
-        background-color: #f8f9fa;
-    }
-
-    /* Video container to hold everything */
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 100px;
-    }
-
-    /* Gradient border container */
-    .gradient-border {
-        padding: 5px;
-        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-        border-radius: 10px;
-    }
-
-    /* Video or content inside the border */
-    .video-content {
-        border-radius: 10px;
-        display: block;
-    }
-
-    .video-links {
-        color: grey;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    /* Ensure responsive width and height for the video */
-    iframe {
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-    }
-
-    /* Responsiveness */
-    @media (min-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 450px;
-        }
-    }
-
-    @media (max-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 350px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        iframe {
-            width: 500px;
-            height: 200px;
-        }
-    }
-
-    /* For mobile screens, to avoid the box-like appearance */
-    @media (max-width: 360px) {
-        .video-content {
-            width: 280px;
-            /* Take full width */
-            height: 200px;
-            /* Adjust height to give a more rectangular shape */
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 256px) {
-            .video-content {
-                width: 1080px;
-                /* Take full width */
-                height: 300px;
-                /* Adjust height to give a more rectangular shape */
-            }
-        }
-    }
-</style>
-
-<body>
-    <header>
-        <h1>Tableau Project</h1>
-    </header>
-
-    <main>
-        <section id="objective">
-            <h2>Objective</h2>
-            <p>
-                Apply Tableau skills learned throughout the week to create a business intelligence dashboard using
-                real-world data. The project involves connecting to data sources, designing visualizations, building
-                interactive dashboards, and presenting insights.
-            </p>
-        </section>
-
-        <section id="dataset">
-            <h2>Dataset</h2>
-            <p>
-                Use a provided dataset (e.g., sales performance, customer demographics, marketing campaign data) for the
-                project.
-            </p>
-        </section>
-
-        <section id="tasks">
-            <h2>Tasks</h2>
-            <ul>
-                <li><strong>Data Connection:</strong> Connect Tableau to the dataset and perform data preprocessing if
-                    necessary.</li>
-                <li><strong>Visualization Design:</strong> Create multiple visualizations (e.g., charts, graphs, maps)
-                    to explore different aspects of the data.</li>
-                <li><strong>Dashboard Creation:</strong> Build a cohesive dashboard with interactive elements (e.g.,
-                    filters, parameters) to convey insights effectively.</li>
-                <li><strong>Presentation:</strong> Prepare a presentation to showcase the Tableau dashboard,
-                    highlighting key findings and actionable insights.</li>
-            </ul>
-        </section>
-
-        <section id="report-writing">
-            <h2>Report Writing</h2>
-            <p>
-                Write a report documenting the dashboard design process, data analysis techniques applied, and
-                recommendations based on the insights gained.
-            </p>
-        </section>
-    </main>
-
-</body>
 
 </html>

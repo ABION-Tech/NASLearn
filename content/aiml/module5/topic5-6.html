@@ -163,129 +163,152 @@
 </head>
 
 <body>
+    <div class="module">
+        <header class="module-header">
+            <h1>Module 5: Neural Networks & Deep Learning</h1>
+            <h2>Page 6: Ethical Considerations & Challenges in Deep Learning</h2>
+        </header>
 
-    <div class="container">
-        <h1 class="text-center mb-4">Conclusion of Week 5</h1>
-        <p>As we conclude Week 4 of our course, it’s essential to reflect on the significant advancements made in our
-            understanding and application of JavaScript, as well as the front-end libraries that are pivotal in modern
-            web development.</p>
+        <section class="content">
+            <article class="introduction">
+                <h2>The Need for Ethical AI</h2>
+                <p>As deep learning becomes more powerful, ethical concerns surrounding its applications grow. AI
+                    systems can unintentionally reinforce biases, invade privacy, and be used maliciously. Addressing
+                    these concerns is crucial for responsible AI development.</p>
+            </article>
 
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Mastering Asynchronous JavaScript</h5>
-                                <p class="card-text">Gained understanding of Promises, async/await, and Fetch API.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Asynchronous programming is essential for managing complex tasks
-                                    efficiently and enhancing user experiences in applications.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Introduction to jQuery</h5>
-                                <p class="card-text">Learned jQuery for simplified DOM manipulation and event handling.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Using jQuery, students can create more interactive web applications
-                                    with less complex JavaScript code.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">React Fundamentals</h5>
-                                <p class="card-text">Explored React's component-based architecture and JSX syntax.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">React allows developers to build efficient and interactive user
-                                    interfaces, making web development more dynamic.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <article class="bias">
+                <h2>1. Bias in AI Models</h2>
+                <p>Deep learning models learn from historical data, which can contain biases that get amplified in AI
+                    predictions.</p>
 
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Hands-On Project</h5>
-                                <p class="card-text">Developed a simple React application for personalized greetings.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">This project reinforced learning about components, state, and event
-                                    handling while boosting creative problem-solving skills.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Styling and Deployment</h5>
-                                <p class="card-text">Learned about CSS styling and integrating frameworks like
-                                    Bootstrap.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Understanding deployment strategies ensures that applications are
-                                    accessible to users, transitioning from development to production.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Looking Ahead</h5>
-                        <p class="card-text">The skills gained this week prepare students for full-stack development in
-                            the upcoming weeks.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <h3>Examples of Bias in AI:</h3>
+                <ul>
+                    <li><strong>Racial & Gender Bias:</strong> AI-driven hiring systems have favored certain
+                        demographics.</li>
+                    <li><strong>Healthcare Disparities:</strong> AI models trained on limited datasets may misdiagnose
+                        underrepresented groups.</li>
+                    <li><strong>Predictive Policing:</strong> AI crime prediction tools reinforce systemic
+                        discrimination.</li>
+                </ul>
 
-        <h4 class="text-center mt-5">Final Thoughts</h4>
-        <p>Embrace the journey of learning and building. Each concept mastered brings you one step closer to becoming a
-            proficient developer. Keep pushing your boundaries, stay curious, and let your creativity flow!</p>
+                <h3>Solutions:</h3>
+                <ul>
+                    <li>Using diverse and representative training datasets.</li>
+                    <li>Implementing fairness-aware algorithms.</li>
+                    <li>Regular auditing of AI systems for bias detection.</li>
+                </ul>
+            </article>
+
+            <article class="privacy">
+                <h2>2. Privacy & Data Security Concerns</h2>
+                <p>Deep learning requires vast amounts of data, raising concerns about how personal information is
+                    collected and used.</p>
+
+                <h3>Major Privacy Issues:</h3>
+                <ul>
+                    <li><strong>Data Collection:</strong> AI companies gather user data, sometimes without consent.</li>
+                    <li><strong>Facial Recognition:</strong> Governments and companies use AI for surveillance, raising
+                        privacy issues.</li>
+                    <li><strong>Deepfakes:</strong> AI-generated videos manipulate public perception.</li>
+                </ul>
+
+                <h3>Solutions:</h3>
+                <ul>
+                    <li>Implementing strong data protection regulations (e.g., GDPR, CCPA).</li>
+                    <li>Using techniques like federated learning to train AI without centralizing personal data.</li>
+                    <li>Developing AI models that minimize data retention.</li>
+                </ul>
+            </article>
+
+            <article class="misuse">
+                <h2>3. Misuse of AI & Security Risks</h2>
+                <p>Malicious actors can exploit deep learning for harmful purposes, including cybercrime and
+                    misinformation.</p>
+
+                <h3>Potential Risks:</h3>
+                <ul>
+                    <li><strong>Deepfakes & Disinformation:</strong> AI-generated videos and images spread false
+                        information.</li>
+                    <li><strong>Automated Cyber Attacks:</strong> AI-powered bots can execute large-scale hacking
+                        operations.</li>
+                    <li><strong>Autonomous Weapons:</strong> AI-controlled military systems pose ethical risks.</li>
+                </ul>
+
+                <h3>Solutions:</h3>
+                <ul>
+                    <li>Developing AI detection tools for deepfake content.</li>
+                    <li>Implementing strict regulations on AI weaponization.</li>
+                    <li>Enhancing cybersecurity measures in AI applications.</li>
+                </ul>
+            </article>
+
+            <article class="job-displacement">
+                <h2>4. Job Displacement & Workforce Challenges</h2>
+                <p>AI automation is transforming industries, replacing traditional jobs while creating new
+                    opportunities.</p>
+
+                <h3>Industries Affected:</h3>
+                <ul>
+                    <li><strong>Manufacturing:</strong> AI-powered robots reduce the need for human labor.</li>
+                    <li><strong>Retail & Customer Service:</strong> AI chatbots and self-checkouts replace human
+                        workers.</li>
+                    <li><strong>Transportation:</strong> Self-driving vehicles threaten jobs in trucking and
+                        ride-hailing services.</li>
+                </ul>
+
+                <h3>Solutions:</h3>
+                <ul>
+                    <li>Upskilling and reskilling programs for AI-related careers.</li>
+                    <li>Encouraging human-AI collaboration instead of full automation.</li>
+                    <li>Developing policies to support displaced workers.</li>
+                </ul>
+            </article>
+
+            <article class="transparency">
+                <h2>5. Lack of AI Explainability</h2>
+                <p>Many deep learning models, especially neural networks, act as "black boxes" where their
+                    decision-making process is unclear.</p>
+
+                <h3>Issues with Explainability:</h3>
+                <ul>
+                    <li>AI decisions in finance, healthcare, and law enforcement are difficult to interpret.</li>
+                    <li>Lack of transparency raises accountability concerns.</li>
+                    <li>Bias and errors in AI predictions go unnoticed.</li>
+                </ul>
+
+                <h3>Solutions:</h3>
+                <ul>
+                    <li>Developing explainable AI (XAI) models.</li>
+                    <li>Ensuring AI systems provide justifications for decisions.</li>
+                    <li>Encouraging AI transparency regulations.</li>
+                </ul>
+            </article>
+
+            <article class="ethical-ai">
+                <h2>6. The Future of Ethical AI</h2>
+                <p>Addressing AI's challenges requires collaboration between researchers, policymakers, and industry
+                    leaders.</p>
+
+                <h3>Key Principles for Ethical AI:</h3>
+                <ul>
+                    <li><strong>Fairness:</strong> Ensuring AI does not discriminate against any group.</li>
+                    <li><strong>Accountability:</strong> Holding AI developers responsible for their models.</li>
+                    <li><strong>Transparency:</strong> Making AI decisions interpretable.</li>
+                    <li><strong>Privacy Protection:</strong> Safeguarding user data.</li>
+                    <li><strong>Human-Centric AI:</strong> Ensuring AI benefits society rather than harming it.</li>
+                </ul>
+            </article>
+
+            <article class="summary">
+                <h2>Summary</h2>
+                <p>Deep learning offers immense potential but comes with significant ethical concerns. Addressing bias,
+                    privacy, security, and transparency challenges is crucial to ensuring AI is developed responsibly.
+                </p>
+                <p>Next, we will explore real-world AI case studies and their societal impact.</p>
+            </article>
+        </section>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

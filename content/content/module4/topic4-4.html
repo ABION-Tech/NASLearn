@@ -4,299 +4,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript DOM Manipulation</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Week 4: Supervised Learning - Classification</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: white;
-            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
         }
 
-        .main-container {
+        .content-section {
+            margin: 20px;
             padding: 20px;
-            margin: 0 auto;
-            max-width: 1200px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         h1,
-        h2 {
+        h2,
+        h3 {
             color: #007bff;
+            /* Blue accent color */
         }
 
-        p {
-            color: #333;
-        }
-
-        .code-container {
-            background-color: #f8f9fa;
-            border-left: 4px solid #007bff;
-            padding: 15px;
-            margin-bottom: 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 16px;
-            color: #343a40;
-        }
-
-        .code-container pre {
-            margin: 0;
-        }
-
-        .highlight {
-            background-color: #007bff;
-            color: white;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-
-        .btn-custom {
-            background-color: #007bff;
-            color: white;
-            border-radius: 50px;
-            padding: 10px 20px;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .btn-custom:hover {
-            background-color: #007BFF;
-        }
-
-        .note {
-            font-size: 0.9em;
-            color: #6c757d;
-            margin-top: -10px;
-        }
-
-        .section-title {
-            margin-top: 40px;
+        h2 {
             border-bottom: 2px solid #007bff;
             padding-bottom: 10px;
-            color: #007bff;
         }
 
-
-
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        ul {
+            margin-left: 20px;
         }
 
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
-
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
-
-        /* Video or content inside the border */
-        .video-content {
-            border-radius: 10px;
-            display: block;
-        }
-
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
+        .project-steps {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 5px solid #007bff;
         }
     </style>
 </head>
 
 <body>
+    <header>
+        <h1>Module 4: Writing Compelling Content</h1>
+        <h2>Page 4: Optimizing Content for SEO & Engagement</h2>
+    </header>
 
-    <div class="main-container">
-        <h1>The Document Object Model (DOM)</h1>
-        <p>The Document Object Model (DOM) is a programming interface that allows JavaScript to interact with and
-            manipulate HTML documents. It represents a document as a tree of objects and nodes that can be dynamically
-            modified.</p>
+    <section id="introduction">
+        <h2>Introduction to SEO & Engagement</h2>
+        <p>
+            Writing compelling content is only part of the equation. To maximize its reach, visibility, and impact, you
+            must optimize it for search engines
+            (SEO) while ensuring high user engagement.
+        </p>
+        <p>
+            In this lesson, we will explore strategies for improving search rankings, increasing reader interaction, and
+            enhancing content performance.
+        </p>
+    </section>
 
-        <h2 class="section-title">4.1 What is the DOM?</h2>
-        <p>The DOM allows developers to interact with a webpage's structure programmatically. It represents the
-            document's structure as a tree of nodes, where each node is an element in the document.</p>
-
+    <section id="seo-fundamentals">
+        <h2>Understanding SEO: The Basics</h2>
+        <p>
+            SEO (Search Engine Optimization) helps content rank higher on search engines like Google. By optimizing your
+            content,
+            you increase the likelihood of reaching your target audience.
+        </p>
+        <h3>Key SEO Factors:</h3>
         <ul>
-            <li><strong>DOM Tree:</strong> Every element in an HTML document becomes a node in the DOM tree.</li>
-            <li><strong>Manipulating the DOM:</strong> JavaScript can add, remove, or modify DOM elements.</li>
+            <li><strong>Keywords:</strong> Choosing relevant search terms for better ranking.</li>
+            <li><strong>Meta Tags:</strong> Crafting engaging title tags and descriptions.</li>
+            <li><strong>URL Optimization:</strong> Using clear, keyword-rich URLs.</li>
+            <li><strong>Internal & External Links:</strong> Enhancing credibility with strategic linking.</li>
+            <li><strong>Readability & Formatting:</strong> Using short paragraphs, bullet points, and structured
+                headings.</li>
+        </ul>
+    </section>
+
+    <section id="keyword-strategy">
+        <h2>Keyword Research & Implementation</h2>
+        <p>
+            Keywords are the foundation of SEO. They should align with what your audience is searching for.
+        </p>
+
+        <h3>Types of Keywords:</h3>
+        <ul>
+            <li><strong>Short-Tail Keywords:</strong> Broad terms (e.g., "digital marketing").</li>
+            <li><strong>Long-Tail Keywords:</strong> More specific searches (e.g., "best digital marketing strategies
+                for startups").</li>
+            <li><strong>LSI (Latent Semantic Indexing) Keywords:</strong> Related terms that help search engines
+                understand context.</li>
         </ul>
 
-        <h2 class="section-title">4.2 Selecting Elements</h2>
-        <p>Before you can manipulate an element, you need to select it from the DOM. Here are a few ways to select
-            elements:</p>
+        <h3>Best Practices:</h3>
+        <ol>
+            <li>Include keywords in <strong>titles, headings, and first 100 words</strong>.</li>
+            <li>Use them <strong>naturally</strong>—avoid keyword stuffing.</li>
+            <li>Leverage <strong>semantic keywords</strong> for better context.</li>
+            <li>Optimize images with <strong>alt text</strong> containing relevant keywords.</li>
+        </ol>
 
-        <h4>1. Using <span class="highlight">getElementById</span>:</h4>
-        <p>Use <span class="highlight">getElementById</span> to select an element by its unique ID.</p>
+        <h4>Example of Keyword-Optimized Content:</h4>
+        <p><em>“Are you looking for the <strong>best digital marketing strategies for startups</strong>?
+                In today’s fast-paced online world, mastering <strong>SEO and content marketing</strong> is
+                crucial.”</em>
+        </p>
+    </section>
 
-        <div class="code-container">
-            <pre>let element = document.getElementById("header");</pre>
-        </div>
+    <section id="engagement-techniques">
+        <h2>Boosting User Engagement</h2>
+        <p>
+            Engagement determines how well users interact with your content. High engagement signals value to search
+            engines,
+            improving rankings and conversions.
+        </p>
 
-        <h4>2. Using <span class="highlight">getElementsByClassName</span>:</h4>
-        <p>Use <span class="highlight">getElementsByClassName</span> to select elements by their class name. This
-            returns a collection of elements.</p>
+        <h3>Engagement Strategies:</h3>
+        <ul>
+            <li><strong>Compelling Introductions:</strong> Hook readers within the first few sentences.</li>
+            <li><strong>Interactive Elements:</strong> Use quizzes, polls, and comment sections.</li>
+            <li><strong>Scannable Formatting:</strong> Short paragraphs, bullet points, and images.</li>
+            <li><strong>Call-to-Action (CTA):</strong> Encourage readers to subscribe, comment, or share.</li>
+            <li><strong>Storytelling:</strong> Make content relatable and emotionally appealing.</li>
+        </ul>
+    </section>
 
-        <div class="code-container">
-            <pre>let elements = document.getElementsByClassName("item");</pre>
-        </div>
+    <section id="linking-strategy">
+        <h2>Internal & External Linking</h2>
+        <p>
+            Linking improves site authority and user experience by guiding readers to relevant content.
+        </p>
 
-        <h4>3. Using <span class="highlight">querySelector</span>:</h4>
-        <p>Use <span class="highlight">querySelector</span> to select the first element that matches a CSS selector.</p>
+        <h3>Internal Linking:</h3>
+        <ul>
+            <li>Links to related articles within your site.</li>
+            <li>Helps search engines understand your content structure.</li>
+            <li>Reduces bounce rates and increases time on site.</li>
+        </ul>
 
-        <div class="code-container">
-            <pre>let element = document.querySelector(".menu");</pre>
-        </div>
+        <h3>External Linking:</h3>
+        <ul>
+            <li>Links to authoritative sources (e.g., research papers, industry leaders).</li>
+            <li>Boosts credibility and adds value to content.</li>
+        </ul>
 
-        <h2 class="section-title">4.3 Manipulating Elements</h2>
-        <p>Once you've selected an element, you can manipulate it in various ways such as changing its content, styles,
-            or adding/removing it from the document.</p>
+        <h4>Example of Internal & External Linking:</h4>
+        <p>
+            “To learn more about digital marketing, check out our guide on
+            <a href="seo-strategies.html">SEO Strategies</a>.
+            You can also read insights from <a href="https://moz.com" target="_blank">Moz</a>.”
+        </p>
+    </section>
 
-        <h4>1. Changing Content:</h4>
-        <p>Use <span class="highlight">textContent</span> or <span class="highlight">innerHTML</span> to change the
-            content of an element.</p>
+    <section id="content-length">
+        <h2>Optimal Content Length</h2>
+        <p>
+            The ideal content length depends on the purpose of the post.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Content Type</th>
+                    <th>Recommended Word Count</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Blog Post</td>
+                    <td>1,500 - 2,500 words</td>
+                    <td>In-depth insights & rankings</td>
+                </tr>
+                <tr>
+                    <td>Social Media Post</td>
+                    <td>50 - 300 words</td>
+                    <td>Quick engagement</td>
+                </tr>
+                <tr>
+                    <td>Product Description</td>
+                    <td>150 - 400 words</td>
+                    <td>Convincing potential buyers</td>
+                </tr>
+                <tr>
+                    <td>Landing Page</td>
+                    <td>500 - 1,500 words</td>
+                    <td>Conversions & lead generation</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-        <div class="code-container">
-            <pre>let header = document.getElementById("header");</pre>
-            <pre>header.textContent = "Welcome!";</pre>
-        </div>
+    <section id="performance-tracking">
+        <h2>Measuring Performance</h2>
+        <p>
+            Tracking content performance helps refine strategies and improve results.
+        </p>
+        <h3>Key Metrics to Monitor:</h3>
+        <ul>
+            <li><strong>Organic Traffic:</strong> Number of visitors from search engines.</li>
+            <li><strong>Bounce Rate:</strong> Percentage of users who leave after viewing one page.</li>
+            <li><strong>Time on Page:</strong> Average duration users spend on a page.</li>
+            <li><strong>Click-Through Rate (CTR):</strong> Percentage of users who click on links.</li>
+            <li><strong>Conversion Rate:</strong> Percentage of visitors who complete a desired action.</li>
+        </ul>
+    </section>
 
-        <button class="btn btn-custom" onclick="changeContent();">Change Header Content</button>
+    <section id="final-thoughts">
+        <h2>Final Thoughts</h2>
+        <p>
+            Effective SEO and engagement strategies ensure your content reaches the right audience and delivers value.
+            By optimizing for search engines and enhancing user experience, your content will perform better and achieve
+            its intended goals.
+        </p>
+        <!-- <a href="page5.html" class="button">Continue to Page 5: Discussion & Assignment</a> -->
+    </section>
 
-        <h4>2. Changing Styles:</h4>
-        <p>Use JavaScript to change the style of an element directly. For example, you can change its color, font size,
-            and more.</p>
 
-        <div class="code-container">
-            <pre>header.style.color = "blue";</pre>
-            <pre>header.style.fontSize = "24px";</pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="changeStyles();">Change Header Style</button>
-
-        <h4>3. Adding/Removing Elements:</h4>
-        <p>You can dynamically create new elements and add them to the DOM, or remove existing ones. Here’s how to add a
-            new paragraph to the page:</p>
-
-        <div class="code-container">
-            <pre>let newElement = document.createElement("p");</pre>
-            <pre>newElement.textContent = "This is a new paragraph.";</pre>
-            <pre>document.body.appendChild(newElement);</pre>
-        </div>
-
-        <button class="btn btn-custom" onclick="addElement();">Add New Paragraph</button>
-    </div>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
-    </div>
-    <script>
-        // Function to change header content
-        function changeContent() {
-            let header = document.getElementById("header");
-            if (header) {
-                header.textContent = "You changed the content!";
-            } else {
-                alert('Header element not found!');
-            }
-        }
-
-        // Function to change header style
-        function changeStyles() {
-            let header = document.getElementById("header");
-            if (header) {
-                header.style.color = "blue";
-                header.style.fontSize = "24px";
-            } else {
-                alert('Header element not found!');
-            }
-        }
-
-        // Function to add a new paragraph
-        function addElement() {
-            let newElement = document.createElement("p");
-            newElement.textContent = "This is a dynamically added paragraph.";
-            document.body.appendChild(newElement);
-        }
-    </script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

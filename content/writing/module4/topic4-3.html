@@ -55,83 +55,169 @@
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1>Week 4: Supervised Learning - Classification</h1>
+    <header>
+        <h1>Module 4: Writing Compelling Content</h1>
+        <h2>Page 3: Structuring Content for Maximum Impact</h2>
+    </header>
 
-        <h2>Model Evaluation: Accuracy, Precision, Recall, F1-Score, ROC Curve, and AUC</h2>
-        <p>Evaluating the performance of a classification model is crucial to ensure its accuracy and reliability.
-            Several metrics can be used to assess the model's effectiveness.</p>
+    <section id="introduction">
+        <h2>Introduction to Content Structuring</h2>
+        <p>
+            A well-structured piece of content enhances readability, engagement, and retention. Whether you're writing a
+            blog post, social media content,
+            or an article, organizing your content effectively ensures clarity and impact.
+        </p>
+        <p>
+            In this section, we’ll explore different structuring techniques, including headline strategies, formatting
+            methods, and logical content flow.
+        </p>
+    </section>
 
-        <div class="metric">
-            <h3>1. Accuracy</h3>
-            <p><strong>Definition:</strong> The proportion of correct predictions out of the total number of
-                predictions.</p>
-            <p class="formula">Accuracy = (TP + TN) / (TP + TN + FP + FN)</p>
-            <p><strong>Where:</strong></p>
-            <ul>
-                <li><strong>TP:</strong> True positives</li>
-                <li><strong>TN:</strong> True negatives</li>
-                <li><strong>FP:</strong> False positives</li>
-                <li><strong>FN:</strong> False negatives</li>
-            </ul>
-            <p><strong>Limitations:</strong> Can be misleading in imbalanced datasets.</p>
-        </div>
-
-        <div class="metric">
-            <h3>2. Precision</h3>
-            <p><strong>Definition:</strong> The proportion of positive predictions that were actually correct.</p>
-            <p class="formula">Precision = TP / (TP + FP)</p>
-            <p><strong>Interpretation:</strong> Measures the model's ability to avoid false positives.</p>
-        </div>
-
-        <div class="metric">
-            <h3>3. Recall</h3>
-            <p><strong>Definition:</strong> The proportion of actual positive instances that were correctly predicted.
-            </p>
-            <p class="formula">Recall = TP / (TP + FN)</p>
-            <p><strong>Interpretation:</strong> Measures the model's ability to avoid false negatives.</p>
-        </div>
-
-        <div class="metric">
-            <h3>4. F1-Score</h3>
-            <p><strong>Definition:</strong> The harmonic mean of precision and recall.</p>
-            <p class="formula">F1-score = 2 * (Precision * Recall) / (Precision + Recall)</p>
-            <p><strong>Interpretation:</strong> Provides a balanced measure of precision and recall, useful when the
-                class distribution is uneven.</p>
-        </div>
-
-        <div class="metric">
-            <h3>5. ROC Curve (Receiver Operating Characteristic Curve)</h3>
-            <p><strong>Definition:</strong> A plot that shows the true positive rate (TPR) against the false positive
-                rate (FPR) for different classification thresholds.</p>
-            <p><strong>AUC (Area Under the Curve):</strong> The area under the ROC curve, which quantifies the overall
-                ability of the model to discriminate between classes.</p>
-            <p><strong>Interpretation:</strong></p>
-            <ul>
-                <li>A higher AUC indicates better performance.</li>
-                <li>An AUC of 1 represents perfect classification, while an AUC of 0.5 represents random guessing.</li>
-            </ul>
-        </div>
-
-        <h2>Choosing the Right Metrics</h2>
-        <p>The choice of evaluation metrics depends on the specific requirements of your problem. Consider the following
-            factors:</p>
+    <section id="headline-strategies">
+        <h2>Crafting Powerful Headlines</h2>
+        <p>
+            The headline is the first thing readers see. A compelling headline should be clear, engaging, and encourage
+            curiosity.
+        </p>
+        <h3>Characteristics of an Effective Headline:</h3>
         <ul>
-            <li><strong>Class imbalance:</strong> If the classes are imbalanced, precision, recall, and F1-score may be
-                more informative than accuracy.</li>
-            <li><strong>Cost of misclassification:</strong> If false positives or false negatives have different costs,
-                you may want to prioritize precision or recall accordingly.</li>
-            <li><strong>Trade-off between precision and recall:</strong> The choice between precision and recall depends
-                on the specific application. For example, in a medical diagnosis problem, you might prioritize recall to
-                avoid false negatives.</li>
+            <li><strong>Clarity:</strong> The message should be easily understood.</li>
+            <li><strong>Conciseness:</strong> Keep it short and impactful.</li>
+            <li><strong>Relevance:</strong> Ensure it aligns with your audience’s interests.</li>
+            <li><strong>Emotion:</strong> Use words that evoke curiosity or urgency.</li>
         </ul>
-        <p class="note">By understanding and using these evaluation metrics, you can effectively assess the performance
-            of your classification models and make informed decisions about model selection and tuning.</p>
-    </div>
+        <h3>Examples:</h3>
+        <ul>
+            <li><strong>Weak:</strong> "How to Write Good Content"</li>
+            <li><strong>Strong:</strong> "10 Proven Strategies to Write Engaging Content That Converts"</li>
+        </ul>
+    </section>
+
+    <section id="structuring-content">
+        <h2>Content Structuring Techniques</h2>
+        <p>
+            Once the headline grabs attention, the content needs to be structured in a way that maintains engagement.
+            Here are effective methods:
+        </p>
+
+        <div class="structure-method">
+            <h3>1. The Inverted Pyramid</h3>
+            <p>
+                This journalistic approach places the most important information at the beginning, followed by
+                supporting details and background information.
+            </p>
+            <h4>Best For:</h4>
+            <ul>
+                <li>News articles</li>
+                <li>Press releases</li>
+                <li>Business reports</li>
+            </ul>
+        </div>
+
+        <div class="structure-method">
+            <h3>2. The Problem-Solution Format</h3>
+            <p>
+                Start by addressing a pain point your audience faces, then provide a clear solution.
+            </p>
+            <h4>Best For:</h4>
+            <ul>
+                <li>Blog posts</li>
+                <li>Marketing copy</li>
+                <li>Product descriptions</li>
+            </ul>
+        </div>
+
+        <div class="structure-method">
+            <h3>3. The Storytelling Approach</h3>
+            <p>
+                Humans are naturally drawn to stories. Using narratives makes content more relatable and memorable.
+            </p>
+            <h4>Best For:</h4>
+            <ul>
+                <li>Brand storytelling</li>
+                <li>Personal blogs</li>
+                <li>Case studies</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="visual-structure">
+        <h2>Enhancing Readability with Visual Formatting</h2>
+        <p>
+            Proper formatting helps break down complex ideas into digestible pieces, making it easier for readers to
+            navigate content.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Formatting Element</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Headings (H1, H2, H3)</strong></td>
+                    <td>Creates a structured hierarchy for easy navigation.</td>
+                    <td>"Top 5 Strategies for Content Writing" (H1) → "Strategy 1: Storytelling" (H2)</td>
+                </tr>
+                <tr>
+                    <td><strong>Bullet Points</strong></td>
+                    <td>Condenses information into easily scannable lists.</td>
+                    <td>✔ Fast readability, ✔ Easy comprehension</td>
+                </tr>
+                <tr>
+                    <td><strong>Bold & Italics</strong></td>
+                    <td>Emphasizes key points and adds variation.</td>
+                    <td>"The <strong>best way</strong> to improve engagement is by <em>understanding your
+                            audience</em>."</td>
+                </tr>
+                <tr>
+                    <td><strong>Whitespace</strong></td>
+                    <td>Avoids clutter and makes content visually appealing.</td>
+                    <td>Separate sections clearly instead of overwhelming text blocks.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="call-to-action">
+        <h2>Crafting a Strong Call to Action (CTA)</h2>
+        <p>
+            A well-crafted CTA guides readers on what to do next—whether it’s subscribing, purchasing, or engaging with
+            your content.
+        </p>
+        <h3>Effective CTA Strategies:</h3>
+        <ul>
+            <li><strong>Action-Oriented:</strong> Use strong verbs like "Download," "Subscribe," or "Get Started."</li>
+            <li><strong>Urgency:</strong> Create a sense of now—"Limited Offer!"</li>
+            <li><strong>Value-Driven:</strong> Highlight the benefit—"Get Your Free Guide Now."</li>
+        </ul>
+
+        <h3>Examples:</h3>
+        <ul>
+            <li><strong>Weak:</strong> "Click here for more info."</li>
+            <li><strong>Strong:</strong> "Start Your Free Trial Today & Unlock Exclusive Benefits!"</li>
+        </ul>
+    </section>
+
+    <section id="final-thoughts">
+        <h2>Final Thoughts</h2>
+        <p>
+            Structuring content effectively ensures that your message is clear, engaging, and action-driven. Whether
+            using headlines,
+            storytelling, or strategic formatting, applying these techniques will help maximize the impact of your
+            writing.
+        </p>
+        <!-- <a href="page4.html" class="button">Continue to Page 4: Optimizing Content for SEO & Engagement</a>
+        -->
+    </section>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

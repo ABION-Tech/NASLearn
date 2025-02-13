@@ -4,76 +4,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Advertising</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: black;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
         }
 
-        .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        h1 {
+        h1,
+        h2,
+        h3 {
             color: #007BFF;
-            /* Blue accent for main heading */
+            /* Blue accent */
         }
 
-        h2 {
-            color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 30px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .ad-section {
-            margin-top: 20px;
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
             border-left: 5px solid #007BFF;
-            /* Blue accent border */
             background-color: #f8f9fa;
-            /* Light gray background for each section */
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #0073e6;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #d6eaff;
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
-</head>
 
 <body>
+    <header>
+        <h1>Social Media Advertising & Paid Promotions</h1>
+        <p>Learn how to leverage paid advertising on social media to increase brand awareness, engagement, and
+            conversions.</p>
+    </header>
 
-    <div class="container">
-        <h1>Social Media Advertising</h1>
+    <section id="intro">
+        <h2>1. Why Invest in Social Media Advertising?</h2>
+        <p>
+            Organic reach on social media is declining, making paid advertising an essential tool for businesses. Social
+            media ads allow brands to:
+        </p>
+        <ul>
+            <li><strong>Reach Targeted Audiences:</strong> Ads can be shown to specific demographics, interests, and
+                behaviors.</li>
+            <li><strong>Boost Engagement:</strong> Increase likes, comments, and shares through strategic promotions.
+            </li>
+            <li><strong>Generate Leads & Sales:</strong> Drive conversions with compelling ad campaigns.</li>
+            <li><strong>Retarget Potential Customers:</strong> Show ads to users who have interacted with your brand
+                before.</li>
+            <li><strong>Track & Optimize Performance:</strong> Measure ad effectiveness using analytics and improve ROI.
+            </li>
+        </ul>
+    </section>
 
-        <div class="ad-section">
-            <h2>Facebook Ads:</h2>
-            <ul>
-                <li><strong>Overview:</strong> Facebook ads allow for detailed targeting based on user data, enabling
-                    businesses to reach specific audiences.</li>
-                <li><strong>Ad Formats:</strong> Options include image ads, video ads, carousel ads, and stories.</li>
-                <li><strong>Real-World Example:</strong> Airbnb effectively uses Facebook Ads to showcase unique
-                    listings and promote travel experiences to targeted audiences.</li>
-            </ul>
+    <section id="ad-types">
+        <h2>2. Types of Social Media Ads</h2>
+        <p>Each social media platform offers unique ad formats tailored to different campaign goals.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Platform</th>
+                    <th>Ad Type</th>
+                    <th>Best Use Case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Facebook</td>
+                    <td>Image, Video, Carousel, Lead Ads</td>
+                    <td>Brand awareness, lead generation, product promotion</td>
+                </tr>
+                <tr>
+                    <td>Instagram</td>
+                    <td>Story Ads, Reels Ads, Shopping Ads</td>
+                    <td>Visual engagement, e-commerce sales</td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td>Promoted Tweets, Follower Ads</td>
+                    <td>Audience growth, trending topic promotions</td>
+                </tr>
+                <tr>
+                    <td>LinkedIn</td>
+                    <td>Sponsored Content, InMail Ads</td>
+                    <td>B2B marketing, professional networking</td>
+                </tr>
+                <tr>
+                    <td>TikTok</td>
+                    <td>In-Feed Ads, Branded Hashtag Challenges</td>
+                    <td>Engaging younger audiences, viral campaigns</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="ad-targeting">
+        <h2>3. Ad Targeting Strategies</h2>
+        <p>
+            Successful social media ads rely on precise targeting to ensure the right message reaches the right
+            audience.
+        </p>
+        <h3>Targeting Options:</h3>
+        <ul>
+            <li><strong>Demographic Targeting:</strong> Age, gender, education level, and relationship status.</li>
+            <li><strong>Interest-Based Targeting:</strong> Hobbies, likes, and preferences.</li>
+            <li><strong>Behavioral Targeting:</strong> Online activities, purchasing behavior, and interactions.</li>
+            <li><strong>Lookalike Audiences:</strong> Target users similar to existing customers.</li>
+            <li><strong>Retargeting:</strong> Show ads to people who previously visited your website or social media
+                page.</li>
+        </ul>
+    </section>
+
+    <section id="budgeting">
+        <h2>4. Budgeting & Bidding Strategies</h2>
+        <p>
+            Budgeting correctly ensures cost-effective campaigns that maximize ROI. Platforms offer various bidding
+            models:
+        </p>
+        <h3>Common Bidding Strategies:</h3>
+        <ul>
+            <li><strong>Cost-Per-Click (CPC):</strong> Pay only when someone clicks your ad.</li>
+            <li><strong>Cost-Per-Mille (CPM):</strong> Pay for every 1,000 impressions.</li>
+            <li><strong>Cost-Per-Action (CPA):</strong> Pay when a specific action (signup, purchase) is completed.</li>
+            <li><strong>Cost-Per-View (CPV):</strong> Pay when users watch a certain percentage of your video ad.</li>
+        </ul>
+        <p>It’s crucial to test different bidding strategies and adjust budgets based on performance data.</p>
+    </section>
+
+    <section id="ad-optimization">
+        <h2>5. Optimizing & Measuring Ad Performance</h2>
+        <p>
+            Tracking performance is key to improving future campaigns. Most platforms provide analytics tools to measure
+            key metrics.
+        </p>
+
+        <h3>Key Performance Indicators (KPIs):</h3>
+        <ul>
+            <li><strong>Click-Through Rate (CTR):</strong> Percentage of users who click the ad after seeing it.</li>
+            <li><strong>Conversion Rate:</strong> Percentage of users who take a desired action (purchase, signup).</li>
+            <li><strong>Engagement Rate:</strong> Likes, comments, shares, and interactions.</li>
+            <li><strong>Return on Ad Spend (ROAS):</strong> Revenue generated compared to ad spend.</li>
+            <li><strong>Cost-Per-Lead (CPL):</strong> Cost of acquiring a new lead.</li>
+        </ul>
+
+        <h3>Ad Optimization Techniques:</h3>
+        <ul>
+            <li><strong>A/B Testing:</strong> Test different ad variations to see which performs best.</li>
+            <li><strong>Refine Targeting:</strong> Adjust audience segments based on engagement data.</li>
+            <li><strong>Improve Ad Creative:</strong> Use compelling visuals, strong headlines, and clear CTAs.</li>
+            <li><strong>Adjust Budget Allocation:</strong> Invest more in high-performing campaigns.</li>
+            <li><strong>Monitor & Adapt:</strong> Track analytics regularly and tweak strategies accordingly.</li>
+        </ul>
+    </section>
+
+
+
+
+
+
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
         </div>
-
-        <div class="ad-section">
-            <h2>Instagram Ads:</h2>
-            <ul>
-                <li><strong>Overview:</strong> Instagram ads integrate seamlessly into the platform's aesthetic,
-                    appealing to users with visually striking content.</li>
-                <li><strong>Ad Formats:</strong> Include photo ads, video ads, story ads, and shopping ads.</li>
-                <li><strong>Real-World Example:</strong> Nike utilizes Instagram ads to feature new product launches and
-                    user-generated content, creating community engagement.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    </div>-->
 </body>
 
 </html>

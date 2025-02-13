@@ -4,144 +4,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Design Concepts</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>NAS Course</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: white;
-            color: black;
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
         }
 
         h1,
         h2,
         h3 {
-            color: #007bff;
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        h1 {
-            margin-top: 20px;
-            font-size: 2.5rem;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        h2 {
-            margin-top: 15px;
-            font-size: 2rem;
+        .custom-section {
+            margin-bottom: 40px;
         }
 
-        h3 {
-            margin-top: 10px;
-            font-size: 1.5rem;
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .section {
-            margin-bottom: 30px;
+        .custom-section ul {
+            margin-left: 20px;
         }
 
-        .misconception,
-        .case-study,
-        .discussion-question {
-            border-left: 4px solid #007bff;
-            padding-left: 15px;
-            margin-bottom: 20px;
+        .custom-section ul li {
+            margin-bottom: 10px;
         }
 
-        .case-study {
-            background-color: #f9f9f9;
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
-            border-radius: 5px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
-        .discussion-question {
-            background-color: #f1f1f1;
-            padding: 15px;
-            border-radius: 5px;
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
         }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+    /* Responsive Design Table Styling */
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    }
+    th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    }
+    th {
+    background-color: #f4f4f4;
+    }
+
+    /* Responsive Layout */
+    .container {
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+    }
+
+    .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    }
+
+    .box {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+    .flex-container {
+    flex-direction: column;
+    }
+    }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="section">
-            <h1>Common Misconceptions, Case Studies, and Discussion Questions</h1>
-        </div>
+    <header>
+        <h1>Module 4: Web Development Fundamentals</h1>
+        <h2>Page 5: Responsive Web Design</h2>
+    </header>
 
-        <div class="section">
-            <h2>Common Misconceptions</h2>
-            <div class="misconception">
-                <strong>1. Layout Design is Only About Aesthetics:</strong> While visual appeal is important, layout
-                design also plays a crucial role in improving readability, usability, and overall effectiveness.
-            </div>
-            <div class="misconception">
-                <strong>2. Layout Design is a One-Size-Fits-All Process:</strong> The best layout design approach can
-                vary depending on the specific project, target audience, and content.
-            </div>
-            <div class="misconception">
-                <strong>3. Grid Systems Are Restrictive:</strong> Grid systems can provide a helpful framework for
-                creating structured and organized layouts without limiting creativity.
-            </div>
-            <div class="misconception">
-                <strong>4. White Space is Wasted Space:</strong> Effective use of white space can enhance the visual
-                appeal and readability of a design.
-            </div>
-        </div>
+    <section class="container">
+        <h2>What is Responsive Web Design?</h2>
+        <p>Responsive web design ensures that websites work well on all devices, including desktops, tablets, and
+            smartphones. It adapts content layout based on screen size.</p>
+    </section>
 
-        <div class="section">
-            <h2>Case Studies</h2>
-            <div class="case-study">
-                <strong>1. The New York Times Redesign:</strong> The New York Times' 2014 redesign featured a
-                significant overhaul of its layout, resulting in a more legible and visually appealing newspaper. The
-                redesign emphasized better organization of content, leading to improved reader engagement.
-            </div>
-            <div class="case-study">
-                <strong>2. Apple's Minimalist Layouts:</strong> Apple's products are known for their clean and
-                minimalist layouts, which contribute to their intuitive user experience. This approach helps users focus
-                on the content without distraction, exemplifying effective layout design principles.
-            </div>
-            <div class="case-study">
-                <strong>3. The Economist's Grid-Based Layout:</strong> The Economist magazine uses a grid-based layout
-                to create a consistent and visually appealing design. This method aids in maintaining a structured flow
-                of information, enhancing reader comprehension.
-            </div>
-            <div class="case-study">
-                <strong>4. The Guardian's Innovative Layouts:</strong> The Guardian newspaper has experimented with
-                various layout techniques, including the "Guardian Eye" layout and the "Big Picture" format, pushing the
-                boundaries of traditional newspaper design to captivate audiences.
-            </div>
-        </div>
+    <section class="container">
+        <h2>Key Principles of Responsive Design</h2>
+        <table>
+            <tr>
+                <th>Concept</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Fluid Grid Layout</td>
+                <td>Uses percentage-based widths instead of fixed units.</td>
+                <td><code>width: 80%;</code></td>
+            </tr>
+            <tr>
+                <td>Flexible Images</td>
+                <td>Ensures images resize correctly.</td>
+                <td><code>max-width: 100%;</code></td>
+            </tr>
+            <tr>
+                <td>Media Queries</td>
+                <td>Adjusts styles based on screen size.</td>
+                <td><code>@media (max-width: 768px) { ... }</code></td>
+            </tr>
+            <tr>
+                <td>Mobile-First Design</td>
+                <td>Starts with mobile layout and scales up.</td>
+                <td><code>@media (min-width: 1024px) { ... }</code></td>
+            </tr>
+        </table>
+    </section>
 
-        <div class="section">
-            <h2>Discussion Questions</h2>
-            <div class="discussion-question">
-                <strong>1. How can layout design be used to improve the readability and legibility of a design?</strong>
-                <p>Discuss the role of typography, white space, and visual hierarchy in enhancing readability.</p>
-            </div>
-            <div class="discussion-question">
-                <strong>2. What are the key principles of layout design, and how can they be applied to different types
-                    of projects?</strong>
-                <p>Explore the concepts of balance, contrast, emphasis, movement, pattern, repetition, rhythm, and
-                    unity.</p>
-            </div>
-            <div class="discussion-question">
-                <strong>3. How can grid systems be used to create effective and organized layouts?</strong>
-                <p>Discuss the benefits and limitations of different grid systems.</p>
-            </div>
-            <div class="discussion-question">
-                <strong>4. What is the role of white space in layout design?</strong>
-                <p>Explore how white space can be used to create visual interest, improve readability, and enhance the
-                    overall aesthetic of a design.</p>
-            </div>
-            <div class="discussion-question">
-                <strong>5. How can layout design be used to improve the user experience of digital products?</strong>
-                <p>Discuss the importance of responsive design, intuitive navigation, and clear calls to action.</p>
-            </div>
-        </div>
-    </div>
+    <section class="container">
+        <h2>Creating a Responsive Layout</h2>
+        <p>Modern CSS techniques like Flexbox and Grid help build responsive designs.</p>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="flex-container">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Media Queries Example</h2>
+        <p>The following CSS ensures a layout change when the screen width is less than 768px.</p>
+        <pre>
+      @media (max-width: 768px) {
+          .flex-container {
+              flex-direction: column;
+          }
+      }
+  </pre>
+    </section>
+
+    <section class="container">
+        <h2>Best Practices for Responsive Web Design</h2>
+        <ul>
+            <li>Use a mobile-first approach.</li>
+            <li>Minimize the use of absolute positioning.</li>
+            <li>Optimize images for different screen sizes.</li>
+            <li>Test on multiple devices and browsers.</li>
+            <li>Keep navigation simple and user-friendly.</li>
+        </ul>
+    </section>
+
+
+
+
+
+
+    </main>
+    <!-- Video Section 
+     <div class="video-container">
+        <div class="gradient-border">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+    </div>-->
 </body>
 
 </html>
