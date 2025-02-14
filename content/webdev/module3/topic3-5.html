@@ -128,7 +128,134 @@
     </style>
 
 <body>
-    <main>
+    <header>
+        <h1>Module 3: Responsive Web Design</h1>
+        <h2>Page 5: CSS Frameworks for Responsive Design</h2>
+    </header>
+
+    <section>
+        <h3>Introduction to CSS Frameworks</h3>
+        <p>CSS frameworks help developers build responsive websites faster by providing pre-written CSS styles and components. These frameworks include **grid systems, flexbox utilities, and ready-made UI components** that ensure a consistent, responsive layout across all devices.</p>
+
+        <h4>Why Use a CSS Framework?</h4>
+        <ul>
+            <li>Saves time by providing pre-designed elements.</li>
+            <li>Ensures mobile-first, responsive layouts.</li>
+            <li>Reduces the need to write extensive custom CSS.</li>
+            <li>Standardizes design across projects.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Popular CSS Frameworks for Responsive Design</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Framework</th>
+                    <th>Key Features</th>
+                    <th>Website</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bootstrap</td>
+                    <td>Grid system, pre-designed components, mobile-first</td>
+                    <td><a href="https://getbootstrap.com/" target="_blank">getbootstrap.com</a></td>
+                </tr>
+                <tr>
+                    <td>Tailwind CSS</td>
+                    <td>Utility-first, flexible customization, mobile-friendly</td>
+                    <td><a href="https://tailwindcss.com/" target="_blank">tailwindcss.com</a></td>
+                </tr>
+                <tr>
+                    <td>Foundation</td>
+                    <td>Responsive grid, accessibility-friendly, flexible UI</td>
+                    <td><a href="https://get.foundation/" target="_blank">get.foundation</a></td>
+                </tr>
+                <tr>
+                    <td>Bulma</td>
+                    <td>Flexbox-based, lightweight, easy to use</td>
+                    <td><a href="https://bulma.io/" target="_blank">bulma.io</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <style>
+        /* Styling for the Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <section>
+        <h3>Example: Using Bootstrap for a Responsive Layout</h3>
+        <p>Bootstrap provides a **12-column grid system** that makes designing responsive layouts easy. Below is an example of a responsive three-column layout using Bootstrap.</p>
+
+        <pre>
+            <code>
+&lt;!-- Add Bootstrap CDN --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"&gt;
+
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-4"&gt;Column 1&lt;/div&gt;
+        &lt;div class="col-md-4"&gt;Column 2&lt;/div&gt;
+        &lt;div class="col-md-4"&gt;Column 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>Example: Using Tailwind CSS</h3>
+        <p>Tailwind CSS is a **utility-first framework** that allows quick and flexible styling.</p>
+
+        <pre>
+            <code>
+&lt;!-- Add Tailwind CSS CDN --&gt;
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+
+&lt;div class="flex flex-wrap"&gt;
+    &lt;div class="w-full md:w-1/3 p-4 bg-blue-200"&gt;Column 1&lt;/div&gt;
+    &lt;div class="w-full md:w-1/3 p-4 bg-green-200"&gt;Column 2&lt;/div&gt;
+    &lt;div class="w-full md:w-1/3 p-4 bg-red-200"&gt;Column 3&lt;/div&gt;
+&lt;/div&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>Summary</h3>
+        <p>CSS frameworks simplify responsive web design. **Bootstrap, Tailwind CSS, Foundation, and Bulma** are popular choices that help developers create responsive layouts quickly and efficiently.</p>
+
+        <p>Next, we will conclude this module with a discussion and assignments to test your understanding of responsive web design.</p>
+    </section>
+</body>
+
 
 
 

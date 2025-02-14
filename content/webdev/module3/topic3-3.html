@@ -128,9 +128,122 @@
     </style>
 
 <body>
-    <main>
+    <header>
+        <h1>Module 3: Responsive Web Design</h1>
+        <h2>Page 3: Using Media Queries for Responsive Design</h2>
+    </header>
 
+    <section>
+        <h3>Introduction to Media Queries</h3>
+        <p>Media queries are a fundamental part of responsive web design, allowing developers to apply different styles based on screen size, resolution, or device type. This helps create websites that adjust seamlessly across desktops, tablets, and mobile devices.</p>
 
+        <h4>Key Features of Media Queries:</h4>
+        <ul>
+            <li>Enable device-specific styling.</li>
+            <li>Allow changes in layout and visibility.</li>
+            <li>Support responsive typography and images.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Basic Syntax of Media Queries</h3>
+        <p>A media query consists of a CSS rule that applies only when a specific condition is met, such as screen width.</p>
+
+        <h4>Example: Basic Media Query</h4>
+        <pre>
+            <code>
+/* Default styling for large screens */
+body {
+    font-size: 18px;
+}
+
+/* Apply styles for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>Creating a Fully Responsive Layout</h3>
+        <p>By combining **Flexbox/Grid** with media queries, we can build a fully responsive design that adjusts based on screen size.</p>
+
+        <h4>Example: Responsive Two-Column Layout</h4>
+        <pre>
+            <code>
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Make it a single column on smaller screens */
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+}
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>Media Queries for Different Devices</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Device Type</th>
+                    <th>Screen Width</th>
+                    <th>Example Media Query</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mobile</td>
+                    <td>Up to 600px</td>
+                    <td><code>@media screen and (max-width: 600px) { ... }</code></td>
+                </tr>
+                <tr>
+                    <td>Tablet</td>
+                    <td>601px - 1024px</td>
+                    <td><code>@media screen and (min-width: 601px) and (max-width: 1024px) { ... }</code></td>
+                </tr>
+                <tr>
+                    <td>Desktop</td>
+                    <td>1025px and above</td>
+                    <td><code>@media screen and (min-width: 1025px) { ... }</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <style>
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+
+    <section>
+        <h3>Summary</h3>
+        <p>Media queries allow developers to create flexible designs that work across multiple devices. By adjusting typography, layout, and visibility based on screen width, we can enhance the user experience.</p>
+        
+        <p>In the next section, we will explore **Responsive Images and Adaptive Media**.</p>
+    </section>
+</body>
 
 
 

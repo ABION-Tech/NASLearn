@@ -128,8 +128,73 @@
     </style>
 
 <body>
-    <main>
+    <header>
+        <h1>Module 3: Responsive Web Design</h1>
+        <h2>Introduction to Responsive Web Design</h2>
+    </header>
 
+    <section>
+        <h3>What is Responsive Web Design?</h3>
+        <p>Responsive Web Design (RWD) is a web development approach that ensures a website dynamically adjusts to different screen sizes and devices. It allows users to have an optimal viewing experience regardless of whether they are using a mobile phone, tablet, or desktop.</p>
+        
+        <p>Instead of designing separate versions of a website for different devices, responsive web design uses flexible layouts, fluid images, and CSS media queries to create a seamless user experience.</p>
+    </section>
+
+    <section>
+        <h3>Why is Responsive Web Design Important?</h3>
+        <ul>
+            <li><strong>Mobile Usage Growth:</strong> A majority of web traffic comes from mobile devices, making responsiveness essential.</li>
+            <li><strong>SEO Benefits:</strong> Google prioritizes mobile-friendly websites in search rankings.</li>
+            <li><strong>Improved User Experience:</strong> Users can easily navigate and interact with a site on any screen size.</li>
+            <li><strong>Cost-Effective:</strong> No need to maintain separate mobile and desktop versions of a website.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Core Principles of Responsive Web Design</h3>
+        <p>There are three main techniques that make a website responsive:</p>
+        <ol>
+            <li><strong>Fluid Grid Layouts:</strong> Instead of fixed pixel widths, elements are sized proportionally using percentages.</li>
+            <li><strong>Flexible Images:</strong> Images automatically adjust to fit the screen size using CSS properties like <code>max-width: 100%</code>.</li>
+            <li><strong>Media Queries:</strong> CSS rules that apply different styles based on screen size, ensuring content is optimized for various devices.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h3>Example: Responsive Layout Using CSS</h3>
+        <p>Below is a simple example of how a responsive layout can be implemented using CSS.</p>
+
+        <pre>
+            <code>
+/* Base styles for all devices */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Responsive styling using media queries */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>Summary</h3>
+        <p>Responsive web design is a crucial skill for modern web developers. By using fluid grids, flexible images, and media queries, websites can provide an optimal user experience on any device. In the next section, we will explore CSS Flexbox and Grid, which are essential tools for creating responsive layouts.</p>
+    </section>
+</body>
 
 
 
@@ -137,16 +202,12 @@
 
 
     </main>
-    <!-- Video Section 
+    Video Section 
      <div class="video-container">
         <div class="gradient-border">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/9o5xsELWy5Q?si=Dk32ae5TNza5NUTF"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/x4u1yp3Msao?si=z62AM1Nfs4gfYzT_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-    </div>-->
+    </div>
 </body>
 
 </html>

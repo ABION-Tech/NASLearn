@@ -130,104 +130,70 @@
 <body>
     <header>
         <h1>Module 3: Responsive Web Design</h1>
-        <h2>Page 4: Responsive Images and Adaptive Media</h2>
+        <h2>Page 6: Discussion and Assignment</h2>
     </header>
 
     <section>
-        <h3>Introduction to Responsive Images</h3>
-        <p>Images are a crucial part of web design, but if not handled properly, they can slow down page load times and create layout issues on different screen sizes. **Responsive images** adapt to various screen sizes, ensuring optimal display and performance.</p>
+        <h3>Discussion: The Role of CSS Frameworks in Modern Web Design</h3>
+        <p>
+            CSS frameworks have revolutionized the way websites are built by providing a structured and responsive layout system. However, some developers prefer writing custom CSS to have full control over their designs.
+        </p>
 
-        <h4>Why Use Responsive Images?</h4>
+        <h4>Discussion Questions</h4>
         <ul>
-            <li>Improves website performance by loading optimized images.</li>
-            <li>Enhances user experience across different devices.</li>
-            <li>Reduces unnecessary bandwidth usage.</li>
+            <li>What are the advantages and disadvantages of using a CSS framework like Bootstrap or Tailwind CSS?</li>
+            <li>In what scenarios would you choose a CSS framework over writing custom CSS?</li>
+            <li>Do you think CSS frameworks limit creativity, or do they enhance efficiency? Why?</li>
+            <li>How does mobile-first design impact the way frameworks like Bootstrap structure their grid systems?</li>
         </ul>
     </section>
 
     <section>
-        <h3>Using the <code>srcset</code> Attribute for Adaptive Images</h3>
-        <p>The <code>srcset</code> attribute in the <code>&lt;img&gt;</code> tag allows browsers to choose the best image based on the screen size.</p>
+        <h3>Assignment: Hands-on CSS Framework Application</h3>
+        <p>For this assignment, you will practice using a CSS framework to create a simple responsive webpage.</p>
 
-        <h4>Example: Responsive Image with <code>srcset</code></h4>
-        <pre>
-            <code>
-&lt;img src="default.jpg" 
-     srcset="small.jpg 600w, medium.jpg 1000w, large.jpg 1600w" 
-     sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 800px" 
-     alt="Example of a responsive image"&gt;
-            </code>
-        </pre>
-        <p><strong>How It Works:</strong></p>
+        <h4>Instructions:</h4>
+        <ol>
+            <li>Choose a CSS framework (**Bootstrap, Tailwind CSS, Foundation, or Bulma**).</li>
+            <li>Create a responsive webpage that includes:
+                <ul>
+                    <li>A **navigation bar**</li>
+                    <li>A **hero section** with a background image and text</li>
+                    <li>A **three-column section** displaying different services or features</li>
+                    <li>A **footer** with contact information</li>
+                </ul>
+            </li>
+            <li>Ensure the layout is fully responsive on mobile, tablet, and desktop screens.</li>
+            <li>Use at least **one pre-built component** from the framework (e.g., a button, card, or modal).</li>
+            <li>Submit your HTML and CSS files or provide a live link to your hosted project.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h3>Bonus Challenge</h3>
+        <p>If you want to go the extra mile, try implementing both **Bootstrap and Tailwind CSS** on separate pages to compare their responsiveness and ease of use.</p>
+    </section>
+
+    <section>
+        <h3>Submission Guidelines</h3>
+        <p>Submit your project as a **GitHub repository, CodePen link, or a ZIP file** containing your HTML, CSS, and any images used.</p>
+
+        <h4>Deadline:</h4>
+        <p>All assignments should be submitted by the end of the week.</p>
+
+        <h4>Grading Criteria:</h4>
         <ul>
-            <li>**small.jpg** loads on screens **≤600px**.</li>
-            <li>**medium.jpg** loads on screens **≤1000px**.</li>
-            <li>**large.jpg** loads for larger screens.</li>
-            <li>The **sizes** attribute tells the browser how much space the image will take.</li>
+            <li>Proper use of a CSS framework (30%)</li>
+            <li>Responsiveness across devices (30%)</li>
+            <li>Creativity and design quality (20%)</li>
+            <li>Code cleanliness and structure (20%)</li>
         </ul>
     </section>
 
     <section>
-        <h3>Using the <code>picture</code> Element for Art Direction</h3>
-        <p>The <code>picture</code> element allows developers to serve different images based on device type or screen resolution.</p>
-
-        <h4>Example: The <code>picture</code> Element</h4>
-        <pre>
-            <code>
-&lt;picture&gt;
-    &lt;source srcset="image-mobile.jpg" media="(max-width: 600px)"&gt;
-    &lt;source srcset="image-tablet.jpg" media="(max-width: 1024px)"&gt;
-    &lt;img src="image-desktop.jpg" alt="Responsive Image Example"&gt;
-&lt;/picture&gt;
-            </code>
-        </pre>
-        <p><strong>How It Works:</strong></p>
-        <ul>
-            <li>Mobile users get **image-mobile.jpg**.</li>
-            <li>Tablet users get **image-tablet.jpg**.</li>
-            <li>Desktop users get **image-desktop.jpg**.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h3>Responsive Videos</h3>
-        <p>To make videos responsive, we need to ensure they resize properly within their containers.</p>
-
-        <h4>Example: Making Embedded Videos Responsive</h4>
-        <pre>
-            <code>
-&lt;div class="video-container"&gt;
-    &lt;iframe src="https://www.youtube.com/embed/exampleID" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-            </code>
-        </pre>
-    </section>
-
-    <style>
-        /* Responsive Video Styling */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-
-    <section>
-        <h3>Summary</h3>
-        <p>Optimizing images and videos for responsiveness ensures a fast, visually appealing website. The use of **srcset**, **picture**, and **responsive videos** enhances the experience across different devices.</p>
-
-        <p>In the next section, we will cover **CSS Frameworks for Responsive Design**.</p>
+        <h3>Conclusion</h3>
+        <p>By completing this assignment, you will gain hands-on experience using CSS frameworks, which will help you build modern, responsive websites efficiently.</p>
+        <p>Good luck, and happy coding! 🚀</p>
     </section>
 </body>
 

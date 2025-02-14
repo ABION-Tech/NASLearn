@@ -128,8 +128,134 @@
     </style>
 
 <body>
-    <main>
+    <header>
+        <h1>Module 3: Responsive Web Design</h1>
+        <h2>Page 2: CSS Flexbox and Grid for Responsive Layouts</h2>
+    </header>
 
+    <section>
+        <h3>Introduction to CSS Flexbox</h3>
+        <p>Flexbox is a CSS layout module that makes it easy to align and distribute elements inside a container, even when their sizes are unknown. It is particularly useful for creating responsive navigation bars, sidebars, and dynamic layouts.</p>
+        
+        <h4>Key Features of Flexbox:</h4>
+        <ul>
+            <li>Allows elements to grow or shrink dynamically.</li>
+            <li>Provides powerful alignment and spacing options.</li>
+            <li>Works efficiently with different screen sizes.</li>
+        </ul>
+
+        <h4>Example: Using Flexbox for a Responsive Navigation Bar</h4>
+        <pre>
+            <code>
+/* Making a navigation bar responsive with Flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+/* Stack items vertically on smaller screens */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>Introduction to CSS Grid</h3>
+        <p>CSS Grid is a two-dimensional layout system that allows developers to create complex and responsive designs with ease. It is perfect for structuring entire web pages or large sections of content.</p>
+
+        <h4>Key Features of CSS Grid:</h4>
+        <ul>
+            <li>Enables precise control over rows and columns.</li>
+            <li>Can create complex layouts without extra HTML elements.</li>
+            <li>Provides flexible sizing options.</li>
+        </ul>
+
+        <h4>Example: Using Grid for a Responsive Layout</h4>
+        <pre>
+            <code>
+/* A simple grid layout for a responsive website */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Making the grid responsive */
+@media screen and (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>Flexbox vs. Grid: When to Use Each?</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Flexbox</th>
+                    <th>Grid</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Best for one-dimensional layouts (either row or column).</td>
+                    <td>Best for two-dimensional layouts (rows and columns).</td>
+                </tr>
+                <tr>
+                    <td>Great for navigation bars, buttons, and aligning items.</td>
+                    <td>Great for designing full-page layouts.</td>
+                </tr>
+                <tr>
+                    <td>Less control over row-column relationships.</td>
+                    <td>Provides precise placement of elements.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <style>
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+
+    <section>
+        <h3>Summary</h3>
+        <p>Both CSS Flexbox and Grid are essential for creating responsive designs. While Flexbox is ideal for handling individual components and simple layouts, CSS Grid is best suited for larger-scale layouts. Mastering both allows developers to build highly adaptable and user-friendly websites.</p>
+
+        <p>In the next section, we will explore how to use media queries to further enhance responsiveness.</p>
+    </section>
+</body>
 
 
 
