@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAS Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #0056b3, #002f6c, #001d4a, #002f6c);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 15px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 420px;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0;
+        }
+
+        .login-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-card h1 {
+            font-size: 2.2rem;
+            color: #0056b3;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .form-control {
+            border: 2px solid #0056b3;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            transition: 0.3s ease;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .form-control:focus {
+            border-color: #002f6c;
+            box-shadow: 0 0 10px rgba(0, 95, 179, 0.6);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #0056b3, #002f6c);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            padding: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #003d80, #0056b3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-footer {
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 1.5rem;
+            color: #555;
+        }
+
+        .login-footer a {
+            color: #0056b3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .login-footer a:hover {
+            color: #003d80;
+            text-decoration: underline;
+        }
+
+        .eye-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: #6c757d;
+            padding: 5px;
+            background-color: transparent;
+            border: none;
+            z-index: 100;
+            cursor: pointer;
+        }
+
+        .eye-btn:hover {
+            color: #000;
+        }
+
+        .mb-3 {
+            position: relative;
+            margin-bottom: 1.5rem !important;
+        }
+
+        #password {
+            padding-right: 40px;
+        }
+
+        .input-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #002f6c;
+        }
+
+        .error-msg {
+            color: #d9534f;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: block;
+            min-height: 1.5rem;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0056b3, #003d80);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Subtle floating animation for login card */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .login-card {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .login-card {
+                padding: 1.8rem;
+                max-width: 95%;
+            }
+            
+            .login-card h1 {
+                font-size: 1.9rem;
+            }
+            
+            .btn-primary {
+                padding: 0.75rem;
+            }
+            
+            .logo {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+        }
+        
+        /* Loading spinner */
+        .spinner {
+            display: none;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-card">
+        <div class="logo-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+        </div>
+        <h1>New Age Skillsphere</h1>
+        <form id="loginForm">
+            <!-- Course Code -->
+            <div class="mb-3">
+                <label for="courseCode" class="input-label">Course Code</label>
+                <input type="text" class="form-control" id="courseCode" placeholder="e.g. NAS/25/AI" required>
+                <small class="form-text text-muted">Format: NAS/Year/Course</small>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label for="password" class="input-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                <button type="button" id="togglePassword" class="eye-btn" aria-label="Show password">
+                    <i id="toggleIcon" class="fas fa-eye-slash"></i>
+                </button>
+                <small class="form-text text-muted">Hint: 1-9</small>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMsg" class="error-msg"></div>
+
+            <!-- Login Button with Spinner -->
+            <button type="submit" class="btn btn-primary w-100 mt-3" id="loginBtn">
+                <span id="loginText">Login</span>
+                <div class="spinner" id="spinner"></div>
+            </button>
+        </form>
+
+        <!-- Footer -->
+        <div class="login-footer">
+            © 2025 New Age Skillsphere </a>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced redirect map with more courses
+        const redirectMap = {
+            "AI": "/AI",
+            "AIML": "/AIML",
+            "PM": "https://newageskills.com.ng/ProjectManagement",
+            "DB": "/Database",
+            "CC": "/CloudComputing",
+            "WD": "/WebDevelopment",
+            "DS": "/DataScience",
+            "CS": "/CyberSecurity",
+            "IOT": "/IoT",
+            "UX": "/UserExperience"
+        };
+
+        // Helper function to extract course code
+        function extractCourseCode(input) {
+            // Remove any spaces and convert to uppercase
+            const cleanInput = input.replace(/\s+/g, '').toUpperCase();
+            
+            // Split by common delimiters: /, ,, |, etc.
+            const parts = cleanInput.split(/[\/,\|]/);
+            
+            // Find the last non-empty part
+            for (let i = parts.length - 1; i >= 0; i--) {
+                if (parts[i]) {
+                    return parts[i];
+                }
+            }
+            
+            return null;
+        }
+
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const courseInput = document.getElementById("courseCode").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMsg = document.getElementById("errorMsg");
+            const loginBtn = document.getElementById("loginBtn");
+            const loginText = document.getElementById("loginText");
+            const spinner = document.getElementById("spinner");
+            
+            // Reset error message
+            errorMsg.textContent = "";
+            
+            // Show loading state
+            loginText.style.display = "none";
+            spinner.style.display = "block";
+            loginBtn.disabled = true;
+            
+            // Simulate network delay
+            setTimeout(function() {
+                // Validate password
+                if (password !== "123456789") {
+                    errorMsg.textContent = "Incorrect password. Hint: 1-9";
+                    loginText.style.display = "inline";
+                    spinner.style.display = "none";
+                    loginBtn.disabled = false;
+                    return;
+                }
+                
+                // Extract course code
+                const courseCode = extractCourseCode(courseInput);
+                
+                if (!courseCode) {
+                    errorMsg.textContent = "Please enter a valid course code";
+                    loginText.style.display = "inline";
+                    spinner.style.display = "none";
+                    loginBtn.disabled = false;
+                    return;
+                }
+                
+                // Check if course exists
+                if (redirectMap[courseCode]) {
+                    // Redirect to the course page
+                    window.location.href = redirectMap[courseCode];
+                } else {
+                    errorMsg.textContent = `Course "${courseCode}" not found. Available courses: ${Object.keys(redirectMap).join(', ')}`;
+                    loginText.style.display = "inline";
+                    spinner.style.display = "none";
+                    loginBtn.disabled = false;
+                }
+            }, 800); // Simulate network delay
+        });
+
+        // Toggle password visibility
+        document.getElementById("togglePassword").addEventListener("click", function() {
+            const passwordField = document.getElementById("password");
+            const toggleIcon = document.getElementById("toggleIcon");
+            
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            }
+        });
+        
+        // Course code autocomplete suggestions
+        const courseCodeInput = document.getElementById("courseCode");
+        courseCodeInput.addEventListener("input", function() {
+            const input = this.value.toUpperCase();
+            const suggestions = Object.keys(redirectMap).filter(code => 
+                code.startsWith(input) || input.includes(code)
+            );
+            
+            if (suggestions.length > 0 && input.length > 1) {
+                // In a real app, you'd show a dropdown with these suggestions
+                console.log("Suggestions:", suggestions.join(", "));
+            }
+        });
+        
+        // Example: Focus on course code field when page loads
+        window.addEventListener('load', function() {
+            document.getElementById('courseCode').focus();
+        });
+    </script>
+</body>
+
+</html>
