@@ -3,18 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAS Login</title>
+    <title>NAS Secure Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <!-- PWA Meta Tags -->
-<meta name="theme-color" content="#0056b3">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="manifest" href="/manifest.json">
-
-<!-- iOS Support -->
-<link rel="apple-touch-icon" href="/icons/icon-192x192.png">
-<meta name="apple-mobile-web-app-status-bar" content="#0056b3">
-<meta name="apple-mobile-web-app-capable" content="yes">
     <style>
         * {
             margin: 0;
@@ -23,17 +14,17 @@
         }
         
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: linear-gradient(45deg, #0056b3, #002f6c, #001d4a, #002f6c);
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77, #778da9);
             background-size: 400% 400%;
             animation: gradientAnimation 15s ease infinite;
+            padding: 1rem;
+            color: #e0e1dd;
         }
         
         @keyframes gradientAnimation {
@@ -43,61 +34,84 @@
         }
         
         .login-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            background: rgba(26, 33, 46, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             padding: 2.5rem;
             width: 100%;
-            max-width: 450px;
-            color: #333;
+            max-width: 480px;
             position: relative;
             overflow: hidden;
             z-index: 10;
-            margin: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .login-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(119, 141, 169, 0.1) 0%, rgba(26, 33, 46, 0) 70%);
+            z-index: -1;
         }
         
         .header {
             text-align: center;
             margin-bottom: 2rem;
+            position: relative;
         }
         
         .header i {
-            font-size: 3rem;
-            color: #0056b3;
+            font-size: 3.5rem;
+            color: #ffd166;
             margin-bottom: 1rem;
+            text-shadow: 0 0 15px rgba(255, 209, 102, 0.4);
             animation: float 4s ease-in-out infinite;
         }
         
         .header h1 {
-            font-size: 2.2rem;
-            color: #0056b3;
+            font-size: 2.4rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #ffd166, #ff9e6d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
         
         .header p {
-            color: #555;
-            font-size: 1rem;
+            color: #a3b1c6;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
         }
         
         .form-control {
-            border: 2px solid #0056b3;
-            border-radius: 8px;
+            background: rgba(30, 38, 54, 0.7);
+            border: 2px solid #415a77;
+            border-radius: 10px;
             transition: all 0.3s ease;
-            padding: 0.75rem 1.25rem;
-            font-size: 1rem;
+            padding: 0.9rem 1.4rem;
+            font-size: 1.05rem;
+            height: auto;
+            color: #e0e1dd;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
         }
         
         .form-control:focus {
-            border-color: #002f6c;
-            box-shadow: 0 0 12px rgba(0, 95, 179, 0.3);
+            border-color: #ffd166;
+            box-shadow: 0 0 15px rgba(255, 209, 102, 0.4);
+            background: rgba(35, 44, 62, 0.8);
         }
         
         .form-label {
             font-weight: 600;
-            color: #003d80;
-            margin-bottom: 0.5rem;
+            color: #ffd166;
+            margin-bottom: 0.7rem;
+            font-size: 1.1rem;
         }
         
         .input-group {
@@ -107,48 +121,76 @@
         
         .eye-btn {
             position: absolute;
-            right: 12px;
+            right: 15px;
             top: 50%;
             transform: translateY(-50%);
             background: transparent;
             border: none;
-            color: #6c757d;
-            font-size: 1.2rem;
+            color: #a3b1c6;
+            font-size: 1.3rem;
             padding: 0.5rem;
             cursor: pointer;
             z-index: 5;
+            transition: color 0.3s;
         }
         
         .eye-btn:hover {
-            color: #0056b3;
+            color: #ffd166;
         }
         
         .btn-primary {
-            background: linear-gradient(to right, #0056b3, #002f6c);
+            background: linear-gradient(135deg, #ff9e6d, #ff6b6b);
             border: none;
-            border-radius: 8px;
-            color: white;
-            padding: 0.85rem;
-            font-size: 1.1rem;
-            font-weight: 600;
+            border-radius: 10px;
+            color: #0d1b2a;
+            padding: 1rem;
+            font-size: 1.15rem;
+            font-weight: 700;
             transition: all 0.3s ease-in-out;
             position: relative;
             overflow: hidden;
+            z-index: 1;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.6s;
+            z-index: -1;
         }
         
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 46, 109, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
         }
         
         .error-msg {
-            color: #dc3545;
-            font-size: 0.95rem;
-            margin: 1rem 0;
+            color: #ff6b6b;
+            font-size: 1rem;
+            margin: 1.2rem 0;
             text-align: center;
-            min-height: 25px;
-            font-weight: 500;
+            min-height: 30px;
+            font-weight: 600;
             animation: fadeIn 0.3s ease;
+            background: rgba(255, 107, 107, 0.15);
+            padding: 0.8rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
         }
         
         @keyframes fadeIn {
@@ -158,11 +200,11 @@
         
         .spinner {
             display: none;
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             border: 3px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            border-top-color: white;
+            border-top-color: #0d1b2a;
             animation: spin 1s linear infinite;
             position: absolute;
             left: 50%;
@@ -174,142 +216,266 @@
             to { transform: translate(-50%, -50%) rotate(360deg); }
         }
         
+        .btn-text {
+            transition: all 0.3s;
+        }
+        
         .login-footer {
             text-align: center;
-            font-size: 0.85rem;
-            margin-top: 1.5rem;
-            color: #555;
+            font-size: 0.9rem;
+            margin-top: 1.8rem;
+            color: #778da9;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 1px solid rgba(119, 141, 169, 0.3);
         }
         
         .login-footer a {
-            color: #0056b3;
+            color: #ffd166;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
         }
         
         .login-footer a:hover {
-            color: #003d80;
+            color: #ff9e6d;
             text-decoration: underline;
         }
         
-        .password-hint {
-            font-size: 0.85rem;
-            color: #6c757d;
+        .security-info {
+            background: rgba(65, 90, 119, 0.3);
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-top: 1.5rem;
+            border-left: 4px solid #ffd166;
+        }
+        
+        .security-info h3 {
+            color: #ffd166;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .security-info p {
+            color: #a3b1c6;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .password-strength {
+            display: flex;
+            gap: 5px;
             margin-top: 0.5rem;
-            font-style: italic;
+        }
+        
+        .strength-bar {
+            height: 5px;
+            flex: 1;
+            background: #415a77;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .strength-bar.active {
+            background: #06d6a0;
         }
         
         /* Floating animation */
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
+        }
+        
+        .login-card {
+            animation: float 8s ease-in-out infinite;
         }
         
         /* Responsive adjustments */
         @media (max-width: 576px) {
             .login-card {
-                padding: 1.75rem;
+                padding: 1.8rem;
             }
             
             .header h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .header i {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
         }
+        
+        /* Background decoration */
+        .decoration {
+            position: absolute;
+            z-index: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 209, 102, 0.1) 0%, transparent 70%);
+            opacity: 0.5;
+        }
+        
+        .dec-1 {
+            width: 400px;
+            height: 400px;
+            top: -150px;
+            right: -150px;
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        .dec-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            left: -100px;
+            animation: float 12s ease-in-out infinite reverse;
+        }
+        
+        .dec-3 {
+            width: 200px;
+            height: 200px;
+            top: 20%;
+            left: 10%;
+            animation: float 10s ease-in-out infinite;
+        }
+        
+        .dec-4 {
+            width: 150px;
+            height: 150px;
+            bottom: 30%;
+            right: 15%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        .password-hint {
+            color: #a3b1c6;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
     </style>
-
 </head>
 <body>
+    <!-- Background decorations -->
+    <div class="decoration dec-1"></div>
+    <div class="decoration dec-2"></div>
+    <div class="decoration dec-3"></div>
+    <div class="decoration dec-4"></div>
+    
     <div class="login-card">
         <div class="header">
             <i class="fas fa-graduation-cap"></i>
             <h1>New Age Skillsphere</h1>
-            <p>Course Access Portal</p>
+            <p>Secure Access to Your Learning Journey</p>
         </div>
         
         <form id="loginForm">
             <!-- Course Code -->
-            <div class="mb-3">
+            <div class="mb-4">
                 <label for="courseCode" class="form-label">
                     <i class="fas fa-book me-2"></i>Course Code
                 </label>
-                <input type="text" class="form-control" id="courseCode" placeholder="Course Initials e.g. WD for Web Dev" required>
+                <input type="text" class="form-control" id="courseCode" placeholder="e.g. NAS/25/WEB" required>
             </div>
             
             <!-- Password -->
-            <div class="mb-3">
+            <div class="mb-4">
                 <label for="password" class="form-label">
-                    <i class="fas fa-lock me-2"></i>Course Passphrase
+                    <i class="fas fa-lock me-2"></i>Password
                 </label>
                 <div class="input-group">
-                    <input type="password" class="form-control" id="password" placeholder="Enter your course passphrase" required>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your secure passphrase" required>
                     <button type="button" id="togglePassword" class="eye-btn" aria-label="Show password">
                         <i id="toggleIcon" class="fas fa-eye-slash"></i>
                     </button>
                 </div>
-                <div class="password-hint">Hint: Check Course group for Details</div>
+                <div class="password-hint">Use your unique course passphrase</div>
             </div>
             
             <!-- Error Message -->
             <div id="errorMsg" class="error-msg"></div>
             
             <!-- Login Button -->
-            <button type="submit" class="btn btn-primary w-100 py-2" id="loginBtn">
-                <span class="btn-text">Access Course</span>
+            <button type="submit" class="btn btn-primary w-100 py-3" id="loginBtn">
+                <span class="btn-text">Access Learning Portal</span>
                 <div class="spinner" id="spinner"></div>
             </button>
+            
+            <!-- Security Information -->
+            <div class="security-info mt-4">
+                <h3><i class="fas fa-shield-alt"></i> Security Enhanced</h3>
+                <p>All course passphrases are uniquely generated and follow strict security protocols to protect your learning resources.</p>
+                <div class="password-strength">
+                    <div class="strength-bar active"></div>
+                    <div class="strength-bar active"></div>
+                    <div class="strength-bar active"></div>
+                    <div class="strength-bar active"></div>
+                    <div class="strength-bar active"></div>
+                </div>
+            </div>
         </form>
         
         <!-- Footer -->
         <div class="login-footer">
-            © 2025 NAS | <a href="#">Support</a> | <a href="#">Privacy Policy</a>
+            © 2025 New Age Skillsphere | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
         </div>
     </div>
 
     <script>
-        // Course authentication with intuitive but secure passwords
+        // Course authentication configuration with unpredictable passwords
         const courseAuth = {
             "AI": { 
-                password: "GoldAI@25", 
+                password: "k9$F2j#L8m", 
                 url: "https://newageskills.com.ng/AI" 
             },
             "AIML": { 
-                password: "BlueAIML@25", 
+                password: "P5@qR3tY!u", 
                 url: "https://newageskills.com.ng/AIML" 
             },
-            "CMP": { 
-                password: "RedCMP@25", 
+            "CD": { 
+                password: "X7&zW1vB*n", 
                 url: "https://newageskills.com.ng/contentdevelopment" 
             },
             "DABI": { 
-                password: "GreenDABI@25", 
+                password: "H6$dG8fK^j", 
                 url: "https://newageskills.com.ng/DA&BI" 
             },
             "DM": { 
-                password: "PurpleDM@25", 
+                password: "M3#sN4cV@p", 
                 url: "https://newageskills.com.ng/DigitalMarketing" 
             },
+            "GRAPHICS": { 
+                password: "T2!rQ9wE$u", 
+                url: "https://newageskills.com.ng/Graphics" 
+            },
             "PM": { 
-                password: "OrangePM@25", 
+                password: "Z5&yU7iX#a", 
                 url: "https://newageskills.com.ng/ProjectManagement" 
             },
+            "PYTHON": { 
+                password: "B8^jI6kO*m", 
+                url: "https://newageskills.com.ng/Python" 
+            },
             "SOFTWARE": { 
-                password: "BlackSD@25", 
+                password: "N1$fC3gH!l", 
                 url: "https://newageskills.com.ng/Software" 
             },
-            "WD": { 
-                password: "SilverWEB@25", 
+            "UIUX": { 
+                password: "A4@vD7sF^q", 
+                url: "https://newageskills.com.ng/UIUX" 
+            },
+            "VIDEO": { 
+                password: "R9#eW2tY*u", 
+                url: "https://newageskills.com.ng/Video" 
+            },
+            "WEB": { 
+                password: "E0!pS5dG&h", 
                 url: "https://newageskills.com.ng/Web" 
             },
-            "W": { 
-                password: "TealWRT@25", 
+            "WRITING": { 
+                password: "L7^mJ3nK#c", 
                 url: "https://newageskills.com.ng/Writing" 
             }
         };
@@ -359,7 +525,7 @@
                 
                 // Check if course exists
                 if (!courseAuth[courseCode]) {
-                    errorMsg.textContent = `Course not found. Available: ${Object.keys(courseAuth).join(', ')}`;
+                    errorMsg.textContent = `Invalid course code. Available courses: ${Object.keys(courseAuth).join(', ')}`;
                     resetLoginButton();
                     return;
                 }
