@@ -3,8 +3,8 @@ const assetsToCache = [
   '/login.html',
   '/css/bootstrap.min.css',
   '/js/main.js',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
+  '/icons/icon-192×192.png',
+  '/icons/icon-512×512.png'
 ];
 
 // Install event
