@@ -10,12 +10,31 @@
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#0056b3">
     <link rel="manifest" href="/manifest.json">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <!-- iOS Support -->
-    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
-    <meta name="apple-mobile-web-app-status-bar" content="#0056b3">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/icon-57x57.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="NAS Portal">
+    
+    <!-- Additional PWA Meta Tags -->
+    <meta name="application-name" content="NAS Portal">
+    <meta name="msapplication-TileColor" content="#0056b3">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
+    <!-- Prevent zoom on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
    <style>
       * {
             margin: 0;
@@ -113,34 +132,51 @@
             margin-bottom: 1.5rem;
         }
         .input-group .form-control {
-            padding-right: 3rem;
+            padding-right: 3.5rem;
+            margin-bottom: 0; /* Remove margin from password input since it's in a group */
         }
         .eye-btn {
             position: absolute;
-            right: 15px;
+            right: 12px;
             top: 50%;
             transform: translateY(-50%);
             background: transparent;
             border: none;
             color: #6c757d;
-            font-size: 1.25rem;
-            padding: 0.5rem;
+            font-size: 1.1rem;
+            padding: 0.6rem;
             cursor: pointer;
             z-index: 5;
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 40px;
             height: 40px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
         }
         .eye-btn:hover {
             color: #0056b3;
+            background: rgba(0, 86, 179, 0.05);
         }
         .password-hint {
             font-size: 0.85rem;
             color: #6c757d;
-            margin-top: -0.8rem;
+            margin-top: 0.5rem;
             margin-bottom: 1.5rem;
             font-style: italic;
+        }
+
+        /* Error message styling */
+        .error-msg {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            background: rgba(220, 53, 69, 0.1);
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            display: none;
         }
 
         /* Button - Matching header color */
@@ -210,6 +246,47 @@
             animation: float 3s ease-in-out infinite;
         }
 
+        /* PWA specific styles */
+        .pwa-mode {
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        
+        /* Install button styles */
+        #installBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #0056b3, #002f6c);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        #installBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Hide install button on installed PWA */
+        .pwa-mode #installBtn {
+            display: none;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 576px) {
             .login-card {
@@ -230,8 +307,15 @@
                 padding: 0.9rem;
                 font-size: 1rem;
             }
+            
+            #installBtn {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
         }
-      
+
     </style>
 
 </head>
@@ -281,7 +365,7 @@
 
         <!-- Footer -->
         <div class="login-footer">
-            © 2025 NAS</a>
+            © 2025 NAS
         </div>
     </div>
 
@@ -312,7 +396,7 @@
                 password: "OrangePM@25",
                 url: "https://newageskills.com.ng/ProjectManagement"
             },
-            "SOFTWARE": {
+            "SD": {
                 password: "BlackSD@25",
                 url: "https://newageskills.com.ng/Software"
             },
@@ -352,6 +436,7 @@
 
             // Reset error message
             errorMsg.textContent = "";
+            errorMsg.style.display = "none";
 
             // Show loading state
             btnText.style.visibility = "hidden";
@@ -365,6 +450,7 @@
 
                 if (!courseCode) {
                     errorMsg.textContent = "Please enter a valid course code";
+                    errorMsg.style.display = "block";
                     resetLoginButton();
                     return;
                 }
@@ -372,6 +458,7 @@
                 // Check if course exists
                 if (!courseAuth[courseCode]) {
                     errorMsg.textContent = `Course not found. Available: ${Object.keys(courseAuth).join(', ')}`;
+                    errorMsg.style.display = "block";
                     resetLoginButton();
                     return;
                 }
@@ -379,6 +466,7 @@
                 // Verify course-specific password
                 if (password !== courseAuth[courseCode].password) {
                     errorMsg.textContent = "Incorrect passphrase for this course";
+                    errorMsg.style.display = "block";
                     resetLoginButton();
                     return;
                 }
@@ -416,12 +504,25 @@
         });
     </script>
     <script>
-        // Register Service Worker
+        // Enhanced Service Worker Registration
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
                     .then(registration => {
                         console.log('SW registered: ', registration);
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // New version available
+                                    if (confirm('New version available! Reload to update?')) {
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        });
                     })
                     .catch(registrationError => {
                         console.log('SW registration failed: ', registrationError);
@@ -430,50 +531,63 @@
         }
     </script>
     <script>
-        // Improved PWA Installation
+        // Enhanced PWA Installation with better UX
         let deferredPrompt;
+        let installBtn;
 
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
 
-            // Create custom install button (you can style this)
-            const installBtn = document.createElement('button');
-            installBtn.id = 'installBtn';
-            installBtn.innerHTML = '📲 Install NAS App';
-            installBtn.style = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 20px;
-        background: linear-gradient(135deg, #0056b3, #002f6c);
-        color: white;
-        border: none;
-        border-radius: 30px;
-        font-weight: bold;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        z-index: 1000;
-        cursor: pointer;
-      `;
+            // Create custom install button
+            if (!installBtn) {
+                installBtn = document.createElement('button');
+                installBtn.id = 'installBtn';
+                installBtn.innerHTML = '📲 Install App';
+                installBtn.setAttribute('aria-label', 'Install NAS Portal as an app');
+                
+                document.body.appendChild(installBtn);
 
-            document.body.appendChild(installBtn);
-
-            installBtn.addEventListener('click', () => {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        installBtn.remove();
+                installBtn.addEventListener('click', async () => {
+                    if (deferredPrompt) {
+                        deferredPrompt.prompt();
+                        const choiceResult = await deferredPrompt.userChoice;
+                        
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('User accepted the install prompt');
+                            installBtn.remove();
+                        }
+                        deferredPrompt = null;
                     }
-                    deferredPrompt = null;
                 });
-            });
+            }
         });
 
-        // Detect if launched as PWA
-        window.addEventListener('load', () => {
-            if (window.matchMedia('(display-mode: standalone)').matches) {
-                document.body.classList.add('pwa-mode');
+        // Handle successful installation
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA was installed');
+            if (installBtn) {
+                installBtn.remove();
             }
+            deferredPrompt = null;
+        });
+
+        // Detect if launched as PWA and add appropriate styles
+        window.addEventListener('load', () => {
+            if (window.matchMedia('(display-mode: standalone)').matches || 
+                window.navigator.standalone === true) {
+                document.body.classList.add('pwa-mode');
+                console.log('Running as PWA');
+            }
+        });
+
+        // Handle online/offline status
+        window.addEventListener('online', () => {
+            console.log('App is online');
+        });
+
+        window.addEventListener('offline', () => {
+            console.log('App is offline');
         });
     </script>
 
