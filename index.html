@@ -23,20 +23,21 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="NAS Portal">
-    
+
     <!-- Additional PWA Meta Tags -->
     <meta name="application-name" content="NAS Portal">
     <meta name="msapplication-TileColor" content="#0056b3">
     <meta name="msapplication-config" content="/browserconfig.xml">
-    
+
     <!-- Prevent zoom on mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-   <style>
-      * {
+    <style>
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -83,11 +84,13 @@
             text-align: center;
             margin-bottom: 1.8rem;
         }
+
         .login-card .header i {
             font-size: 2.8rem;
             color: #0056d2;
             margin-bottom: 0.5rem;
         }
+
         .login-card .header h1 {
             font-size: 2rem;
             margin: 0.4rem 0 0.2rem;
@@ -98,6 +101,7 @@
             font-family: inherit;
             letter-spacing: 0.2px;
         }
+
         .login-card .header p {
             font-size: 1.05rem;
             color: #555;
@@ -112,29 +116,36 @@
             font-weight: 600;
             color: #003d80;
         }
+
         .form-control {
             font-size: 1rem;
             padding: 0.85rem 1.25rem;
             height: auto;
             border: 2px solid #0056b3;
-            border-radius: 8px;
+            border-radius: 8px !important;
+
             transition: all 0.3s ease;
             width: 100%;
             margin-bottom: 1.5rem;
         }
+
         .form-control:focus {
             border-color: #002f6c;
             box-shadow: 0 0 12px rgba(0, 95, 179, 0.3);
             outline: none;
         }
+
         .input-group {
             position: relative;
             margin-bottom: 1.5rem;
         }
+
         .input-group .form-control {
             padding-right: 3.5rem;
-            margin-bottom: 0; /* Remove margin from password input since it's in a group */
+            margin-bottom: 0;
+            /* Remove margin from password input since it's in a group */
         }
+
         .eye-btn {
             position: absolute;
             right: 12px;
@@ -155,10 +166,12 @@
             border-radius: 4px;
             transition: all 0.2s ease;
         }
+
         .eye-btn:hover {
             color: #0056b3;
             background: rgba(0, 86, 179, 0.05);
         }
+
         .password-hint {
             font-size: 0.85rem;
             color: #6c757d;
@@ -194,11 +207,13 @@
             margin-top: 0.5rem;
             box-shadow: 0 4px 15px rgba(0, 86, 210, 0.3);
         }
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 46, 109, 0.4);
             background: linear-gradient(to right, #004dba, #003075);
         }
+
         .btn-primary:active {
             transform: translateY(0);
         }
@@ -221,7 +236,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* Footer */
@@ -237,9 +254,17 @@
 
         /* Animation */
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         .float {
@@ -251,7 +276,7 @@
             padding-top: env(safe-area-inset-top);
             padding-bottom: env(safe-area-inset-bottom);
         }
-        
+
         /* Install button styles */
         #installBtn {
             position: fixed;
@@ -263,25 +288,33 @@
             border: none;
             border-radius: 30px;
             font-weight: bold;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             cursor: pointer;
             font-size: 0.9rem;
             transition: all 0.3s ease;
             animation: pulse 2s infinite;
         }
-        
+
         #installBtn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
         }
-        
+
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
-        
+
         /* Hide install button on installed PWA */
         .pwa-mode #installBtn {
             display: none;
@@ -294,20 +327,24 @@
                 max-width: 95%;
                 border-radius: 14px;
             }
+
             .login-card .header i {
                 font-size: 2.4rem;
             }
+
             .login-card .header h1 {
                 font-size: 1.7rem;
             }
+
             .login-card .header p {
                 font-size: 0.95rem;
             }
+
             .btn-primary {
                 padding: 0.9rem;
                 font-size: 1rem;
             }
-            
+
             #installBtn {
                 bottom: 15px;
                 right: 15px;
@@ -315,7 +352,6 @@
                 font-size: 0.85rem;
             }
         }
-
     </style>
 
 </head>
@@ -510,7 +546,7 @@
                 navigator.serviceWorker.register('/sw.js')
                     .then(registration => {
                         console.log('SW registered: ', registration);
-                        
+
                         // Check for updates
                         registration.addEventListener('updatefound', () => {
                             const newWorker = registration.installing;
@@ -545,14 +581,14 @@
                 installBtn.id = 'installBtn';
                 installBtn.innerHTML = '📲 Install App';
                 installBtn.setAttribute('aria-label', 'Install NAS Portal as an app');
-                
+
                 document.body.appendChild(installBtn);
 
                 installBtn.addEventListener('click', async () => {
                     if (deferredPrompt) {
                         deferredPrompt.prompt();
                         const choiceResult = await deferredPrompt.userChoice;
-                        
+
                         if (choiceResult.outcome === 'accepted') {
                             console.log('User accepted the install prompt');
                             installBtn.remove();
@@ -574,7 +610,7 @@
 
         // Detect if launched as PWA and add appropriate styles
         window.addEventListener('load', () => {
-            if (window.matchMedia('(display-mode: standalone)').matches || 
+            if (window.matchMedia('(display-mode: standalone)').matches ||
                 window.navigator.standalone === true) {
                 document.body.classList.add('pwa-mode');
                 console.log('Running as PWA');
