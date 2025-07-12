@@ -23,342 +23,205 @@
             box-sizing: border-box;
         }
 
-        /* Add to your existing CSS */
-        body.pwa-mode {
-            padding: 0;
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #00264d 0%, #004a99 100%);
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
         }
-.login-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 14px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    padding: 2rem 2.2rem;
-    width: 100%;
-    max-width: 430px; /* increased for desktop */
-    color: #333; /* Your original font color */
-    font-family: inherit; /* Uses your existing font */
-    position: relative;
-    overflow: hidden;
-    z-index: 10;
-    margin: 2rem auto;
-}
 
-.login-card .header p {
-    font-size: 0.87rem;
-    font-weight: 400;
-    color: #777;
-    margin: 0;
-    text-align: center;
-}
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem 2.5rem;
+            width: 100%;
+            max-width: 480px;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+        }
 
-.login-card .header h1 {
-    font-size: 1.7rem;
-    font-weight: 600;
-    color: #0056d2; /* NAS Blue */
-    margin: 0.4rem 0 0.2rem;
-    line-height: 1.3;
-    text-align: center;
-    font-family: inherit;
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(to right, #0056d2, #002f6c);
+            border-radius: 16px 16px 0 0;
+        }
 
-    /* 3D smooth pop styling */
-    text-shadow: 0 1px 0 #fff,     /* subtle top shine */
-                 0 2px 4px rgba(0, 0, 0, 0.2); /* soft bottom shadow */
-    background: linear-gradient(to bottom, #ffffff 0%, #e6f0ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+        /* Header Area - Increased size and matching button color */
+        .login-card .header {
+            text-align: center;
+            margin-bottom: 1.8rem;
+        }
+        .login-card .header i {
+            font-size: 2.8rem;
+            color: #0056d2;
+            margin-bottom: 0.5rem;
+        }
+        .login-card .header h1 {
+            font-size: 2rem;
+            margin: 0.4rem 0 0.2rem;
+            font-weight: 700;
+            color: #0056d2;
+            line-height: 1.3;
+            text-align: center;
+            font-family: inherit;
+            letter-spacing: 0.2px;
+        }
+        .login-card .header p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
 
-    /* Smoother rounded feel */
-    letter-spacing: 0.2px;
-    border-radius: 6px;
-}
-
-/* Header Area */
-.login-card .header {
-    text-align: center;
-    margin-bottom: 1.2rem;
-}
-.login-card .header i {
-    font-size: 2rem;
-    color: #007bff; /* Your blue */
-}
-.login-card .header h1 {
-    font-size: 1.5rem;
-    margin: 0.4rem 0 0.2rem;
-    font-weight: 600;
-}
-.login-card .header p {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-}
-
-/* Labels & Inputs */
-.login-card .form-label {
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
-    font-weight: 500;
-}
-.login-card .form-control {
-    font-size: 0.9rem;
-    padding: 0.55rem 0.75rem;
-    height: auto;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-.input-group {
-    display: flex;
-    align-items: center;
-}
-.eye-btn {
-    background: transparent;
-    border: none;
-    padding: 0 0.75rem;
-    font-size: 1rem;
-    color: #666;
-}
-.password-hint {
-    font-size: 0.75rem;
-    margin-top: 0.3rem;
-    color: #888;
-    font-style: italic;
-}
-
-/* Button */
-.login-card .btn {
-    font-size: 1rem;
-    padding: 0.65rem;
-    margin-top: 1.2rem;
-    background: #0056d2; /* NAS Blue */
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-}
-.spinner {
-    display: none;
-    width: 1rem;
-    height: 1rem;
-    border: 2px solid #fff;
-    border-top: 2px solid transparent;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin-left: 0.5rem;
-}
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-/* Footer */
-.login-footer {
-    margin-top: 1.2rem;
-    font-size: 0.75rem;
-    text-align: center;
-    color: #999;
-    font-weight: 400;
-}
-
-/* ✅ MOBILE RESPONSIVENESS */
-@media (max-width: 480px) {
-    .login-card {
-        padding: 1.2rem 1.4rem;
-        max-width: 92%;
-        border-radius: 12px;
-    }
-
-    .login-card .header i {
-        font-size: 1.5rem;
-    }
-    .login-card .header h1 {
-        font-size: 1.25rem;
-    }
-    .login-card .header p {
-        font-size: 0.8rem;
-    }
-
-    .login-card .form-label,
-    .login-card .form-control,
-    .login-card .btn {
-        font-size: 0.85rem;
-    }
-
-    .eye-btn {
-        padding: 0 0.5rem;
-    }
-
-    .password-hint {
-        font-size: 0.7rem;
-    }
-
-    .login-footer {
-        font-size: 0.7rem;
-    }
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #00264d; /* or your existing gradient */
-    margin: 0;
-    font-family: 'YourChosenFont', sans-serif; /* if you use one */
-}
-             .form-control {
+        /* Form elements */
+        .form-label {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #003d80;
+        }
+        .form-control {
+            font-size: 1rem;
+            padding: 0.85rem 1.25rem;
+            height: auto;
             border: 2px solid #0056b3;
             border-radius: 8px;
             transition: all 0.3s ease;
-            padding: 0.75rem 1.25rem;
-            font-size: 1rem;
+            width: 100%;
+            margin-bottom: 1.5rem;
         }
-
         .form-control:focus {
             border-color: #002f6c;
             box-shadow: 0 0 12px rgba(0, 95, 179, 0.3);
+            outline: none;
         }
-
-        .form-label {
-            font-weight: 600;
-            color: #003d80;
-            margin-bottom: 0.5rem;
-        }
-
         .input-group {
             position: relative;
             margin-bottom: 1.5rem;
         }
-
         .eye-btn {
             position: absolute;
-            right: 12px;
+            right: 15px;
             top: 50%;
             transform: translateY(-50%);
             background: transparent;
             border: none;
             color: #6c757d;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             padding: 0.5rem;
             cursor: pointer;
             z-index: 5;
         }
-
         .eye-btn:hover {
             color: #0056b3;
         }
+        .password-hint {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: -0.8rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
 
+        /* Button - Matching header color */
         .btn-primary {
-            background: linear-gradient(to right, #0056b3, #002f6c);
+            background: linear-gradient(to right, #0056d2, #003a8c);
             border: none;
             border-radius: 8px;
             color: white;
-            padding: 0.85rem;
+            padding: 1rem;
             font-size: 1.1rem;
             font-weight: 600;
-            transition: all 0.3s ease-in-out;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 86, 210, 0.3);
         }
-
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 46, 109, 0.4);
+            background: linear-gradient(to right, #004dba, #003075);
+        }
+        .btn-primary:active {
+            transform: translateY(0);
         }
 
-        .error-msg {
-            color: #dc3545;
-            font-size: 0.95rem;
-            margin: 1rem 0;
-            text-align: center;
-            min-height: 25px;
-            font-weight: 500;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .btn-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .spinner {
             display: none;
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             border: 3px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             border-top-color: white;
             animation: spin 1s linear infinite;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
         }
 
         @keyframes spin {
-            to {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
+            to { transform: rotate(360deg); }
         }
 
+        /* Footer */
         .login-footer {
-            text-align: center;
+            margin-top: 1.8rem;
             font-size: 0.85rem;
-            margin-top: 0.5rem;
-            color: #555;
-            padding-top: 0.5rem;
+            text-align: center;
+            color: #666;
+            font-weight: 500;
+            padding-top: 1.2rem;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .login-footer a {
-            color: #0056b3;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        .login-footer a:hover {
-            color: #003d80;
-            text-decoration: underline;
-        }
-
-        .password-hint {
-            font-size: 0.85rem;
-            color: #6c757d;
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
-
-        /* Floating animation */
+        /* Animation */
         @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
 
-            50% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
+        .float {
+            animation: float 3s ease-in-out infinite;
         }
 
         /* Responsive adjustments */
         @media (max-width: 576px) {
             .login-card {
-                padding: 1.75rem;
+                padding: 1.8rem 1.5rem;
+                max-width: 95%;
+                border-radius: 14px;
             }
-
-            .header h1 {
-                font-size: 1.8rem;
+            .login-card .header i {
+                font-size: 2.4rem;
             }
-
-            .header i {
-                font-size: 2.5rem;
+            .login-card .header h1 {
+                font-size: 1.7rem;
+            }
+            .login-card .header p {
+                font-size: 0.95rem;
+            }
+            .btn-primary {
+                padding: 0.9rem;
+                font-size: 1rem;
             }
         }
     </style>
