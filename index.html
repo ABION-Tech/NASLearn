@@ -85,6 +85,32 @@
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
+input-group {
+  margin-bottom: 20px;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* extra right padding for the icon */
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+  color: #555;
+}
 
         /* Form elements */
         .form-label {
