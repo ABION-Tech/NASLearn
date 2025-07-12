@@ -98,7 +98,13 @@ input-group {
 .password-wrapper input[type="password"],
 .password-wrapper input[type="text"] {
   width: 100%;
-  padding: 10px 40px 10px 10px; /* extra right padding for the icon */
+  padding: 0.85rem 3rem 0.85rem 1.25rem; /* same padding as .form-control + space for icon */
+  font-size: 1rem;
+  border: 2px solid #0056b3;
+  border-radius: 8px; /* match other inputs */
+  transition: all 0.3s ease;
+  height: auto;
+}
   font-size: 16px;
   box-sizing: border-box;
 }
@@ -110,6 +116,34 @@ input-group {
   user-select: none;
   font-size: 18px;
   color: #555;
+}
+
+/* Fix 1: Make Course Passphrase input consistent with others */
+  
+
+
+
+/* Fix 2: Add focus style */
+.password-wrapper input:focus {
+  border-color: #002f6c;
+  box-shadow: 0 0 12px rgba(0, 95, 179, 0.3);
+  outline: none;
+}
+
+/* Fix 3: Center the eye icon vertically */
+.toggle-password,
+.eye-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0;
+  cursor: pointer;
+  z-index: 5;
+  color: #6c757d;
 }
 
         /* Form elements */
