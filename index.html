@@ -27,34 +27,35 @@
         body.pwa-mode {
             padding: 0;
         }
-
 .login-card {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 14px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     padding: 2rem 2.2rem;
     width: 100%;
     max-width: 430px; /* increased for desktop */
-    color: #333;
+    color: #333; /* Your original font color */
+    font-family: inherit; /* Uses your existing font */
     position: relative;
     overflow: hidden;
     z-index: 10;
     margin: 2rem auto;
 }
 
-/* Header Tuning */
+/* Header Area */
 .login-card .header {
     text-align: center;
     margin-bottom: 1.2rem;
 }
 .login-card .header i {
     font-size: 2rem;
-    color: #007bff;
+    color: #007bff; /* Your blue */
 }
 .login-card .header h1 {
     font-size: 1.5rem;
     margin: 0.4rem 0 0.2rem;
+    font-weight: 600;
 }
 .login-card .header p {
     font-size: 0.9rem;
@@ -62,15 +63,18 @@
     margin-bottom: 0.5rem;
 }
 
-/* Input Fields */
+/* Labels & Inputs */
 .login-card .form-label {
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
+    font-weight: 500;
 }
 .login-card .form-control {
     font-size: 0.9rem;
-    padding: 0.5rem 0.75rem;
+    padding: 0.55rem 0.75rem;
     height: auto;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 .input-group {
     display: flex;
@@ -87,13 +91,18 @@
     font-size: 0.75rem;
     margin-top: 0.3rem;
     color: #888;
+    font-style: italic;
 }
 
-/* Button & Spinner */
+/* Button */
 .login-card .btn {
     font-size: 1rem;
     padding: 0.65rem;
     margin-top: 1.2rem;
+    background: #0056d2; /* NAS Blue */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
 }
 .spinner {
     display: none;
@@ -115,13 +124,19 @@
     font-size: 0.75rem;
     text-align: center;
     color: #999;
+    font-weight: 400;
 }
 
-/* 📱 MOBILE-FRIENDLY OVERRIDES */
+/* ✅ MOBILE RESPONSIVENESS */
 @media (max-width: 480px) {
     .login-card {
         padding: 1.2rem 1.4rem;
-        max-width: 90%;
+        max-width: 92%;
+        border-radius: 12px;
+    }
+
+    .login-card .header i {
+        font-size: 1.5rem;
     }
     .login-card .header h1 {
         font-size: 1.25rem;
@@ -129,24 +144,35 @@
     .login-card .header p {
         font-size: 0.8rem;
     }
+
     .login-card .form-label,
     .login-card .form-control,
     .login-card .btn {
         font-size: 0.85rem;
     }
+
     .eye-btn {
         padding: 0 0.5rem;
-        font-size: 0.9rem;
     }
+
     .password-hint {
         font-size: 0.7rem;
     }
+
     .login-footer {
         font-size: 0.7rem;
     }
 }
 
-
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #00264d; /* or your existing gradient */
+    margin: 0;
+    font-family: 'YourChosenFont', sans-serif; /* if you use one */
+}
              .form-control {
             border: 2px solid #0056b3;
             border-radius: 8px;
