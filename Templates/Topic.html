@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
+
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
+
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
+
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
+        }
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center text-primary">Module 1: Introduction to Project Management</h1>
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="text-primary">4. The Role of a Project Manager</h2>
+
+        <p>The Project Manager plays a crucial role in ensuring that a project is completed successfully, within scope,
+          on time, and on budget. Their responsibilities span the entire project life cycle, from initiation to closure,
+          and they are key to the project's success. The role can be broken down into the following core
+          responsibilities and skills:</p>
+
+        <h3 class="text-primary">Core Responsibilities:</h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Planning:</strong> The project manager is responsible for creating the project plan, identifying the
+            necessary resources, and defining the tasks and milestones that will guide the project’s execution.
+          </li>
+          <li class="list-group-item">
+            <strong>Organizing:</strong> Organizing involves assigning tasks, setting priorities, and ensuring that the
+            team has the resources and support needed to carry out their responsibilities.
+          </li>
+          <li class="list-group-item">
+            <strong>Leading:</strong> A project manager leads the project team, guiding them toward achieving the
+            project objectives. Leadership includes motivating the team, resolving conflicts, and ensuring alignment
+            with the project goals.
+          </li>
+          <li class="list-group-item">
+            <strong>Controlling:</strong> The project manager is responsible for monitoring the progress of the project,
+            tracking performance against the project plan, and making adjustments as necessary to keep the project on
+            track.
+          </li>
+        </ul>
+
+        <h3 class="text-primary">Key Skills for a Successful Project Manager:</h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Communication:</strong> Effective communication is key to ensuring that the team and stakeholders
+            are kept informed and aligned throughout the project. A project manager must be clear, concise, and
+            transparent in all communications.
+          </li>
+          <li class="list-group-item">
+            <strong>Leadership:</strong> The project manager must be able to inspire and motivate the project team,
+            while also managing conflicts and building strong relationships within the team and with stakeholders.
+          </li>
+          <li class="list-group-item">
+            <strong>Time Management:</strong> Managing multiple tasks, deadlines, and competing priorities requires
+            strong time management skills. A successful project manager ensures that the project is completed on time
+            and within budget.
+          </li>
+          <li class="list-group-item">
+            <strong>Problem-Solving:</strong> A project manager must be able to quickly identify and solve problems that
+            arise during the project. Whether it's a team issue, a scheduling conflict, or a resource shortfall, the
+            ability to find solutions is critical to keeping the project moving forward.
+          </li>
+        </ul>
+
+        <h3 class="text-primary">The Project Manager as a Bridge:</h3>
+        <p>The project manager acts as a bridge between stakeholders (such as clients, upper management, and external
+          partners) and the project team. They are responsible for understanding the stakeholders' needs and
+          expectations, translating them into actionable tasks for the team, and ensuring that the team has the
+          necessary resources and information to meet these expectations. Additionally, the project manager provides
+          regular updates to stakeholders on the project’s progress, risks, and any necessary changes to the project
+          plan.</p>
+
+        <p>The ability to manage these dual roles—being a liaison between the team and stakeholders—ensures the project
+          remains aligned with its goals while maintaining strong relationships with all involved parties.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+  <!-- CodeMirror Initialization -->
+  <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("html-editor"), {
+      lineNumbers: true,
+      mode: "xml",
+      theme: "default",
+      readOnly: false
+    });
+
+    var exampleEditor = CodeMirror.fromTextArea(document.getElementById("html-example-editor"), {
+      lineNumbers: true,
+      mode: "xml",
+      theme: "default",
+      readOnly: false
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<script>
+    // COURSE ACCESS CONTROL WITH COURSE-SPECIFIC PASSWORDS
+    const courseAuth = {
+        "AI": { 
+            password: "NAS_AI_2025", 
+            url: "https://newageskills.com.ng/AI" 
+        },
+        "AIML": { 
+            password: "NAS_AIML_2025", 
+            url: "https://newageskills.com.ng/AIML" 
+        },
+        "WEB": { 
+            password: "NAS_WEB_2025", 
+            url: "https://newageskills.com.ng/Web" 
+        },
+        "PYTHON": { 
+            password: "NAS_PY_2025", 
+            url: "https://newageskills.com.ng/Python" 
+        },
+        "PM": { 
+            password: "NAS_PM_2025", 
+            url: "https://newageskills.com.ng/ProjectManagement" 
+        },
+        // Add other courses following the same pattern
+    };
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        const courseCode = document.getElementById("courseCode").value.trim().toUpperCase();
+        const password = document.getElementById("password").value.trim();
+        const errorMsg = document.getElementById("errorMsg");
+        const loginBtn = document.getElementById("loginBtn");
+        const loginText = document.getElementById("loginText");
+        const spinner = document.getElementById("spinner");
+        
+        // Reset error message
+        errorMsg.textContent = "";
+        
+        // Show loading state
+        loginText.style.display = "none";
+        spinner.style.display = "block";
+        loginBtn.disabled = true;
+        
+        // Simulate processing delay
+        setTimeout(() => {
+            // Check if course exists
+            if (!courseAuth[courseCode]) {
+                errorMsg.textContent = `Invalid course code. Available: ${Object.keys(courseAuth).join(', ')}`;
+                resetLoginButton();
+                return;
+            }
+            
+            // Verify course-specific password
+            if (password !== courseAuth[courseCode].password) {
+                errorMsg.textContent = "Incorrect password for this course";
+                resetLoginButton();
+                return;
+            }
+            
+            // Successful login - redirect
+            window.location.href = courseAuth[courseCode].url;
+        }, 800);
+        
+        function resetLoginButton() {
+            loginText.style.display = "inline";
+            spinner.style.display = "none";
+            loginBtn.disabled = false;
+        }
+    });
+
+    // Password visibility toggle remains unchanged
+</script>
