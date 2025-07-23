@@ -4,102 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Common Misconceptions, Case Studies, and Discussion Questions in Typography</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Typographic Poster Design Assignment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             background-color: #ffffff;
             color: #000000;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
         h1,
         h2,
-        h3,
-        h4 {
+        h3 {
             color: #007bff;
         }
 
-        .content {
-            padding: 30px;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
-        .misconceptions,
-        .case-studies,
-        .discussion-questions {
-            margin-bottom: 30px;
+        h2 {
+            font-size: 2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 10px;
             border-left: 5px solid #007bff;
-            padding-left: 20px;
-            background-color: #f9f9f9;
+        }
+
+        .steps {
+            background-color: #e9ecef;
+            padding: 15px;
             border-radius: 5px;
+            margin-bottom: 1.5rem;
         }
 
-        .misconception-item,
-        .case-study-item,
-        .discussion-question {
-            margin-bottom: 15px;
-        }
-
-        .question {
-            font-weight: bold;
-        }
-
-        .tip {
-            font-style: italic;
-            color: #007bff;
+        .tips {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-left: 5px solid #17a2b8;
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
 
 <body>
     <div class="container my-5">
-        <h1 class="text-center mb-4">Assignment: Fibonacci Sequence Generator</h1>
-        <h3 class="mt-4">Objective:</h3>
-        <p>Write a Python program to generate the Fibonacci sequence up to a user-specified number.</p>
-
+        <h1 class="text-center mb-4">Software Development: Module 2</h1>
+        <h2 class="mb-3">Programming Basics</h2>
+        <h3 class="mt-4">Discussion Questions</h3>
         <hr>
 
         <section class="my-4">
-            <h4>Instructions:</h4>
-
-            <h5>1. User Input:</h5>
+            <h4>1. Role of Loops and Conditionals:</h4>
+            <h5>Question:</h5>
+            <p>How do loops and conditionals make programs more efficient and dynamic?</p>
+            <h5>Discussion Points:</h5>
             <ul>
-                <li>Prompt the user to enter the maximum number for the sequence.</li>
+                <li>Loops allow repeated execution of code blocks without redundancy, saving time and effort.</li>
+                <li>Conditionals enable decision-making, adapting the program's behavior based on user input or data.
+                </li>
+                <li>Together, they handle complex logic, such as iterating over datasets and applying conditions
+                    dynamically.</li>
             </ul>
-
-            <h5>2. Logic:</h5>
-            <ul>
-                <li>Use a loop to calculate the sequence.</li>
-                <li>Use variables to track the current and previous numbers.</li>
-            </ul>
-
-            <h5>3. Output:</h5>
-            <ul>
-                <li>Print the sequence in a clear, comma-separated format.</li>
-            </ul>
+            <h5>Example:</h5>
+            <p>A shopping cart program uses conditionals to apply discounts if the total exceeds a threshold and loops
+                to calculate the total price from a list of items.</p>
         </section>
 
         <section class="my-4">
-            <h4>Example Output:</h4>
-            <pre>
-Enter the maximum number: 20
-Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13
-            </pre>
-        </section>
-
-        <section class="my-4">
-            <h4>Evaluation Criteria:</h4>
+            <h4>2. Function Design:</h4>
+            <h5>Question:</h5>
+            <p>What are some real-world problems where you would use functions?</p>
+            <h5>Discussion Points:</h5>
             <ul>
-                <li>Correct implementation of loops.</li>
-                <li>Accurate calculation of the Fibonacci sequence.</li>
-                <li>Clean and readable code with proper variable naming and comments.</li>
+                <li>Automating repetitive tasks, such as generating reports or calculating averages.</li>
+                <li>Building modular systems like web APIs (e.g., a function for fetching user data).</li>
+                <li>Solving mathematical problems, like calculating compound interest or statistical metrics.</li>
             </ul>
+            <h5>Example:</h5>
+            <p>A payroll system might use functions to calculate employee salaries, taxes, and bonuses, ensuring
+                modularity and reusability.</p>
         </section>
 
         <section class="my-4">
-            <h4>Would you like me to draft a sample solution? 😊</h4>
+            <h4>3. Debugging Logic Errors:</h4>
+            <h5>Question:</h5>
+            <p>What strategies do you use to debug issues with loops or conditionals?</p>
+            <h5>Discussion Points:</h5>
+            <ul>
+                <li><strong>Print Statements:</strong> Print variable values inside the loop or condition to track
+                    progress.</li>
+                <li><strong>Breakpoints:</strong> Use debugging tools to pause execution and inspect variables.</li>
+                <li><strong>Test Edge Cases:</strong> Check extreme or unexpected inputs to find flaws.</li>
+                <li><strong>Simplify the Problem:</strong> Break down the loop or conditional logic into smaller,
+                    testable parts.</li>
+            </ul>
+            <h5>Example:</h5>
+            <p>When debugging a loop, adding a counter or printing intermediate results helps identify infinite loops or
+                incorrect conditions.</p>
+        </section>
+
+        <section class="my-4">
+            <h4>4. Iterative Processes:</h4>
+            <h5>Question:</h5>
+            <p>Can you provide examples of repetitive tasks in daily life that loops could simulate?</p>
+            <h5>Discussion Points:</h5>
+            <ul>
+                <li>Counting steps while walking: A loop increments the step count for every stride.</li>
+                <li>Calculating daily expenses: A loop sums up the cost of items purchased throughout the day.</li>
+                <li>Sending reminder emails: A loop iterates through a list of recipients and sends a customized email
+                    to each.</li>
+            </ul>
+            <h5>Example:</h5>
+            <p>A coffee shop application could use a loop to calculate the total price for a customer’s order, iterating
+                through a list of selected items.</p>
         </section>
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

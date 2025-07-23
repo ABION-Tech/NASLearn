@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typography in Layouts</title>
+    <title>Software Development: Module 2</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -69,7 +69,7 @@
 </head>
 
 <body>
-    <div class="container my-5">
+    <!-- <div class="container my-5">
         <h1 class="text-center mb-4">Software Development: Module 2</h1>
         <h2 class="mb-3">Programming Basics</h2>
         <h3 class="mt-4">Topic 3: Functions</h3>
@@ -176,8 +176,77 @@ print(factorial(5))  # Output: 120
             <p>By using functions, programmers can write efficient, modular, and scalable code, simplifying complex
                 problems into manageable tasks.</p>
         </section>
-    </div>
+    </div> -->
+<section>
+  <h2>Topic 3: Control Structures</h2>
 
+  <h3>What Are Control Structures?</h3>
+  <p>Control structures determine the flow of a program's execution. They allow a program to make decisions, repeat actions, and branch into different paths based on specific conditions. Mastering control structures is key to writing dynamic, responsive programs.</p>
+
+  <h3>Types of Control Structures</h3>
+  <ul>
+    <li><strong>Conditional Statements</strong> – if, else, elif</li>
+    <li><strong>Loops</strong> – for loops and while loops</li>
+    <li><strong>Loop Control</strong> – break, continue, and pass</li>
+  </ul>
+
+  <h3>1. Conditional Statements</h3>
+  <p>Use conditionals to execute code only when certain conditions are true.</p>
+  <pre><code>age = 18
+
+if age >= 18:
+    print("You're eligible to vote.")
+else:
+    print("You are not eligible to vote yet.")</code></pre>
+
+  <p><strong>elif</strong> (short for "else if") lets you check multiple conditions:</p>
+  <pre><code>score = 75
+
+if score >= 90:
+    print("Excellent!")
+elif score >= 70:
+    print("Good job!")
+else:
+    print("Keep practicing.")</code></pre>
+
+  <h3>2. Loops</h3>
+  <p>Loops let you repeat actions.</p>
+
+  <h4>For Loops</h4>
+  <p>Used to iterate over a sequence (like a list or range).</p>
+  <pre><code>for i in range(5):
+    print("Iteration", i)</code></pre>
+
+  <h4>While Loops</h4>
+  <p>Used when the number of iterations isn’t known ahead of time.</p>
+  <pre><code>count = 0
+while count < 5:
+    print("Count is", count)
+    count += 1</code></pre>
+
+  <h3>3. Loop Control Statements</h3>
+  <ul>
+    <li><strong>break</strong> – Exit the loop immediately.</li>
+    <li><strong>continue</strong> – Skip the current iteration and go to the next.</li>
+    <li><strong>pass</strong> – Do nothing (used as a placeholder).</li>
+  </ul>
+  <pre><code>for i in range(10):
+    if i == 3:
+        continue
+    if i == 7:
+        break
+    print(i)</code></pre>
+
+  <h3>Practice Ideas</h3>
+  <ul>
+    <li>Write a program that prints “FizzBuzz” for numbers 1–100 (Fizz for multiples of 3, Buzz for multiples of 5, FizzBuzz for both).</li>
+    <li>Create a simple menu-driven program using loops and conditionals.</li>
+    <li>Build a basic number guessing game with a while loop.</li>
+  </ul>
+
+  <h3>Summary</h3>
+  <p>Control structures are the backbone of logical decision-making and automation in software. With if-else statements and loops, you gain the power to make your code smart and efficient. Practice frequently to build strong logic muscles.</p>
+</section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

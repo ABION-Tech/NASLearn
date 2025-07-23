@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to Typography</title>
+    <title>Software Development: Module 2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             background-color: #ffffff;
-            color: #000000;
+            color: #000000; 
             font-family: Arial, sans-serif;
         }
 
@@ -44,7 +44,7 @@
         }
     </style>
 </head>
-
+<!-- 
 <body>
     <div class="container my-5">
         <section class="mb-5">
@@ -161,6 +161,110 @@ else:
         </section>
     </div>
 </body>
+ -->
 
+<body>
+    <div class="container my-5">
+        <h3>Introduction to Programming and Syntax</h3>
+        <p>Imagine you want to give someone a set of precise instructions—say, how to bake your favorite cake. You’d write down every step: preheat the oven, measure flour, crack eggs, mix ingredients, and so on. Programming is exactly that, but for computers: it’s the art and science of writing instructions (called <em>source code</em>) that tell a machine what to do.</p>
+
+        <h5>What Is Programming?</h5>
+        <p>Programming is the process of creating a sequence of instructions that a computer can follow to perform tasks. Every piece of software you use—mobile apps, websites, automation scripts—starts as source code written by a programmer. That code is then <strong>compiled</strong> or <strong>interpreted</strong> into machine instructions that run on hardware.</p>
+        <p>Real-life examples include:</p>
+        <ul>
+            <li><strong>Mobile Apps:</strong> Your weather app gathers data, interprets it, and shows you the forecast.</li>
+            <li><strong>Websites:</strong> When you search online, code on a server retrieves, sorts, and displays results in milliseconds.</li>
+            <li><strong>Automation:</strong> Scripts that rename files, send emails, or back up data without your manual effort.</li>
+        </ul>
+
+        <h5>Programming Languages Overview</h5>
+        <p>Just as people speak different languages, computers understand many “programming languages,” each with its own rules and strengths:</p>
+        <p><strong>Python (Primary):</strong> Beginner-friendly syntax, huge community, and versatility across web, data science, AI, automation, and more.</p>
+        <p><strong>Java (Context):</strong> Statically typed, compiled to byte-code for the Java Virtual Machine (JVM); common in enterprise systems and Android development.</p>
+        <p><strong>C# (Context):</strong> Microsoft’s flagship language, used with .NET for Windows apps and popular with the Unity game engine.</p>
+        <p>In this course we’ll focus on Python, but knowing that multiple languages exist helps you pick the right tool for future projects.</p>
+
+        <h5>Setting Up the Environment</h5>
+        <h6>Installing Python</h6>
+        <p>1. Go to <a href="https://www.python.org/downloads" target="_blank">python.org/downloads</a>.<br>
+           2. Download the latest stable Python 3 installer.<br>
+           3. Run it—on Windows, be sure to check “Add Python to PATH.”<br>
+           4. Verify by opening your terminal and typing:</p>
+        <pre><code>python --version</code></pre>
+        <p>You should see something like <code>Python 3.10.4</code>.</p>
+
+        <h6>Choosing an IDE or Code Editor</h6>
+        <p>An IDE helps you write, organize, and debug code. Popular options include:</p>
+        <ul>
+            <li><strong>Visual Studio Code:</strong> Lightweight, extensible, with a rich plugin ecosystem.</li>
+            <li><strong>PyCharm Community Edition:</strong> Python-focused, with smart code completion and debugging.</li>
+        </ul>
+        <p>Install a Python extension or plugin so your editor recognizes <code>.py</code> files.</p>
+
+        <h6>The Terminal / Command Line</h6>
+        <p>While not mandatory, the terminal is powerful for running scripts and managing projects.</p>
+        <p><strong>Windows:</strong> PowerShell or Command Prompt. <strong>macOS/Linux:</strong> Terminal.</p>
+        <p>Basic commands:</p>
+        <pre><code>cd my_folder    # change directory
+ls               # list files (use dir on Windows)
+python hello.py  # run a Python script</code></pre>
+
+        <h6>Your First Python Program: “Hello, World!”</h6>
+        <p>Create a file named <code>hello.py</code> with this content:</p>
+        <pre><code>print("Hello, World!")</code></pre>
+        <p>Save and run it:</p>
+        <pre><code>python hello.py</code></pre>
+        <p>You should see <code>Hello, World!</code> printed to the screen.</p>
+
+        <h5>Basic Syntax</h5>
+        <p>Syntax in programming is like grammar in English: it’s the set of rules that makes your code understandable to the interpreter.</p>
+
+        <h6>Comments</h6>
+        <p>Use comments to explain code. They’re ignored when you run the program.</p>
+        <pre><code># This is a single-line comment
+
+"""
+This is a
+multi-line comment
+or docstring.
+"""
+</code></pre>
+
+        <h6>Indentation</h6>
+        <p>Python uses indentation instead of braces. A consistent 4-space indent is standard:</p>
+        <pre><code>if True:
+    print("Inside the block")
+print("Outside the block")</code></pre>
+
+        <h6>Case Sensitivity</h6>
+        <p>Variable and function names are case sensitive:</p>
+        <pre><code>name = "Ayo"
+Name = "Another"
+print(name)  # Ayo
+print(Name)  # Another</code></pre>
+
+        <h6>Syntax Errors and Debugging</h6>
+        <p>When rules are broken, you get a syntax error. Example:</p>
+        <pre><code>prin("Oops!")  # NameError: name 'prin' is not defined</code></pre>
+        <p><strong>Debugging tips:</strong></p>
+        <ul>
+            <li>Read the error message carefully (file, line number, error type).</li>
+            <li>Check the most recent changes you made.</li>
+            <li>Use <code>print()</code> statements to inspect values and flow.</li>
+            <li>Search the exact error online—chances are someone’s solved it already.</li>
+        </ul>
+    </div>
+
+    <div class="video-container">
+        <div class="gradient-border">
+            <!-- Optional video or leave empty -->
+            <div class="video-links"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 
 </html>

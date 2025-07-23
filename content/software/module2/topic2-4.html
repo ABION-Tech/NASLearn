@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typographic Poster Design Assignment</title>
+    <title>Software Development: Module 2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -65,78 +65,100 @@
 </head>
 
 <body>
-    <div class="container my-5">
-        <h1 class="text-center mb-4">Software Development: Module 2</h1>
-        <h2 class="mb-3">Programming Basics</h2>
-        <h3 class="mt-4">Discussion Questions</h3>
-        <hr>
 
-        <section class="my-4">
-            <h4>1. Role of Loops and Conditionals:</h4>
-            <h5>Question:</h5>
-            <p>How do loops and conditionals make programs more efficient and dynamic?</p>
-            <h5>Discussion Points:</h5>
-            <ul>
-                <li>Loops allow repeated execution of code blocks without redundancy, saving time and effort.</li>
-                <li>Conditionals enable decision-making, adapting the program's behavior based on user input or data.
-                </li>
-                <li>Together, they handle complex logic, such as iterating over datasets and applying conditions
-                    dynamically.</li>
-            </ul>
-            <h5>Example:</h5>
-            <p>A shopping cart program uses conditionals to apply discounts if the total exceeds a threshold and loops
-                to calculate the total price from a list of items.</p>
-        </section>
+<section id="topic-4">
+  <h2>Topic 4: Functions and Modular Programming</h2>
 
-        <section class="my-4">
-            <h4>2. Function Design:</h4>
-            <h5>Question:</h5>
-            <p>What are some real-world problems where you would use functions?</p>
-            <h5>Discussion Points:</h5>
-            <ul>
-                <li>Automating repetitive tasks, such as generating reports or calculating averages.</li>
-                <li>Building modular systems like web APIs (e.g., a function for fetching user data).</li>
-                <li>Solving mathematical problems, like calculating compound interest or statistical metrics.</li>
-            </ul>
-            <h5>Example:</h5>
-            <p>A payroll system might use functions to calculate employee salaries, taxes, and bonuses, ensuring
-                modularity and reusability.</p>
-        </section>
+  <p><strong>Overview:</strong> Functions are fundamental to writing clean, reusable, and maintainable code. They allow us to break large problems into smaller, manageable chunks. Modular programming takes this concept further by organizing code into separate files or modules for better readability and collaboration.</p>
 
-        <section class="my-4">
-            <h4>3. Debugging Logic Errors:</h4>
-            <h5>Question:</h5>
-            <p>What strategies do you use to debug issues with loops or conditionals?</p>
-            <h5>Discussion Points:</h5>
-            <ul>
-                <li><strong>Print Statements:</strong> Print variable values inside the loop or condition to track
-                    progress.</li>
-                <li><strong>Breakpoints:</strong> Use debugging tools to pause execution and inspect variables.</li>
-                <li><strong>Test Edge Cases:</strong> Check extreme or unexpected inputs to find flaws.</li>
-                <li><strong>Simplify the Problem:</strong> Break down the loop or conditional logic into smaller,
-                    testable parts.</li>
-            </ul>
-            <h5>Example:</h5>
-            <p>When debugging a loop, adding a counter or printing intermediate results helps identify infinite loops or
-                incorrect conditions.</p>
-        </section>
+  <h3>1. What is a Function?</h3>
+  <ul>
+    <li>A block of reusable code that performs a specific task.</li>
+    <li>Helps reduce repetition and improves code clarity.</li>
+  </ul>
 
-        <section class="my-4">
-            <h4>4. Iterative Processes:</h4>
-            <h5>Question:</h5>
-            <p>Can you provide examples of repetitive tasks in daily life that loops could simulate?</p>
-            <h5>Discussion Points:</h5>
-            <ul>
-                <li>Counting steps while walking: A loop increments the step count for every stride.</li>
-                <li>Calculating daily expenses: A loop sums up the cost of items purchased throughout the day.</li>
-                <li>Sending reminder emails: A loop iterates through a list of recipients and sends a customized email
-                    to each.</li>
-            </ul>
-            <h5>Example:</h5>
-            <p>A coffee shop application could use a loop to calculate the total price for a customer’s order, iterating
-                through a list of selected items.</p>
-        </section>
-    </div>
+  <pre><code class="language-python">
+# A simple function
+def greet():
+    print("Hello, welcome to NAS Software Engineering!")
+
+greet()
+  </code></pre>
+
+  <h3>2. Parameters and Arguments</h3>
+  <p>Functions can accept inputs, known as <strong>parameters</strong>, and you provide <strong>arguments</strong> when calling them.</p>
+
+  <pre><code class="language-python">
+def greet_user(name):
+    print(f"Hello, {name}!")
+
+greet_user("Ayo")
+  </code></pre>
+
+  <h3>3. Return Values</h3>
+  <p>Functions can return values using the <code>return</code> keyword, allowing further use of the result elsewhere in your code.</p>
+
+  <pre><code class="language-python">
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)  # Outputs 8
+  </code></pre>
+
+  <h3>4. Scope of Variables</h3>
+  <ul>
+    <li><strong>Local variables</strong> exist only inside the function.</li>
+    <li><strong>Global variables</strong> can be accessed throughout the program (though often discouraged).</li>
+  </ul>
+
+  <pre><code class="language-python">
+x = 10  # global
+
+def show_number():
+    x = 5  # local
+    print(x)
+
+show_number()  # Outputs 5
+print(x)       # Outputs 10
+  </code></pre>
+
+  <h3>5. Lambda (Anonymous) Functions</h3>
+  <p>Short functions that are defined without a name, useful for quick, one-line operations.</p>
+
+  <pre><code class="language-python">
+square = lambda x: x * x
+print(square(4))  # Outputs 16
+  </code></pre>
+
+  <h3>6. Modular Programming</h3>
+  <ul>
+    <li>Breaking programs into separate files called <strong>modules</strong>.</li>
+    <li>Promotes reusability, organization, and team collaboration.</li>
+  </ul>
+
+  <pre><code class="language-python">
+# In file: math_utils.py
+def multiply(a, b):
+    return a * b
+
+# In another file
+from math_utils import multiply
+
+print(multiply(3, 4))  # Outputs 12
+  </code></pre>
+
+  <h3>7. Best Practices</h3>
+  <ul>
+    <li>Write small, single-purpose functions.</li>
+    <li>Use descriptive names and comments.</li>
+    <li>Follow consistent indentation and structure.</li>
+    <li>Test your functions individually.</li>
+  </ul>
+
+  <h3>Practical Exercise:</h3>
+  <p>Create a Python module with three functions: one that returns the square of a number, another that converts Celsius to Fahrenheit, and a third that checks if a number is prime.</p>
+</section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
