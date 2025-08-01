@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* CSS remains unchanged - keeping your existing styling */
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -474,8 +475,7 @@
         .benefit-description {
             color: var(--gray);
         }
-        /* Testimonials Section - Commented out */
-        /*
+        /* Testimonials Section */
         .testimonials-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -536,83 +536,143 @@
             color: var(--gray);
             font-size: 0.9rem;
         }
-        */
-        /* How to Apply Section - Mobile Friendly */
+        /* How to Apply Section */
         .timeline {
             position: relative;
-            max-width: 800px;
-            margin: 3rem auto 0;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background-color: var(--primary);
-            margin-left: -2px;
-            border-radius: 2px;
+            max-width: 900px;
+            margin: 0 auto;
         }
         .timeline-item {
             position: relative;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 0.6s ease forwards;
         }
-        .timeline-item:nth-child(odd) {
-            padding-right: calc(50% + 2rem);
-            text-align: right;
-        }
-        .timeline-item:nth-child(even) {
-            padding-left: calc(50% + 2rem);
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .timeline-content {
-            background-color: var(--light);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: var(--shadow-sm);
-            position: relative;
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
             border: 1px solid var(--light-gray);
+            margin-left: 4rem;
+            position: relative;
+            transition: all 0.3s ease;
         }
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            width: 20px;
-            height: 20px;
-            background-color: var(--light);
-            border: 4px solid var(--primary);
-            border-radius: 50%;
-        }
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            right: -42px;
-        }
-        .timeline-item:nth-child(even) .timeline-content::before {
-            left: -42px;
+        .timeline-content:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
         .timeline-step {
             position: absolute;
-            top: 15px;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
+            left: 0;
+            top: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 1.25rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            box-shadow: var(--shadow-md);
+            z-index: 2;
         }
-        .timeline-item:nth-child(odd) .timeline-step {
-            right: -60px;
+        .timeline-connector {
+            position: absolute;
+            left: 1.5rem;
+            top: 5rem;
+            width: 2px;
+            height: calc(100% - 3rem);
+            background: linear-gradient(to bottom, var(--primary) 0%, var(--light-gray) 100%);
+            z-index: 1;
         }
-        .timeline-item:nth-child(even) .timeline-step {
-            left: -60px;
+        .timeline-item:last-child .timeline-connector {
+            display: none;
         }
         .timeline-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.375rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
             color: var(--dark);
+        }
+        .timeline-description {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .timeline-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .feature-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .cta-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+        /* Progress indicator */
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--light-gray);
+            z-index: 1000;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            width: 0%;
+            transition: width 0.3s ease;
         }
         /* FAQ Section */
         .faq-container {
@@ -677,7 +737,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
             opacity: 0.2;
         }
         .cta-content {
@@ -824,39 +884,6 @@
             .about-text {
                 padding-right: 0;
             }
-            
-            .timeline::before {
-                left: 2rem;
-            }
-            
-            .timeline-item {
-                padding-left: calc(50% + 2rem);
-                padding-right: 0;
-                text-align: left;
-            }
-            
-            .timeline-item:nth-child(odd) {
-                padding-right: 0;
-                text-align: left;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::before {
-                left: -42px;
-                right: auto;
-            }
-            
-            .timeline-item:nth-child(even) .timeline-content::before {
-                left: -42px;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-step {
-                left: -60px;
-                right: auto;
-            }
-            
-            .timeline-item:nth-child(even) .timeline-step {
-                left: -60px;
-            }
         }
         @media (max-width: 768px) {
             .nav-links, .nav-actions {
@@ -888,61 +915,16 @@
                 grid-template-columns: 1fr;
             }
             
-            /* Mobile-friendly timeline */
-            .timeline::before {
-                left: 1rem;
-            }
-            
-            .timeline-item {
-                padding-left: 3rem;
-                padding-right: 0;
-                text-align: left;
-                margin-bottom: 2rem;
-            }
-            
-            .timeline-item:nth-child(odd) {
-                padding-right: 0;
-                text-align: left;
-            }
-            
             .timeline-content {
-                padding: 1.2rem;
-            }
-            
-            .timeline-content::before {
-                left: -1.5rem;
-                top: 15px;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::before {
-                left: -1.5rem;
-                right: auto;
-            }
-            
-            .timeline-item:nth-child(even) .timeline-content::before {
-                left: -1.5rem;
+                margin-left: 0;
             }
             
             .timeline-step {
-                left: -1.5rem;
-                right: auto;
-                top: 10px;
-                width: 36px;
-                height: 36px;
-                font-size: 1.1rem;
+                left: 1rem;
             }
             
-            .timeline-item:nth-child(odd) .timeline-step {
-                left: -1.5rem;
-                right: auto;
-            }
-            
-            .timeline-item:nth-child(even) .timeline-step {
-                left: -1.5rem;
-            }
-            
-            .timeline-title {
-                font-size: 1.1rem;
+            .timeline-connector {
+                left: 1.5rem;
             }
         }
         @media (max-width: 576px) {
@@ -966,279 +948,6 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-            
-            /* Even more mobile-friendly timeline */
-            .timeline::before {
-                left: 0.8rem;
-            }
-            
-            .timeline-item {
-                padding-left: 2.5rem;
-                margin-bottom: 1.8rem;
-            }
-            
-            .timeline-content {
-                padding: 1rem;
-            }
-            
-            .timeline-content::before {
-                left: -1rem;
-                top: 12px;
-                width: 16px;
-                height: 16px;
-            }
-            
-            .timeline-step {
-                left: -1rem;
-                top: 8px;
-                width: 32px;
-                height: 32px;
-                font-size: 1rem;
-            }
-
-             /* How to Apply Section */
-        .section {
-            padding: 50px 30px;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 50px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: #0f172a;
-            margin-bottom: 15px;
-            font-family: 'Montserrat', sans-serif;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(to right, #ce1126, #fcd116, #008751);
-            border-radius: 3px;
-        }
-
-        .section-subtitle {
-            font-size: 1.3rem;
-            color: #64748b;
-            max-width: 600px;
-            margin: 20px auto 0;
-        }
-
-        /* Mobile-friendly timeline */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Vertical line */
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 30px;
-            width: 4px;
-            background: #2563eb;
-            border-radius: 2px;
-            z-index: 1;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-            padding-left: 80px;
-            z-index: 2;
-        }
-
-        .timeline-step {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 64px;
-            height: 64px;
-            background: #2563eb;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
-            z-index: 3;
-        }
-
-        .timeline-content {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #2563eb;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .timeline-title {
-            font-size: 1.6rem;
-            color: #0f172a;
-            margin-bottom: 15px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .timeline-description {
-            color: #475569;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .deadline-box {
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            max-width: 600px;
-            margin: 50px auto 0;
-            box-shadow: 0 5px 20px rgba(5, 150, 105, 0.2);
-        }
-
-        .deadline-title {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .deadline-date {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #2563eb;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .cta-button:hover {
-            background: #f1f5f9;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .header-title {
-                font-size: 2.2rem;
-            }
-            
-            .header-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .timeline::before {
-                left: 32px;
-            }
-            
-            .timeline-item {
-                padding-left: 70px;
-            }
-            
-            .timeline-step {
-                width: 54px;
-                height: 54px;
-                font-size: 1.5rem;
-            }
-            
-            .timeline-content {
-                padding: 20px;
-            }
-            
-            .timeline-title {
-                font-size: 1.4rem;
-            }
-            
-            .deadline-date {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-title {
-                font-size: 1.8rem;
-            }
-            
-            .logo-text {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.7rem;
-            }
-            
-            .timeline::before {
-                left: 27px;
-            }
-            
-            .timeline-item {
-                padding-left: 60px;
-            }
-            
-            .timeline-step {
-                width: 44px;
-                height: 44px;
-                font-size: 1.3rem;
-            }
-            
-            .deadline-box {
-                padding: 20px 15px;
-            }
-            
-            .deadline-title {
-                font-size: 1.2rem;
-            }
-            
-            .deadline-date {
-                font-size: 1.3rem;
-            }
-            
-            .cta-button {
-                padding: 12px 30px;
-                font-size: 1.1rem;
-            }
-        }
-
         }
     </style>
 </head>
@@ -1265,7 +974,7 @@
                 <button class="theme-toggle" id="themeToggle">
                     <i class="fas fa-moon"></i>
                 </button>
-                <a href="https://lms.nasskillsphere.africa" class="btn btn-outline" target="_blank">Login</a>
+                <a href="https://newageskillsphere.com.ng" class="btn btn-outline" target="_blank">Login</a>
                 <a href="#cta" class="btn btn-primary">Apply Now</a>
             </div>
             
@@ -1274,31 +983,34 @@
             </button>
         </div>
     </header>
+    
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-pattern"></div>
         <div class="container hero-content">
             <h1 class="hero-title">Transform Your Future with <span>Elite African Education</span></h1>
-            <p class="hero-subtitle"><em>Powered by ABION Industries</em><br>NAS delivers free, world‑class training in the skills today's employers crave—backed by guaranteed internships at ABION. Ready to become job‑ready in just 6 months?</p>
+            <p class="hero-subtitle">NAS delivers world-class training in the skills employers demand—backed by guaranteed internships at ABION Industries. Launch your career in just 6 months, completely free.</p>
             <div class="hero-cta">
                 <a href="#apply" class="btn btn-primary">Apply Now</a>
+                <a href="#courses" class="btn btn-outline">Explore Courses</a>
             </div>
         </div>
     </section>
+    
     <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About New Age Skillsphere</h2>
-                <p class="section-subtitle">Empowering Africa's Youth with Future‑Proof Skills</p>
+                <p class="section-subtitle">Empowering Africa's Next Generation of Innovators</p>
             </div>
             
             <div class="about-content">
                 <div class="about-text">
-                    <p class="about-description">New Age Skillsphere (NAS) is the flagship education initiative of ABION Industries. Born from our commitment to innovation and African empowerment, NAS bridges the continent's digital skills gap by offering zero‑cost, top‑tier training in high‑demand fields.</p>
+                    <p class="about-description">New Age Skillsphere (NAS) is ABION Industries' flagship education initiative, designed to bridge Africa's digital skills gap through zero-cost, world-class training in high-demand fields.</p>
                     
                     <h3 class="about-title">Our Mission</h3>
-                    <p class="about-description">NAS exists to reshape Africa's talent pipeline. By fusing ABION's innovation‑driven culture with a proprietary, step‑by‑step mastery system, we transform motivated learners into confident, work‑ready professionals. Graduates earn a three‑month paid internship at ABION Industries—so you don't just learn, you do.</p>
+                    <p class="about-description">We're transforming Africa's talent pipeline by combining ABION's innovation-driven culture with our proprietary step-by-step mastery system. We don't just teach skills—we create professionals through hands-on experience and guaranteed internships.</p>
                     
                     <div class="about-highlights">
                         <div class="highlight-card">
@@ -1306,7 +1018,7 @@
                                 <i class="fas fa-globe-africa"></i>
                             </div>
                             <h4 class="highlight-title">African Focus</h4>
-                            <p>Curriculum tailored to Africa's unique challenges and opportunities</p>
+                            <p>Curriculum tailored to Africa's unique opportunities and challenges</p>
                         </div>
                         
                         <div class="highlight-card">
@@ -1321,24 +1033,16 @@
                             <div class="highlight-icon">
                                 <i class="fas fa-gem"></i>
                             </div>
-                            <h4 class="highlight-title">Unique NAS Technique</h4>
-                            <p>Our proprietary step-by-step mastery system ensures comprehensive understanding</p>
-                        </div>
-                        
-                        <div class="highlight-card">
-                            <div class="highlight-icon">
-                                <i class="fas fa-book"></i>
-                            </div>
-                            <h4 class="highlight-title">Curriculum Built for Africa</h4>
-                            <p>Tackle local challenges with global tools, informed by real-world market insights</p>
+                            <h4 class="highlight-title">Proprietary NAS Technique</h4>
+                            <p>Our step-by-step mastery system ensures comprehensive understanding</p>
                         </div>
                         
                         <div class="highlight-card">
                             <div class="highlight-icon">
                                 <i class="fas fa-briefcase"></i>
                             </div>
-                            <h4 class="highlight-title">Internship Opportunity at ABION</h4>
-                            <p>Three months on the job at ABION Industries, working on real world projects</p>
+                            <h4 class="highlight-title">ABION Internship</h4>
+                            <p>Three months of real-world experience at ABION Industries</p>
                         </div>
                     </div>
                 </div>
@@ -1346,7 +1050,7 @@
                 <div class="about-visual">
                     <div class="visual-content">
                         <h3 class="visual-title">The NAS Advantage</h3>
-                        <p>Our unique approach combines world-class education with real-world industry experience</p>
+                        <p>Education that leads directly to employment</p>
                         
                         <div class="visual-stats">
                             <div class="stat-item">
@@ -1360,8 +1064,8 @@
                             </div>
                             
                             <div class="stat-item">
-                                <div class="stat-number">3+3</div>
-                                <div class="stat-label">Learning + Internship</div>
+                                <div class="stat-number">6</div>
+                                <div class="stat-label">Months to Career</div>
                             </div>
                         </div>
                     </div>
@@ -1369,6 +1073,7 @@
             </div>
         </div>
     </section>
+    
     <!-- Courses Section -->
     <section class="section" id="courses" style="background-color: #f9fafb;">
         <div class="container">
@@ -1387,7 +1092,7 @@
                         <h3 class="course-title">AI for Business & Content</h3>
                     </div>
                     <div class="course-body">
-                        <p class="course-description">Learn to leverage AI for real‑world business challenges and creative content strategy—plus get hands‑on with the automation and analytics tools driving ABION's own operations.</p>
+                        <p class="course-description">Harness AI to solve real-world business challenges and create compelling content strategies. Master automation and analytics tools used in ABION's daily operations.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="fas fa-clock"></i> 6 months
@@ -1408,7 +1113,7 @@
                         <h3 class="course-title">Machine Learning & AI Development</h3>
                     </div>
                     <div class="course-body">
-                        <p class="course-description">Dive into neural networks, algorithm design, and model deployment. Build the intelligent systems behind ABION Technologies' next‑gen products.</p>
+                        <p class="course-description">Dive deep into neural networks, algorithm design, and model deployment. Build intelligent systems that power next-generation products at ABION Technologies.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="fas fa-clock"></i> 6 months
@@ -1429,7 +1134,7 @@
                         <h3 class="course-title">Content & Media Production</h3>
                     </div>
                     <div class="course-body">
-                        <p class="course-description">From scripting to final cut—master video, audio, and multimedia techniques used by Pyramid Productions and Universal Brothers Studios.</p>
+                        <p class="course-description">Master the complete production pipeline from concept to final cut. Learn video, audio, and multimedia techniques used by Pyramid Productions and Universal Brothers Studios.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="fas fa-clock"></i> 6 months
@@ -1450,7 +1155,7 @@
                         <h3 class="course-title">Data Analysis & Business Intelligence</h3>
                     </div>
                     <div class="course-body">
-                        <p class="course-description">Transform data into insights. Master SQL, dashboards, and statistical analysis like our ABION BI team.</p>
+                        <p class="course-description">Transform raw data into actionable insights. Master SQL, visualization tools, and statistical analysis techniques used by ABION's BI team to drive business decisions.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="fas fa-clock"></i> 6 months
@@ -1471,7 +1176,7 @@
                         <h3 class="course-title">Digital Marketing</h3>
                     </div>
                     <div class="course-body">
-                        <p class="course-description">Own the digital landscape with SEO, PPC, social media, and content campaigns that drive growth—just like ABION's own marketing engine.</p>
+                        <p class="course-description">Master the digital landscape with SEO, PPC, social media, and content strategies that drive growth. Learn the same approaches that power ABION's marketing success.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="fas fa-clock"></i> 6 months
@@ -1492,7 +1197,7 @@
                         <h3 class="course-title">Project Management</h3>
                     </div>
                     <div class="course-body">
-                        <p class="course-description">Learn agile and traditional frameworks to lead projects from concept to delivery—mirroring ABION's cross‑divisional workflows.</p>
+                        <p class="course-description">Learn agile and traditional frameworks to lead projects from concept to delivery. Develop the same skills used by ABION's cross-divisional project teams.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="fas fa-clock"></i> 6 months
@@ -1513,7 +1218,7 @@
                         <h3 class="course-title">Software Development</h3>
                     </div>
                     <div class="course-body">
-                        <p class="course-description">Full‑stack mastery: front end, back end, databases, DevOps—the same skills our ABION Tech engineers use every day.</p>
+                        <p class="course-description">Achieve full-stack mastery: front end, back end, databases, and DevOps. Build the same skills ABION Tech engineers use to create cutting-edge solutions.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="fas fa-clock"></i> 6 months
@@ -1534,7 +1239,7 @@
                         <h3 class="course-title">Web Development</h3>
                     </div>
                     <div class="course-body">
-                        <p class="course-description">Build responsive, accessible websites with HTML, CSS, JavaScript, and modern frameworks—empowering you to launch ABION‑grade web products.</p>
+                        <p class="course-description">Build responsive, accessible websites with HTML, CSS, JavaScript, and modern frameworks. Create the same quality web products ABION delivers to clients.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="fas fa-clock"></i> 6 months
@@ -1555,7 +1260,7 @@
                         <h3 class="course-title">Professional Writing</h3>
                     </div>
                     <div class="course-body">
-                        <p class="course-description">Master copywriting, technical writing, and storytelling for digital platforms—fueling content strategy across ABION's ventures.</p>
+                        <p class="course-description">Master copywriting, technical writing, and storytelling for digital platforms. Develop the content creation skills that drive engagement across ABION's ventures.</p>
                         <div class="course-meta">
                             <div class="course-duration">
                                 <i class="fas fa-clock"></i> 6 months
@@ -1569,12 +1274,13 @@
             </div>
         </div>
     </section>
+    
     <!-- Why NAS Section -->
     <section class="section why-nas" id="why">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">The NAS Advantage</h2>
-                <p class="section-subtitle">More than just education - a transformative experience</p>
+                <p class="section-subtitle">More than education—a pathway to professional success</p>
             </div>
             
             <div class="benefits-grid">
@@ -1583,7 +1289,7 @@
                         <i class="fas fa-gem"></i>
                     </div>
                     <h3 class="benefit-title">Proprietary NAS Technique</h3>
-                    <p class="benefit-description">Our unique milestone‑based system breaks down complex skills into clear, manageable steps—so you master, not just memorize.</p>
+                    <p class="benefit-description">Our unique milestone-based system breaks complex skills into manageable steps, ensuring true mastery rather than memorization.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -1591,7 +1297,7 @@
                         <i class="fas fa-hand-holding-usd"></i>
                     </div>
                     <h3 class="benefit-title">100% Free, 100% Elite</h3>
-                    <p class="benefit-description">No fees, no strings—every resource, every lesson, every mentor session is covered.</p>
+                    <p class="benefit-description">No fees, no strings—every resource, lesson, and mentor session is fully covered by ABION Industries.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -1599,23 +1305,23 @@
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <h3 class="benefit-title">Guaranteed ABION Internship</h3>
-                    <p class="benefit-description">Three months on the job at ABION Industries, working on real world projects.</p>
+                    <p class="benefit-description">Every graduate earns a three-month paid placement working on real ABION projects, building your portfolio and professional network.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-globe-africa"></i>
                     </div>
-                    <h3 class="benefit-title">Curriculum Built by Africans, for Africans</h3>
-                    <p class="benefit-description">Tackle local challenges with global tools, informed by real‑world market insights.</p>
+                    <h3 class="benefit-title">Africa-Centered Curriculum</h3>
+                    <p class="benefit-description">Tackle local challenges with global tools, informed by real-world market insights from across the African continent.</p>
                 </div>
                 
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
-                    <h3 class="benefit-title">Industry Mentorship & Career Workshops</h3>
-                    <p class="benefit-description">Weekly sessions on resume crafting, interview strategy, networking, and personal branding—all with guidance from African tech leaders.</p>
+                    <h3 class="benefit-title">Industry Mentorship</h3>
+                    <p class="benefit-description">Weekly sessions on resume crafting, interview strategy, and personal branding with guidance from African tech leaders.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -1628,18 +1334,18 @@
             </div>
         </div>
     </section>
-    <!-- Testimonials Section - Commented out -->
-    <!--
+
+    <!-- Testimonials Section -->
     <section class="section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Success Stories</h2>
-                <p class="section-subtitle">Hear from our graduates who transformed their careers</p>
+                <p class="section-subtitle">Hear from graduates who transformed their careers</p>
             </div>
             
             <div class="testimonials-container">
                 <div class="testimonial-card">
-                    <p class="testimonial-content">"The NAS program completely changed my career trajectory. Three months after graduating, I joined a leading fintech company—thanks to the hands‑on internship at ABION that set me apart."</p>
+                    <p class="testimonial-content">"The NAS program completely changed my career trajectory. Three months after graduating, I joined a leading fintech company—thanks to the hands-on internship at ABION that set me apart."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">A</div>
                         <div class="author-info">
@@ -1650,7 +1356,7 @@
                 </div>
                 
                 <div class="testimonial-card">
-                    <p class="testimonial-content">"As a creative writer, I never thought I'd end up in tech. NAS's AI for Content course opened doors—now I head content strategy for a major e‑commerce platform, earning three times my previous salary."</p>
+                    <p class="testimonial-content">"As a creative writer, I never thought I'd end up in tech. NAS's AI for Content course opened doors—now I head content strategy for a major e-commerce platform, earning three times my previous salary."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">K</div>
                         <div class="author-info">
@@ -1661,7 +1367,7 @@
                 </div>
                 
                 <div class="testimonial-card">
-                    <p class="testimonial-content">"The NAS Technique demystified software development. By graduation, I'd already received a full‑time offer at ABION Technologies."</p>
+                    <p class="testimonial-content">"The NAS Technique demystified software development. By graduation, I'd already received a full-time offer at ABION Technologies. The internship was invaluable."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">T</div>
                         <div class="author-info">
@@ -1673,12 +1379,12 @@
             </div>
         </div>
     </section>
-    -->
-    <!-- How to Apply Section -->
-    <!-- How to Apply Section -->
-
-    <!-- How to Apply Section -->
-    <section class="section" id="apply" style="background-color: #f9fafb;">
+    
+    <!-- How to Apply Section --> 
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <section class="section" id="apply">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">How to Apply</h2>
@@ -1688,91 +1394,73 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-step">1</div>
+                    <div class="timeline-connector"></div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Online Application</h3>
-                        <p>Complete our straightforward application form. Tell us about your background, interests, and career aspirations. No prior experience required.</p>
+                        <p class="timeline-description">Complete our straightforward application form. Share your background, interests, and career aspirations. No prior experience required.</p>
+                        <div class="timeline-features">
+                            <span class="feature-tag">5 min form</span>
+                            <span class="feature-tag">No experience needed</span>
+                            <span class="feature-tag">Free to apply</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-step">2</div>
+                    <div class="timeline-connector"></div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Aptitude Assessment</h3>
-                        <p>Take our online assessment to evaluate your logical reasoning and learning potential. This helps us match you with the right program.</p>
+                        <p class="timeline-description">Take our online assessment to evaluate your logical reasoning and learning potential. This helps us match you with the right program.</p>
+                        <div class="timeline-features">
+                            <span class="feature-tag">30 min test</span>
+                            <span class="feature-tag">Logic & reasoning</span>
+                            <span class="feature-tag">Instant results</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-step">3</div>
+                    <div class="timeline-connector"></div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Interview</h3>
-                        <p>Have a virtual conversation with our admissions team. We want to understand your motivation and ensure NAS is the right fit for you.</p>
+                        <p class="timeline-description">Have a virtual conversation with our admissions team. We want to understand your motivation and ensure NAS is the right fit for you.</p>
+                        <div class="timeline-features">
+                            <span class="feature-tag">15-20 min call</span>
+                            <span class="feature-tag">Virtual meeting</span>
+                            <span class="feature-tag">Flexible scheduling</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-step">4</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Onboarding</h3>
-                        <p>Accepted candidates receive welcome materials, schedule details, and preparation resources. Get ready to start your transformation!</p>
+                        <h3 class="timeline-title">Welcome & Onboarding</h3>
+                        <p class="timeline-description">Accepted candidates receive welcome materials, schedule details, and preparation resources. Get ready to start your transformation!</p>
+                        <div class="timeline-features">
+                            <span class="feature-tag">Welcome package</span>
+                            <span class="feature-tag">Pre-course prep</span>
+                            <span class="feature-tag">Mentor assignment</span>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="#cta" class="btn btn-primary">Start Your Application</a>
+            <div class="cta-section">
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Ready to get started?</h3>
+                <p style="margin-bottom: 2rem; color: var(--gray);">Join thousands of successful career changers who started their journey with us.</p>
+                <a href="#cta" class="cta-button">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                    Start Your Application
+                </a>
             </div>
         </div>
     </section>
     
-    <!-- <section class="section" id="apply" style="background-color: #f9fafb;">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">How to Apply</h2>
-                <p class="section-subtitle">Your journey to career transformation in 4 simple steps</p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-step">1</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Online Application</h3>
-                        <p>Complete our quick form—no prior experience needed.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-step">2</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Aptitude Assessment</h3>
-                        <p>Show us your logical reasoning and learning potential; we'll match you to the right track.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-step">3</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Interview</h3>
-                        <p>A virtual chat with our admissions team to understand your goals and ensure NAS is your perfect fit.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-step">4</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Onboarding</h3>
-                        <p>Receive your welcome kit, schedule, and prep materials—then get ready to start your transformation.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="#cta" class="btn btn-primary">Start Your Application</a>
-                <p style="margin-top: 1rem; color: var(--gray);"><strong>Applications close June 18, 2025</strong><br>Limited spots—secure yours today.</p>
-            </div>
-        </div>
-    </section> -->
-
     <!-- FAQ Section -->
     <section class="section" id="faq">
         <div class="container">
@@ -1785,40 +1473,41 @@
                 <div class="faq-item">
                     <div class="faq-question">Is NAS really free?</div>
                     <div class="faq-answer">
-                        <p>100%. All course materials, mentors, and internship placements are fully sponsored by ABION Industries.</p>
+                        <p>Yes, 100% free. All course materials, mentorship, and the ABION internship opportunity are fully sponsored by ABION Industries as part of their commitment to developing African talent.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">Who's eligible?</div>
+                    <div class="faq-question">Who is eligible to apply?</div>
                     <div class="faq-answer">
-                        <p>Anyone across Africa with a hunger to learn—no prior tech background required.</p>
+                        <p>We welcome applicants from across Africa with a passion for learning and growth. No prior technical background is required—we value motivation, aptitude, and potential over previous experience.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">How does the ABION internship work?</div>
                     <div class="faq-answer">
-                        <p>Every graduate gets a three‑month paid placement on real ABION projects, building your portfolio and network.</p>
+                        <p>Upon successful course completion, every graduate receives a three-month paid internship at ABION Industries. You'll work on real projects, build your professional portfolio, and establish valuable industry connections.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">Do I need experience to join?</div>
+                    <div class="faq-question">Do I need prior experience to join?</div>
                     <div class="faq-answer">
-                        <p>Nope. Our NAS Technique bridges beginners to advanced learners through structured milestones.</p>
+                        <p>Not at all. Our proprietary NAS Technique is designed to accommodate learners at all levels, from complete beginners to those with some background. We meet you where you are and help you build expertise step by step.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">What happens after I graduate?</div>
+                    <div class="faq-question">What happens after I complete the program?</div>
                     <div class="faq-answer">
-                        <p>Beyond your ABION internship, you enter a vibrant alumni community with ongoing career support and networking opportunities.</p>
+                        <p>Beyond your ABION internship, you'll join our lifelong alumni community, offering ongoing career support, networking opportunities, and access to job openings across our partner network. Many graduates receive full-time employment offers directly from their internship experience.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
     <!-- CTA Section -->
     <section class="section" id="cta">
         <div class="container">
@@ -1834,6 +1523,7 @@
             </div>
         </div>
     </section>
+    
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1893,6 +1583,7 @@
             </div>
         </div>
     </footer>
+    
     <script>
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
@@ -2000,11 +1691,14 @@
                 navActions.style.display = 'none';
             });
         });
-
-
-
-
         
+        // Progress bar for timeline section
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
     </script>
 </body>
 </html>

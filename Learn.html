@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAS Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#0056b3">
+    <link rel="manifest" href="/manifest.json">
+    <!-- iOS Support -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/icon-57x57.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="NAS Portal">
+
+    <!-- Additional PWA Meta Tags -->
+    <meta name="application-name" content="NAS Portal">
+    <meta name="msapplication-TileColor" content="#0056b3">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- Prevent zoom on mobile -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #00264d 0%, #004a99 100%);
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem 2.5rem;
+            width: 100%;
+            max-width: 480px;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(to right, #0056d2, #002f6c);
+            border-radius: 16px 16px 0 0;
+        }
+
+        /* Header Area - Increased size and matching button color */
+        .login-card .header {
+            text-align: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .login-card .header i {
+            font-size: 2.8rem;
+            color: #0056d2;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-card .header h1 {
+            font-size: 2rem;
+            margin: 0.4rem 0 0.2rem;
+            font-weight: 700;
+            color: #0056d2;
+            line-height: 1.3;
+            text-align: center;
+            font-family: inherit;
+            letter-spacing: 0.2px;
+        }
+
+        .login-card .header p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Form elements */
+        .form-label {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #003d80;
+        }
+
+        .form-control {
+            font-size: 1rem;
+            padding: 0.85rem 1.25rem;
+            height: auto;
+            border: 2px solid #0056b3;
+            border-radius: 8px !important;
+
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control:focus {
+            border-color: #002f6c;
+            box-shadow: 0 0 12px rgba(0, 95, 179, 0.3);
+            outline: none;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group .form-control {
+            padding-right: 3.5rem;
+            margin-bottom: 0;
+            /* Remove margin from password input since it's in a group */
+        }
+
+        .eye-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #6c757d;
+            font-size: 1.1rem;
+            padding: 0.6rem;
+            cursor: pointer;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .eye-btn:hover {
+            color: #0056b3;
+            background: rgba(0, 86, 179, 0.05);
+        }
+
+        .password-hint {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        /* Error message styling */
+        .error-msg {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            background: rgba(220, 53, 69, 0.1);
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            display: none;
+        }
+
+        /* Button - Matching header color */
+        .btn-primary {
+            background: linear-gradient(to right, #0056d2, #003a8c);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 86, 210, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 46, 109, 0.4);
+            background: linear-gradient(to right, #004dba, #003075);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Footer */
+        .login-footer {
+            margin-top: 1.8rem;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #666;
+            font-weight: 500;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* PWA specific styles */
+        .pwa-mode {
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        /* Install button styles */
+        #installBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #0056b3, #002f6c);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        #installBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Hide install button on installed PWA */
+        .pwa-mode #installBtn {
+            display: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .login-card {
+                padding: 1.8rem 1.5rem;
+                max-width: 95%;
+                border-radius: 14px;
+            }
+
+            .login-card .header i {
+                font-size: 2.4rem;
+            }
+
+            .login-card .header h1 {
+                font-size: 1.7rem;
+            }
+
+            .login-card .header p {
+                font-size: 0.95rem;
+            }
+
+            .btn-primary {
+                padding: 0.9rem;
+                font-size: 1rem;
+            }
+
+            #installBtn {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="login-card">
+        <div class="header">
+            <i class="fas fa-graduation-cap"></i>
+            <h1>New Age Skillsphere</h1>
+            <p>Course Access Portal</p>
+        </div>
+
+        <form id="loginForm">
+            <!-- Course Code -->
+            <div class="mb-3">
+                <label for="courseCode" class="form-label">
+                    <i class="fas fa-book me-2"></i>Course Code
+                </label>
+                <input type="text" class="form-control" id="courseCode"
+                    placeholder="Course Initials e.g. WD for Web Dev" required>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label for="password" class="form-label">
+                    <i class="fas fa-lock me-2"></i>Course Passphrase
+                </label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" placeholder="Enter your course passphrase"
+                        required>
+                    <button type="button" id="togglePassword" class="eye-btn" aria-label="Show password">
+                        <i id="toggleIcon" class="fas fa-eye-slash"></i>
+                    </button>
+                </div>
+                <div class="password-hint">Hint: Check Course group for Details</div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMsg" class="error-msg"></div>
+
+            <!-- Login Button -->
+            <button type="submit" class="btn btn-primary w-100 py-2" id="loginBtn">
+                <span class="btn-text">Access Course</span>
+                <div class="spinner" id="spinner"></div>
+            </button>
+        </form>
+
+        <!-- Footer -->
+        <div class="login-footer">
+            © 2025 NAS
+        </div>
+    </div>
+
+    <script>
+        // Course authentication with intuitive but secure passwords
+        const courseAuth = {
+            "AI": {
+                password: "GoldAI@25",
+                url: "https://newageskills.com.ng/AI"
+            },
+            "AIML": {
+                password: "BlueAIML@25",
+                url: "https://newageskills.com.ng/AIML"
+            },
+            "CMP": {
+                password: "RedCMP@25",
+                url: "https://newageskills.com.ng/contentdevelopment"
+            },
+            "DABI": {
+                password: "GreenDABI@25",
+                url: "https://newageskills.com.ng/DA&BI"
+            },
+            "DM": {
+                password: "PurpleDM@25",
+                url: "https://newageskills.com.ng/DigitalMarketing"
+            },
+            "PM": {
+                password: "OrangePM@25",
+                url: "https://newageskills.com.ng/ProjectManagement"
+            },
+            "SD": {
+                password: "BlackSD@25",
+                url: "https://newageskills.com.ng/Software"
+            },
+            "WD": {
+                password: "SilverWEB@25",
+                url: "https://newageskills.com.ng/Web"
+            },
+            "W": {
+                password: "TealWRT@25",
+                url: "https://newageskills.com.ng/Writing"
+            }
+        };
+
+        // Helper function to extract course code
+        function extractCourseCode(input) {
+            const cleanInput = input.replace(/\s+/g, '').toUpperCase();
+            const parts = cleanInput.split(/[\/,\|]/);
+
+            for (let i = parts.length - 1; i >= 0; i--) {
+                if (parts[i]) {
+                    return parts[i];
+                }
+            }
+            return null;
+        }
+
+        // Form submission handler
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const courseInput = document.getElementById("courseCode").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMsg = document.getElementById("errorMsg");
+            const loginBtn = document.getElementById("loginBtn");
+            const btnText = loginBtn.querySelector('.btn-text');
+            const spinner = document.getElementById("spinner");
+
+            // Reset error message
+            errorMsg.textContent = "";
+            errorMsg.style.display = "none";
+
+            // Show loading state
+            btnText.style.visibility = "hidden";
+            spinner.style.display = "block";
+            loginBtn.disabled = true;
+
+            // Simulate processing delay
+            setTimeout(() => {
+                // Extract course code
+                const courseCode = extractCourseCode(courseInput);
+
+                if (!courseCode) {
+                    errorMsg.textContent = "Please enter a valid course code";
+                    errorMsg.style.display = "block";
+                    resetLoginButton();
+                    return;
+                }
+
+                // Check if course exists
+                if (!courseAuth[courseCode]) {
+                    errorMsg.textContent = `Course not found. Available: ${Object.keys(courseAuth).join(', ')}`;
+                    errorMsg.style.display = "block";
+                    resetLoginButton();
+                    return;
+                }
+
+                // Verify course-specific password
+                if (password !== courseAuth[courseCode].password) {
+                    errorMsg.textContent = "Incorrect passphrase for this course";
+                    errorMsg.style.display = "block";
+                    resetLoginButton();
+                    return;
+                }
+
+                // Successful login - redirect
+                window.location.href = courseAuth[courseCode].url;
+            }, 800);
+
+            function resetLoginButton() {
+                btnText.style.visibility = "visible";
+                spinner.style.display = "none";
+                loginBtn.disabled = false;
+            }
+        });
+
+        // Toggle password visibility
+        document.getElementById("togglePassword").addEventListener("click", function () {
+            const passwordField = document.getElementById("password");
+            const toggleIcon = document.getElementById("toggleIcon");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            }
+        });
+
+        // Auto-focus on course code field
+        window.addEventListener('load', function () {
+            document.getElementById('courseCode').focus();
+        });
+    </script>
+    <script>
+        // Enhanced Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+
+                        // Check for updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // New version available
+                                    if (confirm('New version available! Reload to update?')) {
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        });
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+    <script>
+        // Enhanced PWA Installation with better UX
+        let deferredPrompt;
+        let installBtn;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+
+            // Create custom install button
+            if (!installBtn) {
+                installBtn = document.createElement('button');
+                installBtn.id = 'installBtn';
+                installBtn.innerHTML = '📲 Install App';
+                installBtn.setAttribute('aria-label', 'Install NAS Portal as an app');
+
+                document.body.appendChild(installBtn);
+
+                installBtn.addEventListener('click', async () => {
+                    if (deferredPrompt) {
+                        deferredPrompt.prompt();
+                        const choiceResult = await deferredPrompt.userChoice;
+
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('User accepted the install prompt');
+                            installBtn.remove();
+                        }
+                        deferredPrompt = null;
+                    }
+                });
+            }
+        });
+
+        // Handle successful installation
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA was installed');
+            if (installBtn) {
+                installBtn.remove();
+            }
+            deferredPrompt = null;
+        });
+
+        // Detect if launched as PWA and add appropriate styles
+        window.addEventListener('load', () => {
+            if (window.matchMedia('(display-mode: standalone)').matches ||
+                window.navigator.standalone === true) {
+                document.body.classList.add('pwa-mode');
+                console.log('Running as PWA');
+            }
+        });
+
+        // Handle online/offline status
+        window.addEventListener('online', () => {
+            console.log('App is online');
+        });
+
+        window.addEventListener('offline', () => {
+            console.log('App is offline');
+        });
+    </script>
+
+</body>
+
+</html>

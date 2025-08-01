@@ -299,61 +299,10 @@
             font-size: 2rem;
             margin-bottom: 1.5rem;
             color: var(--dark);
-            position: relative;
-            display: inline-block;
-        }
-        .about-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            border-radius: 2px;
         }
         .about-description {
             margin-bottom: 1.5rem;
             color: var(--gray);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        .mission-box {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(5, 150, 105, 0.05) 100%);
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin: 2rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .mission-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: 0;
-        }
-        .mission-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            position: relative;
-            z-index: 1;
-        }
-        .mission-description {
-            color: var(--gray);
-            position: relative;
-            z-index: 1;
-            line-height: 1.8;
-        }
-        .highlight-text {
-            color: var(--primary);
-            font-weight: 600;
         }
         .about-highlights {
             display: grid;
@@ -367,9 +316,6 @@
             border-radius: 0.5rem;
             transition: var(--transition);
             border-left: 4px solid var(--primary);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
         }
         .highlight-card:hover {
             transform: translateY(-5px);
@@ -384,10 +330,6 @@
             font-size: 1.25rem;
             margin-bottom: 0.5rem;
             color: var(--dark);
-        }
-        .highlight-text {
-            color: var(--gray);
-            flex-grow: 1;
         }
         .about-visual {
             position: relative;
@@ -1134,14 +1076,15 @@
     <section class="hero" id="home">
         <div class="hero-pattern"></div>
         <div class="container hero-content">
-            <h1 class="hero-title">Transform Your Future with <span>Elite Digital Skills</span></h1>
-            <p class="hero-subtitle"><em>Powered by ABION Industries</em><br>NAS delivers free, world‑class training in the skills today's employers crave—backed by guaranteed internships at ABION. Ready to become job‑ready in just 6 months?</p>
+            <h1 class="hero-title">Transform Your Future with <span>Elite African Education</span></h1>
+            <p class="hero-subtitle"><em>Powered by ABION Industries</em><br>NAS delivers free, world‑class training in the skills needed by today's employers, backed by the internships at ABION. Ready to become market-ready in just 6 months?</p>
             <div class="hero-cta">
                 <a href="#apply" class="btn btn-primary">Apply Now</a>
             </div>
         </div>
     </section>
-    
+
+
     <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
@@ -1154,10 +1097,8 @@
                 <div class="about-text">
                     <p class="about-description">New Age Skillsphere (NAS) is the flagship education initiative of ABION Industries. Born from our commitment to innovation and African empowerment, NAS bridges the continent's digital skills gap by offering zero‑cost, top‑tier training in high‑demand fields.</p>
                     
-                    <div class="mission-box">
-                        <h3 class="mission-title">Our Mission</h3>
-                        <p class="mission-description">NAS exists to reshape Africa's talent pipeline. By fusing ABION's innovation‑driven culture with a proprietary, step‑by‑step mastery system, we transform motivated learners into confident, work‑ready professionals. Graduates earn a three‑month paid internship at ABION Industries—so you don't just learn, you <span class="highlight-text">do</span>.</p>
-                    </div>
+                    <h3 class="about-title">Our Mission</h3>
+                    <p class="about-description">NAS exists to reshape Africa's talent pipeline. By fusing ABION's innovation‑driven culture with a proprietary, step‑by‑step mastery system, we transform motivated learners into confident, work‑ready professionals. Graduates earn a three‑month paid internship at ABION Industries—so you don't just learn, you do.</p>
                     
                     <div class="about-highlights">
                         <div class="highlight-card">
@@ -1165,7 +1106,7 @@
                                 <i class="fas fa-globe-africa"></i>
                             </div>
                             <h4 class="highlight-title">African Focus</h4>
-                            <p class="highlight-text">Curriculum tailored to Africa's unique challenges and opportunities</p>
+                            <p>Curriculum tailored to Africa's unique challenges and opportunities</p>
                         </div>
                         
                         <div class="highlight-card">
@@ -1173,7 +1114,7 @@
                                 <i class="fas fa-hand-holding-usd"></i>
                             </div>
                             <h4 class="highlight-title">Zero Cost</h4>
-                            <p class="highlight-text">Completely free training with all materials provided</p>
+                            <p>Completely free training with all materials provided</p>
                         </div>
                         
                         <div class="highlight-card">
@@ -1181,15 +1122,23 @@
                                 <i class="fas fa-gem"></i>
                             </div>
                             <h4 class="highlight-title">Unique NAS Technique</h4>
-                            <p class="highlight-text">Our proprietary step-by-step mastery system ensures comprehensive understanding</p>
+                            <p>Our proprietary step-by-step mastery system ensures comprehensive understanding</p>
+                        </div>
+                        
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4 class="highlight-title">Curriculum Built for Africa</h4>
+                            <p>Tackle local challenges with global tools, informed by real-world market insights</p>
                         </div>
                         
                         <div class="highlight-card">
                             <div class="highlight-icon">
                                 <i class="fas fa-briefcase"></i>
                             </div>
-                            <h4 class="highlight-title">ABION Internship</h4>
-                            <p class="highlight-text">Three months of real-world experience at ABION Industries</p>
+                            <h4 class="highlight-title">Internship Opportunity at ABION</h4>
+                            <p>Three months on the job at ABION Industries, working on real world projects</p>
                         </div>
                     </div>
                 </div>
@@ -1468,7 +1417,7 @@
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
                     <h3 class="benefit-title">Interview Mastery</h3>
-                    <p class="benefit-description">Gain the confidence and skills to excel in both technical and behavioral interviews through mock sessions, expert feedback, and proven frameworks tailored to top roles across industries.</p>
+                    <p class="benefit-description">Technical & behavioral interview preparation       
                 </div>
                 
                 <div class="benefit-card">
@@ -1481,7 +1430,8 @@
             </div>
         </div>
     </section>
-<!-- Testimonials Section 
+
+    <!-- Testimonials Section -->
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -1524,7 +1474,7 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     
     <!-- How to Apply Section --> 
     <div class="progress-indicator">
@@ -1566,9 +1516,22 @@
                     </div>
                 </div>
                 
-                
                 <div class="timeline-item">
                     <div class="timeline-step">3</div>
+                    <div class="timeline-connector"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Interview</h3>
+                        <p class="timeline-description">Have a virtual conversation with our admissions team. We want to understand your motivation and ensure NAS is the right fit for you.</p>
+                        <div class="timeline-features">
+                            <span class="feature-tag">15-20 min call</span>
+                            <span class="feature-tag">Virtual meeting</span>
+                            <span class="feature-tag">Flexible scheduling</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">4</div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Welcome & Onboarding</h3>
                         <p class="timeline-description">Accepted candidates receive welcome materials, schedule details, and preparation resources. Get ready to start your transformation!</p>
@@ -1583,7 +1546,7 @@
             
             <div class="cta-section">
                 <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Ready to get started?</h3>
-                <p style="margin-bottom: 2rem; color: var(--text-white);">Join  hundreds who beilive in the NAS Path.</p>
+                <p style="margin-bottom: 2rem; color: var(--text-gray);">Join thousands of successful career changers who started their journey with us.</p>
                 <a href="#cta" class="cta-button">
                     <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -1650,7 +1613,7 @@
                     <p class="cta-subtitle">Join our next cohort of ambitious learners. Limited spots available - apply today!</p>
                     <div class="notice-box">
                         <p><strong>Applications are currently closed</strong></p>
-                        <p>Our next application period opens in October 2025</p>
+                        <p>Our next application period opens in August 2025</p>
                     </div>
                 </div>
             </div>
