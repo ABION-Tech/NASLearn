@@ -1,7 +1,7 @@
 const CACHE_NAME = 'nas-cache-v2';
 const ASSETS = [
     '/',
-    '/index.html',
+    '/Learn.html',
     '/css/bootstrap.min.css',
     '/icons/icon-192x192.png',
     '/icons/icon-512x512.png',
