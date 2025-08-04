@@ -15,9 +15,15 @@
         }
 
         h1,
-        h2 {
+        h2,
+        h4 {
             text-align: center;
             color: #1f1f1f;
+        }
+
+        .text-center p {
+            font-size: 18px;
+            font-weight: 200;
         }
 
         .conclusion-section {
@@ -34,9 +40,31 @@
         .card {
             width: 250px;
             perspective: 1000px;
+            width: 100%;
+            height: 250px;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+
         }
 
-        .card-inner {
+
+        .card p {
+            color: #1f1f1f;
+            font-weight: 200;
+            text-align: center;
+            font-size: 18px;
+            padding: 25px;
+        }
+
+        /* .card-inner {
             position: relative;
             width: 100%;
             transition: transform 0.6s;
@@ -78,7 +106,7 @@
 
         .card-back p {
             font-size: 14px;
-        }
+        } */
 
         @media (max-width: 768px) {
             .card {
@@ -193,67 +221,67 @@
         <div class="card-container">
             <!-- Card 1 -->
             <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <p>Understanding Variables</p>
-                    </div>
-                    <div class="card-back">
-                        <p>In Week 4, students learned how to declare and use variables in JavaScript to store data,
-                            including different types such as numbers, strings, and booleans.</p>
-                    </div>
+
+                <div class="card">
+                    <h4>Understanding Variables</h4>
                 </div>
+                <div class="card">
+                    <p>In Week 4, students learned how to declare and use variables in JavaScript to store data,
+                        including different types such as numbers, strings, and booleans.</p>
+                </div>
+
             </div>
 
             <!-- Card 2 -->
             <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <p>Functions in JavaScript</p>
-                    </div>
-                    <div class="card-back">
-                        <p>Functions are reusable blocks of code. Students explored how to declare and invoke functions,
-                            pass parameters, and return values.</p>
-                    </div>
+
+                <div class="card">
+                    <h4>Functions in JavaScript</h4>
                 </div>
+                <div class="card">
+                    <p>Functions are reusable blocks of code. Students explored how to declare and invoke functions,
+                        pass parameters, and return values.</p>
+                </div>
+
             </div>
 
             <!-- Card 3 -->
             <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <p>Control Structures</p>
-                    </div>
-                    <div class="card-back">
-                        <p>Control structures like if-else statements and loops were introduced to control the flow of
-                            the program based on different conditions.</p>
-                    </div>
+
+                <div class="card">
+                    <h4>Control Structures</h4>
                 </div>
+                <div class="card">
+                    <p>Control structures like if-else statements and loops were introduced to control the flow of
+                        the program based on different conditions.</p>
+                </div>
+
             </div>
 
             <!-- Card 4 -->
             <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <p>DOM Manipulation</p>
-                    </div>
-                    <div class="card-back">
-                        <p>Students learned how to dynamically update web pages by selecting and manipulating elements
-                            using the DOM API.</p>
-                    </div>
+
+                <div class="card ">
+                    <h4>DOM Manipulation</h4>
                 </div>
+                <div class="card ">
+                    <p>Students learned how to dynamically update web pages by selecting and manipulating elements
+                        using the DOM API.</p>
+                </div>
+
             </div>
 
             <!-- Card 5 -->
             <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <p>Event Handling</p>
-                    </div>
-                    <div class="card-back">
-                        <p>JavaScript events like clicks and keypresses were handled using event listeners, making pages
-                            interactive and responsive to user actions.</p>
-                    </div>
+
+                <div class="card">
+                    <h4>Event Handling</h4>
                 </div>
+                <div class="card">
+                    <p>JavaScript events like clicks and keypresses were handled using event listeners, making pages
+                        interactive and responsive to user actions.</p>
+                </div>
+
             </div>
         </div>
 

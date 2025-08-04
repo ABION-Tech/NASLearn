@@ -1,6 +1,6 @@
 const CACHE_NAME = 'nas-lms-v1';
 const assetsToCache = [
-  '/login.html',
+  '/Learn.html',
   '/css/bootstrap.min.css',
   '/js/main.js',
   '/icons/icon-192×192.png',

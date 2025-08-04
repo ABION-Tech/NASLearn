@@ -1,0 +1,107 @@
+Check all videos.
+Create and upload all quiz.
+
+
+AI
+
+1. Descript
+Descript is a versatile AI-powered audio editing and transcription tool that also offers advanced voice generation capabilities. Its text-to-speech feature allows users to create synthetic voiceovers in a variety of styles and tones.
+
+Key Features:
+Natural-sounding Voices: Descript's voice generation engine produces high-quality, human-like voices that are difficult to distinguish from real recordings.
+Customization: Users can customize the voice's tone, speed, and pitch to match their specific needs, allowing for greater flexibility in audio production.
+Integration with Other Features: Descript's voice generation capabilities are seamlessly integrated with its other features, such as transcription, editing, and collaboration, streamlining the entire audio production process.
+
+
+2. make similar as above for Eleven labs... (for page AI 4.6)
+basically update the list of AI tools For Image/Audio/Video to the latest tch available( maintain the old, just add new ones)
+
+3. also create an all encompassing AI image, audio, & video gen and biz use cases General Conclusion. (4.16)
+4. also provide an all in one 3 part Hands-on Experience. (4.17)
+5. Create and upload Quiz for the week (4.18)
+
+
+AIML
+
+1. Provide a better intro and explanation for K-Means and Hirerachy Clustering on page (4.2)
+2. Remove auto close from the sidebar modules and implement on main page.
+3. Remove Hands-on or move from Practical Aplications to the Hands-on page  but say with more details / instruction. (4.6 - 4.7)
+also provide submission guidelines.
+4. Create a conclusion page (4.7)
+5. Create and upload Quiz for the week (4.8)
+
+
+
+CMP
+
+1. Modify page 1, make it better (beef it out- more details) and list the type in a visually appealing format, also i dont see a video for "Writing Compeling Content" (4.1)
+2. beef out page 2 and tabulate the Adjusting Tone.. section. (4.2)
+3. page 3 also need a table, seems it a course module 4 wide issue. (4.3)
+4. again on (4.4)
+5. will need a conclusion at (4.7)
+
+
+DABI
+
+1. Really a visualixation examples with no visuals or images, i need cane (LOL) 
+
+"Real-World Example
+A sales team tracking monthly performance can utilize data visualization to gain insights.
+
+Line Chart: Displays sales trends over time, making it easy to see patterns.
+Heatmap: Highlights regions with the highest revenue, helping optimize sales strategies.
+Bar Chart: Compares sales of different product categories side by side."
+
+So provide them eac, try not to infringe, also for future cohorts, lets use ours, like real not AI.
+
+2. Will need conclusion.
+3. Will need Quiz.
+4. (4.1) has Relational Database present.
+
+
+
+DM
+
+1. well assesment is gone, removed, 
+
+"Assessment
+Quiz Questions:
+1. Name four types of content commonly used in content marketing.
+2. Describe the steps in the content creation process.
+3. What are two key benefits of using social media as a distribution channel?
+Project Assignment:
+- Develop a comprehensive content marketing plan for a local business, including types of content, a content calendar, and distribution channels. Present the plan in class."
+
+2. Will need conclusion.
+3. Will need Quiz.
+
+
+
+PM
+
+1. page one (4.1) needs proper revamping, it looks skeletal.
+2. Will need conclusion.
+3. Will need Quiz.
+4. ive made most corrections
+
+
+
+
+SD
+1. Wow no SD at all (inevitable workload)
+
+
+
+WD
+
+1. So the thing is i havent done week 4 yet, so im replacing it with CMP week 4
+here's the original week 4
+"Module 4: Creative Writing Techniques
+Explore creative writing techniques, including storytelling, character development, dialogue, and narrative voice, to make your writing come alive."
+
+here's what im replacing it with
+"Module 4: Writing Compelling Content
+Develop writing skills tailored for various content types and platforms."
+
+
+I will be doing the week 4 o

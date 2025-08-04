@@ -2,7 +2,7 @@
   "name": "NAS Learning Portal",
   "short_name": "NAS",
   "description": "New Age Skillsphere Course Access",
-  "start_url": "/",
+  "start_url": "/Learn.html",
   "display": "standalone",
   "background_color": "#0056b3",
   "theme_color": "#002f6c",
