@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+    <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>5.2: Core Elements of a Narrative</h1>
+        </div>
+
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>Every story, from an epic film to a 300-word blog post, is built on the same foundational elements.
+                Understanding these core components is like acquiring a master key—it allows you to deconstruct why a
+                piece of writing is powerful and to construct your own compelling narratives, regardless of the medium.
+                Let's move beyond just identifying these elements and learn how to wield them with intention.</p>
+
+            <h2>1. Plot Structure: The Backbone of Your Narrative</h2>
+            <p>Plot is the sequence of events, the roadmap your reader follows. It provides momentum and ensures your
+                message has a clear beginning, middle, and end. Two timeless models are incredibly effective for
+                structuring non-fiction content:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    The Three-Act Structure
+                </div>
+                <div class="card-body">
+                    <p>This model is versatile and universally understood.</p>
+                    <ul>
+                        <li><strong>Act I: The Setup (~25%):</strong> Establish the status quo. Introduce your main
+                            character (often your reader) in their ordinary world. Then, disrupt that world with the
+                            Inciting Incident—the specific problem, challenge, or opportunity that creates a desire for
+                            change. This act ends with a turning point that pushes the character into action.</li>
+                        <li><strong>Act II: The Confrontation (~50%):</strong> This is the journey of transformation.
+                            The character pursues their goal but faces obstacles, complications, and rising stakes. They
+                            try different approaches, learn lessons, and perhaps even fail. This is where you, as the
+                            guide, can introduce your solutions, data, or advice as the tools needed to overcome these
+                            challenges.</li>
+                        <li><strong>Act III: The Resolution (~25%):</strong> The story reaches its climax—the decisive
+                            moment where the problem is confronted head-on. This leads to the resolution, where the
+                            outcome is achieved. Crucially, you must show the new status quo—how the character's world
+                            is now better, easier, or more successful because of the journey. This is where your call to
+                            action lives.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    The Hero's Journey (Monomyth)
+                </div>
+                <div class="card-body">
+                    <p>A more detailed archetype that resonates deeply because it mirrors our own life challenges. In a
+                        marketing and non-fiction context, it's vital to remember: The Customer is the Hero. Your Brand
+                        is the Guide.</p>
+                    <ul>
+                        <li><strong>The Ordinary World:</strong> The hero's (customer's) life before they knew about
+                            your solution.</li>
+                        <li><strong>The Call to Adventure:</strong> They realize they need something—a solution to a
+                            growing problem.</li>
+                        <li><strong>Refusal of the Call:</strong> Hesitation due to cost, complexity, or fear of change.
+                        </li>
+                        <li><strong>Meeting the Mentor:</strong> Your brand enters as the guide (like Gandalf or Yoda),
+                            offering not just a product but empathy, authority, and a plan.</li>
+                        <li><strong>Crossing the Threshold:</strong> The decision to buy, sign up, or engage with your
+                            solution.</li>
+                        <li><strong>Tests, Allies, and Enemies:</strong> Using the product, overcoming learning curves,
+                            with your customer support and resources acting as allies.</li>
+                        <li><strong>Reward & Return:</strong> Achieving success and returning to their ordinary world
+                            transformed, now equipped with the reward (saved time, increased revenue, peace of mind).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>2. Character: Who is at the Heart of Your Story?</h2>
+            <p>In non-fiction, "character" doesn't mean invention; it means humanization.</p>
+
+            <ul>
+                <li><strong>The Hero is Your Audience:</strong> You must develop a deep understanding of your customer
+                    persona. What are their desires (to be efficient, respected, secure)? What are their fears (wasting
+                    money, failing, being overwhelmed)? What are their motivations? Give them a name and a face in your
+                    mind.</li>
+                <li><strong>Your Brand is the Guide:</strong> The guide's role is crucial. Guides are empathic ("We
+                    understand your struggle"), competent ("We have a solution for that"), and generous ("Here's how to
+                    do it"). They empower the hero to win their own battle. Your brand voice should consistently embody
+                    these traits.</li>
+            </ul>
+
+            <h2>3. Conflict: The Engine of Engagement</h2>
+            <p>Conflict is not necessarily negative; it is the source of all narrative energy. It is the problem that
+                yearns to be solved. Without it, there is no story, only a statement.</p>
+
+            <h3>Types of Conflict:</h3>
+            <ul>
+                <li><strong>Person vs. Problem:</strong> The most common in non-fiction (e.g., vs. clutter, vs.
+                    inefficient software, vs. poor health).</li>
+                <li><strong>Person vs. Circumstance:</strong> (e.g., vs. a recession, vs. a pandemic, vs. a new industry
+                    regulation).</li>
+                <li><strong>Person vs. Self:</strong> (e.g., vs. procrastination, vs. self-doubt, vs. a lack of
+                    knowledge). Clearly defining the conflict creates stakes—what does the hero stand to lose if they
+                    fail? What do they gain if they succeed?</li>
+            </ul>
+
+            <h2>4. Setting: The World of Your Story</h2>
+            <p>Setting provides context and grounds the narrative in reality. It's the "where and when" that makes the
+                story relatable.</p>
+
+            <ul>
+                <li>For a case study, the setting is the client's industry, company size, and market pressures.</li>
+                <li>For a blog post, it could be the reader's hectic kitchen, their quiet home office, or their crowded
+                    commute.</li>
+                <li>Use specific, sensory details to build this world. Instead of "a business," describe "a family-owned
+                    bakery struggling to keep up with online orders amidst the morning rush of in-store customers."</li>
+            </ul>
+
+            <h2>Deconstruction in Action:</h2>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>Blog Post: "5 Time-Saving Tips for Busy Parents"</th>
+                        <th>Advertisement: Apple's "1984"</th>
+                        <th>Non-Profit Appeal: "Help Save the Rainforest"</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Character</strong></td>
+                        <td>Sarah, a working mom of two</td>
+                        <td>The rebellious athlete</td>
+                        <td>Maria, an indigenous community leader</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Setting</strong></td>
+                        <td>A chaotic Monday morning; spilled cereal, lost homework</td>
+                        <td>A dystopian, gray, mind-controlled auditorium</td>
+                        <td>The lush, noisy, but rapidly shrinking Amazon rainforest</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conflict</strong></td>
+                        <td>Person vs. Time; the constant stress of being late & overwhelmed</td>
+                        <td>Person vs. Society; against conformity and oppression</td>
+                        <td>Person vs. Circumstance; against illegal logging and deforestation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plot (3-Act)</strong></td>
+                        <td>I: The chaotic morning. II: Discovering and trying the tips. III: A calmer, more controlled
+                            household.</td>
+                        <td>I: The bleak, uniform world. II: The heroine's rebellion and sprint. III: The destruction of
+                            the screen, liberating the crowd.</td>
+                        <td>I: Maria describes the forest's beauty and the sound of bulldozers. II: The fight to
+                            document and protest the logging. III: How a donation creates a protected reserve.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>The Guide</strong></td>
+                        <td>The blogger, sharing lived-experience advice</td>
+                        <td>Apple/Macintosh, providing the tool for liberation</td>
+                        <td>The non-profit, providing the means and organization for action</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Embedded Video Context</h2>
+            <p>To see these elements working together in famous narratives, watch this video breakdown of the Hero's
+                Journey in popular culture. Then, try to spot the same elements in a recent ad or blog article you
+                admire.</p>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Story Analysis Channel</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>A powerful narrative is a deliberate construction. By intentionally designing the plot, character,
+                    conflict, and setting, you transform static information into a dynamic journey that your audience
+                    willingly joins. Always remember: your customer is the hero on a quest, and you are the trusted
+                    guide that helps them succeed.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+
+</html>

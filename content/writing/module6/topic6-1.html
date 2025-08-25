@@ -2,173 +2,597 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 6: Advanced Supervised Learning - Support Vector Machines (SVMs)</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #000000;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-        h1,
-        h2,
-        h3 {
-            color: #007bff;
-            /* Blue accent */
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        .section {
-            margin-bottom: 30px;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        .code {
-            background-color: #f8f9fa;
-            /* Light gray for code blocks */
-            padding: 10px;
-            border-left: 5px solid #007bff;
-            /* Blue accent for code block border */
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .list-group-item {
-            background-color: transparent;
-            /* Transparent background for list items */
-        }
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
 
-        .bg-light-blue {
-            background-color: #e7f1ff;
-            /* Light blue background */
-            padding: 15px;
-            border-radius: 5px;
+    .container {
+      padding: 20px;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
+
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
-    </style>
+      }
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
+        }
+      }
+    }
+  </style>
+
 </head>
 
+
 <body>
-
-    <div class="container mt-5">
-
-        <div class="section">
-            <h1 class="text-center">Week 6: Advanced Supervised Learning - Support Vector Machines (SVMs)</h1>
-        </div>
-
-        <div class="section">
-            <h2>Support Vector Machines (SVMs)</h2>
-            <p>Support Vector Machines (SVMs) are supervised learning algorithms that are widely used for classification
-                tasks. They are particularly effective when dealing with high-dimensional data. The primary objective of
-                SVM is to find the optimal hyperplane that best separates the data into different classes, maximizing
-                the margin between the classes.</p>
-        </div>
-
-        <div class="section">
-            <h3>1. Linear SVM</h3>
-            <p>Linear SVM operates under the assumption that the data can be separated linearly. The key concepts
-                include:</p>
-            <ul class="list-group">
-                <li class="list-group-item">**Hyperplane:** A linear decision boundary that separates the data into two
-                    classes.</li>
-                <li class="list-group-item">**Margin:** The distance between the hyperplane and the nearest data points
-                    from each class.</li>
-                <li class="list-group-item">**Optimization:** SVM aims to find the hyperplane that provides the largest
-                    margin.</li>
-            </ul>
-            <p>Mathematically, the optimization problem can be formulated as:</p>
-            <div class="code">
-                <pre>maximize: γ
-subject to: yi(w⋅xi + b) ≥ 1 for all i</pre>
-            </div>
-            <p>where:</p>
-            <ul class="list-group">
-                <li class="list-group-item">`yi`: The class label of the ith data point.</li>
-                <li class="list-group-item">`xi`: The ith data point.</li>
-                <li class="list-group-item">`w`: The normal vector to the hyperplane.</li>
-                <li class="list-group-item">`b`: The bias term.</li>
-                <li class="list-group-item">`γ`: The margin.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>2. Kernel Trick</h3>
-            <p>In many real-world scenarios, data is not linearly separable. The kernel trick is a technique that allows
-                SVM to operate in a higher-dimensional feature space, enabling the separation of classes that are not
-                linearly separable.</p>
-            <h4>Common Kernels:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">**Linear Kernel:** Best suited for linearly separable data.</li>
-                <li class="list-group-item">**Polynomial Kernel:** Useful for capturing non-linear relationships.</li>
-                <li class="list-group-item">**Radial Basis Function (RBF) Kernel:** A popular choice for various
-                    non-linear relationships, providing flexibility in the decision boundary.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>3. Soft Margin SVM</h3>
-            <p>Soft Margin SVM allows for some misclassifications to enhance the model's generalization capabilities.
-                This is particularly useful in datasets with noise and outliers.</p>
-            <p>Key components include:</p>
-            <ul class="list-group">
-                <li class="list-group-item">**Regularization Parameter (C):** Controls the trade-off between maximizing
-                    the margin and minimizing misclassifications.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>4. Evaluation Metrics</h3>
-            <p>Evaluating the performance of an SVM model involves various metrics:</p>
-            <ul class="list-group">
-                <li class="list-group-item">**Accuracy:** The proportion of correct predictions.</li>
-                <li class="list-group-item">**Precision:** The proportion of positive predictions that are correct.</li>
-                <li class="list-group-item">**Recall:** The proportion of actual positive instances that are correctly
-                    predicted.</li>
-                <li class="list-group-item">**F1-score:** The harmonic mean of precision and recall, providing a balance
-                    between the two.</li>
-                <li class="list-group-item">**ROC Curve:** A graphical representation showing the true positive rate
-                    against the false positive rate, helping to evaluate the trade-offs between sensitivity and
-                    specificity.</li>
-            </ul>
-        </div>
-
-        <div class="section bg-light-blue">
-            <h2>Applications of SVM</h2>
-            <p>Support Vector Machines have diverse applications across various fields:</p>
-            <ul class="list-group">
-                <li class="list-group-item">**Text Classification:** Categorizing text documents (e.g., spam detection,
-                    sentiment analysis).</li>
-                <li class="list-group-item">**Image Classification:** Identifying objects or scenes in images.</li>
-                <li class="list-group-item">**Bioinformatics:** Predicting protein structure and function based on
-                    genetic data.</li>
-                <li class="list-group-item">**Anomaly Detection:** Identifying unusual or rare data points that deviate
-                    from expected patterns.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>Advantages and Disadvantages</h3>
-            <h4>Advantages:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">Effective for high-dimensional data.</li>
-                <li class="list-group-item">Robust to outliers, making it suitable for noisy datasets.</li>
-                <li class="list-group-item">Can handle non-linear relationships using kernel tricks.</li>
-            </ul>
-            <h4>Disadvantages:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">Can be computationally expensive for large datasets.</li>
-                <li class="list-group-item">Sensitive to the choice of kernel and regularization parameter, which may
-                    require extensive tuning.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <p>By mastering the principles of Support Vector Machines, you will be equipped to apply this powerful
-                algorithm effectively across a wide range of classification challenges.</p>
-        </div>
-
+  <div class="container">
+    <div class="header">
+      <h1>Module 6: Email Marketing and Marketing Automation</h1>
+      <h2>6.1: Fundamentals of Email Marketing</h2>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="module-content">
+      <h2>Introduction</h2>
+      <p>Welcome to the foundation of one of the most powerful and consistent channels in digital marketing. While new
+        platforms emerge and fade, email has remained a cornerstone of digital strategy for decades. In this section, we
+        will explore why it's so effective, how to do it correctly, and the critical legal and technical foundations you
+        must understand to be successful.</p>
+
+      <h2>1. The Evolution & Importance of Email Marketing</h2>
+      <h3>Why Email Endures</h3>
+      <p>Think about your own inbox. It's a centralized hub for your personal and professional life. Unlike social media
+        feeds, which are controlled by algorithms, your inbox is yours. This personal nature is what makes email
+        marketing so powerful.</p>
+
+      <div class="card">
+        <div class="card-header">
+          Key Benefits of Email Marketing
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Unmatched ROI:</strong> For every $1 spent on email marketing, the average return is $36. This
+              incredible return on investment is due to its low cost and high effectiveness at driving conversions.</li>
+            <li><strong>Direct Access to Your Audience:</strong> Email is an owned media channel. You own your list. You
+              are not at the mercy of a social media platform's changing algorithms, rules, or fees. You have a direct
+              line of communication to the people who have explicitly asked to hear from you.</li>
+            <li><strong>Versatility:</strong> Email is not just for selling. It's used throughout the entire customer
+              journey:
+              <ul>
+                <li>Awareness: Educational newsletters, blog digests.</li>
+                <li>Consideration: Product webinars, case studies.</li>
+                <li>Conversion: Promotional offers, cart abandonment emails.</li>
+                <li>Retention: Welcome series, loyalty rewards, re-engagement campaigns.</li>
+                <li>Advocacy: Requesting reviews, referral programs.</li>
+              </ul>
+            </li>
+            <li><strong>Measurability:</strong> Nearly every aspect of an email campaign can be tracked and measured—who
+              opened it, what they clicked, when they unsubscribed—allowing for precise optimization.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Email marketing is a direct, cost-effective, and versatile channel that you control, making it essential for
+          building long-term customer relationships.</p>
+      </div>
+
+      <h2>2. Types of Email Campaigns</h2>
+      <p>Not all emails are created equal. They serve different purposes and are sent based on different customer
+        triggers. We can categorize them into three main types:</p>
+
+      <div class="card">
+        <div class="card-header">
+          A. Promotional Emails
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Goal:</strong> To drive a specific, immediate action, usually a purchase.</li>
+            <li><strong>Characteristics:</strong> Focused on an offer, have a clear call-to-action (CTA) like "Buy Now"
+              or "Get 50% Off."</li>
+            <li><strong>Examples:</strong>
+              <ul>
+                <li>Flash sale announcements</li>
+                <li>New product launch announcements</li>
+                <li>Event invitations (webinars, in-store events)</li>
+                <li>Seasonal offers (Black Friday, Holiday sales)</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          B. Transactional Emails
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Goal:</strong> To confirm an action a user has taken or to facilitate an ongoing process. These
+              are expected by the user.</li>
+            <li><strong>Characteristics:</strong> High open rates (people want to see their order confirmation!),
+              primarily text-based and informative.</li>
+            <li><strong>Examples:</strong>
+              <ul>
+                <li>Order confirmation and shipping updates</li>
+                <li>Account registration confirmations</li>
+                <li>Password reset emails</li>
+                <li>Receipts</li>
+                <li>Support ticket responses</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          C. Relational Emails (or Lifecycle Emails)
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Goal:</strong> To build, nurture, and maintain a long-term relationship with a subscriber. They
+              provide value beyond a direct sale.</li>
+            <li><strong>Characteristics:</strong> Focused on education, engagement, and brand building.</li>
+            <li><strong>Examples:</strong>
+              <ul>
+                <li>Welcome Series: A sequence of emails sent to a new subscriber to introduce your brand and set
+                  expectations.</li>
+                <li>Newsletters: A regular digest of your latest content, company news, and curated tips.</li>
+                <li>Loyalty Program Updates: Informing members of their points, exclusive benefits, or member-only
+                  content.</li>
+                <li>Re-engagement Campaigns: Emails sent to inactive subscribers to win them back.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>A strong email strategy uses a mix of these types. Bombarding your list with only promotional emails will
+          lead to fatigue. Use relational emails to provide value and build trust, making your promotional emails more
+          effective.</p>
+      </div>
+
+      <h2>3. Building & Maintaining Your Email List</h2>
+      <p>Your email list is an asset. Building it with integrity and maintaining its health is your number one priority.
+      </p>
+
+      <h3>Ethical List Building (The "Permission" Principle)</h3>
+      <p>You must always have explicit permission to email someone.</p>
+
+      <ul>
+        <li><strong>Opt-in Forms:</strong> Place signup forms on your website, blog, and social media profiles.</li>
+        <li><strong>Lead Magnets:</strong> Offer a valuable piece of content (e.g., an ebook, whitepaper, checklist,
+          discount code) in exchange for an email address. This is inbound marketing at its core—attracting people who
+          are already interested.</li>
+        <li><strong>Gated Content:</strong> Requiring an email address to access premium content, tools, or webinars.
+        </li>
+        <li><strong>Point-of-Sale Signups:</strong> Asking customers if they'd like to join your email list during
+          checkout (with a clear opt-in, not a pre-checked box).</li>
+      </ul>
+
+      <div class="card" style="background-color: #fff8f8; border-left: 4px solid #ff4444;">
+        <div class="card-header" style="color: #d32f2f;">
+          The Danger of Purchased Lists: JUST DON'T DO IT.
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Low Engagement:</strong> These people don't know you. They didn't ask to hear from you. They
+              will mark you as spam.</li>
+            <li><strong>High Spam Risk:</strong> Sending emails to purchased lists violates the terms of service of
+              every major email service provider (e.g., Mailchimp, Constant Contact). Your account will be shut down.
+            </li>
+            <li><strong>Legal Compliance:</strong> It violates laws like CAN-SPAM and GDPR, which require explicit
+              consent.</li>
+            <li><strong>It Damages Your Sender Reputation:</strong> Internet Service Providers (ISPs like Gmail,
+              Outlook) see high spam complaint rates from your emails and will start sending all your emails—even to
+              people who want them—straight to the spam folder. This is incredibly difficult to recover from.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Ongoing List Maintenance</h3>
+      <p>A smaller, engaged list is far more valuable than a large, inactive one.</p>
+
+      <ul>
+        <li><strong>List Hygiene:</strong> Regularly remove invalid email addresses (e.g., those that bounce).</li>
+        <li><strong>Re-engagement Campaigns:</strong> Try to win back inactive subscribers (those who haven't opened an
+          email in 3-6 months) with a special offer or simply ask if they still want to hear from you.</li>
+        <li><strong>Sunset Inactive Users:</strong> If they don't respond to your re-engagement campaign, remove them.
+          This improves your overall engagement metrics and protects your deliverability.</li>
+      </ul>
+
+      <h2>4. Legal Compliance: It's Not Optional</h2>
+      <p>Email marketing is governed by strict laws designed to protect consumers. Ignorance is not an excuse.</p>
+
+      <div class="card">
+        <div class="card-header">
+          CAN-SPAM Act (U.S.)
+        </div>
+        <div class="card-body">
+          <p>This law sets the rules for commercial email. Key requirements:</p>
+          <ul>
+            <li><strong>No Misleading Header Information:</strong> Your "From," "To," and "Reply-To" fields must
+              accurately identify you or your business.</li>
+            <li><strong>No Deceptive Subject Lines:</strong> The subject line must reflect the content of the message.
+            </li>
+            <li><strong>Identify the Message as an Ad:</strong> You must clearly disclose that the message is an
+              advertisement.</li>
+            <li><strong>Include Your Physical Address:</strong> Your valid postal address must be visible in the email.
+            </li>
+            <li><strong>Provide a Clear Unsubscribe Mechanism:</strong> You must include a clear and obvious way for
+              users to opt-out of future emails.</li>
+            <li><strong>Honor Unsubscribe Requests Promptly:</strong> You must process opt-out requests within 10
+              business days and cannot charge a fee or require any personal information beyond an email address to do
+              so.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          GDPR (General Data Protection Regulation - EU)
+        </div>
+        <div class="card-body">
+          <p>This is stricter than CAN-SPAM and applies to any business that markets to individuals in the European
+            Union, regardless of where the business is located.</p>
+          <ul>
+            <li><strong>Explicit Consent:</strong> You need a clear, affirmative "opt-in." Pre-checked boxes or assuming
+              consent from inactivity are not allowed.</li>
+            <li><strong>Right to Access and Be Forgotten:</strong> Individuals can ask what data you have on them and
+              request its deletion.</li>
+            <li><strong>Proof of Compliance:</strong> You must be able to prove how and when someone gave consent.</li>
+            <li><strong>Privacy by Design:</strong> Data protection must be built into your processes from the start.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>A Privacy-First Mindset</h3>
+      <p>Beyond avoiding fines, being transparent and respectful with user data builds immense trust. Tell people what
+        they're signing up for, how often you'll email them, and what content to expect. This trust is the foundation of
+        a strong customer relationship.</p>
+
+      <h2>5. Email Deliverability: Getting to the Inbox</h2>
+      <p>Deliverability is the ability of your emails to successfully reach recipients' inboxes. It's not guaranteed.
+        ISPs use complex algorithms to act as gatekeepers, filtering out spam.</p>
+
+      <div class="card" style="background-color: #fff8f8; border-left: 4px solid #ff4444;">
+        <div class="card-header" style="color: #d32f2f;">
+          Factors That Hurt Deliverability (What NOT to Do):
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Spammy Subject Lines:</strong> Avoid excessive punctuation (!!!), all caps, and trigger words
+              like "FREE," "WINNER," "ACT NOW," "GUARANTEED," and "NO COST."</li>
+            <li><strong>Poor Sender Reputation:</strong> ISPs assign your sending domain and IP address a reputation
+              score based on your sending practices. High spam complaint rates, high bounce rates, and low engagement
+              (low opens/clicks) destroy your reputation.</li>
+            <li><strong>Bad List Quality:</strong> Sending to purchased lists, old lists, or lists with many invalid
+              emails will get you flagged.</li>
+            <li><strong>Unbalanced Content:</strong> An email that is one giant image with little-to-no text looks like
+              spam to filters. Also, avoid large attachments; instead, link to a file hosted on your website.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" style="background-color: #f8fff8; border-left: 4px solid #44aa44;">
+        <div class="card-header" style="color: #2e7d32;">
+          Factors That Improve Deliverability (What TO Do):
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Authenticate Your Domain:</strong> This is technical but critical. Set up these protocols to
+              prove to ISPs that you are who you say you are and that you're not a spammer spoofing your identity.
+              <ul>
+                <li><strong>SPF (Sender Policy Framework):</strong> Specifies which mail servers are allowed to send
+                  email for your domain.</li>
+                <li><strong>DKIM (DomainKeys Identified Mail):</strong> Adds a digital signature to your emails,
+                  verifying they weren't altered in transit.</li>
+                <li><strong>DMARC (Domain-based Message Authentication, Reporting & Conformance):</strong> Tells ISPs
+                  what to do with emails that fail SPF or DKIM authentication (e.g., reject them).</li>
+              </ul>
+            </li>
+            <li><strong>Maintain List Hygiene:</strong> As discussed above, a clean list is a healthy list.</li>
+            <li><strong>Encourage Engagement:</strong> Write compelling subject lines and valuable content that makes
+              people want to open, read, and click. Engagement tells ISPs your emails are wanted.</li>
+            <li><strong>Use a Consistent Sending Schedule:</strong> Sending a huge volume of emails after a long period
+              of inactivity can trigger spam filters. Be consistent.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Module 6.1 Summary:</h2>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Key Idea</th>
+            <th>Why It Matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Importance</strong></td>
+            <td>High-ROI, owned media channel.</td>
+            <td>You control direct access to an engaged audience.</td>
+          </tr>
+          <tr>
+            <td><strong>Campaign Types</strong></td>
+            <td>Promotional, Transactional, Relational.</td>
+            <td>Using a mix builds trust and drives conversions.</td>
+          </tr>
+          <tr>
+            <td><strong>List Building</strong></td>
+            <td>Grow ethically with permission (opt-ins, lead magnets).</td>
+            <td>A quality list is your most valuable asset. Never buy lists.</td>
+          </tr>
+          <tr>
+            <td><strong>Legal Compliance</strong></td>
+            <td>Follow CAN-SPAM (US) and GDPR (EU) rules.</td>
+            <td>It's the law. Non-compliance risks fines and destroys trust.</td>
+          </tr>
+          <tr>
+            <td><strong>Deliverability</strong></td>
+            <td>Get past spam filters to the inbox.</td>
+            <td>If your email doesn't get delivered, nothing else matters.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-point">
+        <h4>Up Next</h4>
+        <p>In the next section, we will put this knowledge into practice by learning how to craft compelling email
+          content and design templates that convert.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+  <script>
+
+  </script>
+
 </body>
 
 </html>

@@ -2,133 +2,602 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframing and Prototyping</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #000000;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-        h1,
-        h2,
-        h3 {
-            color: #007bff;
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        .content-section {
-            margin: 40px 0;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        .section-title {
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
 
-        .accent {
-            color: #007bff;
-        }
+    .container {
+      padding: 20px;
+    }
 
-        .highlight {
-            background-color: #f8f9fa;
-            padding: 10px;
-            border-left: 4px solid #007bff;
-        }
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .tool {
-            font-weight: bold;
-            color: #007bff;
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
+
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
-    </style>
+      }
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
+        }
+      }
+    }
+  </style>
+
 </head>
 
+
 <body>
-    <div class="container">
-        <div class="content-section">
-            <h1 class="section-title">Wireframing and Prototyping: Visualizing and Testing Design Concepts</h1>
-
-            <h2>Wireframing</h2>
-            <p>Wireframing is the process of creating low-fidelity representations of a user interface. Wireframes focus
-                on layout, structure, and content, rather than visual design elements like colors, fonts, and imagery.
-            </p>
-
-            <h3>Purpose of Wireframing:</h3>
-            <ul>
-                <li><span class="accent">Identify usability issues:</span> Wireframes can help to identify potential
-                    usability problems early in the design process.</li>
-                <li><span class="accent">Communicate ideas:</span> Wireframes can be used to communicate design concepts
-                    to stakeholders and team members.</li>
-                <li><span class="accent">Iterate and refine:</span> Wireframes can be easily modified and iterated upon
-                    to explore different design options.</li>
-            </ul>
-
-            <h3>Wireframing Tools:</h3>
-            <ul>
-                <li><span class="tool">Balsamiq:</span> A popular tool for creating low-fidelity wireframes.</li>
-                <li><span class="tool">Sketch:</span> A design tool that can also be used for wireframing.</li>
-                <li><span class="tool">Figma:</span> A versatile design tool that offers features for wireframing,
-                    prototyping, and design collaboration.</li>
-                <li><span class="tool">Adobe XD:</span> Another popular design tool with wireframing capabilities.</li>
-            </ul>
-
-            <h2>Prototyping</h2>
-            <p>Prototyping involves creating interactive, high-fidelity representations of a user interface. Prototypes
-                can be used to test the usability and functionality of a design before development begins.</p>
-
-            <h3>Types of Prototypes:</h3>
-            <ul>
-                <li><span class="accent">Low-fidelity prototypes:</span> Simpler prototypes that focus on the overall
-                    layout and structure.</li>
-                <li><span class="accent">High-fidelity prototypes:</span> More detailed prototypes that closely resemble
-                    the final product.</li>
-                <li><span class="accent">Interactive prototypes:</span> Prototypes that allow users to interact with the
-                    design, such as clicking buttons or entering text.</li>
-            </ul>
-
-            <h3>Prototyping Tools:</h3>
-            <ul>
-                <li><span class="tool">Figma:</span> A powerful tool for creating interactive prototypes.</li>
-                <li><span class="tool">Adobe XD:</span> Another popular tool for prototyping.</li>
-                <li><span class="tool">InVision:</span> A dedicated prototyping tool with advanced features.</li>
-                <li><span class="tool">Marvel:</span> A simple and easy-to-use prototyping tool.</li>
-            </ul>
-
-            <h2>Key Considerations for Wireframing and Prototyping</h2>
-            <ul>
-                <li><span class="accent">User Research:</span> Gather insights from user research to inform your
-                    wireframes and prototypes.</li>
-                <li><span class="accent">Iterative Design:</span> Be prepared to iterate and refine your designs based
-                    on feedback and testing.</li>
-                <li><span class="accent">Accessibility:</span> Ensure that your wireframes and prototypes are accessible
-                    to users with disabilities.</li>
-                <li><span class="accent">Collaboration:</span> Collaborate with other team members, such as developers
-                    and designers, to ensure that the design is feasible and aligns with project goals.</li>
-            </ul>
-
-            <h2>Expanding on the Content</h2>
-            <p>To further explore the topic of wireframing and prototyping, consider the following:</p>
-            <ul>
-                <li><span class="accent">The Relationship Between Wireframing and Prototyping:</span> How wireframes and
-                    prototypes complement each other in the design process.</li>
-                <li><span class="accent">Usability Testing:</span> Techniques for conducting effective usability testing
-                    on wireframes and prototypes.</li>
-                <li><span class="accent">Prototyping for Mobile Devices:</span> The unique challenges and considerations
-                    for designing and testing mobile prototypes.</li>
-                <li><span class="accent">Emerging Trends in Wireframing and Prototyping:</span> Explore new tools and
-                    techniques for creating wireframes and prototypes.</li>
-                <li><span class="accent">The Role of Wireframing and Prototyping in Agile Development:</span> How
-                    wireframing and prototyping can be integrated into agile development methodologies.</li>
-            </ul>
-        </div>
+  <div class="container">
+    <div class="header">
+      <h1>Week 6: Advanced Python & Pythonic Programming</h1>
+      <h2>6.2: Mastering Decorators and Context Managers</h2>
     </div>
+
+    <div class="module-content">
+      <h2>Introduction: Power Tools for Readable and Robust Code</h2>
+      <p>Python provides powerful, high-level tools for managing code behavior and resources elegantly. Two of the most
+        important are decorators and context managers. Decorators allow you to modify or enhance functions and classes
+        without permanently altering their source code. Context managers provide a clean, reliable way to handle setup
+        and teardown operations, most commonly for resource management. Mastering these concepts is a hallmark of an
+        advanced Python programmer.</p>
+
+      <h2>1. First-Class Functions & Closures: The Building Blocks</h2>
+      <p>To understand decorators, you must first grasp two fundamental concepts: first-class functions and closures.
+      </p>
+
+      <div class="card">
+        <div class="card-header">
+          First-Class Functions
+        </div>
+        <div class="card-body">
+          <p>In Python, functions are first-class objects. This means they can be:</p>
+          <ul>
+            <li>Assigned to variables.</li>
+            <li>Passed as arguments to other functions.</li>
+            <li>Returned as values from other functions.</li>
+            <li>Stored in data structures like lists or dictionaries.</li>
+          </ul>
+
+          <pre><code>def greet(name):
+    return f"Hello, {name}!"
+
+# Assign function to a variable
+my_func = greet
+print(my_func("Alice"))  # Output: Hello, Alice!
+
+# Pass function as an argument
+def call_twice(func, arg):
+    return func(arg) + " " + func(arg)
+
+print(call_twice(greet, "Bob")) # Output: Hello, Bob! Hello, Bob!</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Closures
+        </div>
+        <div class="card-body">
+          <p>A closure is a function object that remembers values in the enclosing (non-global) scope even if they are
+            not present in memory. It is a nested function that captures and remembers the environment in which it was
+            created.</p>
+
+          <pre><code>def make_multiplier(factor):  # Outer function
+    # This inner function "closes over" the 'factor' variable
+    def multiplier(x):
+        return x * factor
+    return multiplier  # Return the inner function itself, not its result
+
+# Create specialized functions
+double = make_multiplier(2)
+triple = make_multiplier(3)
+
+print(double(5))  # Output: 10. The inner multiplier() remembers factor=2.
+print(triple(5))  # Output: 15. The inner multiplier() remembers factor=3.</code></pre>
+
+          <p>Here, double and triple are closures. They remember the factor value from their originating make_multiplier
+            call long after that call has finished executing.</p>
+        </div>
+      </div>
+
+      <h2>2. Decorators: Enhancing Functions Dynamically</h2>
+      <p>A decorator is a callable (usually a function) that takes another function as an argument, adds some
+        functionality (the "decoration"), and returns a new function, all without permanently modifying the original
+        function.</p>
+
+      <div class="card">
+        <div class="card-header">
+          The "@" Syntax (Syntactic Sugar)
+        </div>
+        <div class="card-body">
+          <p>The @decorator syntax is a cleaner way to apply a decorator. This code:</p>
+          <pre><code>@my_decorator
+def my_function():
+    ...</code></pre>
+          <p>is equivalent to this:</p>
+          <pre><code>def my_function():
+    ...
+my_function = my_decorator(my_function)</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Building a Practical Decorator
+        </div>
+        <div class="card-body">
+          <p>The log decorator from the prompt is a classic example. Let's expand on it.</p>
+          <pre><code>import time
+from functools import wraps  # A crucial tool for decorators
+
+def log(func):
+    @wraps(func)  # This preserves the original function's metadata (name, docstring)
+    def wrapper(*args, **kwargs):  # Use *args and **kwargs to handle any function signature
+        print(f"[INFO] Calling {func.__name__} with args: {args}, kwargs: {kwargs}")
+        result = func(*args, **kwargs)  # Call the original function
+        print(f"[INFO] {func.__name__} returned: {result}")
+        return result
+    return wrapper
+
+@log
+def add(a, b):
+    """Adds two numbers."""
+    return a + b
+
+print(add(5, 3))
+# Output:
+# [INFO] Calling add with args: (5, 3), kwargs: {}
+# [INFO] add returned: 8
+# 8
+
+# Thanks to @wraps, the function's identity is preserved:
+print(add.__name__)  # Output: 'add' (without @wraps, it would be 'wrapper')
+print(add.__doc__)   # Output: 'Adds two numbers.'</code></pre>
+
+          <p>The functools.wraps decorator is essential for writing professional decorators. It copies the __name__,
+            __doc__, and other metadata from the original function to the wrapper, preventing confusing debugging
+            issues.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Common Real-World Uses for Decorators
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Timing:</strong> Measure how long a function takes to run.</li>
+            <li><strong>Caching/Memoization:</strong> Store the results of expensive function calls to avoid
+              recomputation.</li>
+            <li><strong>Authentication & Authorization:</strong> Check if a user is logged in or has permission before
+              executing a function (common in web frameworks like Flask).</li>
+            <li><strong>Validation:</strong> Validate input arguments or return values of a function.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Decorators with Arguments
+        </div>
+        <div class="card-body">
+          <p>To create a decorator that accepts its own arguments, you need to add another layer of nesting.</p>
+          <pre><code>def repeat(num_times): # This is the decorator factory
+    def decorator_repeat(func): # This is the actual decorator
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            for _ in range(num_times):
+                result = func(*args, **kwargs)
+            return result # Usually, we return the result only from the last call
+        return wrapper
+    return decorator_repeat
+
+@repeat(num_times=3)
+def say_hello():
+    print("Hello!")
+
+say_hello()
+# Output:
+# Hello!
+# Hello!
+# Hello!</code></pre>
+        </div>
+      </div>
+
+      <h2>3. Context Managers: Elegant Resource Management</h2>
+      <p>A context manager is an object that defines the runtime context to be established when executing a with
+        statement. It handles the entry and exit of the context, most commonly used for resource acquisition and release
+        (e.g., opening/closing files, acquiring/releasing locks, connecting/disconnecting from databases).</p>
+
+      <div class="card">
+        <div class="card-header">
+          The with Statement
+        </div>
+        <div class="card-body">
+          <p>This statement simplifies exception handling by encapsulating standard try/finally patterns.</p>
+          <pre><code># The classic way (prone to forgetting to close the file)
+file = open('file.txt', 'r')
+content = file.read()
+file.close() # What if an error happens before this line?
+
+# The Pythonic way using a context manager
+with open('file.txt', 'r') as file: # file is the context manager
+    content = file.read()
+# The file is automatically closed when the 'with' block is exited, even if an error occurs.</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Creating a Custom Context Manager (Class-Based)
+        </div>
+        <div class="card-body">
+          <p>You can create your own context manager by implementing the __enter__ and __exit__ methods.</p>
+          <pre><code>class ManagedFile:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+        self._file = None
+
+    def __enter__(self):
+        # This runs when entering the 'with' block. Setup happens here.
+        print(f"Opening file {self.filename}")
+        self._file = open(self.filename, self.mode)
+        return self._file # The 'as' target is this returned object.
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        # This runs when exiting the 'with' block. Teardown happens here.
+        # exc_type, exc_val, exc_tb contain exception info if one occurred.
+        print(f"Closing file {self.filename}")
+        self._file.close()
+        # Return False to propagate the exception, True to suppress it.
+        return False
+
+# Using the custom context manager
+with ManagedFile('file.txt', 'w') as f:
+    f.write('Hello, context manager!')
+# Output:
+# Opening file file.txt
+# Closing file file.txt</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Creating a Custom Context Manager (Function-Based with @contextmanager)
+        </div>
+        <div class="card-body">
+          <p>The contextlib module provides a simpler way to write context managers using a generator and a decorator.
+            This is often more readable.</p>
+          <pre><code>from contextlib import contextmanager
+
+@contextmanager
+def managed_file(filename, mode):
+    # Setup: equivalent to __enter__
+    print(f"Opening file {filename}")
+    f = open(filename, mode)
+    try:
+        yield f  # This is where the body of the 'with' block executes
+    finally:
+        # Teardown: equivalent to __exit__. The 'finally' ensures it always runs.
+        print(f"Closing file {filename}")
+        f.close()
+
+# Usage is identical to the class-based version
+with managed_file('file.txt', 'w') as f:
+    f.write('Hello, from contextlib!')
+# Output:
+# Opening file file.txt
+# Closing file file.txt</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Practical Example: A Timer Context Manager
+        </div>
+        <div class="card-body">
+          <pre><code>from time import perf_counter
+from contextlib import contextmanager
+
+@contextmanager
+def timer():
+    start = perf_counter()
+    try:
+        yield
+    finally:
+        end = perf_counter()
+        print(f"Elapsed time: {end - start:.6f} seconds")
+
+with timer():
+    # Simulate a time-consuming task
+    sum(x for x in range(1, 1000000))
+# Output: Elapsed time: 0.045321 seconds</code></pre>
+        </div>
+      </div>
+
+      <h2>Module 6.2 Summary:</h2>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Core Idea</th>
+            <th>Pythonic Application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>First-Class Functions</strong></td>
+            <td>Functions can be treated like any other object.</td>
+            <td>Enables higher-order functions and flexible code design.</td>
+          </tr>
+          <tr>
+            <td><strong>Closures</strong></td>
+            <td>Inner functions that remember their creation environment.</td>
+            <td>The fundamental mechanism that makes decorators possible.</td>
+          </tr>
+          <tr>
+            <td><strong>Decorators</strong></td>
+            <td>Functions that modify the behavior of other functions/classes.</td>
+            <td>Use for cross-cutting concerns (logging, timing, auth) without cluttering core logic. Always use
+              @functools.wraps.</td>
+          </tr>
+          <tr>
+            <td><strong>Context Managers</strong></td>
+            <td>Objects that manage setup and teardown of a context.</td>
+            <td>The preferred way to manage resources (files, locks, connections) using the with statement. Ensures
+              cleanup always happens.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Decorators and context managers are powerful tools that promote the DRY (Don't Repeat Yourself) principle and
+          separation of concerns. They allow you to write code that is more modular, more readable, and more robust.
+          Using them effectively is a key step towards writing professional-grade Python code.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
 </body>
+
 
 </html>

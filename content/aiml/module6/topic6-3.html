@@ -4,155 +4,559 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 6: Advanced Supervised Learning - Ensemble Methods</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
         body {
             background-color: #ffffff;
             color: #000000;
+            font-family: Arial, sans-serif;
         }
 
         h1,
         h2,
         h3 {
-            color: #007bff;
-            /* Blue accent color */
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        .section {
-            margin-bottom: 30px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
-            /* Light grey background for sections */
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .important {
-            background-color: #e7f1ff;
-            /* Light blue background for important notes */
-            border-left: 4px solid #007bff;
-            padding: 10px;
+        .custom-section {
+            margin-bottom: 40px;
         }
 
-        ul {
-            margin-bottom: 20px;
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
+
 </head>
 
 <body>
     <div class="container">
-        <div class="section">
-            <h1>Week 6: Advanced Supervised Learning - Ensemble Methods</h1>
-            <h2>Introduction to Ensemble Methods</h2>
-            <p>**Ensemble methods** are powerful techniques in machine learning that combine the predictions from
-                multiple models to enhance overall performance. The primary advantages of ensemble methods include:</p>
-            <ul>
-                <li>Reducing overfitting, thus leading to better generalization on unseen data.</li>
-                <li>Improving accuracy through diverse model contributions.</li>
-                <li>Increasing robustness against outliers and noise.</li>
-            </ul>
-            <p>By harnessing the strengths of various models, ensemble methods can yield more reliable predictions
-                compared to individual models.</p>
+        <div class="header">
+            <h1>6.3: Setting Up Your Deep Learning Environment</h1>
         </div>
 
-        <div class="section">
-            <h3>1. Bagging (Bootstrap Aggregating)</h3>
-            <p><strong>Concept:</strong> Bagging works by creating multiple models trained on different subsets of the
-                data, known as bootstrap samples, and aggregating their predictions to form a final output.</p>
-            <p><strong>Random Forest:</strong> A widely used bagging algorithm that employs decision trees as its base
-                learners, offering exceptional performance in various applications.</p>
-            <h4>Advantages:</h4>
-            <ul>
-                <li>Mitigates overfitting through averaging predictions.</li>
-                <li>Accommodates both numerical and categorical features.</li>
-                <li>Effectively captures complex, non-linear relationships in the data.</li>
-            </ul>
-            <h4>Disadvantages:</h4>
-            <ul>
-                <li>Computationally intensive, particularly for large datasets with many features.</li>
-            </ul>
-        </div>
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>While understanding the theory behind neural networks is crucial, deep learning is ultimately a hands-on
+                discipline. This lesson bridges theory and practice by guiding you through setting up the tools and
+                environments used by professionals and researchers worldwide. We'll focus on making these powerful
+                technologies accessible regardless of your hardware limitations, ensuring you can start building and
+                experimenting immediately.</p>
 
-        <div class="section">
-            <h3>2. Boosting</h3>
-            <p><strong>Concept:</strong> Boosting constructs multiple models sequentially, where each new model focuses
-                on the errors made by the previous ones, progressively enhancing model accuracy.</p>
-            <h4>Types:</h4>
-            <ul>
-                <li><strong>AdaBoost (Adaptive Boosting):</strong> Adjusts the weights of training examples based on
-                    their classification performance, giving more focus to hard-to-classify instances.</li>
-                <li><strong>Gradient Boosting:</strong> Iteratively fits new models to the residuals of the existing
-                    model, optimizing a chosen loss function at each step.</li>
-                <li><strong>XGBoost (eXtreme Gradient Boosting):</strong> An optimized version of gradient boosting that
-                    incorporates regularization and other enhancements for improved performance.</li>
-            </ul>
-            <h4>Advantages:</h4>
-            <ul>
-                <li>Achieves high accuracy, especially in complex classification and regression problems.</li>
-                <li>Handles both numerical and categorical data effectively.</li>
-            </ul>
-            <h4>Disadvantages:</h4>
-            <ul>
-                <li>Prone to overfitting if hyperparameters are not carefully tuned and optimized.</li>
-            </ul>
-        </div>
+            <h2>Content</h2>
+            <h3>The TensorFlow & Keras Ecosystem</h3>
+            <p>Understanding the relationship between these two frameworks is key to working effectively in deep
+                learning:</p>
 
-        <div class="section">
-            <h3>Ensemble Methods vs. Single Models</h3>
-            <p>When comparing ensemble methods to single models, consider the following:</p>
-            <ul>
-                <li><strong>Ensemble methods:</strong>
+            <div class="card">
+                <div class="card-header">TensorFlow</div>
+                <div class="card-body">
+                    <p>Developed by Google, this is a comprehensive end-to-end open source platform for machine
+                        learning. It provides:</p>
                     <ul>
-                        <li>Can significantly enhance accuracy and reduce overfitting.</li>
-                        <li>Effective for capturing complex relationships in the data.</li>
-                        <li>May incur higher computational costs due to multiple models.</li>
+                        <li>A flexible architecture for deploying computation across various platforms (CPUs, GPUs,
+                            TPUs)</li>
+                        <li>Automatic differentiation capabilities that make backpropagation efficient</li>
+                        <li>Production-ready tools for deploying models to servers, edge devices, and web browsers</li>
+                        <li>A vast ecosystem of tools for monitoring, visualization, and data processing</li>
                     </ul>
-                </li>
-                <li><strong>Single models:</strong>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Keras</div>
+                <div class="card-body">
+                    <p>Originally an independent library, Keras is now the official high-level API of TensorFlow. It
+                        offers:</p>
                     <ul>
-                        <li>Simpler to implement and interpret.</li>
-                        <li>May suffice for less complex problems, where the data is straightforward.</li>
+                        <li>A user-friendly, intuitive interface for building and training models</li>
+                        <li>Modular building blocks that can be combined with minimal code</li>
+                        <li>Strong defaults and best practices built into its design</li>
+                        <li>The ability to seamlessly mix Keras simplicity with TensorFlow power when needed</li>
                     </ul>
+                    <p><strong>The Analogy:</strong> If TensorFlow is a powerful engine with countless knobs and
+                        controls, Keras is the well-designed dashboard and steering wheel that makes driving accessible.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Hardware Acceleration: Why GPUs Dominate Deep Learning</h3>
+            <p>The computational demands of deep learning are extraordinary, making specialized hardware essential:</p>
+
+            <div class="card">
+                <div class="card-header">The Matrix Multiplication Advantage</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Neural network training is fundamentally about performing massive matrix multiplications
+                        </li>
+                        <li>GPUs contain thousands of smaller, efficient cores optimized for parallel processing</li>
+                        <li>This architecture is perfectly suited for the simultaneous calculations required in deep
+                            learning</li>
+                        <li>A good GPU can provide 10-100× speedup compared to CPU-only training</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">TPUs (Tensor Processing Units)</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Google's custom-developed application-specific integrated circuits (ASICs)</li>
+                        <li>Specifically optimized for TensorFlow operations</li>
+                        <li>Available primarily through Google Cloud Platform and Colab Pro</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Environment Options: From Free to Full Control</h3>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Best For</th>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Google Colab</strong></td>
+                        <td>Beginners, Education, Quick Experiments</td>
+                        <td>Free GPU access, No setup required, Pre-installed libraries, Cloud storage</td>
+                        <td>Limited session duration, Resource restrictions, Less control</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Colab Pro</strong></td>
+                        <td>Serious Learners, Small Projects</td>
+                        <td>Longer sessions, More memory, Priority GPU access</td>
+                        <td>Subscription fee, Still some limitations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Local Setup</strong></td>
+                        <td>Advanced Projects, Data Privacy, Customization</td>
+                        <td>Full control, No internet required, No time limits, Better debugging</td>
+                        <td>Hardware costs, Complex setup, Maintenance overhead</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cloud Platforms (AWS, GCP, Azure)</strong></td>
+                        <td>Large Projects, Production Workloads</td>
+                        <td>Scalability, Enterprise features, Latest hardware</td>
+                        <td>Significant cost, Configuration complexity</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Tensors: The Universal Data Language of Deep Learning</h3>
+            <p>Tensors are the fundamental data structure that flows through neural networks:</p>
+
+            <div class="card">
+                <div class="card-header">Conceptual Understanding</div>
+                <div class="card-body">
+                    <p>A tensor is a container for numerical data that has three key properties:</p>
+                    <ol>
+                        <li><strong>Rank:</strong> The number of dimensions (also called order)</li>
+                        <li><strong>Shape:</strong> The size of each dimension</li>
+                        <li><strong>Data Type:</strong> The type of values stored (e.g., float32, int8)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Practical Examples</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>0-D Tensor (Scalar):</strong> temperature = 25.3 - a single number</li>
+                        <li><strong>1-D Tensor (Vector):</strong> vector = [0.2, 0.5, 0.3] - a list of probabilities for
+                            classification</li>
+                        <li><strong>2-D Tensor (Matrix):</strong> matrix = [[1, 2, 3], [4, 5, 6]] - a traditional
+                            spreadsheet-like table</li>
+                        <li><strong>3-D Tensor:</strong> image = [28, 28, 3] - a color image with height, width, and
+                            color channels</li>
+                        <li><strong>4-D Tensor:</strong> batch = [32, 28, 28, 3] - a batch of 32 color images</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Tensor Operations</div>
+                <div class="card-body">
+                    <p>The core of neural network mathematics involves operations on these tensors:</p>
+                    <ul>
+                        <li><strong>Element-wise operations:</strong> Applying functions to each element independently
+                        </li>
+                        <li><strong>Matrix multiplication:</strong> Combining tensors using dot products</li>
+                        <li><strong>Reduction operations:</strong> Calculating sums, means across dimensions</li>
+                        <li><strong>Reshaping:</strong> Changing tensor dimensions without altering data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Comprehensive Setup Guide</h3>
+
+            <div class="card">
+                <div class="card-header">Option 1: Google Colab (Recommended for Beginners)</div>
+                <div class="card-body">
+                    <ol>
+                        <li><strong>Access:</strong> Navigate to colab.research.google.com</li>
+                        <li><strong>Create New Notebook:</strong> Click "File" > "New notebook"</li>
+                        <li><strong>Enable GPU:</strong>
+                            <ul>
+                                <li>Click "Runtime" > "Change runtime type"</li>
+                                <li>Set "Hardware accelerator" to "GPU"</li>
+                                <li>Click "Save"</li>
+                            </ul>
+                        </li>
+                        <li><strong>Verify Setup:</strong>
+                            <pre
+                                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+                  <code>import tensorflow as tf
+  print("TensorFlow version:", tf.__version__)
+  
+  # Check for GPU
+  if tf.config.list_physical_devices('GPU'):
+      print("GPU is available! 🚀")
+      print("GPU device:", tf.test.gpu_device_name())
+  else:
+      print("GPU not available. Using CPU.")</code>
+                </pre>
+                        </li>
+                        <li><strong>Test with Simple Computation:</strong>
+                            <pre
+                                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+                  <code># Create two random matrices
+  a = tf.random.normal([1000, 1000])
+  b = tf.random.normal([1000, 1000])
+  
+  # Time the matrix multiplication
+  %timeit tf.matmul(a, b)</code>
+                </pre>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Option 2: Local Setup (For Advanced Users)</div>
+                <div class="card-body">
+                    <ol>
+                        <li><strong>Prerequisites:</strong>
+                            <ul>
+                                <li>NVIDIA GPU with CUDA support (check compatibility)</li>
+                                <li>Python 3.8-3.10 installed</li>
+                                <li>pip package manager updated</li>
+                            </ul>
+                        </li>
+                        <li><strong>Installation Steps:</strong>
+                            <pre
+                                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+                  <code># Create a virtual environment (recommended)
+  python -m venv tf-env
+  source tf-env/bin/activate  # On Windows: tf-env\Scripts\activate
+  
+  # Install TensorFlow with GPU support
+  pip install tensorflow[and-cuda]
+  
+  # Verify installation
+  python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"</code>
+                </pre>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3>Essential First Steps in Your New Environment</h3>
+            <p>Once set up, run this verification script to ensure everything works correctly:</p>
+            <pre
+                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+          <code># Import and check version
+  import tensorflow as tf
+  print(f"TensorFlow Version: {tf.__version__}")
+  # Check available devices
+  devices = tf.config.list_physical_devices()
+  print("Available devices:", [d.device_type for d in devices])
+  # Create a simple neural network to test the environment
+  model = tf.keras.Sequential([
+      tf.keras.layers.Dense(10, input_shape=(5,), activation='relu'),
+      tf.keras.layers.Dense(1)
+  ])
+  # Compile and summarize
+  model.compile(optimizer='adam', loss='mse')
+  model.summary()
+  print("🎉 Environment setup successful! Ready for deep learning.")</code>
+        </pre>
+
+            <h3>Troubleshooting Common Issues</h3>
+            <ul>
+                <li><strong>GPU Not Detected in Colab:</strong> Try restarting the runtime (Runtime > Restart runtime)
                 </li>
+                <li><strong>Out of Memory Errors:</strong> Reduce batch size or model complexity</li>
+                <li><strong>Version Conflicts:</strong> Create a fresh environment or use Colab's reset function</li>
+                <li><strong>CUDA Errors:</strong> Ensure compatible versions of TensorFlow, CUDA, and cuDNN</li>
             </ul>
-        </div>
 
-        <div class="section">
-            <h3>Choosing the Right Ensemble Method</h3>
-            <p>Selecting the appropriate ensemble method hinges on various factors:</p>
-            <ul>
-                <li><strong>Data Complexity:</strong> Ensemble methods are generally more effective for intricate
-                    problems that involve complex relationships.</li>
-                <li><strong>Computational Resources:</strong> Consider the computational cost associated with ensemble
-                    methods, especially with larger datasets.</li>
-                <li><strong>Interpretability:</strong> While ensemble methods may provide better accuracy, they can also
-                    be more challenging to interpret compared to single models.</li>
-            </ul>
-        </div>
+            <h2>Embedded Video Context</h2>
+            <p>Watch this step-by-step guide to setting up Google Colab for deep learning, including GPU activation and
+                basic operations.</p>
 
-        <div class="section important">
-            <h3>Practical Tips</h3>
-            <ul>
-                <li>Experiment with various ensemble methods and their hyperparameters to determine the best fit for
-                    your specific dataset.</li>
-                <li>Evaluate the performance of your ensemble model using appropriate metrics, such as accuracy,
-                    precision, recall, or F1 score.</li>
-                <li>Weigh the trade-off between accuracy and interpretability when choosing between ensemble and single
-                    models.</li>
-            </ul>
-        </div>
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/inN8seMm7UI" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Google Colab Setup Tutorial</h4>
+                    </div>
+                </div>
+            </div>
 
-        <div class="section">
-            <h2>Conclusion</h2>
-            <p>By mastering ensemble methods, you can leverage their collective power to significantly enhance the
-                performance and reliability of your machine learning models, making them more adept at solving complex
-                real-world problems.</p>
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>You now have access to professional-grade deep learning tools through either Google Colab's free
+                    environment or a local setup. The fundamental concept you'll work with is the tensor—a
+                    multi-dimensional array that serves as the basic data structure for all neural network operations.
+                    With your environment ready, you're prepared to move from theory to practice and begin building your
+                    first neural networks in the next lesson. Remember that while the setup might seem technical
+                    initially, these tools are designed to make deep learning accessible to everyone.</p>
+            </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
 </body>
+
+<!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+
 
 </html>

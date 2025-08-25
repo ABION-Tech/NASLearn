@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
+
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
+
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
+
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
+
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
+        }
+      }
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
+        }
+      }
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Week 6: Quality, Procurement, and Stakeholder Management</h1>
+      <h2>6.5: Integrating Knowledge Areas</h2>
+    </div>
+
+    <div class="module-content">
+      <h2>Introduction: The Project Management Ecosystem</h2>
+      <p>Thus far, we have studied Quality, Procurement, and Stakeholder Management as distinct knowledge areas.
+        However, in practice, they are not isolated silos. They form a dynamic, interconnected system where a decision
+        or failure in one area inevitably ripples through the others. Mastering project management is less about
+        excelling in one area and more about understanding these intricate connections and managing the trade-offs. This
+        module synthesizes the week's learning by exploring these interactions through a real-world case study,
+        illustrating why an integrated view is the only path to true project success.</p>
+
+      <h2>1. The Web of Interactions: How Everything Connects</h2>
+      <p>A project is a complex organism. A change in one variable affects many others. Let's explore the
+        cause-and-effect relationships between this week's core topics.</p>
+
+      <div class="card">
+        <div class="card-header">
+          Quality & Cost (The Rework Cycle)
+        </div>
+        <div class="card-body">
+          <p><strong>Interaction:</strong> There is a direct and powerful correlation between quality management and
+            project cost. Poor quality (QC failures) inevitably leads to rework.</p>
+          <p><strong>The Ripple Effect:</strong> Rework consumes additional labor hours, materials, and time. This
+            drives up costs (blowing the budget) and causes delays (blowing the schedule). Conversely, investing in
+            proactive Quality Assurance (QA)—like better training and process audits—costs money upfront but saves
+            significant cost downstream by preventing defects.</p>
+          <p><strong>The Principle:</strong> It is always cheaper to prevent a defect than it is to detect and fix it
+            later.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Procurement & Schedule (The External Dependency)
+        </div>
+        <div class="card-body">
+          <p><strong>Interaction:</strong> The procurement process is a critical driver of the project schedule. Your
+            project's timeline is often only as reliable as your slowest vendor.</p>
+          <p><strong>The Ripple Effect:</strong> A delay in vendor selection, a late delivery of materials, or poor
+            performance by a contractor will create a domino effect, delaying all dependent tasks. This is why the
+            "Conduct Procurements" and "Control Procurements" processes are so vital. Choosing the right contract type
+            (e.g., Fixed-Price with incentives for on-time delivery) can help mitigate this schedule risk.</p>
+          <p><strong>The Principle:</strong> Procurements are not just purchases; they are strategic schedule
+            dependencies that must be actively managed.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Stakeholder Management & Scope (The Moving Target)
+        </div>
+        <div class="card-body">
+          <p><strong>Interaction:</strong> Ineffective stakeholder engagement is the primary cause of uncontrolled scope
+            change and poor team morale.</p>
+          <p><strong>The Ripple Effect:</strong></p>
+          <ul>
+            <li><strong>On Scope:</strong> If key stakeholders are not identified, engaged, and managed, they may
+              introduce changes late in the project ("scope creep") or withhold crucial support, leading to rework and
+              delays.</li>
+            <li><strong>On Team Morale:</strong> A team that constantly receives conflicting directives from different
+              stakeholders or is forced to redo work due to poor requirements will quickly become demotivated, burned
+              out, and less productive.</li>
+          </ul>
+          <p><strong>The Principle:</strong> Proactive stakeholder management is a forcefield against disruptive change
+            and a pillar of team health.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The Central Hub: The Project Manager
+        </div>
+        <div class="card-body">
+          <p>The PM sits at the center of this web, constantly monitoring these interactions, making trade-off
+            decisions, and communicating their impacts. For example, a stakeholder requests a change (Stakeholder Mgmt).
+            The PM must assess its impact on scope, schedule, and cost (Core Constraints), determine if it requires
+            procuring a new resource (Procurement), and evaluate how it will be tested and integrated without
+            compromising quality (Quality).</p>
+        </div>
+      </div>
+
+      <h2>2. Case Study: The Healthcare.gov Launch Failure</h2>
+      <p>The initial launch of the Healthcare.gov website in October 2013 is a classic example of a project failure
+        resulting from the disintegration of these knowledge areas.</p>
+
+      <div class="card">
+        <div class="card-header">
+          The Project
+        </div>
+        <div class="card-body">
+          <p>Create a centralized online portal for Americans to enroll in health insurance plans under the Affordable
+            Care Act.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The Outcome
+        </div>
+        <div class="card-body">
+          <p>On launch day, the website crashed repeatedly, was incredibly slow, and produced erroneous data. Fewer than
+            1% of intended users could enroll, leading to a massive public and political backlash.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Root Cause Analysis Through Our Knowledge Areas
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>
+              <strong>Catastrophic Quality Management Failure:</strong>
+              <ul>
+                <li><strong>Poor QC (Testing):</strong> There was virtually no end-to-end testing or load testing before
+                  launch. The system was never tested with the volume of users it experienced on day one.</li>
+                <li><strong>Lack of QA (Process):</strong> The development process was siloed among dozens of
+                  contractors with no integrated testing or coordination process. There was no single authority ensuring
+                  the various components (login, application, plan database, payment gateway) work together.</li>
+                <li><strong>Impact:</strong> The product was not "fit for use" in any capacity, leading to a total
+                  failure to meet its primary objective.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Ineffective Procurement and Vendor Mismanagement:</strong>
+              <ul>
+                <li><strong>Unclear Contracts:</strong> The project was broken into dozens of separate contracts with
+                  different vendors (over 50). The contracts were often T&M (Time & Materials), which provided little
+                  incentive for vendors to work efficiently or meet deadlines.</li>
+                <li><strong>Lack of Coordination:</strong> No single prime contractor was responsible for systems
+                  integration. The Change Control Board (CCB) was ineffective or non-existent, leading to a lack of
+                  oversight and a failure to manage dependencies between vendors.</li>
+                <li><strong>Impact:</strong> This created a "tragedy of the commons" where no single vendor was
+                  accountable for the overall success of the project. Delays and bugs in one vendor's work cascaded
+                  through the entire system.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Inadequate Stakeholder Engagement:</strong>
+              <ul>
+                <li><strong>Missing Key Stakeholders:</strong> End-users (the citizens) were not adequately considered
+                  in the design and testing phases. Their needs for simplicity, clarity, and usability were ignored.
+                </li>
+                <li><strong>Lack of Transparency:</strong> The project's severe problems were not communicated upward to
+                  political leadership, creating a false sense of confidence until the very public failure.</li>
+                <li><strong>Impact:</strong> The system was technically complex but practically unusable for its
+                  intended audience. This led to a stakeholder (public) revolt that threatened the entire policy
+                  initiative.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Integrated Mitigations (How It Should Have Been Handled)
+        </div>
+        <div class="card-body">
+          <p>A disciplined, integrated approach could have prevented this failure:</p>
+          <ul>
+            <li><strong>Stricter Vendor Oversight (Procurement -> Quality/Schedule):</strong> Appoint a prime systems
+              integrator with a Fixed-Price incentive-based contract to manage all other vendors and be accountable for
+              the final, working product.</li>
+            <li><strong>Early and Continuous User Testing (Stakeholder -> Quality):</strong> Include end-users in
+              usability testing throughout the development lifecycle, not just at the end. This ensures the product is
+              "fit for use."</li>
+            <li><strong>Robust Change and Configuration Management (Quality -> Procurement):</strong> Implement a
+              powerful CCB with representatives from all key vendor teams to rigorously evaluate every change request
+              for its system-wide impact.</li>
+            <li><strong>Transparent Communication (Stakeholder -> All):</strong> Establish a clear communication plan
+              that provides honest, frequent updates on project status and risks to all stakeholders, including
+              leadership, to manage expectations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Module 6.5 & Week 6 Summary:</h2>
+      <p>This week moved beyond the core constraints of time, cost, and scope to the supporting processes that determine
+        the value and viability of a project.</p>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Knowledge Area</th>
+            <th>Its Purpose</th>
+            <th>Key Integration Insight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Quality Management</strong></td>
+            <td>To ensure deliverables are fit for use and meet requirements.</td>
+            <td>Quality is an investment, not a cost. Poor quality creates rework, which destroys the budget and
+              schedule.</td>
+          </tr>
+          <tr>
+            <td><strong>Procurement Management</strong></td>
+            <td>To acquire external resources to complete the project.</td>
+            <td>Vendors are strategic partners and schedule dependencies. The contract type defines the risk
+              relationship.</td>
+          </tr>
+          <tr>
+            <td><strong>Stakeholder Management</strong></td>
+            <td>To identify and engage those impacted by the project.</td>
+            <td>People determine success. Unmanaged stakeholders create scope creep and team dysfunction.</td>
+          </tr>
+          <tr>
+            <td><strong>Change & Config Management</strong></td>
+            <td>To control how change is integrated into the project.</td>
+            <td>This is the essential discipline that binds the others together, providing stability and traceability.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-point">
+        <h4>Final Takeaway</h4>
+        <p>The "Iron Triangle" of Scope, Time, and Cost is embedded within a larger framework of Quality, Procurement,
+          and Stakeholder Management. You cannot optimize one without affecting the others. The professional project
+          manager's role is to constantly balance these interconnected forces, making informed decisions that protect
+          the overall health and success of the project.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+</body>
+
+
+
+</html>

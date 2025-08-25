@@ -4,132 +4,509 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Conversational Agents</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
         }
 
+        h1,
         h2,
         h3 {
             color: #007BFF;
             /* Blue accent */
         }
 
-        .content-section {
-            padding: 20px;
-            margin-bottom: 30px;
-            border: 1px solid #007BFF;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .lead {
-            font-size: 1.2rem;
+        .custom-section {
+            margin-bottom: 40px;
         }
 
-        .list-group-item {
-            border: none;
-            padding: 10px 15px;
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
+
 </head>
 
 <body>
-
-    <div class="container mt-5">
-
-        <div class="content-section">
-            <h2>AI-Powered Conversational Agents: Transforming Business Interactions</h2>
-            <p class="lead">Conversational agents, powered by AI, are revolutionizing the way businesses interact with
-                customers, driving efficiency and enhancing user experience.</p>
+    <div class="container">
+        <div class="header">
+            <h1>6.2: Predictive Analytics and Forecasting</h1>
         </div>
 
-        <div class="content-section">
-            <h3>Customer Support</h3>
-            <ul class="list-group">
-                <li class="list-group-item">**24/7 Availability:** AI-powered chatbots can provide round-the-clock
-                    customer support, ensuring that customers always have access to assistance.</li>
-                <li class="list-group-item">**Improved Efficiency:** Chatbots can handle routine inquiries and tasks,
-                    freeing up human agents to focus on more complex issues.</li>
-                <li class="list-group-item">**Personalized Service:** AI can analyze customer data to provide
-                    personalized recommendations and support.</li>
-                <li class="list-group-item">**Language Translation:** Chatbots can be equipped with language translation
-                    capabilities to serve customers from different regions.</li>
-            </ul>
-            <p>By leveraging customer data, chatbots can provide context-aware solutions that enhance the overall
-                customer experience.</p>
-        </div>
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>Predictive analytics represents the most direct application of AI's power to transform business strategy.
+                Where traditional analytics helps us understand what has already happened, predictive analytics gives
+                organizations the ability to anticipate what will happen, enabling a shift from reactive problem-solving
+                to proactive strategy development. This section provides a comprehensive look at how predictive models
+                work, how they're implemented, and how they create tangible business value.</p>
 
-        <div class="content-section">
-            <h3>Lead Generation</h3>
-            <ul class="list-group">
-                <li class="list-group-item">**Proactive Engagement:** Chatbots can proactively engage with potential
-                    customers on websites or social media platforms, capturing leads and nurturing relationships.</li>
-                <li class="list-group-item">**Qualifying Leads:** Chatbots can qualify leads by asking relevant
-                    questions and gathering information, helping sales teams prioritize their efforts.</li>
-                <li class="list-group-item">**Personalized Recommendations:** Chatbots can recommend products or
-                    services based on customer preferences and behavior.</li>
-            </ul>
-            <p>This proactive engagement fosters relationships and drives higher conversion rates by understanding
-                customer needs better.</p>
-        </div>
+            <h2>The Predictive Modeling Process</h2>
+            <p>Predictive modeling follows a structured process that transforms raw data into actionable insights:</p>
 
-        <div class="content-section">
-            <h3>Conversational Commerce</h3>
-            <ul class="list-group">
-                <li class="list-group-item">**Shopping Assistance:** Chatbots can assist customers with product
-                    selection, providing information and recommendations tailored to their needs.</li>
-                <li class="list-group-item">**Order Placement:** Customers can place orders directly through chatbots,
-                    streamlining the purchasing process and minimizing cart abandonment.</li>
-                <li class="list-group-item">**Customer Service:** Chatbots can provide post-purchase support, addressing
-                    customer inquiries and resolving issues.</li>
-                <li class="list-group-item">**Personalized Offers:** Chatbots can offer personalized promotions and
-                    discounts based on customer behavior and previous interactions.</li>
-            </ul>
-            <p>By facilitating seamless shopping experiences, chatbots significantly enhance customer satisfaction and
-                drive sales.</p>
-        </div>
+            <div class="card">
+                <div class="card-header">
+                    The Six Steps of Predictive Modeling
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li><strong>Problem Definition:</strong> The most critical step. Clearly defining the business
+                            question and what needs to be predicted. Example: "We want to predict which customers are
+                            most likely to purchase in the next 30 days."</li>
+                        <li><strong>Data Collection & Preparation:</strong> Gathering relevant historical data from
+                            various sources and preparing it for analysis. This includes handling missing values,
+                            correcting errors, and formatting data consistently.</li>
+                        <li><strong>Feature Selection & Engineering:</strong> Identifying which variables (features) are
+                            most predictive of the outcome and creating new features that might improve model accuracy.
+                            Example: From a "signup date," engineering a "days since signup" feature.</li>
+                        <li><strong>Model Selection & Training:</strong> Choosing an appropriate algorithm and training
+                            it on historical data, allowing it to learn the relationships between features and the
+                            target outcome.</li>
+                        <li><strong>Model Evaluation & Validation:</strong> Testing the model's accuracy on new data it
+                            hasn't seen before to ensure it will perform well in real-world conditions.</li>
+                        <li><strong>Deployment & Monitoring:</strong> Implementing the model into business operations
+                            and continuously monitoring its performance to ensure it remains accurate as conditions
+                            change.</li>
+                    </ol>
+                </div>
+            </div>
 
-        <div class="content-section">
-            <h3>Benefits of Using Conversational AI in Business</h3>
-            <ul class="list-group">
-                <li class="list-group-item">**Improved Customer Satisfaction:** AI-powered chatbots can provide faster,
-                    more efficient, and more personalized customer support.</li>
-                <li class="list-group-item">**Increased Efficiency:** Chatbots can automate routine tasks, freeing up
-                    human agents to focus on more complex issues.</li>
-                <li class="list-group-item">**Enhanced Lead Generation:** Chatbots can help businesses identify and
-                    qualify potential customers, increasing sales opportunities.</li>
-                <li class="list-group-item">**Boosted Sales:** Conversational commerce can drive sales by providing a
-                    seamless and convenient shopping experience.</li>
-                <li class="list-group-item">**Cost Savings:** Chatbots can reduce operational costs by automating tasks
-                    and improving efficiency, providing a high return on investment.</li>
-            </ul>
-        </div>
+            <h2>Core Algorithm Types for Business Forecasting</h2>
+            <p>Different business problems require different algorithmic approaches:</p>
 
-        <div class="content-section">
-            <h3>Challenges and Considerations</h3>
-            <ul class="list-group">
-                <li class="list-group-item">**Technical Limitations:** AI-powered chatbots may still have limitations in
-                    understanding complex queries or handling unexpected situations.</li>
-                <li class="list-group-item">**Ethical Concerns:** There are concerns about the potential for chatbots to
-                    be used to manipulate or deceive customers, leading to a loss of trust.</li>
-                <li class="list-group-item">**Integration:** Integrating chatbots with existing business systems can be
-                    complex and require significant resources.</li>
-            </ul>
-            <p>Despite these challenges, the benefits of using conversational AI in business are significant. As AI
-                technology continues to advance, we can expect to see even more innovative and powerful applications in
-                this area.</p>
-        </div>
+            <div class="card">
+                <div class="card-header">
+                    Regression Analysis
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Purpose:</strong> Predicts continuous numerical values</li>
+                        <li><strong>Business Applications:</strong> Sales forecasting, price optimization, demand
+                            prediction</li>
+                        <li><strong>Example Techniques:</strong> Linear regression, polynomial regression, ridge
+                            regression</li>
+                    </ul>
+                </div>
+            </div>
 
+            <div class="card">
+                <div class="card-header">
+                    Time Series Analysis
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Purpose:</strong> Specifically designed for data collected over time, accounting for
+                            trends, seasonality, and cycles</li>
+                        <li><strong>Business Applications:</strong> Inventory management, revenue forecasting, website
+                            traffic prediction</li>
+                        <li><strong>Example Techniques:</strong> ARIMA, exponential smoothing, Prophet</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Classification Algorithms
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Purpose:</strong> Predicts categorical outcomes or class membership</li>
+                        <li><strong>Business Applications:</strong> Customer churn prediction, fraud detection, credit
+                            risk assessment</li>
+                        <li><strong>Example Techniques:</strong> Logistic regression, decision trees, random forests
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>The Critical Role of Data Quality</h2>
+            <p>The accuracy of predictive models is profoundly dependent on data quality considerations:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Data Quality Challenges
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Data Cleaning Challenges:</strong>
+                            <ul>
+                                <li>Handling missing data through imputation or deletion strategies</li>
+                                <li>Identifying and addressing outliers that may skew model results</li>
+                                <li>Correcting inconsistent formatting across data sources</li>
+                            </ul>
+                        </li>
+                        <li><strong>Feature Engineering Techniques:</strong>
+                            <ul>
+                                <li>Creating interaction terms between variables</li>
+                                <li>Transforming variables to better relationships with the target</li>
+                                <li>Reducing dimensionality to eliminate redundant features</li>
+                            </ul>
+                        </li>
+                        <li><strong>Data Partitioning Strategies:</strong>
+                            <ul>
+                                <li>Training set (typically 60-80% of data) for model development</li>
+                                <li>Validation set for parameter tuning and model selection</li>
+                                <li>Test set (typically 20-30%) for final unbiased performance evaluation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Implementation Framework for Success</h2>
+            <p>Moving from pilot to production requires careful planning:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    From Pilot to Production
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Pilot Project Selection Criteria:</strong>
+                            <ul>
+                                <li>Clear business value proposition</li>
+                                <li>Available and accessible data</li>
+                                <li>Well-defined success metrics</li>
+                                <li>Support from business stakeholders</li>
+                            </ul>
+                        </li>
+                        <li><strong>Production Deployment Considerations:</strong>
+                            <ul>
+                                <li>Integration with existing systems and workflows</li>
+                                <li>Automated retraining schedules to maintain model accuracy</li>
+                                <li>Monitoring systems to track model performance degradation</li>
+                                <li>Governance frameworks for model updates and validation</li>
+                            </ul>
+                        </li>
+                        <li><strong>Performance Measurement:</strong>
+                            <ul>
+                                <li>Statistical Metrics: Mean Absolute Error (MAE), Root Mean Square Error (RMSE),
+                                    accuracy, precision, recall</li>
+                                <li>Business Metrics: ROI, cost savings, revenue increase, customer retention
+                                    improvement</li>
+                                <li>Operational Metrics: Model latency, computational costs, maintenance requirements
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Industry-Specific Applications</h2>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Industry</th>
+                        <th>Applications</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Retail</strong></td>
+                        <td>Demand forecasting, price optimization, inventory management</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Finance</strong></td>
+                        <td>Credit scoring, fraud detection, algorithmic trading</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Healthcare</strong></td>
+                        <td>Patient readmission risk, disease outbreak prediction, treatment effectiveness</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Manufacturing</strong></td>
+                        <td>Predictive maintenance, quality control, supply chain optimization</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marketing</strong></td>
+                        <td>Customer lifetime value prediction, campaign response forecasting</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Common Pitfalls and How to Avoid Them</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    Key Challenges in Predictive Analytics
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Overfitting:</strong> Creating models that perform well on training data but poorly
+                            on new data</li>
+                        <li><strong>Sample Bias:</strong> Using data that doesn't represent the full population being
+                            predicted</li>
+                        <li><strong>Concept Drift:</strong> Models becoming less accurate as underlying patterns change
+                            over time</li>
+                        <li><strong>Black Box Problem:</strong> Difficulty explaining complex model decisions to
+                            stakeholders</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Embedded Video Context</h2>
+            <p>To understand how time series forecasting works in practice, watch this explanation of ARIMA modeling,
+                one of the most widely used techniques for business forecasting.</p>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Time Series Forecasting with ARIMA Modeling</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Predictive analytics transforms historical data into a strategic asset that enables evidence-based
+                    decision making. While algorithmic sophistication matters, success ultimately depends on clear
+                    business problem definition, high-quality data preparation, and careful attention to implementation
+                    details that ensure models remain accurate and relevant in production environments. The greatest
+                    value comes from integrating predictive insights into operational processes where they can drive
+                    automated decisions or inform human judgment.</p>
+            </div>
+        </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+
 
 </html>

@@ -4,49 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Working with Databases</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
+        .container h1 {
+            font-size: 2.3rem;
         }
 
-        h1,
-        h2,
-        h4 {
-            color: #007bff;
-        }
-
-        .container {
-            margin-top: 30px;
-        }
-
-        .code-block {
-            background-color: #343a40;
-            color: #fff;
-            padding: 15px;
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        li::before {
-            content: '•';
-            color: #007bff;
-            padding-right: 5px;
-        }
-
-        .explanation {
-            color: #6c757d;
-        }
-
-        .card {
-            border: none;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
         }
 
         /* Basic Reset */
@@ -67,6 +48,82 @@
 
         .container {
             padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -145,141 +202,355 @@
                 }
             }
         }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
+
 </head>
 
 <body>
-
     <div class="container">
-        <h1 class="text-center mb-4">Working with Databases</h1>
-
-        <h2>3.1. Introduction to Databases</h2>
-        <p>Databases are essential for storing and managing data used by web applications. They can be categorized into:
-        </p>
-
-        <ul>
-            <li><strong>Relational Databases (SQL):</strong>
-                <ul>
-                    <li>Use Structured Query Language (SQL) for querying and managing data.</li>
-                    <li>Examples: MySQL, PostgreSQL, SQLite.</li>
-                </ul>
-            </li>
-            <li><strong>NoSQL Databases:</strong>
-                <ul>
-                    <li>Designed for unstructured or semi-structured data.</li>
-                    <li>Examples: MongoDB, CouchDB.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h2>3.2. Connecting to a Database with Node.js</h2>
-        <p>This section focuses on connecting to MongoDB, a popular NoSQL database, using the <code>mongoose</code>
-            library, which provides an elegant API for MongoDB.</p>
-
-        <h4>Installation:</h4>
-        <div class="code-block">
-            <code>npm install mongoose</code>
+        <div class="header">
+            <h1>6.3: Advanced Graphic Design Tools</h1>
         </div>
 
-        <h4>Basic MongoDB Connection with Mongoose:</h4>
-        <div class="code-block">
-            <code>
-// app.js
-const mongoose = require('mongoose');
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>Professional graphic design requires mastery of industry-standard tools and understanding of when and how
+                to use them effectively. This lesson explores the advanced capabilities of essential design software,
+                the strategic choice between vector and raster graphics, techniques for creating sophisticated visuals,
+                and workflow optimization strategies that separate amateur designers from professionals. You'll learn
+                not just how to use these tools, but how to leverage them efficiently to produce high-quality work
+                across various media formats.</p>
 
-mongoose.connect('mongodb://localhost/mydatabase', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+            <h2>Content</h2>
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-    console.log('Connected to MongoDB');
-});
-        </code>
-        </div>
+            <div class="card">
+                <div class="card-header">1. Adobe Creative Suite Mastery</div>
+                <div class="card-body">
+                    <p>The Adobe Creative Suite remains the industry standard for professional graphic design, with each
+                        application serving specific purposes in the design workflow.</p>
 
-        <p class="explanation">
-            <strong>Explanation:</strong>
-        <ul>
-            <li><strong>mongoose.connect():</strong> Connects to the MongoDB server.</li>
-            <li><strong>db.on('error'):</strong> Handles connection errors.</li>
-            <li><strong>db.once('open'):</strong> Confirms successful connection.</li>
-        </ul>
-        </p>
+                    <h4>Adobe Photoshop: The Image Manipulation Powerhouse</h4>
+                    <ul>
+                        <li><strong>Primary Uses:</strong> Photo editing, retouching, digital painting, compositing</li>
+                        <li><strong>Advanced Techniques:</strong>
+                            <ul>
+                                <li>Non-destructive editing: Using adjustment layers, smart objects, and layer masks
+                                </li>
+                                <li>Advanced retouching: Frequency separation for skin retouching, content-aware fill
+                                </li>
+                                <li>Compositing: Blending multiple images seamlessly using layer masks and blending
+                                    modes</li>
+                                <li>3D design: Basic 3D modeling and texturing capabilities</li>
+                            </ul>
+                        </li>
+                        <li><strong>Professional Workflow:</strong> RAW processing → retouching → color grading → final
+                            output</li>
+                    </ul>
 
-        <h4>Creating a Schema and Model:</h4>
-        <div class="code-block">
-            <code>
-const mongoose = require('mongoose');
+                    <h4>Adobe Illustrator: Precision Vector Design</h4>
+                    <ul>
+                        <li><strong>Primary Uses:</strong> Logo design, icon creation, illustrations, typography design
+                        </li>
+                        <li><strong>Advanced Techniques:</strong>
+                            <ul>
+                                <li>Pen tool mastery: Creating precise paths and custom shapes</li>
+                                <li>Pathfinder operations: Combining shapes using unite, minus front, intersect, and
+                                    exclude</li>
+                                <li>Global colors: Creating color swatches that update across all instances</li>
+                                <li>Appearance panel: Stacking multiple fills, strokes, and effects on single objects
+                                </li>
+                                <li>Pattern creation: Designing seamless patterns using pattern options</li>
+                            </ul>
+                        </li>
+                        <li><strong>Professional Workflow:</strong> Sketch → vector tracing → color application →
+                            refinement</li>
+                    </ul>
 
-const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    age: Number
-});
+                    <h4>Adobe InDesign: Layout and Publishing Excellence</h4>
+                    <ul>
+                        <li><strong>Primary Uses:</strong> Multi-page documents, books, magazines, brochures, reports
+                        </li>
+                        <li><strong>Advanced Techniques:</strong>
+                            <ul>
+                                <li>Master pages: Creating consistent layouts across multiple pages</li>
+                                <li>Paragraph/character styles: Applying consistent formatting throughout documents</li>
+                                <li>Text threading: Flowing text through multiple text frames</li>
+                                <li>Data merge: Automating repetitive information in catalogs or directories</li>
+                                <li>Interactive documents: Adding buttons, animations, and video for digital
+                                    publications</li>
+                            </ul>
+                        </li>
+                        <li><strong>Professional Workflow:</strong> Layout planning → master page setup → content
+                            placement → preflight check</li>
+                    </ul>
+                </div>
+            </div>
 
-const User = mongoose.model('User', userSchema);
-        </code>
-        </div>
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/3Vh6s3v0f1o" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Adobe Creative Suite Overview</h4>
+                    </div>
+                </div>
+            </div>
 
-        <p class="explanation">
-            <strong>Explanation:</strong>
-        <ul>
-            <li><strong>Schema:</strong> Defines the structure of the documents in the collection.</li>
-            <li><strong>mongoose.model():</strong> Creates a model for the schema.</li>
-        </ul>
-        </p>
+            <div class="card">
+                <div class="card-header">2. Vector vs. Raster: Choosing the Right Format</div>
+                <div class="card-body">
+                    <p>Understanding the fundamental difference between vector and raster graphics is crucial for
+                        selecting the appropriate format for each design task.</p>
 
-        <h4>Performing CRUD Operations:</h4>
-        <div class="code-block">
-            <code>
-// Create a new user
-const newUser = new User({
-    name: 'Alice',
-    email: 'alice@example.com',
-    age: 25
-});
+                    <h4>Vector Graphics (Illustrator, Sketch, Figma)</h4>
+                    <ul>
+                        <li><strong>Composition:</strong> Mathematical equations defining points, lines, curves, and
+                            shapes</li>
+                        <li><strong>Advantages:</strong>
+                            <ul>
+                                <li>Infinite scalability without quality loss</li>
+                                <li>Smaller file sizes for simple graphics</li>
+                                <li>Easy editing of individual elements</li>
+                                <li>Perfect for logos, icons, and illustrations</li>
+                            </ul>
+                        </li>
+                        <li><strong>Common Formats:</strong> AI, EPS, SVG, PDF</li>
+                        <li><strong>Best For:</strong> Logos, icons, illustrations, typography, diagrams</li>
+                    </ul>
 
-newUser.save((err) => {
-    if (err) return console.error(err);
-    console.log('User saved');
-});
+                    <h4>Raster Graphics (Photoshop, Procreate, Photopea)</h4>
+                    <ul>
+                        <li><strong>Composition:</strong> Grid of pixels, each with color information</li>
+                        <li><strong>Advantages:</strong>
+                            <ul>
+                                <li>Rich detail and complex color variations</li>
+                                <li>Natural texture and photographic quality</li>
+                                <li>Advanced editing capabilities for images</li>
+                                <li>Wide format support and compatibility</li>
+                            </ul>
+                        </li>
+                        <li><strong>Common Formats:</strong> PSD, JPEG, PNG, TIFF, GIF</li>
+                        <li><strong>Best For:</strong> Photographs, digital paintings, textural elements, complex
+                            composites</li>
+                    </ul>
 
-// Find users
-User.find({}, (err, users) => {
-    if (err) return console.error(err);
-    console.log(users);
-});
-        </code>
-        </div>
+                    <h4>Hybrid Approaches</h4>
+                    <ul>
+                        <li>Smart Objects in Photoshop: Embedding vector elements within raster documents</li>
+                        <li>Rasterizing: Converting vector to raster when necessary for specific effects</li>
+                        <li>Tracing: Converting raster images to vector paths when appropriate</li>
+                    </ul>
 
-        <p class="explanation">
-            <strong>Explanation:</strong>
-        <ul>
-            <li><strong>new User():</strong> Creates a new document.</li>
-            <li><strong>save():</strong> Saves the document to the database.</li>
-            <li><strong>find():</strong> Retrieves documents from the database.</li>
-        </ul>
-        </p>
-    </div>
+                    <p><strong>Interactive Exercise:</strong> Create the same design element (a simple logo with text)
+                        as both vector and raster graphics. Scale both to 1000% and compare the quality differences.</p>
+                </div>
+            </div>
 
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
+            <div class="card">
+                <div class="card-header">3. Advanced Design Techniques</div>
+                <div class="card-body">
+                    <p>Mastering advanced techniques allows designers to create more sophisticated work efficiently.</p>
+
+                    <h4>Photoshop Compositing Mastery</h4>
+                    <ul>
+                        <li>Blending Modes: Using Multiply for shadows, Screen for lights, Overlay for contrast</li>
+                        <li>Advanced Masking: Channel masking for complex selections like hair or transparency</li>
+                        <li>Match Color: Matching color tones between different source images</li>
+                        <li>Perspective Matching: Ensuring consistent perspective in composite images</li>
+                    </ul>
+
+                    <h4>Illustrator Special Effects</h4>
+                    <ul>
+                        <li>Gradient Meshes: Creating photorealistic shading and complex color transitions</li>
+                        <li>Custom Brushes: Developing brushes for specific textural effects</li>
+                        <li>3D Effects: Extruding and revolving 2D shapes into 3D objects</li>
+                        <li>Appearance Panel Stacking: Applying multiple strokes, fills, and effects to single objects
+                        </li>
+                    </ul>
+
+                    <h4>InDesign Long Document Features</h4>
+                    <ul>
+                        <li>Table of Contents Generation: Automatic TOC creation based on paragraph styles</li>
+                        <li>Indexing: Creating and managing indexes for large documents</li>
+                        <li>Book Feature: Managing multiple InDesign documents as a single book</li>
+                        <li>Cross-References: Dynamic text that updates automatically</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/2X2i7b2Q0s4" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Advanced Photoshop Compositing Techniques</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">4. Graphics for Social Media</div>
+                <div class="card-body">
+                    <p>Creating effective social media graphics requires understanding platform specifications and using
+                        appropriate tools for efficiency.</p>
+
+                    <h4>Platform-Specific Requirements</h4>
+                    <ul>
+                        <li><strong>Instagram:</strong> Square (1080x1080), portrait (1080x1350), stories (1080x1920)
+                        </li>
+                        <li><strong>Facebook:</strong> Cover photo (820x312), post images (1200x630)</li>
+                        <li><strong>Twitter:</strong> Header (1500x500), in-stream images (1200x675)</li>
+                        <li><strong>LinkedIn:</strong> Company banner (1128x191), post images (1200x627)</li>
+                        <li><strong>Pinterest:</strong> Portrait (1000x1500), optimal 2:3 aspect ratio</li>
+                    </ul>
+
+                    <h4>Alternative Design Tools</h4>
+                    <ul>
+                        <li><strong>Canva:</strong> Template-based design for quick social graphics</li>
+                        <li><strong>Figma:</strong> Collaborative interface design with strong layout capabilities</li>
+                        <li><strong>Affinity Suite:</strong> Adobe alternative with one-time purchase model</li>
+                        <li><strong>Procreate:</strong> Digital painting and illustration on iPad</li>
+                    </ul>
+
+                    <h4>Optimization Strategies</h4>
+                    <ul>
+                        <li>File size reduction: Balancing quality and load time</li>
+                        <li>Format selection: JPEG for photos, PNG for transparency, GIF for animation</li>
+                        <li>Accessibility: Adding alt text and ensuring color contrast</li>
+                        <li>Brand consistency: Maintaining visual identity across platforms</li>
+                    </ul>
+
+                    <p><strong>Practical Exercise:</strong> Create a social media campaign kit for a fictional product,
+                        including graphics for Instagram posts, stories, Facebook cover, and Twitter header.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">5. Professional Workflow Optimization</div>
+                <div class="card-body">
+                    <p>Efficient workflows separate professional designers from amateurs, enabling higher quality work
+                        in less time.</p>
+
+                    <h4>File Organization System</h4>
+                    <ul>
+                        <li>Logical folder structure: Client → Project → Assets, Exports, Working Files</li>
+                        <li>Consistent naming conventions: ProjectName_Date_Version_Initials.ext</li>
+                        <li>Asset management: Using Adobe Bridge or similar DAM systems</li>
+                        <li>Version control: Saving iterative versions rather than overwriting</li>
+                    </ul>
+
+                    <h4>Time-Saving Techniques</h4>
+                    <ul>
+                        <li>Preset creation: Saving frequently used adjustments, styles, and settings</li>
+                        <li>Template development: Creating reusable layouts for common projects</li>
+                        <li>Asset libraries: Building collections of logos, icons, and UI elements</li>
+                        <li>Custom workspaces: Optimizing interface layout for specific tasks</li>
+                    </ul>
+
+                    <h4>Automation Strategies</h4>
+                    <ul>
+                        <li>Photoshop Actions: Recording and batch processing repetitive tasks</li>
+                        <li>Illustrator Scripts: Automating complex or repetitive vector operations</li>
+                        <li>Data Merge: Automating catalog and directory creation in InDesign</li>
+                        <li>Export configurations: Saving preset export settings for different outputs</li>
+                    </ul>
+
+                    <h4>Collaboration Practices</h4>
+                    <ul>
+                        <li>Package gathering: Collecting all necessary files for handoff</li>
+                        <li>Cloud collaboration: Using Adobe Cloud or similar services for team projects</li>
+                        <li>Feedback systems: Implementing efficient review and approval processes</li>
+                        <li>Documentation: Providing style guides and usage instructions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/8dVW4a8z0cM" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Professional Design Workflow Optimization</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Mastering advanced graphic design tools involves not just learning software features, but
+                    understanding when and how to use them effectively. Professional designers select the right tool for
+                    each task, leverage advanced techniques to create sophisticated work, implement efficient workflows
+                    to save time, and adapt their skills to various output requirements. By developing proficiency
+                    across multiple applications and understanding their strengths and limitations, you can tackle any
+                    design challenge with confidence and efficiency.</p>
             </div>
         </div>
     </div>
+    <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+
+    </script>
+
 </body>
 
 </html>

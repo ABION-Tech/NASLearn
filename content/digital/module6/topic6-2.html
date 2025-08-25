@@ -4,92 +4,503 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crafting Engaging Emails</title>
+    <title> New Age Skillsphere</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
         }
 
         .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
+            padding: 20px;
         }
 
-        h1 {
-            color: #007BFF;
-            /* Blue accent for main heading */
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
             text-align: center;
-            margin-bottom: 30px;
+            margin-top: 5px;
         }
 
-        h2 {
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
             color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 20px;
+            /* Blue accent */
         }
 
-        .section {
-            margin-bottom: 30px;
-            padding: 15px;
-            border-left: 5px solid #007BFF;
-            /* Blue accent border */
-            background-color: #f8f9fa;
-            /* Light gray background for sections */
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        ul {
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
             margin-left: 20px;
         }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
+
 </head>
 
+
 <body>
-
     <div class="container">
-        <h1>Crafting Engaging Emails</h1>
-
-        <div class="section">
-            <h2>Subject Lines:</h2>
-            <ul>
-                <li><strong>Definition:</strong> The subject line is the first thing recipients see, and it
-                    significantly influences open rates.</li>
-                <li><strong>Best Practices:</strong>
-                    <ul>
-                        <li>Keep it short and intriguing.</li>
-                        <li>Personalize when possible (e.g., using the recipient’s name).</li>
-                        <li>Use actionable language and urgency (e.g., “Don’t miss out on…”).</li>
-                    </ul>
-                </li>
-                <li><strong>Real-World Example:</strong> BuzzFeed often uses catchy subject lines that spark curiosity,
-                    leading to higher open rates.</li>
-            </ul>
+      <div class="header">
+        <h1>Module 6: Email Marketing and Marketing Automation</h1>
+        <h2>6.2: Email Design and Content Creation</h2>
+      </div>
+      
+      <div class="module-content">
+        <h2>Introduction</h2>
+        <p>Now that you understand the why and the rules of email marketing, it's time to master the how. The success of your campaign hinges on two critical elements: design and content. A beautifully designed email with weak copy will fail. A brilliantly written email that's ugly and broken will also fail. This module will teach you how to marry compelling copy with effective design to create emails that get opened, read, and clicked.</p>
+        
+        <h2>1. Principles of Effective Email Design</h2>
+        <p>The primary goal of email design is not to win art awards; it's to facilitate communication and guide the reader to a single action. Your design should remove friction and make the path to that action as clear as possible.</p>
+        
+        <div class="card">
+          <div class="card-header">
+            Clean and Scannable Layouts
+          </div>
+          <div class="card-body">
+            <p><strong>The Reality:</strong> Most people don't read emails; they scan them. They look for visual cues to decide if the content is relevant.</p>
+            <p><strong>How to Do It:</strong> Use plenty of white space (breathing room between elements), short paragraphs, and images to break up text. Avoid cluttering the email with too many offers or messages.</p>
+          </div>
         </div>
-
-        <div class="section">
-            <h2>Call-to-Actions (CTAs):</h2>
-            <ul>
-                <li><strong>Definition:</strong> CTAs are prompts that encourage recipients to take a specific action,
-                    such as clicking a link, signing up for an event, or making a purchase.</li>
-                <li><strong>Best Practices:</strong>
-                    <ul>
-                        <li>Use clear, concise language (e.g., “Get Started” or “Shop Now”).</li>
-                        <li>Make the CTA visually appealing and easily accessible within the email.</li>
-                    </ul>
-                </li>
-                <li><strong>Real-World Example:</strong> Amazon uses strong CTAs in their emails, directing customers to
-                    exclusive offers and recommendations.</li>
-            </ul>
+        
+        <div class="card">
+          <div class="card-header">
+            Visual Hierarchy
+          </div>
+          <div class="card-body">
+            <p><strong>The Concept:</strong> Hierarchy is the arrangement of elements in a way that implies importance. It guides the reader's eye through the email in a specific order.</p>
+            <p><strong>How to Do It:</strong></p>
+            <ol>
+              <li><strong>Headline/Subject (H1):</strong> The largest text, often at the top. It should capture the main value proposition.</li>
+              <li><strong>Subheadings (H2, H3):</strong> Smaller than the headline but larger than body text. They break the email into scannable sections.</li>
+              <li><strong>Body Text:</strong> The main content. Keep it concise.</li>
+              <li><strong>Call-to-Action (CTA) Button:</strong> The most important visual element. It must stand out.</li>
+              <li><strong>Footer:</strong> The smallest text for legal links and the unsubscribe option.</li>
+            </ol>
+          </div>
         </div>
+        
+        <div class="card">
+          <div class="card-header">
+            The Rule of One Clear CTA
+          </div>
+          <div class="card-body">
+            <p><strong>The Why:</strong> Every email should have one primary goal. Do you want them to read a blog post, claim a discount, or watch a video? Giving multiple options leads to decision paralysis, and the subscriber is more likely to do nothing.</p>
+            <p><strong>The How:</strong> Design your email's narrative to lead logically to a single, prominent CTA button. You can have secondary, text-based links (e.g., "Read the full article on our blog"), but the primary action should be unmistakable.</p>
+            <p><strong>Exception:</strong> Newsletters often have multiple CTAs, but they should still be visually ordered by importance.</p>
+          </div>
+        </div>
+        
+        <h2>2. Crafting Irresistible Subject Lines & Preheaders</h2>
+        <p>This is the most important real estate in your email. If your subject line and preheader fail, your email will never be opened.</p>
+        
+        <div class="card">
+          <div class="card-header">
+            Subject Lines
+          </div>
+          <div class="card-body">
+            <p><strong>Length:</strong> Aim for 25-50 characters to avoid being cut off on mobile devices.</p>
+            <p><strong>Strategies:</strong></p>
+            <ul>
+              <li><strong>Curiosity:</strong> "You forgot something in your cart..." or "The secret to...[benefit]".</li>
+              <li><strong>Benefit-Driven:</strong> "Get 5 hours of your week back" or "Learn the shortcut to [goal]".</li>
+              <li><strong>Urgency/Scarcity:</strong> "24-Hour Sale: Your VIP Access Inside" or "Last chance to enroll!".</li>
+              <li><strong>Personalization:</strong> "John, a special offer just for you" (use sparingly to avoid feeling generic).</li>
+            </ul>
+            <p><strong>Avoid:</strong> Spam triggers (ALL CAPS, excessive !!!), being overly vague, or misleading the reader ("Re: Your order" when it's not).</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            Preheaders
+          </div>
+          <div class="card-body">
+            <p><strong>What is it?</strong> The snippet of text that appears next to or below the subject line in most email clients. It's usually pulled from the first few lines of your email's text.</p>
+            <p><strong>The Mistake:</strong> Leaving it as default ("View this email in your browser...") is a wasted opportunity.</p>
+            <p><strong>The Strategy:</strong> Treat the preheader as an extension of your subject line.</p>
+            <ul>
+              <li><strong>Complement, Don't Repeat:</strong> If the subject line is the hook, the preheader is the supporting context.</li>
+              <li><strong>Example:</strong>
+                <ul>
+                  <li>Subject: Your weekend plan is here 🎬</li>
+                  <li>Preheader: Check out this week's top 3 new releases on StreamFlix.</li>
+                </ul>
+              </li>
+              <li><strong>How to Control It:</strong> Most email marketing platforms allow you to set a specific "preheader text." If not, you can hide the default text by coding a small, hidden div at the very top of your email.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h2>3. Writing Engaging Email Copy</h2>
+        <p>Your writing must be concise, valuable, and focused on the reader.</p>
+        
+        <ul>
+          <li><strong>Tone of Voice:</strong> Write like you speak. Use a personal, conversational tone ("we," "you," "I") to build a connection. Avoid overly formal corporate jargon.</li>
+          <li><strong>Benefits Over Features:</strong> People don't buy features; they buy the benefit those features provide.
+            <ul>
+              <li>Feature: "Our course has 10 modules and 50 lessons."</li>
+              <li>Benefit: "Master in-demand skills and land your dream job in just 10 weeks."</li>
+            </ul>
+          </li>
+          <li><strong>Use Storytelling:</strong> Humans are wired for stories. A short, relatable anecdote can make your message more memorable and emotionally resonant.</li>
+          <li><strong>Create Scannable Text:</strong>
+            <ul>
+              <li>Use short sentences and paragraphs (2-3 lines max).</li>
+              <li>Utilize bullet points and numbered lists.</li>
+              <li>Bold key phrases or important benefits to draw the scanner's eye.</li>
+            </ul>
+          </li>
+          <li><strong>Urgency and Scarcity:</strong> Use these powerful psychological triggers sparingly and honestly. Fake urgency ("Only 1 left!") will destroy trust. Real urgency ("Sale ends tonight at midnight") can drive action.</li>
+        </ul>
+        
+        <h2>4. Mobile Optimization: A Non-Negotiable Priority</h2>
+        <p>With the vast majority of emails first opened on a mobile device, your emails must be designed for the small screen.</p>
+        
+        <ul>
+          <li><strong>Responsive Design:</strong> Your email template must automatically adjust its layout, image size, and text spacing to fit any screen size. All modern email editors and templates are responsive by default.</li>
+          <li><strong>Font Size:</strong> Use a minimum body text size of 16px to ensure readability without zooming.</li>
+          <li><strong>Tappable Buttons:</strong> Your CTA button must be large enough for a thumb. A good minimum size is 44x44 pixels. Ensure there is plenty of space around the button so users don't accidentally tap the wrong link.</li>
+          <li><strong>Single Column Layout:</strong> Multi-column layouts shrink to an unreadable size on mobile. A single-column layout is the safest and most effective choice.</li>
+          <li><strong>Testing:</strong> Always send a test email to yourself and open it on your phone. Check for broken layouts, tiny text, or images that don't load.</li>
+        </ul>
+        
+        <h2>5. Advanced Personalization Strategies</h2>
+        <p>Personalization is the key to moving from "blast" marketing to "conversational" marketing. It's about delivering the right message to the right person at the right time.</p>
+        
+        <div class="card">
+          <div class="card-header">
+            Beyond the First Name
+          </div>
+          <div class="card-body">
+            <p>While "Hi [First Name]" is a start, it's table stakes. True personalization leverages data.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            Personalization by Behavior
+          </div>
+          <div class="card-body">
+            <p>This is the most powerful method because it's based on a user's actions.</p>
+            <ul>
+              <li><strong>Abandoned Cart:</strong> "Did you forget something? Here's your 10% off completion offer!"</li>
+              <li><strong>Browse Abandonment:</strong> "Still interested in the [Product Name]? Here's what customers are saying..."</li>
+              <li><strong>Link/Content Engagement:</strong> "Since you liked our article on [Topic A], you might love our guide to [Related Topic B]."</li>
+              <li><strong>Purchase History:</strong> "Customers who bought [Product A] also loved [Product B]."</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            Personalization by Demographics/Profile
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Location:</strong> Promote an in-store event to subscribers in a specific city or adjust offers based on weather.</li>
+              <li><strong>Company/Industry:</strong> Send relevant case studies or content tailored to a subscriber's professional field.</li>
+              <li><strong>Anniversary/Birthday:</strong> Automate a special offer on a subscriber's birthday or the anniversary of their sign-up date.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            Personalization by Buyer Journey Stage
+          </div>
+          <div class="card-body">
+            <ul>
+              <li><strong>New Subscriber:</strong> Send a welcome series introducing your brand's core values and most popular content.</li>
+              <li><strong>Lead:</strong> Nurture them with educational content and case studies.</li>
+              <li><strong>Customer:</strong> Send onboarding tips, upsell opportunities, and requests for reviews.</li>
+              <li><strong>Lapsed Customer:</strong> Run a win-back campaign with a strong incentive to return.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="key-point">
+          <h4>Key Takeaway</h4>
+          <p>Effective personalization makes the subscriber feel like you are speaking directly to them, dramatically increasing relevance, engagement, and conversion rates.</p>
+        </div>
+        
+        <h2>Module 6.2 Summary:</h2>
+        
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Element</th>
+              <th>Core Principle</th>
+              <th>Pro Tip</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Design</strong></td>
+              <td>Guide the eye. Remove friction.</td>
+              <td>One primary CTA per email. Use visual hierarchy.</td>
+            </tr>
+            <tr>
+              <td><strong>Subject Line</strong></td>
+              <td>Be a compelling headline.</td>
+              <td>Keep it under 50 chars. Spark curiosity or state a benefit.</td>
+            </tr>
+            <tr>
+              <td><strong>Preheader</strong></td>
+              <td>Support the subject line.</td>
+              <td>Write custom text; don't waste it on "View in browser."</td>
+            </tr>
+            <tr>
+              <td><strong>Copywriting</strong></td>
+              <td>Write for scanners. Focus on benefits.</td>
+              <td>Use "you," break text into chunks, and bold key points.</td>
+            </tr>
+            <tr>
+              <td><strong>Mobile</strong></td>
+              <td>Design for the thumb.</td>
+              <td>Use a single column, large fonts (16px+), and tappable buttons.</td>
+            </tr>
+            <tr>
+              <td><strong>Personalization</strong></td>
+              <td>Be relevant, not just "personal."</td>
+              <td>Leverage behavioral data (what they did) over just demographics (who they are).</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="key-point">
+          <h4>Up Next</h4>
+          <p>In the next section, we will explore the tools and strategies that allow you to scale this personalization: Marketing Automation. We'll learn how to set up automated email sequences that nurture leads and customers without manual effort.</p>
+        </div>
+      </div>
+    </div> 
+ 
+<!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
     </div>
+  </div> -->
 
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+
+</script>
 
 </body>
 

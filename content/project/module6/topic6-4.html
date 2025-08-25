@@ -2,265 +2,516 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hands-On CRUD Application</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-        h1,
-        h2,
-        h4 {
-            color: #007bff;
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        .container {
-            margin-top: 30px;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        .code-block {
-            background-color: #343a40;
-            color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
 
-        li::before {
-            content: '•';
-            color: #007bff;
-            padding-right: 5px;
-        }
+    .container {
+      padding: 20px;
+    }
 
-        .explanation {
-            color: #6c757d;
-        }
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .card {
-            border: none;
-        }
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
 
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
 
-        .container {
-            padding: 20px;
-        }
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
 
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
 
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
 
-        /* Video or content inside the border */
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
         .video-content {
-            border-radius: 10px;
-            display: block;
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
 
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
+  </style>
 
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
-        }
-    </style>
 </head>
 
+
+
+
 <body>
-
-    <div class="container">
-        <h1 class="text-center mb-4">Hands-On Practice: Building a Simple CRUD Application</h1>
-
-        <h2>4.1. Project Setup</h2>
-        <h4>Initialize the Project:</h4>
-        <p>Create a new directory for your project and initialize it with npm.</p>
-        <div class="code-block">
-            <code>
-mkdir my-backend-project<br>
-cd my-backend-project<br>
-npm init -y
-        </code>
-        </div>
-
-        <h4>Install Dependencies:</h4>
-        <p>Install Express and Mongoose.</p>
-        <div class="code-block">
-            <code>
-npm install express mongoose
-        </code>
-        </div>
-
-        <h2>4.2. Creating the Server</h2>
-        <h4>Setup Express Server:</h4>
-        <div class="code-block">
-            <code>
-// app.js
-const express = require('express');<br>
-const mongoose = require('mongoose');<br>
-const app = express();<br><br>
-
-app.use(express.json());<br><br>
-
-mongoose.connect('mongodb://localhost/mydatabase', {<br>
-    useNewUrlParser: true,<br>
-    useUnifiedTopology: true<br>
-});<br><br>
-
-const userSchema = new mongoose.Schema({<br>
-    name: String,<br>
-    email: String,<br>
-    age: Number<br>
-});<br><br>
-
-const User = mongoose.model('User', userSchema);<br><br>
-
-// Create user<br>
-app.post('/users', (req, res) => {<br>
-    const newUser = new User(req.body);<br>
-    newUser.save((err, user) => {<br>
-        if (err) return res.status(500).send(err);<br>
-        res.status(201).send(user);<br>
-    });<br>
-});<br><br>
-
-// Read users<br>
-app.get('/users', (req, res) => {<br>
-    User.find({}, (err, users) => {<br>
-        if (err) return res.status(500).send(err);<br>
-        res.status(200).send(users);<br>
-    });<br>
-});<br><br>
-
-// Update user<br>
-app.put('/users/:id', (req, res) => {<br>
-    User.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, user) => {<br>
-        if (err) return res.status(500).send(err);<br>
-        res.status(200).send(user);<br>
-    });<br>
-});<br><br>
-
-// Delete user<br>
-app.delete('/users/:id', (req, res) => {<br>
-    User.findByIdAndDelete(req.params.id, (err) => {<br>
-        if (err) return res.status(500).send(err);<br>
-        res.status(204).send();<br>
-    });<br>
-});<br><br>
-
-app.listen(3000, () => {<br>
-    console.log('Server running on port 3000');<br>
-});
-        </code>
-        </div>
-
-        <h2>4.3. Testing the Application</h2>
-        <h4>Using Postman:</h4>
-        <p>Test CRUD operations by sending HTTP requests to your API endpoints using Postman or any other API testing
-            tool.</p>
-
-        <h4>Verifying Functionality:</h4>
-        <p>Ensure that all routes are functioning correctly and that data is being stored, retrieved, updated, and
-            deleted as expected.</p>
-
+  <div class="container">
+    <div class="header">
+      <h1>Week 6: Quality, Procurement, and Stakeholder Management</h1>
+      <h2>6.4: Change Control and Configuration Management</h2>
     </div>
 
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
-    </div>
+    <div class="module-content">
+      <h2>Introduction: The Discipline of Controlling Chaos</h2>
+      <p>Change is inevitable in any project. New requirements emerge, unexpected challenges arise, and stakeholders
+        gain new insights. However, uncontrolled change is the primary driver of project failure, leading to budget
+        overruns, missed deadlines, and team burnout. This module introduces the essential disciplines of Change Control
+        and Configuration Management—the structured processes that allow a project to adapt to necessary change without
+        descending into chaos. They are the guardrails that keep the project on track while allowing for evolution.</p>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <h2>1. Formal Change Control: The Bulwark Against Scope Creep</h2>
+      <p>Formal Change Control is the process of ensuring that all proposed changes to the project's baseline (scope,
+        schedule, cost, quality) are reviewed, approved, documented, and managed in a controlled and coordinated manner.
+      </p>
+
+      <div class="card">
+        <div class="card-header">
+          Why It's Non-Negotiable
+        </div>
+        <div class="card-body">
+          <p>Without a formal process, projects fall victim to scope creep—the insidious, uncontrolled expansion of
+            project scope without adjustments to time, cost, or resources. Scope creep is often death by a thousand
+            cuts: small, seemingly innocent changes that collectively derail the project.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The Standard Change Control Process
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Identification & Submission:</strong> Anyone (team member, stakeholder, sponsor) can identify
+              the need for a change. They must formally document it using a Change Request Form. This form captures:
+              <ul>
+                <li>Description of Change: What exactly is being proposed?</li>
+                <li>Reason/Justification: Why is this change needed? What value does it bring?</li>
+                <li>Impact Analysis: What is the preliminary estimate of the impact on scope, schedule, cost, quality,
+                  resources, and risk?</li>
+              </ul>
+            </li>
+            <li><strong>Review:</strong> The Change Request is logged and submitted to the governing authority (often a
+              Change Control Board) for review.</li>
+            <li><strong>Approval/Rejection:</strong> The governing body evaluates the change against the project's
+              objectives and makes a decision.</li>
+            <li><strong>Implementation:</strong> If approved, the change is formally integrated into the project plan.
+              The project baseline is updated, and the team is notified.</li>
+            <li><strong>Verification & Closure:</strong> The project manager ensures the change was implemented
+              correctly and updates all relevant documentation.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <h4>The Critical Mindset Shift</h4>
+        <p>A formal process does not mean saying "no" to all change. It means saying "let's understand the consequences
+          first." It transforms change from a disruptive event into a managed process.</p>
+      </div>
+
+      <h2>2. The Change Control Board (CCB): The Governance Body</h2>
+      <p>The Change Control Board is the group of stakeholders responsible for reviewing, evaluating, approving,
+        deferring, or rejecting change requests. The CCB ensures that each change is evaluated from a strategic, not
+        just a tactical, perspective.</p>
+
+      <div class="card">
+        <div class="card-header">
+          Composition
+        </div>
+        <div class="card-body">
+          <p>The CCB is not a democracy open to all. It typically includes key decision-makers with the authority to
+            commit resources. Common members are:</p>
+          <ul>
+            <li>Project Sponsor (has budgetary authority)</li>
+            <li>Project Manager (understands project impacts)</li>
+            <li>Senior User Representatives (understand client impact)</li>
+            <li>Senior Technical Representatives (understand technical feasibility)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The CCB's Decision-Making Criteria
+        </div>
+        <div class="card-body">
+          <p>The board doesn't just ask "Is this a good idea?" They perform a rigorous analysis based on:</p>
+          <ul>
+            <li><strong>Strategic Alignment:</strong> Does this change align with the original business case and project
+              objectives?</li>
+            <li><strong>Impact Analysis:</strong> What is the total impact on the triple constraint (scope, time, cost)?
+              A change might seem simple but could have a ripple effect on dependencies, risk, and quality.</li>
+            <li><strong>Alternative Solutions:</strong> Are there other, less disruptive ways to achieve the same
+              benefit?</li>
+            <li><strong>Risk Assessment:</strong> What new risks does this change introduce?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Possible Outcomes
+        </div>
+        <div class="card-body">
+          <p>The CCB can:</p>
+          <ul>
+            <li>Approve the change.</li>
+            <li>Reject the change.</li>
+            <li>Defer the change for consideration in a future phase or project.</li>
+            <li>Request more information before making a decision.</li>
+          </ul>
+          <p>The existence of a CCB protects the project manager from being pressured into accepting changes arbitrarily
+            and ensures that all changes are weighed against the project's ultimate goals.</p>
+        </div>
+      </div>
+
+      <h2>3. Configuration Management: The Single Source of Truth</h2>
+      <p>While Change Control manages the process of change, Configuration Management manages the outputs of change. It
+        is the discipline of identifying, organizing, controlling, and tracking all versions of project deliverables
+        (configurable items) and their documentation to maintain integrity and traceability.</p>
+
+      <div class="card">
+        <div class="card-header">
+          The Problem it Solves
+        </div>
+        <div class="card-body">
+          <p>Have you ever heard questions like?</p>
+          <ul>
+            <li>"Which version of this document is the final one?"</li>
+            <li>"Which software build includes the latest bug fix?"</li>
+            <li>"What component was changed that caused this new error?"</li>
+          </ul>
+          <p>Configuration Management eliminates this confusion by ensuring everyone is working from the same, current
+            version.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Key Activities of Configuration Management
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Configuration Identification:</strong> Identifying and selecting the "configurable items" that
+              will be managed. This includes all key deliverables: documents (plans, requirements, designs), software
+              code, hardware components, and even major tools.
+              <ul>
+                <li>Example: In a construction project, configurable items include the architectural drawings, the
+                  engineering specs, and the bill of materials.</li>
+              </ul>
+            </li>
+            <li><strong>Configuration Status Accounting:</strong> Recording and reporting the status of each
+              configurable item, including its version, what changes have been made, and who made them. This is the
+              audit trail.
+              <ul>
+                <li>Example: A log that shows that Requirements Document v1.0 was approved on Date X, and v1.1 was
+                  approved on Date Y to incorporate Change Request CR-005.</li>
+              </ul>
+            </li>
+            <li><strong>Configuration Verification and Audit:</strong> Regularly checking that the actual delivered
+              product conforms to its defined specifications and that all changes have been properly recorded and
+              implemented.
+              <ul>
+                <li>Example: Before a software release, an audit ensures that the code about to be deployed matches
+                  exactly what was tested and approved.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The Ultimate Example: Version Control Systems (like Git)
+        </div>
+        <div class="card-body">
+          <p>Software development provides the perfect model for understanding Configuration Management. Git is a tool
+            that automates it.</p>
+          <ul>
+            <li><strong>Identification:</strong> Every file in the codebase is a configurable item.</li>
+            <li><strong>Control:</strong> Developers cannot edit the main codebase directly. They work on their own
+              "branches."</li>
+            <li><strong>Status Accounting:</strong> Every change is saved as a "commit" with a unique ID, a message
+              describing the change, and the author's name.</li>
+            <li><strong>Verification:</strong> Before code is merged into the main branch ("trunk"), it undergoes peer
+              review and automated testing. This system allows dozens of developers to work on the same product
+              simultaneously without chaos, and it allows the team to revert to any previous version if a new change
+              breaks the system.</li>
+          </ul>
+          <p><strong>The Symbiotic Relationship:</strong> Change Control and Configuration Management work hand-in-hand.
+            The Change Control process authorizes a change to a deliverable. Configuration Management then ensures that
+            the change is made, recorded, and verified correctly. You cannot have effective change management without
+            configuration management, and vice versa.</p>
+        </div>
+      </div>
+
+      <h2>Module 6.4 Summary:</h2>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Core Idea</th>
+            <th>Why It Matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Formal Change Control</strong></td>
+            <td>A process to evaluate and approve changes systematically.</td>
+            <td>Prevents scope creep by ensuring every change is understood, approved, and integrated into the plan.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Change Control Board (CCB)</strong></td>
+            <td>A governance body that makes change decisions.</td>
+            <td>Brings strategic perspective and authority to change decisions, protecting the project's objectives.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Configuration Management</strong></td>
+            <td>The discipline of managing deliverable versions and their changes.</td>
+            <td>Provides a single source of truth, ensures integrity, and allows for traceability and auditability.</td>
+          </tr>
+          <tr>
+            <td><strong>Key Activities (CM)</strong></td>
+            <td>Identify, Control, Account, Audit.</td>
+            <td>Creates order from chaos by documenting what changed, why, when, and by whom.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Change is not the enemy; uncontrolled change is. By implementing rigorous Change Control and Configuration
+          Management processes, you empower your project to adapt and evolve without sacrificing stability,
+          predictability, and ultimately, success. These disciplines are the hallmark of a professional and mature
+          project management practice.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+
 </body>
+
 
 </html>

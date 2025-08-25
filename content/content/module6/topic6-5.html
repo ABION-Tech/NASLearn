@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+    <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>6.5: Motion Graphics Fundamentals</h1>
+        </div>
+
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>Motion graphics represent the evolution of static design into dynamic visual communication. This medium
+                combines graphic design principles with animation techniques to create engaging content that captures
+                attention, explains complex ideas, and enhances storytelling. In this lesson, you'll learn the
+                fundamental concepts and techniques that form the foundation of motion design, enabling you to add
+                movement and depth to your visual creations.</p>
+
+            <h2>Learning Objectives</h2>
+            <p>Upon completion of this lesson, you will be able to:</p>
+            <ul>
+                <li>Understand the principles and applications of motion graphics</li>
+                <li>Create basic keyframe animations using industry-standard techniques</li>
+                <li>Implement kinetic typography for effective message delivery</li>
+                <li>Apply basic visual effects and transitions</li>
+                <li>Select appropriate tools for different motion graphics projects</li>
+            </ul>
+
+            <div class="card">
+                <div class="card-header">1. Introduction to Motion Design</div>
+                <div class="card-body">
+                    <p>Motion graphics represent the intersection of graphic design and animation, focusing on bringing
+                        visual elements to life through movement rather than character-based storytelling.</p>
+
+                    <h4>Definition and Scope</h4>
+                    <p>Motion graphics involve creating animated graphic elements that communicate messages, explain
+                        concepts, or enhance visual appeal. Unlike traditional character animation, motion graphics
+                        typically focus on abstract elements, text, and graphic components rather than narrative
+                        character development.</p>
+
+                    <h4>Key Applications</h4>
+                    <ul>
+                        <li><strong>Title Sequences and Intros:</strong> Engaging openings for videos, films, and
+                            presentations</li>
+                        <li><strong>Explainer Videos:</strong> Simplifying complex concepts through animated diagrams
+                            and illustrations</li>
+                        <li><strong>Advertising:</strong> Capturing attention in commercial spots and social media ads
+                        </li>
+                        <li><strong>User Interface Elements:</strong> Animated buttons, transitions, and feedback in
+                            apps and websites</li>
+                        <li><strong>Data Visualization:</strong> Bringing charts and statistics to life through
+                            animation</li>
+                    </ul>
+
+                    <h4>Core Principles</h4>
+                    <ul>
+                        <li><strong>Purpose-Driven Movement:</strong> Every animation should serve a communicative
+                            purpose</li>
+                        <li><strong>Timing and Pacing:</strong> Movement speed affects perception and emphasis</li>
+                        <li><strong>Spatial Relationships:</strong> How elements move in relation to each other</li>
+                        <li><strong>Visual Consistency:</strong> Maintaining design coherence throughout motion</li>
+                    </ul>
+
+                    <h4>Industry Context</h4>
+                    <p>Motion graphics have become essential in digital marketing, user experience design, film
+                        production, and corporate communications. The ability to create engaging motion content is
+                        increasingly valued across design disciplines.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">2. Keyframe Animation</div>
+                <div class="card-body">
+                    <p>Keyframe animation forms the technical foundation of motion graphics, allowing designers to
+                        create movement by defining changes over time.</p>
+
+                    <h4>Timeline Fundamentals</h4>
+                    <p>The timeline interface represents time horizontally, with layers stacked vertically.
+                        Understanding this spatial representation of time is crucial for planning and executing
+                        animations.</p>
+
+                    <h4>Keyframe Concepts</h4>
+                    <ul>
+                        <li><strong>Keyframes:</strong> Markers that define property values at specific points in time
+                        </li>
+                        <li><strong>Interpolation:</strong> The automatic calculation of values between keyframes</li>
+                        <li><strong>Easing:</strong> Controlling the acceleration and deceleration of movements</li>
+                        <li><strong>Parenting:</strong> Linking objects so they inherit transformations from parent
+                            elements</li>
+                    </ul>
+
+                    <h4>Animation Properties</h4>
+                    <ul>
+                        <li><strong>Position:</strong> Movement across the screen or in 3D space</li>
+                        <li><strong>Scale:</strong> Size changes that can create emphasis or perspective effects</li>
+                        <li><strong>Rotation:</strong> Spinning or turning movements around an anchor point</li>
+                        <li><strong>Opacity:</strong> Fading in or out to create transitions or focus attention</li>
+                        <li><strong>Effects Parameters:</strong> Animating filter settings, colors, or other properties
+                        </li>
+                    </ul>
+
+                    <h4>Professional Workflow</h4>
+                    <ol>
+                        <li><strong>Planning:</strong> Storyboarding and defining the animation sequence</li>
+                        <li><strong>Setup:</strong> Preparing assets and organizing layers</li>
+                        <li><strong>Blocking:</strong> Setting primary keyframes to establish timing</li>
+                        <li><strong>Refining:</strong> Adding secondary animation and adjusting easing</li>
+                        <li><strong>Polishing:</strong> Fine-tuning timing, adding effects, and preparing for export
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">3. Text Animation (Kinetic Typography)</div>
+                <div class="card-body">
+                    <p>Kinetic typography brings text to life through motion, enhancing message delivery and emotional
+                        impact.</p>
+
+                    <h4>Strategic Applications</h4>
+                    <ul>
+                        <li><strong>Lower Thirds:</strong> Animated titles that identify speakers without obscuring
+                            video content</li>
+                        <li><strong>Social Media Content:</strong> Eye-catching text animations for platforms like
+                            Instagram Reels and TikTok</li>
+                        <li><strong>Presentation Enhancements:</strong> Dynamic text that emphasizes key points in
+                            speeches or lectures</li>
+                        <li><strong>Brand Identities:</strong> Animated logos and slogans that reinforce brand
+                            recognition</li>
+                    </ul>
+
+                    <h4>Technical Approaches</h4>
+                    <ul>
+                        <li><strong>Reveal Animations:</strong> Text that appears through various methods (typewriter,
+                            fade, slide)</li>
+                        <li><strong>Emphasis Techniques:</strong> Selective animation of key words or phrases</li>
+                        <li><strong>Path-Based Animation:</strong> Text that follows custom motion paths</li>
+                        <li><strong>3D Text Effects:</strong> Extruded text with depth and perspective movement</li>
+                    </ul>
+
+                    <h4>Readability Considerations</h4>
+                    <ul>
+                        <li><strong>Timing:</strong> Ensuring text remains on screen long enough to be read comfortably
+                        </li>
+                        <li><strong>Pacing:</strong> Matching animation speed to content tone and message urgency</li>
+                        <li><strong>Contrast:</strong> Maintaining legibility against background elements</li>
+                        <li><strong>Hierarchy:</strong> Using motion to establish visual importance between text
+                            elements</li>
+                    </ul>
+
+                    <h4>Creative Techniques</h4>
+                    <ul>
+                        <li><strong>Motion Blur:</strong> Adding realistic movement trails for fast animations</li>
+                        <li><strong>Texturing:</strong> Applying materials and lighting to create dimensional type</li>
+                        <li><strong>Synchronization:</strong> Matching text animation to audio cues or music rhythm</li>
+                        <li><strong>Modular Systems:</strong> Creating reusable text animation presets for brand
+                            consistency</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">4. Basic Visual Effects</div>
+                <div class="card-body">
+                    <p>Visual effects enhance motion graphics by creating seamless integrations and transitions between
+                        elements.</p>
+
+                    <h4>Transition Techniques</h4>
+                    <ul>
+                        <li><strong>Fades:</strong> Smooth opacity transitions that create gentle scene changes</li>
+                        <li><strong>Wipes:</strong> Directional transitions that reveal new content</li>
+                        <li><strong>Morphs:</strong> Transformations where one shape changes into another</li>
+                        <li><strong>Mask Transitions:</strong> Using shapes or elements to reveal underlying content
+                        </li>
+                    </ul>
+
+                    <h4>Compositing Fundamentals</h4>
+                    <p>Compositing involves combining multiple visual elements into a single, cohesive scene.</p>
+                    <ul>
+                        <li><strong>Layer Blending Modes:</strong> Mathematical operations that determine how layers
+                            interact</li>
+                        <li><strong>Alpha Channels:</strong> Transparency information that allows elements to overlap
+                            cleanly</li>
+                        <li><strong>Track Mattes:</strong> Using one layer's luminance or alpha to control another's
+                            visibility</li>
+                        <li><strong>Color Matching:</strong> Adjusting elements to ensure visual consistency across
+                            composited layers</li>
+                    </ul>
+
+                    <h4>Essential Effects</h4>
+                    <ul>
+                        <li><strong>Color Correction:</strong> Adjusting exposure, contrast, and color balance</li>
+                        <li><strong>Blur Effects:</strong> Creating depth of field or motion trail effects</li>
+                        <li><strong>Glows and Light Effects:</strong> Adding atmospheric elements and emphasis</li>
+                        <li><strong>Distortion Effects:</strong> Warping and bending elements for creative expression
+                        </li>
+                    </ul>
+
+                    <h4>Integration with Live Action</h4>
+                    <ul>
+                        <li><strong>Motion Tracking:</strong> Matching camera movement to add graphics to live footage
+                        </li>
+                        <li><strong>Roto-scoping:</strong> Isolating elements from background footage</li>
+                        <li><strong>Green Screen Techniques:</strong> Removing and replacing backgrounds</li>
+                        <li><strong>Shadow Matching:</strong> Ensuring added elements cast believable shadows</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">5. Tools Overview</div>
+                <div class="card-body">
+                    <p>Selecting the right tool for each motion graphics project depends on complexity, output
+                        requirements, and workflow integration.</p>
+
+                    <h4>Industry Standard: Adobe After Effects</h4>
+                    <ul>
+                        <li><strong>Strengths:</strong> Comprehensive toolset, extensive plugin ecosystem, industry
+                            adoption</li>
+                        <li><strong>Ideal For:</strong> Complex motion graphics, visual effects, professional broadcast
+                            work</li>
+                        <li><strong>Learning Curve:</strong> Steep but offers maximum creative control</li>
+                        <li><strong>Integration:</strong> Seamless workflow with other Adobe applications</li>
+                    </ul>
+
+                    <h4>Video Editing Integration: Adobe Premiere Pro</h4>
+                    <ul>
+                        <li><strong>Strengths:</strong> Excellent for editing-driven motion graphics, streamlined
+                            workflow</li>
+                        <li><strong>Ideal For:</strong> Lower thirds, basic title animations, quick social content</li>
+                        <li><strong>Motion Graphics Tools:</strong> Essential Graphics panel with template-based
+                            workflow</li>
+                        <li><strong>Limitations:</strong> Less control over complex animations than After Effects</li>
+                    </ul>
+
+                    <h4>Alternative Solutions</h4>
+                    <ul>
+                        <li><strong>DaVinci Resolve:</strong> Free version available, strong color grading tools,
+                            growing motion graphics capabilities</li>
+                        <li><strong>Blender:</strong> Completely free, powerful 3D capabilities, steep learning curve
+                        </li>
+                        <li><strong>CapCut:</strong> Mobile-friendly, template-driven, ideal for social media content
+                        </li>
+                        <li><strong>Apple Motion:</strong> Mac-only, lower cost, good for basic to intermediate motion
+                            work</li>
+                    </ul>
+
+                    <h4>Selecting the Right Tool</h4>
+                    <p>Consider these factors when choosing software:</p>
+                    <ul>
+                        <li><strong>Project Complexity:</strong> Simple text animations vs. complex 3D compositions</li>
+                        <li><strong>Output Requirements:</strong> Social media vs. broadcast standards</li>
+                        <li><strong>Team Collaboration:</strong> Shared projects vs. individual work</li>
+                        <li><strong>Budget Constraints:</strong> Subscription costs vs. free alternatives</li>
+                        <li><strong>Learning Investment:</strong> Time available to master complex software</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Hands-On Exercises</div>
+                <div class="card-body">
+                    <h4>Exercise 1: Recreate a Famous Ad Campaign Using Gestalt Principles</h4>
+                    <p>Select a recognizable advertising campaign and recreate one key visual using motion graphics.
+                        Focus on applying Gestalt principles through animation:</p>
+                    <ul>
+                        <li>Use proximity and similarity to create logical groupings</li>
+                        <li>Apply continuity to guide the viewer's eye through the sequence</li>
+                        <li>Implement closure by revealing elements gradually</li>
+                        <li>Create clear figure-ground relationships through movement</li>
+                    </ul>
+
+                    <h4>Exercise 2: Redesign a Business Card with Clear Visual Hierarchy</h4>
+                    <p>Animate a business card reveal that demonstrates understanding of visual hierarchy through
+                        motion:</p>
+                    <ul>
+                        <li>Animate the most important information first (name, primary contact)</li>
+                        <li>Use scale and timing to emphasize key elements</li>
+                        <li>Create a cohesive animation that reflects the brand personality</li>
+                        <li>Ensure readability is maintained throughout the animation</li>
+                    </ul>
+
+                    <h4>Technical Requirements</h4>
+                    <ul>
+                        <li>Create both exercises using motion graphics software</li>
+                        <li>Keep animations between 5-15 seconds</li>
+                        <li>Export in appropriate formats for web viewing</li>
+                        <li>Document your design decisions and animation choices</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Motion graphics represent a powerful extension of visual design principles into the dimension of
+                    time. By understanding the fundamental techniques of keyframe animation, kinetic typography, and
+                    visual effects, you can create engaging content that enhances communication and captures audience
+                    attention. Remember that effective motion graphics always serve the message rather than distract
+                    from it, and that consistency with brand identity should be maintained even in animated formats.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+<script>
+
+</script>
+
+</body>
+
+</html>

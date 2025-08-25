@@ -2,154 +2,545 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 6: Advanced Supervised Learning - Ensemble Methods</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.1/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #000000;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-        h1,
-        h2,
-        h3 {
-            color: #007bff;
-            /* Blue accent */
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        .content-section {
-            margin: 40px 0;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        .assignment {
-            background-color: #f8f9fa;
-            border-left: 5px solid #007bff;
-            /* Blue accent */
-            padding: 15px;
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .footer {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 0.9em;
-            color: #6c757d;
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
+
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
-    </style>
+      }
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
+        }
+      }
+    }
+  </style>
+
 </head>
 
+
 <body>
-    <div class="container">
-        <div class="content-section">
-            <h1>Week 6: Advanced Supervised Learning - Ensemble Methods</h1>
-
-            <h2>Introduction to Ensemble Methods</h2>
-            <p>Ensemble methods combine multiple machine learning models to improve overall performance. By merging the
-                predictions of various models, ensemble methods can effectively reduce overfitting, enhance accuracy,
-                and bolster robustness against variations in data.</p>
-
-            <h3>1. Bagging (Bootstrap Aggregating)</h3>
-            <p><strong>Concept:</strong> Bagging involves creating multiple models by training them on different subsets
-                of the data (bootstrap samples) and aggregating their predictions.</p>
-            <p><strong>Random Forest:</strong> A widely-used bagging algorithm that employs decision trees as base
-                models.</p>
-            <p><strong>Advantages:</strong></p>
-            <ul>
-                <li>Reduces overfitting by averaging predictions from multiple models.</li>
-                <li>Effectively handles both numerical and categorical features.</li>
-                <li>Can capture complex non-linear relationships in data.</li>
-            </ul>
-            <p><strong>Disadvantages:</strong></p>
-            <ul>
-                <li>Can be computationally expensive for large datasets, requiring significant resources.</li>
-            </ul>
-
-            <h3>2. Boosting</h3>
-            <p><strong>Concept:</strong> Boosting involves creating multiple models sequentially, where each model
-                addresses the errors made by the previous models.</p>
-            <p><strong>Types:</strong></p>
-            <ul>
-                <li><strong>AdaBoost (Adaptive Boosting):</strong> Adjusts the weights of training examples based on
-                    their classification accuracy.</li>
-                <li><strong>Gradient Boosting:</strong> Minimizes a loss function by iteratively adding models that fit
-                    the residuals of preceding models.</li>
-                <li><strong>XGBoost (eXtreme Gradient Boosting):</strong> An efficient implementation of gradient
-                    boosting with various optimizations for performance.</li>
-            </ul>
-            <p><strong>Advantages:</strong></p>
-            <ul>
-                <li>Achieves high accuracy, particularly for complex problems.</li>
-                <li>Handles both numerical and categorical features effectively.</li>
-            </ul>
-            <p><strong>Disadvantages:</strong></p>
-            <ul>
-                <li>Can be sensitive to overfitting if not tuned properly.</li>
-            </ul>
-
-            <h2>Practical Applications</h2>
-            <p>Ensemble methods have numerous real-world applications across diverse industries, enhancing predictive
-                performance and decision-making processes:</p>
-            <ul>
-                <li><strong>Financial Forecasting:</strong> Used for predicting stock prices, interest rates, and other
-                    financial variables, helping investors make informed decisions.</li>
-                <li><strong>Healthcare:</strong> Predict disease outcomes, identify risk factors, and develop
-                    personalized treatment plans tailored to individual patients.</li>
-                <li><strong>Natural Language Processing:</strong> Applied in sentiment analysis, text classification,
-                    and machine translation, improving the understanding of human language.</li>
-                <li><strong>Image Recognition:</strong> Utilized for identifying objects, scenes, or features in images,
-                    powering technologies like facial recognition.</li>
-                <li><strong>Recommendation Systems:</strong> Suggest products or content to users based on their
-                    preferences, enhancing user experience in e-commerce and entertainment.</li>
-                <li><strong>Fraud Detection:</strong> Identifies fraudulent transactions in financial data, protecting
-                    organizations from financial losses.</li>
-                <li><strong>Anomaly Detection:</strong> Detects unusual data points that deviate from the norm, which is
-                    crucial in monitoring and security systems.</li>
-            </ul>
-
-            <h2>Common Misconceptions</h2>
-            <p>Despite their effectiveness, several misconceptions persist regarding ensemble methods:</p>
-            <ul>
-                <li><strong>Ensemble methods are always better than single models:</strong> While they often enhance
-                    performance, they may not be necessary for simpler problems where a single model suffices.</li>
-                <li><strong>Bagging and boosting are the only ensemble methods:</strong> Other techniques, such as
-                    stacking and voting, can be employed depending on the specific problem context.</li>
-                <li><strong>Ensemble methods are always computationally expensive:</strong> Although they can require
-                    substantial resources, optimization techniques can mitigate performance costs.</li>
-            </ul>
-
-            <h2>Recap and Preview</h2>
-            <p>This week, we explored ensemble methods, their applications, and various techniques like bagging and
-                boosting, including their advantages and disadvantages. Understanding these methods equips you with
-                tools to enhance model performance significantly.</p>
-            <p>In the upcoming week, we will delve into <strong>Deep Learning and Neural Networks</strong>, covering
-                their architecture, training methodologies, and applications across various domains.</p>
-
-            <div class="assignment">
-                <h3>Assignment: Train and Fine-Tune a Model Using an Advanced Algorithm</h3>
-                <p><strong>Dataset:</strong> Choose a relevant dataset for classification or regression.</p>
-                <p><strong>Steps:</strong></p>
-                <ol>
-                    <li><strong>Load and Explore the Data:</strong> Load the dataset into a Pandas DataFrame and explore
-                        its characteristics using exploratory data analysis (EDA) techniques.</li>
-                    <li><strong>Preprocess the Data:</strong> Handle missing values, outliers, and categorical variables
-                        as needed to prepare for modeling.</li>
-                    <li><strong>Feature Engineering:</strong> Create new features or transform existing ones to enhance
-                        model performance.</li>
-                    <li><strong>Split the Data:</strong> Divide the dataset into training and testing sets for model
-                        evaluation.</li>
-                    <li><strong>Train an Ensemble Model:</strong> Select an advanced algorithm like XGBoost and train it
-                        on the training set.</li>
-                    <li><strong>Tune the Hyperparameters:</strong> Experiment with various hyperparameters to optimize
-                        the model's performance effectively.</li>
-                    <li><strong>Evaluate the Model:</strong> Assess the model's performance on the testing set using
-                        appropriate metrics, such as accuracy, precision, and recall.</li>
-                </ol>
-                <p>By completing this project, you will gain practical experience in building and fine-tuning advanced
-                    machine learning models, setting the stage for more complex tasks in the field.</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="header">
+      <h1>Module 6: Email Marketing and Marketing Automation</h1>
+      <h2>6.4: Marketing Automation Fundamentals</h2>
     </div>
+
+    <div class="module-content">
+      <h2>Introduction</h2>
+      <p>Welcome to the strategic apex of digital marketing. While email marketing is the channel, marketing automation
+        is the brain that powers it. It's the technology that allows you to replace manual, repetitive tasks with
+        automated, personalized communication. This module moves beyond one-off campaigns and into the realm of building
+        intelligent, self-running systems that nurture relationships, qualify customers, and drive revenue 24 hours a
+        day.</p>
+
+      <h2>1. What is Marketing Automation? Beyond the Hype</h2>
+      <p>At its core, marketing automation is the use of software to automatically deliver targeted and personalized
+        marketing messages based on user behavior, preferences, and data.</p>
+
+      <div class="card">
+        <div class="card-header">
+          The Manual vs. Automated Mindset
+        </div>
+        <div class="card-body">
+          <p><strong>Manual (The Old Way):</strong> You notice someone downloaded an ebook. A week later, you remember
+            to send them a follow-up email manually.</p>
+          <p><strong>Automated (The New Way):</strong> The moment someone downloads the ebook, the system instantly tags
+            them as "interested in Topic X," adds them to a "Nurture Sequence for Topic X," and sends a pre-written,
+            personalized follow-up email without you lifting a finger.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Key Benefits
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Saves Time & Resources:</strong> Automates repetitive tasks like sending welcome emails,
+              follow-ups, and reminders.</li>
+            <li><strong>Scales Personalization:</strong> Allows you to deliver a one-to-one experience to thousands of
+              people simultaneously, which is impossible to do manually.</li>
+            <li><strong>Increases Conversions:</strong> By delivering the right message at the perfect moment (e.g.,
+              when a user is most engaged), you dramatically increase the likelihood of a conversion.</li>
+            <li><strong>Improves Lead Management:</strong> Helps you identify, score, and route the best leads to your
+              sales team.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <h4>Key Insight</h4>
+        <p>Marketing automation is not spam. It is the opposite. It's about sending more relevant emails by listening to
+          what the user wants through their behavior.</p>
+      </div>
+
+      <h2>2. Mapping the Customer Journey: The Blueprint for Automation</h2>
+      <p>You cannot automate what you do not understand. The foundation of any automation strategy is a clearly defined
+        Customer Journey Map. This is a visual story of every interaction a customer has with your brand, from first
+        awareness to becoming a loyal advocate.</p>
+
+      <div class="card">
+        <div class="card-header">
+          The Stages of the Journey
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Awareness:</strong> The prospect becomes aware of a problem and discovers your brand as a
+              potential solution. (e.g., reads a blog post, sees a social media ad).</li>
+            <li><strong>Consideration:</strong> The prospect actively researches and evaluates solutions, including
+              yours. (e.g., downloads a whitepaper, compares pricing pages, signs up for a webinar).</li>
+            <li><strong>Purchase (Conversion):</strong> The prospect decides to buy your product or service.</li>
+            <li><strong>Retention & Loyalty:</strong> The post-purchase phase where you work to delight the customer and
+              turn them into a repeat buyer.</li>
+            <li><strong>Advocacy:</strong> The delighted customer refers others and promotes your brand without being
+              asked.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Example Journey Map for a SaaS Product
+        </div>
+        <div class="card-body">
+          <p><strong>Trigger:</strong> User signs up for a free trial. (Awareness → Consideration)</p>
+          <p><strong>Automated Action:</strong></p>
+          <ul>
+            <li>Email 1 (Instantly): Welcome email with login details and a video tutorial.</li>
+            <li>Email 2 (Day 2): Case study showing how Company X achieved results.</li>
+            <li>Email 3 (Day 5): Tips for using an advanced feature.</li>
+            <li>Email 4 (Day 9): "Getting the most out of your trial" + offer to book a demo.</li>
+          </ul>
+          <p><strong>Trigger:</strong> User upgrades to a paid plan. (Purchase)</p>
+          <p><strong>Automated Action:</strong> Onboarding series, offer for premium support.</p>
+          <p><strong>Trigger:</strong> 30 days as a customer. (Retention)</p>
+          <p><strong>Automated Action:</strong> Request a review, share a referral program offer.</p>
+          <p>This map becomes the blueprint for building your automation workflows.</p>
+        </div>
+      </div>
+
+      <h2>3. Lead Scoring & Nurturing: Qualifying Leads Automatically</h2>
+      <p>Lead scoring is a methodology used to rank prospects on a scale of their perceived value to the organization.
+        The purpose is to identify sales-ready leads so your sales team can prioritize their efforts on the
+        opportunities most likely to close.</p>
+
+      <div class="card">
+        <div class="card-header">
+          How It Works
+        </div>
+        <div class="card-body">
+          <p>You assign positive and negative points based on demographic information and specific behaviors.</p>
+          <p><strong>Demographic Criteria (Who they are):</strong></p>
+          <ul>
+            <li>Job Title = "C-Level" (+25 points)</li>
+            <li>Industry = "Healthcare" (+10 points)</li>
+            <li>Company Size = "500-1000 employees" (+15 points)</li>
+          </ul>
+          <p><strong>Behavioral Criteria (What they do):</strong></p>
+          <ul>
+            <li>Visits Pricing Page (+10 points)</li>
+            <li>Downloads a Whitepaper (+5 points)</li>
+            <li>Attends a Webinar (+15 points)</li>
+            <li>Requests a Demo (+50 points)</li>
+            <li>Email not opened in 60 days (-5 points)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Lead Nurturing
+        </div>
+        <div class="card-body">
+          <p>This is the process of developing relationships with buyers at every stage of the journey, especially those
+            who are not yet sales-ready.</p>
+          <ul>
+            <li>A lead with a low score might be automatically enrolled in an educational nurture campaign with blog
+              posts and webinars.</li>
+            <li>Once their score crosses a certain threshold (e.g., 75 points), they are automatically tagged as a
+              Marketing Qualified Lead (MQL) and an alert is sent to the sales team to make a personal follow-up.</li>
+          </ul>
+          <p>This ensures the sales team spends time on hot leads, while marketing continues to nurture the warm ones.
+          </p>
+        </div>
+      </div>
+
+      <h2>4. Behavioral Triggers: The Engine of Automation</h2>
+      <p>Triggers are the specific events that launch an automated action. They are the "if" part of the
+        "if-this-then-that" logic that powers automation.</p>
+
+      <div class="card">
+        <div class="card-header">
+          The Power of Triggers
+        </div>
+        <div class="card-body">
+          <p>They make your communication immediate and hyper-relevant, capitalizing on a user's peak interest.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Common Trigger Examples
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Abandoned Cart:</strong> IF a user adds a product to their cart BUT does not complete the
+              purchase within 1 hour, THEN trigger an abandoned cart email sequence.</li>
+            <li><strong>Website Activity:</strong> IF a user visits the "Enterprise Pricing" page more than twice in a
+              week, THEN add them to a segment for "Enterprise Leads" and trigger an email with an enterprise case
+              study.</li>
+            <li><strong>Email Engagement:</strong> IF a user clicks a specific link in a newsletter (e.g., "Guide to
+              SEO"), THEN tag them as "Interested in SEO" and trigger a follow-up email with your advanced SEO webinar.
+            </li>
+            <li><strong>Lapse in Activity (Re-engagement):</strong> IF a subscriber has not opened any emails in 60
+              days, THEN trigger a "We miss you" campaign with a strong win-back offer or a simple "Do you still want to
+              hear from us?" email.</li>
+            <li><strong>Date-Based:</strong> IF a user's birthday is today (based on their profile data), THEN trigger
+              an email with a personalized birthday discount.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>5. CRM Integration: Closing the Loop</h2>
+      <p>For marketing automation to reach its full potential, it must be integrated with a Customer Relationship
+        Management (CRM) system like Salesforce, HubSpot, or Zoho.</p>
+
+      <div class="card">
+        <div class="card-header">
+          What is a CRM?
+        </div>
+        <div class="card-body">
+          <p>A CRM is a centralized database where a business records all its interactions and information about leads
+            and customers. It's the single source of truth for the sales team.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The Power of Integration
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Seamless Data Sync:</strong> All email interactions (opens, clicks), website visits, and lead
+              scores from your marketing automation platform are automatically logged to the contact's record in the
+              CRM. This gives sales reps a complete view of the prospect's journey before they even make a call.</li>
+            <li><strong>Alignment Between Marketing & Sales:</strong> This integration ends the "blame game."
+              <ul>
+                <li>Marketing can see which leads converted into customers, allowing them to calculate ROI and refine
+                  their strategies based on what actually works.</li>
+                <li>Sales can see a lead's complete history, making their outreach informed and personalized (e.g., "I
+                  saw you were reading our article on X...").</li>
+              </ul>
+            </li>
+            <li><strong>Automated Workflow Handoffs:</strong> When a lead hits a certain score (MQL), the automation
+              platform can not only alert a sales rep but also automatically create a new "task" for them in the CRM to
+              call the lead.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>CRM integration transforms marketing from a cost center into a measurable revenue driver. It creates a
+          closed-loop system where marketing activities are directly tied to sales outcomes.</p>
+      </div>
+
+      <h2>Module 6.4 Summary:</h2>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Core Idea</th>
+            <th>Business Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Marketing Automation</strong></td>
+            <td>Using software to automate personalized messages based on behavior.</td>
+            <td>Saves time, scales personalization, and increases conversion rates.</td>
+          </tr>
+          <tr>
+            <td><strong>Customer Journey Mapping</strong></td>
+            <td>Charting the path from awareness to advocacy.</td>
+            <td>Provides the blueprint for building relevant and effective automated workflows.</td>
+          </tr>
+          <tr>
+            <td><strong>Lead Scoring</strong></td>
+            <td>Ranking leads based on profile and engagement.</td>
+            <td>Allows sales to focus on hot leads and marketing to nurture warm ones.</td>
+          </tr>
+          <tr>
+            <td><strong>Behavioral Triggers</strong></td>
+            <td>"If-This-Then-That" rules that start automations.</td>
+            <td>Enables immediate, hyper-relevant communication that capitalizes on user intent.</td>
+          </tr>
+          <tr>
+            <td><strong>CRM Integration</strong></td>
+            <td>Connecting marketing data with the sales database.</td>
+            <td>Aligns marketing and sales, proving ROI and enabling smarter, data-driven outreach.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-point">
+        <h4>Module Conclusion</h4>
+        <p>This concludes Module 6: Email Marketing and Marketing Automation. You now understand the strategic
+          principles, creative execution, powerful tools, and automated systems that make this channel one of the most
+          effective in a digital marketer's toolkit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+  <script>
+
+  </script>
+
 </body>
 
 </html>

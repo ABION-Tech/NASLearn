@@ -2,173 +2,563 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment: Designing a Mobile App Interface</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: white;
-            color: black;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-        h1,
-        h2,
-        h3,
-        h4 {
-            color: #007bff;
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        .container {
-            margin-top: 30px;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        .section-title {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
 
-        .step {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-left: 5px solid #007bff;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
+    .container {
+      padding: 20px;
+    }
 
-        .grading-rubric {
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 30px;
-        }
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .additional-tips {
-            margin-top: 30px;
-            background-color: #f8f9fa;
-            border-left: 5px solid #007bff;
-            padding: 15px;
-            border-radius: 5px;
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
+
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
-    </style>
+      }
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
+        }
+      }
+    }
+  </style>
+
 </head>
 
+
 <body>
-
-    <div class="container">
-        <h1 class="text-center">Assignment: Designing a Mobile App Interface</h1>
-
-        <h2 class="section-title">Goal</h2>
-        <p>The goal of this assignment is to create a wireframe and high-fidelity prototype for a simple mobile app
-            interface. This process will help you develop your UI/UX design skills and understand the key principles of
-            designing for mobile applications.</p>
-
-        <h2 class="section-title">Prompt</h2>
-        <p>Choose a concept for your mobile app, such as:</p>
-        <ul>
-            <li>A to-do list app</li>
-            <li>A social media app</li>
-            <li>A news app</li>
-            <li>A fitness tracking app</li>
-            <li>A recipe sharing app</li>
-        </ul>
-
-        <h2 class="section-title">Materials</h2>
-        <p>You can use the following materials for your design process:</p>
-        <ul>
-            <li>Paper and pencil for initial sketches</li>
-            <li>Digital design tools like Figma, Adobe XD, or Sketch for creating wireframes and prototypes</li>
-        </ul>
-
-        <h2 class="section-title">Steps</h2>
-        <div class="step">
-            <h4>1. Define the App's Purpose</h4>
-            <p>Clearly articulate the app's goal and target audience. Consider what problem your app solves and who will
-                benefit from it.</p>
-        </div>
-        <div class="step">
-            <h4>2. Conduct User Research</h4>
-            <p>Gather insights into your target audience's needs, preferences, and behaviors. Use surveys, interviews,
-                or user observation to inform your design decisions.</p>
-        </div>
-        <div class="step">
-            <h4>3. Create a User Flow</h4>
-            <p>Map out the user's journey through the app, from initial launch to completing tasks. This visual
-                representation will guide your design process.</p>
-        </div>
-        <div class="step">
-            <h4>4. Design the Wireframes</h4>
-            <p>Create low-fidelity wireframes to visualize the layout, structure, and content of the app's screens.
-                Focus on functionality and user experience rather than aesthetics at this stage.</p>
-        </div>
-        <div class="step">
-            <h4>5. Iterate and Refine</h4>
-            <p>Gather feedback on your wireframes from peers or potential users, and make necessary adjustments to
-                improve usability and design.</p>
-        </div>
-        <div class="step">
-            <h4>6. Create a High-Fidelity Prototype</h4>
-            <p>Design a more detailed and visually appealing prototype that includes colors, typography, imagery, and
-                interactive elements.</p>
-        </div>
-        <div class="step">
-            <h4>7. Test the Prototype</h4>
-            <p>Conduct usability testing with real users to gather feedback on the prototype's effectiveness. Observe
-                users as they navigate through the app and note areas for improvement.</p>
-        </div>
-        <div class="step">
-            <h4>8. Iterate and Refine</h4>
-            <p>Make any necessary adjustments to the prototype based on the testing results. Continue to refine your
-                design to enhance the overall user experience.</p>
-        </div>
-
-        <h2 class="section-title">Grading Rubric</h2>
-        <div class="grading-rubric">
-            <p>Your assignment will be evaluated based on the following criteria:</p>
-            <ul>
-                <li><strong>User-Centered Design:</strong> Does the app interface meet the needs and preferences of the
-                    target audience?</li>
-                <li><strong>Usability:</strong> Is the app easy to navigate and use?</li>
-                <li><strong>Visual Appeal:</strong> Is the app visually appealing and consistent with the brand's
-                    identity?</li>
-                <li><strong>Functionality:</strong> Does the app fulfill its intended purpose and provide the necessary
-                    features?</li>
-                <li><strong>Accessibility:</strong> Is the app accessible to users with disabilities?</li>
-                <li><strong>Creativity:</strong> Does the app demonstrate originality and creativity?</li>
-            </ul>
-        </div>
-
-        <h2 class="section-title">Additional Tips</h2>
-        <div class="additional-tips">
-            <p>To enhance your design process, consider the following tips:</p>
-            <ul>
-                <li><strong>Keep it Simple:</strong> Avoid overwhelming users with too many features or complex
-                    interactions. A clean and straightforward design is more user-friendly.</li>
-                <li><strong>Prioritize Core Features:</strong> Focus on the most essential features that align with your
-                    app's purpose and target audience. Additional features can be added later as needed.</li>
-                <li><strong>Test on Different Devices:</strong> Test your app on a variety of devices and screen sizes
-                    to ensure it works well on all platforms and provides a consistent experience.</li>
-                <li><strong>Seek Feedback:</strong> Gather feedback from users and experts to improve your design.
-                    Constructive criticism can help you identify blind spots and enhance usability.</li>
-            </ul>
-        </div>
-
-        <h2 class="section-title">Conclusion</h2>
-        <p>By following these steps and applying the principles of UI/UX design, you can create a user-friendly and
-            visually appealing mobile app interface that effectively meets the needs of your target audience. Good luck
-            with your assignment!</p>
+  <div class="container">
+    <div class="header">
+      <h1>Week 6: Advanced Python & Pythonic Programming</h1>
+      <h2>6.4: Functional Programming Techniques in Python</h2>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="module-content">
+      <h2>Introduction: A Multi-Paradigm Language</h2>
+      <p>Python is not a purely functional language, but it incorporates many powerful functional programming (FP)
+        concepts. These techniques can lead to code that is more concise, expressive, easier to test, and less prone to
+        bugs. This module explores how to leverage these ideas in a Pythonic way, blending them effectively with
+        Python's object-oriented and imperative styles.</p>
+
+      <h2>1. Core Functional Tools: map, filter, and reduce</h2>
+      <p>These three functions are the classic workhorses of functional programming. They allow you to process sequences
+        by applying functions to them, often avoiding the need for explicit loops.</p>
+
+      <div class="card">
+        <div class="card-header">
+          map(function, iterable, ...)
+        </div>
+        <div class="card-body">
+          <p>Applies a function to every item in an iterable (like a list) and returns a new map object (an iterator) of
+            the results.</p>
+          <pre><code># Convert a list of strings to integers
+str_numbers = ["1", "2", "3", "4"]
+# Using map
+numbers_iterator = map(int, str_numbers) # Applies int() to each element
+numbers_list = list(numbers_iterator) # Convert the iterator to a list: [1, 2, 3, 4]
+
+# With a lambda function
+squared = list(map(lambda x: x**2, [1, 2, 3, 4])) # [1, 4, 9, 16]</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          filter(function, iterable)
+        </div>
+        <div class="card-body">
+          <p>Constructs an iterator from those elements of the iterable for which the function returns True.</p>
+          <pre><code># Filter even numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers)) # [2, 4, 6, 8, 10]</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          reduce(function, iterable[, initializer])
+        </div>
+        <div class="card-body">
+          <p>(From the functools module) Applies a function of two arguments cumulatively to the items of an iterable,
+            from left to right, so as to reduce the iterable to a single value.</p>
+          <pre><code>from functools import reduce
+# Calculate the product of a list
+product = reduce(lambda x, y: x * y, [1, 2, 3, 4]) # ((1*2)*3)*4 = 24
+# Find the maximum value
+maximum = reduce(lambda a, b: a if a > b else b, [5, 2, 8, 1]) # 8</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The Pythonic Alternative: Comprehensions
+        </div>
+        <div class="card-body">
+          <p>While map and filter are functional, list comprehensions and generator expressions are often considered
+            more Pythonic and readable for simple transformations and filters.</p>
+          <pre><code># Map alternative: More readable for simple transformations
+numbers_list = [int(x) for x in str_numbers] # [1, 2, 3, 4]
+squared = [x**2 for x in [1, 2, 3, 4]]       # [1, 4, 9, 16]
+
+# Filter alternative: More readable for simple conditions
+even_numbers = [x for x in numbers if x % 2 == 0] # [2, 4, 6, 8, 10]
+
+# Combined map and filter
+squared_evens = [x**2 for x in numbers if x % 2 == 0] # [4, 16, 36, 64, 100]</code></pre>
+          <p><strong>Guideline:</strong> Use comprehensions for straightforward operations. Use map and filter when the
+            logic is more complex and deserves its own named function, or when working with iterator chains.</p>
+        </div>
+      </div>
+
+      <h2>2. The functools Module: Power Tools for Functions</h2>
+      <p>The functools module is a treasure trove of higher-order functions that act on or return other functions.</p>
+
+      <div class="card">
+        <div class="card-header">
+          @lru_cache(maxsize=128, typed=False)
+        </div>
+        <div class="card-body">
+          <p>A decorator that implements memoization. It caches the results of expensive function calls, returning the
+            cached result when the same inputs occur again. This can dramatically speed up recursive algorithms or
+            functions that perform heavy I/O/calculations.</p>
+          <pre><code>from functools import lru_cache
+import time
+
+@lru_cache(maxsize=None) # Cache all calls
+def expensive_calculation(n):
+    time.sleep(2) # Simulate a slow calculation
+    return n * n
+
+print(expensive_calculation(5)) # Takes 2 seconds, returns 25
+print(expensive_calculation(5)) # Returns 25 INSTANTLY (from cache)
+print(expensive_calculation(10)) # Takes 2 seconds, returns 100</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          partial(func, /, *args, **keywords)
+        </div>
+        <div class="card-body">
+          <p>Returns a new partial object which, when called, behaves like func called with the args and keywords you
+            provided. It "freezes" some portion of a function's arguments, creating a new function with a simpler
+            signature.</p>
+          <pre><code>from functools import partial
+
+# A function with many parameters
+def power(base, exponent):
+    return base ** exponent
+
+# Create specialized versions
+square = partial(power, exponent=2)
+cube = partial(power, exponent=3)
+
+print(square(5))  # 25 (equivalent to power(5, exponent=2))
+print(cube(3))    # 27 (equivalent to power(3, exponent=3))</code></pre>
+          <p>This is incredibly useful for callback functions that require a specific signature.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          @wraps(wrapped_func)
+        </div>
+        <div class="card-body">
+          <p>As discussed in the decorators module, this is a crucial decorator for writing well-behaved decorators. It
+            copies the name, docstring, and other metadata from the original function to the wrapper function,
+            preventing confusion during debugging.</p>
+        </div>
+      </div>
+
+      <h2>3. Pure Functions & Side Effects: The Heart of Reliable Code</h2>
+      <p>A core tenet of functional programming is the emphasis on pure functions and the minimization of side effects.
+        Understanding these concepts will make you a better programmer, even if you don't write purely functional code.
+      </p>
+
+      <div class="card">
+        <div class="card-header">
+          Pure Functions
+        </div>
+        <div class="card-body">
+          <p>A function is pure if:</p>
+          <ol>
+            <li>Its output depends only on its input arguments. Given the same input, it will always return the same
+              output.</li>
+            <li>It has no side effects. It does not change anything outside the function's scope (no modifying global
+              variables, no printing to the screen, no writing to files, no mutating its input arguments).</li>
+          </ol>
+          <p><strong>Example of a Pure Function:</strong></p>
+          <pre><code>def pure_multiply(x, y):
+    return x * y</code></pre>
+          <p><strong>Example of an Impure Function:</strong></p>
+          <pre><code>result = 0
+def impure_multiply(x, y):
+    global result # Side Effect: Modifies a variable outside its scope
+    result = x * y
+    print(f"The result is {result}") # Side Effect: Does I/O (printing)
+    return result</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Side Effects
+        </div>
+        <div class="card-body">
+          <p>An action a function performs that isn't related to calculating its return value. Common side effects
+            include:</p>
+          <ul>
+            <li>Modifying a global variable.</li>
+            <li>Modifying a mutable argument passed by reference (e.g., appending to a list that was passed in).</li>
+            <li>Printing to the console or logging.</li>
+            <li>Writing to a file or database.</li>
+            <li>Making an HTTP request.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Why Prefer Pure Functions?
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Testability:</strong> They are incredibly easy to test. You call them with input and assert on
+              the output. No complex setup or mocking of external state is needed.</li>
+            <li><strong>Reasonability:</strong> Their behavior is completely predictable and deterministic. This makes
+              them easier to reason about and debug.</li>
+            <li><strong>Reusability:</strong> They are not dependent on or tied to a specific external context or state.
+            </li>
+            <li><strong>Thread-Safety:</strong> Pure functions can be safely used in parallel/concurrent environments
+              since they don't modify shared state.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          A Practical Pythonic Approach
+        </div>
+        <div class="card-body">
+          <p>You cannot and should not eliminate all side effects (writing to a database is often the whole point of a
+            program!). The key is to manage and isolate them.</p>
+          <ul>
+            <li><strong>Separate logic from I/O:</strong> Write pure functions for your core business logic and data
+              transformations. Then, write separate functions that handle the I/O (database, network, UI) and call the
+              pure functions.</li>
+            <li><strong>Avoid mutating arguments:</strong> Prefer returning new data structures instead of modifying
+              inputs. For example, instead of appending to a passed-in list, return a new list.</li>
+          </ul>
+          <p><strong>Example of Isolating Side Effects:</strong></p>
+          <pre><code># Pure business logic
+def calculate_discount(prices, discount_rate):
+    """Returns a new list of discounted prices."""
+    return [price * (1 - discount_rate) for price in prices]
+
+# Impure function that handles I/O
+def apply_discount_to_cart(shopping_cart_id, discount_rate):
+    # 1. Side Effect: Read from database
+    cart = database.get_cart(shopping_cart_id)
+    original_prices = cart.get_prices()
+
+    # 2. Call pure function
+    discounted_prices = calculate_discount(original_prices, discount_rate)
+
+    # 3. Side Effect: Write to database
+    cart.update_prices(discounted_prices)
+    database.save_cart(cart)</code></pre>
+          <p>This separation makes calculate_discount trivial to test and reason about, while apply_discount_to_cart
+            clearly defines the boundaries where side effects occur.</p>
+        </div>
+      </div>
+
+      <h2>Module 6.4 Summary:</h2>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Core Idea</th>
+            <th>Pythonic Application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>map, filter, reduce</strong></td>
+            <td>Apply functions to sequences to transform, filter, or aggregate.</td>
+            <td>Useful for iterator chains. Often replaced by more readable comprehensions for simple cases.</td>
+          </tr>
+          <tr>
+            <td><strong>functools.lru_cache</strong></td>
+            <td>Memoization decorator that caches function results.</td>
+            <td>Use to optimize expensive pure function calls, especially in dynamic programming.</td>
+          </tr>
+          <tr>
+            <td><strong>functools.partial</strong></td>
+            <td>"Freeze" some function arguments to create a new, simpler function.</td>
+            <td>Excellent for creating specialized functions and adapting APIs for callbacks.</td>
+          </tr>
+          <tr>
+            <td><strong>Pure Functions</strong></td>
+            <td>Same input -> same output, no side effects.</td>
+            <td>Strive to write pure functions for core logic. They are predictable, easy to test, and reusable.</td>
+          </tr>
+          <tr>
+            <td><strong>Side Effects</strong></td>
+            <td>Actions that change state outside the function or perform I/O.</td>
+            <td>Isolate and manage side effects. Don't eliminate them, but contain them to specific parts of your code.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Functional programming in Python is not about dogma. It's about pragmatically borrowing powerful ideas—like
+          treating functions as objects, using higher-order functions, and writing pure logic—to write cleaner, more
+          robust, and more maintainable code. Use these techniques to complement Python's other paradigms.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
 </body>
+
+
 
 </html>

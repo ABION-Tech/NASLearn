@@ -4,66 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overview of Back-End Development</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-            color: #333;
+        .container h1 {
+            font-size: 2.3rem;
         }
 
-        .container {
-            margin-top: 30px;
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
         }
-
-        h2,
-        h4 {
-            margin-top: 30px;
-        }
-
-        .card {
-            transition: transform 0.2s;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-        }
-
-        .back {
-            display: none;
-        }
-
-        .card-flip {
-            perspective: 1000px;
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 10px;
-        }
-
-        .flip-card-back {
-            transform: rotateY(180deg);
-            background-color: #007bff;
-            color: white;
-        }
-
 
         /* Basic Reset */
         * {
@@ -83,6 +48,82 @@
 
         .container {
             padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -161,130 +202,343 @@
                 }
             }
         }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
+
 </head>
 
 <body>
-
     <div class="container">
-        <h1 class="text-center mb-4">Overview of Back-End Development</h1>
-
-        <h2>1.1. What is Back-End Development?</h2>
-        <p>Back-end development refers to the server-side of web development, where the server, database, and
-            application logic reside. Unlike front-end development, which deals with the user interface and experience,
-            back-end development handles data processing, storage, and server-side logic.</p>
-
-        <h4>Key Components:</h4>
-        <ul>
-            <li><strong>Server:</strong> Hosts the web application and processes requests from clients.</li>
-            <li><strong>Database:</strong> Stores and manages data that the application uses.</li>
-            <li><strong>Application Logic:</strong> The code that defines how data is processed and handled.</li>
-        </ul>
-
-        <h2>1.2. Server-Side Concepts</h2>
-        <p>Understanding server-side concepts is essential for back-end development. This includes knowledge of how
-            servers process requests, manage data, and communicate with front-end applications.</p>
-
-        <h4>HTTP Requests and Responses:</h4>
-        <ul>
-            <li><strong>Requests:</strong> Made by clients (e.g., web browsers) to access resources on the server.
-                Includes methods like GET, POST, PUT, DELETE.</li>
-            <li><strong>Responses:</strong> Returned by the server with the requested data or status messages (e.g., 200
-                OK, 404 Not Found).</li>
-        </ul>
-
-        <h4>Middleware:</h4>
-        <p>Middleware refers to functions that process requests before they reach the final route handler. They can
-            perform tasks like logging, authentication, or parsing request bodies.</p>
-
-        <h4>Routing:</h4>
-        <p>Routing determines how server requests are handled based on the URL and HTTP method. Each route corresponds
-            to a specific endpoint or resource.</p>
-
-        <h2>Interactive Cards</h2>
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Understanding Servers</h5>
-                                <p class="card-text">Learn about server responsibilities and hosting applications.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Servers manage client requests and ensure data is processed and
-                                    delivered efficiently.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Role of Databases</h5>
-                                <p class="card-text">Explore how databases store and manage application data.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Databases ensure data integrity and facilitate quick data retrieval
-                                    for applications.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Middleware Importance</h5>
-                                <p class="card-text">Understand how middleware enhances application functionality.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Middleware can handle tasks like authentication, logging, and error
-                                    handling, improving overall efficiency.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h2 class="section-title">YouTube Video Explanation</h2>
-        <p>Watch the video below to get a more in-depth understanding.
-        </p>
-
-
-        <div class="video-container">
-            <div class="gradient-border">
-                <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-                <div class="video-links">
-                    <h4>Channel Name<h4>
-                </div>
-            </div>
+        <div class="header">
+            <h1>Module 6: Advanced Visual Design and Branding</h1>
         </div>
 
-        <h2 class="text-center mt-5">Conclusion</h2>
-        <p>The back-end development realm is a crucial part of web application architecture. Understanding server-side
-            concepts, how to handle HTTP requests and responses, middleware functionality, and routing mechanisms are
-            essential for aspiring developers. By mastering these elements, you can build robust and scalable
-            applications that effectively serve user needs.</p>
+        <div class="module-content">
+            <h2>Module Introduction</h2>
+            <p>Welcome to Module 6, where we move beyond basic design principles to explore the psychological and
+                strategic foundations of powerful visual communication. In this module, you'll learn how to apply
+                advanced design principles that influence perception, create meaningful brand experiences, and
+                communicate effectively across various media platforms. Whether you're designing websites, marketing
+                materials, or entire brand systems, these principles will help you create work that is both
+                aesthetically pleasing and psychologically effective.</p>
+
+            <h2>Learning Objectives</h2>
+            <p>Upon completion of this module, you will be able to:</p>
+            <ul>
+                <li>Apply Gestalt principles to create cohesive and intuitive visual designs</li>
+                <li>Select and implement color schemes based on psychological impact and brand strategy</li>
+                <li>Create effective typography systems that enhance readability and brand personality</li>
+                <li>Design balanced layouts that work across multiple platforms and devices</li>
+                <li>Develop comprehensive visual branding systems with consistent application</li>
+            </ul>
+
+            <h2>6.1: Principles of Advanced Visual Design</h2>
+            <h3>Introduction</h3>
+            <p>Advanced visual design goes beyond making things "look nice" - it's about creating intentional visual
+                experiences that guide perception, communicate hierarchy, and evoke specific emotions. This lesson
+                explores the psychological principles that underlie effective visual communication and how to apply them
+                in modern digital contexts.</p>
+
+            <h3>Content</h3>
+
+            <div class="card">
+                <div class="card-header">1. Gestalt Principles and Their Application in Modern Media</div>
+                <div class="card-body">
+                    <p>Gestalt psychology reveals how humans naturally organize visual elements into coherent groups.
+                        Understanding these principles allows designers to create compositions that feel intuitive and
+                        organized.</p>
+
+                    <h4>Proximity</h4>
+                    <p>Objects close together are perceived as related or belonging to the same group.</p>
+                    <ul>
+                        <li><strong>Application:</strong> Group related form fields, navigation items, or content cards
+                            together with consistent spacing. Increased proximity creates stronger perceived
+                            relationships.</li>
+                        <li><strong>Modern Example:</strong> Dashboard widgets cluster related metrics; e-commerce sites
+                            group product details, price, and add-to-cart buttons.</li>
+                    </ul>
+
+                    <h4>Similarity</h4>
+                    <p>Elements sharing visual characteristics (color, shape, size, texture) are perceived as related.
+                    </p>
+                    <ul>
+                        <li><strong>Application:</strong> Use consistent styling for all secondary buttons; maintain
+                            identical icon style throughout an interface; create visual consistency in content cards.
+                        </li>
+                        <li><strong>Modern Example:</strong> Social media platforms use identical heart icons for liking
+                            across all post types.</li>
+                    </ul>
+
+                    <h4>Continuity</h4>
+                    <p>The eye naturally follows lines and curves, preferring continuous paths over separated elements.
+                    </p>
+                    <ul>
+                        <li><strong>Application:</strong> Create visual flow through layouts; guide the eye along
+                            intentional paths; use implied lines to connect related elements.</li>
+                        <li><strong>Modern Example:</strong> Horizontal scrolling galleries and carousels use continuity
+                            principles to suggest additional content beyond the visible area.</li>
+                    </ul>
+
+                    <h4>Closure</h4>
+                    <p>The mind fills in missing parts to complete familiar shapes or forms.</p>
+                    <ul>
+                        <li><strong>Application:</strong> Create minimalist logos that suggest complete forms; use
+                            partial elements to suggest more content; design loading animations that engage this
+                            principle.</li>
+                        <li><strong>Modern Example:</strong> The World Wildlife Fund panda logo uses negative space to
+                            complete the animal shape.</li>
+                    </ul>
+
+                    <h4>Figure-Ground</h4>
+                    <p>The perceptual separation between the main element (figure) and its background (ground).</p>
+                    <ul>
+                        <li><strong>Application:</strong> Ensure sufficient contrast between text and background; use
+                            blur effects to create depth; design modal windows that clearly separate from background
+                            content.</li>
+                        <li><strong>Modern Example:</strong> Video conferencing apps use figure-ground separation to
+                            highlight the speaker while minimizing background distraction.</li>
+                    </ul>
+
+                    <p><strong>Interactive Exercise:</strong> Analyze three different mobile app interfaces and identify
+                        where each of the five Gestalt principles is applied. Sketch how you might improve one interface
+                        by strengthening these principles.</p>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/9X0s8s3e2Y8" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Gestalt Principles for UI Design</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">2. Color Psychology and Advanced Color Theory for Brand Impact</div>
+                <div class="card-body">
+                    <p>Color communicates instantly and emotionally before a single word is read. Understanding color
+                        psychology and relationships enables strategic color choices that support brand messaging.</p>
+
+                    <h4>Psychological Impact of Colors</h4>
+                    <ul>
+                        <li><strong>Warm Colors:</strong> Red (energy, urgency, passion), Orange (friendliness,
+                            creativity, confidence), Yellow (optimism, attention-grabbing, warmth)</li>
+                        <li><strong>Cool Colors:</strong> Blue (trust, security, calmness), Green (growth, health,
+                            stability), Purple (creativity, luxury, wisdom)</li>
+                        <li><strong>Neutral Colors:</strong> Black (sophistication, power), White (purity, simplicity,
+                            cleanliness), Gray (balance, neutrality, professionalism)</li>
+                    </ul>
+
+                    <h4>Advanced Color Harmonies</h4>
+                    <ul>
+                        <li><strong>Analogous:</strong> Colors adjacent on the color wheel (harmonious, comfortable)
+                        </li>
+                        <li><strong>Complementary:</strong> Colors opposite each other (high contrast, dynamic)</li>
+                        <li><strong>Triadic:</strong> Three colors equally spaced (vibrant, balanced)</li>
+                        <li><strong>Split-Complementary:</strong> Base color plus two adjacent to its complement (strong
+                            contrast but less tension)</li>
+                        <li><strong>Tetradic (Double Complementary):</strong> Two complementary pairs (rich but
+                            difficult to balance)</li>
+                    </ul>
+
+                    <h4>Accessibility Considerations</h4>
+                    <ul>
+                        <li>Ensure sufficient color contrast for readability (WCAG guidelines)</li>
+                        <li>Don't rely solely on color to convey information</li>
+                        <li>Consider color blindness when choosing palettes</li>
+                    </ul>
+
+                    <p><strong>Practical Application:</strong> Create a color palette for a fictional brand including
+                        primary, secondary, and accent colors with hex codes. Justify your choices based on the brand's
+                        personality and target audience.</p>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/O0i0nT5YgQI" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Color Theory Basics</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">3. Typography Mastery</div>
+                <div class="card-body">
+                    <p>Typography is the voice of your design - it speaks even when the user isn't consciously reading.
+                        Effective typography creates hierarchy, establishes tone, and improves readability.</p>
+
+                    <h4>Font Pairing Strategies</h4>
+                    <ul>
+                        <li><strong>Contrast with Harmony:</strong> Pair a expressive display font with a neutral body
+                            font</li>
+                        <li><strong>Superfamily Approach:</strong> Use different weights from the same type family</li>
+                        <li><strong>Mood Matching:</strong> Ensure type personality matches brand personality</li>
+                        <li><strong>Practical Limit:</strong> Maximum 2-3 type families per project</li>
+                    </ul>
+
+                    <h4>Creating Hierarchy</h4>
+                    <ul>
+                        <li><strong>Size Variation:</strong> Clear differentiation between heading levels</li>
+                        <li><strong>Weight Contrast:</strong> Using bold, medium, and regular weights intentionally</li>
+                        <li><strong>Spacing Management:</strong> Letter-spacing, line-height, and paragraph spacing</li>
+                        <li><strong>Color and Value:</strong> Using color to establish importance rather than just size
+                        </li>
+                    </ul>
+
+                    <h4>Readability Considerations</h4>
+                    <ul>
+                        <li><strong>Optimal line length:</strong> 45-75 characters for body text</li>
+                        <li><strong>Line height:</strong> 1.4-1.6 times font size for body text</li>
+                        <li><strong>Font size:</strong> Minimum 16px for body text on digital platforms</li>
+                        <li><strong>Responsive typography:</strong> Adjusting sizes for different screen sizes</li>
+                    </ul>
+
+                    <p><strong>Interactive Exercise:</strong> Take a text-heavy webpage screenshot and redesign the
+                        typographic hierarchy using only size, weight, and spacing changes (no color changes). Document
+                        your reasoning for each decision.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">4. Layout Composition</div>
+                <div class="card-body">
+                    <p>Effective layout creates visual harmony, guides the eye naturally, and presents information in
+                        order of importance. Understanding compositional principles helps create balanced designs across
+                        various media.</p>
+
+                    <h4>Grid Systems</h4>
+                    <ul>
+                        <li><strong>Rule of Thirds:</strong> Dividing layout into thirds both horizontally and
+                            vertically</li>
+                        <li><strong>Golden Ratio:</strong> Approximately 1:1.618 proportion found in nature</li>
+                        <li><strong>Modular Grids:</strong> Creating consistent rhythm and alignment across layouts</li>
+                        <li><strong>Breakpoints:</strong> Adapting grid structures for different screen sizes</li>
+                    </ul>
+
+                    <h4>Visual Hierarchy Principles</h4>
+                    <ul>
+                        <li><strong>Size and Scale:</strong> Larger elements attract more attention</li>
+                        <li><strong>Color and Contrast:</strong> High-contrast elements draw the eye</li>
+                        <li><strong>White Space:</strong> Creates breathing room and emphasizes important elements</li>
+                        <li><strong>Placement:</strong> Elements in upper-left and center typically get noticed first
+                        </li>
+                    </ul>
+
+                    <h4>Responsive Considerations</h4>
+                    <ul>
+                        <li><strong>Mobile-First Approach:</strong> Designing for smallest screens first</li>
+                        <li><strong>Fluid Layouts:</strong> Using percentages rather than fixed pixels</li>
+                        <li><strong>Flexible Images:</strong> Ensuring images scale appropriately</li>
+                        <li><strong>Content Prioritization:</strong> Deciding what matters most on each screen size</li>
+                    </ul>
+
+                    <p><strong>Mini-Project:</strong> Take a single content set (company announcement with headline,
+                        date, body text, and call-to-action) and create three layout variations: Instagram post, email
+                        newsletter, and website banner. Document how you adapted the composition for each format.</p>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Advanced visual design principles provide a psychological foundation for creating intentional,
+                    effective visual communication. By understanding how people perceive and process visual information,
+                    you can create designs that not only look professional but also guide users naturally through
+                    content, reinforce brand messaging, and create emotional connections. These principles work together
+                    to transform subjective aesthetic choices into strategic design decisions.</p>
+            </div>
+
+            <h2>Embedded Video Context for Full Module</h2>
+            <p>Consider adding these video resources throughout the module:</p>
+            <ol>
+                <li>Gestalt Principles in UI/UX Design (practical examples)</li>
+                <li>Creating Emotional Impact with Color Psychology</li>
+                <li>Typography Hierarchy in Web Design</li>
+                <li>Grid Systems for Responsive Layouts</li>
+                <li>Building a Complete Brand System from Scratch</li>
+            </ol>
+
+            <h2>Module Assignment</h2>
+            <p>Develop a complete brand style guide for a fictional company including:</p>
+            <ol>
+                <li>Logo with clear usage guidelines</li>
+                <li>Color palette with primary and secondary colors</li>
+                <li>Typography system with hierarchy examples</li>
+                <li>Layout examples showing application across different media</li>
+                <li>Documentation of how design principles were applied</li>
+            </ol>
+
+            <h2>Weekly Quiz</h2>
+            <p>Covers identification of Gestalt principles, color harmony types, typography terminology, and layout
+                composition concepts.</p>
+        </div>
     </div>
+</body>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+
 </body>
 
 </html>

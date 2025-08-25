@@ -4,174 +4,548 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Power BI Features</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-        background-color: #ffffff;
-        color: #000000;
-        font-family: Arial, sans-serif;
-    }
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
 
-    h1,
-    h2,
-    h3 {
-        color: #007BFF;
-        /* Blue accent */
-    }
-
-    .content-container {
-        margin: 50px auto;
-        max-width: 900px;
-    }
-
-    .custom-section {
-        margin-bottom: 40px;
-    }
-
-    .custom-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .custom-section ul {
-        margin-left: 20px;
-    }
-
-    .custom-section ul li {
-        margin-bottom: 10px;
-    }
-
-    blockquote {
-        font-size: 1.1em;
-        padding: 15px;
-        border-left: 5px solid #007BFF;
-        background-color: #f8f9fa;
-    }
-
-    /* Video container to hold everything */
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 100px;
-    }
-
-    /* Gradient border container */
-    .gradient-border {
-        padding: 5px;
-        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-        border-radius: 10px;
-    }
-
-    /* Video or content inside the border */
-    .video-content {
-        border-radius: 10px;
-        display: block;
-    }
-
-    .video-links {
-        color: grey;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    /* Ensure responsive width and height for the video */
-    iframe {
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-    }
-
-    /* Responsiveness */
-    @media (min-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 450px;
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+    <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
-    }
 
-    @media (max-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 350px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        iframe {
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             width: 500px;
-            height: 200px;
+            height: 150px;
+            margin-bottom: 15px;
         }
-    }
 
-    /* For mobile screens, to avoid the box-like appearance */
-    @media (max-width: 360px) {
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
         .video-content {
-            width: 280px;
-            /* Take full width */
-            height: 200px;
-            /* Adjust height to give a more rectangular shape */
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
         }
 
         /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 256px) {
+        @media (max-width: 360px) {
             .video-content {
-                width: 1080px;
+                width: 280px;
                 /* Take full width */
-                height: 300px;
+                height: 200px;
                 /* Adjust height to give a more rectangular shape */
             }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
-    }
-</style>
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+</head>
 
 <body>
-    <header>
-        <h1>Advanced Power BI Features</h1>
-    </header>
+    <div class="container">
+        <div class="header">
+            <h1>6.3: Introduction to ETL/ELT Tools</h1>
+        </div>
 
-    <main>
-        <section id="dax-functions">
-            <h2>DAX Functions (Data Analysis Expressions)</h2>
-            <p>DAX is a powerful formula language used in Power BI for data analysis and manipulation. It allows you to
-                create complex calculations and aggregations.</p>
-            <ul>
-                <li><strong>Introduction to DAX:</strong> Understanding the role of DAX in Power BI for creating
-                    calculated columns, measures, and calculated tables.</li>
-                <li><strong>Common DAX Functions:</strong>
+        <div class="module-content">
+            <div class="card">
+                <div class="card-header">Learning Objectives</div>
+                <div class="card-body">
                     <ul>
-                        <li><strong>Aggregate functions:</strong> SUM, AVERAGE.</li>
-                        <li><strong>Time intelligence functions:</strong> DATESYTD, SAMEPERIODLASTYEAR.</li>
-                        <li><strong>Logical functions:</strong> IF, SWITCH.</li>
+                        <li>Understand the spectrum of ETL/ELT tools, from code-centric to fully managed platforms</li>
+                        <li>Evaluate the trade-offs between flexibility, maintenance, and speed of implementation</li>
+                        <li>Identify common use cases and scenarios for each type of tool</li>
+                        <li>Gain familiarity with prominent tools in each category</li>
                     </ul>
-                </li>
-            </ul>
-        </section>
+                </div>
+            </div>
 
-        <section id="data-modeling">
-            <h2>Data Modeling in Power BI</h2>
-            <p>Data modeling is essential for effective data analysis in Power BI. It involves structuring data for
-                optimal performance and insight extraction.</p>
-            <ul>
-                <li><strong>Relationships:</strong> Defining and managing relationships between tables in Power BI’s
-                    data model.</li>
-                <li><strong>Hierarchies and Filters:</strong> Creating hierarchies for organizational data and applying
-                    filters for dynamic data analysis.</li>
-            </ul>
-        </section>
+            <div class="card">
+                <div class="card-header">1. Code-Centric Tools</div>
+                <div class="card-body">
+                    <p>Code-centric tools provide maximum flexibility and control, requiring significant technical
+                        expertise but offering few limitations in terms of what can be built.</p>
 
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p>
-                <strong>Hands-On Practice:</strong> Explore advanced Power BI features by creating DAX calculations
-                (e.g., year-to-date sales, cumulative totals), optimizing data models with relationships, and using
-                hierarchies and filters to perform in-depth data analysis.
-            </p>
-        </section>
-    </main>
+                    <h4>Python Ecosystem</h4>
+                    <ul>
+                        <li><strong>Pandas:</strong> Ideal for small to medium-sized datasets (fits in memory)
+                            <ul>
+                                <li>Rich data manipulation capabilities (filtering, transformation, aggregation)</li>
+                                <li>Excellent for prototyping and exploratory data analysis</li>
+                                <li>Limited to single-machine processing</li>
+                                <li>Example: Cleaning and transforming CSV files from marketing campaigns</li>
+                            </ul>
+                        </li>
+                        <li><strong>PySpark:</strong> Distributed processing for large-scale data
+                            <ul>
+                                <li>Handles datasets too large for single machine memory</li>
+                                <li>Runs on Spark clusters for parallel processing</li>
+                                <li>Supports structured and unstructured data</li>
+                                <li>Example: Processing terabyte-scale web clickstream data</li>
+                            </ul>
+                        </li>
+                        <li><strong>Apache Airflow:</strong> Workflow orchestration and scheduling
+                            <ul>
+                                <li>Programmatically author, schedule, and monitor workflows</li>
+                                <li>Rich ecosystem of operators for various services</li>
+                                <li>Dependency management and retry mechanisms</li>
+                                <li>Example: Building complex multi-step data pipelines with error handling</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>SQL-Based Transformation</h4>
+                    <ul>
+                        <li><strong>In-Warehouse Processing:</strong> Using modern cloud data warehouses as
+                            transformation engines
+                            <ul>
+                                <li>Leverages the power and scalability of Snowflake, BigQuery, or Redshift</li>
+                                <li>No data movement required during transformation</li>
+                                <li>Example: Transforming raw JSON data into structured tables using SQL UDFs</li>
+                            </ul>
+                        </li>
+                        <li><strong>dbt (Data Build Tool):</strong> SQL-based transformation framework
+                            <ul>
+                                <li>Version control and testing for data transformations</li>
+                                <li>Modular SQL programming with Jinja templating</li>
+                                <li>Documentation generation and dependency management</li>
+                                <li>Example: Building a slowly changing dimension Type 2 using dbt snapshots</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Implementation Considerations</h4>
+                    <ul>
+                        <li><strong>Development Time:</strong> Typically longer due to custom coding requirements</li>
+                        <li><strong>Maintenance Overhead:</strong> Requires ongoing engineering resources</li>
+                        <li><strong>Flexibility:</strong> Can handle any custom requirement or edge case</li>
+                        <li><strong>Cost:</strong> Primarily engineering time rather than licensing fees</li>
+                    </ul>
+
+                    <h4>Use Cases</h4>
+                    <ul>
+                        <li>Highly custom data processing requirements</li>
+                        <li>Organizations with strong engineering teams</li>
+                        <li>Complex business logic that can't be expressed visually</li>
+                        <li>Scenarios requiring complete control over processing logic</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">2. Low-Code/No-Code Platforms</div>
+                <div class="card-body">
+                    <p>These platforms abstract away the underlying complexity, enabling faster development and broader
+                        accessibility while sacrificing some degree of flexibility.</p>
+
+                    <h4>Connector-Based Platforms</h4>
+                    <ul>
+                        <li><strong>Fivetran:</strong> Managed data pipeline service
+                            <ul>
+                                <li>300+ pre-built connectors to SaaS applications and databases</li>
+                                <li>Automatic schema migration and type handling</li>
+                                <li>Incremental data loading with change data capture</li>
+                                <li>Example: Syncing Salesforce, Marketo, and Zendesk data to Snowflake</li>
+                            </ul>
+                        </li>
+                        <li><strong>Stitch:</strong> Simple, scalable ETL service
+                            <ul>
+                                <li>Focus on ease of use and rapid setup</li>
+                                <li>Open-source Singer.io integration for custom taps</li>
+                                <li>Affordable pricing based on rows synced</li>
+                                <li>Example: Replicating PostgreSQL databases to Redshift</li>
+                            </ul>
+                        </li>
+                        <li><strong>Matillion:</strong> ELT platform built for cloud data warehouses
+                            <ul>
+                                <li>Visual interface for building transformation jobs</li>
+                                <li>Optimized for Snowflake, Redshift, BigQuery, and Synapse</li>
+                                <li>Component-based approach with reusable transformations</li>
+                                <li>Example: Building fact and dimension tables from raw ERP data</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Advantages</h4>
+                    <ul>
+                        <li><strong>Rapid Implementation:</strong> Pipelines can be built in hours rather than weeks
+                        </li>
+                        <li><strong>Reduced Maintenance:</strong> Vendor handles connector updates and API changes</li>
+                        <li><strong>Accessibility:</strong> Business analysts can build and manage pipelines</li>
+                        <li><strong>Reliability:</strong> Built-in monitoring, alerting, and error handling</li>
+                    </ul>
+
+                    <h4>Limitations</h4>
+                    <ul>
+                        <li><strong>Cost:</strong> Subscription fees can become significant at scale</li>
+                        <li><strong>Customization:</strong> Limited ability to handle unique requirements</li>
+                        <li><strong>Vendor Lock-in:</strong> Migration to another platform can be challenging</li>
+                        <li><strong>Performance:</strong> May not optimize for specific use cases</li>
+                    </ul>
+
+                    <h4>Implementation Patterns</h4>
+                    <ul>
+                        <li><strong>SaaS Data Integration:</strong> Connecting business applications to data warehouse
+                        </li>
+                        <li><strong>Database Replication:</strong> Keeping analytical stores in sync with operational
+                            databases</li>
+                        <li><strong>Quick Start Projects:</strong> Rapid prototyping and proof-of-concept development
+                        </li>
+                        <li><strong>Departmental Solutions:</strong> Business-unit specific data integration needs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">3. Cloud-Native Services</div>
+                <div class="card-body">
+                    <p>Cloud providers offer managed ETL/ELT services that integrate tightly with their ecosystems,
+                        providing seamless operation within their cloud platforms.</p>
+
+                    <h4>AWS Glue</h4>
+                    <ul>
+                        <li><strong>Serverless Architecture:</strong> No infrastructure to manage</li>
+                        <li><strong>Data Catalog:</strong> Central metadata repository for all data assets</li>
+                        <li><strong>Flexible Execution:</strong> Python shell, Spark, or custom containers</li>
+                        <li><strong>Visual Interface:</strong> Glue Studio for low-code development</li>
+                        <li><strong>Example:</strong> Cataloging S3 data and transforming it for Redshift analysis</li>
+                    </ul>
+
+                    <h4>Azure Data Factory</h4>
+                    <ul>
+                        <li><strong>Hybrid Execution:</strong> Cloud and on-premises data integration</li>
+                        <li><strong>Data Flows:</strong> Visual data transformation without coding</li>
+                        <li><strong>Power Query Integration:</strong> Familiar Excel-like interface</li>
+                        <li><strong>Monitoring:</strong> Built-in pipeline monitoring and alerting</li>
+                        <li><strong>Example:</strong> Building data pipelines between on-prem SQL Server and Azure
+                            Synapse</li>
+                    </ul>
+
+                    <h4>Google Dataflow</h4>
+                    <ul>
+                        <li><strong>Unified Batch and Streaming:</strong> Same code for both processing modes</li>
+                        <li><strong>Apache Beam:</strong> Open-source SDK for pipeline development</li>
+                        <li><strong>Auto-scaling:</strong> Automatic resource allocation based on workload</li>
+                        <li><strong>Real-time Processing:</strong> Low-latency stream processing capabilities</li>
+                        <li><strong>Example:</strong> Real-time analytics of IoT sensor data with anomaly detection</li>
+                    </ul>
+
+                    <h4>Comparative Analysis</h4>
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>AWS Glue</th>
+                                <th>Azure Data Factory</th>
+                                <th>Google Dataflow</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Pricing Model</strong></td>
+                                <td>DPU hours + crawler runs</td>
+                                <td>Activity runs + data movement</td>
+                                <td>vCPU/hour + memory</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Strength</strong></td>
+                                <td>Catalog integration</td>
+                                <td>Hybrid connectivity</td>
+                                <td>Real-time processing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Programming Model</strong></td>
+                                <td>Spark/Python</td>
+                                <td>GUI or code</td>
+                                <td>Apache Beam</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Best For</strong></td>
+                                <td>AWS-centric organizations</td>
+                                <td>Azure/Microsoft shops</td>
+                                <td>Real-time analytics</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Implementation Considerations</h4>
+                    <ul>
+                        <li><strong>Cloud Strategy:</strong> Alignment with existing cloud investments</li>
+                        <li><strong>Skill Availability:</strong> Team expertise with specific cloud platforms</li>
+                        <li><strong>Data Residency:</strong> Compliance with data sovereignty requirements</li>
+                        <li><strong>Cost Management:</strong> Understanding and monitoring usage-based pricing</li>
+                        <li><strong>Integration:</strong> Compatibility with existing tools and processes</li>
+                    </ul>
+
+                    <h4>Hybrid Approaches</h4>
+                    <p>Many organizations implement a combination of these tools:</p>
+                    <ul>
+                        <li>Low-code platforms for common SaaS integrations</li>
+                        <li>Cloud-native services for cloud-to-cloud data movement</li>
+                        <li>Custom code for specialized transformation logic</li>
+                        <li>Orchestration tools to manage the complete pipeline</li>
+                    </ul>
+
+                    <h4>Selection Criteria</h4>
+                    <ul>
+                        <li><strong>Data Volume:</strong> Small (Python) vs. Large (Spark/Cloud-native)</li>
+                        <li><strong>Team Skills:</strong> Technical (code) vs. Non-technical (low-code)</li>
+                        <li><strong>Budget:</strong> Engineering time (code) vs. Licensing fees (platforms)</li>
+                        <li><strong>Requirements:</strong> Standard (platforms) vs. Custom (code)</li>
+                        <li><strong>Cloud Strategy:</strong> Multi-cloud (abstracted) vs. Single-cloud (native)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Emerging Trends</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Reverse ETL:</strong> Moving data from warehouses back to operational systems</li>
+                        <li><strong>Data Sharing:</strong> Secure sharing of live data between organizations</li>
+                        <li><strong>Machine Learning Integration:</strong> Embedded ML capabilities in data pipelines
+                        </li>
+                        <li><strong>Real-time Processing:</strong> Increasing demand for streaming capabilities</li>
+                        <li><strong>Data Quality:</strong> Built-in data quality monitoring and validation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>The ETL/ELT tool landscape offers solutions for every need and skill level. Code-centric tools
+                    provide maximum flexibility for complex requirements, low-code platforms enable rapid development of
+                    common patterns, and cloud-native services offer seamless integration within specific cloud
+                    ecosystems. The optimal choice depends on your organization's technical capabilities, existing
+                    infrastructure, and specific use cases, with many organizations ultimately implementing a
+                    combination of approaches to balance flexibility, speed, and maintenance requirements.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+    <script>
+
+    </script>
 
 </body>
 

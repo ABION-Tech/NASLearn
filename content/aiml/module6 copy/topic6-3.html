@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6: Advanced Supervised Learning - Ensemble Methods</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+            /* Blue accent color */
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            /* Light grey background for sections */
+        }
+
+        .important {
+            background-color: #e7f1ff;
+            /* Light blue background for important notes */
+            border-left: 4px solid #007bff;
+            padding: 10px;
+        }
+
+        ul {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">
+            <h1>Week 6: Advanced Supervised Learning - Ensemble Methods</h1>
+            <h2>Introduction to Ensemble Methods</h2>
+            <p>**Ensemble methods** are powerful techniques in machine learning that combine the predictions from
+                multiple models to enhance overall performance. The primary advantages of ensemble methods include:</p>
+            <ul>
+                <li>Reducing overfitting, thus leading to better generalization on unseen data.</li>
+                <li>Improving accuracy through diverse model contributions.</li>
+                <li>Increasing robustness against outliers and noise.</li>
+            </ul>
+            <p>By harnessing the strengths of various models, ensemble methods can yield more reliable predictions
+                compared to individual models.</p>
+        </div>
+
+        <div class="section">
+            <h3>1. Bagging (Bootstrap Aggregating)</h3>
+            <p><strong>Concept:</strong> Bagging works by creating multiple models trained on different subsets of the
+                data, known as bootstrap samples, and aggregating their predictions to form a final output.</p>
+            <p><strong>Random Forest:</strong> A widely used bagging algorithm that employs decision trees as its base
+                learners, offering exceptional performance in various applications.</p>
+            <h4>Advantages:</h4>
+            <ul>
+                <li>Mitigates overfitting through averaging predictions.</li>
+                <li>Accommodates both numerical and categorical features.</li>
+                <li>Effectively captures complex, non-linear relationships in the data.</li>
+            </ul>
+            <h4>Disadvantages:</h4>
+            <ul>
+                <li>Computationally intensive, particularly for large datasets with many features.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>2. Boosting</h3>
+            <p><strong>Concept:</strong> Boosting constructs multiple models sequentially, where each new model focuses
+                on the errors made by the previous ones, progressively enhancing model accuracy.</p>
+            <h4>Types:</h4>
+            <ul>
+                <li><strong>AdaBoost (Adaptive Boosting):</strong> Adjusts the weights of training examples based on
+                    their classification performance, giving more focus to hard-to-classify instances.</li>
+                <li><strong>Gradient Boosting:</strong> Iteratively fits new models to the residuals of the existing
+                    model, optimizing a chosen loss function at each step.</li>
+                <li><strong>XGBoost (eXtreme Gradient Boosting):</strong> An optimized version of gradient boosting that
+                    incorporates regularization and other enhancements for improved performance.</li>
+            </ul>
+            <h4>Advantages:</h4>
+            <ul>
+                <li>Achieves high accuracy, especially in complex classification and regression problems.</li>
+                <li>Handles both numerical and categorical data effectively.</li>
+            </ul>
+            <h4>Disadvantages:</h4>
+            <ul>
+                <li>Prone to overfitting if hyperparameters are not carefully tuned and optimized.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Ensemble Methods vs. Single Models</h3>
+            <p>When comparing ensemble methods to single models, consider the following:</p>
+            <ul>
+                <li><strong>Ensemble methods:</strong>
+                    <ul>
+                        <li>Can significantly enhance accuracy and reduce overfitting.</li>
+                        <li>Effective for capturing complex relationships in the data.</li>
+                        <li>May incur higher computational costs due to multiple models.</li>
+                    </ul>
+                </li>
+                <li><strong>Single models:</strong>
+                    <ul>
+                        <li>Simpler to implement and interpret.</li>
+                        <li>May suffice for less complex problems, where the data is straightforward.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Choosing the Right Ensemble Method</h3>
+            <p>Selecting the appropriate ensemble method hinges on various factors:</p>
+            <ul>
+                <li><strong>Data Complexity:</strong> Ensemble methods are generally more effective for intricate
+                    problems that involve complex relationships.</li>
+                <li><strong>Computational Resources:</strong> Consider the computational cost associated with ensemble
+                    methods, especially with larger datasets.</li>
+                <li><strong>Interpretability:</strong> While ensemble methods may provide better accuracy, they can also
+                    be more challenging to interpret compared to single models.</li>
+            </ul>
+        </div>
+
+        <div class="section important">
+            <h3>Practical Tips</h3>
+            <ul>
+                <li>Experiment with various ensemble methods and their hyperparameters to determine the best fit for
+                    your specific dataset.</li>
+                <li>Evaluate the performance of your ensemble model using appropriate metrics, such as accuracy,
+                    precision, recall, or F1 score.</li>
+                <li>Weigh the trade-off between accuracy and interpretability when choosing between ensemble and single
+                    models.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>By mastering ensemble methods, you can leverage their collective power to significantly enhance the
+                performance and reliability of your machine learning models, making them more adept at solving complex
+                real-world problems.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -4,152 +4,526 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 6: Advanced Supervised Learning - Ensemble Methods</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.1/css/bootstrap.min.css">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
         body {
             background-color: #ffffff;
             color: #000000;
+            font-family: Arial, sans-serif;
         }
 
         h1,
         h2,
         h3 {
-            color: #007bff;
+            color: #007BFF;
             /* Blue accent */
         }
 
-        .content-section {
-            margin: 40px 0;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .assignment {
-            background-color: #f8f9fa;
-            border-left: 5px solid #007bff;
-            /* Blue accent */
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
-        .footer {
-            margin-top: 50px;
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
             text-align: center;
-            font-size: 0.9em;
-            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
+
 </head>
 
 <body>
     <div class="container">
-        <div class="content-section">
-            <h1>Week 6: Advanced Supervised Learning - Ensemble Methods</h1>
+        <div class="header">
+            <h1>6.4: Building Your First Neural Network with Keras</h1>
+        </div>
 
-            <h2>Introduction to Ensemble Methods</h2>
-            <p>Ensemble methods combine multiple machine learning models to improve overall performance. By merging the
-                predictions of various models, ensemble methods can effectively reduce overfitting, enhance accuracy,
-                and bolster robustness against variations in data.</p>
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>Welcome to the practical heart of deep learning! In this lesson, you will build, train, and evaluate your
+                first neural network to solve a real-world problem: recognizing handwritten digits. This hands-on
+                experience will transform abstract concepts into tangible skills as you work with the classic MNIST
+                dataset—the "Hello, World!" of deep learning. By the end of this lesson, you'll understand the complete
+                workflow from data preparation to model evaluation.</p>
 
-            <h3>1. Bagging (Bootstrap Aggregating)</h3>
-            <p><strong>Concept:</strong> Bagging involves creating multiple models by training them on different subsets
-                of the data (bootstrap samples) and aggregating their predictions.</p>
-            <p><strong>Random Forest:</strong> A widely-used bagging algorithm that employs decision trees as base
-                models.</p>
-            <p><strong>Advantages:</strong></p>
+            <h2>Content</h2>
+
+            <h3>1. Understanding the MNIST Dataset</h3>
+            <p>The Modified National Institute of Standards and Technology (MNIST) dataset has become the standard
+                benchmark for introductory computer vision and deep learning.</p>
+
+            <div class="card">
+                <div class="card-header">Dataset Composition</div>
+                <div class="card-body">
+                    <ul>
+                        <li>60,000 training images and 10,000 testing images</li>
+                        <li>28x28 pixel grayscale images of handwritten digits (0-9)</li>
+                        <li>Pre-split into training and testing sets</li>
+                        <li>Pre-processed with digits centered in images</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Why MNIST is Ideal for Beginners</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Simple but non-trivial problem</li>
+                        <li>Low computational requirements</li>
+                        <li>Well-balanced classes</li>
+                        <li>Clean, pre-processed data</li>
+                        <li>Established baseline performance metrics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>2. Comprehensive Data Preparation</h3>
+            <p>Proper data preparation is crucial for neural network performance:</p>
+            <pre
+                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+            <code>import tensorflow as tf
+    # Load the MNIST dataset
+    mnist = tf.keras.datasets.mnist
+    (x_train, y_train), (x_test, y_test) = mnist.load_data()
+    # Examine dataset shape
+    print("Training data shape:", x_train.shape)  # (60000, 28, 28)
+    print("Training labels shape:", y_train.shape)  # (60000,)
+    print("Test data shape:", x_test.shape)  # (10000, 28, 28)
+    # Normalize pixel values from [0, 255] to [0, 1]
+    x_train = x_train.astype('float32') / 255.0
+    x_test = x_test.astype('float32') / 255.0
+    # Optional: Convert labels to categorical (one-hot encoding)
+    # y_train = tf.keras.utils.to_categorical(y_train, 10)
+    # y_test = tf.keras.utils.to_categorical(y_test, 10)
+    # Display sample images
+    import matplotlib.pyplot as plt
+    plt.figure(figsize=(10, 10))
+    for i in range(9):
+        plt.subplot(3, 3, i + 1)
+        plt.imshow(x_train[i], cmap='gray')
+        plt.title(f"Label: {y_train[i]}")
+        plt.axis('off')
+    plt.show()</code>
+          </pre>
+
+            <h3>3. Building the Model: Layer-by-Layer Explanation</h3>
+            <p>The Keras Sequential API allows you to build models layer by layer:</p>
+            <pre
+                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+            <code>model = tf.keras.models.Sequential([
+        # Flatten layer: Convert 2D image (28,28) to 1D vector (784)
+        tf.keras.layers.Flatten(input_shape=(28, 28)),
+        
+        # First hidden layer: 128 neurons with ReLU activation
+        tf.keras.layers.Dense(128, activation='relu'),
+        
+        # Dropout layer: Regularization to prevent overfitting
+        tf.keras.layers.Dropout(0.2),
+        
+        # Second hidden layer: 64 neurons
+        tf.keras.layers.Dense(64, activation='relu'),
+        
+        # Output layer: 10 neurons (one for each digit) with softmax activation
+        tf.keras.layers.Dense(10, activation='softmax')
+    ])
+    # Display model architecture
+    model.summary()</code>
+          </pre>
+
+            <div class="card">
+                <div class="card-header">Layer Details</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Flatten:</strong> Transforms the 2D array (28x28 pixels) into a 1D array of 784
+                            pixels</li>
+                        <li><strong>Dense:</strong> Fully connected layer where each neuron connects to all neurons in
+                            previous layer</li>
+                        <li><strong>Dropout:</strong> Randomly sets a fraction of input units to 0 during training to
+                            prevent overfitting</li>
+                        <li><strong>Softmax:</strong> Converts output scores to probabilities that sum to 1</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>4. Compiling the Model: Configuring the Learning Process</h3>
+            <p>Compiling prepares the model for training by specifying:</p>
             <ul>
-                <li>Reduces overfitting by averaging predictions from multiple models.</li>
-                <li>Effectively handles both numerical and categorical features.</li>
-                <li>Can capture complex non-linear relationships in data.</li>
+                <li>How to measure performance (loss function)</li>
+                <li>How to update weights (optimizer)</li>
+                <li>What metrics to track</li>
             </ul>
-            <p><strong>Disadvantages:</strong></p>
+            <pre
+                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+            <code>model.compile(
+        optimizer='adam',  # Adaptive Moment Estimation - efficient and commonly used
+        loss='sparse_categorical_crossentropy',  # For integer labels (use 'categorical_crossentropy' for one-hot)
+        metrics=['accuracy']  # Track accuracy during training
+    )</code>
+          </pre>
+
+            <div class="card">
+                <div class="card-header">Optimizer Options</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Adam:</strong> Default choice, adaptive learning rate</li>
+                        <li><strong>SGD:</strong> Stochastic Gradient Descent, simpler but may require more tuning</li>
+                        <li><strong>RMSprop:</strong> Good for recurrent neural networks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>5. Training the Model: The Fit Method</h3>
+            <p>The .fit() method trains the model for a fixed number of epochs:</p>
+            <pre
+                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+            <code># Train the model
+    history = model.fit(
+        x_train, y_train,
+        batch_size=32,  # Number of samples per gradient update
+        epochs=10,  # Number of complete passes through the training dataset
+        validation_split=0.1,  # Use 10% of training data for validation
+        verbose=1  # Show progress bars
+    )
+    # Alternatively, use explicit validation data
+    # history = model.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test))</code>
+          </pre>
+
+            <div class="card">
+                <div class="card-header">Training Parameters</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Batch Size:</strong> Smaller values provide more frequent updates but noisier
+                            gradients</li>
+                        <li><strong>Epochs:</strong> Too few → underfitting, too many → overfitting</li>
+                        <li><strong>Validation Split:</strong> Monitor performance on unseen data during training</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>6. Evaluating Model Performance</h3>
+            <p>After training, evaluate on the test set to measure generalization:</p>
+            <pre
+                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+            <code># Evaluate on test data
+    test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=0)
+    print(f"Test accuracy: {test_accuracy:.4f}")
+    # Make predictions on test data
+    predictions = model.predict(x_test)
+    # Examine a specific prediction
+    import numpy as np
+    sample_idx = 0
+    predicted_label = np.argmax(predictions[sample_idx])
+    true_label = y_test[sample_idx]
+    print(f"Predicted: {predicted_label}, True: {true_label}")
+    print(f"Confidence: {np.max(predictions[sample_idx]):.4f}")</code>
+          </pre>
+
+            <h3>7. Visualizing Training Progress</h3>
+            <p>Understanding training curves helps diagnose model behavior:</p>
+            <pre
+                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+            <code># Plot training history
+    plt.figure(figsize=(12, 4))
+    plt.subplot(1, 2, 1)
+    plt.plot(history.history['accuracy'], label='Training Accuracy')
+    plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
+    plt.title('Model Accuracy')
+    plt.ylabel('Accuracy')
+    plt.xlabel('Epoch')
+    plt.legend()
+    plt.subplot(1, 2, 2)
+    plt.plot(history.history['loss'], label='Training Loss')
+    plt.plot(history.history['val_loss'], label='Validation Loss')
+    plt.title('Model Loss')
+    plt.ylabel('Loss')
+    plt.xlabel('Epoch')
+    plt.legend()
+    plt.tight_layout()
+    plt.show()</code>
+          </pre>
+
+            <h3>8. Saving and Loading Models</h3>
+            <p>Persist your trained models for future use:</p>
+            <pre
+                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+            <code># Save the entire model
+    model.save('mnist_model.keras')  # Or .h5 format
+    # Load the model
+    loaded_model = tf.keras.models.load_model('mnist_model.keras')
+    # Save only weights
+    model.save_weights('model_weights.weights.h5')
+    # Load weights into a new model with same architecture
+    new_model = tf.keras.models.Sequential([...])  # Same architecture
+    new_model.load_weights('model_weights.weights.h5')</code>
+          </pre>
+
+            <h2>Embedded Video Context</h2>
+            <p>Follow along with this coding tutorial that builds an MNIST classifier step-by-step in Keras, explaining
+                each component in detail.</p>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/aircAruvnKk" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Building a Neural Network with Keras</h4>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Troubleshooting Common Issues</h3>
             <ul>
-                <li>Can be computationally expensive for large datasets, requiring significant resources.</li>
+                <li><strong>Low Accuracy:</strong> Increase model complexity, train for more epochs, check data
+                    normalization</li>
+                <li><strong>Overfitting:</strong> Add more dropout, use data augmentation, reduce model complexity</li>
+                <li><strong>Slow Training:</strong> Reduce batch size, use GPU acceleration, simplify architecture</li>
             </ul>
 
-            <h3>2. Boosting</h3>
-            <p><strong>Concept:</strong> Boosting involves creating multiple models sequentially, where each model
-                addresses the errors made by the previous models.</p>
-            <p><strong>Types:</strong></p>
-            <ul>
-                <li><strong>AdaBoost (Adaptive Boosting):</strong> Adjusts the weights of training examples based on
-                    their classification accuracy.</li>
-                <li><strong>Gradient Boosting:</strong> Minimizes a loss function by iteratively adding models that fit
-                    the residuals of preceding models.</li>
-                <li><strong>XGBoost (eXtreme Gradient Boosting):</strong> An efficient implementation of gradient
-                    boosting with various optimizations for performance.</li>
-            </ul>
-            <p><strong>Advantages:</strong></p>
-            <ul>
-                <li>Achieves high accuracy, particularly for complex problems.</li>
-                <li>Handles both numerical and categorical features effectively.</li>
-            </ul>
-            <p><strong>Disadvantages:</strong></p>
-            <ul>
-                <li>Can be sensitive to overfitting if not tuned properly.</li>
-            </ul>
-
-            <h2>Practical Applications</h2>
-            <p>Ensemble methods have numerous real-world applications across diverse industries, enhancing predictive
-                performance and decision-making processes:</p>
-            <ul>
-                <li><strong>Financial Forecasting:</strong> Used for predicting stock prices, interest rates, and other
-                    financial variables, helping investors make informed decisions.</li>
-                <li><strong>Healthcare:</strong> Predict disease outcomes, identify risk factors, and develop
-                    personalized treatment plans tailored to individual patients.</li>
-                <li><strong>Natural Language Processing:</strong> Applied in sentiment analysis, text classification,
-                    and machine translation, improving the understanding of human language.</li>
-                <li><strong>Image Recognition:</strong> Utilized for identifying objects, scenes, or features in images,
-                    powering technologies like facial recognition.</li>
-                <li><strong>Recommendation Systems:</strong> Suggest products or content to users based on their
-                    preferences, enhancing user experience in e-commerce and entertainment.</li>
-                <li><strong>Fraud Detection:</strong> Identifies fraudulent transactions in financial data, protecting
-                    organizations from financial losses.</li>
-                <li><strong>Anomaly Detection:</strong> Detects unusual data points that deviate from the norm, which is
-                    crucial in monitoring and security systems.</li>
-            </ul>
-
-            <h2>Common Misconceptions</h2>
-            <p>Despite their effectiveness, several misconceptions persist regarding ensemble methods:</p>
-            <ul>
-                <li><strong>Ensemble methods are always better than single models:</strong> While they often enhance
-                    performance, they may not be necessary for simpler problems where a single model suffices.</li>
-                <li><strong>Bagging and boosting are the only ensemble methods:</strong> Other techniques, such as
-                    stacking and voting, can be employed depending on the specific problem context.</li>
-                <li><strong>Ensemble methods are always computationally expensive:</strong> Although they can require
-                    substantial resources, optimization techniques can mitigate performance costs.</li>
-            </ul>
-
-            <h2>Recap and Preview</h2>
-            <p>This week, we explored ensemble methods, their applications, and various techniques like bagging and
-                boosting, including their advantages and disadvantages. Understanding these methods equips you with
-                tools to enhance model performance significantly.</p>
-            <p>In the upcoming week, we will delve into <strong>Deep Learning and Neural Networks</strong>, covering
-                their architecture, training methodologies, and applications across various domains.</p>
-
-            <div class="assignment">
-                <h3>Assignment: Train and Fine-Tune a Model Using an Advanced Algorithm</h3>
-                <p><strong>Dataset:</strong> Choose a relevant dataset for classification or regression.</p>
-                <p><strong>Steps:</strong></p>
-                <ol>
-                    <li><strong>Load and Explore the Data:</strong> Load the dataset into a Pandas DataFrame and explore
-                        its characteristics using exploratory data analysis (EDA) techniques.</li>
-                    <li><strong>Preprocess the Data:</strong> Handle missing values, outliers, and categorical variables
-                        as needed to prepare for modeling.</li>
-                    <li><strong>Feature Engineering:</strong> Create new features or transform existing ones to enhance
-                        model performance.</li>
-                    <li><strong>Split the Data:</strong> Divide the dataset into training and testing sets for model
-                        evaluation.</li>
-                    <li><strong>Train an Ensemble Model:</strong> Select an advanced algorithm like XGBoost and train it
-                        on the training set.</li>
-                    <li><strong>Tune the Hyperparameters:</strong> Experiment with various hyperparameters to optimize
-                        the model's performance effectively.</li>
-                    <li><strong>Evaluate the Model:</strong> Assess the model's performance on the testing set using
-                        appropriate metrics, such as accuracy, precision, and recall.</li>
-                </ol>
-                <p>By completing this project, you will gain practical experience in building and fine-tuning advanced
-                    machine learning models, setting the stage for more complex tasks in the field.</p>
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Building and training a neural network with Keras abstracts away much of the underlying complexity
+                    while maintaining flexibility. The process follows a consistent pattern: prepare data, define
+                    architecture, compile with appropriate settings, train while monitoring performance, and evaluate on
+                    unseen data. This workflow forms the foundation for solving more complex problems with deep
+                    learning. Your first model achieving ~98% accuracy on MNIST demonstrates the power of these
+                    approaches, even with relatively simple architectures.</p>
             </div>
         </div>
+
+
+
+
+        <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
     </div>
+  </div> -->
+
 </body>
 
 </html>

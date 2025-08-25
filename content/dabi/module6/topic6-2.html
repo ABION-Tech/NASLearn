@@ -4,33 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setting Up a Server</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-            color: #333;
+        .container h1 {
+            font-size: 2.3rem;
         }
 
-        .container {
-            margin-top: 30px;
-        }
-
-        h2,
-        h4 {
-            margin-top: 30px;
-        }
-
-        h2 {
-            color: #7698f7;
-        }
-
-        .code-block {
-            background-color: #e9ecef;
-            padding: 15px;
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            overflow-x: auto;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
         }
 
         /* Basic Reset */
@@ -51,6 +48,82 @@
 
         .container {
             padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -129,460 +202,354 @@
                 }
             }
         }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
+
 </head>
 
 <body>
-
     <div class="container">
-        <h1 class="text-center mb-4">Setting Up a Server</h1>
-
-        <h2>2.1. Introduction to Node.js</h2>
-        <p>Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It enables developers to use
-            JavaScript for server-side programming.</p>
-
-        <h4>Installation:</h4>
-        <ul>
-            <li>Download and install Node.js from <a href="https://nodejs.org" target="_blank">nodejs.org</a>.</li>
-            <li>Verify the installation using <code>node -v</code> and <code>npm -v</code> in the terminal.</li>
-        </ul>
-
-        <h4>Basic Node.js Application:</h4>
-        <div class="code-block">
-            <code>
-// app.js
-const http = require('http');
-
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello, World!\n');
-});
-
-server.listen(3000, '127.0.0.1', () => {
-    console.log('Server running at http://127.0.0.1:3000/');
-});
-        </code>
+        <div class="header">
+            <h1>6.2: Data Warehousing & Data Lakes</h1>
         </div>
 
-        <h4>Explanation:</h4>
-        <ul>
-            <li><strong>http.createServer():</strong> Creates a new HTTP server.</li>
-            <li><strong>req:</strong> Represents the incoming request.</li>
-            <li><strong>res:</strong> Represents the response that will be sent to the client.</li>
-            <li><strong>server.listen():</strong> Binds the server to a specific port and IP address.</li>
-        </ul>
+        <div class="module-content">
+            <div class="card">
+                <div class="card-header">1. Data Warehouses: Structured Analytics Powerhouses</div>
+                <div class="card-body">
+                    <h4>Definition and Core Purpose</h4>
+                    <p>A data warehouse is a specialized database system optimized for analytical processing rather than
+                        transactional operations. It serves as the central repository for structured, filtered data that
+                        has been processed for specific business intelligence purposes.</p>
 
-        <h2>2.2. Introduction to Express.js</h2>
-        <p>Express.js is a minimalist web framework for Node.js that simplifies the process of building web applications
-            and APIs.</p>
+                    <h4>Architectural Characteristics</h4>
+                    <ul>
+                        <li><strong>Schema-on-Write:</strong> Requires predefined schema before data loading</li>
+                        <li><strong>Columnar Storage:</strong> Data stored by columns rather than rows for faster
+                            aggregation</li>
+                        <li><strong>MPP Architecture:</strong> Massively Parallel Processing for handling large queries
+                        </li>
+                        <li><strong>SQL Optimization:</strong> Designed specifically for complex SQL queries and joins
+                        </li>
+                    </ul>
 
-        <h4>Installation:</h4>
-        <ul>
-            <li>Install Express using npm:</li>
-            <div class="code-block">
-                <code>npm install express</code>
+                    <h4>Key Technologies and Platforms</h4>
+                    <ul>
+                        <li><strong>Snowflake:</strong> Cloud-native, separates storage and compute, automatic scaling
+                        </li>
+                        <li><strong>Google BigQuery:</strong> Serverless, petabyte-scale analytics with machine learning
+                            integration</li>
+                        <li><strong>Amazon Redshift:</strong> Cloud data warehouse with strong AWS ecosystem integration
+                        </li>
+                        <li><strong>Azure Synapse Analytics:</strong> Microsoft's integrated analytics service with both
+                            data warehousing and big data analytics</li>
+                    </ul>
+
+                    <h4>Typical Use Cases</h4>
+                    <ul>
+                        <li>Business Reporting: Standardized financial and operational reports</li>
+                        <li>Dashboarding: Real-time KPI monitoring and visualization</li>
+                        <li>Historical Analysis: Trend analysis over extended time periods</li>
+                        <li>Regulatory Compliance: Structured reporting for audit requirements</li>
+                    </ul>
+
+                    <h4>Implementation Considerations</h4>
+                    <ul>
+                        <li><strong>Data Modeling:</strong> Typically uses dimensional modeling (star schema, snowflake
+                            schema)</li>
+                        <li><strong>ETL Processes:</strong> Requires robust data transformation pipelines</li>
+                        <li><strong>Cost Management:</strong> Cloud pricing based on storage and compute usage</li>
+                        <li><strong>Performance Tuning:</strong> Indexing, partitioning, and distribution key
+                            optimization</li>
+                    </ul>
+
+                    <h4>Advantages</h4>
+                    <ul>
+                        <li>Excellent query performance for structured analytics</li>
+                        <li>Strong SQL support and compatibility with BI tools</li>
+                        <li>ACID compliance and data consistency</li>
+                        <li>Mature security and governance features</li>
+                    </ul>
+
+                    <h4>Limitations</h4>
+                    <ul>
+                        <li>Limited support for semi-structured and unstructured data</li>
+                        <li>Higher storage costs compared to data lakes</li>
+                        <li>Schema rigidity can limit flexibility</li>
+                        <li>Requires significant upfront modeling effort</li>
+                    </ul>
+                </div>
             </div>
-        </ul>
 
-        <h4>Creating a Basic Express Server:</h4>
-        <div class="code-block">
-            <code>
-// app.js
-const express = require('express');
-const app = express();
+            <div class="card">
+                <div class="card-header">2. Data Lakes: Flexible Raw Data Storage</div>
+                <div class="card-body">
+                    <h4>Definition and Core Purpose</h4>
+                    <p>A data lake is a centralized repository that allows you to store all your structured and
+                        unstructured data at any scale. It's designed to store data in its raw format, without requiring
+                        predefined schema.</p>
 
-app.get('/', (req, res) => {
-    res.send('Hello, Express!');
-});
+                    <h4>Architectural Characteristics</h4>
+                    <ul>
+                        <li><strong>Schema-on-Read:</strong> Applies structure only when data is read/queried</li>
+                        <li><strong>Object Storage:</strong> Data stored as files in native format</li>
+                        <li><strong>Horizontal Scalability:</strong> Scales seamlessly to exabytes of data</li>
+                        <li><strong>Multi-Format Support:</strong> Handles diverse data types and formats</li>
+                    </ul>
 
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
-});
-        </code>
+                    <h4>Key Technologies and Platforms</h4>
+                    <ul>
+                        <li><strong>AWS S3:</strong> Industry-standard object storage with extensive ecosystem</li>
+                        <li><strong>Azure Data Lake Storage:</strong> Optimized for big data analytics workloads</li>
+                        <li><strong>Google Cloud Storage:</strong> Unified object storage with strong consistency</li>
+                        <li><strong>Hadoop HDFS:</strong> Open-source distributed file system (on-premise option)</li>
+                    </ul>
+
+                    <h4>Data Type Support</h4>
+                    <ul>
+                        <li><strong>Structured:</strong> CSV, Parquet, Avro, ORC</li>
+                        <li><strong>Semi-structured:</strong> JSON, XML, log files</li>
+                        <li><strong>Unstructured:</strong> Images, videos, audio files, documents</li>
+                        <li><strong>Real-time:</strong> Streaming data, IoT sensor data</li>
+                    </ul>
+
+                    <h4>Typical Use Cases</h4>
+                    <ul>
+                        <li>Data Science: Machine learning and advanced analytics on raw data</li>
+                        <li>Log Analysis: Storage and processing of application and server logs</li>
+                        <li>IoT Data: Handling high-volume sensor and device data</li>
+                        <li>Archive Storage: Cost-effective long-term data retention</li>
+                    </ul>
+
+                    <h4>Implementation Considerations</h4>
+                    <ul>
+                        <li><strong>Data Cataloging:</strong> Critical for discoverability and governance</li>
+                        <li><strong>Access Control:</strong> Fine-grained permissions management</li>
+                        <li><strong>Cost Optimization:</strong> Lifecycle policies and storage tiering</li>
+                        <li><strong>Data Quality:</strong> Challenges with managing unstructured data</li>
+                    </ul>
+
+                    <h4>Advantages</h4>
+                    <ul>
+                        <li>Extreme flexibility for diverse data types</li>
+                        <li>Cost-effective storage for large volumes</li>
+                        <li>Supports advanced analytics and machine learning</li>
+                        <li>No data modeling required before ingestion</li>
+                    </ul>
+
+                    <h4>Limitations</h4>
+                    <ul>
+                        <li>Can become a "data swamp" without proper governance</li>
+                        <li>Query performance typically slower than data warehouses</li>
+                        <li>Limited transaction support</li>
+                        <li>Requires specialized skills for optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">3. The Lakehouse Concept: Modern Hybrid Approach</div>
+                <div class="card-body">
+                    <h4>Definition and Core Purpose</h4>
+                    <p>A lakehouse architecture combines the flexibility and cost-effectiveness of data lakes with the
+                        performance and reliability of data warehouses. It aims to provide a unified platform for all
+                        data analytics workloads.</p>
+
+                    <h4>Architectural Characteristics</h4>
+                    <ul>
+                        <li><strong>Unified Storage:</strong> Single storage layer for all data types</li>
+                        <li><strong>ACID Transactions:</strong> Data warehouse-like reliability on data lake storage
+                        </li>
+                        <li><strong>Schema Enforcement:</strong> Optional schema validation and evolution</li>
+                        <li><strong>Multi-Engine Support:</strong> Various processing engines can access same data</li>
+                    </ul>
+
+                    <h4>Key Technologies and Platforms</h4>
+                    <ul>
+                        <li><strong>Databricks Delta Lake:</strong> Open format storage layer that brings reliability to
+                            data lakes</li>
+                        <li><strong>Apache Hudi:</strong> Incremental processing framework for big data</li>
+                        <li><strong>Snowflake with External Tables:</strong> Hybrid approach using external data lakes
+                        </li>
+                        <li><strong>BigLake:</strong> Google Cloud's unified storage engine for data lakes and
+                            warehouses</li>
+                    </ul>
+
+                    <h4>Core Features</h4>
+                    <ul>
+                        <li><strong>Time Travel:</strong> Query historical versions of data</li>
+                        <li><strong>Upserts/Deletes:</strong> Support for DML operations on data lake storage</li>
+                        <li><strong>Schema Evolution:</strong> Handle changing data structures gracefully</li>
+                        <li><strong>Performance Optimization:</strong> Automatic file compaction and indexing</li>
+                    </ul>
+
+                    <h4>Benefits Over Traditional Approaches</h4>
+                    <ul>
+                        <li>Single copy of data serves multiple use cases</li>
+                        <li>Eliminates data silos and movement between systems</li>
+                        <li>Supports both BI and AI workloads on same platform</li>
+                        <li>Reduced total cost of ownership and complexity</li>
+                    </ul>
+
+                    <h4>Implementation Patterns</h4>
+                    <ul>
+                        <li><strong>Medallion Architecture:</strong> Bronze (raw), Silver (cleaned), Gold (enriched)
+                            layers</li>
+                        <li><strong>Incremental Processing:</strong> Only process changed data</li>
+                        <li><strong>Unified Governance:</strong> Consistent security and access controls</li>
+                        <li><strong>Multi-Modal Access:</strong> SQL, Python, Spark, and machine learning frameworks
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">4. Choosing the Right Solution: Decision Framework</div>
+                <div class="card-body">
+                    <h4>Technical Considerations</h4>
+                    <ul>
+                        <li><strong>Data Structure:</strong> Structured (warehouse) vs. Diverse formats (lake)</li>
+                        <li><strong>Query Patterns:</strong> Complex SQL (warehouse) vs. Flexible processing (lake)</li>
+                        <li><strong>Performance Needs:</strong> Sub-second responses (warehouse) vs. Batch processing
+                            (lake)</li>
+                        <li><strong>Scale Requirements:</strong> Terabytes to petabytes (both) vs. Exabytes (lake)</li>
+                    </ul>
+
+                    <h4>Organizational Factors</h4>
+                    <ul>
+                        <li><strong>Team Skills:</strong> SQL expertise (warehouse) vs. Big data skills (lake)</li>
+                        <li><strong>Compliance Needs:</strong> Strict governance (warehouse) vs. Flexible access (lake)
+                        </li>
+                        <li><strong>Budget Constraints:</strong> Higher performance cost (warehouse) vs. Lower storage
+                            cost (lake)</li>
+                        <li><strong>Time to Value:</strong> Quick setup (warehouse) vs. Long-term flexibility (lake)
+                        </li>
+                    </ul>
+
+                    <h4>Use Case Alignment</h4>
+                    <p><strong>Choose Data Warehouse When:</strong></p>
+                    <ul>
+                        <li>Business intelligence and standardized reporting</li>
+                        <li>Regulatory compliance requiring strict data governance</li>
+                        <li>Well-defined analytics requirements with stable schemas</li>
+                        <li>Performance-critical dashboards and applications</li>
+                    </ul>
+
+                    <p><strong>Choose Data Lake When:</strong></p>
+                    <ul>
+                        <li>Advanced analytics and machine learning on raw data</li>
+                        <li>Storage of diverse data types including unstructured data</li>
+                        <li>Exploration and discovery with evolving requirements</li>
+                        <li>Cost-effective storage of massive data volumes</li>
+                    </ul>
+
+                    <p><strong>Choose Lakehouse When:</strong></p>
+                    <ul>
+                        <li>Need both BI and AI capabilities on same platform</li>
+                        <li>Desire to modernize existing data infrastructure</li>
+                        <li>Requirement for unified governance across use cases</li>
+                        <li>Growing company with evolving data needs</li>
+                    </ul>
+
+                    <h4>Migration Considerations</h4>
+                    <ul>
+                        <li><strong>Assessment:</strong> Inventory current data assets and use cases</li>
+                        <li><strong>Phased Approach:</strong> Start with new workloads or specific departments</li>
+                        <li><strong>Hybrid Strategy:</strong> Maintain both systems during transition period</li>
+                        <li><strong>Skills Development:</strong> Train team on new technologies and approaches</li>
+                    </ul>
+
+                    <h4>Future Trends</h4>
+                    <ul>
+                        <li><strong>Serverless Architectures:</strong> Automatic scaling and cost optimization</li>
+                        <li><strong>Automated Governance:</strong> AI-driven data quality and cataloging</li>
+                        <li><strong>Real-time Capabilities:</strong> Streaming data processing becoming standard</li>
+                        <li><strong>Multi-Cloud Strategies:</strong> Avoiding vendor lock-in through abstraction layers
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/8a74rQyGpSE" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Data Warehouses vs. Data Lakes vs. Lakehouses</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>The choice between data warehouse, data lake, or lakehouse architecture depends on your specific
+                    business requirements, technical constraints, and organizational capabilities. Modern organizations
+                    often implement a hybrid approach, using each technology for its strengths while working toward a
+                    more unified lakehouse architecture. The optimal solution balances performance, cost, flexibility,
+                    and governance to support both current and future analytics needs.</p>
+            </div>
         </div>
-
-        <h4>Explanation:</h4>
-        <ul>
-            <li><strong>express():</strong> Initializes an Express application.</li>
-            <li><strong>app.get():</strong> Defines a route for handling GET requests to the root URL.</li>
-            <li><strong>app.listen():</strong> Starts the server and listens on the specified port.</li>
-        </ul>
-
-        <h2 class="text-center mt-5">Conclusion</h2>
-        <p>Setting up a server using Node.js and Express.js is a fundamental skill for back-end developers. With
-            Node.js, you can harness the power of JavaScript on the server side, while Express.js provides a robust
-            framework to build efficient web applications. Mastering these tools will enable you to create dynamic,
-            server-side applications that interact seamlessly with front-end technologies.</p>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to Power BI</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-        background-color: #ffffff;
-        color: #000000;
-        font-family: Arial, sans-serif;
-    }
-
-    h1,
-    h2,
-    h3 {
-        color: #007BFF;
-        /* Blue accent */
-    }
-
-    .content-container {
-        margin: 50px auto;
-        max-width: 900px;
-    }
-
-    .custom-section {
-        margin-bottom: 40px;
-    }
-
-    .custom-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .custom-section ul {
-        margin-left: 20px;
-    }
-
-    .custom-section ul li {
-        margin-bottom: 10px;
-    }
-
-    blockquote {
-        font-size: 1.1em;
-        padding: 15px;
-        border-left: 5px solid #007BFF;
-        background-color: #f8f9fa;
-    }
-
-    /* Video container to hold everything */
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 100px;
-    }
-
-    /* Gradient border container */
-    .gradient-border {
-        padding: 5px;
-        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-        border-radius: 10px;
-    }
-
-    /* Video or content inside the border */
-    .video-content {
-        border-radius: 10px;
-        display: block;
-    }
-
-    .video-links {
-        color: grey;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    /* Ensure responsive width and height for the video */
-    iframe {
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-    }
-
-    /* Responsiveness */
-    @media (min-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 450px;
-        }
-    }
-
-    @media (max-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 350px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        iframe {
-            width: 500px;
-            height: 200px;
-        }
-    }
-
-    /* For mobile screens, to avoid the box-like appearance */
-    @media (max-width: 360px) {
-        .video-content {
-            width: 280px;
-            /* Take full width */
-            height: 200px;
-            /* Adjust height to give a more rectangular shape */
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 256px) {
-            .video-content {
-                width: 1080px;
-                /* Take full width */
-                height: 300px;
-                /* Adjust height to give a more rectangular shape */
-            }
-        }
-    }
-</style>
-
-<body>
-    <header>
-        <h1>Introduction to Power BI</h1>
-    </header>
-
-    <main>
-        <section id="overview-bi">
-            <h2>Overview of Business Intelligence (BI)</h2>
-            <p>
-                Business Intelligence involves technologies and strategies for collecting, analyzing, and presenting
-                business information to support decision-making processes.
-            </p>
-        </section>
-
-        <section id="introduction-power-bi">
-            <h2>Introduction to Power BI</h2>
-            <p>
-                Power BI is a powerful suite of business analytics tools developed by Microsoft. It allows users to
-                connect to a wide variety of data sources, create interactive visualizations, and share insights across
-                organizations.
-            </p>
-        </section>
-
-        <section id="power-bi-interface">
-            <h2>Power BI Interface Overview</h2>
-            <ul>
-                <li><strong>Data Source Connection:</strong> Connecting to data sources such as Excel files, databases
-                    (SQL Server, MySQL), cloud services (Azure, Google Analytics), and web data connectors.</li>
-                <li><strong>Data Model:</strong> Understanding Power BI’s data model and relationships between tables.
-                </li>
-            </ul>
-        </section>
-
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p>
-                <strong>Hands-On Practice:</strong> Install Power BI Desktop (free version), connect to a sample
-                dataset, and explore the Power BI interface. Create basic visualizations (e.g., bar charts, line charts)
-                using sample data.
-            </p>
-        </section>
-    </main>
-
-</body>
-
-</html>
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creating Visualizations in Power BI</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-        background-color: #ffffff;
-        color: #000000;
-        font-family: Arial, sans-serif;
-    }
-
-    h1,
-    h2,
-    h3 {
-        color: #007BFF;
-        /* Blue accent */
-    }
-
-    .content-container {
-        margin: 50px auto;
-        max-width: 900px;
-    }
-
-    .custom-section {
-        margin-bottom: 40px;
-    }
-
-    .custom-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .custom-section ul {
-        margin-left: 20px;
-    }
-
-    .custom-section ul li {
-        margin-bottom: 10px;
-    }
-
-    blockquote {
-        font-size: 1.1em;
-        padding: 15px;
-        border-left: 5px solid #007BFF;
-        background-color: #f8f9fa;
-    }
-
-    /* Video container to hold everything */
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 100px;
-    }
-
-    /* Gradient border container */
-    .gradient-border {
-        padding: 5px;
-        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-        border-radius: 10px;
-    }
-
-    /* Video or content inside the border */
-    .video-content {
-        border-radius: 10px;
-        display: block;
-    }
-
-    .video-links {
-        color: grey;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    /* Ensure responsive width and height for the video */
-    iframe {
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-    }
-
-    /* Responsiveness */
-    @media (min-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 450px;
-        }
-    }
-
-    @media (max-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 350px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        iframe {
-            width: 500px;
-            height: 200px;
-        }
-    }
-
-    /* For mobile screens, to avoid the box-like appearance */
-    @media (max-width: 360px) {
-        .video-content {
-            width: 280px;
-            /* Take full width */
-            height: 200px;
-            /* Adjust height to give a more rectangular shape */
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 256px) {
-            .video-content {
-                width: 1080px;
-                /* Take full width */
-                height: 300px;
-                /* Adjust height to give a more rectangular shape */
-            }
-        }
-    }
-</style>
-
-<body>
-    <header>
-        <h1>Creating Visualizations in Power BI</h1>
-    </header>
-
-    <main>
-        <section id="charts-graphs">
-            <h2>Charts and Graphs in Power BI</h2>
-            <p>Power BI offers a variety of visualization types to represent data effectively:</p>
-            <ul>
-                <li><strong>Bar Charts, Line Charts, Area Charts:</strong> Visualizing trends and comparisons.</li>
-                <li><strong>Pie Charts, Scatter Plots:</strong> Showing distributions and relationships.</li>
-                <li><strong>Maps:</strong> Geographical data visualization using maps.</li>
-            </ul>
-        </section>
-
-        <section id="formatting-customization">
-            <h2>Formatting and Customization</h2>
-            <p>Enhance your visualizations with these formatting and customization options:</p>
-            <ul>
-                <li><strong>Themes and Styles:</strong> Applying predefined themes and customizing visual elements
-                    (e.g., colors, fonts).</li>
-                <li><strong>Interaction and Drill-Down:</strong> Adding interactivity through drill-down features and
-                    cross-filtering.</li>
-            </ul>
-        </section>
-
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p>
-                <strong>Hands-On Practice:</strong> Create various types of visualizations in Power BI using sample
-                datasets. Customize visualizations by adjusting formatting, applying themes, and adding interactive
-                features (e.g., tooltips, drill-through).
-            </p>
-        </section>
-    </main>
+    <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+    <script>
+
+    </script>
 
 </body>
 

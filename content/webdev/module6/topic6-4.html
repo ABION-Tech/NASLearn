@@ -2,265 +2,566 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hands-On CRUD Application</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-        h1,
-        h2,
-        h4 {
-            color: #007bff;
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        .container {
-            margin-top: 30px;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        .code-block {
-            background-color: #343a40;
-            color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
 
-        li::before {
-            content: '•';
-            color: #007bff;
-            padding-right: 5px;
-        }
+    .container {
+      padding: 20px;
+    }
 
-        .explanation {
-            color: #6c757d;
-        }
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .card {
-            border: none;
-        }
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
 
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
 
-        .container {
-            padding: 20px;
-        }
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
 
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
 
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
 
-        /* Video or content inside the border */
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
         .video-content {
-            border-radius: 10px;
-            display: block;
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
 
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
+  </style>
 
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
-        }
-    </style>
 </head>
 
+
 <body>
+  <div class="container">
+    <div class="header">
+      <h1>Week 6: Introduction to Backend Development with Node.js</h1>
+      <h2>6.4: Express.js Fundamentals - The Web Developer's Superpower</h2>
+    </div>
 
-    <div class="container">
-        <h1 class="text-center mb-4">Hands-On Practice: Building a Simple CRUD Application</h1>
+    <div class="module-content">
+      <h2>Learning Objectives</h2>
+      <p>By the end of this module, you will be able to:</p>
+      <ul>
+        <li>Define Express.js and articulate its purpose and advantages over using the core http module.</li>
+        <li>Initialize a new Node.js project and install Express as a dependency.</li>
+        <li>Create a basic Express server and understand its core components.</li>
+        <li>Implement routing to handle different HTTP methods and URL patterns, including extracting data from
+          parameters and query strings.</li>
+        <li>Explain the concept of middleware, use built-in middleware, and create simple custom middleware.</li>
+        <li>Serve static files (like HTML, CSS, images) from a directory using Express.</li>
+      </ul>
 
-        <h2>4.1. Project Setup</h2>
-        <h4>Initialize the Project:</h4>
-        <p>Create a new directory for your project and initialize it with npm.</p>
-        <div class="code-block">
-            <code>
-mkdir my-backend-project<br>
-cd my-backend-project<br>
-npm init -y
-        </code>
+      <h2>1. Introduction: From Manual Labor to Express Speed</h2>
+      <p>In the previous module, you built an HTTP server using just the Node.js http module. You saw firsthand how
+        managing routes with a giant if/else statement can quickly become messy and unmanageable.</p>
+      <p>Express.js is the solution to that problem. It is the most popular, minimal, and flexible web application
+        framework for Node.js. Think of it not as a completely new language, but as a powerful set of tools and a clear
+        structure built on top of the http module. It handles the tedious tasks for you, allowing you to write cleaner,
+        more readable, and more maintainable code.</p>
+      <p>It provides:</p>
+      <ul>
+        <li><strong>Robust Routing:</strong> A clean way to define how your application responds to client requests for
+          a specific endpoint (URI) and HTTP method (GET, POST, etc.).</li>
+        <li><strong>Middleware:</strong> Functions that have access to the request and response objects. They can
+          execute any code, make changes to the request/response, and end the cycle or call the next middleware in line.
+          This is where the real power of Express lies.</li>
+        <li><strong>Utilities:</strong> Convenient helpers for tasks like parsing incoming data, setting response
+          headers, and rendering views.</li>
+      </ul>
+
+      <h2>2. Setting Up an Express Application</h2>
+      <p>Let's get Express up and running. Unlike the core http module, Express is not built into Node.js; it's a
+        third-party package that you need to install.</p>
+
+      <div class="card">
+        <div class="card-header">
+          Step 1: Initialize a Project
         </div>
-
-        <h4>Install Dependencies:</h4>
-        <p>Install Express and Mongoose.</p>
-        <div class="code-block">
-            <code>
-npm install express mongoose
-        </code>
+        <div class="card-body">
+          <p>First, create a new directory for your project and initialize it with npm to manage your dependencies.</p>
+          <pre><code>mkdir my-express-app
+cd my-express-app
+npm init -y  # The -y flag accepts all default values</code></pre>
         </div>
+      </div>
 
-        <h2>4.2. Creating the Server</h2>
-        <h4>Setup Express Server:</h4>
-        <div class="code-block">
-            <code>
-// app.js
-const express = require('express');<br>
-const mongoose = require('mongoose');<br>
-const app = express();<br><br>
+      <div class="card">
+        <div class="card-header">
+          Step 2: Install Express
+        </div>
+        <div class="card-body">
+          <p>Use npm (Node Package Manager) to download and install Express into your project.</p>
+          <pre><code>npm install express</code></pre>
+          <p>This command adds Express to your package.json file as a dependency and downloads it into the node_modules
+            folder.</p>
+        </div>
+      </div>
 
-app.use(express.json());<br><br>
-
-mongoose.connect('mongodb://localhost/mydatabase', {<br>
-    useNewUrlParser: true,<br>
-    useUnifiedTopology: true<br>
-});<br><br>
-
-const userSchema = new mongoose.Schema({<br>
-    name: String,<br>
-    email: String,<br>
-    age: Number<br>
-});<br><br>
-
-const User = mongoose.model('User', userSchema);<br><br>
-
-// Create user<br>
-app.post('/users', (req, res) => {<br>
-    const newUser = new User(req.body);<br>
-    newUser.save((err, user) => {<br>
-        if (err) return res.status(500).send(err);<br>
-        res.status(201).send(user);<br>
-    });<br>
-});<br><br>
-
-// Read users<br>
-app.get('/users', (req, res) => {<br>
-    User.find({}, (err, users) => {<br>
-        if (err) return res.status(500).send(err);<br>
-        res.status(200).send(users);<br>
-    });<br>
-});<br><br>
-
-// Update user<br>
-app.put('/users/:id', (req, res) => {<br>
-    User.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, user) => {<br>
-        if (err) return res.status(500).send(err);<br>
-        res.status(200).send(user);<br>
-    });<br>
-});<br><br>
-
-// Delete user<br>
-app.delete('/users/:id', (req, res) => {<br>
-    User.findByIdAndDelete(req.params.id, (err) => {<br>
-        if (err) return res.status(500).send(err);<br>
-        res.status(204).send();<br>
-    });<br>
-});<br><br>
-
-app.listen(3000, () => {<br>
-    console.log('Server running on port 3000');<br>
+      <div class="card">
+        <div class="card-header">
+          Step 3: Your First Express Server
+        </div>
+        <div class="card-body">
+          <p>Create a file named app.js (or index.js) and write the following code:</p>
+          <pre><code>// 1. Import the express module
+const express = require('express');
+// 2. Create an Express application
+// This is equivalent to http.createServer() but much more powerful.
+const app = express();
+// 3. Define the port number
+const PORT = 3000;
+// 4. Define a route handler for the homepage
+// app.METHOD(PATH, HANDLER_FUNCTION)
+app.get('/', (req, res) => {
+  // Instead of res.end(), Express provides res.send()
+  // It automatically sets the Content-Type header based on the input.
+  res.send('Welcome to Express!');
 });
-        </code>
+// 5. Start the server, make it listen on the port
+app.listen(PORT, () => {
+  console.log(`✅ Express server is running on http://localhost:${PORT}`);
+});</code></pre>
         </div>
+      </div>
 
-        <h2>4.3. Testing the Application</h2>
-        <h4>Using Postman:</h4>
-        <p>Test CRUD operations by sending HTTP requests to your API endpoints using Postman or any other API testing
-            tool.</p>
-
-        <h4>Verifying Functionality:</h4>
-        <p>Ensure that all routes are functioning correctly and that data is being stored, retrieved, updated, and
-            deleted as expected.</p>
-
-    </div>
-
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
+      <div class="card">
+        <div class="card-header">
+          Step 4: Run the Server
         </div>
-    </div>
+        <div class="card-body">
+          <p>Execute your script with Node:</p>
+          <pre><code>node app.js</code></pre>
+          <p>Visit http://localhost:3000 in your browser. You should see "Welcome to Express!". Congratulations, you've
+            built your first Express server!</p>
+        </div>
+      </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <h2>3. The Power of Middleware</h2>
+      <p>Middleware functions are the heart and soul of Express. They are functions that execute during the lifecycle of
+        a request to the Express server. Each middleware function has access to:</p>
+      <ul>
+        <li>The request (req) object.</li>
+        <li>The response (res) object.</li>
+        <li>The next middleware function in the application's request-response cycle, commonly denoted by a variable
+          named next.</li>
+      </ul>
+
+      <div class="card">
+        <div class="card-header">
+          How Middleware Works: The "Chain of Responsibility"
+        </div>
+        <div class="card-body">
+          <p>Think of middleware as a pipeline. A request goes through each middleware function in the order they are
+            defined until a response is sent back.</p>
+          <pre><code>// A simple logging middleware
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next(); // This calls the next middleware function in the chain.
+});
+// Built-in middleware to parse JSON data from requests
+app.use(express.json()); // This adds a parsed `body` object to the `req` object.
+// The route handler is also a form of middleware that ends the cycle.
+app.post('/data', (req, res) => {
+  // Because express.json() ran first, we can access the sent JSON data!
+  console.log(req.body);
+  res.json({ received: true, data: req.body });
+});</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Key Middleware Types
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Application-level middleware:</strong> Bound to the app instance using app.use() or
+              app.METHOD(). (The most common type).</li>
+            <li><strong>Built-in middleware:</strong> Included with Express, like express.json() and express.static().
+            </li>
+            <li><strong>Third-party middleware:</strong> Added from npm packages, like morgan for logging, helmet for
+              security, and cors for enabling Cross-Origin Resource Sharing.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>4. Robust Routing</h2>
+      <p>Express routing is a vast improvement over manual if/else checks. It provides methods (app.get, app.post,
+        app.put, app.delete, etc.) that correspond to HTTP methods.</p>
+
+      <div class="card">
+        <div class="card-header">
+          A. Route Parameters
+        </div>
+        <div class="card-body">
+          <p>Parameters are named URL segments used to capture values at a specific position in the URL. They are
+            defined by adding a colon : before the name in the route path.</p>
+          <pre><code>// Route with a parameter ':id'
+// Example URL: /users/123
+app.get('/users/:id', (req, res) => {
+  // The captured value is available in req.params
+  const userId = req.params.id; // '123' for the example URL
+  res.send(`Looking for User ID: ${userId}`);
+});
+// You can have multiple parameters
+// Example URL: /posts/2023/08
+app.get('/posts/:year/:month', (req, res) => {
+  res.send(`Showing posts from ${req.params.month}/${req.params.year}`);
+});</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          B. Query Strings
+        </div>
+        <div class="card-body">
+          <p>Query strings are not part of the route path. They are the key-value pairs after the ? in a URL. Express
+            automatically parses them into a handy JavaScript object.</p>
+          <pre><code>// Example URL: /search?q=javascript&sort=date
+app.get('/search', (req, res) => {
+  // The parsed query string is available in req.query
+  const searchTerm = req.query.q;     // 'javascript'
+  const sortOrder = req.query.sort;   // 'date'
+  res.send(`You searched for '${searchTerm}', sorted by '${sortOrder}'`);
+});</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          C. Handling Different HTTP Methods
+        </div>
+        <div class="card-body">
+          <p>Express makes it trivial to handle different methods on the same path.</p>
+          <pre><code>// GET /articles - Fetch all articles
+app.get('/articles', (req, res) => {
+  res.send('Get all articles');
+});
+// POST /articles - Create a new article
+app.post('/articles', (req, res) => {
+  // Data would typically be in req.body (if parsed by middleware)
+  res.send('Create a new article');
+});
+// PUT /articles/:id - Update a specific article
+app.put('/articles/:id', (req, res) => {
+  res.send(`Update article with ID: ${req.params.id}`);
+});
+// DELETE /articles/:id - Delete a specific article
+app.delete('/articles/:id', (req, res) => {
+  res.send(`Delete article with ID: ${req.params.id}`);
+});</code></pre>
+        </div>
+      </div>
+
+      <h2>5. Serving Static Files</h2>
+      <p>A web application needs to serve static assets: HTML files, CSS stylesheets, JavaScript client-side code,
+        images, and fonts. Express provides the express.static built-in middleware to do this easily.</p>
+
+      <div class="card">
+        <div class="card-header">
+          Step 1: Create a Directory
+        </div>
+        <div class="card-body">
+          <p>Create a folder in your project named public. This is the standard name for holding static files.</p>
+          <pre><code>my-express-app/
+├── node_modules/
+├── public/       <-- Your static files go here
+│   ├── index.html
+│   ├── style.css
+│   └── image.jpg
+├── package.json
+└── app.js</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Step 2: Use the static middleware
+        </div>
+        <div class="card-body">
+          <p>In your app.js, add the following line:</p>
+          <pre><code>app.use(express.static('public'));</code></pre>
+          <p><strong>How it works:</strong> This middleware serves files from the public directory relative to where you
+            started your Node process. Now, the browser can access any file inside public directly.</p>
+          <ul>
+            <li>http://localhost:3000/index.html will serve public/index.html</li>
+            <li>http://localhost:3000/style.css will serve public/style.css</li>
+            <li>http://localhost:3000/image.jpg will serve public/image.jpg</li>
+          </ul>
+          <p>You can also create a virtual path (a prefix):</p>
+          <pre><code>app.use('/static', express.static('public'));</code></pre>
+          <p>Now, the files are available under the /static path:</p>
+          <ul>
+            <li>http://localhost:3000/static/image.jpg</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>6. Key Takeaways</h2>
+      <ul>
+        <li><strong>Express is a Framework:</strong> It provides structure and utilities on top of Node's http module,
+          making development faster and cleaner.</li>
+        <li><strong>Middleware is Key:</strong> It's a powerful concept for executing code, manipulating
+          requests/responses, and adding functionality like logging, parsing, and authentication.</li>
+        <li><strong>Routing is Declarative:</strong> You declare routes explicitly using app.METHOD(PATH, HANDLER),
+          which is far superior to manual if/else checks.</li>
+        <li><strong>Data Extraction:</strong> Use req.params for route parameters, req.query for query strings, and
+          req.body (with middleware) for data in the request body.</li>
+        <li><strong>Static Files are Easy:</strong> The express.static middleware is the simple, standard way to serve
+          static assets like images, CSS, and HTML files.</li>
+      </ul>
+
+      <h2>7. Practice & Further Exploration</h2>
+      <ol>
+        <li><strong>Build a Simple API:</strong> Create routes for a simple resource like "books" (/books, /books/:id).
+          Implement GET and POST handlers. Use express.json() middleware to read JSON data from a POST request.</li>
+        <li><strong>Create Custom Middleware:</strong> Write a middleware function that calculates how long a request
+          takes and logs the time to the console. (Hint: use Date.now() before and after calling next()).</li>
+        <li><strong>Experiment with Static Files:</strong> Create a public folder with an index.html file and a
+          style.css file. Link them and use the static middleware to serve them. Try adding an image.</li>
+        <li><strong>Handle 404s:</strong> Add a middleware at the very end of your file (after all other routes) to
+          handle 404 errors for any request that didn't match a route.
+          <pre><code>app.use((req, res) => {
+  res.status(404).send("404 - That page doesn't exist");
+});</code></pre>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
 </body>
+
+
 
 </html>

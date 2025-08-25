@@ -4,73 +4,554 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Measuring Email Campaign Performance</title>
+    <title> New Age Skillsphere</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
         }
 
         .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
+            padding: 20px;
         }
 
-        h1 {
-            color: #007BFF;
-            /* Blue accent for main heading */
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
             text-align: center;
-            margin-bottom: 30px;
+            margin-top: 5px;
         }
 
-        h2 {
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
             color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 20px;
+            /* Blue accent */
         }
 
-        .section {
-            margin-bottom: 30px;
-            padding: 15px;
-            border-left: 5px solid #007BFF;
-            /* Blue accent border */
-            background-color: #f8f9fa;
-            /* Light gray background for sections */
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        ul {
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
             margin-left: 20px;
         }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
     </style>
+
 </head>
 
+
 <body>
-
     <div class="container">
-        <h1>Measuring Email Campaign Performance</h1>
+        <div class="header">
+            <h1>Module 6: Email Marketing and Marketing Automation</h1>
+            <h2>6.3: Email Marketing Tools and Platforms</h2>
+        </div>
 
-        <div class="section">
-            <h2>Key Metrics:</h2>
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>Knowing the strategy and creative elements of email marketing is only half the battle. To execute
+                campaigns at scale, you need the right technology. This module introduces you to the software platforms
+                that power modern email marketing, the process of launching a campaign, and the advanced
+                techniques—automation, segmentation, and testing—that transform a basic email blast into a
+                sophisticated, results-driven engine for growth.</p>
+
+            <h2>1. Choosing Your Platform: A Comparative Overview</h2>
+            <p>Selecting an Email Service Provider (ESP) is a critical decision. The right platform acts as the central
+                hub for your audience data, your creative content, and your performance analytics. There is no single
+                "best" platform; the best choice depends on your business's size, budget, and technical needs.</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Key Evaluation Criteria
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Ease of Use:</strong> How intuitive is the interface for building emails and
+                            campaigns?</li>
+                        <li><strong>Automation Capabilities:</strong> Can you build complex workflows based on user
+                            behavior?</li>
+                        <li><strong>Segmentation Features:</strong> How easily can you slice and dice your audience?
+                        </li>
+                        <li><strong>Integrations:</strong> Does it connect with your CRM, e-commerce platform, website,
+                            and other tools?</li>
+                        <li><strong>Pricing Structure:</strong> Is it based on the number of subscribers, number of
+                            emails sent, or both?</li>
+                        <li><strong>Scalability:</strong> Will it grow with your business as your list and needs become
+                            more complex?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Platform Comparisons</h3>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Best For</th>
+                        <th>Key Strengths</th>
+                        <th>Considerations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Mailchimp</strong></td>
+                        <td>Beginners, SMBs, Creatives</td>
+                        <td>Extremely user-friendly drag-and-drop builder. Strong templates and branding tools. Good
+                            free plan for starting out.</td>
+                        <td>Automation can feel limited compared to more advanced platforms. Pricing can get high as
+                            your list grows.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Constant Contact</strong></td>
+                        <td>Small Businesses, Events, Non-Profits</td>
+                        <td>Excellent event management features (RSVPs, reminders). Strong customer support and
+                            guidance. Very easy to use.</td>
+                        <td>Less focused on deep marketing automation and CRM integration compared to others.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HubSpot</strong></td>
+                        <td>Inbound Marketing, Sales & Marketing Alignment</td>
+                        <td>Superior CRM integration. Ties email activity directly to contact records. Powerful lead
+                            nurturing within a full marketing suite. Free plan available.</td>
+                        <td>The full power is unlocked with the paid suite, which can be expensive. Can be complex for
+                            pure email needs.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ActiveCampaign</strong></td>
+                        <td>Power Users, Advanced Automation</td>
+                        <td>Best-in-class automation and segmentation. Incredibly detailed triggers and conditions based
+                            on contact behavior. Very powerful for the price.</td>
+                        <td>Steeper learning curve. The interface is powerful but can be overwhelming for absolute
+                            beginners.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Klaviyo</strong></td>
+                        <td>E-commerce</td>
+                        <td>Deeply integrated with platforms like Shopify. Specialized in revenue-driving flows like
+                            abandoned carts and post-purchase upsells. Strong product recommendation features.</td>
+                        <td>Very focused on e-commerce; less ideal for B2B or lead generation.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Your choice of platform should be a strategic decision. Start by defining your primary use case
+                    (e.g., "I need to recover abandoned carts" vs. "I need to nurture leads from my website"), then
+                    choose the tool that best serves that function.</p>
+            </div>
+
+            <h2>2. The Campaign Setup Process: A Step-by-Step Guide</h2>
+            <p>Launching a campaign is a structured process. Following these steps ensures nothing is missed and your
+                campaign is set up for success.</p>
+
+            <ol>
+                <li><strong>Import & Manage Contacts:</strong> Bring your clean, permission-based list into the
+                    platform. Organize them into a main "Audience" or "List."</li>
+                <li><strong>Segment the List:</strong> Before you build the email, decide who gets it. Use the
+                    platform's tools to create a segment based on your criteria (e.g., "Contacts where Country is
+                    Canada" or "Contacts who clicked Link A in the last 30 days").</li>
+                <li><strong>Design the Email:</strong> Use the platform's editor (drag-and-drop, HTML, or
+                    template-based) to create your email. Always use a pre-designed template as a starting point for
+                    brand consistency.</li>
+                <li><strong>Schedule the Send:</strong> Determine the optimal day and time for your audience. (Pro Tip:
+                    Industry best practices are starting points; you should A/B test send times for your specific
+                    audience).</li>
+                <li><strong>Test Relentlessly:</strong>
+                    <ul>
+                        <li>Send a Test Email: Send it to yourself and colleagues. Check rendering on desktop, mobile,
+                            and in different email clients (Gmail, Outlook, Apple Mail).</li>
+                        <li>Check Links: Click every single link to ensure they go to the correct destination.</li>
+                        <li>Spellcheck: Proofread the subject line, preheader, and body text.</li>
+                    </ul>
+                </li>
+                <li><strong>Launch:</strong> Hit the "Send" or "Schedule" button. The platform will handle the delivery
+                    to your segmented list.</li>
+            </ol>
+
+            <h2>3. Automation Workflows: The Heart of Modern Email</h2>
+            <p>Automation is the process of sending targeted emails to people based on triggers (specific actions they
+                take) or schedules (specific times after a trigger). This allows you to send the right message at the
+                right time, 24/7, without manual effort.</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Drip Campaigns (Time-based)
+                </div>
+                <div class="card-body">
+                    <p>A pre-written, pre-scheduled sequence of emails sent out at specific time intervals after a
+                        trigger event.</p>
+                    <p><strong>Example: Welcome Series</strong> Trigger: Someone subscribes to your list.</p>
+                    <ul>
+                        <li>Email 1: Immediate - "Thanks for subscribing! Here's your promised lead magnet."</li>
+                        <li>Email 2: 1 day later - "Here's how our product helped someone like you."</li>
+                        <li>Email 3: 3 days later - "Got questions? Here are the answers."</li>
+                        <li>Email 4: 7 days later - "Special offer for our new subscribers."</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Nurture Campaigns (Behavior-triggered)
+                </div>
+                <div class="card-body">
+                    <p>Emails sent based on a user's specific behavior, making them highly relevant.</p>
+                    <p><strong>Example: Cart Abandonment</strong> Trigger: A user adds a product to their cart but does
+                        not complete the purchase within a set time (e.g., 1 hour).</p>
+                    <ul>
+                        <li>Email 1: 1 hour later - "Did you forget something?" + picture of the cart items.</li>
+                        <li>Email 2: 24 hours later - "Still thinking about it? Here's what customers say..." + reviews.
+                        </li>
+                        <li>Email 3: 72 hours later - "Last chance! Here's 10% off to complete your order." + discount
+                            code.</li>
+                    </ul>
+                    <p>Other common workflows: Browse abandonment, post-purchase follow-up, re-engagement campaigns for
+                        inactive subscribers, and birthday greetings.</p>
+                </div>
+            </div>
+
+            <h2>4. Segmentation: Speaking to Specific Audiences</h2>
+            <p>Segmentation is the practice of dividing your main contact list into smaller, targeted groups (segments)
+                based on shared characteristics. This allows for hyper-personalized messaging that dramatically
+                increases engagement.</p>
+
+            <h3>Why Segment?</h3>
+            <p>Sending the same email to your entire list is a missed opportunity. A new lead needs different
+                information than a loyal customer. A customer in Florida doesn't care about a snow shovel sale.</p>
+
+            <h3>Types of Segmentation</h3>
             <ul>
-                <li><strong>Open Rates:</strong> The percentage of recipients who open an email. High open rates
-                    indicate effective subject lines and a well-targeted audience.</li>
-                <li><strong>Click-Through Rates (CTR):</strong> The percentage of recipients who click on a link within
-                    the email. It measures engagement and the effectiveness of the content.</li>
-                <li><strong>Conversion Rates:</strong> The percentage of recipients who complete a desired action (e.g.,
-                    purchase, sign-up) after clicking through.</li>
-                <li><strong>Bounce Rates:</strong> The percentage of emails that fail to deliver. It’s crucial to
-                    monitor hard (permanent) and soft (temporary) bounces to maintain a healthy list.</li>
+                <li><strong>Demographic:</strong> Location, age, gender, job title, company size.</li>
+                <li><strong>Behavioral:</strong> Purchase history, pages visited on your website, links clicked in
+                    previous emails, items added to cart.</li>
+                <li><strong>Engagement Level:</strong> Frequent openers/clickers vs. inactive subscribers (no opens in
+                    last 6 months).</li>
             </ul>
+
+            <h3>Advanced Example</h3>
+            <p>Instead of sending a "20% Off Everything" sale to everyone, you could create three segments:</p>
+            <ol>
+                <li><strong>Segment A (Loyal Customers):</strong> "A special thank you: Enjoy 25% off our entire store."
+                </li>
+                <li><strong>Segment B (Window Shoppers):</strong> "We noticed you were looking! Here's 20% off the items
+                    you viewed."</li>
+                <li><strong>Segment C (Everyone Else):</strong> "Spring Sale: Enjoy 15% off sitewide."</li>
+            </ol>
+
+            <h2>5. A/B Testing: Data-Driven Optimization</h2>
+            <p>A/B testing (or split testing) is a method of comparing two versions of an email to see which one
+                performs better with a sample of your audience. The winning version is then sent to the rest of the
+                list. This removes guesswork and allows you to continuously improve your results.</p>
+
+            <h3>The Golden Rule</h3>
+            <p>Only test one variable at a time. If you test the subject line and the CTA button color simultaneously,
+                you won't know which change caused the difference in performance.</p>
+
+            <h3>What to Test</h3>
+            <ul>
+                <li><strong>Subject Lines (Most Common):</strong> Test curiosity vs. direct benefit, personalization vs.
+                    no personalization, emoji vs. no emoji.</li>
+                <li><strong>From Name:</strong> Company name vs. personal name (e.g., "Company Inc." vs. "John from
+                    Company Inc.")."</li>
+                <li><strong>Send Time:</strong> Tuesday 10 AM vs. Thursday 2 PM.</li>
+                <li><strong>Content:</strong> Long copy vs. short copy, video vs. image.</li>
+                <li><strong>CTA:</strong> Button color, button text ("Buy Now" vs. "Get Your Copy"), placement of the
+                    CTA.</li>
+            </ul>
+
+            <h3>How to Do It</h3>
+            <ol>
+                <li>Choose one element to test (e.g., Subject Line A vs. Subject Line B).</li>
+                <li>The platform will split your audience into two (or more) random groups and send each version to a
+                    portion of the list (e.g., 20%).</li>
+                <li>After a set time (usually a few hours), the platform will determine a winner based on your chosen
+                    metric (typically the highest open rate for subject line tests or highest click-through rate for CTA
+                    tests).</li>
+                <li>The winning version is automatically sent to the remaining 80% of the list.</li>
+            </ol>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Always be testing. Small, incremental improvements based on data compound over time to create
+                    massively successful email programs.</p>
+            </div>
+
+            <h2>Module 6.3 Summary:</h2>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Definition</th>
+                        <th>Practical Application</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ESP Selection</strong></td>
+                        <td>Choosing the right software platform.</td>
+                        <td>Match platform strengths (ease, automation, CRM) to your business needs.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Campaign Setup</strong></td>
+                        <td>The process of launching an email.</td>
+                        <td>Follow the sequence: List → Segment → Design → Schedule → Test → Send.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Automation</strong></td>
+                        <td>Sending emails based on triggers or schedules.</td>
+                        <td>Set up "set-and-forget" sequences for welcome, nurture, and re-engagement.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Segmentation</strong></td>
+                        <td>Dividing your list into targeted groups.</td>
+                        <td>Send more relevant offers by targeting users based on behavior and demographics.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>A/B Testing</strong></td>
+                        <td>Comparing two versions to find a winner.</td>
+                        <td>Test one variable at a time (e.g., subject lines) to optimize performance based on data.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="key-point">
+                <h4>Up Next</h4>
+                <p>In our final section for this module, we will learn how to measure the success of all this work. We
+                    will dive into Email Analytics and Reporting, learning how to interpret key metrics and calculate
+                    the ROI of your email marketing efforts.</p>
+            </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+    <script>
+
+    </script>
 
 </body>
 

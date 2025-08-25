@@ -4,240 +4,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 6: Advanced Supervised Learning - Support Vector Machines (SVMs)</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
             font-family: Arial, sans-serif;
         }
 
         h1,
         h2,
         h3 {
-            color: #007bff;
-            /* Bootstrap primary color */
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        h1 {
-            margin-top: 30px;
-            margin-bottom: 20px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        h2 {
-            margin-top: 20px;
-            margin-bottom: 15px;
-        }
-
-        h3 {
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        .section {
+        .custom-section {
             margin-bottom: 40px;
         }
 
-        .code {
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
             background-color: #f8f9fa;
-            border-left: 3px solid #007bff;
-            padding: 10px;
-            overflow-x: auto;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
+
 </head>
 
 <body>
     <div class="container">
-        <h1>Week 6: Advanced Supervised Learning - Support Vector Machines (SVMs)</h1>
-
-        <div class="section">
-            <h2>Support Vector Machines (SVMs)</h2>
-            <p>Support Vector Machines (SVMs) are a powerful class of supervised learning algorithms primarily used for
-                classification tasks, especially when the dataset contains high-dimensional feature spaces. The
-                fundamental objective of SVM is to determine the hyperplane that best separates the different classes in
-                the dataset while maximizing the margin between them.</p>
+        <div class="header">
+            <h1>6.2: The Engine of Learning: Forward Propagation and Backpropagation</h1>
         </div>
 
-        <div class="section">
-            <h2>1. Linear SVM</h2>
-            <p>The linear SVM seeks to establish a hyperplane, which is a linear decision boundary, that divides the
-                classes within the dataset. Key concepts include:</p>
-            <ul>
-                <li><strong>Hyperplane:</strong> A linear decision boundary that separates the data into two classes.
-                </li>
-                <li><strong>Margin:</strong> The distance between the hyperplane and the closest data points of each
-                    class.</li>
-                <li><strong>Optimization:</strong> SVM optimizes the position of the hyperplane to maximize the margin.
-                </li>
-            </ul>
-            <p>The mathematical formulation for a linear SVM can be expressed as:</p>
-            <div class="code">
-                maximize: γ <br>
-                subject to: y<sub>i</sub>(w⋅x<sub>i</sub> + b) ≥ 1 for all i
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>A neural network's architecture is merely a potential—an empty framework waiting to be filled with
+                knowledge. The true magic lies in the learning process that animates this structure. This fundamental
+                process operates through a continuous cycle of making predictions and learning from errors, formally
+                known as forward propagation and backpropagation. Understanding this engine is crucial to grasping how
+                neural networks transform from blank slates into powerful predictive models.</p>
+
+            <h2>Content</h2>
+            <h3>The Learning Cycle: A Four-Step Process</h3>
+            <p>Neural network training follows an iterative process that can be broken down into four essential steps,
+                repeated across thousands of iterations:</p>
+
+            <div class="card">
+                <div class="card-header">Step 1: The Forward Pass (Making Predictions)</div>
+                <div class="card-body">
+                    <p>The forward pass is the process of turning input data into predictions by passing it through the
+                        network's layers.</p>
+                    <p><strong>Process Details:</strong></p>
+                    <ul>
+                        <li>Input data is fed into the input layer</li>
+                        <li>Each neuron calculates a weighted sum of its inputs plus bias:
+                            <div
+                                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+                                z = (w₁x₁ + w₂x₂ + ... + wₙxₙ) + b
+                            </div>
+                        </li>
+                        <li>This sum is passed through an activation function: a = f(z)</li>
+                        <li>The output becomes the input to the next layer</li>
+                        <li>This continues through all hidden layers until the output layer produces the final
+                            prediction</li>
+                    </ul>
+                    <p><strong>Mathematical Representation:</strong> For a network with L layers, the forward pass can
+                        be described as:
+                    <div
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+                        a⁽ˡ⁾ = f(z⁽ˡ⁾) where z⁽ˡ⁾ = W⁽ˡ⁾a⁽ˡ⁻¹⁾ + b⁽ˡ⁾
+                    </div>
+                    Here, W represents the weight matrix, b the bias vector, and f the activation function.
+                    </p>
+                </div>
             </div>
-            <p>Where:</p>
-            <ul>
-                <li><code>y<sub>i</sub></code>: The class label of the i<sup>th</sup> data point.</li>
-                <li><code>x<sub>i</sub></code>: The i<sup>th</sup> data point.</li>
-                <li><code>w</code>: The normal vector to the hyperplane.</li>
-                <li><code>b</code>: The bias term.</li>
-                <li><code>γ</code>: The margin.</li>
-            </ul>
-        </div>
 
-        <div class="section">
-            <h2>2. Kernel Trick</h2>
-            <p>Many real-world datasets are not linearly separable. The kernel trick is a technique used in SVMs to
-                transform data into a higher-dimensional space, making it easier to separate the classes linearly.</p>
-            <ul>
-                <li><strong>Common Kernels:</strong>
+            <div class="card">
+                <div class="card-header">Step 2: Calculating the Error (Quantifying Mistakes)</div>
+                <div class="card-body">
+                    <p>After making predictions, the network must measure how wrong it was using a loss function.</p>
+
+                    <h4>Mean Squared Error (MSE)</h4>
                     <ul>
-                        <li><strong>Linear Kernel:</strong> Used for linearly separable data.</li>
-                        <li><strong>Polynomial Kernel:</strong> Captures non-linear relationships.</li>
-                        <li><strong>Radial Basis Function (RBF) Kernel:</strong> A commonly used kernel for non-linear
-                            relationships.</li>
+                        <li><strong>Used for:</strong> Regression problems (predicting continuous values)</li>
+                        <li><strong>Formula:</strong>
+                            <div
+                                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+                                L = (1/n) * Σ(y_pred - y_true)²
+                            </div>
+                        </li>
+                        <li><strong>Properties:</strong> Heavily penalizes large errors, differentiable, convex for
+                            linear models</li>
                     </ul>
-                </li>
-            </ul>
-        </div>
 
-        <div class="section">
-            <h2>3. Soft Margin SVM</h2>
-            <p>To improve generalization and handle outliers, SVM employs a soft margin approach, which allows for some
-                misclassifications. The regularization parameter (C) controls the balance between maximizing the margin
-                and minimizing misclassifications:</p>
-            <ul>
-                <li><strong>Regularization Parameter (C):</strong> A hyperparameter that dictates how much we want to
-                    avoid misclassifying each training example.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>4. Evaluation Metrics</h2>
-            <p>To assess the performance of SVM models, several metrics can be utilized:</p>
-            <ul>
-                <li><strong>Accuracy:</strong> The proportion of correct predictions made by the model.</li>
-                <li><strong>Precision:</strong> The ratio of true positive predictions to the total predicted positives.
-                </li>
-                <li><strong>Recall:</strong> The ratio of true positive predictions to the actual positives.</li>
-                <li><strong>F1-score:</strong> The harmonic mean of precision and recall.</li>
-                <li><strong>ROC Curve:</strong> A graphical representation of the true positive rate versus the false
-                    positive rate.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Applications of SVM</h2>
-            <p>SVMs are versatile algorithms with applications across various domains, including:</p>
-            <ul>
-                <li><strong>Text Classification:</strong> Used to categorize text documents (e.g., spam detection,
-                    sentiment analysis).</li>
-                <li><strong>Image Classification:</strong> Employed to recognize and classify objects in images.</li>
-                <li><strong>Bioinformatics:</strong> Used to predict protein structure and function.</li>
-                <li><strong>Anomaly Detection:</strong> Effective in identifying unusual data points within datasets.
-                </li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Advantages and Disadvantages</h2>
-            <p>While SVMs are powerful, they come with both advantages and disadvantages:</p>
-            <ul>
-                <li><strong>Advantages:</strong>
+                    <h4>Cross-Entropy Loss</h4>
                     <ul>
-                        <li>Effective for high-dimensional datasets.</li>
-                        <li>Robust against outliers due to the margin maximization approach.</li>
-                        <li>Can model non-linear relationships using kernel functions.</li>
+                        <li><strong>Used for:</strong> Classification problems (categorical predictions)</li>
+                        <li><strong>Formula:</strong>
+                            <div
+                                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+                                L = -Σ y_true * log(y_pred)
+                            </div>
+                        </li>
+                        <li><strong>Properties:</strong> Better for probability distributions, avoids learning slowdown
+                            in classification</li>
                     </ul>
-                </li>
-                <li><strong>Disadvantages:</strong>
-                    <ul>
-                        <li>Computationally intensive, especially with large datasets.</li>
-                        <li>Sensitive to the choice of kernel and regularization parameter.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>By understanding the principles of SVM and their applications, you can leverage this powerful algorithm
-                effectively across various classification problems.</p>
-        </div>
 
-        <div class="section">
-            <h2>Model Tuning: Grid Search and Random Search</h2>
-            <p>Model tuning is a critical step in machine learning, involving the adjustment of hyperparameters to
-                enhance the model's performance. Hyperparameters are the settings configured before the model training
-                process.</p>
+                    <p><strong>The Loss Landscape:</strong> The loss function creates a multidimensional landscape where
+                        we aim to find the lowest point (global minimum). The structure of this landscape depends on the
+                        network architecture and data.</p>
+                </div>
+            </div>
 
-            <h3>1. Grid Search</h3>
-            <p>Grid search is a systematic method for exploring a specified grid of hyperparameter values:</p>
-            <ul>
-                <li><strong>Process:</strong>
+            <div class="card">
+                <div class="card-header">Step 3: Backpropagation (The Calculus of Learning)</div>
+                <div class="card-body">
+                    <p>Backpropagation is the algorithm that efficiently calculates how each weight and bias should be
+                        adjusted to reduce the error.</p>
+
+                    <h4>The Chain Rule in Action</h4>
+                    <p>Backpropagation applies the chain rule from calculus to compute the gradient of the loss function
+                        with respect to each parameter.</p>
+                    <div
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+                        ∂L/∂w = ∂L/∂a * ∂a/∂z * ∂z/∂w
+                    </div>
+
+                    <h4>How It Works Backward</h4>
                     <ol>
-                        <li>Define a grid of hyperparameter values.</li>
-                        <li>Train a model for each combination of hyperparameter values.</li>
-                        <li>Evaluate the performance of each model using a validation set.</li>
-                        <li>Select the model with the best performance.</li>
+                        <li>Compute gradient at output layer: δ⁽ᴸ⁾ = ∂L/∂a⁽ᴸ⁾ * f'(z⁽ᴸ⁾)</li>
+                        <li>Propagate backward through each layer: δ⁽ˡ⁾ = (W⁽ˡ⁺¹⁾ᵀδ⁽ˡ⁺¹⁾) ⊙ f'(z⁽ˡ⁾)</li>
+                        <li>Calculate weight gradients: ∂L/∂W⁽ˡ⁾ = δ⁽ˡ⁾a⁽ˡ⁻¹⁾ᵀ</li>
+                        <li>Calculate bias gradients: ∂L/∂b⁽ˡ⁾ = δ⁽ˡ⁾</li>
                     </ol>
-                </li>
-                <li><strong>Advantages:</strong> Guarantees the discovery of the best hyperparameters within the defined
-                    grid.</li>
-                <li><strong>Disadvantages:</strong> Can be computationally expensive when the grid is large.</li>
-            </ul>
 
-            <h3>2. Random Search</h3>
-            <p>Random search randomly samples hyperparameter values from predefined distributions:</p>
+                    <p><strong>Computational Efficiency:</strong> Backpropagation is efficient because it reuses many
+                        calculations from the forward pass, avoiding the need to compute each derivative separately.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Step 4: Gradient Descent (Updating the Parameters)</div>
+                <div class="card-body">
+                    <p>Once we have the gradients, we use them to update the network's parameters.</p>
+
+                    <h4>Stochastic Gradient Descent (SGD)</h4>
+                    <p><strong>Basic update rule:</strong>
+                    <div
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+                        w = w - η * ∇w
+                    </div>
+                    Where η is the learning rate—a crucial hyperparameter
+                    </p>
+
+                    <h4>Learning Rate Considerations</h4>
+                    <ul>
+                        <li><strong>Too High:</strong> Updates are too large, may overshoot minimum, causing divergence
+                        </li>
+                        <li><strong>Too Low:</strong> Updates are too small, training becomes slow, may get stuck in
+                            local minima</li>
+                        <li><strong>Adaptive Methods:</strong> Modern optimizers (Adam, RMSProp) adjust learning rates
+                            per parameter</li>
+                    </ul>
+
+                    <h4>Batch Variations</h4>
+                    <ul>
+                        <li><strong>Batch Gradient Descent:</strong> Uses entire dataset for each update—stable but slow
+                        </li>
+                        <li><strong>Stochastic Gradient Descent:</strong> Uses one sample per update—fast but noisy</li>
+                        <li><strong>Mini-batch Gradient Descent:</strong> Compromise approach using small subsets—most
+                            common in practice</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Visualizing the Process</h3>
+            <p>Imagine navigating a mountainous terrain in thick fog:</p>
             <ul>
-                <li><strong>Process:</strong>
-                    <ol>
-                        <li>Define a distribution for each hyperparameter.</li>
-                        <li>Randomly sample hyperparameter values from the distributions.</li>
-                        <li>Train a model for each combination of sampled hyperparameters.</li>
-                        <li>Evaluate the performance of each model using a validation set.</li>
-                        <li>Repeat the previous steps for a specified number of iterations.</li>
-                    </ol>
-                </li>
-                <li><strong>Advantages:</strong> More efficient than grid search for large hyperparameter spaces and can
-                    explore a broader range of values.</li>
-                <li><strong>Disadvantages:</strong> Does not guarantee finding the optimal hyperparameter values.</li>
+                <li>Forward pass is taking a step and checking your altitude (calculating loss)</li>
+                <li>Backpropagation is feeling the slope beneath your feet (calculating gradients)</li>
+                <li>Gradient descent is taking a step downhill (updating parameters)</li>
             </ul>
 
-            <h3>Choosing the Right Technique</h3>
-            <p>The choice between grid search and random search depends on the hyperparameter space:</p>
+            <h3>Implementation in Practice</h3>
+            <p>Modern frameworks like TensorFlow and PyTorch automate backpropagation through:</p>
             <ul>
-                <li><strong>Grid search:</strong> Best suited for small hyperparameter spaces.</li>
-                <li><strong>Random search:</strong> Ideal for larger hyperparameter spaces or when computational
-                    resources are limited.</li>
+                <li><strong>Automatic Differentiation:</strong> Systems that automatically compute derivatives</li>
+                <li><strong>Computational Graphs:</strong> Representing calculations as graphs for efficient gradient
+                    computation</li>
+                <li><strong>Optimizer Classes:</strong> Pre-implemented optimization algorithms</li>
             </ul>
 
-            <h3>Additional Considerations</h3>
-            <ul>
-                <li><strong>Nested Cross-Validation:</strong> Use nested cross-validation to evaluate model performance
-                    on unseen data while tuning hyperparameters.</li>
-                <li><strong>Bayesian Optimization:</strong> A more efficient method using Bayesian probability to
-                    explore the hyperparameter space.</li>
-                <li><strong>Hyperparameter Importance:</strong> Identify the hyperparameters that significantly affect
-                    the model's performance.</li>
-            </ul>
+            <h2>Embedded Video Context</h2>
+            <p>To understand how these mathematical concepts work in practice, watch this visual explanation of gradient
+                descent and backpropagation.</p>
 
-            <h3>Practical Tips</h3>
-            <ul>
-                <li>Start with a small grid or distribution.</li>
-                <li>Utilize a validation set to assess performance.</li>
-                <li>Consider the computational cost when selecting hyperparameter values.</li>
-                <li>Experiment with different tuning techniques.</li>
-            </ul>
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/IHZwWFHWa-w" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Gradient Descent Visualization by 3Blue1Brown</h4>
+                    </div>
+                </div>
+            </div>
 
-            <p>By effectively tuning the hyperparameters of your machine learning models, you can improve their
-                performance and achieve better results.</p>
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>The forward pass generates predictions using the current network parameters. The loss function
+                    quantifies the error between predictions and actual values. Backpropagation efficiently calculates
+                    how each parameter contributes to this error using the chain rule. Finally, gradient descent uses
+                    these calculations to update the parameters in the direction that reduces error. This iterative
+                    process of prediction, error measurement, and correction is the fundamental engine that allows
+                    neural networks to learn from data. The efficiency of backpropagation makes training deep networks
+                    feasible, while the choice of loss function, learning rate, and optimizer significantly impacts
+                    training effectiveness and final performance.</p>
+            </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+<!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
 
 </html>

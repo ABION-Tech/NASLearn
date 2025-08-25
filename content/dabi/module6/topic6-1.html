@@ -4,64 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overview of Back-End Development</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-            color: #333;
+        .container h1 {
+            font-size: 2.3rem;
         }
 
-        .container {
-            margin-top: 30px;
-        }
-
-        h2,
-        h4 {
-            margin-top: 30px;
-        }
-
-        .card {
-            transition: transform 0.2s;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-        }
-
-        .back {
-            display: none;
-        }
-
-        .card-flip {
-            perspective: 1000px;
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 10px;
-        }
-
-        .flip-card-back {
-            transform: rotateY(180deg);
-            background-color: #007bff;
-            color: white;
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
         }
 
         /* Basic Reset */
@@ -82,6 +48,82 @@
 
         .container {
             padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
         }
 
         /* Video container to hold everything */
@@ -160,298 +202,371 @@
                 }
             }
         }
-    </style>
-</head>
 
-<body>
-
-    <div class="container">
-        <h1 class="text-center mb-4">Overview of Back-End Development</h1>
-
-        <h2>1.1. What is Back-End Development?</h2>
-        <p>Back-end development refers to the server-side of web development, where the server, database, and
-            application logic reside. Unlike front-end development, which deals with the user interface and experience,
-            back-end development handles data processing, storage, and server-side logic.</p>
-
-        <h4>Key Components:</h4>
-        <ul>
-            <li><strong>Server:</strong> Hosts the web application and processes requests from clients.</li>
-            <li><strong>Database:</strong> Stores and manages data that the application uses.</li>
-            <li><strong>Application Logic:</strong> The code that defines how data is processed and handled.</li>
-        </ul>
-
-        <h2>1.2. Server-Side Concepts</h2>
-        <p>Understanding server-side concepts is essential for back-end development. This includes knowledge of how
-            servers process requests, manage data, and communicate with front-end applications.</p>
-
-        <h4>HTTP Requests and Responses:</h4>
-        <ul>
-            <li><strong>Requests:</strong> Made by clients (e.g., web browsers) to access resources on the server.
-                Includes methods like GET, POST, PUT, DELETE.</li>
-            <li><strong>Responses:</strong> Returned by the server with the requested data or status messages (e.g., 200
-                OK, 404 Not Found).</li>
-        </ul>
-
-        <h4>Middleware:</h4>
-        <p>Middleware refers to functions that process requests before they reach the final route handler. They can
-            perform tasks like logging, authentication, or parsing request bodies.</p>
-
-        <h4>Routing:</h4>
-        <p>Routing determines how server requests are handled based on the URL and HTTP method. Each route corresponds
-            to a specific endpoint or resource.</p>
-
-        <h2>Interactive Cards</h2>
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Understanding Servers</h5>
-                                <p class="card-text">Learn about server responsibilities and hosting applications.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Servers manage client requests and ensure data is processed and
-                                    delivered efficiently.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Role of Databases</h5>
-                                <p class="card-text">Explore how databases store and manage application data.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Databases ensure data integrity and facilitate quick data retrieval
-                                    for applications.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card card-flip" onclick="this.classList.toggle('flipped');">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="card-body">
-                                <h5 class="card-title">Middleware Importance</h5>
-                                <p class="card-text">Understand how middleware enhances application functionality.</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="card-body">
-                                <p class="card-text">Middleware can handle tasks like authentication, logging, and error
-                                    handling, improving overall efficiency.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="text-center mt-5">Conclusion</h2>
-        <p>The back-end development realm is a crucial part of web application architecture. Understanding server-side
-            concepts, how to handle HTTP requests and responses, middleware functionality, and routing mechanisms are
-            essential for aspiring developers. By mastering these elements, you can build robust and scalable
-            applications that effectively serve user needs.</p>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to Power BI</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-        background-color: #ffffff;
-        color: #000000;
-        font-family: Arial, sans-serif;
-    }
-
-    h1,
-    h2,
-    h3 {
-        color: #007BFF;
-        /* Blue accent */
-    }
-
-    .content-container {
-        margin: 50px auto;
-        max-width: 900px;
-    }
-
-    .custom-section {
-        margin-bottom: 40px;
-    }
-
-    .custom-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .custom-section ul {
-        margin-left: 20px;
-    }
-
-    .custom-section ul li {
-        margin-bottom: 10px;
-    }
-
-    blockquote {
-        font-size: 1.1em;
-        padding: 15px;
-        border-left: 5px solid #007BFF;
-        background-color: #f8f9fa;
-    }
-
-    /* Video container to hold everything */
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 100px;
-    }
-
-    /* Gradient border container */
-    .gradient-border {
-        padding: 5px;
-        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-        border-radius: 10px;
-    }
-
-    /* Video or content inside the border */
-    .video-content {
-        border-radius: 10px;
-        display: block;
-    }
-
-    .video-links {
-        color: grey;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    /* Ensure responsive width and height for the video */
-    iframe {
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-    }
-
-    /* Responsiveness */
-    @media (min-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 450px;
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
         }
-    }
 
-    @media (max-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 350px;
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
         }
-    }
 
-    @media (max-width: 768px) {
-        iframe {
-            width: 500px;
-            height: 200px;
-        }
-    }
-
-    /* For mobile screens, to avoid the box-like appearance */
-    @media (max-width: 360px) {
-        .video-content {
-            width: 280px;
-            /* Take full width */
-            height: 200px;
-            /* Adjust height to give a more rectangular shape */
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
         }
 
         /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 256px) {
+        @media (max-width: 360px) {
             .video-content {
-                width: 1080px;
+                width: 280px;
                 /* Take full width */
-                height: 300px;
+                height: 200px;
                 /* Adjust height to give a more rectangular shape */
             }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
-    }
-</style>
+    </style>
+
+</head>
 
 <body>
-    <header>
-        <h1>Introduction to Power BI</h1>
-    </header>
+    <div class="container">
+        <div class="header">
+            <h1>Week 6: Data Engineering & The Modern Data Stack</h1>
+        </div>
 
-    <main>
-        <section id="overview-bi">
-            <h2>Overview of Business Intelligence (BI)</h2>
-            <p>
-                Business Intelligence involves technologies and strategies for collecting, analyzing, and presenting
-                business information to support decision-making processes.
+        <div class="module-content">
+            <h2>Module Introduction</h2>
+            <p>Welcome to the foundation of all data-driven decision making. While data analysis often receives the
+                spotlight, none of it would be possible without the critical work of data engineering. This module
+                explores the behind-the-scenes infrastructure that enables businesses to collect, store, process, and
+                transform raw data into actionable insights. You'll learn how data moves from countless sources to
+                become the clean, structured information that powers dashboards, reports, and machine learning models.
             </p>
-        </section>
 
-        <section id="introduction-power-bi">
-            <h2>Introduction to Power BI</h2>
-            <p>
-                Power BI is a powerful suite of business analytics tools developed by Microsoft. It allows users to
-                connect to a wide variety of data sources, create interactive visualizations, and share insights across
-                organizations.
-            </p>
-        </section>
+            <h2>Module Learning Objective</h2>
+            <p>By the end of this week, students will understand that before analysis can happen, data must be ingested,
+                stored, and transformed. This module introduces the foundational concepts of data engineering that make
+                BI and analytics possible.</p>
 
-        <section id="power-bi-interface">
-            <h2>Power BI Interface Overview</h2>
-            <ul>
-                <li><strong>Data Source Connection:</strong> Connecting to data sources such as Excel files, databases
-                    (SQL Server, MySQL), cloud services (Azure, Google Analytics), and web data connectors.</li>
-                <li><strong>Data Model:</strong> Understanding Power BI’s data model and relationships between tables.
-                </li>
-            </ul>
-        </section>
+            <h2>6.1: The Data Pipeline Concept: ETL vs. ELT</h2>
 
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p>
-                <strong>Hands-On Practice:</strong> Install Power BI Desktop (free version), connect to a sample
-                dataset, and explore the Power BI interface. Create basic visualizations (e.g., bar charts, line charts)
-                using sample data.
-            </p>
-        </section>
-    </main>
+            <div class="card">
+                <div class="card-header">1. The Data Journey: From Source to Insight</div>
+                <div class="card-body">
+                    <p>Data doesn't magically appear in dashboards and reports. It undergoes a sophisticated journey
+                        through multiple stages, each with specific challenges and requirements.</p>
+
+                    <h4>The Complete Data Pathway</h4>
+                    <ul>
+                        <li><strong>Sources:</strong> The origins of data, which can include:
+                            <ul>
+                                <li>Databases (SQL, NoSQL)</li>
+                                <li>APIs (application programming interfaces)</li>
+                                <li>File systems (CSV, JSON, Parquet)</li>
+                                <li>Streaming data (clickstreams, IoT sensors)</li>
+                                <li>Third-party data providers</li>
+                            </ul>
+                        </li>
+                        <li><strong>Ingestion:</strong> The process of collecting and importing data from sources
+                            <ul>
+                                <li>Batch processing: Scheduled data transfers (hourly, daily)</li>
+                                <li>Real-time processing: Continuous data collection</li>
+                                <li>Change data capture: Identifying and capturing data changes</li>
+                            </ul>
+                        </li>
+                        <li><strong>Storage:</strong> Where data resides during processing
+                            <ul>
+                                <li>Data lakes: Raw, unstructured data storage</li>
+                                <li>Data warehouses: Structured, processed data</li>
+                                <li>Data marts: Department-specific data subsets</li>
+                            </ul>
+                        </li>
+                        <li><strong>Transformation:</strong> Converting raw data into analysis-ready formats
+                            <ul>
+                                <li>Cleaning: Removing errors and inconsistencies</li>
+                                <li>Standardization: Ensuring consistent formats</li>
+                                <li>Enrichment: Augmenting with additional data sources</li>
+                                <li>Aggregation: Summarizing detailed data</li>
+                            </ul>
+                        </li>
+                        <li><strong>Analytics:</strong> The process of deriving insights
+                            <ul>
+                                <li>Business intelligence: Dashboards and reports</li>
+                                <li>Data science: Statistical analysis and modeling</li>
+                                <li>Machine learning: Predictive analytics</li>
+                            </ul>
+                        </li>
+                        <li><strong>Insights:</strong> Actionable information delivered to decision-makers
+                            <ul>
+                                <li>Visualization: Charts, graphs, and dashboards</li>
+                                <li>Alerts: Automated notifications of significant findings</li>
+                                <li>Recommendations: Data-driven suggestions for action</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>Pipeline Reliability Considerations</h4>
+                    <ul>
+                        <li><strong>Data Quality:</strong> Ensuring accuracy, completeness, and consistency</li>
+                        <li><strong>Latency:</strong> Balancing speed with comprehensiveness</li>
+                        <li><strong>Scalability:</strong> Handling increasing data volumes efficiently</li>
+                        <li><strong>Monitoring:</strong> Tracking pipeline health and performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">2. ETL (Extract, Transform, Load)</div>
+                <div class="card-body">
+                    <p>ETL represents the traditional approach to data processing, where transformation occurs before
+                        loading into the target system.</p>
+
+                    <h4>The ETL Process Breakdown</h4>
+
+                    <h5>Extract</h5>
+                    <ul>
+                        <li>Pulling data from source systems</li>
+                        <li>Handling different data formats and structures</li>
+                        <li>Managing API rate limits and connection constraints</li>
+                        <li>Implementing incremental extraction to avoid full reloads</li>
+                    </ul>
+
+                    <h5>Transform</h5>
+                    <ul>
+                        <li><strong>Data Cleaning:</strong> Handling missing values, standardizing formats, correcting
+                            errors</li>
+                        <li><strong>Business Rules Application:</strong> Calculating metrics, applying logic, creating
+                            derived fields</li>
+                        <li><strong>Data Validation:</strong> Ensuring quality and consistency</li>
+                        <li><strong>Performance Optimization:</strong> Aggregating, filtering, and structuring for
+                            efficiency</li>
+                    </ul>
+
+                    <h5>Load</h5>
+                    <ul>
+                        <li>Inserting transformed data into the target data warehouse</li>
+                        <li>Managing schemas and table structures</li>
+                        <li>Handling updates, inserts, and deletions</li>
+                        <li>Maintaining historical data (slowly changing dimensions)</li>
+                    </ul>
+
+                    <h4>ETL Advantages</h4>
+                    <ul>
+                        <li><strong>Data Quality:</strong> Transformation before loading ensures clean, consistent data
+                        </li>
+                        <li><strong>Compliance:</strong> Sensitive data can be anonymized or encrypted before storage
+                        </li>
+                        <li><strong>Performance:</strong> Pre-aggregated data enables faster query performance</li>
+                        <li><strong>Cost Control:</strong> Storage costs are optimized by storing only processed data
+                        </li>
+                    </ul>
+
+                    <h4>ETL Challenges</h4>
+                    <ul>
+                        <li><strong>Rigidity:</strong> Schema changes require pipeline modifications</li>
+                        <li><strong>Latency:</strong> Transformation step can delay data availability</li>
+                        <li><strong>Resource Intensive:</strong> Requires significant processing power before loading
+                        </li>
+                        <li><strong>Limited Raw Data Access:</strong> Original data may be lost during transformation
+                        </li>
+                    </ul>
+
+                    <h4>Real-World ETL Example: Financial Services Compliance</h4>
+                    <p>A bank must generate daily regulatory reports showing transaction patterns. The ETL process:</p>
+                    <ol>
+                        <li>Extracts transaction data from multiple banking systems</li>
+                        <li>Transforms data by anonymizing customer information, converting currencies, and flagging
+                            suspicious patterns</li>
+                        <li>Loads the compliant, standardized data into a regulatory reporting database</li>
+                        <li>Analysts run predefined reports without accessing raw transaction data</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">3. ELT (Extract, Load, Transform)</div>
+                <div class="card-body">
+                    <p>ELT represents the modern approach to data processing, leveraging the power of cloud data
+                        platforms to transform data after loading.</p>
+
+                    <h4>The ELT Process Breakdown</h4>
+
+                    <h5>Extract</h5>
+                    <ul>
+                        <li>Similar to ETL, but often with less preprocessing</li>
+                        <li>May include lightweight parsing or compression</li>
+                        <li>Focus on rapid data movement to the target platform</li>
+                    </ul>
+
+                    <h5>Load</h5>
+                    <ul>
+                        <li>Storing raw, largely unprocessed data in the target system</li>
+                        <li>Using scalable cloud storage solutions</li>
+                        <li>Maintaining data in its original form for future flexibility</li>
+                        <li>Implementing efficient loading patterns for large volumes</li>
+                    </ul>
+
+                    <h5>Transform</h5>
+                    <ul>
+                        <li>Performing transformations within the data warehouse</li>
+                        <li>Using SQL or warehouse-specific processing capabilities</li>
+                        <li>Creating transformed views rather than physical tables</li>
+                        <li>Enabling multiple transformation versions for different use cases</li>
+                    </ul>
+
+                    <h4>ELT Advantages</h4>
+                    <ul>
+                        <li><strong>Flexibility:</strong> Raw data is available for unexpected analysis needs</li>
+                        <li><strong>Speed:</strong> Data is available sooner since transformation happens after loading
+                        </li>
+                        <li><strong>Scalability:</strong> Cloud data platforms handle transformation at scale</li>
+                        <li><strong>Iterative Development:</strong> Transformations can be modified without reloading
+                            data</li>
+                    </ul>
+
+                    <h4>ELT Challenges</h4>
+                    <ul>
+                        <li><strong>Data Governance:</strong> Raw data requires careful access controls</li>
+                        <li><strong>Storage Costs:</strong> Storing raw data can be more expensive</li>
+                        <li><strong>Skill Requirements:</strong> Requires strong SQL and data modeling expertise</li>
+                        <li><strong>Performance Management:</strong> Poorly designed transformations can impact
+                            warehouse performance</li>
+                    </ul>
+
+                    <h4>Real-World ELT Example: E-commerce Customer Analysis</h4>
+                    <p>An online retailer wants to analyze customer behavior across multiple touchpoints:</p>
+                    <ol>
+                        <li>Extracts raw clickstream, purchase, and customer service data</li>
+                        <li>Loads all raw data into a cloud data warehouse (Snowflake/BigQuery)</li>
+                        <li>Data scientists transform data within the warehouse to create customer journey maps</li>
+                        <li>Different teams create their own transformed views for specific analysis needs</li>
+                        <li>Raw data remains available for unexpected investigation needs</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">4. When to Use ETL vs. ELT</div>
+                <div class="card-body">
+                    <h4>ETL is Preferable When</h4>
+                    <ul>
+                        <li><strong>Regulatory Compliance:</strong> Industries with strict data governance requirements
+                            (healthcare, finance)</li>
+                        <li><strong>Established Requirements:</strong> Well-defined reporting needs with consistent
+                            formats</li>
+                        <li><strong>Performance Critical:</strong> Applications requiring optimized query performance
+                        </li>
+                        <li><strong>Sensitive Data:</strong> Scenarios where raw data shouldn't be stored for security
+                            reasons</li>
+                        <li><strong>Limited Storage:</strong> Environments with significant storage constraints</li>
+                    </ul>
+
+                    <h4>ELT is Preferable When</h4>
+                    <ul>
+                        <li><strong>Exploratory Analysis:</strong> Situations requiring flexibility for unexpected
+                            questions</li>
+                        <li><strong>Cloud Infrastructure:</strong> Organizations using modern cloud data platforms</li>
+                        <li><strong>Rapid Implementation:</strong> Projects needing quick time-to-value for data
+                            availability</li>
+                        <li><strong>Multiple Use Cases:</strong> Data serving diverse analytical requirements</li>
+                        <li><strong>Data Science Needs:</strong> Scenarios where raw data is valuable for modeling</li>
+                    </ul>
+
+                    <h4>Hybrid Approaches</h4>
+                    <p>Many organizations implement a hybrid strategy:</p>
+                    <ul>
+                        <li>ETL for sensitive, regulated, or high-performance data</li>
+                        <li>ELT for exploratory, innovation, or raw data analysis</li>
+                        <li>Creating a "medallion architecture" with bronze (raw), silver (cleaned), and gold (enriched)
+                            layers</li>
+                    </ul>
+
+                    <h4>Decision Framework</h4>
+                    <p>Consider these factors when choosing between ETL and ELT:</p>
+                    <ol>
+                        <li><strong>Data Sensitivity:</strong> How strictly must raw data be controlled?</li>
+                        <li><strong>Analysis Patterns:</strong> Are reporting needs predictable or exploratory?</li>
+                        <li><strong>Technical Environment:</strong> What platforms and tools are available?</li>
+                        <li><strong>Team Skills:</strong> What expertise exists for transformation logic?</li>
+                        <li><strong>Cost Structure:</strong> How does your organization balance storage vs. processing
+                            costs?</li>
+                        <li><strong>Compliance Requirements:</strong> What regulations govern your data handling?</li>
+                    </ol>
+
+                    <h4>Implementation Considerations</h4>
+                    <ul>
+                        <li><strong>Tool Selection:</strong> Choose tools that support your preferred approach (ETL
+                            tools: Informatica, Talend; ELT tools: dbt, Dataform)</li>
+                        <li><strong>Monitoring:</strong> Implement comprehensive monitoring regardless of approach</li>
+                        <li><strong>Documentation:</strong> Maintain clear documentation of data lineage and
+                            transformation logic</li>
+                        <li><strong>Testing:</strong> Establish robust testing procedures for transformation logic</li>
+                        <li><strong>Version Control:</strong> Manage transformation code with proper version control
+                            systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/8a74rQyGpSE" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>ETL vs. ELT Explained</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>The choice between ETL and ELT represents a fundamental architectural decision in data engineering.
+                    ETL offers control, compliance, and performance for well-understood data needs, while ELT provides
+                    flexibility, speed, and adaptability for exploratory analysis. Modern data stacks often incorporate
+                    elements of both approaches, creating layered architectures that balance governance with
+                    flexibility. Understanding these patterns is essential for designing data systems that effectively
+                    support organizational analytics needs.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+    <script>
+
+    </script>
 
 </body>
 

@@ -2,284 +2,523 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Working with Databases</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-        h1,
-        h2,
-        h4 {
-            color: #007bff;
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        .container {
-            margin-top: 30px;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        .code-block {
-            background-color: #343a40;
-            color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
 
-        li::before {
-            content: '•';
-            color: #007bff;
-            padding-right: 5px;
-        }
+    .container {
+      padding: 20px;
+    }
 
-        .explanation {
-            color: #6c757d;
-        }
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .card {
-            border: none;
-        }
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
 
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
 
-        .container {
-            padding: 20px;
-        }
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
 
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
 
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
 
-        /* Video or content inside the border */
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
         .video-content {
-            border-radius: 10px;
-            display: block;
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
 
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
+  </style>
 
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
-        }
-    </style>
 </head>
 
+
 <body>
-
-    <div class="container">
-        <h1 class="text-center mb-4">Working with Databases</h1>
-
-        <h2>3.1. Introduction to Databases</h2>
-        <p>Databases are essential for storing and managing data used by web applications. They can be categorized into:
-        </p>
-
-        <ul>
-            <li><strong>Relational Databases (SQL):</strong>
-                <ul>
-                    <li>Use Structured Query Language (SQL) for querying and managing data.</li>
-                    <li>Examples: MySQL, PostgreSQL, SQLite.</li>
-                </ul>
-            </li>
-            <li><strong>NoSQL Databases:</strong>
-                <ul>
-                    <li>Designed for unstructured or semi-structured data.</li>
-                    <li>Examples: MongoDB, CouchDB.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h2>3.2. Connecting to a Database with Node.js</h2>
-        <p>This section focuses on connecting to MongoDB, a popular NoSQL database, using the <code>mongoose</code>
-            library, which provides an elegant API for MongoDB.</p>
-
-        <h4>Installation:</h4>
-        <div class="code-block">
-            <code>npm install mongoose</code>
-        </div>
-
-        <h4>Basic MongoDB Connection with Mongoose:</h4>
-        <div class="code-block">
-            <code>
-// app.js
-const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/mydatabase', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-    console.log('Connected to MongoDB');
-});
-        </code>
-        </div>
-
-        <p class="explanation">
-            <strong>Explanation:</strong>
-        <ul>
-            <li><strong>mongoose.connect():</strong> Connects to the MongoDB server.</li>
-            <li><strong>db.on('error'):</strong> Handles connection errors.</li>
-            <li><strong>db.once('open'):</strong> Confirms successful connection.</li>
-        </ul>
-        </p>
-
-        <h4>Creating a Schema and Model:</h4>
-        <div class="code-block">
-            <code>
-const mongoose = require('mongoose');
-
-const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    age: Number
-});
-
-const User = mongoose.model('User', userSchema);
-        </code>
-        </div>
-
-        <p class="explanation">
-            <strong>Explanation:</strong>
-        <ul>
-            <li><strong>Schema:</strong> Defines the structure of the documents in the collection.</li>
-            <li><strong>mongoose.model():</strong> Creates a model for the schema.</li>
-        </ul>
-        </p>
-
-        <h4>Performing CRUD Operations:</h4>
-        <div class="code-block">
-            <code>
-// Create a new user
-const newUser = new User({
-    name: 'Alice',
-    email: 'alice@example.com',
-    age: 25
-});
-
-newUser.save((err) => {
-    if (err) return console.error(err);
-    console.log('User saved');
-});
-
-// Find users
-User.find({}, (err, users) => {
-    if (err) return console.error(err);
-    console.log(users);
-});
-        </code>
-        </div>
-
-        <p class="explanation">
-            <strong>Explanation:</strong>
-        <ul>
-            <li><strong>new User():</strong> Creates a new document.</li>
-            <li><strong>save():</strong> Saves the document to the database.</li>
-            <li><strong>find():</strong> Retrieves documents from the database.</li>
-        </ul>
-        </p>
+  <div class="container">
+    <div class="header">
+      <h1>Week 6: Introduction to Backend Development with Node.js</h1>
+      <h2>6.3: Building a Simple HTTP Server (The "Naked" Node.js Way)</h2>
     </div>
 
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
-    </div>
+    <div class="module-content">
+      <h2>Learning Objectives</h2>
+      <p>By the end of this module, you will be able to:</p>
+      <ul>
+        <li>Explain the role of the Node.js http core module.</li>
+        <li>Create a fundamental HTTP server using http.createServer().</li>
+        <li>Deconstruct the incoming request (req) object to access the URL and HTTP method.</li>
+        <li>Construct appropriate responses using the response (res) object, including status codes and headers.</li>
+        <li>Implement basic manual routing based on URL paths and HTTP methods.</li>
+        <li>Articulate the limitations of this manual approach and understand the value frameworks like Express.js
+          provide.</li>
+      </ul>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <h2>1. Introduction: The Foundation of Web Servers</h2>
+      <p>Every web framework, including Express.js, Koa, or Hapi, is built on top of the core capabilities provided by
+        the Node.js runtime. The http module is the fundamental building block for handling web traffic in Node.js.
+        Understanding how to use it directly is like learning to build a car engine before driving the car—it gives you
+        a deep appreciation for what happens under the hood and makes you a better, more powerful debugger when working
+        with higher-level tools.</p>
+      <p>In this module, we will strip away all the conveniences and build a server from the ground up.</p>
+
+      <h2>2. The Core http Module</h2>
+      <p>Node.js provides a set of built-in modules. The http module is one of them, and it contains functions to create
+        an HTTP server, make HTTP requests, and handle HTTP responses.</p>
+      <p>We import it using require:</p>
+
+      <pre><code>const http = require('http');</code></pre>
+
+      <p>This gives us access to all the functionality needed to create our server.</p>
+
+      <h2>3. Creating the Server: http.createServer()</h2>
+      <p>The heart of our application is the http.createServer() method. This method creates a new server instance.</p>
+      <p>It takes one important argument: a request listener function. This function is automatically added to the
+        'request' event and is called every single time the server receives a new HTTP request from a client (e.g., a
+        web browser).</p>
+      <p>The request listener function always has two parameters:</p>
+      <ol>
+        <li><strong>req:</strong> An object representing the HTTP Request. It contains all the information about the
+          client's request (the URL they want, the method they used, any data they sent, headers, etc.).</li>
+        <li><strong>res:</strong> An object representing the HTTP Response. This is your server's toolbox for sending
+          data back to the client.</li>
+      </ol>
+
+      <p><strong>Basic Server Shell:</strong></p>
+
+      <pre><code>const http = require('http');
+// Create the server
+const server = http.createServer((req, res) => {
+  // This function runs for every incoming request.
+  // Our job is to look at `req` and decide what to send back with `res`.
+  console.log("A new request came in!"); 
+});
+// Start the server, tell it to listen on a specific port
+const PORT = 3000;
+server.listen(PORT, () => {
+  console.log(`Server is now listening on port ${PORT}. Open your browser at http://localhost:${PORT}`);
+});</code></pre>
+
+      <p>If you run this code, the server will start, but it will never actually respond to the client! The browser will
+        just hang. We need to use the res object to send a response.</p>
+
+      <h2>4. Handling the Request and Sending a Response</h2>
+      <p>Let's make our server functional. The core logic of our application lives inside the request listener function.
+      </p>
+
+      <div class="card">
+        <div class="card-header">
+          A. The req (Request) Object
+        </div>
+        <div class="card-body">
+          <p>We need to inspect the incoming request to decide how to handle it. The two most important properties for
+            basic routing are:</p>
+          <ul>
+            <li><strong>req.url:</strong> The path and query string of the request (e.g., /, /about,
+              /products?category=books).</li>
+            <li><strong>req.method:</strong> The HTTP method used (e.g., 'GET', 'POST', 'PUT', 'DELETE').</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          B. The res (Response) Object
+        </div>
+        <div class="card-body">
+          <p>We use this object to build and send our response.</p>
+          <ul>
+            <li><strong>res.writeHead(statusCode, [headers]):</strong> This method sends the response head to the
+              client. This includes the HTTP status code (like 200 for OK or 404 for Not Found) and any response headers
+              (like what type of content we're sending).
+              <ul>
+                <li><strong>'Content-Type':</strong> A crucial header that tells the client how to interpret the
+                  response data. Common values are 'text/plain', 'text/html', and 'application/json'.</li>
+              </ul>
+            </li>
+            <li><strong>res.write(data):</strong> Used to write response body content. You can call it multiple times.
+            </li>
+            <li><strong>res.end([data]):</strong> This method is mandatory. It signals to the server that all response
+              headers and body have been sent. You can also send a final piece of data as an argument. The server will
+              not send anything until this is called.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>5. Implementing Basic Routing and Methods</h2>
+      <p>Let's expand the example to handle different routes and methods manually. We'll use simple if/else if/else
+        statements to check req.url and req.method.</p>
+
+      <div class="card">
+        <div class="card-header">
+          Example: A Simple Application with Three Routes
+        </div>
+        <div class="card-body">
+          <pre><code>const http = require('http');
+const server = http.createServer((req, res) => {
+  
+  // Route 1: Handle GET requests to the homepage ('/')
+  if (req.url === '/' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, World! This is the homepage.');
+  } 
+  // Route 2: Handle GET requests to '/about'
+  else if (req.url === '/about' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'text/html' }); // Notice the HTML content-type
+    res.end('&lt;h1&gt;About Us&lt;/h1&gt;&lt;p&gt;This is a simple Node.js server.&lt;/p&gt;');
+  }
+  // Route 3: Handle POST requests to '/create' (e.g., form submission)
+  else if (req.url === '/create' && req.method === 'POST') {
+    // In a real app, we would process submitted data here.
+    res.writeHead(201, { 'Content-Type': 'application/json' }); // 201 = Created
+    res.end(JSON.stringify({ message: "Data created successfully!" }));
+  } 
+  // Catch-all for any request that doesn't match the above routes
+  else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('404 Not Found\nThe page you are looking for does not exist.');
+  }
+});
+server.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
+
+          <p><strong>Testing Your Server:</strong> You can't test the POST route easily in a browser URL bar. Use a tool
+            like Postman or Thunder Client (VS Code extension) to send a POST request to http://localhost:3000/create.
+            For the GET routes, simply visit http://localhost:3000/ and http://localhost:3000/about in your browser.</p>
+        </div>
+      </div>
+
+      <h2>6. The Problem: Why This Gets Messy</h2>
+      <p>Our example has only three routes, and the if/else chain is already starting to look cluttered. Imagine a
+        real-world application with 50+ routes, including:</p>
+      <ul>
+        <li>Complex URL patterns with parameters (e.g., /users/:userId/posts/:postId).</li>
+        <li>Multiple methods for the same URL (e.g., GET /users to list users, POST /users to create a user).</li>
+        <li>Middleware for tasks like authentication, logging, and parsing request data.</li>
+      </ul>
+      <p>Trying to handle all of this with a giant if/else statement or a massive switch block would become a
+        maintenance nightmare. The code would be difficult to read, error-prone, and hard to extend.</p>
+      <p>This is precisely why web frameworks like Express.js were created.</p>
+
+      <h2>7. The Solution: Enter Express.js</h2>
+      <p>Express doesn't add any new functionality that isn't ultimately possible with the core http module. Instead, it
+        provides a layer of abstraction and syntactic sugar. It makes the same functionality much easier and cleaner to
+        write.</p>
+
+      <div class="card">
+        <div class="card-header">
+          Side-by-Side Comparison
+        </div>
+        <div class="card-body">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Native http Module</th>
+                <th>Express.js</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Create Server</strong></td>
+                <td>http.createServer()</td>
+                <td>express()</td>
+              </tr>
+              <tr>
+                <td><strong>Define a GET route</strong></td>
+                <td>if (req.url === '/' && req.method === 'GET')</td>
+                <td>app.get('/', handler)</td>
+              </tr>
+              <tr>
+                <td><strong>URL Parameters</strong></td>
+                <td>Manually parse with req.url.split()</td>
+                <td>app.get('/users/:id', (req, res) => { req.params.id })</td>
+              </tr>
+              <tr>
+                <td><strong>Status Code</strong></td>
+                <td>res.writeHead(404)</td>
+                <td>res.status(404)</td>
+              </tr>
+              <tr>
+                <td><strong>Send Response</strong></td>
+                <td>res.end('data')</td>
+                <td>res.send('data')</td>
+              </tr>
+              <tr>
+                <td><strong>Middleware</strong></td>
+                <td>Manual function calls</td>
+                <td>app.use(middlewareFunction)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>As you can see, Express provides a clean, declarative, and highly readable way to define your application's
+            logic. It handles the tedious parsing and branching for you, allowing you to focus on writing business
+            logic.</p>
+        </div>
+      </div>
+
+      <h2>8. Key Takeaways</h2>
+      <ul>
+        <li><strong>Foundation First:</strong> The Node.js http module is the powerful foundation all web frameworks are
+          built upon.</li>
+        <li><strong>Request/Response Cycle:</strong> Every web server operates on a cycle: receive a req object, process
+          it, and send back a res object.</li>
+        <li><strong>Manual Labor:</strong> Building a server manually teaches you the intricacies of HTTP (methods,
+          status codes, headers) but becomes impractical for large applications.</li>
+        <li><strong>Frameworks are Helpers:</strong> Frameworks like Express.js are not magic; they are helpful tools
+          that provide a clean, standard structure and simplify common tasks, making you a more efficient developer.
+        </li>
+      </ul>
+
+      <h2>9. Practice & Further Exploration</h2>
+      <ol>
+        <li><strong>Modify the Code:</strong> Add a new route, /contact, that returns some HTML with a fake contact
+          form.</li>
+        <li><strong>Add a 405 Error:</strong> The current server returns a 404 for unknown routes. Improve it: if a
+          route exists but the method is wrong (e.g., a POST request to /), return a 405 Method Not Allowed status code.
+        </li>
+        <li><strong>Read Request Data:</strong> Look up how to listen for the 'data' and 'end' events on the req object
+          to read data sent in a POST request. (This is a preview of why we need middleware like express.json()).</li>
+        <li><strong>Experiment with Headers:</strong> Try changing the Content-Type header to 'application/json' or
+          'text/html' and see how the browser behaves differently.</li>
+      </ol>
+
+      <div class="key-point">
+        <h4>Conclusion</h4>
+        <p>By completing this module, you have taken a crucial step in understanding the fundamentals of web development
+          with Node.js. You are no longer just using a framework; you understand what it's doing for you.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
 </body>
+
+
 
 </html>

@@ -4,168 +4,693 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power BI Best Practices</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-        background-color: #ffffff;
-        color: #000000;
-        font-family: Arial, sans-serif;
-    }
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
 
-    h1,
-    h2,
-    h3 {
-        color: #007BFF;
-        /* Blue accent */
-    }
-
-    .content-container {
-        margin: 50px auto;
-        max-width: 900px;
-    }
-
-    .custom-section {
-        margin-bottom: 40px;
-    }
-
-    .custom-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .custom-section ul {
-        margin-left: 20px;
-    }
-
-    .custom-section ul li {
-        margin-bottom: 10px;
-    }
-
-    blockquote {
-        font-size: 1.1em;
-        padding: 15px;
-        border-left: 5px solid #007BFF;
-        background-color: #f8f9fa;
-    }
-
-    /* Video container to hold everything */
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 100px;
-    }
-
-    /* Gradient border container */
-    .gradient-border {
-        padding: 5px;
-        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-        border-radius: 10px;
-    }
-
-    /* Video or content inside the border */
-    .video-content {
-        border-radius: 10px;
-        display: block;
-    }
-
-    .video-links {
-        color: grey;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    /* Ensure responsive width and height for the video */
-    iframe {
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-    }
-
-    /* Responsiveness */
-    @media (min-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 450px;
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+    <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
-    }
 
-    @media (max-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 350px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        iframe {
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             width: 500px;
-            height: 200px;
+            height: 150px;
+            margin-bottom: 15px;
         }
-    }
 
-    /* For mobile screens, to avoid the box-like appearance */
-    @media (max-width: 360px) {
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
         .video-content {
-            width: 280px;
-            /* Take full width */
-            height: 200px;
-            /* Adjust height to give a more rectangular shape */
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
         }
 
         /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 256px) {
+        @media (max-width: 360px) {
             .video-content {
-                width: 1080px;
+                width: 280px;
                 /* Take full width */
-                height: 300px;
+                height: 200px;
                 /* Adjust height to give a more rectangular shape */
             }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
-    }
-</style>
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+</head>
 
 <body>
-    <header>
-        <h1>Power BI Best Practices</h1>
-    </header>
+    <div class="container">
+        <div class="header">
+            <h1>6.4: Data Modeling for Analytics</h1>
+        </div>
 
-    <main>
-        <section id="dashboard-design">
-            <h2>Designing Effective Dashboards</h2>
-            <p>Creating an effective Power BI dashboard requires careful consideration of layout, storytelling, and
-                performance.</p>
-            <ul>
-                <li><strong>Layout and Structure:</strong> Organizing visualizations for clarity and flow in Power BI
-                    dashboards.</li>
-                <li><strong>Data Storytelling:</strong> Using Power BI to tell a compelling data-driven story and convey
-                    insights effectively.</li>
-                <li><strong>Performance Optimization:</strong> Improving dashboard performance by optimizing data models
-                    and queries.</li>
-            </ul>
-        </section>
+        <div class="module-content">
+            <div class="card">
+                <div class="card-header">Learning Objectives</div>
+                <div class="card-body">
+                    <ul>
+                        <li>Understand the fundamental differences between transactional and analytical data modeling
+                        </li>
+                        <li>Master dimensional modeling concepts including star and snowflake schemas</li>
+                        <li>Learn to design fact and dimension tables for various business scenarios</li>
+                        <li>Implement slowly changing dimensions to handle historical data tracking</li>
+                        <li>Apply performance optimization techniques for analytical databases</li>
+                    </ul>
+                </div>
+            </div>
 
-        <section id="collaboration">
-            <h2>Collaboration and Sharing</h2>
-            <p>Sharing insights and collaborating with stakeholders is a crucial part of the Power BI workflow.</p>
-            <ul>
-                <li><strong>Publishing and Sharing:</strong> Publishing Power BI reports to Power BI Service and sharing
-                    them with stakeholders. Using Power BI Apps for controlled distribution.</li>
-            </ul>
-        </section>
+            <div class="card">
+                <div class="card-header">1. Transactional vs. Analytical Design</div>
+                <div class="card-body">
+                    <h4>Transactional Databases (OLTP - Online Transaction Processing)</h4>
+                    <p>Transactional databases are optimized for handling operational processes that involve frequent,
+                        small, and rapid data modifications. These systems prioritize data integrity, consistency, and
+                        transaction speed.</p>
 
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p>
-                <strong>Hands-On Practice:</strong> Design and develop a comprehensive dashboard in Power BI.
-                Incorporate best practices for layout, storytelling, and performance optimization. Publish the dashboard
-                to Power BI Service and share it with peers for feedback.
-            </p>
-        </section>
-    </main>
+                    <h5>Key Characteristics</h5>
+                    <ul>
+                        <li><strong>Normalized Structure:</strong> Data is organized to minimize redundancy through
+                            multiple related tables</li>
+                        <li><strong>ACID Compliance:</strong> Atomicity, Consistency, Isolation, and Durability ensure
+                            reliable transactions</li>
+                        <li><strong>Row-Based Storage:</strong> Optimized for reading and writing individual records
+                            efficiently</li>
+                        <li><strong>High Concurrency:</strong> Supports many users performing simultaneous transactions
+                        </li>
+                        <li><strong>Real-Time Processing:</strong> Designed for immediate data processing needs</li>
+                    </ul>
+
+                    <h5>Common Use Cases</h5>
+                    <ul>
+                        <li>Banking transaction processing systems</li>
+                        <li>E-commerce order management systems</li>
+                        <li>Inventory management applications</li>
+                        <li>Customer relationship management (CRM) systems</li>
+                    </ul>
+
+                    <h5>Example Schema</h5>
+                    <p>A typical OLTP database for an e-commerce system might include dozens of normalized tables such
+                        as customers, orders, order_items, products, product_categories, payments, and
+                        shipping_addresses, all connected through foreign key relationships.</p>
+
+                    <h4>Analytical Models (OLAP - Online Analytical Processing)</h4>
+                    <p>Analytical databases are optimized for complex queries that involve large volumes of historical
+                        data. These systems prioritize query performance, data aggregation, and read operations over
+                        write efficiency.</p>
+
+                    <h5>Key Characteristics</h5>
+                    <ul>
+                        <li><strong>Denormalized Structure:</strong> Data is organized to minimize joins and optimize
+                            query performance</li>
+                        <li><strong>Columnar Storage:</strong> Data is stored by columns rather than rows for faster
+                            aggregation</li>
+                        <li><strong>Read-Optimized:</strong> Designed for complex analytical queries rather than
+                            frequent updates</li>
+                        <li><strong>Historical Data:</strong> Maintains extensive historical records for trend analysis
+                        </li>
+                        <li><strong>Batch Processing:</strong> Typically updated through scheduled ETL/ELT processes
+                            rather than real-time transactions</li>
+                    </ul>
+
+                    <h5>Common Use Cases</h5>
+                    <ul>
+                        <li>Business intelligence and reporting systems</li>
+                        <li>Data warehousing and data mart implementations</li>
+                        <li>Historical trend analysis and forecasting</li>
+                        <li>Executive dashboards and KPI monitoring</li>
+                    </ul>
+
+                    <h5>Comparative Analysis</h5>
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Transactional (OLTP)</th>
+                                <th>Analytical (OLAP)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Primary Purpose</strong></td>
+                                <td>Run business operations</td>
+                                <td>Support business decisions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Structure</strong></td>
+                                <td>Highly normalized</td>
+                                <td>Denormalized</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Storage Orientation</strong></td>
+                                <td>Row-based</td>
+                                <td>Column-based</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Query Pattern</strong></td>
+                                <td>Simple, frequent updates</td>
+                                <td>Complex, read-intensive</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Scope</strong></td>
+                                <td>Current operational data</td>
+                                <td>Historical, summarized data</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Performance Metric</strong></td>
+                                <td>Transactions per second</td>
+                                <td>Query response time</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">2. Dimensional Modeling</div>
+                <div class="card-body">
+                    <p>Dimensional modeling is the foundational approach for designing analytical databases that are
+                        intuitive for business users and performant for analytical queries.</p>
+
+                    <h4>Star Schema: The Standard Approach</h4>
+                    <p>The star schema is the simplest and most common dimensional model structure, characterized by a
+                        central fact table surrounded by multiple dimension tables.</p>
+
+                    <h5>Structure Components</h5>
+                    <ul>
+                        <li><strong>Fact Table:</strong> Contains quantitative measurements of business events</li>
+                        <li><strong>Dimension Tables:</strong> Contain descriptive attributes that provide context to
+                            facts</li>
+                        <li><strong>Relationship:</strong> Dimension tables connect to fact tables through foreign key
+                            relationships</li>
+                    </ul>
+
+                    <h5>Example Implementation</h5>
+                    <p>A retail sales star schema would include:</p>
+                    <ul>
+                        <li><strong>Fact Table:</strong> sales_fact with columns: date_key, product_key, store_key,
+                            customer_key, sales_amount, quantity_sold</li>
+                        <li><strong>Dimension Tables:</strong> date_dim, product_dim, store_dim, customer_dim</li>
+                    </ul>
+
+                    <h5>Advantages</h5>
+                    <ul>
+                        <li>Simple structure that business users can easily understand</li>
+                        <li>Minimal joins required for common queries</li>
+                        <li>Excellent query performance for aggregated data</li>
+                        <li>Straightforward to implement and maintain</li>
+                    </ul>
+
+                    <h4>Snowflake Schema: The Normalized Variation</h4>
+                    <p>The snowflake schema extends the star schema by normalizing the dimension tables, creating a more
+                        complex structure that resembles a snowflake.</p>
+
+                    <h5>Structure Characteristics</h5>
+                    <ul>
+                        <li>Dimension tables are normalized into multiple related tables</li>
+                        <li>Hierarchical relationships are explicitly represented</li>
+                        <li>Reduces data redundancy at the cost of increased complexity</li>
+                    </ul>
+
+                    <h5>Example Implementation</h5>
+                    <p>In a snowflaked version of the retail schema:</p>
+                    <ul>
+                        <li>product_dim might be normalized into product, product_category, and product_subcategory
+                            tables</li>
+                        <li>date_dim might be normalized into date, month, quarter, and year tables</li>
+                    </ul>
+
+                    <h5>When to Use Snowflake</h5>
+                    <ul>
+                        <li>When storage optimization is critical</li>
+                        <li>When dimension tables have complex hierarchical relationships</li>
+                        <li>When dimensions have very high cardinality</li>
+                        <li>When integrating with certain BI tools that prefer normalized dimensions</li>
+                    </ul>
+
+                    <h5>Comparison: Star vs. Snowflake</h5>
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Criteria</th>
+                                <th>Star Schema</th>
+                                <th>Snowflake Schema</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Structure</strong></td>
+                                <td>Simple, denormalized</td>
+                                <td>Complex, normalized</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Joins Required</strong></td>
+                                <td>Fewer joins</td>
+                                <td>More joins</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Query Performance</strong></td>
+                                <td>Generally faster</td>
+                                <td>Slightly slower</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Storage Efficiency</strong></td>
+                                <td>Less efficient</td>
+                                <td>More efficient</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ease of Use</strong></td>
+                                <td>Business-friendly</td>
+                                <td>More technical</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Maintenance</strong></td>
+                                <td>Easier</td>
+                                <td>More complex</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">3. Core Concepts</div>
+                <div class="card-body">
+                    <h4>Fact Tables: The Measurement Center</h4>
+                    <p>Fact tables store the quantitative measurements of business events and form the core of
+                        dimensional models.</p>
+
+                    <h5>Types of Fact Tables</h5>
+                    <ul>
+                        <li><strong>Transaction Fact Tables:</strong> Record individual events (e.g., each sale
+                            transaction)</li>
+                        <li><strong>Periodic Snapshot Fact Tables:</strong> Capture state at regular intervals (e.g.,
+                            daily account balance)</li>
+                        <li><strong>Accumulating Snapshot Fact Tables:</strong> Track processes with defined start and
+                            end points (e.g., order fulfillment process)</li>
+                    </ul>
+
+                    <h5>Fact Table Components</h5>
+                    <ul>
+                        <li><strong>Foreign Keys:</strong> Links to dimension tables</li>
+                        <li><strong>Measures:</strong> Numerical values that can be aggregated (e.g., sales_amount,
+                            quantity)</li>
+                        <li><strong>Degenerate Dimensions:</strong> Transaction identifiers that don't belong in
+                            dimension tables</li>
+                        <li><strong>Metadata Columns:</strong> Load timestamp, process ID, data source</li>
+                    </ul>
+
+                    <h5>Design Considerations</h5>
+                    <ul>
+                        <li>Choose appropriate grain (level of detail) for business requirements</li>
+                        <li>Balance between detail and performance needs</li>
+                        <li>Consider partitioning strategies for large fact tables</li>
+                        <li>Implement appropriate indexing for common query patterns</li>
+                    </ul>
+
+                    <h4>Dimension Tables: The Context Providers</h4>
+                    <p>Dimension tables provide the descriptive context for the measurements stored in fact tables.</p>
+
+                    <h5>Characteristics of Good Dimension Tables</h5>
+                    <ul>
+                        <li><strong>Verbose Descriptions:</strong> Rich textual descriptions for business users</li>
+                        <li><strong>Complete Sets:</strong> Should contain all possible values, including "unknown" or
+                            "not applicable"</li>
+                        <li><strong>Surrogate Keys:</strong> Integer keys that are independent of operational systems
+                        </li>
+                        <li><strong>Slowly Changing:</strong> Designed to handle attribute changes over time</li>
+                    </ul>
+
+                    <h5>Common Dimension Types</h5>
+                    <ul>
+                        <li><strong>Conformed Dimensions:</strong> Shared across multiple fact tables (e.g., date
+                            dimension)</li>
+                        <li><strong>Junk Dimensions:</strong> Groups of low-cardinality flags and indicators</li>
+                        <li><strong>Mini-Dimensions:</strong> Separates frequently changing attributes from large
+                            dimensions</li>
+                        <li><strong>Role-Playing Dimensions:</strong> Single physical table used multiple times with
+                            different meanings</li>
+                    </ul>
+
+                    <h4>Slowly Changing Dimensions (SCDs): Managing Historical Changes</h4>
+                    <p>SCDs are techniques for handling changes to dimension attribute values while preserving
+                        historical accuracy.</p>
+
+                    <h5>Type 1: Overwrite Old Values</h5>
+                    <ul>
+                        <li>Simplest approach, overwrites existing data with new values</li>
+                        <li>No history preservation - only current state is maintained</li>
+                        <li>Use when historical accuracy is not important</li>
+                        <li>Example: Correcting a spelling error in a product description</li>
+                    </ul>
+
+                    <h5>Type 2: Add New Row with Updated Values</h5>
+                    <ul>
+                        <li>Creates a new dimension record with a new surrogate key</li>
+                        <li>Maintains complete history of changes</li>
+                        <li>Includes effective date, expiration date, and current flag columns</li>
+                        <li>Use when tracking historical changes is required</li>
+                        <li>Example: Tracking customer address changes over time</li>
+                    </ul>
+
+                    <h5>Type 3: Add New Column for Previous Value</h5>
+                    <ul>
+                        <li>Adds columns to store a limited history of changes</li>
+                        <li>Compromise between Type 1 and Type 2</li>
+                        <li>Only maintains limited history (typically previous value)</li>
+                        <li>Use when limited history tracking is sufficient</li>
+                        <li>Example: Tracking both current and previous sales territories</li>
+                    </ul>
+
+                    <h5>Advanced SCD Techniques</h5>
+                    <ul>
+                        <li><strong>Type 4:</strong> Add History Table - Maintains current dimension in main table and
+                            history in separate table</li>
+                        <li><strong>Type 5:</strong> Hybrid Approach - Combines techniques for optimal performance and
+                            functionality</li>
+                        <li><strong>Type 6:</strong> Unified Approach - Combines aspects of Types 1, 2, and 3 in single
+                            design</li>
+                        <li><strong>Type 7:</strong> Dual Approach - Maintains both historical and current dimension
+                            views</li>
+                    </ul>
+
+                    <h5>Implementation Guidance</h5>
+                    <ul>
+                        <li>Choose SCD type based on business requirements for historical tracking</li>
+                        <li>Consider performance implications of each approach</li>
+                        <li>Implement automated processes for handling dimension changes</li>
+                        <li>Document SCD rules clearly for all dimension attributes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">4. Designing for Performance</div>
+                <div class="card-body">
+                    <h4>Aggregation Strategies</h4>
+                    <ul>
+                        <li><strong>Pre-aggregated Summary Tables:</strong> Create tables with pre-calculated aggregates
+                            for common queries</li>
+                        <li><strong>Materialized Views:</strong> Database objects that store query results for fast
+                            access</li>
+                        <li><strong>OLAP Cubes:</strong> Multi-dimensional arrays of values for rapid analysis</li>
+                        <li><strong>Partial Aggregations:</strong> Pre-calculate at certain levels while maintaining
+                            detail availability</li>
+                    </ul>
+
+                    <h4>Indexing Techniques</h4>
+                    <ul>
+                        <li><strong>Primary Indexes:</strong> Carefully choose distribution keys in distributed systems
+                        </li>
+                        <li><strong>Secondary Indexes:</strong> Create indexes on commonly filtered columns</li>
+                        <li><strong>Bitmap Indexes:</strong> Effective for low-cardinality columns in data warehouses
+                        </li>
+                        <li><strong>Column-Specific Indexing:</strong> Different index types for different data patterns
+                        </li>
+                    </ul>
+
+                    <h4>Partitioning Strategies</h4>
+                    <ul>
+                        <li><strong>Date Partitioning:</strong> Most common approach for time-series data</li>
+                        <li><strong>Range Partitioning:</strong> For numerical values with natural ranges</li>
+                        <li><strong>List Partitioning:</strong> For categorical values with known sets</li>
+                        <li><strong>Composite Partitioning:</strong> Combining multiple partitioning strategies</li>
+                    </ul>
+
+                    <h4>Compression Techniques</h4>
+                    <ul>
+                        <li><strong>Columnar Compression:</strong> Leverage patterns within columns for efficient
+                            storage</li>
+                        <li><strong>Dictionary Encoding:</strong> Replace repetitive values with compact identifiers
+                        </li>
+                        <li><strong>Run-Length Encoding:</strong> Compress sequences of identical values</li>
+                        <li><strong>Bit-Packing:</strong> Store values using the minimum necessary bits</li>
+                    </ul>
+
+                    <h4>Query Optimization Considerations</h4>
+                    <ul>
+                        <li><strong>Join Strategies:</strong> Choose appropriate join algorithms based on data
+                            characteristics</li>
+                        <li><strong>Statistics Maintenance:</strong> Keep database statistics current for optimal query
+                            planning</li>
+                        <li><strong>Workload Management:</strong> Implement resource allocation policies for different
+                            query types</li>
+                        <li><strong>Caching Strategies:</strong> Utilize result caching and intermediate storage
+                            effectively</li>
+                    </ul>
+
+                    <h4>Implementation Best Practices</h4>
+                    <ul>
+                        <li>Start with business requirements rather than technical optimization</li>
+                        <li>Implement iterative design with feedback from business users</li>
+                        <li>Establish naming conventions and standards early</li>
+                        <li>Document data lineage and transformation rules thoroughly</li>
+                        <li>Plan for evolution and changes in business requirements</li>
+                    </ul>
+
+                    <h4>Monitoring and Maintenance</h4>
+                    <ul>
+                        <li>Regularly review query performance and adjust designs accordingly</li>
+                        <li>Monitor data quality and implement validation processes</li>
+                        <li>Establish processes for handling new data sources and requirements</li>
+                        <li>Plan for regular maintenance tasks like index rebuilding and statistics updates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Effective data modeling for analytics requires balancing business usability with technical
+                    performance considerations. Dimensional modeling provides a robust framework for creating analytical
+                    systems that are both intuitive for business users and efficient for query processing. By
+                    understanding the trade-offs between different modeling approaches and implementing appropriate
+                    performance optimization techniques, you can create analytical databases that deliver insights
+                    effectively while maintaining flexibility for future requirements.</p>
+            </div>
+        </div>
+    </div>
+    <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
 
 </body>
 

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+    <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>6.5: Practical Considerations and Debugging Neural Networks</h1>
+        </div>
+
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>Training your first neural network is an exciting milestone, but what happens when your model doesn't
+                perform as expected? Success in deep learning often depends less on theoretical knowledge and more on
+                practical debugging skills. This lesson equips you with essential techniques for diagnosing and fixing
+                common problems in neural network training. You'll learn to interpret training curves, implement
+                effective regularization strategies, and systematically address issues that prevent models from learning
+                effectively.</p>
+
+            <h2>Content</h2>
+
+            <div class="card">
+                <div class="card-header">1. Advanced Data Preprocessing Techniques</div>
+                <div class="card-body">
+                    <p>Proper data preparation is the foundation of successful model training:</p>
+
+                    <h4>Normalization vs. Standardization</h4>
+                    <ul>
+                        <li><strong>Normalization:</strong> Scaling features to a [0, 1] range:
+                            <div
+                                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+                                X_normalized = (X - X_min) / (X_max - X_min)
+                            </div>
+                        </li>
+                        <li><strong>Standardization:</strong> Transforming features to have mean=0 and std=1:
+                            <div
+                                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+                                X_standardized = (X - μ) / σ
+                            </div>
+                        </li>
+                        <li><strong>When to use which:</strong> Normalization for bounded data, standardization for
+                            Gaussian-like distributions</li>
+                    </ul>
+
+                    <h4>Batch Normalization</h4>
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Add batch normalization between layers
+  model.add(tf.keras.layers.Dense(64))
+  model.add(tf.keras.layers.BatchNormalization())
+  model.add(tf.keras.layers.Activation('relu'))</code>
+            </pre>
+                    <ul>
+                        <li>Normalizes activations between layers</li>
+                        <li>Allows higher learning rates</li>
+                        <li>Reduces sensitivity to initialization</li>
+                    </ul>
+
+                    <h4>Data Augmentation (for image data)</h4>
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Create an image data generator
+  datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+      rotation_range=20,
+      width_shift_range=0.2,
+      height_shift_range=0.2,
+      horizontal_flip=True,
+      zoom_range=0.2
+  )
+  # Use during training
+  model.fit(datagen.flow(x_train, y_train, batch_size=32), ...)</code>
+            </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">2. Interpreting Training Curves: A Diagnostic Guide</div>
+                <div class="card-body">
+                    <p>The history object contains crucial information about the training process:</p>
+
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Comprehensive training analysis
+  def plot_training_history(history):
+      fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
+      
+      # Plot accuracy
+      ax1.plot(history.history['accuracy'], label='Training Accuracy')
+      ax1.plot(history.history['val_accuracy'], label='Validation Accuracy')
+      ax1.set_title('Model Accuracy')
+      ax1.set_ylabel('Accuracy')
+      ax1.set_xlabel('Epoch')
+      ax1.legend()
+      
+      # Plot loss
+      ax2.plot(history.history['loss'], label='Training Loss')
+      ax2.plot(history.history['val_loss'], label='Validation Loss')
+      ax2.set_title('Model Loss')
+      ax2.set_ylabel('Loss')
+      ax2.set_xlabel('Epoch')
+      ax2.legend()
+      
+      plt.tight_layout()
+      return fig
+  # Analyze your training
+  history = model.fit(...)
+  plot_training_history(history)</code>
+            </pre>
+
+                    <h4>Common Training Scenarios and Solutions</h4>
+
+                    <div class="card">
+                        <div class="card-header">Ideal Training</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Both training and validation metrics improve steadily</li>
+                                <li>Final validation performance is close to training performance</li>
+                                <li><strong>Action:</strong> Continue training or stop if performance plateaus</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">Overfitting (High Variance)</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Training accuracy improves but validation accuracy stagnates or decreases</li>
+                                <li>Training loss decreases but validation loss increases</li>
+                                <li><strong>Solutions:</strong></li>
+                            </ul>
+                            <pre
+                                style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+                  <code># Add regularization techniques
+  model = tf.keras.Sequential([
+      tf.keras.layers.Dense(128, activation='relu', 
+                           kernel_regularizer=tf.keras.regularizers.l2(0.001)),
+      tf.keras.layers.Dropout(0.5),  # Increase dropout rate
+      # ...
+  ])
+  
+  # Use early stopping
+  early_stopping = tf.keras.callbacks.EarlyStopping(
+      monitor='val_loss',
+      patience=5,  # Number of epochs with no improvement
+      restore_best_weights=True
+  )
+  model.fit(..., callbacks=[early_stopping])</code>
+                </pre>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">Underfitting (High Bias)</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Both training and validation accuracy are poor</li>
+                                <li>Model fails to learn patterns in the data</li>
+                                <li><strong>Solutions:</strong>
+                                    <ul>
+                                        <li>Increase model complexity (more layers/neurons)</li>
+                                        <li>Train for more epochs</li>
+                                        <li>Reduce regularization</li>
+                                        <li>Feature engineering</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">Unstable Training</div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Loss oscillates wildly or becomes NaN</li>
+                                <li><strong>Solutions:</strong>
+                                    <ul>
+                                        <li>Reduce learning rate</li>
+                                        <li>Gradient clipping: optimizer = tf.keras.optimizers.Adam(clipvalue=1.0)</li>
+                                        <li>Check for exploding gradients</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">3. Advanced Debugging Techniques</div>
+                <div class="card-body">
+                    <h4>Gradient Checking</h4>
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># For debugging custom layers or loss functions
+  with tf.GradientTape() as tape:
+      predictions = model(x_batch)
+      loss = loss_fn(y_batch, predictions)
+  gradients = tape.gradient(loss, model.trainable_variables)
+  
+  # Check for vanishing/exploding gradients
+  for grad, var in zip(gradients, model.trainable_variables):
+      if grad is not None:
+          print(f"Variable: {var.name}, Gradient norm: {tf.norm(grad).numpy()}")</code>
+            </pre>
+
+                    <h4>Learning Rate Finder</h4>
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Implement learning rate range test
+  initial_weights = model.get_weights()
+  min_lr, max_lr = 1e-6, 1e-1
+  lr_finder_rates = np.geomspace(min_lr, max_lr, num=100)
+  losses = []
+  
+  for lr in lr_finder_rates:
+      model.set_weights(initial_weights)
+      optimizer = tf.keras.optimizers.Adam(learning_rate=lr)
+      # Train for a few steps
+      # Record loss</code>
+            </pre>
+
+                    <h4>Visualizing Activations and Weights</h4>
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Extract intermediate layer outputs
+  activation_model = tf.keras.Model(
+      inputs=model.input,
+      outputs=[layer.output for layer in model.layers]
+  )
+  activations = activation_model.predict(x_sample)
+  
+  # Visualize first layer weights for CNNs
+  first_layer_weights = model.layers[0].get_weights()[0]
+  plt.figure(figsize=(10, 10))
+  for i in range(16):
+      plt.subplot(4, 4, i+1)
+      plt.imshow(first_layer_weights[:, :, 0, i], cmap='viridis')
+      plt.axis('off')</code>
+            </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">4. Hyperparameter Tuning Strategies</div>
+                <div class="card-body">
+                    <h4>Systematic Approach</h4>
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Use Keras Tuner for automated hyperparameter optimization
+  import kerastuner as kt
+  
+  def build_model(hp):
+      model = tf.keras.Sequential()
+      model.add(tf.keras.layers.Flatten(input_shape=(28, 28)))
+      
+      # Tune number of units
+      for i in range(hp.Int('num_layers', 1, 3)):
+          model.add(tf.keras.layers.Dense(
+              units=hp.Int('units_' + str(i), 32, 256, step=32),
+              activation='relu'
+          ))
+          model.add(tf.keras.layers.Dropout(
+              hp.Float('dropout_' + str(i), 0.1, 0.5, step=0.1)
+          ))
+      
+      model.add(tf.keras.layers.Dense(10, activation='softmax'))
+      
+      model.compile(
+          optimizer=tf.keras.optimizers.Adam(
+              hp.Float('learning_rate', 1e-4, 1e-2, sampling='log')),
+          loss='sparse_categorical_crossentropy',
+          metrics=['accuracy']
+      )
+      return model
+  
+  tuner = kt.RandomSearch(
+      build_model,
+      objective='val_accuracy',
+      max_trials=20,
+      executions_per_trial=2
+  )
+  tuner.search(x_train, y_train, epochs=10, validation_split=0.2)</code>
+            </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">5. Practical Debugging Checklist</div>
+                <div class="card-body">
+                    <p>When your model isn't performing well:</p>
+
+                    <h4>1. Data Issues</h4>
+                    <ul>
+                        <li>Check for data leaks between training and validation sets</li>
+                        <li>Verify data normalization/standardization</li>
+                        <li>Examine class distribution (imbalance?)</li>
+                        <li>Look for missing or corrupted data</li>
+                    </ul>
+
+                    <h4>2. Model Architecture</h4>
+                    <ul>
+                        <li>Start with a simple baseline model</li>
+                        <li>Gradually increase complexity</li>
+                        <li>Verify input shapes match data</li>
+                        <li>Check output layer activation matches problem type</li>
+                    </ul>
+
+                    <h4>3. Training Process</h4>
+                    <ul>
+                        <li>Monitor training and validation metrics</li>
+                        <li>Try different learning rates</li>
+                        <li>Experiment with different optimizers</li>
+                        <li>Use callbacks for early stopping and checkpointing</li>
+                    </ul>
+
+                    <h4>4. Regularization</h4>
+                    <ul>
+                        <li>Add dropout if overfitting</li>
+                        <li>Try L1/L2 regularization</li>
+                        <li>Consider batch normalization</li>
+                        <li>Use data augmentation if applicable</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Embedded Video Context</h2>
+            <p>Watch this practical guide to debugging neural networks, showing real examples of training issues and
+                their solutions.</p>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/Ilg3gGewQ5U" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Neural Network Debugging Techniques</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Effective neural network debugging requires a systematic approach and careful interpretation of
+                    training signals. The most successful practitioners are those who can diagnose issues from training
+                    curves, implement appropriate regularization strategies, and methodically test hypotheses about what
+                    might be causing poor performance. Remember that model development is an iterative process—even
+                    experienced researchers rarely get everything right on the first attempt. The ability to diagnose
+                    and fix problems systematically is what separates novice from expert deep learning practitioners.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+
+
+</body>
+
+</html>

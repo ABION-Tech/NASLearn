@@ -4,10 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Features in Conversational AI: Natural Language Processing (NLP)</title>
+    <title> New Age Skillsphere</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
         body {
             background-color: #ffffff;
             color: #000000;
@@ -18,129 +94,479 @@
         h2,
         h3 {
             color: #007BFF;
-            /* Blue accent color */
+            /* Blue accent */
         }
 
-        .section {
-            margin: 40px 0;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .content {
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        .custom-section {
+            margin-bottom: 40px;
         }
 
-        .highlight {
-            background-color: #f0f8ff;
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
             border-left: 5px solid #007BFF;
-            /* Blue accent color */
-            padding: 10px 15px;
-            margin: 10px 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
+
 </head>
 
 <body>
-
     <div class="container">
-        <div class="section">
-            <h1 class="text-center">Advanced Features in Conversational AI: Natural Language Processing (NLP)</h1>
-            <div class="content">
-                <h2>Understanding Natural Language Processing (NLP)</h2>
-                <p>Natural Language Processing (NLP) is a critical component of conversational AI, enabling systems to
-                    understand, interpret, and generate human language. By incorporating advanced NLP techniques,
-                    conversational AI can achieve a higher level of sophistication and effectiveness. NLP combines
-                    linguistics, computer science, and artificial intelligence to facilitate human-computer interaction.
-                </p>
-            </div>
+        <div class="header">
+            <h1>6.4: Operational Analytics and Process Optimization</h1>
         </div>
 
-        <div class="section">
-            <h2>Key NLP Techniques</h2>
-            <div class="content">
-                <h3>1. Named Entity Recognition (NER)</h3>
-                <p>NER identifies named entities in text, such as people, places, organizations, and dates. This
-                    information can be used to personalize responses and provide relevant information, enhancing user
-                    experience.</p>
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>While customer analytics focuses externally on client interactions and experiences, operational analytics
+                turns the lens inward to transform how organizations function. This discipline uses AI to optimize
+                internal processes, reduce inefficiencies, cut costs, and enhance productivity across the entire value
+                chain. From manufacturing floors to service delivery systems, operational analytics represents one of
+                the most immediate and measurable applications of AI in business, often delivering rapid ROI through
+                streamlined operations and resource optimization.</p>
 
-                <h3>2. Sentiment Analysis</h3>
-                <p>Sentiment analysis determines the emotional tone of text, helping conversational AI systems
-                    understand the user's mood and intent. This enables a more tailored interaction and allows
-                    businesses to respond appropriately to customer needs.</p>
+            <h2>Supply Chain Intelligence and Demand Forecasting</h2>
+            <p>Modern supply chain optimization extends far beyond basic inventory management:</p>
 
-                <h3>3. Dialog Management</h3>
-                <p>Dialog management involves keeping track of the conversation's context, understanding the user's
-                    goals, and generating appropriate responses. Effective dialog management ensures smooth and coherent
-                    interactions, reducing frustration for users.</p>
-
-                <h3>4. Machine Learning</h3>
-                <p>Machine learning algorithms can be used to train conversational AI systems on large datasets of human
-                    conversations, improving their ability to understand and respond to natural language. Continuous
-                    learning from interactions enhances the system's performance over time.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Benefits of Advanced NLP</h2>
-            <div class="content highlight">
-                <h3>Improved Understanding</h3>
-                <p>Advanced NLP techniques enable conversational AI systems to better understand the nuances of human
-                    language, leading to more accurate and relevant responses.</p>
+            <div class="card">
+                <div class="card-header">
+                    Multi-Tier Demand Sensing
+                </div>
+                <div class="card-body">
+                    <p>AI models that incorporate hundreds of external variables—weather patterns, social media trends,
+                        economic indicators, and geopolitical events—to create more accurate demand forecasts than
+                        traditional time-series analysis alone.</p>
+                </div>
             </div>
 
-            <div class="content highlight">
-                <h3>Enhanced Engagement</h3>
-                <p>By understanding the user's context and intent, conversational AI systems can engage users in more
-                    meaningful and personalized conversations, fostering brand loyalty.</p>
+            <div class="card">
+                <div class="card-header">
+                    Intelligent Inventory Optimization
+                </div>
+                <div class="card-body">
+                    <p>Dynamic systems that balance multiple competing objectives: minimizing carrying costs while
+                        maximizing product availability, incorporating lead time variability, supplier reliability
+                        metrics, and transportation constraints.</p>
+                </div>
             </div>
 
-            <div class="content highlight">
-                <h3>Increased Efficiency</h3>
-                <p>Advanced NLP can help automate tasks and streamline workflows, making conversational AI more
-                    efficient and cost-effective for businesses.</p>
+            <div class="card">
+                <div class="card-header">
+                    Logistics Network Optimization
+                </div>
+                <div class="card-body">
+                    <p>AI-powered systems that continuously analyze and optimize routing, warehouse placement, and
+                        transportation modes based on real-time conditions, fuel costs, and service level requirements.
+                    </p>
+                </div>
             </div>
 
-            <div class="content highlight">
-                <h3>Enhanced Customer Experience</h3>
-                <p>Conversational AI systems that can understand and respond to natural language can provide a better
-                    customer experience, leading to higher satisfaction rates.</p>
+            <div class="card">
+                <div class="card-header">
+                    Risk Mitigation
+                </div>
+                <div class="card-body">
+                    <p>Predictive models that identify potential supply chain disruptions before they occur, enabling
+                        proactive contingency planning and alternative sourcing strategies.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="section">
-            <h2>Challenges and Future Directions</h2>
-            <div class="content">
-                <p>Despite the advancements in NLP, there are still challenges to overcome:</p>
-                <ul>
-                    <li><strong>Contextual Understanding:</strong> Understanding the context of a conversation can be
-                        difficult, especially when dealing with ambiguity or multiple meanings.</li>
-                    <li><strong>Dialect and Accent Variation:</strong> Conversational AI systems may struggle to
-                        understand dialects or accents that are different from the training data.</li>
-                    <li><strong>Cultural Nuances:</strong> Understanding cultural nuances and references can be
-                        challenging for conversational AI systems.</li>
-                </ul>
-                <h3>Future Research Directions</h3>
-                <p>Future research and development in NLP will focus on:</p>
-                <ul>
-                    <li><strong>Contextual Understanding:</strong> Developing techniques for better understanding the
-                        context of a conversation, including the user's goals and background knowledge.</li>
-                    <li><strong>Multimodal Understanding:</strong> Combining NLP with other modalities, such as vision
-                        and audio, to create more comprehensive and context-aware conversational AI systems.</li>
-                    <li><strong>Explainable AI:</strong> Developing techniques to make conversational AI systems more
-                        transparent and explainable, increasing user trust and confidence.</li>
-                </ul>
-                <p>By incorporating advanced NLP techniques, conversational AI systems can become even more powerful and
-                    effective tools for communication and interaction. As NLP research continues to advance, we can
-                    expect to see even more sophisticated and natural-feeling conversational AI experiences.</p>
+            <h2>Workforce and Resource Optimization</h2>
+            <p>AI transforms how organizations deploy their human and capital resources:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Labor Forecasting
+                </div>
+                <div class="card-body">
+                    <p>Sophisticated models that predict staffing needs based on historical patterns, scheduled events,
+                        and real-time demand signals, automatically adjusting for factors like seasonality and special
+                        promotions.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Skills-Based Routing
+                </div>
+                <div class="card-body">
+                    <p>Intelligent systems that match customer needs with specifically qualified employees, considering
+                        expertise, language capabilities, and historical performance metrics.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Workforce Productivity Analytics
+                </div>
+                <div class="card-body">
+                    <p>AI systems that identify optimal work patterns, process bottlenecks, and opportunities for
+                        automation or workflow redesign.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Maintenance Crew Optimization
+                </div>
+                <div class="card-body">
+                    <p>Predictive systems that schedule maintenance teams based on equipment criticality, parts
+                        availability, and technician skill sets and locations.</p>
+                </div>
+            </div>
+
+            <h2>Predictive Maintenance and Asset Management</h2>
+            <p>Moving beyond preventive maintenance to truly predictive approaches:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Equipment Health Monitoring
+                </div>
+                <div class="card-body">
+                    <p>IoT sensors combined with AI algorithms that detect subtle changes in vibration, temperature,
+                        acoustics, or energy consumption that indicate impending failures.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Remaining Useful Life Prediction
+                </div>
+                <div class="card-body">
+                    <p>Models that estimate how much operational life remains in critical assets, enabling just-in-time
+                        maintenance and replacement without unnecessary downtime or premature part replacement.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Root Cause Analysis
+                </div>
+                <div class="card-body">
+                    <p>AI systems that automatically correlate multiple data sources to identify the underlying causes
+                        of equipment failures or performance degradation.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Maintenance Optimization
+                </div>
+                <div class="card-body">
+                    <p>Systems that balance maintenance costs against operational risks, scheduling interventions at the
+                        optimal time to minimize total cost of ownership.</p>
+                </div>
+            </div>
+
+            <h2>AI-Powered Quality Control</h2>
+            <p>Computer vision and machine learning revolutionize quality assurance:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Visual Inspection Systems
+                </div>
+                <div class="card-body">
+                    <p>AI vision systems that detect defects, inconsistencies, or variations invisible to the human eye,
+                        operating at production line speeds with consistent accuracy.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Automated Measurement and Verification
+                </div>
+                <div class="card-body">
+                    <p>Systems that continuously monitor critical dimensions, tolerances, and specifications without
+                        production interruption.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Process Parameter Optimization
+                </div>
+                <div class="card-body">
+                    <p>AI systems that continuously adjust manufacturing parameters (temperature, pressure, speed) in
+                        real-time to maintain optimal quality outcomes.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Anomaly Detection
+                </div>
+                <div class="card-body">
+                    <p>Unsupervised learning algorithms that identify unusual patterns or emerging quality issues before
+                        they become significant problems.</p>
+                </div>
+            </div>
+
+            <h2>Real-Time Operational Decision Systems</h2>
+            <p>Integrating AI directly into operational workflows:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Autonomous Decision Making
+                </div>
+                <div class="card-body">
+                    <p>Systems that make routine operational decisions without human intervention—inventory
+                        replenishment, production scheduling, energy management—based on predefined business rules and
+                        AI optimization.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Dynamic Pricing and Yield Management
+                </div>
+                <div class="card-body">
+                    <p>AI systems that continuously adjust prices, offers, or resource allocation based on real-time
+                        supply and demand conditions.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Exception Management
+                </div>
+                <div class="card-body">
+                    <p>Intelligent monitoring systems that automatically identify and prioritize operational exceptions
+                        for human intervention, reducing the cognitive load on operations staff.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Digital Twin Technology
+                </div>
+                <div class="card-body">
+                    <p>Creating virtual replicas of physical systems that can be used to simulate, predict, and optimize
+                        operations before implementing changes in the real world.</p>
+                </div>
+            </div>
+
+            <h2>Implementation Framework</h2>
+            <p>Successfully implementing operational AI requires addressing several key considerations:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Data Infrastructure
+                </div>
+                <div class="card-body">
+                    <p>Ensuring reliable data collection from sensors, equipment, and operational systems, often
+                        requiring edge computing capabilities for real-time processing.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Integration Challenges
+                </div>
+                <div class="card-body">
+                    <p>Connecting AI systems with existing operational technology (OT), enterprise resource planning
+                        (ERP), and manufacturing execution systems (MES).</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Change Management
+                </div>
+                <div class="card-body">
+                    <p>Helping operational staff trust and adopt AI recommendations, often requiring transparent
+                        explanations of AI reasoning and gradual implementation approaches.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    ROI Measurement
+                </div>
+                <div class="card-body">
+                    <p>Establishing clear metrics to measure the impact of operational AI initiatives on key performance
+                        indicators like equipment uptime, throughput, quality rates, and operational costs.</p>
+                </div>
+            </div>
+
+            <h2>Embedded Video Context</h2>
+            <p>To see predictive maintenance in action, watch this case study of how a major industrial company uses AI
+                and IoT sensors to prevent equipment failures and optimize maintenance schedules.</p>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Predictive Maintenance Case Study: Industrial AI in Action</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Operational analytics represents one of the most valuable and immediately applicable uses of AI in
+                    business. By embedding intelligence into core operational processes—from supply chains to production
+                    floors to service delivery—organizations can achieve significant efficiency gains, cost reductions,
+                    and quality improvements. The transition from reactive to predictive operations requires investment
+                    in data infrastructure and change management, but the resulting competitive advantages in
+                    reliability, efficiency, and responsiveness make these investments increasingly essential for modern
+                    businesses.</p>
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
 
 </html>

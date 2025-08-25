@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+    <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Assignment: Fashion-MNIST Exploration - Hands-On Practice</h1>
+        </div>
+
+        <div class="module-content">
+            <h2>Objective</h2>
+            <p>This assignment challenges you to apply your understanding of neural network architecture design and
+                hyperparameter tuning to the Fashion-MNIST dataset. You will experiment with different network
+                architectures, analyze their performance, and develop intuition about what makes certain designs more
+                effective than others. This practical exercise will solidify your understanding of how neural networks
+                learn and generalize.</p>
+
+            <h2>1. Understanding the Fashion-MNIST Dataset</h2>
+            <div class="card">
+                <div class="card-header">What is Fashion-MNIST?</div>
+                <div class="card-body">
+                    <p>Fashion-MNIST is a more challenging alternative to the classic MNIST digit recognition dataset.
+                        It contains 70,000 grayscale images of clothing items across 10 categories, each of size 28×28
+                        pixels. The increased complexity makes it better for testing neural network architectures.</p>
+
+                    <h4>The 10 Categories:</h4>
+                    <ol>
+                        <li>T-shirt/top</li>
+                        <li>Trouser</li>
+                        <li>Pullover</li>
+                        <li>Dress</li>
+                        <li>Coat</li>
+                        <li>Sandal</li>
+                        <li>Shirt</li>
+                        <li>Sneaker</li>
+                        <li>Bag</li>
+                        <li>Ankle boot</li>
+                    </ol>
+
+                    <h4>Why Fashion-MNIST is Better for Learning:</h4>
+                    <ul>
+                        <li>More challenging than digit recognition (lower baseline accuracy)</li>
+                        <li>Better representation of real-world computer vision problems</li>
+                        <li>Helps develop skills that transfer to more complex datasets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Embedded Video Context</h2>
+            <p>Watch this overview of the Fashion-MNIST dataset to understand its composition and challenges.</p>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/5p7kZ0pQKb4" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Fashion-MNIST Dataset Overview</h4>
+                    </div>
+                </div>
+            </div>
+
+            <h2>2. Implementation Guide</h2>
+
+            <div class="card">
+                <div class="card-header">Step 1: Environment Setup and Data Loading</div>
+                <div class="card-body">
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Import necessary libraries
+  import tensorflow as tf
+  from tensorflow import keras
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import seaborn as sns
+  from sklearn.metrics import classification_report, confusion_matrix
+  # Set random seed for reproducibility
+  tf.random.set_seed(42)
+  np.random.seed(42)
+  # Load Fashion-MNIST dataset
+  (x_train, y_train), (x_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
+  # Check dataset shape
+  print("Training data shape:", x_train.shape)
+  print("Training labels shape:", y_train.shape)
+  print("Test data shape:", x_test.shape)
+  print("Test labels shape:", y_test.shape)
+  # Define class names for reference
+  class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
+                 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']</code>
+            </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Step 2: Data Exploration and Visualization</div>
+                <div class="card-body">
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Visualize sample images
+  plt.figure(figsize=(10,10))
+  for i in range(25):
+      plt.subplot(5,5,i+1)
+      plt.xticks([])
+      plt.yticks([])
+      plt.grid(False)
+      plt.imshow(x_train[i], cmap=plt.cm.binary)
+      plt.xlabel(class_names[y_train[i]])
+  plt.show()
+  # Check class distribution
+  plt.figure(figsize=(10,5))
+  plt.subplot(1,2,1)
+  sns.countplot(x=y_train)
+  plt.title('Training set class distribution')
+  plt.subplot(1,2,2)
+  sns.countplot(x=y_test)
+  plt.title('Test set class distribution')
+  plt.tight_layout()
+  plt.show()</code>
+            </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Step 3: Data Preprocessing</div>
+                <div class="card-body">
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Normalize pixel values to [0, 1]
+  x_train = x_train.astype('float32') / 255.0
+  x_test = x_test.astype('float32') / 255.0
+  # Reshape data for MLP input (flatten 28x28 images to 784-dimensional vectors)
+  x_train_flat = x_train.reshape((x_train.shape[0], 28*28))
+  x_test_flat = x_test.reshape((x_test.shape[0], 28*28))
+  print("Flattened training shape:", x_train_flat.shape)
+  print("Flattened test shape:", x_test_flat.shape)</code>
+            </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Step 4: Model Building Utility Function</div>
+                <div class="card-body">
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code>def create_model(hidden_layers, activation='relu', output_activation='softmax'):
+      """
+      Creates a sequential model with specified architecture
+      
+      Args:
+          hidden_layers: List of integers specifying neurons in each hidden layer
+          activation: Activation function for hidden layers
+          output_activation: Activation function for output layer
+      
+      Returns:
+          Compiled Keras model
+      """
+      model = tf.keras.Sequential()
+      
+      # Input layer
+      model.add(tf.keras.layers.Input(shape=(784,)))
+      
+      # Hidden layers
+      for neurons in hidden_layers:
+          model.add(tf.keras.layers.Dense(neurons, activation=activation))
+          model.add(tf.keras.layers.Dropout(0.2))  # Regularization
+      
+      # Output layer
+      model.add(tf.keras.layers.Dense(10, activation=output_activation))
+      
+      # Compile model
+      model.compile(optimizer='adam',
+                    loss='sparse_categorical_crossentropy',
+                    metrics=['accuracy'])
+      
+      return model</code>
+            </pre>
+                </div>
+            </div>
+
+            <h2>3. Experimentation Framework</h2>
+
+            <div class="card">
+                <div class="card-header">Required Model Architectures to Test</div>
+                <div class="card-body">
+
+                    <h4>Model A: Simple Architecture (Baseline)</h4>
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code>model_a = create_model(hidden_layers=[128], activation='relu')
+  model_a.summary()</code>
+            </pre>
+
+                    <h4>Model B: Deeper Architecture</h4>
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code>model_b = create_model(hidden_layers=[256, 128], activation='relu')
+  model_b.summary()</code>
+            </pre>
+
+                    <h4>Model C: Alternative Activation Function</h4>
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code>model_c = create_model(hidden_layers=[128, 64], activation='tanh')
+  model_c.summary()</code>
+            </pre>
+
+                    <h4>Advanced Option: Create Your Own Architecture</h4>
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Experiment with your own architecture here
+  model_custom = create_model(hidden_layers=[512, 256, 128], activation='relu')
+  model_custom.summary()</code>
+            </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Training and Evaluation Function</div>
+                <div class="card-body">
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code>def train_and_evaluate_model(model, x_train, y_train, x_test, y_test, epochs=15):
+      """
+      Train model and return history and evaluation results
+      """
+      # Add early stopping to prevent overfitting
+      early_stopping = tf.keras.callbacks.EarlyStopping(
+          monitor='val_loss', patience=3, restore_best_weights=True
+      )
+      
+      # Train model
+      history = model.fit(
+          x_train, y_train,
+          epochs=epochs,
+          batch_size=32,
+          validation_split=0.2,
+          callbacks=[early_stopping],
+          verbose=1
+      )
+      
+      # Evaluate on test set
+      test_loss, test_accuracy = model.evaluate(x_test, y_test, verbose=0)
+      
+      return history, test_loss, test_accuracy</code>
+            </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Visualization Function</div>
+                <div class="card-body">
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code>def plot_training_history(history, model_name):
+      """
+      Plot training history for accuracy and loss
+      """
+      fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
+      
+      # Plot accuracy
+      ax1.plot(history.history['accuracy'], label='Training Accuracy')
+      ax1.plot(history.history['val_accuracy'], label='Validation Accuracy')
+      ax1.set_title(f'{model_name} - Accuracy')
+      ax1.set_xlabel('Epoch')
+      ax1.set_ylabel('Accuracy')
+      ax1.legend()
+      
+      # Plot loss
+      ax2.plot(history.history['loss'], label='Training Loss')
+      ax2.plot(history.history['val_loss'], label='Validation Loss')
+      ax2.set_title(f'{model_name} - Loss')
+      ax2.set_xlabel('Epoch')
+      ax2.set_ylabel('Loss')
+      ax2.legend()
+      
+      plt.tight_layout()
+      plt.show()</code>
+            </pre>
+                </div>
+            </div>
+
+            <h2>4. Running the Experiments</h2>
+
+            <div class="card">
+                <div class="card-header">Execute each experiment one by one</div>
+                <div class="card-body">
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Experiment with Model A
+  print("Training Model A...")
+  history_a, loss_a, acc_a = train_and_evaluate_model(model_a, x_train_flat, y_train, x_test_flat, y_test)
+  plot_training_history(history_a, "Model A (128 neurons, ReLU)")
+  
+  # Experiment with Model B
+  print("Training Model B...")
+  history_b, loss_b, acc_b = train_and_evaluate_model(model_b, x_train_flat, y_train, x_test_flat, y_test)
+  plot_training_history(history_b, "Model B (256-128 neurons, ReLU)")
+  
+  # Experiment with Model C
+  print("Training Model C...")
+  history_c, loss_c, acc_c = train_and_evaluate_model(model_c, x_train_flat, y_train, x_test_flat, y_test)
+  plot_training_history(history_c, "Model C (128-64 neurons, Tanh)")</code>
+            </pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Comparative Analysis</div>
+                <div class="card-body">
+                    <pre
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+              <code># Compare model performance
+  results = {
+      'Model A': acc_a,
+      'Model B': acc_b, 
+      'Model C': acc_c
+  }
+  plt.figure(figsize=(10, 6))
+  plt.bar(results.keys(), results.values())
+  plt.title('Test Accuracy Comparison')
+  plt.ylabel('Accuracy')
+  plt.ylim(0.7, 0.9)
+  for i, v in enumerate(results.values()):
+      plt.text(i, v + 0.005, f'{v:.3f}', ha='center')
+  plt.show()</code>
+            </pre>
+                </div>
+            </div>
+
+            <h2>5. Analysis and Report Guidelines</h2>
+            <p>Your report should include:</p>
+            <ol>
+                <li><strong>Introduction:</strong> Brief overview of the assignment and Fashion-MNIST dataset</li>
+                <li><strong>Methodology:</strong>
+                    <ul>
+                        <li>Description of each model architecture</li>
+                        <li>Preprocessing steps applied</li>
+                        <li>Training parameters (epochs, batch size, etc.)</li>
+                    </ul>
+                </li>
+                <li><strong>Results:</strong>
+                    <ul>
+                        <li>Final test accuracy for each model</li>
+                        <li>Training curves for each model (include the plots)</li>
+                        <li>Observations about training behavior (convergence speed, overfitting, etc.)</li>
+                    </ul>
+                </li>
+                <li><strong>Analysis:</strong>
+                    <ul>
+                        <li>Which model performed best? Why do you think that is?</li>
+                        <li>Did any model show signs of overfitting or underfitting?</li>
+                        <li>How did different activation functions affect performance?</li>
+                        <li>What effect did network depth have on performance?</li>
+                    </ul>
+                </li>
+                <li><strong>Conclusion:</strong>
+                    <ul>
+                        <li>Summary of key findings</li>
+                        <li>Insights gained about neural network design</li>
+                        <li>Potential improvements or further experiments</li>
+                    </ul>
+                </li>
+                <li><strong>Appendix:</strong>
+                    <ul>
+                        <li>Complete code (as Colab notebook link)</li>
+                        <li>References to any external resources used</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h2>6. Submission Requirements</h2>
+            <ol>
+                <li><strong>Colab Notebook:</strong> Shareable link to your Google Colab notebook with all code executed
+                </li>
+                <li><strong>PDF Report:</strong> 1-2 page report following the structure above</li>
+                <li><strong>Submission Format:</strong> Submit both through the course LMS</li>
+            </ol>
+
+            <h3>Grading Rubric</h3>
+            <ul>
+                <li>Code correctness and completeness (30%)</li>
+                <li>Model experimentation and variety (25%)</li>
+                <li>Analysis depth and insight (25%)</li>
+                <li>Report quality and clarity (20%)</li>
+            </ul>
+
+            <h2>Embedded Video Context</h2>
+            <p>Watch this tutorial on interpreting neural network training curves to help with your analysis.</p>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/3q4z0p2gY8I" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Interpreting Neural Network Training Curves</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>This assignment is designed to help you develop intuition about neural network architecture design
+                    through hands-on experimentation. There are no "right" answers—the goal is to systematically test
+                    different approaches, carefully observe the results, and form data-driven conclusions about what
+                    architectural choices work best for different types of problems. The skills you develop here will be
+                    directly applicable to designing neural networks for real-world applications.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

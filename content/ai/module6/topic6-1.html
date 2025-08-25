@@ -4,9 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to Conversational AI: A Deep Dive</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
         body {
             background-color: #ffffff;
             color: #000000;
@@ -16,147 +93,431 @@
         h1,
         h2,
         h3 {
-            color: #007bff;
-            /* Blue accent color */
+            color: #007BFF;
+            /* Blue accent */
         }
 
-        h1 {
-            margin-top: 30px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        h2 {
-            margin-top: 25px;
+        .custom-section {
+            margin-bottom: 40px;
         }
 
-        h3 {
-            margin-top: 20px;
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .content-section {
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #007bff;
-            /* Blue accent for sections */
-            border-radius: 5px;
+        .custom-section ul {
+            margin-left: 20px;
         }
 
-        .key-components,
-        .techniques,
-        .applications {
-            margin-top: 10px;
+        .custom-section ul li {
+            margin-bottom: 10px;
         }
 
-        .list-style {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        .highlight {
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
             background-color: #f8f9fa;
-            padding: 10px;
-            border-left: 5px solid #007bff;
-            margin: 10px 0;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
+
 </head>
 
 <body>
-
     <div class="container">
-        <div class="content-section">
-            <h1>Introduction to Conversational AI: A Deep Dive</h1>
-            <p>Conversational AI, a subset of artificial intelligence, focuses on creating systems that can communicate
-                and interact with humans in natural language. Chatbots and virtual assistants are prime examples of
-                conversational AI in action, serving various industries and enhancing user experience through effective
-                communication.</p>
+        <div class="header">
+            <h1>6.1: Introduction to AI-Driven Analytics</h1>
         </div>
 
-        <div class="content-section">
-            <h2>How AI Powers Chatbots and Virtual Assistants</h2>
-            <p>At the core of conversational AI are natural language processing (NLP) techniques. NLP enables machines
-                to understand, interpret, and generate human language. Here's a breakdown of the key components:</p>
-            <div class="key-components">
-                <h3>1. Natural Language Understanding (NLU)</h3>
-                <ul class="list-style">
-                    <li><strong>Tokenization:</strong> Breaking down text into individual words or subwords to analyze
-                        them separately.</li>
-                    <li><strong>Part-of-Speech Tagging:</strong> Identifying the grammatical role of each word (e.g.,
-                        noun, verb, adjective) to understand the structure of sentences.</li>
-                    <li><strong>Named Entity Recognition:</strong> Recognizing entities like people, places, and
-                        organizations to identify key information within the text.</li>
-                    <li><strong>Semantic Analysis:</strong> Understanding the meaning and context of the text, allowing
-                        for more accurate responses.</li>
-                </ul>
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>Business Intelligence has traditionally focused on historical reporting- showing what already happened.
+                AI-driven analytics represents a paradigm shift, using machine learning to not only understand the past
+                but to predict future outcomes and recommend data-driven actions. This transformative approach is
+                changing how organizations make decisions and compete in their markets.</p>
 
-                <h3>2. Dialogue Management</h3>
-                <ul class="list-style">
-                    <li><strong>State Tracking:</strong> Keeping track of the conversation's context and history to
-                        maintain coherent interactions.</li>
-                    <li><strong>Intent Recognition:</strong> Determining the user's intent based on their query to
-                        provide relevant responses.</li>
-                    <li><strong>Response Generation:</strong> Selecting an appropriate response from a predefined set or
-                        generating a new one based on context.</li>
-                </ul>
+            <h2>The Evolution from Traditional to AI-Driven BI</h2>
+            <p>Traditional Business Intelligence has served organizations well for decades, but has fundamental
+                limitations:</p>
 
-                <h3>3. Natural Language Generation (NLG)</h3>
-                <ul class="list-style">
-                    <li><strong>Text Generation:</strong> Creating human-readable text based on the identified intent
-                        and context to formulate responses.</li>
-                    <li><strong>Formatting:</strong> Ensuring the generated text is grammatically correct and coherent
-                        for clear communication.</li>
-                </ul>
+            <div class="card">
+                <div class="card-header">
+                    Traditional (Descriptive) BI
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Focuses on:</strong> "What happened?" and "How many?"</li>
+                        <li><strong>Relies on:</strong> Dashboards, standardized reports, and SQL queries</li>
+                        <li><strong>Approach:</strong> Rule-based and historical analysis</li>
+                        <li><strong>Example:</strong> A monthly sales report showing revenue by product category and
+                            region</li>
+                        <li><strong>Limitation:</strong> Provides rear-view mirror perspective without predictive
+                            capability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    AI-Driven (Predictive & Prescriptive) BI
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Answers:</strong> "What will happen?" and "What should we do?"</li>
+                        <li><strong>Uses:</strong> Machine learning models to identify patterns and predict outcomes
+                        </li>
+                        <li><strong>Approach:</strong> Statistical pattern recognition and predictive modeling</li>
+                        <li><strong>Example:</strong> A model predicting which customers are most likely to churn next
+                            quarter, with specific retention recommendations for each segment</li>
+                        <li><strong>Advantage:</strong> Provides forward-looking insights and actionable recommendations
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Core Concepts and Terminology</h2>
+            <p>Understanding these fundamental concepts is essential:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Machine Learning (ML)
+                </div>
+                <div class="card-body">
+                    <p>A subset of AI where algorithms improve automatically through experience without explicit
+                        programming. ML systems learn patterns from data rather than following predetermined rules.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Data Mining
+                </div>
+                <div class="card-body">
+                    <p>The process of examining large datasets to discover patterns, correlations, and anomalies that
+                        might otherwise go unnoticed. It's the foundation upon which predictive models are built.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Predictive Modeling
+                </div>
+                <div class="card-body">
+                    <p>The process of using historical data to create a mathematical model that can predict future
+                        outcomes or behaviors. These models become more accurate as they process more data.</p>
+                </div>
+            </div>
+
+            <h2>The Business Value Proposition</h2>
+            <p>AI analytics creates tangible value across industries through several mechanisms:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Enhanced Decision-Making
+                </div>
+                <div class="card-body">
+                    <p>Replaces intuition-based decisions with data-driven forecasts, reducing uncertainty in strategic
+                        planning</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Process Automation
+                </div>
+                <div class="card-body">
+                    <p>Automates complex analytical tasks that would be time-consuming for human analysts, freeing them
+                        for higher-value interpretation and strategy work</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Opportunity Identification
+                </div>
+                <div class="card-body">
+                    <p>Detects subtle patterns, correlations, and trends that are invisible to human analysis,
+                        uncovering new revenue opportunities or cost savings</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Customer Experience Personalization
+                </div>
+                <div class="card-body">
+                    <p>Enables hyper-personalized experiences through recommendation engines and targeted marketing that
+                        adapt to individual customer behaviors</p>
+                </div>
+            </div>
+
+            <h2>Real-World Applications Across Industries</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    Retail & E-commerce
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Dynamic pricing optimization</li>
+                        <li>Personalized product recommendations</li>
+                        <li>Inventory forecasting and management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Financial Services
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Fraud detection and prevention</li>
+                        <li>Credit risk assessment</li>
+                        <li>Algorithmic trading strategies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Healthcare
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Disease outbreak prediction</li>
+                        <li>Patient readmission risk scoring</li>
+                        <li>Drug discovery acceleration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Manufacturing
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Predictive maintenance scheduling</li>
+                        <li>Quality control automation</li>
+                        <li>Supply chain optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Implementation Considerations</h2>
+            <p>Successful AI analytics implementation requires addressing several key factors:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Data Quality
+                </div>
+                <div class="card-body">
+                    <p>The principle of "garbage in, garbage out" applies doubly to AI systems. Clean, well-structured
+                        data is essential for accurate predictions</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Infrastructure Requirements
+                </div>
+                <div class="card-body">
+                    <p>AI analytics typically requires more computational power and storage than traditional BI, often
+                        leveraging cloud-based solutions</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Skill Gaps
+                </div>
+                <div class="card-body">
+                    <p>Organizations need to develop or acquire data science capabilities, including data engineering,
+                        model development, and interpretation skills</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Change Management
+                </div>
+                <div class="card-body">
+                    <p>Moving from descriptive to predictive analytics requires cultural shifts in how decisions are
+                        made and trusted within organizations</p>
+                </div>
+            </div>
+
+            <h2>Embedded Video Context</h2>
+            <p>To understand how AI is transforming business intelligence in practice, watch this video case study of AI
+                implementation. As you watch, note how the organization moved from traditional reporting to predictive
+                insights.</p>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Case Study: AI Implementation in Business Intelligence</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>AI-driven analytics represents a fundamental shift from describing the past to predicting and shaping
+                    the future. While the transition requires new capabilities and approaches, the potential for
+                    improved decision-making and competitive advantage makes this transformation essential for modern
+                    organizations. Success depends on building strong data foundations, developing the right skills, and
+                    creating a culture that trusts and acts on data-driven insights.</p>
             </div>
         </div>
-
-        <div class="content-section">
-            <h2>Key Techniques in Conversational AI</h2>
-            <p>There are various techniques employed in the development of conversational AI systems:</p>
-            <div class="techniques">
-                <ul class="list-style">
-                    <li><strong>Rule-Based Systems:</strong> These systems follow predefined rules and patterns to
-                        generate responses. While they are effective for simple, task-oriented conversations, they can
-                        be limited in their flexibility.</li>
-                    <li><strong>Machine Learning:</strong> Machine learning algorithms, such as neural networks, learn
-                        from large datasets of conversations, improving their responses over time. This approach allows
-                        for more natural and dynamic interactions.</li>
-                    <li><strong>Reinforcement Learning:</strong> This technique involves training AI agents to make
-                        decisions based on rewards and punishments, optimizing conversational AI systems for specific
-                        tasks or goals, enhancing their ability to adapt.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Applications of Conversational AI</h2>
-            <p>Conversational AI has a wide range of applications across various sectors:</p>
-            <div class="applications">
-                <ul class="list-style">
-                    <li><strong>Customer Service:</strong> Chatbots and virtual assistants handle routine customer
-                        inquiries, freeing human agents for more complex tasks and enhancing efficiency.</li>
-                    <li><strong>Personal Assistants:</strong> Virtual assistants like Siri, Alexa, and Google Assistant
-                        can perform tasks such as setting reminders, playing music, and controlling smart home devices,
-                        streamlining daily activities.</li>
-                    <li><strong>Education:</strong> Conversational AI provides personalized tutoring and support to
-                        students, adapting to individual learning needs and enhancing educational outcomes.</li>
-                    <li><strong>Entertainment:</strong> Chatbots can create interactive storytelling experiences or
-                        games, providing engaging content and enhancing user engagement.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="content-section highlight">
-            <h2>The Future of Conversational AI</h2>
-            <p>As conversational AI continues to advance, we can expect to see even more sophisticated and
-                natural-feeling interactions with machines. The future of communication is likely to be shaped by the
-                integration of human intelligence and artificial intelligence, paving the way for more intuitive user
-                experiences and innovative applications.</p>
-        </div>
-
     </div>
+</body>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<div class="video-container">
+    <div class="gradient-border">
+        <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <div class="video-links">
+            <h4>Video Explanation<h4>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+
 </body>
 
 </html>

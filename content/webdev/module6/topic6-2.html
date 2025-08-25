@@ -2,235 +2,647 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setting Up a Server</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-        .container {
-            margin-top: 30px;
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        h2,
-        h4 {
-            margin-top: 30px;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        h2 {
-            color: #7698f7;
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .code-block {
-            background-color: #e9ecef;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    .container {
+      padding: 20px;
+    }
 
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .container {
-            padding: 20px;
-        }
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
 
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
 
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
 
-        /* Video or content inside the border */
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
+
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
         .video-content {
-            border-radius: 10px;
-            display: block;
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
 
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
+  </style>
 
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
-        }
-    </style>
 </head>
 
+
 <body>
+  <div class="container">
+    <div class="header">
+      <h1>Week 6: Introduction to Backend Development with Node.js</h1>
+      <h2>6.2: Introduction to Node.js & npm</h2>
+    </div>
 
-    <div class="container">
-        <h1 class="text-center mb-4">Setting Up a Server</h1>
+    <div class="module-content">
+      <h2>Introduction: JavaScript Everywhere</h2>
+      <p>For years, JavaScript was confined to the browser. It was a language for making web pages interactive. Node.js
+        shattered that limitation. It took JavaScript and placed it on the server, enabling developers to build fast,
+        scalable network applications using a language they already knew. This module introduces you to the Node.js
+        runtime, its powerful package manager, npm, and the core tools you need to start building.</p>
 
-        <h2>2.1. Introduction to Node.js</h2>
-        <p>Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It enables developers to use
-            JavaScript for server-side programming.</p>
+      <h2>1. What is Node.js? More Than Just JavaScript</h2>
+      <p>Node.js is not a programming language nor a framework. It is a JavaScript runtime environment built on top of
+        Google Chrome's powerful V8 JavaScript engine.</p>
 
-        <h4>Installation:</h4>
-        <ul>
-            <li>Download and install Node.js from <a href="https://nodejs.org" target="_blank">nodejs.org</a>.</li>
-            <li>Verify the installation using <code>node -v</code> and <code>npm -v</code> in the terminal.</li>
-        </ul>
+      <div class="card">
+        <div class="card-header">
+          The V8 Engine
+        </div>
+        <div class="card-body">
+          <p>This is what makes Node.js fast. V8 is the open-source JavaScript engine that compiles JavaScript directly
+            to native machine code inside Chrome. Node.js takes this engine and provides additional capabilities for
+            working with the operating system, like reading files and handling networks, which a browser doesn't allow.
+          </p>
+        </div>
+      </div>
 
-        <h4>Basic Node.js Application:</h4>
-        <div class="code-block">
-            <code>
-// app.js
-const http = require('http');
+      <div class="card">
+        <div class="card-header">
+          Running JavaScript Outside the Browser
+        </div>
+        <div class="card-body">
+          <p>Node.js provides the necessary APIs (e.g., fs, http, path) that allow JavaScript code to interact with the
+            server's operating system. This means you can write a JavaScript program that starts a web server, accesses
+            a database, or reads a configuration file—things that were previously only possible with languages like
+            Python, Java, or PHP.</p>
+        </div>
+      </div>
 
+      <div class="card">
+        <div class="card-header">
+          The Secret Sauce: Event-Driven, Non-Blocking I/O
+        </div>
+        <div class="card-body">
+          <p>This is the most important concept to grasp about Node.js. It's what makes it efficient and well-suited for
+            I/O-heavy applications (like web servers, APIs, and chat apps).</p>
+
+          <p><strong>I/O (Input/Output):</strong> Any operation that involves an external system: reading a file from a
+            disk, waiting for a database query to return, making an HTTP request to another API. These operations are
+            incredibly slow compared to in-memory calculations (like adding two numbers).</p>
+
+          <p><strong>Blocking I/O (The Old Way):</strong> In traditional server models, when a request requires an I/O
+            operation (e.g., reading a file), the entire process stops ("blocks") and waits idly for that operation to
+            finish. This is inefficient, as the server could be handling other requests while it waits.</p>
+
+          <p><strong>Non-Blocking I/O (The Node.js Way):</strong> Node.js uses an event loop to handle operations
+            asynchronously.</p>
+          <ol>
+            <li>When an I/O operation is requested, Node.js doesn't wait. It registers a callback function and
+              immediately continues to execute other code.</li>
+            <li>The event loop constantly checks if any operations have completed.</li>
+            <li>Once the slow I/O operation is finished, the event loop places its callback function in a queue to be
+              executed as soon as the main thread is free.</li>
+          </ol>
+
+          <p><strong>The Analogy:</strong> Imagine a single restaurant waiter (the event loop) serving many tables
+            (requests).</p>
+          <ul>
+            <li><strong>Blocking:</strong> The waiter takes an order from Table 1, goes to the kitchen, and stands there
+              waiting for the food to be cooked before serving Table 2. This is terribly inefficient.</li>
+            <li><strong>Non-Blocking:</strong> The waiter takes an order from Table 1 and gives it to the kitchen. They
+              immediately go to Table 2 to take their order. When the kitchen signals that Table 1's food is ready, the
+              waiter picks it up and delivers it. One waiter efficiently handles many tables.</li>
+          </ul>
+          <p>This model allows a single-threaded Node.js application to handle thousands of concurrent connections
+            efficiently, making it lightweight and performant.</p>
+        </div>
+      </div>
+
+      <h2>2. Setting Up and Running Node.js</h2>
+
+      <div class="card">
+        <div class="card-header">
+          Installation
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>Go to the official Node.js website.</li>
+            <li>Download and run the installer for your operating system (Windows, macOS, Linux). The LTS (Long Term
+              Support) version is recommended for most users as it is more stable.</li>
+            <li>The installer includes both Node.js and npm (Node Package Manager).</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Verifying the Installation
+        </div>
+        <div class="card-body">
+          <p>Open your terminal or command prompt and run:</p>
+          <pre><code>node --version
+npm --version</code></pre>
+          <p>You should see version numbers printed out (e.g., v18.17.0 and 9.6.7). This confirms a successful
+            installation.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Running a JavaScript File
+        </div>
+        <div class="card-body">
+          <p>Create a file named app.js with the following content:</p>
+          <pre><code>// app.js
+console.log('Hello from Node.js!');
+const message = "The answer is";
+const answer = 42;
+console.log(`${message} ${answer}`);</code></pre>
+          <p>In your terminal, navigate to the directory containing app.js and run:</p>
+          <pre><code>node app.js</code></pre>
+          <p>You will see the output: Hello from Node.js! followed by The answer is 42.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The Node.js REPL (Read-Eval-Print Loop)
+        </div>
+        <div class="card-body">
+          <p>A REPL is an interactive programming environment. You can launch it by simply typing node in your terminal
+            (without a filename).</p>
+          <pre><code>$ node
+> 2 + 2
+4
+> const name = 'Your Name';
+undefined
+> console.log(`Hello, ${name}!`);
+Hello, Your Name!
+undefined
+> .exit</code></pre>
+          <p>This is useful for quickly testing small snippets of JavaScript code without creating a file.</p>
+        </div>
+      </div>
+
+      <h2>3. npm (Node Package Manager): The World's Largest Software Registry</h2>
+      <p>npm is two things: 1) an online repository of hundreds of thousands of free packages (libraries) of code, and
+        2) a command-line utility installed with Node.js to interact with that repository.</p>
+
+      <div class="card">
+        <div class="card-header">
+          The package.json File
+        </div>
+        <div class="card-body">
+          <p>This is the manifest file for your Node.js project. It holds metadata about your project and, most
+            importantly, a list of all the external packages (dependencies) your project needs to run. You can create
+            one manually or let npm create it for you.</p>
+          <pre><code># Navigate to your project's root directory and run:
+npm init -y</code></pre>
+          <p>The -y flag tells npm to use default values for all prompts, generating a standard package.json.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Installing Packages
+        </div>
+        <div class="card-body">
+          <p><strong>Local Install (The most common):</strong> Packages are installed in a node_modules folder inside
+            your project directory. They are only available for that specific project.</p>
+          <pre><code># Syntax: npm install &lt;package-name&gt;
+npm install express</code></pre>
+          <p>This installs the popular Express.js web framework and adds it to the "dependencies" section of your
+            package.json. Other developers can now run npm install (with no arguments) to download all the dependencies
+            listed in your package.json.</p>
+
+          <p><strong>Global Install (-g):</strong> Packages are installed system-wide, making their command-line tools
+            available anywhere. These are typically utilities, not project libraries.</p>
+          <pre><code>npm install -g nodemon</code></pre>
+          <p>nodemon is a tool that automatically restarts your Node.js application when it detects file changes, which
+            is invaluable for development.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Key npm Commands
+        </div>
+        <div class="card-body">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Command</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>npm init</code></td>
+                <td>Creates a package.json file interactively.</td>
+              </tr>
+              <tr>
+                <td><code>npm init -y</code></td>
+                <td>Creates a package.json with default values.</td>
+              </tr>
+              <tr>
+                <td><code>npm install &lt;pkg&gt;</code></td>
+                <td>Installs a package locally and adds it to dependencies.</td>
+              </tr>
+              <tr>
+                <td><code>npm install --save-dev &lt;pkg&gt;</code></td>
+                <td>Installs a package and adds it to devDependencies (for tools like linters, test frameworks).</td>
+              </tr>
+              <tr>
+                <td><code>npm install -g &lt;pkg&gt;</code></td>
+                <td>Installs a package globally.</td>
+              </tr>
+              <tr>
+                <td><code>npm uninstall &lt;pkg&gt;</code></td>
+                <td>Removes a locally installed package.</td>
+              </tr>
+              <tr>
+                <td><code>npm update</code></td>
+                <td>Updates all packages to their latest version.</td>
+              </tr>
+              <tr>
+                <td><code>npm list</code></td>
+                <td>Lists all installed packages in the current project.</td>
+              </tr>
+              <tr>
+                <td><code>npm list -g --depth=0</code></td>
+                <td>Lists all globally installed top-level packages.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>4. Exploring Built-In Modules: Node.js's Standard Library</h2>
+      <p>Node.js comes with a rich set of built-in modules that provide core functionality. You don't need to install
+        them; you just need to require them in your code.</p>
+
+      <div class="card">
+        <div class="card-header">
+          The fs (File System) Module
+        </div>
+        <div class="card-body">
+          <p>Allows you to work with the file system. All methods come in both synchronous (blocking) and asynchronous
+            (non-blocking, callback-based) forms. Prefer the asynchronous versions in a real server.</p>
+          <pre><code>const fs = require('fs'); // require() is the traditional way to import modules
+
+// Asynchronously read a file (Non-Blocking)
+fs.readFile('myfile.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error("Error reading file:", err);
+    return;
+  }
+  console.log("File content:", data);
+});
+console.log("This will run BEFORE the file is finished reading!");
+
+// Synchronously read a file (Blocking - avoid in production servers!)
+try {
+  const data = fs.readFileSync('myfile.txt', 'utf8');
+  console.log("File content:", data);
+} catch (err) {
+  console.error("Error reading file:", err);
+}
+console.log("This will run AFTER the file is finished reading.");</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The http Module
+        </div>
+        <div class="card-body">
+          <p>The core module for creating HTTP servers and making HTTP requests. It's low-level but powerful.</p>
+          <pre><code>const http = require('http');
+
+// Create a basic server
 const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello, World!\n');
+  // This function runs every time a request is received
+  console.log(`Request received for: ${req.url}`);
+  // Set the response header
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  // Send the response body
+  res.end('Hello from your first Node.js server!\n');
 });
 
-server.listen(3000, '127.0.0.1', () => {
-    console.log('Server running at http://127.0.0.1:3000/');
-});
-        </code>
+// Tell the server to listen on port 3000
+server.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000');
+});</code></pre>
+          <p>Run this script with node, then open your browser and go to http://localhost:3000. You've just built a web
+            server!</p>
         </div>
+      </div>
 
-        <h4>Explanation:</h4>
-        <ul>
-            <li><strong>http.createServer():</strong> Creates a new HTTP server.</li>
-            <li><strong>req:</strong> Represents the incoming request.</li>
-            <li><strong>res:</strong> Represents the response that will be sent to the client.</li>
-            <li><strong>server.listen():</strong> Binds the server to a specific port and IP address.</li>
-        </ul>
-
-        <h2>2.2. Introduction to Express.js</h2>
-        <p>Express.js is a minimalist web framework for Node.js that simplifies the process of building web applications
-            and APIs.</p>
-
-        <h4>Installation:</h4>
-        <ul>
-            <li>Install Express using npm:</li>
-            <div class="code-block">
-                <code>npm install express</code>
-            </div>
-        </ul>
-
-        <h4>Creating a Basic Express Server:</h4>
-        <div class="code-block">
-            <code>
-// app.js
-const express = require('express');
-const app = express();
-
-app.get('/', (req, res) => {
-    res.send('Hello, Express!');
-});
-
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
-});
-        </code>
+      <div class="card">
+        <div class="card-header">
+          The path Module
         </div>
+        <div class="card-body">
+          <p>Provides utilities for working with file and directory paths. It's essential for handling cross-platform
+            path differences (Windows uses \, macOS/Linux use /).</p>
+          <pre><code>const path = require('path');
 
-        <h4>Explanation:</h4>
-        <ul>
-            <li><strong>express():</strong> Initializes an Express application.</li>
-            <li><strong>app.get():</strong> Defines a route for handling GET requests to the root URL.</li>
-            <li><strong>app.listen():</strong> Starts the server and listens on the specified port.</li>
-        </ul>
+const myFilePath = '/users/joe/docs/letter.txt';
 
-        <h2 class="text-center mt-5">Conclusion</h2>
-        <p>Setting up a server using Node.js and Express.js is a fundamental skill for back-end developers. With
-            Node.js, you can harness the power of JavaScript on the server side, while Express.js provides a robust
-            framework to build efficient web applications. Mastering these tools will enable you to create dynamic,
-            server-side applications that interact seamlessly with front-end technologies.</p>
+// Get the base filename
+path.basename(myFilePath); // 'letter.txt'
+
+// Get the directory name
+path.dirname(myFilePath); // '/users/joe/docs'
+
+// Get the file extension
+path.extname(myFilePath); // '.txt'
+
+// Join path segments, handling slashes correctly
+path.join('/users', 'joe', 'docs', 'report.pdf'); // '/users/joe/docs/report.pdf'
+
+// Create an absolute path from relative segments
+path.resolve('docs', 'text.txt'); // e.g., '/current/working/directory/docs/text.txt'</code></pre>
+        </div>
+      </div>
+
+      <h2>Module 6.2 Summary:</h2>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Core Idea</th>
+            <th>Why It Matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Node.js</strong></td>
+            <td>A runtime for executing JS on the server, powered by non-blocking I/O.</td>
+            <td>It allows JS full-stack development and is efficient for building scalable network applications.</td>
+          </tr>
+          <tr>
+            <td><strong>npm</strong></td>
+            <td>The package manager for Node.js, used to share and install code libraries.</td>
+            <td>It provides access to a massive ecosystem of open-source tools, drastically speeding up development.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>package.json</strong></td>
+            <td>A file that documents your project's metadata and dependencies.</td>
+            <td>It makes your project reproducible and shareable. npm install relies on it.</td>
+          </tr>
+          <tr>
+            <td><strong>Built-In Modules</strong></td>
+            <td>Core Node.js libraries (fs, http, path) for system interaction.</td>
+            <td>They provide the foundational building blocks for creating any server-side application.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Node.js, combined with npm, provides a powerful and efficient platform for building server-side applications.
+          Its event-driven, non-blocking architecture is its superpower, allowing you to handle many users with minimal
+          resources. The vast ecosystem of npm packages means you rarely have to build anything from scratch.</p>
+      </div>
+
+      <div class="key-point">
+        <h4>Up Next</h4>
+        <p>Now that you can create a basic server with the http module, we will learn to use Express.js—a powerful web
+          framework that builds on these basics to make routing and building APIs much simpler.</p>
+      </div>
     </div>
+  </div>
 
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
+  <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </div> -->
 </body>
+
+
 
 </html>

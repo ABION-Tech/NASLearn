@@ -2,235 +2,407 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setting Up a Server</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-        .container {
-            margin-top: 30px;
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        h2,
-        h4 {
-            margin-top: 30px;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        h2 {
-            color: #7698f7;
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .code-block {
-            background-color: #e9ecef;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    .container {
+      padding: 20px;
+    }
 
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .container {
-            padding: 20px;
-        }
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
 
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
 
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
 
-        /* Video or content inside the border */
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
+
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
         .video-content {
-            border-radius: 10px;
-            display: block;
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
 
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
+  </style>
 
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
-        }
-    </style>
 </head>
 
+
+
+
 <body>
-
-    <div class="container">
-        <h1 class="text-center mb-4">Setting Up a Server</h1>
-
-        <h2>2.1. Introduction to Node.js</h2>
-        <p>Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It enables developers to use
-            JavaScript for server-side programming.</p>
-
-        <h4>Installation:</h4>
-        <ul>
-            <li>Download and install Node.js from <a href="https://nodejs.org" target="_blank">nodejs.org</a>.</li>
-            <li>Verify the installation using <code>node -v</code> and <code>npm -v</code> in the terminal.</li>
-        </ul>
-
-        <h4>Basic Node.js Application:</h4>
-        <div class="code-block">
-            <code>
-// app.js
-const http = require('http');
-
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello, World!\n');
-});
-
-server.listen(3000, '127.0.0.1', () => {
-    console.log('Server running at http://127.0.0.1:3000/');
-});
-        </code>
-        </div>
-
-        <h4>Explanation:</h4>
-        <ul>
-            <li><strong>http.createServer():</strong> Creates a new HTTP server.</li>
-            <li><strong>req:</strong> Represents the incoming request.</li>
-            <li><strong>res:</strong> Represents the response that will be sent to the client.</li>
-            <li><strong>server.listen():</strong> Binds the server to a specific port and IP address.</li>
-        </ul>
-
-        <h2>2.2. Introduction to Express.js</h2>
-        <p>Express.js is a minimalist web framework for Node.js that simplifies the process of building web applications
-            and APIs.</p>
-
-        <h4>Installation:</h4>
-        <ul>
-            <li>Install Express using npm:</li>
-            <div class="code-block">
-                <code>npm install express</code>
-            </div>
-        </ul>
-
-        <h4>Creating a Basic Express Server:</h4>
-        <div class="code-block">
-            <code>
-// app.js
-const express = require('express');
-const app = express();
-
-app.get('/', (req, res) => {
-    res.send('Hello, Express!');
-});
-
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
-});
-        </code>
-        </div>
-
-        <h4>Explanation:</h4>
-        <ul>
-            <li><strong>express():</strong> Initializes an Express application.</li>
-            <li><strong>app.get():</strong> Defines a route for handling GET requests to the root URL.</li>
-            <li><strong>app.listen():</strong> Starts the server and listens on the specified port.</li>
-        </ul>
-
-        <h2 class="text-center mt-5">Conclusion</h2>
-        <p>Setting up a server using Node.js and Express.js is a fundamental skill for back-end developers. With
-            Node.js, you can harness the power of JavaScript on the server side, while Express.js provides a robust
-            framework to build efficient web applications. Mastering these tools will enable you to create dynamic,
-            server-side applications that interact seamlessly with front-end technologies.</p>
+  <div class="container">
+    <div class="header">
+      <h1>Week 6: Quality, Procurement, and Stakeholder Management</h1>
+      <h2>6.2: Project Procurement Management</h2>
     </div>
 
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
-    </div>
+    <div class="module-content">
+      <h2>Introduction: The Art of Strategic Sourcing</h2>
+      <p>Few projects are completed using solely in-house resources. Project Procurement Management is the process of
+        purchasing or acquiring products, services, or results from outside the project team. It's a critical strategic
+        function that, when done correctly, provides access to specialized skills, reduces costs, and accelerates
+        schedules. When done poorly, it introduces significant risk, delays, and budget overruns. This module will equip
+        you with the framework to make smart "make-or-buy" decisions and to manage external partnerships effectively.
+      </p>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <h2>1. Make-or-Buy Analysis: The Fundamental Decision</h2>
+      <p>The first step in procurement is deciding if you even should procure. A Make-or-Buy Analysis is a strategic
+        decision-making process used to determine whether a project activity should be performed internally by the
+        organization ("Make") or acquired from an external supplier ("Buy").</p>
+
+      <div class="card">
+        <div class="card-header">
+          Key Factors to Consider
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Core Competency:</strong> Is this activity a core function of our business? Does it provide a
+              competitive advantage? Never outsource your core competency.
+              <ul>
+                <li>Example: A top-tier bakery would not outsource the recipe development for its signature pastry.</li>
+              </ul>
+            </li>
+            <li><strong>Cost:</strong> Which option is more cost-effective? Consider not just the direct cost but also
+              indirect costs like management overhead, training, and potential cost of poor quality.
+              <ul>
+                <li>Example: Building a custom internal server might have a high upfront cost but lower long-term
+                  operational expenses, while buying cloud services has a low upfront cost but recurring fees.</li>
+              </ul>
+            </li>
+            <li><strong>Expertise & Resources:</strong> Do we have the necessary skills, knowledge, equipment, and
+              available personnel in-house? If not, how difficult and expensive would it be to develop or acquire them?
+              <ul>
+                <li>Example: A small startup building a website might not have a full-time security expert, so they
+                  would "buy" a security audit from a consulting firm.</li>
+              </ul>
+            </li>
+            <li><strong>Control & Flexibility:</strong> How much control do we need over the process, schedule, and
+              intellectual property? "Making" provides more control; "buying" often means less direct oversight.</li>
+            <li><strong>Risk:</strong> Who is best positioned to manage the risks associated with this work? Consider
+              the risk of delays, cost overruns, technical failure, and confidentiality.</li>
+            <li><strong>Timeline:</strong> Can our internal team complete the work within the required timeframe?
+              External vendors may be able to start and finish faster due to specialized focus and resources.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>The Outcome: This analysis results in a formal justification for either using internal resources or proceeding
+        to develop procurement documents (like an RFP) for external vendors.</p>
+
+      <h2>2. The Procurement Process: A Lifecycle View</h2>
+      <p>Procurement is not a single event but a structured process that runs parallel to the project lifecycle. It is
+        often broken down into four key processes.</p>
+
+      <div class="card">
+        <div class="card-header">
+          1. Plan Procurements
+        </div>
+        <div class="card-body">
+          <p><strong>Purpose:</strong> To document project procurement decisions, specify the approach, and identify
+            potential sellers.</p>
+          <p><strong>Key Activities:</strong></p>
+          <ul>
+            <li>Create the Procurement Management Plan: How will procurements be managed from initiation through
+              closure?</li>
+            <li>Develop Procurement Documents: Prepare the documents used to solicit proposals, such as a Request for
+              Proposal (RFP), Request for Quotation (RFQ), or Invitation for Bid (IFB).</li>
+            <li>Define Source Selection Criteria: How will you choose a vendor? Common criteria include: price,
+              technical approach, reputation, past performance, and warranty terms.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          2. Conduct Procurements
+        </div>
+        <div class="card-body">
+          <p><strong>Purpose:</strong> To obtain seller responses, select a seller, and award a contract.</p>
+          <p><strong>Key Activities:</strong></p>
+          <ul>
+            <li><strong>Seller Selection:</strong> This is often a multi-step process:
+              <ol>
+                <li>Advertise: Distribute the RFP to potential sellers.</li>
+                <li>Proposal Evaluation: Hold a bidders' conference, receive proposals, and score them against the
+                  pre-defined selection criteria.</li>
+                <li>Select & Negotiate: Choose the best seller and negotiate the final contract terms and pricing.</li>
+              </ol>
+            </li>
+            <li><strong>Award a Contract:</strong> Finalize and sign the legal agreement.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          3. Control Procurements
+        </div>
+        <div class="card-body">
+          <p><strong>Purpose:</strong> To manage procurement relationships, monitor contract performance, and make
+            changes as necessary.</p>
+          <p><strong>Key Activities:</strong></p>
+          <ul>
+            <li><strong>Performance Review:</strong> Ensure the vendor's work meets the agreed-upon milestones, quality
+              standards, and other KPIs outlined in the contract.</li>
+            <li><strong>Payment Systems:</strong> Process invoices and make payments according to the contract terms.
+            </li>
+            <li><strong>Change Control:</strong> Manage any changes to the procurement statement of work, budget, or
+              timeline through a formal change request process. All changes must be documented in writing.</li>
+            <li><strong>Claims Administration:</strong> Handle any disputes or disagreements that arise between the
+              buyer and seller.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          4. Close Procurements
+        </div>
+        <div class="card-body">
+          <p><strong>Purpose:</strong> To complete each procurement formally, including resolution of any open items.
+          </p>
+          <p><strong>Key Activities:</strong></p>
+          <ul>
+            <li><strong>Verification:</strong> Confirm that all work described in the contract has been completed
+              satisfying the stakeholders and achieving project deliverables
+            </li>
+            <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
 </body>
+
+
 
 </html>

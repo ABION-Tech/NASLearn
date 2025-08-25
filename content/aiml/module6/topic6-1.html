@@ -4,171 +4,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 6: Advanced Supervised Learning - Support Vector Machines (SVMs)</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
     <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
         body {
             background-color: #ffffff;
             color: #000000;
+            font-family: Arial, sans-serif;
         }
 
         h1,
         h2,
         h3 {
-            color: #007bff;
+            color: #007BFF;
             /* Blue accent */
         }
 
-        .section {
-            margin-bottom: 30px;
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
         }
 
-        .code {
-            background-color: #f8f9fa;
-            /* Light gray for code blocks */
-            padding: 10px;
-            border-left: 5px solid #007bff;
-            /* Blue accent for code block border */
+        .custom-section {
+            margin-bottom: 40px;
         }
 
-        .list-group-item {
-            background-color: transparent;
-            /* Transparent background for list items */
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .bg-light-blue {
-            background-color: #e7f1ff;
-            /* Light blue background */
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
             padding: 15px;
-            border-radius: 5px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
     </style>
+
 </head>
 
 <body>
-
-    <div class="container mt-5">
-
-        <div class="section">
-            <h1 class="text-center">Week 6: Advanced Supervised Learning - Support Vector Machines (SVMs)</h1>
+    <div class="container">
+        <div class="header">
+            <h1>AIML Week 6: Introduction to Neural Networks & Deep Learning</h1>
         </div>
 
-        <div class="section">
-            <h2>Support Vector Machines (SVMs)</h2>
-            <p>Support Vector Machines (SVMs) are supervised learning algorithms that are widely used for classification
-                tasks. They are particularly effective when dealing with high-dimensional data. The primary objective of
-                SVM is to find the optimal hyperplane that best separates the data into different classes, maximizing
-                the margin between the classes.</p>
-        </div>
+        <div class="module-content">
+            <h2>Module Introduction</h2>
+            <p>Welcome to the frontier of AI. This week, we move from traditional machine learning to the powerful,
+                brain-inspired architectures of neural networks and deep learning. This technology is behind the most
+                dramatic recent advances in AI, from image recognition and natural language processing to self-driving
+                cars. We will demystify how these models work, from a single artificial neuron to multi-layered "deep"
+                networks, and you will build and train your first neural network using industry-standard tools.</p>
 
-        <div class="section">
-            <h3>1. Linear SVM</h3>
-            <p>Linear SVM operates under the assumption that the data can be separated linearly. The key concepts
-                include:</p>
-            <ul class="list-group">
-                <li class="list-group-item">**Hyperplane:** A linear decision boundary that separates the data into two
-                    classes.</li>
-                <li class="list-group-item">**Margin:** The distance between the hyperplane and the nearest data points
-                    from each class.</li>
-                <li class="list-group-item">**Optimization:** SVM aims to find the hyperplane that provides the largest
-                    margin.</li>
+            <h2>Module Learning Objective</h2>
+            <p>Students will learn the fundamental building blocks of neural networks, understand how they learn from
+                data via backpropagation, and build their first basic models using a modern framework
+                (TensorFlow/Keras).</p>
+
+            <h2>6.1: From Biological Inspiration to Artificial Neural Networks</h2>
+            <h3>Introduction</h3>
+            <p>The human brain, with its billions of interconnected neurons, is the most powerful known computational
+                system. While artificial neural networks (ANNs) are not literal replicas of the brain, they are inspired
+                by its core operating principles. This lesson explores this biological metaphor and translates it into
+                the mathematical foundation of modern deep learning. Understanding this connection provides crucial
+                intuition for why neural networks are so effective at learning complex patterns.</p>
+
+            <h3>Content</h3>
+            <h4>The Biological Blueprint: How a Neuron Works</h4>
+            <ul>
+                <li><strong>Core Components:</strong>
+                    <ul>
+                        <li><strong>Dendrites:</strong> Receive incoming electrical signals from other neurons.</li>
+                        <li><strong>Cell Body (Soma):</strong> Processes these signals. If the combined input exceeds a
+                            certain threshold, the neuron activates.</li>
+                        <li><strong>Axon:</strong> Transmits the output signal to other neurons across synapses.</li>
+                    </ul>
+                </li>
+                <li><strong>The Process:</strong> Information processing in the brain is an electrochemical process
+                    where neurons fire based on the weighted sum of their inputs. Learning occurs through the
+                    strengthening or weakening of synaptic connections.</li>
             </ul>
-            <p>Mathematically, the optimization problem can be formulated as:</p>
-            <div class="code">
-                <pre>maximize: γ
-subject to: yi(w⋅xi + b) ≥ 1 for all i</pre>
+
+            <h4>The Artificial Neuron: A Mathematical Translation</h4>
+            <p>The Perceptron, developed in the 1950s, is the simplest artificial model of a biological neuron. It
+                formalizes this process into a mathematical function:</p>
+            <ol>
+                <li><strong>Inputs (x₁, x₂, ..., xₙ):</strong> These are the features of our data (e.g., pixel values,
+                    sensor readings, word counts). Analogous to signals from dendrites.</li>
+                <li><strong>Weights (w₁, w₂, ..., wₙ):</strong> Each input is multiplied by a weight, representing the
+                    strength or importance of that connection. Analogous to the strength of a synaptic connection. These
+                    are the parameters the model must learn.</li>
+                <li><strong>Summation (Σ) + Bias (b):</strong> The weighted inputs are summed together, and a bias term
+                    is added. The bias allows the model to shift the activation function, providing more flexibility.
+                    It's like the inherent threshold of the neuron.
+                    <div
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+                        z = (x₁ * w₁) + (x₂ * w₂) + ... + (xₙ * wₙ) + b
+                    </div>
+                </li>
+                <li><strong>Activation Function (f):</strong> This function takes the weighted sum z and produces the
+                    final output of the neuron. It decides if and how strongly the neuron should "fire."
+                    <div
+                        style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+                        output = f(z)
+                    </div>
+                </li>
+            </ol>
+
+            <h4>Building Complexity: From Single Neuron to Deep Networks</h4>
+            <p>A single perceptron is limited—it can only learn linear relationships. True power emerges when we connect
+                thousands of them together.</p>
+
+            <h5>Layers: The Architecture of Intelligence</h5>
+            <ul>
+                <li><strong>Input Layer:</strong> The first layer that receives the raw input data. It doesn't perform
+                    computation; it just distributes the data. The number of neurons equals the number of input
+                    features.</li>
+                <li><strong>Hidden Layers:</strong> These are the computational engine of the network. Each neuron in a
+                    hidden layer is connected to every neuron in the previous layer (a configuration called "fully
+                    connected" or "dense"). A network with more than one hidden layer is considered a "deep" network.
+                    These layers automatically and progressively learn increasingly abstract features from the input
+                    data.</li>
+                <li><strong>Output Layer:</strong> The final layer that produces the result. Its structure depends on
+                    the task:
+                    <ul>
+                        <li><strong>Regression (predicting a number):</strong> One neuron with a linear activation
+                            function.</li>
+                        <li><strong>Binary Classification:</strong> One neuron with a sigmoid activation (outputting a
+                            probability between 0 and 1).</li>
+                        <li><strong>Multi-class Classification:</strong> Multiple neurons (one per class) with a softmax
+                            activation (outputting a probability distribution across all classes).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h5>Activation Functions: Introducing Non-Linearity</h5>
+            <p>If we used only linear activation functions, the entire network, regardless of depth, could be reduced to
+                a single linear transformation. Activation functions are what allow neural networks to model complex,
+                non-linear relationships. They are the source of the network's representational power.</p>
+
+            <div class="card">
+                <div class="card-header">Sigmoid (σ)</div>
+                <div class="card-body">
+                    <p><strong>Formula:</strong> <code
+                            style="background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; font-family: monospace;">f(z) = 1 / (1 + e^{-z})</code>
+                    </p>
+                    <p><strong>Output Range:</strong> (0, 1)</p>
+                    <p><strong>Use Case:</strong> Historically popular, especially for output layers in binary
+                        classification (interpretable as a probability).</p>
+                    <p><strong>Drawback:</strong> Prone to the "vanishing gradient" problem in deep networks, where
+                        gradients become extremely small during training, stalling learning.</p>
+                </div>
             </div>
-            <p>where:</p>
-            <ul class="list-group">
-                <li class="list-group-item">`yi`: The class label of the ith data point.</li>
-                <li class="list-group-item">`xi`: The ith data point.</li>
-                <li class="list-group-item">`w`: The normal vector to the hyperplane.</li>
-                <li class="list-group-item">`b`: The bias term.</li>
-                <li class="list-group-item">`γ`: The margin.</li>
-            </ul>
-        </div>
 
-        <div class="section">
-            <h3>2. Kernel Trick</h3>
-            <p>In many real-world scenarios, data is not linearly separable. The kernel trick is a technique that allows
-                SVM to operate in a higher-dimensional feature space, enabling the separation of classes that are not
-                linearly separable.</p>
-            <h4>Common Kernels:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">**Linear Kernel:** Best suited for linearly separable data.</li>
-                <li class="list-group-item">**Polynomial Kernel:** Useful for capturing non-linear relationships.</li>
-                <li class="list-group-item">**Radial Basis Function (RBF) Kernel:** A popular choice for various
-                    non-linear relationships, providing flexibility in the decision boundary.</li>
-            </ul>
-        </div>
+            <div class="card">
+                <div class="card-header">Hyperbolic Tangent (Tanh)</div>
+                <div class="card-body">
+                    <p><strong>Formula:</strong> <code
+                            style="background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; font-family: monospace;">f(z) = (e^z - e^{-z}) / (e^z + e^{-z})</code>
+                    </p>
+                    <p><strong>Output Range:</strong> (-1, 1)</p>
+                    <p><strong>Use Case:</strong> Often performs better than sigmoid for hidden layers because its
+                        output is zero-centered, making the learning process for the next layer more efficient.</p>
+                    <p><strong>Drawback:</strong> Still suffers from the vanishing gradient problem.</p>
+                </div>
+            </div>
 
-        <div class="section">
-            <h3>3. Soft Margin SVM</h3>
-            <p>Soft Margin SVM allows for some misclassifications to enhance the model's generalization capabilities.
-                This is particularly useful in datasets with noise and outliers.</p>
-            <p>Key components include:</p>
-            <ul class="list-group">
-                <li class="list-group-item">**Regularization Parameter (C):** Controls the trade-off between maximizing
-                    the margin and minimizing misclassifications.</li>
-            </ul>
-        </div>
+            <div class="card">
+                <div class="card-header">Rectified Linear Unit (ReLU)</div>
+                <div class="card-body">
+                    <p><strong>Formula:</strong> <code
+                            style="background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; font-family: monospace;">f(z) = max(0, z)</code>
+                    </p>
+                    <p><strong>Output Range:</strong> [0, ∞)</p>
+                    <p><strong>Use Case:</strong> The default choice for most hidden layers in modern networks. It is
+                        computationally cheap and strongly mitigates the vanishing gradient problem.</p>
+                    <p><strong>Drawback:</strong> The "Dying ReLU" problem—if too many neurons output zero, they can
+                        become inactive and stop learning.</p>
+                </div>
+            </div>
 
-        <div class="section">
-            <h3>4. Evaluation Metrics</h3>
-            <p>Evaluating the performance of an SVM model involves various metrics:</p>
-            <ul class="list-group">
-                <li class="list-group-item">**Accuracy:** The proportion of correct predictions.</li>
-                <li class="list-group-item">**Precision:** The proportion of positive predictions that are correct.</li>
-                <li class="list-group-item">**Recall:** The proportion of actual positive instances that are correctly
-                    predicted.</li>
-                <li class="list-group-item">**F1-score:** The harmonic mean of precision and recall, providing a balance
-                    between the two.</li>
-                <li class="list-group-item">**ROC Curve:** A graphical representation showing the true positive rate
-                    against the false positive rate, helping to evaluate the trade-offs between sensitivity and
-                    specificity.</li>
-            </ul>
-        </div>
+            <div class="card">
+                <div class="card-header">Leaky ReLU</div>
+                <div class="card-body">
+                    <p><strong>Formula:</strong> <code
+                            style="background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; font-family: monospace;">f(z) = { z if z > 0, αz if z < 0 }</code>
+                        (where α is a small constant, e.g., 0.01)</p>
+                    <p><strong>Output Range:</strong> (-∞, ∞)</p>
+                    <p><strong>Use Case:</strong> An attempt to fix the Dying ReLU problem by allowing a small, non-zero
+                        gradient when the unit is not active.</p>
+                </div>
+            </div>
 
-        <div class="section bg-light-blue">
-            <h2>Applications of SVM</h2>
-            <p>Support Vector Machines have diverse applications across various fields:</p>
-            <ul class="list-group">
-                <li class="list-group-item">**Text Classification:** Categorizing text documents (e.g., spam detection,
-                    sentiment analysis).</li>
-                <li class="list-group-item">**Image Classification:** Identifying objects or scenes in images.</li>
-                <li class="list-group-item">**Bioinformatics:** Predicting protein structure and function based on
-                    genetic data.</li>
-                <li class="list-group-item">**Anomaly Detection:** Identifying unusual or rare data points that deviate
-                    from expected patterns.</li>
-            </ul>
-        </div>
+            <h5>Why Depth is Powerful: The Hierarchy of Features</h5>
+            <p>The magic of deep learning lies in this hierarchical feature learning. Each layer builds on the output of
+                the previous one to learn more complex representations.</p>
 
-        <div class="section">
-            <h3>Advantages and Disadvantages</h3>
-            <h4>Advantages:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">Effective for high-dimensional data.</li>
-                <li class="list-group-item">Robust to outliers, making it suitable for noisy datasets.</li>
-                <li class="list-group-item">Can handle non-linear relationships using kernel tricks.</li>
-            </ul>
-            <h4>Disadvantages:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">Can be computationally expensive for large datasets.</li>
-                <li class="list-group-item">Sensitive to the choice of kernel and regularization parameter, which may
-                    require extensive tuning.</li>
-            </ul>
-        </div>
+            <p><strong>Real-World Example: Classifying an Image of a Cat</strong></p>
+            <ol>
+                <li><strong>Layer 1 (Edges):</strong> Neurons activate in response to simple edges, curves, and blobs of
+                    color at various orientations and locations.</li>
+                <li><strong>Layer 2 (Patterns):</strong> Neurons combine these edges to detect more complex patterns
+                    like circles (eyes), textures (fur), and triangles (ears).</li>
+                <li><strong>Layer 3 (Parts):</strong> Neurons combine these patterns to recognize object parts: a
+                    whisker, a nose, a paw.</li>
+                <li><strong>Output Layer (Object):</strong> The final layer combines these parts to recognize the entire
+                    object: "cat."</li>
+            </ol>
 
-        <div class="section">
-            <p>By mastering the principles of Support Vector Machines, you will be equipped to apply this powerful
-                algorithm effectively across a wide range of classification challenges.</p>
-        </div>
+            <p>This automated feature extraction is what eliminates the need for manual feature engineering, a major
+                bottleneck in traditional machine learning.</p>
 
+            <h2>Embedded Video Context</h2>
+            <p>To solidify the connection between biology and artificial networks, watch this short video that animates
+                the process.</p>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>Neural Networks Demystified</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>An artificial neural network is a mathematical model inspired by the brain's structure. It is
+                    composed of interconnected layers of simple processing units (neurons). Each neuron applies a
+                    weighted sum to its inputs and passes the result through a non-linear activation function. By
+                    stacking these layers, the network can learn a hierarchy of features, from simple to complex,
+                    enabling it to model incredibly intricate relationships within data. The choice of architecture
+                    (number of layers, neurons) and activation functions are fundamental design decisions that define
+                    the network's capabilities.</p>
+            </div>
+        </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
 
 </html>

@@ -2,130 +2,618 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Designing for Web and Mobile: Responsive Design Principles</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: white;
-            color: black;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-        h1,
-        h2,
-        h3,
-        h4 {
-            color: #007bff;
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        .container {
-            margin-top: 30px;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        .section-title {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
 
-        .best-practices {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-left: 5px solid #007bff;
-            border-radius: 5px;
-        }
+    .container {
+      padding: 20px;
+    }
 
-        .expanded-content {
-            margin-bottom: 30px;
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            padding: 15px;
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
+
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
-    </style>
+      }
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
+        .video-content {
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
+        }
+      }
+    }
+  </style>
+
 </head>
 
+
 <body>
-
-    <div class="container">
-        <h1 class="text-center">Designing for Web and Mobile: Responsive Design Principles</h1>
-
-        <p>Responsive design is a design approach that ensures websites and applications adapt seamlessly to different
-            screen sizes and devices, such as desktops, tablets, and smartphones. This provides a consistent and optimal
-            user experience across all platforms.</p>
-
-        <h2 class="section-title">Key Principles of Responsive Design</h2>
-        <ul>
-            <li><strong>Fluid Grids:</strong> Using flexible grids that adjust to different screen sizes, allowing for
-                proportional resizing of elements.</li>
-            <li><strong>Flexible Images:</strong> Employing images that scale and adapt to different screen resolutions,
-                ensuring they load quickly and maintain quality.</li>
-            <li><strong>Media Queries:</strong> Using CSS media queries to apply different styles based on screen size,
-                orientation, and other factors, allowing for tailored user experiences.</li>
-            <li><strong>Touch Optimization:</strong> Designing for touchscreens by ensuring elements are large enough to
-                be easily tapped and avoiding complex interactions that can frustrate users.</li>
-            <li><strong>Content Prioritization:</strong> Determining the most important content and ensuring it is
-                visible and accessible on all devices to enhance user engagement.</li>
-        </ul>
-
-        <h2 class="section-title">Challenges and Considerations</h2>
-        <ul>
-            <li><strong>Screen Diversity:</strong> The wide range of screen sizes and resolutions can make it
-                challenging to create responsive designs that work well on all devices.</li>
-            <li><strong>Performance:</strong> Responsive designs should be optimized for performance, especially on
-                mobile devices with slower internet connections. Techniques such as image optimization and asynchronous
-                loading can be vital.</li>
-            <li><strong>User Experience:</strong> Prioritizing the user experience is crucial in responsive design.
-                Ensure that the design is intuitive and easy to use on all devices, considering user flows and
-                interaction patterns.</li>
-            <li><strong>Testing:</strong> Thoroughly testing your designs on different devices and screen sizes is
-                essential to identify and address any issues, ensuring that the final product is polished and
-                user-friendly.</li>
-        </ul>
-
-        <h2 class="section-title">Best Practices for Responsive Design</h2>
-        <div class="best-practices">
-            <ul>
-                <li><strong>Start with Mobile:</strong> Design for mobile first and then adapt the design for larger
-                    screens, which often leads to more thoughtful layouts.</li>
-                <li><strong>Use a Responsive Framework:</strong> Consider using a responsive framework like Bootstrap or
-                    Foundation to streamline the design process and ensure consistency.</li>
-                <li><strong>Prioritize Content:</strong> Ensure that the most important content is visible and
-                    accessible on all devices to enhance user engagement and retention.</li>
-                <li><strong>Minimize Scroll:</strong> Aim to keep the most important content above the fold to avoid
-                    excessive scrolling, especially on mobile devices.</li>
-                <li><strong>Test Across Devices:</strong> Thoroughly test your designs on a variety of devices and
-                    screen sizes to catch potential issues early.</li>
-            </ul>
-        </div>
-
-        <h2 class="section-title">Expanding on the Content</h2>
-        <div class="expanded-content">
-            <p>To further explore the topic of responsive design, consider the following areas:</p>
-            <ul>
-                <li><strong>Responsive Design vs. Adaptive Design:</strong> Understanding the differences between these
-                    two approaches and when to use each can enhance design effectiveness.</li>
-                <li><strong>Mobile-First vs. Desktop-First Design:</strong> Discuss the benefits and drawbacks of each
-                    approach, noting how each can impact the design process and final user experience.</li>
-                <li><strong>Designing for Touchscreens:</strong> Tips for creating intuitive and user-friendly touch
-                    interfaces, including sizing considerations and gesture-based interactions.</li>
-                <li><strong>Accessibility and Responsive Design:</strong> Ensuring that responsive designs are
-                    accessible to users with disabilities is not only ethical but also expands your audience.</li>
-                <li><strong>Emerging Trends in Responsive Design:</strong> Exploring new techniques and technologies for
-                    creating responsive designs, such as CSS Grid, Flexbox, and more.</li>
-            </ul>
-        </div>
+  <div class="container">
+    <div class="header">
+      <h1>Week 6: Advanced Python & Pythonic Programming</h1>
+      <h2>6.3: Advanced Object-Oriented Programming in Python</h2>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div class="module-content">
+      <h2>Introduction: Beyond Basic Classes</h2>
+      <p>Object-Oriented Programming (OOP) in Python offers powerful tools for building complex, maintainable systems.
+        However, moving beyond simple classes and single inheritance requires understanding more advanced concepts. This
+        module delves into the Pythonic ways to handle complex inheritance, enforce interfaces, reduce boilerplate code,
+        and design flexible systems using composition.</p>
+
+      <h2>1. Multiple Inheritance & The Method Resolution Order (MRO)</h2>
+      <p>Unlike many languages, Python supports multiple inheritance, where a class can inherit from more than one
+        parent class. This is powerful but introduces ambiguity: if a method is defined in multiple parent classes,
+        which one does the child class use? Python resolves this with a deterministic algorithm.</p>
+
+      <div class="card">
+        <div class="card-header">
+          The "Diamond Problem"
+        </div>
+        <div class="card-body">
+          <p>A classic issue in multiple inheritance.</p>
+          <pre><code>class A:
+    def speak(self):
+        return "A"
+
+class B(A):
+    def speak(self):
+        return "B"
+
+class C(A):
+    def speak(self):
+        return "C"
+
+class D(B, C):
+    pass
+
+d = D()
+print(d.speak()) # Which `speak` is called? A? B? C?</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Method Resolution Order (MRO)
+        </div>
+        <div class="card-body">
+          <p>Python uses the C3 Linearization algorithm to create a consistent and predictable order in which to search
+            for methods. You can view this order for any class using Class.__mro__ or Class.mro().</p>
+          <pre><code>print(D.__mro__) # Output: (&lt;class '__main__.D'&gt;, &lt;class '__main__.B'&gt;, &lt;class '__main__.C'&gt;, &lt;class '__main__.A'&gt;, &lt;class 'object'&gt;)</code></pre>
+          <p>The MRO for class D is: D → B → C → A → object.</p>
+          <p><strong>Rule of Thumb:</strong> The search goes left-to-right and depth-first, but a class is only visited
+            once, and a child class is always checked before its parents. This means when d.speak() is called, Python
+            looks in D (not found), then B (found!), and executes B.speak().</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The super() Function Revisited
+        </div>
+        <div class="card-body">
+          <p>In the context of multiple inheritance, super() becomes incredibly powerful. It delegates method calls to
+            the next class in the MRO, not necessarily the parent class. This allows cooperative multiple inheritance.
+          </p>
+          <pre><code>class A:
+    def __init__(self):
+        print("A")
+        super().__init__() # This might call something other than object.__init__!
+
+class B(A):
+    def __init__(self):
+        print("B")
+        super().__init__()
+
+class C(A):
+    def __init__(self):
+        print("C")
+        super().__init__()
+
+class D(B, C):
+    def __init__(self):
+        print("D")
+        super().__init__()
+
+d = D()
+# Output:
+# D
+# B
+# C
+# A</code></pre>
+          <p>The call to super().__init__() in B does not call A.__init__ directly. Instead, it calls C.__init__ because
+            the MRO of D is D → B → C → A → object. This behavior enables different classes in a hierarchy to cooperate
+            without knowing about each other.</p>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Use multiple inheritance sparingly and with clear intent. Always be aware of the MRO, and use super()
+          consistently to make your classes good citizens in a complex hierarchy.</p>
+      </div>
+
+      <h2>2. Abstract Base Classes (ABCs): Enforcing Interfaces</h2>
+      <p>Sometimes you want to define a blueprint for other classes—a set of methods that must be implemented. This is
+        called an interface. Python uses Abstract Base Classes (ABCs) from the abc module for this purpose, following a
+        philosophy of "duck typing" with optional, explicit enforcement.</p>
+
+      <div class="card">
+        <div class="card-header">
+          Creating an Abstract Base Class
+        </div>
+        <div class="card-body">
+          <p>You use the ABC meta-class and the @abstractmethod decorator.</p>
+          <pre><code>from abc import ABC, abstractmethod
+
+class Animal(ABC): # This is an abstract base class
+
+    @abstractmethod
+    def speak(self):
+        """Every animal must define how it speaks.""" 
+        pass
+
+    @abstractmethod
+    def move(self):
+        pass</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Enforcing the Interface
+        </div>
+        <div class="card-body">
+          <p>You cannot create an instance of an abstract class. Any concrete subclass must override all
+            @abstractmethods.</p>
+          <pre><code>class Dog(Animal):
+    def speak(self): # Must implement this
+        return "Woof!"
+
+    def move(self): # Must implement this
+        return "Runs on four legs"
+
+class IncompleteAnimal(Animal):
+    pass # Doesn't implement 'move'
+
+dog = Dog() # This works fine
+# incomplete = IncompleteAnimal() # This will raise a TypeError!</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Why Use ABCs?
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Documentation:</strong> They clearly define what methods a subclass should have.</li>
+            <li><strong>Enforcement:</strong> They prevent instantiation of incomplete classes, catching errors early.
+            </li>
+            <li><strong>API Standardization:</strong> They are used throughout the Python standard library to define
+              expected interfaces (e.g., the collections.abc module defines interfaces for Sequence, Mapping, etc.).
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Use ABCs when you need to formally define a contract that a group of related classes must fulfill.</p>
+      </div>
+
+      <h2>3. Data Classes: Automating Boilerplate</h2>
+      <p>A significant amount of class code is boilerplate: __init__, __repr__, __eq__. The @dataclass decorator (Python
+        3.7+) automatically generates these special methods for you, making your code shorter, more readable, and less
+        error-prone.</p>
+
+      <div class="card">
+        <div class="card-header">
+          Basic Usage
+        </div>
+        <div class="card-body">
+          <pre><code>from dataclasses import dataclass
+
+# The old, verbose way
+class OldPoint:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __repr__(self):
+        return f"Point(x={self.x}, y={self.y})"
+    def __eq__(self, other):
+        if not isinstance(other, OldPoint):
+            return NotImplemented
+        return self.x == other.x and self.y == other.y
+
+# The new, Pythonic way
+@dataclass
+class Point:
+    x: int  # This is a type hint. It's used by the dataclass but not enforced at runtime.
+    y: int
+
+p1 = Point(1, 2)
+p2 = Point(1, 2)
+print(p1)       # Output: Point(x=1, y=2) (__repr__)
+print(p1 == p2) # Output: True (__eq__)</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Advanced Features
+        </div>
+        <div class="card-body">
+          <p>Dataclasses are highly customizable.</p>
+          <pre><code>from dataclasses import dataclass, field
+
+@dataclass(order=True) # Generates __lt__, __le__, __gt__, __ge__
+class InventoryItem:
+    # You can provide default values
+    name: str
+    # field() lets you configure advanced options
+    unit_price: float = field(default=0.0, repr=False) # Don't show price in __repr__
+    quantity: int = 1
+    # Default factories for mutable defaults (avoids a common pitfall)
+    categories: list[str] = field(default_factory=list)
+
+item = InventoryItem("Laptop", 1299.99, 5)
+print(item) # Output: InventoryItem(name='Laptop', quantity=5, categories=[])</code></pre>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Use @dataclass for classes that are primarily containers of data. It eliminates tedious boilerplate and
+          reduces bugs.</p>
+      </div>
+
+      <h2>4. Composition over Inheritance: Favoring Flexibility</h2>
+      <p>"Inheritance" represents an "is-a" relationship (a Dog is an Animal). "Composition" represents a "has-a"
+        relationship (a Car has an Engine). While inheritance is useful, it can lead to rigid, tightly-coupled, and
+        complex hierarchies. Composition is often a more flexible and maintainable alternative.</p>
+
+      <div class="card">
+        <div class="card-header">
+          The Problem with Deep Inheritance
+        </div>
+        <div class="card-body">
+          <p>A Saveable, Loggable, Drawable, GameObject class becomes a "God object" that's hard to understand,
+            maintain, and change.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The Composition Solution
+        </div>
+        <div class="card-body">
+          <p>Build classes out of smaller, focused components.</p>
+          <pre><code># Instead of this:
+class DieselCar(Engine, FuelSystem, ...):
+    ...
+
+# Prefer this:
+class Car:
+    def __init__(self):
+        self.engine = DieselEngine() # Car HAS-A DieselEngine
+        self.fuel_system = FuelSystem()
+
+    def start(self):
+        self.engine.ignite() # Delegate the work to the component
+        self.fuel_system.pump_fuel()
+
+# Now, changing to an ElectricCar is trivial and doesn't require a new inheritance tree.
+class ElectricCar:
+    def __init__(self):
+        self.engine = ElectricMotor() # Replaced the component
+        self.battery = BatteryPack()
+
+    def start(self):
+        self.engine.engage()
+        self.battery.discharge()</code></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Why Composition is Powerful
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Flexibility:</strong> You can change behavior at runtime by swapping out components.</li>
+            <li><strong>Maintainability:</strong> Each class has a single, well-defined responsibility.</li>
+            <li><strong>Loose Coupling:</strong> The Car class depends on the interface of an Engine (e.g., it has an
+              .ignite() method), not a specific base class. This adheres to the "Dependency Inversion Principle."</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Before building a deep inheritance hierarchy, ask: "Can this be modeled more effectively using composition?"
+          Favor "has-a" relationships over "is-a" relationships to create more modular and adaptable code.</p>
+      </div>
+
+      <h2>Module 6.3 Summary:</h2>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Core Idea</th>
+            <th>Pythonic Principle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Multiple Inheritance & MRO</strong></td>
+            <td>A class can have multiple parents, resolved by C3 Linearization.</td>
+            <td>Use with care. Understand super() and the MRO to manage complexity.</td>
+          </tr>
+          <tr>
+            <td><strong>Abstract Base Classes (ABCs)</strong></td>
+            <td>Enforce a public interface (method signatures) for subclasses.</td>
+            <td>Use to define clear contracts and catch implementation errors early.</td>
+          </tr>
+          <tr>
+            <td><strong>Data Classes</strong></td>
+            <td>A decorator that auto-generates boilerplate methods for data containers.</td>
+            <td>Use @dataclass to write less code and reduce errors in data-heavy classes.</td>
+          </tr>
+          <tr>
+            <td><strong>Composition over Inheritance</strong></td>
+            <td>Build complex objects by combining simpler, focused ones.</td>
+            <td>Prefer "has-a" relationships to create flexible, decoupled, and maintainable designs.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-point">
+        <h4>Final Takeaway</h4>
+        <p>Advanced OOP in Python is about choosing the right tool for the job. Use inheritance for "is-a" relationships
+          where it makes sense, but lean towards composition and ABCs for building robust, flexible, and clean systems.
+          Data classes are the go-to solution for eliminating boring boilerplate.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
 </body>
 
 </html>

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> New Age Skillsphere</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Embedding CodeMirror (Code Editor) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+    <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        .CodeMirror {
+            overflow: auto;
+            min-width: 200px;
+            resize: both;
+            min-height: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 500px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #007BFF;
+            /* Blue accent */
+        }
+
+        .content-container {
+            margin: 50px auto;
+            max-width: 900px;
+        }
+
+        .custom-section {
+            margin-bottom: 40px;
+        }
+
+        .custom-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .custom-section ul {
+            margin-left: 20px;
+        }
+
+        .custom-section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-size: 1.1em;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
+            background-color: #f8f9fa;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>6.5: Tools and Implementation</h1>
+        </div>
+
+        <div class="module-content">
+            <h2>Introduction</h2>
+            <p>Translating AI analytics concepts into tangible business value requires careful consideration of
+                technology platforms, team structures, and organizational change management. This section provides a
+                practical framework for selecting the right tools, building effective implementation strategies, and
+                overcoming the common challenges that derail AI initiatives. Success depends on treating AI adoption as
+                an organizational transformation, not just a technology installation.</p>
+
+            <h2>AI Analytics Platform Landscape</h2>
+            <p>The tool ecosystem has evolved to support different organizational needs and skill levels:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Cloud-Based End-to-End Platforms
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Examples:</strong> Google Vertex AI, Azure Machine Learning, Amazon SageMaker, IBM
+                            Watson Studio</li>
+                        <li><strong>Strengths:</strong> Maximum flexibility, extensive customization, scalable
+                            infrastructure, access to latest innovations</li>
+                        <li><strong>Best For:</strong> Organizations with strong data science teams, complex use cases
+                            requiring custom solutions, companies already invested in a specific cloud ecosystem</li>
+                        <li><strong>Considerations:</strong> Requires significant technical expertise, higher total cost
+                            of ownership for sophisticated implementations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Automated Machine Learning (AutoML) Platforms
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Examples:</strong> DataRobot, H2O.ai, Dataiku, Azure Automated ML</li>
+                        <li><strong>Strengths:</strong> Accelerated model development, accessible to business analysts,
+                            built-in best practices, automated feature engineering</li>
+                        <li><strong>Best For:</strong> Organizations with limited data science resources, rapid
+                            prototyping, business teams seeking self-service analytics capabilities</li>
+                        <li><strong>Considerations:</strong> Potential limitations for highly specialized use cases,
+                            less transparency into underlying algorithms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Integrated BI and Analytics Suites
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Examples:</strong> Tableau CRM, Power BI with Azure ML, Qlik Sense, ThoughtSpot</li>
+                        <li><strong>Strengths:</strong> Seamless integration with existing BI workflows, familiar
+                            interfaces for business users, embedded AI capabilities</li>
+                        <li><strong>Best For:</strong> Organizations with mature BI practices, business intelligence
+                            teams expanding into predictive analytics</li>
+                        <li><strong>Considerations:</strong> May lack advanced functionality of specialized platforms,
+                            often requires integration with other tools for full lifecycle management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Data Infrastructure and Integration Strategy</h2>
+            <p>Successful AI implementation requires a robust data foundation:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Modern Data Architecture Components
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Data Warehouses:</strong> Snowflake, BigQuery, Redshift - for structured analytics
+                        </li>
+                        <li><strong>Data Lakes:</strong> AWS S3, Azure Data Lake, Databricks - for unstructured and
+                            semi-structured data</li>
+                        <li><strong>Data Integration Tools:</strong> Fivetran, Stitch, Matillion - for automated data
+                            pipeline management</li>
+                        <li><strong>Feature Stores:</strong> Feast, Tecton - for managing and serving ML features
+                            consistently</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    API-Led Integration Approach
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Establishing clear APIs for data exchange between operational systems and analytics
+                            platforms</li>
+                        <li>Implementing data governance and quality checks at integration points</li>
+                        <li>Ensuring real-time data availability where required for operational AI</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Data Governance Considerations
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Establishing data quality standards and monitoring</li>
+                        <li>Implementing data lineage tracking for regulatory compliance</li>
+                        <li>Managing data access controls and privacy protections</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Building Effective AI Teams</h2>
+            <p>AI success requires multidisciplinary teams with complementary skills:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Key Roles and Responsibilities
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Data Scientists:</strong> Develop and validate models, select algorithms, interpret
+                            results</li>
+                        <li><strong>Data Engineers:</strong> Build and maintain data pipelines, ensure data quality and
+                            availability</li>
+                        <li><strong>MLOps Engineers:</strong> Deploy models to production, monitor performance, manage
+                            retraining</li>
+                        <li><strong>Business Translators:</strong> Bridge technical and business domains, define success
+                            metrics</li>
+                        <li><strong>AI Product Managers:</strong> Prioritize use cases, manage stakeholder expectations,
+                            measure business impact</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Team Structure Models
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Centralized Center of Excellence:</strong> Shared team serving multiple business
+                            units</li>
+                        <li><strong>Embedded Model:</strong> Data professionals embedded within business teams</li>
+                        <li><strong>Hybrid Approach:</strong> Central team setting standards with embedded specialists
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Skills Development Strategies
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Upskilling existing employees through targeted training programs</li>
+                        <li>Establishing mentorship relationships between technical and business team members</li>
+                        <li>Creating rotation programs to build cross-functional understanding</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Change Management and Adoption Strategies</h2>
+            <p>Overcoming organizational resistance is critical for AI success:</p>
+
+            <div class="card">
+                <div class="card-header">
+                    Stakeholder Engagement Framework
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Early involvement of business stakeholders in project definition</li>
+                        <li>Regular communication of progress and findings</li>
+                        <li>Demonstration of tangible business value through pilot projects</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Adoption Acceleration Tactics
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Quick Wins:</strong> Start with high-impact, achievable projects to build momentum
+                        </li>
+                        <li><strong>User-Centric Design:</strong> Involve end-users in solution design and testing</li>
+                        <li><strong>Training Programs:</strong> Develop role-specific training for different user groups
+                        </li>
+                        <li><strong>Support Systems:</strong> Establish help desks and communities of practice</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Measuring and Communicating Success
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Establishing baseline metrics before implementation</li>
+                        <li>Tracking both technical metrics (model accuracy, latency) and business metrics (ROI, process
+                            improvements)</li>
+                        <li>Creating compelling success stories to share across the organization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Implementation Roadmap</h2>
+            <p>A phased approach reduces risk and builds capabilities incrementally:</p>
+
+            <ol>
+                <li><strong>Assessment Phase:</strong> Inventory existing data assets, identify use cases, assess
+                    current capabilities</li>
+                <li><strong>Proof of Concept:</strong> Test hypotheses with small-scale pilots, demonstrate feasibility
+                </li>
+                <li><strong>Minimum Viable Product:</strong> Develop limited-scope production solutions, establish
+                    operational patterns</li>
+                <li><strong>Scaling:</strong> Expand successful solutions across business units, build repeatable
+                    patterns</li>
+                <li><strong>Optimization:</strong> Continuously improve models and processes, expand use cases</li>
+            </ol>
+
+            <h2>Common Pitfalls and Mitigation Strategies</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    Key Challenges and Solutions
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>Underestimating Data Quality Issues:</strong> Implement robust data validation and
+                            cleansing processes</li>
+                        <li><strong>Lacking Production Readiness:</strong> Plan for operational support and monitoring
+                            from the beginning</li>
+                        <li><strong>Ignoring Model Governance:</strong> Establish processes for model validation,
+                            documentation, and compliance</li>
+                        <li><strong>Overlooking Change Management:</strong> Dedicate resources specifically to adoption
+                            and training</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Embedded Video Context</h2>
+            <p>Watch this comparison of leading AI platforms to understand their relative strengths and ideal use cases.
+            </p>
+
+            <div class="video-container">
+                <div class="gradient-border">
+                    <iframe class="video-content" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-links">
+                        <h4>AI Platform Comparison: Finding the Right Tools for Your Organization</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Key Takeaway</h4>
+                <p>Successful AI implementation requires equal attention to technology, people, and processes. The right
+                    tool selection depends on organizational capabilities and use case requirements, but technology
+                    alone cannot ensure success. Building cross-functional teams, establishing robust data
+                    infrastructure, and managing organizational change are equally critical components. Organizations
+                    that approach AI implementation holistically—addressing technical, organizational, and cultural
+                    aspects simultaneously—are most likely to achieve sustainable value from their AI investments.</p>
+            </div>
+
+            <h2>Hands-On Exercise: FreshMart Produce Spoilage Reduction</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    Scenario
+                </div>
+                <div class="card-body">
+                    <p>You are a data analyst for "FreshMart," a regional grocery chain with 45 stores. Management is
+                        concerned about significant financial losses from spoilage of fresh fruits and vegetables, which
+                        averages 15% of produce inventory weekly. They want to implement an AI-driven solution to reduce
+                        waste while maintaining product availability for customers.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    1. Objective & Prediction Goals
+                </div>
+                <div class="card-body">
+                    <p><strong>Primary Prediction:</strong> Daily demand forecasting for 25 high-volume produce items at
+                        the individual store level.</p>
+                    <ul>
+                        <li><strong>Specific Outcomes:</strong>
+                            <ul>
+                                <li>Predict exact quantities needed for each product per store for the next 3-7 days
+                                </li>
+                                <li>Identify optimal delivery schedules and inventory levels</li>
+                                <li>Flag products approaching spoilage for prioritized promotion or donation</li>
+                            </ul>
+                        </li>
+                        <li><strong>Key Performance Indicators:</strong>
+                            <ul>
+                                <li>Reduction in spoilage rate from 15% to below 8%</li>
+                                <li>Maintenance of product availability above 98%</li>
+                                <li>Improvement in gross margin for produce department</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    2. Data Requirements & Sources
+                </div>
+                <div class="card-body">
+                    <p><strong>Internal Data Sources:</strong></p>
+                    <ul>
+                        <li><strong>Historical Sales Data:</strong> 3+ years of item-level sales data by store,
+                            including dates, quantities, and prices</li>
+                        <li><strong>Inventory Records:</strong> Current and historical inventory levels, spoilage
+                            tracking, waste logs</li>
+                        <li><strong>Promotional Data:</strong> Dates, products, and details of past promotions and their
+                            impact on sales</li>
+                        <li><strong>Product Characteristics:</strong> Shelf life, seasonality, supplier lead times, and
+                            cost data</li>
+                        <li><strong>Operational Data:</strong> Delivery schedules, stocking times, and store hours</li>
+                    </ul>
+
+                    <p><strong>External Data Sources:</strong></p>
+                    <ul>
+                        <li><strong>Weather Data:</strong> Local temperature, humidity, and precipitation forecasts</li>
+                        <li><strong>Calendar Events:</strong> School schedules, holidays, local events, and community
+                            activities</li>
+                        <li><strong>Economic Indicators:</strong> Local employment data and economic trends affecting
+                            spending patterns</li>
+                        <li><strong>Social Media Trends:</strong> Local event mentions and food trends in the region
+                        </li>
+                    </ul>
+
+                    <p><strong>Data Quality Considerations:</strong></p>
+                    <ul>
+                        <li>Establish data validation checks for missing values and outliers</li>
+                        <li>Implement consistent tracking of spoilage across all stores</li>
+                        <li>Ensure time synchronization across all data sources</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    3. Modeling Approach
+                </div>
+                <div class="card-body">
+                    <p><strong>Primary Model Selection:</strong></p>
+                    <ul>
+                        <li><strong>Hybrid Time Series Forecasting:</strong> Combining ARIMA (AutoRegressive Integrated
+                            Moving Average) for baseline patterns with machine learning for incorporating external
+                            factors</li>
+                        <li><strong>Algorithm Stack:</strong>
+                            <ul>
+                                <li>Gradient Boosting Machines (XGBoost/LightGBM): For incorporating numerous external
+                                    variables and detecting complex patterns</li>
+                                <li>Recurrent Neural Networks (LSTM): For capturing long-term dependencies and seasonal
+                                    patterns</li>
+                                <li>Ensemble Methods: Combining multiple model outputs for improved accuracy</li>
+                            </ul>
+                        </li>
+                        <li><strong>Specialized Components:</strong>
+                            <ul>
+                                <li>Spoilage Prediction Model: Separate classification model predicting spoilage risk
+                                    based on current inventory age and environmental conditions</li>
+                                <li>Promotion Impact Model: Quantifying how different promotional strategies affect
+                                    demand patterns</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p><strong>Model Training & Validation:</strong></p>
+                    <ul>
+                        <li>Use 2 years of historical data for training</li>
+                        <li>Reserve most recent 6 months for validation and testing</li>
+                        <li>Implement cross-validation across different store clusters</li>
+                        <li>Establish baseline accuracy metrics against current manual ordering performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    4. Implementation Strategy
+                </div>
+                <div class="card-body">
+                    <p><strong>System Integration:</strong></p>
+                    <ul>
+                        <li>API Integration: Connect forecasting system with existing inventory management and ordering
+                            systems</li>
+                        <li>Dashboard Development: Create store-level dashboards showing recommended order quantities
+                            and spoilage alerts</li>
+                        <li>Mobile Alerts: Implement push notifications for store managers regarding high-risk spoilage
+                            items</li>
+                    </ul>
+
+                    <p><strong>Deployment Phasing:</strong></p>
+                    <ol>
+                        <li>Pilot Program: Implement in 5 stores for 2-month validation</li>
+                        <li>Regional Rollout: Expand to 15 stores in highest-spoilage regions</li>
+                        <li>Full Implementation: Deploy across all 45 stores</li>
+                    </ol>
+
+                    <p><strong>User Training & Change Management:</strong></p>
+                    <ul>
+                        <li>Develop training programs for store managers and procurement staff</li>
+                        <li>Create feedback mechanism for continuous system improvement</li>
+                        <li>Establish performance incentives tied to spoilage reduction goals</li>
+                    </ul>
+
+                    <p><strong>Technology Stack:</strong></p>
+                    <ul>
+                        <li>Cloud Platform: AWS or Azure for scalable computation</li>
+                        <li>Data Pipeline: Apache Airflow for workflow management</li>
+                        <li>Model Serving: Kubernetes containers for scalable deployment</li>
+                        <li>Monitoring: MLflow for model performance tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    5. Success Measurement & Value Proposition
+                </div>
+                <div class="card-body">
+                    <p><strong>Financial Metrics:</strong></p>
+                    <ul>
+                        <li>Direct Savings: Reduction in spoilage costs (target: $250,000 annually)</li>
+                        <li>Increased Revenue: Improved product availability driving additional sales</li>
+                        <li>Labor Efficiency: Reduction in time spent on manual ordering and waste management</li>
+                    </ul>
+
+                    <p><strong>Operational Metrics:</strong></p>
+                    <ul>
+                        <li>Forecast Accuracy: Measure using Mean Absolute Percentage Error (MAPE), targeting <12% error
+                                rate</li>
+                        <li>Inventory Turnover: Increase inventory turnover rate for produce department</li>
+                        <li>Service Level: Maintain product availability above 98%</li>
+                    </ul>
+
+                    <p><strong>Sustainability Impact:</strong></p>
+                    <ul>
+                        <li>Waste Reduction: Track reduction in food waste (pounds diverted from landfills)</li>
+                        <li>Donation Optimization: Increase efficient donations of near-expiry products</li>
+                        <li>Carbon Footprint: Reduce transportation waste from over-ordering</li>
+                    </ul>
+
+                    <p><strong>Implementation Timeline:</strong></p>
+                    <ul>
+                        <li>Months 1-2: Data collection and model development</li>
+                        <li>Months 3-4: Pilot implementation and validation</li>
+                        <li>Months 5-8: Phased rollout across all stores</li>
+                        <li>Month 9+: Continuous optimization and expansion to other product categories</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <h4>Assignment Instructions</h4>
+                <p>Submit your completed analysis to the course instructor by [Due Date]. Format: 3-5 page document or
+                    presentation deck covering all five sections above.</p>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- 
+  <div class="video-container">
+    <div class="gradient-border">
+      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <div class="video-links">
+        <h4>Channel Name<h4>
+      </div>
+    </div>
+  </div> -->
+
+</html>
