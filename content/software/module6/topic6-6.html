@@ -183,6 +183,30 @@
       }
     }
 
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .card-header {
+      background-color: #007BFF;
+      color: rgb(255, 255, 255)
+    }
+
     /* For mobile screens, to avoid the box-like appearance */
     @media (max-width: 360px) {
       .video-content {
@@ -375,7 +399,8 @@ if __name__ == "__main__":
         <div class="card-body">
           <ul>
             <li>Decorate the main processing functions (<code>convert_fahrenheit_to_celsius</code>,
-              <code>filter_high_temps</code>) with your <code>log_call</code> decorator.</li>
+              <code>filter_high_temps</code>) with your <code>log_call</code> decorator.
+            </li>
             <li>Use your <code>managed_log_file</code> context manager in the <code>main()</code> function for the final
               summary log message.</li>
           </ul>
@@ -421,7 +446,7 @@ if __name__ == "__main__":
           decorators, comprehensions, and writing clean, idiomatic code. Good luck!</p>
       </div>
 
-      <h2>Solution: Refactored Pythonic Code</h2>
+      <!-- <h2>Solution: Refactored Pythonic Code</h2>
 
       <div class="card">
         <div class="card-header">
@@ -491,8 +516,8 @@ def main():
 if __name__ == "__main__":
     main()</code></pre>
         </div>
-      </div>
-
+      </div> -->
+      <!-- 
       <h2>Part 3: Explanation</h2>
 
       <div class="card">
@@ -507,7 +532,7 @@ if __name__ == "__main__":
             maintain. Finally, using f-strings and generator expressions with join() makes string formatting more
             efficient and the code more maintainable overall.</p>
         </div>
-      </div>
+      </div> -->
 
       <div class="key-point">
         <h4>Key Improvements</h4>

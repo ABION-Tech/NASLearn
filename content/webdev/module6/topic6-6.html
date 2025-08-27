@@ -37,6 +37,30 @@
       box-sizing: border-box;
     }
 
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .card-header {
+      background-color: #007BFF;
+      color: rgb(255, 255, 255)
+    }
+
     /* Body styles */
     body {
       margin: 0;
@@ -248,217 +272,5 @@
 
 </head>
 
-
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>Module 6: Activities & Assessments</h1>
-      <h2>Hands-On Practice: Building Your First Automated Welcome Series</h2>
-    </div>
-
-    <div class="module-content">
-      <div class="key-point">
-        <h4>Objective</h4>
-        <p>To apply the concepts of email marketing automation by building a fundamental nurture workflow—a 3-step
-          welcome series for new subscribers. This practice will solidify your understanding of behavioral triggers,
-          email design, content sequencing, and list management.</p>
-      </div>
-
-      <div class="key-point">
-        <h4>Why This Matters</h4>
-        <p>The welcome series is one of the highest-performing automated workflows you can create. It sets the tone for
-          your relationship with a new subscriber, delivers immediate value, and begins guiding them toward their first
-          conversion.</p>
-      </div>
-
-      <h2>Scenario: The "Urban Jungle" Plant Shop</h2>
-      <p>You are the digital marketer for "Urban Jungle," a hypothetical online store selling unique houseplants and
-        accessories. A visitor to the website signs up for the newsletter to receive a lead magnet: "The Beginner's
-        Guide to Not Killing Your Plants."</p>
-      <p>Your task is to welcome this new subscriber and encourage them to make their first purchase.</p>
-
-      <h2>Your Challenge: Build the Automation</h2>
-
-      <div class="card">
-        <div class="card-header">
-          Step 1: Plan Your Series (The Blueprint)
-        </div>
-        <div class="card-body">
-          <p>Before you even open an email tool, you must plan your strategy. Answer these questions to build your
-            blueprint:</p>
-
-          <ul>
-            <li><strong>Goal:</strong> What is the primary goal of this welcome series? (e.g., Build trust? Deliver the
-              guide? Encourage a first purchase?)</li>
-            <li><strong>Audience:</strong> Who are you emailing? What is their primary need or fear when they sign up?
-            </li>
-            <li><strong>Trigger:</strong> What specific user action will start this automated series?</li>
-          </ul>
-
-          <div class="card" style="background-color: #f0f7ff; border-left: 4px solid #2196F3;">
-            <div class="card-header" style="color: #0d47a1;">
-              Email 1 (Immediate)
-            </div>
-            <div class="card-body">
-              <ul>
-                <li><strong>Objective:</strong> What must this email accomplish immediately after signup?</li>
-                <li><strong>Content:</strong> What is the core message? What is the Call-to-Action (CTA)?</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card" style="background-color: #f0f7ff; border-left: 4px solid #2196F3;">
-            <div class="card-header" style="color: #0d47a1;">
-              Email 2 (24 Hours Later)
-            </div>
-            <div class="card-body">
-              <ul>
-                <li><strong>Objective:</strong> What is the logical next step in building this relationship?</li>
-                <li><strong>Content:</strong> How will you provide further value? How will you introduce your products
-                  without being overly salesy? What is the CTA?</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card" style="background-color: #f0f7ff; border-left: 4px solid #2196F3;">
-            <div class="card-header" style="color: #0d47a1;">
-              Email 3 (72 Hours Later)
-            </div>
-            <div class="card-body">
-              <ul>
-                <li><strong>Objective:</strong> What is the final nudge toward your primary goal?</li>
-                <li><strong>Content:</strong> How will you incentivize action? What is the final CTA?</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          Step 2: Build the Workflow in a Tool
-        </div>
-        <div class="card-body">
-          <p>Now, implement your plan. You may use any email marketing platform you have access to (e.g., Mailchimp,
-            Brevo (formerly Sendinblue), HubSpot, ActiveCampaign—many offer free tiers).</p>
-
-          <div class="card" style="background-color: #f0fff0; border-left: 4px solid #4CAF50;">
-            <div class="card-header" style="color: #1b5e20;">
-              A. Find the Automation Builder
-            </div>
-            <div class="card-body">
-              <p>Locate the section in your chosen platform for creating automated email sequences, often called
-                "Automation," "Workflows," or "Journeys."</p>
-            </div>
-          </div>
-
-          <div class="card" style="background-color: #f0fff0; border-left: 4px solid #4CAF50;">
-            <div class="card-header" style="color: #1b5e20;">
-              B. Set the Trigger
-            </div>
-            <div class="card-body">
-              <p>Configure the workflow to start when a contact is added to a specific list or when a form is submitted.
-              </p>
-            </div>
-          </div>
-
-          <div class="card" style="background-color: #f0fff0; border-left: 4px solid #4CAF50;">
-            <div class="card-header" style="color: #1b5e20;">
-              C. Add the Emails
-            </div>
-            <div class="card-body">
-              <p>Build the three emails you planned in Step 1.</p>
-              <ul>
-                <li>Craft compelling subject lines that encourage opens.</li>
-                <li>Design the email body using the principles of hierarchy, scannability, and mobile optimization.</li>
-                <li>Include clear, prominent CTAs in each email.</li>
-                <li>Use personalization tags (like {{First Name}}) where appropriate.</li>
-                <li>Set the delays between emails (e.g., send Email 2 after 24 hours, Email 3 after 72 hours).</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          Step 3: Test and Validate
-        </div>
-        <div class="card-body">
-          <p>A crucial—and often skipped—step. Never launch an automation without testing it first.</p>
-
-          <ul>
-            <li><strong>Enroll a Test Email:</strong> Add your own personal email address to the list that triggers the
-              automation.</li>
-            <li><strong>Experience the Journey:</strong> Go through the entire series as a subscriber would. Open every
-              email. Click every link.</li>
-            <li><strong>Check for Errors:</strong>
-              <ul>
-                <li>Are all the links working correctly?</li>
-                <li>Is the personalization populating correctly?</li>
-                <li>Do the emails look good on your mobile phone?</li>
-                <li>Did the emails arrive at the correct time intervals?</li>
-              </ul>
-            </li>
-            <li><strong>Refine:</strong> Make any necessary adjustments based on your test.</li>
-          </ul>
-        </div>
-      </div>
-
-      <h2>Deliverables for Submission:</h2>
-      <p>To complete this hands-on practice, please submit the following:</p>
-
-      <ol>
-        <li>
-          <strong>Your Blueprint (Step 1):</strong> A document (Word, Google Doc, or PDF) outlining your plan for the 3
-          emails, answering all the questions in Step 1.
-        </li>
-        <li>
-          <strong>Screenshot Evidence (Step 2 & 3):</strong>
-          <ul>
-            <li>A screenshot of your email automation workflow canvas in your chosen tool, showing the trigger and the
-              three email steps.</li>
-            <li>A screenshot of your inbox showing you received at least one of the test emails.</li>
-          </ul>
-        </li>
-      </ol>
-
-      <div class="card" style="background-color: #fff8e1; border-left: 4px solid #FFC107;">
-        <div class="card-header" style="color: #ff6f00;">
-          Success Tips
-        </div>
-        <div class="card-body">
-          <ul>
-            <li>Keep it simple. Focus on nailing the basic structure of a triggered, multi-email series.</li>
-            <li>Think like a subscriber. What would you want to receive after signing up?</li>
-            <li>Revisit the lecture materials on automation, design, and copywriting if you get stuck.</li>
-            <li>Don't over-design. A simple, well-written text-based email can be more effective than a poorly designed
-              graphic-heavy one.</li>
-          </ul>
-          <p>This exercise will give you the foundational experience needed to build more complex automations in the
-            future. Good luck!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 
-  <div class="video-container">
-    <div class="gradient-border">
-      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-      <div class="video-links">
-        <h4>Channel Name<h4>
-      </div>
-    </div>
-  </div> -->
-
-  <script>
-
-  </script>
-
-</body>
 
 </html>

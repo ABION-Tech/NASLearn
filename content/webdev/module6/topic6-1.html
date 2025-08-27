@@ -2,267 +2,293 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> New Age Skillsphere</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css\styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> New Age Skillsphere</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css\styles.css">
 
-    <!-- Embedding CodeMirror (Code Editor) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
-    <style>
-        .container h1 {
-            font-size: 2.3rem;
-        }
+  <!-- Embedding CodeMirror (Code Editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+  <style>
+    .container h1 {
+      font-size: 2.3rem;
+    }
 
-        .CodeMirror {
-            overflow: auto;
-            min-width: 200px;
-            resize: both;
-            min-height: 150px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 500px;
-            height: 150px;
-            margin-bottom: 15px;
-        }
+    .CodeMirror {
+      overflow: auto;
+      min-width: 200px;
+      resize: both;
+      min-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 500px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Body styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-            top: 80px;
-        }
+    /* Body styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      top: 80px;
+    }
 
-        .container {
-            padding: 20px;
-        }
+    .container {
+      padding: 20px;
+    }
 
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
 
-        /* Video or content inside the border */
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .card-header {
+      background-color: #007BFF;
+      color: rgb(255, 255, 255)
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #007BFF;
+      /* Blue accent */
+    }
+
+    .content-container {
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .custom-section {
+      margin-bottom: 40px;
+    }
+
+    .custom-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .custom-section ul {
+      margin-left: 20px;
+    }
+
+    .custom-section ul li {
+      margin-bottom: 10px;
+    }
+
+    blockquote {
+      font-size: 1.1em;
+      padding: 15px;
+      border-left: 5px solid #007BFF;
+      background-color: #f8f9fa;
+    }
+
+    /* Video container to hold everything */
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+
+    /* Gradient border container */
+    .gradient-border {
+      padding: 5px;
+      background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+      border-radius: 10px;
+    }
+
+    /* Video or content inside the border */
+    .video-content {
+      border-radius: 10px;
+      display: block;
+    }
+
+    .video-links {
+      color: grey;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    /* Ensure responsive width and height for the video */
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
+
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
+
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
         .video-content {
-            border-radius: 10px;
-            display: block;
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
+      }
+    }
 
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
-        }
+    /* Responsiveness */
+    @media (min-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 450px;
+      }
+    }
 
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
+    @media (max-width: 1200px) {
+      iframe {
+        width: 800px;
+        height: 350px;
+      }
+    }
 
-        body {
-            background-color: #ffffff;
-            color: #000000;
-            font-family: Arial, sans-serif;
-        }
+    @media (max-width: 768px) {
+      iframe {
+        width: 500px;
+        height: 200px;
+      }
+    }
 
-        h1,
-        h2,
-        h3 {
-            color: #007BFF;
-            /* Blue accent */
-        }
+    /* For mobile screens, to avoid the box-like appearance */
+    @media (max-width: 360px) {
+      .video-content {
+        width: 280px;
+        /* Take full width */
+        height: 200px;
+        /* Adjust height to give a more rectangular shape */
+      }
 
-        .content-container {
-            margin: 50px auto;
-            max-width: 900px;
-        }
-
-        .custom-section {
-            margin-bottom: 40px;
-        }
-
-        .custom-section p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .custom-section ul {
-            margin-left: 20px;
-        }
-
-        .custom-section ul li {
-            margin-bottom: 10px;
-        }
-
-        blockquote {
-            font-size: 1.1em;
-            padding: 15px;
-            border-left: 5px solid #007BFF;
-            background-color: #f8f9fa;
-        }
-
-        /* Video container to hold everything */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 100px;
-        }
-
-        /* Gradient border container */
-        .gradient-border {
-            padding: 5px;
-            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-            border-radius: 10px;
-        }
-
-        /* Video or content inside the border */
+      /* For mobile screens, to avoid the box-like appearance */
+      @media (max-width: 256px) {
         .video-content {
-            border-radius: 10px;
-            display: block;
+          width: 1080px;
+          /* Take full width */
+          height: 300px;
+          /* Adjust height to give a more rectangular shape */
         }
-
-        .video-links {
-            color: grey;
-            font-size: 0.8rem;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        /* Ensure responsive width and height for the video */
-        iframe {
-            width: 100%;
-            height: 400px;
-            border-radius: 10px;
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
-        }
-
-        /* Responsiveness */
-        @media (min-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            iframe {
-                width: 800px;
-                height: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            iframe {
-                width: 500px;
-                height: 200px;
-            }
-        }
-
-        /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 360px) {
-            .video-content {
-                width: 280px;
-                /* Take full width */
-                height: 200px;
-                /* Adjust height to give a more rectangular shape */
-            }
-
-            /* For mobile screens, to avoid the box-like appearance */
-            @media (max-width: 256px) {
-                .video-content {
-                    width: 1080px;
-                    /* Take full width */
-                    height: 300px;
-                    /* Adjust height to give a more rectangular shape */
-                }
-            }
-        }
-    </style>
+      }
+    }
+  </style>
 
 </head>
- 
+
 
 <body>
   <div class="container">
     <div class="header">
-      <h1>Week 6: Introduction to Backend Development with Node.js</h1>
-      <h2>6.1: The Client-Server Model & Role of the Back-End</h2>
+      <h1>6.1: The Client-Server Model & Role of the Back-End</h1>
     </div>
-    
+
     <div class="module-content">
       <h2>Introduction: The Unseen Engine of the Web</h2>
-      <p>Every time you scroll through a social media feed, add an item to a shopping cart, or check the weather on your phone, you are interacting with a powerful, unseen engine: the back-end. This module pulls back the curtain on how the web truly works, moving beyond the browser to understand the servers, protocols, and logic that power modern applications.</p>
-      
+      <p>Every time you scroll through a social media feed, add an item to a shopping cart, or check the weather on your
+        phone, you are interacting with a powerful, unseen engine: the back-end. This module pulls back the curtain on
+        how the web truly works, moving beyond the browser to understand the servers, protocols, and logic that power
+        modern applications.</p>
+
       <h2>1. How the Web Works: The Request-Response Cycle</h2>
       <p>At its core, the web is built on a simple, powerful pattern: the client-server model.</p>
-      
+
       <div class="card">
         <div class="card-header">
           The Client (The Requestor)
@@ -276,13 +302,14 @@
           </ol>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="card-header">
           The Server (The Responder)
         </div>
         <div class="card-body">
-          <p>This is a powerful computer (or cluster of computers) running specialized software, always connected to the internet. Its job is to:</p>
+          <p>This is a powerful computer (or cluster of computers) running specialized software, always connected to the
+            internet. Its job is to:</p>
           <ol>
             <li>Listen continuously for incoming requests from clients.</li>
             <li>Process those requests. This often involves:
@@ -292,11 +319,13 @@
                 <li>Communicating with other external services (e.g., payment gateways).</li>
               </ul>
             </li>
-            <li>Send back a response to the client. This response contains everything the client needs to proceed, including status information, metadata, and the actual requested content (like HTML, JSON, or an image).</li>
+            <li>Send back a response to the client. This response contains everything the client needs to proceed,
+              including status information, metadata, and the actual requested content (like HTML, JSON, or an image).
+            </li>
           </ol>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="card-header">
           The Analogy
@@ -306,22 +335,25 @@
           <ul>
             <li>You (the client) look at the menu (the interface) and tell the waiter your order (the request).</li>
             <li>The waiter takes your order to the kitchen (the server).</li>
-            <li>The kitchen staff applies its recipes (business logic), uses ingredients from the fridge (the database), and prepares your meal.</li>
+            <li>The kitchen staff applies its recipes (business logic), uses ingredients from the fridge (the database),
+              and prepares your meal.</li>
             <li>The waiter then brings your food back to you (the response).</li>
           </ul>
         </div>
       </div>
-      
+
       <h2>2. Deep Dive into HTTP: The Language of the Web</h2>
-      <p>Clients and servers communicate using a protocol—a set of agreed-upon rules. For the web, this is the HyperText Transfer Protocol (HTTP).</p>
-      
+      <p>Clients and servers communicate using a protocol—a set of agreed-upon rules. For the web, this is the HyperText
+        Transfer Protocol (HTTP).</p>
+
       <div class="card">
         <div class="card-header">
           HTTP Methods (Verbs): The Intent of the Request
         </div>
         <div class="card-body">
-          <p>The method tells the server what kind of action the client wants to perform. The most important ones are:</p>
-          
+          <p>The method tells the server what kind of action the client wants to perform. The most important ones are:
+          </p>
+
           <table class="custom-table">
             <thead>
               <tr>
@@ -370,22 +402,25 @@
               </tr>
             </tbody>
           </table>
-          
-          <p><em>*Idempotent: Making the same identical request multiple times has the same effect as making it once. (e.g., DELETEing a resource twice: the first time it's gone, the second time you get a 404, but the resource is still gone—the end state is the same).</em></p>
+
+          <p><em>*Idempotent: Making the same identical request multiple times has the same effect as making it once.
+              (e.g., DELETEing a resource twice: the first time it's gone, the second time you get a 404, but the
+              resource is still gone—the end state is the same).</em></p>
           <p><em>**Safe: The operation does not change the server's state. GET and HEAD are safe.</em></p>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="card-header">
           HTTP Responses: The Server's Reply
         </div>
         <div class="card-body">
           <p>After processing the request, the server sends back an HTTP response, which contains three key parts:</p>
-          
+
           <ol>
             <li>
-              <strong>Status Code:</strong> A 3-digit number that summarizes the result. The first digit indicates the category:
+              <strong>Status Code:</strong> A 3-digit number that summarizes the result. The first digit indicates the
+              category:
               <ul>
                 <li><strong>1xx (Informational):</strong> Request received, continuing process.</li>
                 <li><strong>2xx (Success):</strong> The action was successfully received, understood, and accepted.
@@ -401,14 +436,17 @@
                 </li>
                 <li><strong>4xx (Client Error):</strong> The request contains bad syntax or cannot be fulfilled.
                   <ul>
-                    <li><strong>404 Not Found:</strong> The server cannot find the requested resource. The infamous "oops" page.</li>
-                    <li><strong>403 Forbidden:</strong> The client does not have access rights (authorization error).</li>
+                    <li><strong>404 Not Found:</strong> The server cannot find the requested resource. The infamous
+                      "oops" page.</li>
+                    <li><strong>403 Forbidden:</strong> The client does not have access rights (authorization error).
+                    </li>
                     <li><strong>401 Unauthorized:</strong> The client must authenticate itself (log in).</li>
                   </ul>
                 </li>
                 <li><strong>5xx (Server Error):</strong> The server failed to fulfill a valid request.
                   <ul>
-                    <li><strong>500 Internal Server Error:</strong> A generic error message when the server encounters an unexpected condition.</li>
+                    <li><strong>500 Internal Server Error:</strong> A generic error message when the server encounters
+                      an unexpected condition.</li>
                   </ul>
                 </li>
               </ul>
@@ -422,30 +460,42 @@
               </ul>
             </li>
             <li>
-              <strong>Body:</strong> The actual content of the response. This is the HTML for a webpage, the JSON data for an API response, the bytes of an image file, etc.
+              <strong>Body:</strong> The actual content of the response. This is the HTML for a webpage, the JSON data
+              for an API response, the bytes of an image file, etc.
             </li>
           </ol>
         </div>
       </div>
-      
+
       <h2>3. What Happens When You Type a URL and Press Enter?</h2>
       <p>This process, which happens in milliseconds, is a symphony of technologies working together.</p>
-      
+
       <ol>
         <li>
-          <strong>DNS Lookup (The Phonebook):</strong> The browser takes the domain name (e.g., www.example.com) and asks a DNS (Domain Name System) server to translate it into a numerical IP address (e.g., 93.184.216.34). This is how your browser finds the server's location on the internet.
+          <strong>DNS Lookup (The Phonebook):</strong> The browser takes the domain name (e.g., www.example.com) and
+          asks a DNS (Domain Name System) server to translate it into a numerical IP address (e.g., 93.184.216.34). This
+          is how your browser finds the server's location on the internet.
         </li>
         <li>
-          <strong>TCP Handshake (The Introduction):</strong> The browser establishes a reliable TCP (Transmission Control Protocol) connection with the server at the IP address. They perform a "three-way handshake" (SYN, SYN-ACK, ACK) to synchronize and establish a connection. This ensures data packets arrive in order and without errors.
+          <strong>TCP Handshake (The Introduction):</strong> The browser establishes a reliable TCP (Transmission
+          Control Protocol) connection with the server at the IP address. They perform a "three-way handshake" (SYN,
+          SYN-ACK, ACK) to synchronize and establish a connection. This ensures data packets arrive in order and without
+          errors.
         </li>
         <li>
-          <strong>TLS Handshake (The Secret Handshake - for HTTPS):</strong> If the website uses HTTPS (which it always should!), the browser and server now perform a TLS (Transport Layer Security) handshake. They agree on encryption keys, establishing a secure, encrypted tunnel. The padlock icon in your browser bar signifies this is complete.
+          <strong>TLS Handshake (The Secret Handshake - for HTTPS):</strong> If the website uses HTTPS (which it always
+          should!), the browser and server now perform a TLS (Transport Layer Security) handshake. They agree on
+          encryption keys, establishing a secure, encrypted tunnel. The padlock icon in your browser bar signifies this
+          is complete.
         </li>
         <li>
-          <strong>HTTP Request (The Ask):</strong> The browser sends an HTTP GET request through the established secure connection. The request includes the path (e.g., /blog/post-1), headers (e.g., User-Agent, Accept-Language), and other information.
+          <strong>HTTP Request (The Ask):</strong> The browser sends an HTTP GET request through the established secure
+          connection. The request includes the path (e.g., /blog/post-1), headers (e.g., User-Agent, Accept-Language),
+          and other information.
         </li>
         <li>
-          <strong>Server Processing (The Kitchen):</strong> The server software (e.g., Node.js, Apache, Nginx) receives the request. It might:
+          <strong>Server Processing (The Kitchen):</strong> The server software (e.g., Node.js, Apache, Nginx) receives
+          the request. It might:
           <ul>
             <li>Route the request based on the path.</li>
             <li>Execute application code (business logic).</li>
@@ -454,54 +504,62 @@
           </ul>
         </li>
         <li>
-          <strong>HTTP Response (The Answer):</strong> The server sends back an HTTP response containing a 200 OK status code, headers like Content-Type: text/html, and the HTML content for the blog post in the body.
+          <strong>HTTP Response (The Answer):</strong> The server sends back an HTTP response containing a 200 OK status
+          code, headers like Content-Type: text/html, and the HTML content for the blog post in the body.
         </li>
         <li>
-          <strong>Browser Rendering (The Presentation):</strong> The browser receives the response, parses the HTML, and begins rendering the page. It often discovers it needs more resources (CSS, JavaScript, images) and repeats steps 3-6 for each of those files until the entire page is loaded.
+          <strong>Browser Rendering (The Presentation):</strong> The browser receives the response, parses the HTML, and
+          begins rendering the page. It often discovers it needs more resources (CSS, JavaScript, images) and repeats
+          steps 3-6 for each of those files until the entire page is loaded.
         </li>
       </ol>
-      
+
       <h2>4. The Role of the Back-End: More Than Just Data</h2>
       <p>The back-end is the brain of the operation. Its responsibilities are vast and critical:</p>
-      
+
       <div class="card">
         <div class="card-header">
           Business Logic
         </div>
         <div class="card-body">
           <p>This is the core set of rules that define how the application operates.</p>
-          <p><strong>Example:</strong> "A user can only edit their own blog posts," "Calculating tax and shipping costs on an order," "Determining what posts to show in a user's feed based on an algorithm."</p>
+          <p><strong>Example:</strong> "A user can only edit their own blog posts," "Calculating tax and shipping costs
+            on an order," "Determining what posts to show in a user's feed based on an algorithm."</p>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="card-header">
           Data Persistence
         </div>
         <div class="card-body">
           <p>The back-end is responsible for reliably storing and retrieving application data using databases.</p>
-          <p><strong>Types:</strong> SQL databases (e.g., PostgreSQL, MySQL) for structured, relational data. NoSQL databases (e.g., MongoDB, Redis) for more flexible, document-oriented or key-value data.</p>
+          <p><strong>Types:</strong> SQL databases (e.g., PostgreSQL, MySQL) for structured, relational data. NoSQL
+            databases (e.g., MongoDB, Redis) for more flexible, document-oriented or key-value data.</p>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="card-header">
           Authentication & Authorization
         </div>
         <div class="card-body">
           <ul>
-            <li><strong>Authentication (AuthN):</strong> Verifying who a user is (e.g., "Is this password correct?"). The back-end checks credentials and creates a session.</li>
-            <li><strong>Authorization (AuthZ):</strong> Verifying what an authenticated user is allowed to do (e.g., "Is this user allowed to delete this photo?").</li>
+            <li><strong>Authentication (AuthN):</strong> Verifying who a user is (e.g., "Is this password correct?").
+              The back-end checks credentials and creates a session.</li>
+            <li><strong>Authorization (AuthZ):</strong> Verifying what an authenticated user is allowed to do (e.g., "Is
+              this user allowed to delete this photo?").</li>
           </ul>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="card-header">
           API Design
         </div>
         <div class="card-body">
-          <p>Modern back-ends often don't serve HTML directly. Instead, they provide a RESTful API—a structured set of URLs (endpoints) that return raw data (usually JSON). This allows:</p>
+          <p>Modern back-ends often don't serve HTML directly. Instead, they provide a RESTful API—a structured set of
+            URLs (endpoints) that return raw data (usually JSON). This allows:</p>
           <ul>
             <li>A web browser to fetch data and render it dynamically.</li>
             <li>A mobile app to use the exact same back-end logic and data.</li>
@@ -509,27 +567,31 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="card-header">
           Security
         </div>
         <div class="card-body">
-          <p>The back-end is the last line of defense, responsible for validating all incoming data, protecting against attacks (SQL injection, cross-site scripting), and securely handling secrets like API keys and passwords (by hashing them, never storing them in plain text).</p>
+          <p>The back-end is the last line of defense, responsible for validating all incoming data, protecting against
+            attacks (SQL injection, cross-site scripting), and securely handling secrets like API keys and passwords (by
+            hashing them, never storing them in plain text).</p>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="card-header">
           Performance & Scaling
         </div>
         <div class="card-body">
-          <p>The back-end must be optimized to handle many simultaneous users (high concurrency) by using techniques like caching (storing frequently accessed data in memory) and load balancing (distributing traffic across multiple servers).</p>
+          <p>The back-end must be optimized to handle many simultaneous users (high concurrency) by using techniques
+            like caching (storing frequently accessed data in memory) and load balancing (distributing traffic across
+            multiple servers).</p>
         </div>
       </div>
-      
+
       <h2>Module 6.1 Summary:</h2>
-      
+
       <table class="custom-table">
         <thead>
           <tr>
@@ -561,15 +623,16 @@
           </tr>
         </tbody>
       </table>
-      
+
       <div class="key-point">
         <h4>Up Next</h4>
-        <p>Now that you understand what a server does, the next module will show you how to build one using Node.js and its core built-in modules.</p>
+        <p>Now that you understand what a server does, the next module will show you how to build one using Node.js and
+          its core built-in modules.</p>
       </div>
     </div>
   </div>
 
-<!-- 
+  <!-- 
   <div class="video-container">
     <div class="gradient-border">
       <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"

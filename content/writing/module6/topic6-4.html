@@ -97,6 +97,30 @@
       /* Blue accent */
     }
 
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .card-header {
+      background-color: #007BFF;
+      color: rgb(255, 255, 255)
+    }
+
     .content-container {
       margin: 50px auto;
       max-width: 900px;
@@ -249,298 +273,5 @@
 </head>
 
 
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>Module 6: Email Marketing and Marketing Automation</h1>
-      <h2>6.4: Marketing Automation Fundamentals</h2>
-    </div>
-
-    <div class="module-content">
-      <h2>Introduction</h2>
-      <p>Welcome to the strategic apex of digital marketing. While email marketing is the channel, marketing automation
-        is the brain that powers it. It's the technology that allows you to replace manual, repetitive tasks with
-        automated, personalized communication. This module moves beyond one-off campaigns and into the realm of building
-        intelligent, self-running systems that nurture relationships, qualify customers, and drive revenue 24 hours a
-        day.</p>
-
-      <h2>1. What is Marketing Automation? Beyond the Hype</h2>
-      <p>At its core, marketing automation is the use of software to automatically deliver targeted and personalized
-        marketing messages based on user behavior, preferences, and data.</p>
-
-      <div class="card">
-        <div class="card-header">
-          The Manual vs. Automated Mindset
-        </div>
-        <div class="card-body">
-          <p><strong>Manual (The Old Way):</strong> You notice someone downloaded an ebook. A week later, you remember
-            to send them a follow-up email manually.</p>
-          <p><strong>Automated (The New Way):</strong> The moment someone downloads the ebook, the system instantly tags
-            them as "interested in Topic X," adds them to a "Nurture Sequence for Topic X," and sends a pre-written,
-            personalized follow-up email without you lifting a finger.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          Key Benefits
-        </div>
-        <div class="card-body">
-          <ul>
-            <li><strong>Saves Time & Resources:</strong> Automates repetitive tasks like sending welcome emails,
-              follow-ups, and reminders.</li>
-            <li><strong>Scales Personalization:</strong> Allows you to deliver a one-to-one experience to thousands of
-              people simultaneously, which is impossible to do manually.</li>
-            <li><strong>Increases Conversions:</strong> By delivering the right message at the perfect moment (e.g.,
-              when a user is most engaged), you dramatically increase the likelihood of a conversion.</li>
-            <li><strong>Improves Lead Management:</strong> Helps you identify, score, and route the best leads to your
-              sales team.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="key-point">
-        <h4>Key Insight</h4>
-        <p>Marketing automation is not spam. It is the opposite. It's about sending more relevant emails by listening to
-          what the user wants through their behavior.</p>
-      </div>
-
-      <h2>2. Mapping the Customer Journey: The Blueprint for Automation</h2>
-      <p>You cannot automate what you do not understand. The foundation of any automation strategy is a clearly defined
-        Customer Journey Map. This is a visual story of every interaction a customer has with your brand, from first
-        awareness to becoming a loyal advocate.</p>
-
-      <div class="card">
-        <div class="card-header">
-          The Stages of the Journey
-        </div>
-        <div class="card-body">
-          <ol>
-            <li><strong>Awareness:</strong> The prospect becomes aware of a problem and discovers your brand as a
-              potential solution. (e.g., reads a blog post, sees a social media ad).</li>
-            <li><strong>Consideration:</strong> The prospect actively researches and evaluates solutions, including
-              yours. (e.g., downloads a whitepaper, compares pricing pages, signs up for a webinar).</li>
-            <li><strong>Purchase (Conversion):</strong> The prospect decides to buy your product or service.</li>
-            <li><strong>Retention & Loyalty:</strong> The post-purchase phase where you work to delight the customer and
-              turn them into a repeat buyer.</li>
-            <li><strong>Advocacy:</strong> The delighted customer refers others and promotes your brand without being
-              asked.</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          Example Journey Map for a SaaS Product
-        </div>
-        <div class="card-body">
-          <p><strong>Trigger:</strong> User signs up for a free trial. (Awareness → Consideration)</p>
-          <p><strong>Automated Action:</strong></p>
-          <ul>
-            <li>Email 1 (Instantly): Welcome email with login details and a video tutorial.</li>
-            <li>Email 2 (Day 2): Case study showing how Company X achieved results.</li>
-            <li>Email 3 (Day 5): Tips for using an advanced feature.</li>
-            <li>Email 4 (Day 9): "Getting the most out of your trial" + offer to book a demo.</li>
-          </ul>
-          <p><strong>Trigger:</strong> User upgrades to a paid plan. (Purchase)</p>
-          <p><strong>Automated Action:</strong> Onboarding series, offer for premium support.</p>
-          <p><strong>Trigger:</strong> 30 days as a customer. (Retention)</p>
-          <p><strong>Automated Action:</strong> Request a review, share a referral program offer.</p>
-          <p>This map becomes the blueprint for building your automation workflows.</p>
-        </div>
-      </div>
-
-      <h2>3. Lead Scoring & Nurturing: Qualifying Leads Automatically</h2>
-      <p>Lead scoring is a methodology used to rank prospects on a scale of their perceived value to the organization.
-        The purpose is to identify sales-ready leads so your sales team can prioritize their efforts on the
-        opportunities most likely to close.</p>
-
-      <div class="card">
-        <div class="card-header">
-          How It Works
-        </div>
-        <div class="card-body">
-          <p>You assign positive and negative points based on demographic information and specific behaviors.</p>
-          <p><strong>Demographic Criteria (Who they are):</strong></p>
-          <ul>
-            <li>Job Title = "C-Level" (+25 points)</li>
-            <li>Industry = "Healthcare" (+10 points)</li>
-            <li>Company Size = "500-1000 employees" (+15 points)</li>
-          </ul>
-          <p><strong>Behavioral Criteria (What they do):</strong></p>
-          <ul>
-            <li>Visits Pricing Page (+10 points)</li>
-            <li>Downloads a Whitepaper (+5 points)</li>
-            <li>Attends a Webinar (+15 points)</li>
-            <li>Requests a Demo (+50 points)</li>
-            <li>Email not opened in 60 days (-5 points)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          Lead Nurturing
-        </div>
-        <div class="card-body">
-          <p>This is the process of developing relationships with buyers at every stage of the journey, especially those
-            who are not yet sales-ready.</p>
-          <ul>
-            <li>A lead with a low score might be automatically enrolled in an educational nurture campaign with blog
-              posts and webinars.</li>
-            <li>Once their score crosses a certain threshold (e.g., 75 points), they are automatically tagged as a
-              Marketing Qualified Lead (MQL) and an alert is sent to the sales team to make a personal follow-up.</li>
-          </ul>
-          <p>This ensures the sales team spends time on hot leads, while marketing continues to nurture the warm ones.
-          </p>
-        </div>
-      </div>
-
-      <h2>4. Behavioral Triggers: The Engine of Automation</h2>
-      <p>Triggers are the specific events that launch an automated action. They are the "if" part of the
-        "if-this-then-that" logic that powers automation.</p>
-
-      <div class="card">
-        <div class="card-header">
-          The Power of Triggers
-        </div>
-        <div class="card-body">
-          <p>They make your communication immediate and hyper-relevant, capitalizing on a user's peak interest.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          Common Trigger Examples
-        </div>
-        <div class="card-body">
-          <ul>
-            <li><strong>Abandoned Cart:</strong> IF a user adds a product to their cart BUT does not complete the
-              purchase within 1 hour, THEN trigger an abandoned cart email sequence.</li>
-            <li><strong>Website Activity:</strong> IF a user visits the "Enterprise Pricing" page more than twice in a
-              week, THEN add them to a segment for "Enterprise Leads" and trigger an email with an enterprise case
-              study.</li>
-            <li><strong>Email Engagement:</strong> IF a user clicks a specific link in a newsletter (e.g., "Guide to
-              SEO"), THEN tag them as "Interested in SEO" and trigger a follow-up email with your advanced SEO webinar.
-            </li>
-            <li><strong>Lapse in Activity (Re-engagement):</strong> IF a subscriber has not opened any emails in 60
-              days, THEN trigger a "We miss you" campaign with a strong win-back offer or a simple "Do you still want to
-              hear from us?" email.</li>
-            <li><strong>Date-Based:</strong> IF a user's birthday is today (based on their profile data), THEN trigger
-              an email with a personalized birthday discount.</li>
-          </ul>
-        </div>
-      </div>
-
-      <h2>5. CRM Integration: Closing the Loop</h2>
-      <p>For marketing automation to reach its full potential, it must be integrated with a Customer Relationship
-        Management (CRM) system like Salesforce, HubSpot, or Zoho.</p>
-
-      <div class="card">
-        <div class="card-header">
-          What is a CRM?
-        </div>
-        <div class="card-body">
-          <p>A CRM is a centralized database where a business records all its interactions and information about leads
-            and customers. It's the single source of truth for the sales team.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          The Power of Integration
-        </div>
-        <div class="card-body">
-          <ul>
-            <li><strong>Seamless Data Sync:</strong> All email interactions (opens, clicks), website visits, and lead
-              scores from your marketing automation platform are automatically logged to the contact's record in the
-              CRM. This gives sales reps a complete view of the prospect's journey before they even make a call.</li>
-            <li><strong>Alignment Between Marketing & Sales:</strong> This integration ends the "blame game."
-              <ul>
-                <li>Marketing can see which leads converted into customers, allowing them to calculate ROI and refine
-                  their strategies based on what actually works.</li>
-                <li>Sales can see a lead's complete history, making their outreach informed and personalized (e.g., "I
-                  saw you were reading our article on X...").</li>
-              </ul>
-            </li>
-            <li><strong>Automated Workflow Handoffs:</strong> When a lead hits a certain score (MQL), the automation
-              platform can not only alert a sales rep but also automatically create a new "task" for them in the CRM to
-              call the lead.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="key-point">
-        <h4>Key Takeaway</h4>
-        <p>CRM integration transforms marketing from a cost center into a measurable revenue driver. It creates a
-          closed-loop system where marketing activities are directly tied to sales outcomes.</p>
-      </div>
-
-      <h2>Module 6.4 Summary:</h2>
-
-      <table class="custom-table">
-        <thead>
-          <tr>
-            <th>Concept</th>
-            <th>Core Idea</th>
-            <th>Business Impact</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Marketing Automation</strong></td>
-            <td>Using software to automate personalized messages based on behavior.</td>
-            <td>Saves time, scales personalization, and increases conversion rates.</td>
-          </tr>
-          <tr>
-            <td><strong>Customer Journey Mapping</strong></td>
-            <td>Charting the path from awareness to advocacy.</td>
-            <td>Provides the blueprint for building relevant and effective automated workflows.</td>
-          </tr>
-          <tr>
-            <td><strong>Lead Scoring</strong></td>
-            <td>Ranking leads based on profile and engagement.</td>
-            <td>Allows sales to focus on hot leads and marketing to nurture warm ones.</td>
-          </tr>
-          <tr>
-            <td><strong>Behavioral Triggers</strong></td>
-            <td>"If-This-Then-That" rules that start automations.</td>
-            <td>Enables immediate, hyper-relevant communication that capitalizes on user intent.</td>
-          </tr>
-          <tr>
-            <td><strong>CRM Integration</strong></td>
-            <td>Connecting marketing data with the sales database.</td>
-            <td>Aligns marketing and sales, proving ROI and enabling smarter, data-driven outreach.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="key-point">
-        <h4>Module Conclusion</h4>
-        <p>This concludes Module 6: Email Marketing and Marketing Automation. You now understand the strategic
-          principles, creative execution, powerful tools, and automated systems that make this channel one of the most
-          effective in a digital marketer's toolkit.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 
-  <div class="video-container">
-    <div class="gradient-border">
-      <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-      <div class="video-links">
-        <h4>Channel Name<h4>
-      </div>
-    </div>
-  </div> -->
-
-  <script>
-
-  </script>
-
-</body>
 
 </html>
