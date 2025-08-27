@@ -1,0 +1,33 @@
+PM 
+Project Quality Management Video 1
+
+Project Procurement Management Video 2
+
+Advanced Stakeholder Engagement Video 3 
+
+Change Control and Configuration Management
+
+
+
+SD Pr WEEk 6
+DevOps, Cloud Computing, and Deployment
+
+Python Data Model & Special Methods vid1
+Mastering Decorators and Context Managers vid2
+Advanced Object-Oriented Programming in Python vid 3
+Functional Programming Techniques in Python vid4
+
+
+
+Web
+Module 6: Introduction to Back-End Development
+6.1: The Client-Server Model & Role of the Back-End
+6.2: Introduction to Node.js & npm
+6.3: Building a Simple HTTP Server
+6.4: Express.js Fundamentals
+
+
+
+
+Writing
+
