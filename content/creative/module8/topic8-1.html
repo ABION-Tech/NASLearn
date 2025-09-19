@@ -4,45 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integrating Front-End and Back-End</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: #333;
-        }
-
-        pre {
-            background-color: #eee;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        .code-block {
-            background-color: #f9f9f9;
-            border-left: 5px solid #ccc;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-        ul {
-            line-height: 1.6;
-            padding-left: 20px;
-        }
-
-        .content-section {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
 
         /* Basic Reset */
@@ -141,147 +107,21 @@
                 }
             }
         }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+        }
     </style>
 </head>
 
 <body>
-
-    <h1>Integrating Front-End and Back-End</h1>
-
-    <!-- Section 1.1 - Connecting a React Front-End with a Node.js Back-End -->
-    <div class="content-section">
-        <h2>1.1. Connecting a React Front-End with a Node.js Back-End</h2>
-        <p>Integrating a React front-end with a Node.js back-end involves setting up communication between these two
-            layers of your application. Here's how to achieve this:</p>
-
-        <h3>Understanding the Basics of API Integration:</h3>
-        <ul>
-            <li><strong>API Endpoints:</strong> Your Node.js back-end exposes API endpoints that the React front-end can
-                call to retrieve or send data.</li>
-        </ul>
-        <div class="code-block">
-            <pre><code>
-// Node.js (Express) - server.js
-app.get('/api/users', async (req, res) => {
-    const users = await User.find();
-    res.json(users);
-});
-            </code></pre>
-        </div>
-        <ul>
-            <li><strong>/api/users:</strong> An endpoint that returns a list of users in JSON format.</li>
-            <li><strong>res.json(users):</strong> Sends the user data as a JSON response to the front-end.</li>
-        </ul>
-
-        <h3>Making API Requests in React:</h3>
-        <ul>
-            <li>Use <strong>fetch()</strong> or libraries like <strong>Axios</strong> to make HTTP requests from your
-                React components.</li>
-        </ul>
-        <div class="code-block">
-            <pre><code>
-// React - UserList.js
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-function UserList() {
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        axios.get('/api/users')
-            .then(response => {
-                setUsers(response.data);
-            })
-            .catch(error => {
-                console.error('There was an error fetching the users!', error);
-            });
-    }, []);
-
-    return (
-        <ul>
-            {users.map(user => (
-                <li key={user.id}>{user.name}</li>
-            ))}
-        </ul>
-    );
-}
-
-export default UserList;
-            </code></pre>
-        </div>
-        <ul>
-            <li><strong>useEffect():</strong> Fetches data from the API when the component mounts.</li>
-            <li><strong>axios.get():</strong> Sends a GET request to the back-end and updates the component state with
-                the retrieved data.</li>
-        </ul>
-    </div>
-
-    <!-- Section 1.2 - Fetching Data from APIs and Displaying it in the UI -->
-    <div class="content-section">
-        <h2>1.2. Fetching Data from APIs and Displaying it in the UI</h2>
-        <h3>Handling API Responses:</h3>
-        <ul>
-            <li><strong>Parsing JSON Responses:</strong> Use JavaScript’s <strong>.json()</strong> method to parse JSON
-                responses from the API.</li>
-        </ul>
-        <div class="code-block">
-            <pre><code>
-fetch('/api/data')
-    .then(response => response.json())
-    .then(data => console.log(data));
-            </code></pre>
-        </div>
-        <ul>
-            <li><strong>Error Handling:</strong> Implement error handling to manage scenarios where API requests fail.
-            </li>
-        </ul>
-        <div class="code-block">
-            <pre><code>
-fetch('/api/data')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => console.log(data))
-    .catch(error => console.error('There was a problem with the fetch operation:', error));
-            </code></pre>
-        </div>
-
-        <h3>Dynamic UI Updates:</h3>
-        <ul>
-            <li><strong>Updating React State:</strong> Use <strong>useState</strong> to manage state in your React
-                components and dynamically update the UI based on API data.</li>
-        </ul>
-        <div class="code-block">
-            <pre><code>
-const [data, setData] = useState([]);
-
-useEffect(() => {
-    fetch('/api/data')
-        .then(response => response.json())
-        .then(data => setData(data));
-}, []);
-            </code></pre>
-        </div>
-        <ul>
-            <li><strong>setData(data):</strong> Updates the component state with the data fetched from the API,
-                triggering a re-render.</li>
-        </ul>
-    </div>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
-    </div>
-
 
 </body>
 

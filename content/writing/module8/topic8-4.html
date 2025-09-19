@@ -4,169 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 8: Natural Language Processing (NLP)</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: #ffffff;
-            color: #333333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
         h1,
-        h2,
-        h3 {
-            color: #007BFF;
-            /* Blue accent */
-        }
-
-        h1 {
-            margin-top: 20px;
-        }
-
-        .content-section {
-            margin: 30px 0;
-            padding: 20px;
-            border-left: 5px solid #007BFF;
-            /* Blue accent */
-            background-color: #f8f9fa;
-            /* Light gray background */
-        }
-
-        pre {
-            background-color: #f1f1f1;
-            border: 1px solid #ddd;
-            padding: 10px;
-            overflow: auto;
-        }
-
-        .key-concepts ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        .applications ul {
-            list-style-type: circle;
-            margin-left: 20px;
+        h2 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1 class="text-center">Week 8: Natural Language Processing (NLP)</h1>
-
-        <div class="content-section">
-            <h2>Introduction to Natural Language Processing (NLP)</h2>
-            <p>
-                Natural Language Processing (NLP) is a subfield of artificial intelligence that focuses on the
-                interaction
-                between computers and human language. It involves the development of algorithms and techniques that
-                allow
-                computers to understand, interpret, and generate human language, enabling a variety of applications that
-                enhance user experiences across different platforms.
-            </p>
-            <p>
-                The importance of NLP lies in its ability to bridge the gap between human communication and machine
-                understanding, making it a crucial technology in today's digital landscape.
-            </p>
-        </div>
-
-        <div class="content-section key-concepts">
-            <h2>Key Concepts</h2>
-            <ul>
-                <li><strong>Text Data:</strong> The raw material of NLP, consisting of sequences of words or characters.
-                </li>
-                <li><strong>Tokenization:</strong> The process of breaking down text into individual words or tokens,
-                    allowing for easier analysis.</li>
-                <li><strong>Stemming and Lemmatization:</strong> Techniques for reducing words to their root form,
-                    aiding in text normalization.</li>
-                <li><strong>Stop Words:</strong> Common words (e.g., "and", "the", "is") that are often removed from
-                    text data to improve processing efficiency.</li>
-                <li><strong>Part-of-Speech Tagging:</strong> Identifying the grammatical category of each word (e.g.,
-                    noun, verb, adjective) for contextual analysis.</li>
-                <li><strong>Named Entity Recognition:</strong> Identifying named entities in text, such as people,
-                    organizations, and locations, crucial for data extraction.</li>
-                <li><strong>Sentiment Analysis:</strong> Determining the sentiment expressed in a piece of text (e.g.,
-                    positive, negative, neutral), commonly used in social media monitoring.</li>
-                <li><strong>Machine Translation:</strong> Translating text from one language to another using advanced
-                    algorithms.</li>
-                <li><strong>Text Summarization:</strong> Generating a concise summary of a longer piece of text, useful
-                    in news aggregation and research.</li>
-                <li><strong>Question Answering:</strong> Developing systems that can answer questions based on a given
-                    text, enhancing user interaction.</li>
-            </ul>
-        </div>
-
-        <div class="content-section challenges">
-            <h2>Challenges in NLP</h2>
-            <p>
-                Despite its advancements, NLP faces several challenges:
-            </p>
-            <ul>
-                <li><strong>Ambiguity:</strong> Natural language is inherently ambiguous, and computers may struggle to
-                    interpret meaning correctly.</li>
-                <li><strong>Contextual Understanding:</strong> Understanding the meaning of words and phrases in the
-                    context of a sentence or document is complex.</li>
-                <li><strong>Data Sparsity:</strong> Many languages have limited amounts of labeled data available for
-                    training NLP models, impacting performance.</li>
-            </ul>
-        </div>
-
-        <div class="content-section applications">
-            <h2>Applications of NLP</h2>
-            <p>
-                NLP has a wide range of applications, including:
-            </p>
-            <ul>
-                <li><strong>Search Engines:</strong> Improving search results by understanding the intent of search
-                    queries, enhancing user satisfaction.</li>
-                <li><strong>Chatbots and Virtual Assistants:</strong> Creating conversational agents that can interact
-                    with users in natural language, improving customer support.</li>
-                <li><strong>Sentiment Analysis:</strong> Analyzing customer feedback and social media sentiment to guide
-                    business decisions.</li>
-                <li><strong>Machine Translation:</strong> Developing accurate and fluent machine translation systems for
-                    global communication.</li>
-                <li><strong>Text Summarization:</strong> Creating concise summaries of news articles, research papers,
-                    or other documents for quick consumption.</li>
-            </ul>
-        </div>
-
-        <div class="content-section techniques">
-            <h2>NLP Techniques</h2>
-            <p>
-                Various techniques are employed in NLP to process and analyze text data:
-            </p>
-            <ul>
-                <li><strong>Bag-of-Words:</strong> Representing text as a numerical vector where each dimension
-                    corresponds to a word in the vocabulary, facilitating classification tasks.</li>
-                <li><strong>TF-IDF (Term Frequency-Inverse Document Frequency):</strong> Weighting words based on their
-                    frequency in a document and their rarity across the entire corpus to highlight important terms.</li>
-                <li><strong>Word Embeddings:</strong> Representing words as dense vectors in a continuous space,
-                    capturing semantic relationships between words for improved understanding.</li>
-                <li><strong>Recurrent Neural Networks (RNNs):</strong> Neural networks that can process sequential data,
-                    such as text, enabling context-aware predictions.</li>
-                <li><strong>Long Short-Term Memory (LSTM) Networks:</strong> A type of RNN designed to capture long-term
-                    dependencies in data, crucial for understanding context in longer texts.</li>
-            </ul>
-        </div>
-
-        <div class="content-section conclusion">
-            <h2>Conclusion</h2>
-            <p>
-                By understanding the fundamentals of NLP, you can build applications that process and understand human
-                language, enabling a wide range of possibilities. As NLP technology continues to evolve, the ability to
-                create sophisticated systems that comprehend language will unlock new opportunities in various
-                industries, transforming how we interact with machines.
-            </p>
-        </div>
-
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

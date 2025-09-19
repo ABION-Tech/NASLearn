@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version Control with Git</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        pre {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #007bff;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Version Control with Git</h1>
+
+    <section>
+        <h2>3.1. Basics of Git and GitHub</h2>
+        <h3>Introduction to Git:</h3>
+        <p>Git is a distributed version control system that tracks changes in your source code.</p>
+        <h4>Basic Git Commands:</h4>
+        <ul>
+            <li><strong>Initialize a Git Repository:</strong></li>
+            <pre><code>git init</code></pre>
+            <li><strong>Add Files to Staging:</strong></li>
+            <pre><code>git add .</code></pre>
+            <li><strong>Commit Changes:</strong></li>
+            <pre><code>git commit -m "Initial commit"</code></pre>
+            <li><strong>Push to Remote Repository:</strong></li>
+            <pre><code>git push origin main</code></pre>
+        </ul>
+
+        <h3>Introduction to GitHub:</h3>
+        <p>GitHub is a platform for hosting and managing Git repositories.</p>
+        <h4>Creating a Repository on GitHub:</h4>
+        <p>Sign in to GitHub and create a new repository from the GitHub dashboard.</p>
+
+        <h4>Connecting Your Local Repository to GitHub:</h4>
+        <pre><code>git remote add origin https://github.com/username/repository.git
+git push -u origin main</code></pre>
+        <p><strong>Explanation:</strong></p>
+        <p><code>git remote add origin</code>: Links your local repository to GitHub.</p>
+    </section>
+
+    <section>
+        <h2>3.2. Collaborative Development with Git</h2>
+        <h3>Branching and Merging:</h3>
+        <p>Create a Branch:</p>
+        <pre><code>git checkout -b feature-branch</code></pre>
+        <p>Merge Branches:</p>
+        <pre><code>git checkout main
+git merge feature-branch</code></pre>
+        <p><strong>Resolve Conflicts:</strong> When merging, if conflicts arise, Git will highlight them. Edit the
+            conflicting files to resolve the conflicts and commit the changes.</p>
+
+        <h3>Pull Requests:</h3>
+        <p><strong>Creating a Pull Request:</strong> Push your branch to GitHub and open a pull request from the GitHub
+            interface.</p>
+        <p><strong>Review and Merge:</strong> Review changes and merge the pull request once approved.</p>
+    </section>
+    <div class="video-container">
+        <div class="gradient-border">
+            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <div class="video-links">
+                <h4>Channel Name<h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -4,161 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
 
-        h2,
-        h3,
-        h4 {
-            color: #007bff;
-            /* Blue accent */
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
 
         .section-title {
-            margin-top: 40px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
-        .content {
-            margin: 20px 0;
-        }
-
-        .list-group-item {
-            border: none;
-            margin-bottom: 10px;
-            padding: 10px;
-        }
-
-        .key-points {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        .footer {
-            margin-top: 40px;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 14px;
-            color: #666;
+        h1,
+        h2 {
+            color: #007bff;
         }
     </style>
-    <title>AI in Sales and Marketing: A Powerful Toolset</title>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="content">
-            <h2 class="section-title">AI in Sales and Marketing: A Powerful Toolset</h2>
-            <p>Artificial Intelligence (AI) has revolutionized the way businesses approach sales and marketing, offering
-                innovative tools and techniques that can drive growth and improve customer satisfaction. This week,
-                we'll explore how AI can be used to enhance predictive analytics, customer segmentation, and
-                personalized marketing campaigns.</p>
-
-            <h3 class="section-title">Predictive Analytics</h3>
-            <p>Predictive analytics, powered by AI, enables businesses to analyze historical data and make accurate
-                predictions about future trends and customer behavior. This valuable information can be used to optimize
-                marketing strategies and improve sales outcomes.</p>
-
-            <h4>Key Applications:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Customer Churn Prediction:</strong> Identify customers at risk of churning and take
-                    proactive steps to retain them.
-                </li>
-                <li class="list-group-item">
-                    <strong>Sales Forecasting:</strong> Predict future sales trends and optimize inventory levels to
-                    meet demand effectively.
-                </li>
-                <li class="list-group-item">
-                    <strong>Lead Scoring:</strong> Prioritize leads based on their likelihood of converting into
-                    customers, helping sales teams focus on high-potential prospects.
-                </li>
-                <li class="list-group-item">
-                    <strong>Product Recommendations:</strong> Suggest products or services to customers based on their
-                    preferences and previous behavior, increasing upsell and cross-sell opportunities.
-                </li>
-            </ul>
-
-            <h3 class="section-title">Customer Segmentation</h3>
-            <p>AI-powered customer segmentation allows businesses to divide their customer base into distinct groups
-                based on shared characteristics. This enables targeted marketing campaigns and personalized experiences.
-            </p>
-
-            <h4>Key Techniques:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>RFM Analysis:</strong> Segment customers based on Recency, Frequency, and Monetary value to
-                    identify high-value customers.
-                </li>
-                <li class="list-group-item">
-                    <strong>Clustering Algorithms:</strong> Use algorithms like K-means and hierarchical clustering to
-                    group customers based on similarities in their behavior and preferences.
-                </li>
-                <li class="list-group-item">
-                    <strong>Predictive Modeling:</strong> Utilize predictive analytics to identify customer segments
-                    with high potential value, enhancing targeting accuracy.
-                </li>
-            </ul>
-
-            <h3 class="section-title">Personalized Marketing Campaigns</h3>
-            <p>AI enables businesses to deliver highly personalized marketing campaigns that resonate with individual
-                customers. This can lead to increased engagement, higher conversion rates, and improved customer
-                satisfaction.</p>
-
-            <h4>Key Strategies:</h4>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Personalized Content:</strong> Create content that is tailored to the specific interests and
-                    needs of individual customers, enhancing relevance.
-                </li>
-                <li class="list-group-item">
-                    <strong>Personalized Offers:</strong> Offer personalized promotions and discounts based on customer
-                    behavior and preferences to boost sales.
-                </li>
-                <li class="list-group-item">
-                    <strong>Personalized Channels:</strong> Deliver marketing messages through the channels that
-                    customers prefer, ensuring maximum impact.
-                </li>
-            </ul>
-
-            <h3 class="section-title">Benefits of Using AI for Sales and Marketing</h3>
-            <ul class="list-group">
-                <li class="list-group-item">Improved Efficiency: AI can automate routine tasks and streamline workflows,
-                    allowing teams to focus on strategic initiatives.</li>
-                <li class="list-group-item">Enhanced Decision Making: AI-powered insights can inform data-driven
-                    decision-making, leading to better outcomes.</li>
-                <li class="list-group-item">Increased Customer Satisfaction: Personalized marketing campaigns can
-                    significantly improve customer satisfaction and loyalty.</li>
-                <li class="list-group-item">Higher ROI: AI can help businesses achieve a higher return on investment
-                    from their marketing efforts by optimizing campaigns.</li>
-            </ul>
-
-            <h3 class="section-title">Challenges and Considerations</h3>
-            <ul class="list-group">
-                <li class="list-group-item">Data Quality: The quality of the data used to train AI models is crucial for
-                    accurate predictions and recommendations; poor data can lead to flawed results.</li>
-                <li class="list-group-item">Ethical Considerations: AI-powered marketing must be used ethically and
-                    responsibly, respecting customer privacy and avoiding discriminatory practices.</li>
-                <li class="list-group-item">Integration: Integrating AI tools with existing business systems can be
-                    complex, requiring careful planning and execution.</li>
-            </ul>
-
-            <p>By leveraging AI for sales and marketing, businesses can gain a competitive advantage, improve customer
-                relationships, and drive growth. As AI technology continues to advance, we can expect to see even more
-                innovative and powerful applications in this area.</p>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -4,164 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment: Building Your Design Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+    <title>Week 9</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: #fff;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
         h1,
-        h2,
-        h3,
-        h4 {
+        h2 {
             color: #007bff;
-        }
-
-        .section {
-            margin: 20px 0;
-        }
-
-        .highlight {
-            background-color: #007bff;
-            color: white;
-            padding: 5px;
-            border-radius: 5px;
-        }
-
-        .tip {
-            border-left: 5px solid #007bff;
-            padding-left: 15px;
-            margin: 10px 0;
-        }
-
-        .footer {
-            margin-top: 20px;
-            padding: 20px 0;
-            text-align: center;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container mt-5">
-        <div class="section">
-            <h1>Assignment: Building Your Design Portfolio</h1>
-            <p><strong>Goal:</strong> To curate a comprehensive portfolio that showcases your best design work and
-                effectively communicates your skills and abilities.</p>
-        </div>
-
-        <div class="section">
-            <h2>Steps:</h2>
-            <ol>
-                <li>
-                    <h4>Select Your Best Projects</h4>
-                    <p>Choose five or more projects that best represent your design skills and experience. Consider
-                        projects that demonstrate a variety of your abilities, such as branding, UI/UX design,
-                        illustration, or motion graphics.</p>
-                    <div class="tip">
-                        <strong>Tip:</strong> Select projects that not only showcase your skills but also align with the
-                        types of jobs you’re interested in.
-                    </div>
-                </li>
-                <li>
-                    <h4>Organize Your Portfolio</h4>
-                    <p>Decide on the structure and layout of your portfolio. Consider using a chronological or thematic
-                        approach.</p>
-                    <div class="tip">
-                        <strong>Tip:</strong> Use a grid or card layout for a clean and modern appearance.
-                    </div>
-                </li>
-                <li>
-                    <h4>Create Project Descriptions</h4>
-                    <p>Write detailed descriptions for each project, explaining the goals, challenges, and solutions.
-                    </p>
-                    <div class="tip">
-                        <strong>Tip:</strong> Use bullet points for clarity and readability when discussing your
-                        challenges and solutions.
-                    </div>
-                </li>
-                <li>
-                    <h4>Include Process Work</h4>
-                    <p>Showcase the process behind your designs, including sketches, wireframes, prototypes, and
-                        iterations.</p>
-                    <div class="tip">
-                        <strong>Tip:</strong> Consider using a "before and after" approach to highlight your design
-                        evolution.
-                    </div>
-                </li>
-                <li>
-                    <h4>Add Context</h4>
-                    <p>Provide context for your projects by explaining the client, target audience, and design
-                        objectives.</p>
-                    <div class="tip">
-                        <strong>Tip:</strong> Share any relevant metrics or outcomes that resulted from your design
-                        work.
-                    </div>
-                </li>
-                <li>
-                    <h4>Present Your Work</h4>
-                    <p>Choose a format for your portfolio, such as a physical portfolio, a website, or an online
-                        platform like Behance or Dribbble.</p>
-                    <div class="tip">
-                        <strong>Tip:</strong> If creating a website, ensure it is responsive and user-friendly.
-                    </div>
-                </li>
-                <li>
-                    <h4>Seek Feedback</h4>
-                    <p>Get feedback from mentors, colleagues, or friends to identify areas for improvement.</p>
-                    <div class="tip">
-                        <strong>Tip:</strong> Use feedback constructively to make iterative improvements to your
-                        portfolio.
-                    </div>
-                </li>
-            </ol>
-        </div>
-
-        <div class="section">
-            <h2>Grading Rubric:</h2>
-            <ul>
-                <li><strong>Project Selection:</strong> Are the projects included in your portfolio representative of
-                    your best work?</li>
-                <li><strong>Organization and Clarity:</strong> Is your portfolio well-organized and easy to navigate?
-                </li>
-                <li><strong>Project Descriptions:</strong> Are the project descriptions clear, concise, and informative?
-                </li>
-                <li><strong>Process Work:</strong> Do you provide sufficient process work to demonstrate your design
-                    process?</li>
-                <li><strong>Visual Appeal:</strong> Is your portfolio visually appealing and professional?</li>
-                <li><strong>Creativity:</strong> Does your portfolio showcase your creativity and unique approach to
-                    design?</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Additional Tips:</h2>
-            <ul>
-                <li><strong>Tailor Your Portfolio:</strong> Customize your portfolio to the specific industry or field
-                    you are targeting.</li>
-                <li><strong>Keep It Updated:</strong> Regularly update your portfolio with your latest projects to
-                    showcase your growth and development.</li>
-                <li><strong>Tell a Story:</strong> Use your portfolio to tell a compelling story about your design
-                    journey.</li>
-                <li><strong>Seek Feedback:</strong> Actively seek feedback from others to improve your portfolio.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Final Thoughts</h2>
-            <p>By following these steps and carefully curating your portfolio, you can create a powerful tool to
-                showcase your design skills and attract potential clients or employers. Remember, your portfolio is not
-                just a collection of your work but a reflection of your personal design philosophy and journey.</p>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

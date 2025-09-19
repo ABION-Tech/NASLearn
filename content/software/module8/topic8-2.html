@@ -4,32 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deployment - Web Hosting and Cloud Services</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-
-        h1,
-        h2 {
-            color: #333;
-        }
-
-        pre {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            overflow-x: auto;
-        }
-
-        code {
-            background-color: #333;
-            padding: 2px 5px;
-            border-radius: 3px;
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
 
         /* Basic Reset */
@@ -128,91 +107,22 @@
                 }
             }
         }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Deployment</h1>
 
-    <h2>2.1. Introduction to Web Hosting and Cloud Services</h2>
-    <p><strong>Web Hosting Basics:</strong></p>
-    <ul>
-        <li><strong>What is Web Hosting?</strong></li>
-        <p>Web hosting services provide the infrastructure and technologies required to store, serve, and manage your
-            website on the internet.</p>
-        <li><strong>Types of Web Hosting:</strong></li>
-        <ul>
-            <li><strong>Shared Hosting:</strong> Multiple websites share the same server resources.</li>
-            <li><strong>VPS Hosting:</strong> Virtual Private Server with dedicated resources.</li>
-            <li><strong>Dedicated Hosting:</strong> Entire server dedicated to a single website.</li>
-            <li><strong>Cloud Hosting:</strong> Scalable hosting using cloud infrastructure.</li>
-        </ul>
-    </ul>
-
-    <p><strong>Choosing a Hosting Provider:</strong></p>
-    <ul>
-        <li>Popular choices include Heroku, AWS (Amazon Web Services), and Vercel.</li>
-    </ul>
-
-    <h2>2.2. Deploying a Full-Stack Application to a Platform Like Heroku</h2>
-    <p><strong>Deploying to Heroku:</strong></p>
-    <ul>
-        <li><strong>Setting Up Heroku CLI:</strong></li>
-        <pre><code>curl https://cli-assets.heroku.com/install.sh | sh</code></pre>
-
-        <li><strong>Creating a New Heroku App:</strong></li>
-        <pre><code>heroku login
-heroku create myapp</code></pre>
-
-        <li><strong>Deploying Your Code:</strong></li>
-        <pre><code>"scripts": {
-    "start": "node server.js"
-}</code></pre>
-        <pre><code>git add .
-git commit -m "Deploy to Heroku"
-git push heroku main</code></pre>
-
-        <li><strong>Managing and Scaling Your Application:</strong></li>
-        <pre><code>heroku logs --tail
-heroku ps:scale web=1</code></pre>
-    </ul>
-
-    <h2>2.3. Using Continuous Integration/Continuous Deployment (CI/CD) Tools</h2>
-    <p><strong>Introduction to CI/CD:</strong></p>
-    <p>CI/CD automates the process of testing, building, and deploying your application.</p>
-    <p><strong>Setting Up CI/CD with GitHub Actions:</strong></p>
-    <pre><code># .github/workflows/deploy.yml
-name: Deploy
-on:
-  push:
-    branches:
-      - main
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: npm install
-      - run: npm test
-      - name: Deploy to Heroku
-        run: git push heroku main
-        env:
-          HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}</code></pre>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

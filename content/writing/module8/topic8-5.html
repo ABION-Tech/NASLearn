@@ -4,164 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 8: Natural Language Processing (NLP)</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
 
-        h1,
-        h2,
-        h3 {
-            color: #007BFF;
-            /* Blue accent color */
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
         }
 
         .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
             margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
-        .content-section {
-            border-left: 5px solid #007BFF;
-            /* Blue accent color */
-            padding-left: 15px;
-            margin-bottom: 20px;
-        }
-
-        .technique-list {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-
-        .challenge-list {
-            list-style-type: circle;
-            padding-left: 20px;
-        }
-
-        .example-list {
-            list-style-type: disc;
-            padding-left: 20px;
+        h1,
+        h2 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Week 8: Natural Language Processing (NLP)</h1>
-
-        <div class="content-section">
-            <h2>Applications of NLP: Text Classification and Sentiment Analysis</h2>
-
-            <h3>1. Text Classification</h3>
-            <p>
-                Text classification is the process of assigning categories or labels to a piece of text based on its
-                content. This technique is essential for various applications in today’s digital world. Key applications
-                of text classification include:
-            </p>
-            <ul class="technique-list">
-                <li><strong>Spam Filtering:</strong> Identifying and filtering out spam emails from legitimate
-                    correspondence.</li>
-                <li><strong>Sentiment Analysis:</strong> Determining whether the sentiment expressed in a text is
-                    positive, negative, or neutral.</li>
-                <li><strong>Topic Modeling:</strong> Identifying the main topics or themes present in a collection of
-                    documents.</li>
-                <li><strong>Document Categorization:</strong> Assigning documents to predefined categories based on
-                    their content.</li>
-                <li><strong>Intent Classification:</strong> Recognizing the intent behind user queries or commands in
-                    applications such as chatbots.</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h3>2. Sentiment Analysis</h3>
-            <p>
-                Sentiment analysis, also known as opinion mining, is a specific form of text classification that focuses
-                on identifying the sentiment expressed in a piece of text. It has a wide range of applications,
-                including:
-            </p>
-            <ul class="technique-list">
-                <li><strong>Social Media Monitoring:</strong> Analyzing public opinion on products, brands, or current
-                    events through platforms like Twitter and Facebook.</li>
-                <li><strong>Customer Feedback Analysis:</strong> Understanding customer satisfaction and pinpointing
-                    areas for improvement based on reviews and feedback.</li>
-                <li><strong>Market Research:</strong> Gathering insights into consumer preferences and trends to inform
-                    business strategies.</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h2>Techniques for Text Classification and Sentiment Analysis</h2>
-            <p>
-                There are several techniques used in text classification and sentiment analysis that help in extracting
-                meaningful information from text. These include:
-            </p>
-            <ul class="technique-list">
-                <li><strong>Bag-of-Words:</strong> A simple representation where text is converted into a numerical
-                    vector based on word frequency.</li>
-                <li><strong>TF-IDF:</strong> A method that weighs words based on their frequency in a document and
-                    rarity across the entire corpus, highlighting important terms.</li>
-                <li><strong>Word Embeddings:</strong> Techniques like Word2Vec and GloVe that represent words as dense
-                    vectors in a continuous space, capturing semantic relationships.</li>
-                <li><strong>Machine Learning Algorithms:</strong> Various algorithms used for classification include:
-                    <ul class="challenge-list">
-                        <li>Naive Bayes</li>
-                        <li>Support Vector Machines (SVMs)</li>
-                        <li>Decision Trees</li>
-                        <li>Random Forests</li>
-                        <li>Neural Networks (e.g., Recurrent Neural Networks, Convolutional Neural Networks)</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h2>Challenges and Considerations</h2>
-            <p>
-                While text classification and sentiment analysis offer numerous benefits, several challenges must be
-                addressed for effective implementation:
-            </p>
-            <ul class="challenge-list">
-                <li><strong>Data Preprocessing:</strong> Cleaning and preprocessing text data, including tokenization,
-                    stemming, lemmatization, and stop word removal.</li>
-                <li><strong>Feature Engineering:</strong> Creating meaningful features that capture the relevant
-                    information in the text for better model performance.</li>
-                <li><strong>Class Imbalance:</strong> Managing datasets where one class has significantly more examples
-                    than others, which can bias model predictions.</li>
-                <li><strong>Evaluation Metrics:</strong> Using appropriate metrics such as accuracy, precision, recall,
-                    F1-score, and confusion matrix to assess model performance.</li>
-                <li><strong>Domain Knowledge:</strong> Incorporating domain-specific knowledge to enhance model accuracy
-                    and relevance in specific applications.</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h2>Real-World Examples</h2>
-            <p>
-                Text classification and sentiment analysis are used in a variety of real-world scenarios, including:
-            </p>
-            <ul class="example-list">
-                <li><strong>Sentiment Analysis of Movie Reviews:</strong> Determining whether reviews are positive,
-                    negative, or neutral to help potential viewers make informed decisions.</li>
-                <li><strong>Spam Detection:</strong> Identifying spam emails based on their content to protect users
-                    from phishing and unwanted solicitations.</li>
-                <li><strong>Customer Support Ticket Classification:</strong> Categorizing support tickets into different
-                    topics or issues for efficient resolution.</li>
-                <li><strong>Social Media Monitoring:</strong> Analyzing public opinion on products, brands, or current
-                    events to guide marketing strategies.</li>
-            </ul>
-        </div>
-
-        <p>By understanding the techniques and challenges involved in text classification and sentiment analysis, you
-            can build powerful applications that extract valuable insights from textual data, driving informed decisions
-            across various industries.</p>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

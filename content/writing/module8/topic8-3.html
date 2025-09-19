@@ -4,161 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 9: Model Deployment and Real-World Applications</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: #ffffff;
-            color: #000000;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
         }
 
         .container {
-            margin-top: 40px;
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
         h1,
-        h2,
-        h3 {
+        h2 {
             color: #007bff;
-            /* Blue accent */
-        }
-
-        .highlight {
-            background-color: #f0f8ff;
-            /* Light blue background for emphasis */
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        pre {
-            background-color: #f8f9fa;
-            /* Light gray for code blocks */
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #6c757d;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="section">
-            <h1>Week 9: Model Deployment and Real-World Applications</h1>
-            <h2>ML Model in Production: Building APIs for ML Models</h2>
 
-            <h3>1. Introduction</h3>
-            <p>Once a machine learning model is trained and evaluated, it needs to be deployed into a production
-                environment for real-world applications. A common approach to deploying models is to create APIs that
-                allow other applications to interact with the model. APIs (Application Programming Interfaces) enable
-                seamless integration and communication between different software components.</p>
-
-            <h3>2. API Design</h3>
-            <p>A well-designed API is crucial for usability and efficiency. Consider the following aspects when
-                designing your API:</p>
-            <ul>
-                <li><strong>RESTful API:</strong> A popular architecture style for building web APIs that utilizes
-                    standard HTTP methods.</li>
-                <li><strong>Endpoints:</strong> Define endpoints that clients can use to interact with the model, such
-                    as:</li>
-                <ul>
-                    <li><code>/predict</code>: For making predictions.</li>
-                    <li><code>/train</code>: For retraining the model.</li>
-                    <li><code>/metrics</code>: For retrieving model performance metrics.</li>
-                </ul>
-                <li><strong>Data Format:</strong> Choose a suitable data format for input and output, such as JSON or
-                    Protobuf.</li>
-                <li><strong>Authentication and Authorization:</strong> Implement security measures to protect the API
-                    and ensure only authorized access.</li>
-            </ul>
-
-            <h3>3. Flask and FastAPI</h3>
-            <p>Flask and FastAPI are popular frameworks for building web APIs in Python. Here are some key features:</p>
-            <ul>
-                <li><strong>Ease of Use:</strong> Both frameworks are user-friendly and have straightforward syntax.
-                </li>
-                <li><strong>Flexibility:</strong> They allow customization to meet specific requirements.</li>
-                <li><strong>Integration:</strong> Easy integration with various libraries and frameworks.</li>
-            </ul>
-            <h4>Example Using Flask:</h4>
-            <pre><code>
-from flask import Flask, request, jsonify
-import pickle
-
-app = Flask(__name__)
-
-# Load the trained model
-model = pickle.load(open('model.pkl', 'rb'))
-
-@app.route('/predict', methods=['POST'])
-def predict():
-    data = request.json
-    features = data['features']
-    prediction = model.predict([features])
-    return jsonify({'prediction': prediction[0]})
-
-if __name__ == '__main__':
-    app.run(debug=True)
-            </code></pre>
-
-            <h3>4. Model Serving</h3>
-            <p>Consider the following methods for serving your model:</p>
-            <ul>
-                <li><strong>Dedicated Server:</strong> Deploy the API on a dedicated server for performance and
-                    reliability.</li>
-                <li><strong>Cloud Platforms:</strong> Utilize cloud services like AWS, GCP, or Azure for scalability and
-                    reliability.</li>
-                <li><strong>Containerization:</strong> Package the API and its dependencies into a container (e.g.,
-                    Docker) for portability.</li>
-                <li><strong>Model Serving Frameworks:</strong> Use frameworks like TensorFlow Serving or TorchServe for
-                    efficient model serving.</li>
-            </ul>
-
-            <h3>5. Monitoring and Maintenance</h3>
-            <p>Continuous monitoring and maintenance are essential for a successful deployment:</p>
-            <ul>
-                <li><strong>Monitor Performance:</strong> Track the model's performance over time to identify any
-                    issues.</li>
-                <li><strong>Retrain the Model:</strong> Periodically retrain the model to keep it up-to-date with
-                    changes in the data.</li>
-                <li><strong>Handle Errors and Exceptions:</strong> Implement error handling and logging to ensure the
-                    API's reliability.</li>
-            </ul>
-
-            <h3>6. Security</h3>
-            <p>Security is paramount in API design:</p>
-            <ul>
-                <li><strong>Authentication and Authorization:</strong> Protect the API from unauthorized access.</li>
-                <li><strong>Input Validation:</strong> Validate input data to prevent malicious attacks.</li>
-                <li><strong>Data Privacy:</strong> Ensure sensitive data is handled securely throughout the API
-                    lifecycle.</li>
-            </ul>
-
-            <h3>7. Versioning</h3>
-            <p>Manage different versions of your API to accommodate evolving user needs:</p>
-            <ul>
-                <li><strong>Manage Different Versions:</strong> Allow users to choose between different versions of the
-                    API to ensure compatibility with their applications.</li>
-                <li><strong>Backward Compatibility:</strong> Maintain backward compatibility for existing clients when
-                    introducing new features or changes.</li>
-            </ul>
-
-            <h3>Conclusion</h3>
-            <p>By following these steps and considering best practices for API design and deployment, you can
-                effectively make your machine learning models accessible to users and other applications, ensuring they
-                deliver real value in practical scenarios.</p>
-        </div>
-    </div>
 </body>
 
 </html>

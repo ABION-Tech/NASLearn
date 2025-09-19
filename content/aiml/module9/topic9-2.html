@@ -4,177 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 9: AI Ethics and Responsible AI</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+    <title>Week 9</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            top: 80px;
         }
 
-        h1,
-        h2,
-        h3 {
-            color: #007BFF;
-            /* Blue accent color */
-        }
-
-        .section {
-            margin: 20px 0;
-            padding: 15px;
-            border-left: 5px solid #007BFF;
-            /* Blue accent */
-        }
-
-        .content {
+        .container {
             padding: 20px;
         }
 
-        .list-group-item {
-            background-color: #f8f9fa;
-            /* Light gray background for list items */
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
         }
 
-        .important {
-            font-weight: bold;
-            color: #FF5733;
-            /* Red color for important notes */
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container content">
-        <h1 class="text-center">Week 9: AI Ethics and Responsible AI</h1>
-        <div class="section">
-            <h2>Bias and Fairness in Machine Learning</h2>
-
-            <h3>Understanding Bias</h3>
-            <p>
-                **Bias** in machine learning refers to systematic errors that occur when a model exhibits unfair or
-                discriminatory behavior. This can stem from various factors, including biased data, biased algorithms,
-                and biased evaluation metrics. Addressing bias is crucial for developing ethical AI systems that promote
-                fairness and equality.
-            </p>
-
-            <h3>1. Sources of Bias</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Biased Data:</strong> Training models on biased datasets can lead to predictions that mirror
-                    those biases. This bias may arise from historical inequalities, sampling methods that do not
-                    accurately represent the population, or errors in data measurement.
-                </li>
-                <li class="list-group-item">
-                    <strong>Biased Algorithms:</strong> Some algorithms may inherently favor certain outcomes,
-                    particularly when dealing with complex or high-dimensional data.
-                </li>
-                <li class="list-group-item">
-                    <strong>Biased Evaluation Metrics:</strong> The choice of metrics can influence how fairness is
-                    perceived. If evaluation metrics do not adequately capture diverse outcomes, biases can go
-                    unnoticed.
-                </li>
-            </ul>
-
-            <h3>2. Types of Bias</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Representation Bias:</strong> Occurs when training data fails to adequately represent the
-                    entire population of interest, leading to models that do not generalize well.
-                </li>
-                <li class="list-group-item">
-                    <strong>Measurement Bias:</strong> Arises when the data collection process introduces inaccuracies
-                    or inconsistencies, affecting the validity of the data.
-                </li>
-                <li class="list-group-item">
-                    <strong>Algorithm Bias:</strong> Some algorithms may produce biased outcomes even with fair data,
-                    due to their internal decision-making processes.
-                </li>
-                <li class="list-group-item">
-                    <strong>Confirmation Bias:</strong> When models reinforce existing biases instead of challenging
-                    them, further entrenching societal inequalities.
-                </li>
-            </ul>
-
-            <h3>3. Consequences of Bias</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Discrimination:</strong> Biased models can lead to discriminatory practices against
-                    marginalized groups, resulting in unjust treatment in various domains such as hiring, lending, and
-                    law enforcement.
-                </li>
-                <li class="list-group-item">
-                    <strong>Inequity:</strong> AI systems that perpetuate bias can exacerbate existing societal
-                    inequalities, disproportionately affecting vulnerable populations.
-                </li>
-                <li class="list-group-item">
-                    <strong>Loss of Trust:</strong> As biased models lead to unfair outcomes, public trust in AI
-                    technologies diminishes, impacting their acceptance and effectiveness.
-                </li>
-            </ul>
-
-            <h3>4. Mitigating Bias</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Data Quality:</strong> Ensure that training datasets are diverse, representative, and free
-                    from bias. This includes actively seeking out underrepresented groups in data collection efforts.
-                </li>
-                <li class="list-group-item">
-                    <strong>Algorithm Selection:</strong> Opt for algorithms that are less prone to bias. Consider
-                    fairness constraints during the selection process to minimize the risk of biased outcomes.
-                </li>
-                <li class="list-group-item">
-                    <strong>Evaluation Metrics:</strong> Use evaluation metrics sensitive to fairness, such as balanced
-                    accuracy, precision, recall, and F1-score, to assess model performance across different demographic
-                    groups.
-                </li>
-                <li class="list-group-item">
-                    <strong>Bias Detection and Correction:</strong> Employ techniques like adversarial debiasing and
-                    reweighing to identify and correct biases in models proactively.
-                </li>
-            </ul>
-
-            <h3>5. Fairness Metrics</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Demographic Parity:</strong> Ensure model predictions are equally distributed among
-                    different demographic groups, thus promoting fairness in outcomes.
-                </li>
-                <li class="list-group-item">
-                    <strong>Equal Opportunity:</strong> Ensure that positive outcomes are equally likely for all
-                    demographic groups, providing a fair chance of receiving favorable predictions.
-                </li>
-                <li class="list-group-item">
-                    <strong>Predictive Parity:</strong> Ensure the model's predictions are equally accurate across
-                    diverse demographic groups, maintaining consistent performance.
-                </li>
-            </ul>
-
-            <h3>6. Fairness Constraints</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Incorporate Fairness Constraints:</strong> Integrate fairness constraints during the model
-                    training process to ensure equitable treatment across demographic groups.
-                </li>
-                <li class="list-group-item">
-                    <strong>Fairness-Aware Algorithms:</strong> Utilize algorithms designed with fairness in mind, such
-                    as fair decision trees or fair random forests, to inherently reduce bias in predictions.
-                </li>
-            </ul>
-
-            <div class="important">
-                <p>By understanding the sources, types, and consequences of bias in machine learning, we can take steps
-                    to mitigate bias and ensure that AI systems are fair and equitable. Implementing these strategies is
-                    essential for fostering a future where AI serves all segments of society fairly and justly.</p>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

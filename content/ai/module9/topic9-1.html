@@ -4,141 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: #fff;
-            color: #000;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
             padding: 20px;
         }
 
-        h1 {
-            color: #007bff;
-            /* Blue accent for main heading */
-            margin-bottom: 20px;
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
         }
 
-        h2 {
-            color: #007BFF;
-            /* Darker blue for subheadings */
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
             margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
-        ul {
-            margin-bottom: 20px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-            border: 1px solid #007bff;
-            border-radius: 5px;
-            padding: 15px;
-            background-color: #f9f9f9;
-        }
-
-        .highlight {
-            background-color: #e7f3ff;
-            border-left: 6px solid #007bff;
-            padding: 10px;
-            margin: 10px 0;
+        h1,
+        h2 {
+            color: #007bff;
         }
     </style>
-    <title>Data Collection and Management: The Foundation of AI</title>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Data Collection and Management: The Foundation of AI</h1>
-        <p>Data is the lifeblood of artificial intelligence (AI). Without high-quality, relevant data, AI systems cannot
-            learn, grow, or make accurate predictions. Therefore, effective data collection and management are crucial
-            for the success of any AI project.</p>
-
-        <div class="section">
-            <h2>Best Practices for Data Collection</h2>
-            <ul>
-                <li><strong>Define Clear Objectives:</strong> Clearly articulate the goals of your AI project and
-                    identify the specific types of data required to achieve those goals. This includes understanding the
-                    desired outcomes and metrics for success.</li>
-                <li><strong>Identify Data Sources:</strong> Determine where you will obtain the necessary data. This may
-                    involve internal sources (e.g., databases, CRM systems), external sources (e.g., public datasets,
-                    third-party providers), or a combination of both. Establish partnerships with data providers if
-                    necessary.</li>
-                <li><strong>Consider Data Quality:</strong> Ensure that the data you collect is accurate, complete, and
-                    relevant. Poor-quality data can lead to inaccurate results and hinder the performance of your AI
-                    system. Implement checks and validations to maintain data integrity.</li>
-                <li><strong>Ethical Considerations:</strong> Be mindful of ethical considerations when collecting data,
-                    such as privacy, consent, and bias. This includes obtaining informed consent from participants and
-                    being transparent about data usage.</li>
-                <li><strong>Data Labeling:</strong> If your AI system requires labeled data, ensure that the data is
-                    accurately and consistently labeled. This may involve training annotators or utilizing automated
-                    labeling tools.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Data Preprocessing</h2>
-            <p>Once you have collected your data, it often needs to be preprocessed before it can be used to train an AI
-                model. This involves cleaning, transforming, and preparing the data to ensure optimal performance.</p>
-            <ul>
-                <li><strong>Cleaning:</strong> Remove noise, errors, and inconsistencies from the data. This step is
-                    crucial to enhance the reliability of your model's predictions.</li>
-                <li><strong>Transformation:</strong> Convert data into a suitable format for your AI model (e.g.,
-                    numerical, categorical). This may involve converting text to numerical representations or changing
-                    date formats.</li>
-                <li><strong>Normalization:</strong> Scale the data to a common range (e.g., 0-1) to ensure fair
-                    comparison. Normalization techniques help models converge faster and improve overall performance.
-                </li>
-                <li><strong>Feature Engineering:</strong> Create new features from existing data to improve model
-                    performance. This could involve deriving new variables that capture important patterns or trends.
-                </li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Data Storage and Management</h2>
-            <ul>
-                <li><strong>Data Warehouse:</strong> Consider using a data warehouse to store and manage large datasets.
-                    A data warehouse centralizes data from multiple sources, providing a comprehensive view for
-                    analysis.</li>
-                <li><strong>Data Lakes:</strong> Data lakes provide a flexible and scalable solution for storing
-                    unstructured data, enabling organizations to store vast amounts of raw data in its native format.
-                </li>
-                <li><strong>Data Governance:</strong> Implement data governance policies to ensure data quality,
-                    security, and compliance. Establish clear roles and responsibilities for data management.</li>
-                <li><strong>Cloud-Based Solutions:</strong> Leverage cloud-based data storage and management solutions
-                    for scalability and cost-effectiveness. Cloud platforms offer flexible options for storage and
-                    computing power.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Data Privacy and Security</h2>
-            <ul>
-                <li><strong>Data Protection Regulations:</strong> Comply with relevant data protection regulations, such
-                    as GDPR and CCPA. Understanding and adhering to these regulations is essential for protecting user
-                    privacy.</li>
-                <li><strong>Data Encryption:</strong> Encrypt sensitive data to protect it from unauthorized access.
-                    This is crucial for maintaining the confidentiality of personal information.</li>
-                <li><strong>Access Controls:</strong> Implement robust access controls to restrict access to data. This
-                    may include role-based access control and multi-factor authentication to enhance security.</li>
-                <li><strong>Regular Monitoring:</strong> Monitor your data systems for security threats and
-                    vulnerabilities. Conduct regular audits and assessments to identify potential risks.</li>
-            </ul>
-        </div>
-
-        <div class="highlight">
-            <h3>Key Takeaway:</h3>
-            <p>By following these best practices, you can ensure that your AI projects have access to high-quality,
-                relevant data, which is essential for building accurate and effective models. The foundation of AI is
-                built on the pillars of effective data collection, management, and security.</p>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

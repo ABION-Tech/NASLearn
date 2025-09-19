@@ -4,146 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A/B Testing and User Experience (UX) Design</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
-            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
         }
 
         .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
         h1,
         h2 {
-            color: #007BFF;
-            /* Blue accent for headings */
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            margin-top: 30px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        ul {
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .highlight {
-            font-weight: bold;
-        }
-
-        .info-box {
-            background-color: #f8f9fa;
-            /* Light gray background */
-            padding: 20px;
-            border-left: 4px solid #007BFF;
-            /* Blue accent on the left */
-            margin-bottom: 30px;
-            border-radius: 5px;
-            /* Rounded corners */
-        }
-
-        .summary {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #007BFF;
-            /* Highlight summary text */
-            text-align: center;
-            margin-top: 40px;
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="container">
-        <h1>A/B Testing and User Experience (UX) Design</h1>
-
-        <h2>A/B Testing</h2>
-        <p><span class="highlight">A/B testing</span> is a powerful tool for optimizing websites and landing pages. It
-            involves creating two or more versions of a page and randomly directing traffic to each version to determine
-            which performs better in terms of conversions.</p>
-
-        <div class="info-box">
-            <h3>Key Steps in A/B Testing:</h3>
-            <ul>
-                <li><strong>Identify the Hypothesis:</strong> Clearly define the hypothesis you want to test, such as
-                    whether a different headline or call-to-action will lead to higher conversions.</li>
-                <li><strong>Create Variations:</strong> Create two or more versions of the page that differ in the
-                    element you want to test.</li>
-                <li><strong>Run the Test:</strong> Direct a statistically significant amount of traffic to each
-                    variation and collect data on performance metrics such as conversion rate, click-through rate, and
-                    time on page.</li>
-                <li><strong>Analyze the Results:</strong> Analyze the data to determine which variation performed
-                    better.</li>
-                <li><strong>Implement the Winning Variation:</strong> Implement the winning variation on your website
-                    and continue to monitor its performance.</li>
-            </ul>
-        </div>
-
-        <h2>User Experience (UX) Design</h2>
-        <p><span class="highlight">UX design</span> focuses on creating products that are easy to use, enjoyable, and
-            effective in meeting user needs. A well-designed user experience can lead to increased engagement, reduced
-            bounce rates, and higher conversion rates.</p>
-
-        <div class="info-box">
-            <h3>Key Principles of UX Design:</h3>
-            <ul>
-                <li><strong>User-Centered Design:</strong> Put the user at the center of the design process and focus on
-                    meeting their needs and expectations.</li>
-                <li><strong>Usability:</strong> Ensure that the product is easy to use and understand.</li>
-                <li><strong>Accessibility:</strong> Make the product accessible to users with disabilities.</li>
-                <li><strong>Visual Design:</strong> Create a visually appealing and consistent design.</li>
-                <li><strong>Information Architecture:</strong> Organize content in a logical and intuitive way.</li>
-            </ul>
-        </div>
-
-        <h2>The Relationship Between A/B Testing and UX Design</h2>
-        <p>A/B testing can be a valuable tool for improving the user experience of a website or landing page. By testing
-            different design elements and measuring their impact on user behavior, you can identify areas where the user
-            experience can be improved.</p>
-
-        <div class="info-box">
-            <h3>For example:</h3>
-            <ul>
-                <li>You could use A/B testing to compare different layouts for your homepage to see which one is more
-                    effective at guiding users to the desired action.</li>
-                <li>You could test different headlines for your landing page to see which one is more compelling and
-                    persuasive.</li>
-                <li>You could test different call-to-action buttons to see which one is more likely to encourage users
-                    to click.</li>
-            </ul>
-        </div>
-
-        <p class="summary">By continuously conducting A/B testing and making data-driven improvements, you can optimize
-            your website or landing page for maximum conversions and user satisfaction.</p>
-    </div>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 

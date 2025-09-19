@@ -4,155 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Common Misconceptions and Discussion Questions</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+    <title>Week 9</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: #fff;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
         h1,
-        h2,
-        h3,
-        h4 {
+        h2 {
             color: #007bff;
-        }
-
-        .section {
-            margin: 20px 0;
-        }
-
-        .highlight {
-            background-color: #007bff;
-            color: white;
-            padding: 5px;
-            border-radius: 5px;
-        }
-
-        .misconception {
-            border-left: 5px solid #007bff;
-            padding-left: 15px;
-            margin: 10px 0;
-        }
-
-        .discussion-question {
-            border: 1px solid #007bff;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 10px 0;
-            background-color: #f9f9f9;
-        }
-
-        .tip {
-            border-left: 5px solid #007bff;
-            padding-left: 15px;
-            margin: 10px 0;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container mt-5">
-        <div class="section">
-            <h1>Common Misconceptions and Discussion Questions</h1>
-        </div>
-
-        <div class="section">
-            <h2>Common Misconceptions</h2>
-            <div class="misconception">
-                <h4>1. A Portfolio is Only for Professionals</h4>
-                <p>Even if you're just starting out, a portfolio can be a valuable tool for showcasing your skills and
-                    attracting opportunities. It helps potential clients and employers see your growth and capabilities.
-                </p>
-            </div>
-            <div class="misconception">
-                <h4>2. A Portfolio Needs to Be Perfect</h4>
-                <p>Your portfolio should be a showcase of your best work, but it's also a reflection of your growth and
-                    development. Including projects that demonstrate your learning process is essential. Remember,
-                    perfection is subjective.</p>
-            </div>
-            <div class="misconception">
-                <h4>3. A Portfolio Should Be Static</h4>
-                <p>Your portfolio should be a living document that evolves as you grow as a designer. Continuously
-                    update it with your latest projects and accomplishments to keep it relevant and reflective of your
-                    current skills.</p>
-            </div>
-            <div class="misconception">
-                <h4>4. A Portfolio is Only for Job Hunting</h4>
-                <p>A portfolio can also be used to attract clients, collaborate with other designers, and build your
-                    personal brand. It serves as a testament to your skills and creativity in various contexts.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Discussion Questions</h2>
-            <div class="discussion-question">
-                <h4>1. How can a portfolio be used to differentiate yourself from other designers?</h4>
-                <p>Discuss the importance of showcasing your unique skills, style, and approach. Highlight how your
-                    personal brand can make you stand out in a competitive market.</p>
-            </div>
-            <div class="discussion-question">
-                <h4>2. What are the key elements of a successful portfolio?</h4>
-                <p>Explore the importance of quality projects, clear descriptions, and a visually appealing layout.
-                    Discuss how these elements contribute to making a strong first impression.</p>
-            </div>
-            <div class="discussion-question">
-                <h4>3. How can you tailor your portfolio to specific industries or fields of design?</h4>
-                <p>Discuss the importance of understanding your target audience and tailoring your portfolio
-                    accordingly. Consider how different industries have varying expectations and styles.</p>
-            </div>
-            <div class="discussion-question">
-                <h4>4. What are the challenges of maintaining a portfolio as you grow as a designer?</h4>
-                <p>Discuss the importance of regularly updating your portfolio and staying current with design trends.
-                    Explore how evolving your skills might affect the types of projects you showcase.</p>
-            </div>
-            <div class="discussion-question">
-                <h4>5. How can you use your portfolio to build relationships with other designers and industry
-                    professionals?</h4>
-                <p>Explore the importance of networking and collaboration in the design field. Discuss how sharing your
-                    portfolio can open doors to valuable connections and partnerships.</p>
-            </div>
-            <div class="discussion-question">
-                <h4>6. What are the ethical considerations when presenting your work in a portfolio?</h4>
-                <p>Discuss issues such as copyright, plagiarism, and client confidentiality. Emphasize the importance of
-                    being transparent and ethical in showcasing your work.</p>
-            </div>
-            <div class="discussion-question">
-                <h4>7. How can you use your portfolio to negotiate better rates or terms with clients?</h4>
-                <p>Explore the importance of showcasing your skills and experience to justify your rates. Discuss how a
-                    strong portfolio can boost your confidence in negotiations.</p>
-            </div>
-            <div class="discussion-question">
-                <h4>8. What are the emerging trends in portfolio presentation?</h4>
-                <p>Discuss new platforms and tools for creating and showcasing design portfolios. Explore the impact of
-                    technology on how portfolios are displayed and interacted with.</p>
-            </div>
-            <div class="discussion-question">
-                <h4>9. How can you use your portfolio to attract freelance or contract work?</h4>
-                <p>Explore strategies for using your portfolio to generate new business opportunities. Discuss how to
-                    leverage your portfolio when pitching to potential clients.</p>
-            </div>
-            <div class="discussion-question">
-                <h4>10. What advice would you give to someone who is just starting to build their design portfolio?</h4>
-                <p>Share personal experiences and insights on how to get started and build a strong portfolio. Encourage
-                    new designers to experiment and not be afraid of mistakes.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Final Thoughts</h2>
-            <p>Your portfolio is more than just a collection of your work; it's a personal narrative of your design
-                journey. By understanding the common misconceptions and engaging with these discussion questions, you
-                can build a portfolio that truly reflects your skills and aspirations as a designer.</p>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

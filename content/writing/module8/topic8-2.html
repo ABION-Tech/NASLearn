@@ -4,182 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Supervised Learning - Ensemble Methods</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: #ffffff;
-            color: #000000;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
         h1,
-        h2,
-        h3 {
-            color: #007bff;
-            /* Blue Accent */
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
         h2 {
-            font-size: 2rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        ul {
-            margin-bottom: 20px;
-        }
-
-        .card {
-            margin: 20px 0;
-            border: 1px solid #007bff;
-            /* Blue Border */
-        }
-
-        .card-header {
-            background-color: #007bff;
-            /* Blue Background */
-            color: white;
-        }
-
-        .btn-custom {
-            background-color: #007bff;
-            /* Blue Button */
-            color: white;
-        }
-
-        .btn-custom:hover {
-            background-color: #007BFF;
-            /* Darker Blue on Hover */
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>Week 8: Advanced Supervised Learning - Ensemble Methods</h1>
-                <h2>Ensemble Learning: Bagging and Boosting</h2>
-                <p><strong>Ensemble methods</strong> combine multiple machine learning models to improve overall
-                    performance. By aggregating the predictions of multiple models, ensemble methods can reduce
-                    overfitting, improve accuracy, and increase robustness.</p>
 
-                <div class="card">
-                    <div class="card-header">
-                        <h3>1. Bagging (Bootstrap Aggregating)</h3>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Concept:</strong> Create multiple models by training them on different subsets of the
-                            data (bootstrap samples) and combining their predictions.</p>
-                        <p><strong>Random Forest:</strong> A popular bagging algorithm that uses decision trees as base
-                            models.</p>
-                        <p><strong>Advantages:</strong></p>
-                        <ul>
-                            <li>Reduces overfitting by averaging the predictions of multiple models.</li>
-                            <li>Can handle both numerical and categorical features.</li>
-                            <li>Can capture non-linear relationships.</li>
-                        </ul>
-                        <p><strong>Disadvantages:</strong></p>
-                        <ul>
-                            <li>Can be computationally expensive for large datasets.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>2. Boosting</h3>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Concept:</strong> Create multiple models sequentially, where each model focuses on
-                            the errors made by the previous models.</p>
-                        <p><strong>Types:</strong></p>
-                        <ul>
-                            <li><strong>AdaBoost (Adaptive Boosting):</strong> Weights the training examples based on
-                                their classification accuracy.</li>
-                            <li><strong>Gradient Boosting:</strong> Minimizes a loss function by iteratively adding
-                                models that fit the residuals of the previous models.</li>
-                            <li><strong>XGBoost (eXtreme Gradient Boosting):</strong> An efficient implementation of
-                                gradient boosting with additional optimizations.</li>
-                        </ul>
-                        <p><strong>Advantages:</strong></p>
-                        <ul>
-                            <li>Can achieve high accuracy, especially for complex problems.</li>
-                            <li>Can handle both numerical and categorical features.</li>
-                        </ul>
-                        <p><strong>Disadvantages:</strong></p>
-                        <ul>
-                            <li>Can be sensitive to overfitting if not properly tuned.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h2>Ensemble Methods vs. Single Models</h2>
-                <p><strong>Ensemble methods:</strong></p>
-                <ul>
-                    <li>Can improve accuracy and reduce overfitting.</li>
-                    <li>Can handle complex relationships.</li>
-                    <li>Can be computationally expensive.</li>
-                </ul>
-                <p><strong>Single models:</strong></p>
-                <ul>
-                    <li>Simpler to implement and interpret.</li>
-                    <li>May be sufficient for simpler problems.</li>
-                </ul>
-
-                <h2>Choosing the Right Ensemble Method</h2>
-                <p>The choice of ensemble method depends on the specific characteristics of your data and the problem
-                    you are trying to solve. Consider the following factors:</p>
-                <ul>
-                    <li><strong>Data complexity:</strong> Ensemble methods are often effective for complex problems.
-                    </li>
-                    <li><strong>Computational resources:</strong> Ensemble methods can be computationally expensive,
-                        especially for large datasets.</li>
-                    <li><strong>Interpretability:</strong> Single models may be easier to interpret than ensemble
-                        methods.</li>
-                </ul>
-
-                <h2>Practical Tips</h2>
-                <p>Here are some practical tips to leverage ensemble methods effectively:</p>
-                <ul>
-                    <li>Experiment with different ensemble methods and hyperparameters.</li>
-                    <li>Evaluate the performance of the ensemble model using appropriate metrics, such as accuracy,
-                        precision, recall, and F1 score.</li>
-                    <li>Consider the trade-off between accuracy and interpretability; sometimes, a simpler model may
-                        suffice for practical applications.</li>
-                    <li>Utilize cross-validation to ensure your model generalizes well to unseen data.</li>
-                    <li>Monitor model performance over time to detect any signs of drift or degradation, which may
-                        necessitate retraining.</li>
-                </ul>
-
-                <h2>Conclusion</h2>
-                <p>By understanding the principles of ensemble methods, you can leverage their power to improve the
-                    performance of your machine learning models. Mastering these techniques will not only enhance your
-                    model's accuracy but also empower you to tackle more complex data-driven challenges.</p>
-                <button class="btn btn-custom">Enroll Now</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

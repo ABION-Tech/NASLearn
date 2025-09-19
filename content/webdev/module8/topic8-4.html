@@ -4,43 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Stack Application Integration Project</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        h2 {
-            color: #555;
-        }
-
-        code {
-            background-color: #eee;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-
-        pre {
-            background-color: #272822;
-            color: #f8f8f2;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        .section {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
 
         /* Basic Reset */
@@ -139,150 +107,22 @@
                 }
             }
         }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Practical Exercises and Projects</h1>
-
-    <div class="section">
-        <h2>4.1. Full-Stack Application Integration Project</h2>
-        <p><strong>Objective:</strong> Build a full-stack application that integrates the front-end with the back-end,
-            demonstrating your ability to connect React components with Node.js services and deploy the entire
-            application.</p>
-
-        <h3>Step-by-Step Instructions:</h3>
-
-        <h4>1. Project Setup:</h4>
-        <p><strong>Create a New Repository:</strong></p>
-        <pre>
-git init
-        </pre>
-        <p>Initialize a new Git repository for your project.</p>
-        <pre>
-git remote add origin https://github.com/username/full-stack-app.git
-        </pre>
-        <p>Create a new repository on GitHub and link it to your local repository.</p>
-
-        <h4>2. Back-End Setup:</h4>
-        <p><strong>Set Up Node.js and Express:</strong></p>
-        <pre>
-mkdir backend
-cd backend
-npm init -y
-npm install express mongoose cors
-        </pre>
-        <p>Create a basic Express server:</p>
-        <pre>
-// backend/server.js
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-
-const app = express();
-const PORT = process.env.PORT || 5000;
-
-app.use(cors());
-app.use(express.json());
-
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/fullstackapp', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
-
-app.get('/api/items', (req, res) => {
-    res.json([{ id: 1, name: 'Item 1' }]);
-});
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-        </pre>
-
-        <h4>3. Front-End Setup:</h4>
-        <p><strong>Create a New React App:</strong></p>
-        <pre>
-npx create-react-app frontend
-cd frontend
-npm install axios
-        </pre>
-        <p>Create a React component to fetch and display data:</p>
-        <pre>
-// frontend/src/App.js
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-function App() {
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        axios.get('http://localhost:5000/api/items')
-            .then(response => setItems(response.data))
-            .catch(error => console.error('There was an error!', error));
-    }, []);
-
-    return (
-        &lt;div className="App"&gt;
-            &lt;h1&gt;Items List&lt;/h1&gt;
-            &lt;ul&gt;
-                {items.map(item =&gt; (
-                    &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
-                ))}
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    );
-}
-
-export default App;
-        </pre>
-
-        <h4>4. Integrating Front-End and Back-End:</h4>
-        <p><strong>Proxy Setup:</strong></p>
-        <pre>
-// In frontend/package.json
-"proxy": "http://localhost:5000"
-        </pre>
-        <p><strong>Run Both Servers:</strong></p>
-        <pre>
-// Run the back-end server
-cd backend
-node server.js
-
-// Run the React development server
-cd frontend
-npm start
-        </pre>
-
-        <h4>5. Deployment:</h4>
-        <p><strong>Deploy to Heroku:</strong></p>
-        <pre>
-web: node backend/server.js
-        </pre>
-        <pre>
-git add .
-git commit -m "Setup full-stack app"
-git push origin main
-heroku create
-git push heroku main
-        </pre>
-
-        <h4>6. Testing and Debugging:</h4>
-        <p><strong>Test Endpoints:</strong></p>
-        <pre>
-heroku logs --tail
-        </pre>
-    </div>
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

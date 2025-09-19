@@ -4,133 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recap and Preview - Motion Graphics Course</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #fff;
-            color: #000;
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
 
-        h1,
-        h2,
-        h3 {
-            color: #007bff;
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
         }
 
         .container {
-            margin-top: 40px;
-            margin-bottom: 40px;
+            padding: 20px;
         }
 
-        .section {
-            margin-bottom: 40px;
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
         }
 
-        .takeaways-list,
-        .portfolio-preview-list {
-            list-style-type: none;
-            padding: 0;
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
         }
 
-        .takeaway,
-        .portfolio-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #007bff;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="section">
-            <h1>Recap and Preview</h1>
-        </div>
-
-        <div class="section">
-            <h2>Summary of the Week's Key Takeaways</h2>
-            <ul class="takeaways-list">
-                <li class="takeaway">
-                    <strong>Key Animation Techniques:</strong>
-                    We explored the foundation of motion graphics by understanding keyframes, which are essential for
-                    defining the start and end points of any animation. Tweening (in-betweening) helps to create smooth
-                    transitions, while timing and easing techniques are crucial for creating realistic motion that feels
-                    natural.
-                </li>
-                <li class="takeaway">
-                    <strong>Motion Graphics Software:</strong>
-                    We took a closer look at popular tools in the industry, particularly Adobe After Effects and
-                    Blender. After Effects is favored for its robust features and integration with other Adobe products,
-                    while Blender offers powerful 3D animation capabilities, allowing for more complex visual effects.
-                </li>
-                <li class="takeaway">
-                    <strong>Animation Styles:</strong>
-                    Understanding different styles of animation is vital. We discussed cartoon animations for fun and
-                    entertainment, realistic animations that aim to mimic real-life motion, and abstract styles that
-                    convey ideas through non-literal visual representation.
-                </li>
-                <li class="takeaway">
-                    <strong>Applications of Motion Graphics:</strong>
-                    Motion graphics have vast applications, including branding and advertising campaigns where visuals
-                    attract attention. We also examined their role in user interfaces, enhancing usability through
-                    informative animations that guide users through interactions.
-                </li>
-                <li class="takeaway">
-                    <strong>Best Practices:</strong>
-                    To create effective and engaging motion graphics, we highlighted best practices such as maintaining
-                    consistency in style, ensuring animations serve a purpose, and optimizing graphics for various
-                    platforms to enhance user experience.
-                </li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Preview: Portfolio Building</h2>
-            <p>Next week, we will shift our focus to the crucial aspect of <strong>portfolio building</strong>. A
-                well-curated portfolio showcases your design skills and plays a significant role in attracting potential
-                clients or employers. Here’s what you can expect:</p>
-            <ul class="portfolio-preview-list">
-                <li class="portfolio-item">
-                    <strong>Curating Your Portfolio:</strong>
-                    We will discuss how to select the best examples of your work that highlight your skills and
-                    experiences effectively. You'll learn to evaluate your projects based on relevance, skill level, and
-                    the impact they had.
-                </li>
-                <li class="portfolio-item">
-                    <strong>Portfolio Layout and Design:</strong>
-                    A visually appealing layout can significantly enhance the presentation of your work. We’ll explore
-                    various design principles that ensure your portfolio stands out while maintaining professionalism.
-                </li>
-                <li class="portfolio-item">
-                    <strong>Writing Effective Descriptions:</strong>
-                    Crafting clear and concise descriptions for each project is essential. We will cover how to
-                    communicate the purpose of the project, your role, and the impact it achieved, helping potential
-                    clients understand your value.
-                </li>
-                <li class="portfolio-item">
-                    <strong>Online Portfolios:</strong>
-                    With an emphasis on the digital space, we will guide you through building a professional online
-                    portfolio using platforms such as Behance, Dribbble, or creating your own website to display your
-                    work.
-                </li>
-                <li class="portfolio-item">
-                    <strong>Networking and Promotion:</strong>
-                    Having a great portfolio is just the beginning. We’ll share effective strategies for promoting your
-                    portfolio and building a network that can lead to job opportunities and collaborations.
-                </li>
-            </ul>
-            <p>Stay tuned for a more in-depth exploration of portfolio building and how to effectively showcase your
-                design skills!</p>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

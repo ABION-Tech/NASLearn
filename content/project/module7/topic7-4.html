@@ -4,42 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing and Debugging in Node.js</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
-
-        h1,
-        h2 {
-            color: #333;
-        }
-
-        .content-section {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        pre {
-            background-color: #333;
-            color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            overflow-x: auto;
-        }
-
-        code {
-            color: #61dafb;
-        }
-
-        .explanation {
-            font-style: italic;
-            color: #555;
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
 
         /* Basic Reset */
@@ -138,96 +107,22 @@
                 }
             }
         }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Testing and Debugging in Node.js</h1>
 
-    <!-- Section 4.1 - Unit Testing -->
-    <div class="content-section">
-        <h2>4.1. Unit Testing</h2>
-        <p>Unit testing ensures that individual components of your application work as expected.</p>
-
-        <h3>Setting Up Testing Frameworks</h3>
-        <p>Use Mocha as the test framework and Chai for assertions.</p>
-        <pre><code>const chai = require('chai');
-const expect = chai.expect;
-
-describe('User Authentication', function() {
-    it('should register a new user', async function() {
-        const res = await request(app).post('/register')
-            .send({ name: 'John Doe', email: 'john@example.com', password: 'password123' });
-        expect(res.status).to.equal(201);
-    });
-});
-</code></pre>
-        <p class="explanation">
-            <strong>Explanation:</strong> <br>
-            <code>request(app)</code>: Simulates HTTP requests to the Express app for testing. <br>
-            <code>expect()</code>: Provides assertions to verify test outcomes.
-        </p>
-    </div>
-
-    <!-- Section 4.2 - Integration Testing -->
-    <div class="content-section">
-        <h2>4.2. Integration Testing</h2>
-        <p>Integration tests ensure that different parts of your application work together correctly.</p>
-
-        <h3>Testing API Endpoints</h3>
-        <p>Test that your RESTful API endpoints function correctly and handle edge cases.</p>
-        <pre><code>describe('API Endpoints', function() {
-    it('should return all users', async function() {
-        const res = await request(app).get('/api/users');
-        expect(res.status).to.equal(200);
-        expect(res.body).to.be.an('array');
-    });
-});
-</code></pre>
-        <p class="explanation">
-            <strong>Explanation:</strong> <br>
-            <code>request(app).get()</code>: Simulates GET requests to the API endpoint and checks the response.
-        </p>
-    </div>
-
-    <!-- Section 4.3 - Debugging Techniques -->
-    <div class="content-section">
-        <h2>4.3. Debugging Techniques</h2>
-        <p>Effective debugging helps identify and fix issues in your application.</p>
-
-        <h3>Using console.log()</h3>
-        <p>Log important information to the console for debugging.</p>
-        <pre><code>app.post('/login', async (req, res) => {
-    console.log('Login attempt:', req.body);
-    // Further login logic...
-});
-</code></pre>
-        <p class="explanation">
-            <strong>Explanation:</strong> <br>
-            <code>console.log()</code>: Useful for tracing execution flow and checking variable values.
-        </p>
-
-        <h3>Using Debugging Tools</h3>
-        <p>Node.js Inspector: Use the built-in Node.js inspector for advanced debugging.</p>
-        <pre><code>node --inspect server.js
-</code></pre>
-        <p class="explanation">
-            <strong>Explanation:</strong> <br>
-            <code>--inspect</code>: Starts the Node.js application with debugging enabled.
-        </p>
-    </div>
-
-    <div class="video-container">
-        <div class="gradient-border">
-            <iframe class="video-content" src="https://www.youtube.com/embed/OyEHnIC45Zk" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <div class="video-links">
-                <h4>Channel Name<h4>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

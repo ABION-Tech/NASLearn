@@ -4,187 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversion Rate Optimization Techniques</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: #fff;
-            color: #000;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
         }
 
-        h2,
-        h3 {
-            color: #007bff;
+        .container {
+            padding: 20px;
         }
 
-        p,
-        li {
-            line-height: 1.6;
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
         }
 
-        .content-section {
-            margin-top: 20px;
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
         }
 
-        .cta {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            margin: 10px 0;
+            margin-top: 5px;
         }
 
-        .cta:hover {
-            background-color: #007BFF;
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
         }
 
-        .highlight {
-            font-weight: bold;
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
             color: #007BFF;
+            /* Blue accent for section titles */
         }
 
-        ul {
-            margin-bottom: 20px;
-        }
-
-        .section-heading {
-            padding-bottom: 10px;
-            border-bottom: 2px solid #007bff;
-            margin-bottom: 20px;
-        }
-
-        .key-point {
-            background-color: #f0f8ff;
-            padding: 15px;
-            border-left: 4px solid #007bff;
-            margin-bottom: 20px;
+        h1,
+        h2 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container content-section">
-        <h2 class="section-heading">Techniques for Improving Conversion Rates: A Deep Dive</h2>
-
-        <h3>1. Optimizing Landing Pages</h3>
-
-        <div class="key-point">
-            <h4>Clear Call-to-Action (CTA):</h4>
-            <ul>
-                <li><span class="highlight">Placement:</span> Ensure CTAs are strategically placed above the fold, where
-                    users are most likely to see them first.</li>
-                <li><span class="highlight">Specificity:</span> Use action-oriented verbs and concise language to
-                    clearly convey the benefit of taking the desired action.</li>
-                <li><span class="highlight">Contrasting Colors:</span> Make CTAs visually stand out using contrasting
-                    colors that draw the eye.</li>
-                <li><span class="highlight">A/B Testing:</span> Experiment with different CTA variations to determine
-                    which performs best.</li>
-            </ul>
-        </div>
-
-        <div class="key-point">
-            <h4>Reducing Clutter:</h4>
-            <ul>
-                <li><span class="highlight">Minimalist Design:</span> Keep landing pages clean and uncluttered to avoid
-                    overwhelming users.</li>
-                <li><span class="highlight">Above-the-Fold Focus:</span> Prioritize the most important elements above
-                    the fold to capture attention quickly.</li>
-                <li><span class="highlight">Single-Column Layout:</span> Use a single-column layout to guide users' eyes
-                    towards the CTA.</li>
-                <li><span class="highlight">White Space:</span> Incorporate white space to improve readability and
-                    create a more visually appealing design.</li>
-            </ul>
-        </div>
-
-        <div class="key-point">
-            <h4>Trust Signals:</h4>
-            <ul>
-                <li><span class="highlight">Testimonials and Reviews:</span> Showcase positive feedback from satisfied
-                    customers to build social proof.</li>
-                <li><span class="highlight">Security Badges:</span> Display security certifications and trust seals to
-                    reassure users about data privacy and safety.</li>
-                <li><span class="highlight">Guarantees and Returns:</span> Offer guarantees and return policies to
-                    alleviate concerns and encourage purchases.</li>
-                <li><span class="highlight">Brand Recognition:</span> Leverage your brand's reputation and recognition
-                    to instill trust.</li>
-            </ul>
-        </div>
-
-        <h3>2. Improving Content</h3>
-
-        <div class="key-point">
-            <h4>Personalization:</h4>
-            <ul>
-                <li><span class="highlight">Dynamic Content:</span> Use dynamic content to tailor messages based on user
-                    data, such as name, location, or browsing history.</li>
-                <li><span class="highlight">Personalized Recommendations:</span> Offer personalized product
-                    recommendations based on user preferences and past purchases.</li>
-                <li><span class="highlight">Segmentation:</span> Divide your audience into segments based on
-                    demographics, behavior, or interests to deliver targeted content.</li>
-            </ul>
-        </div>
-
-        <div class="key-point">
-            <h4>Urgency and Scarcity:</h4>
-            <ul>
-                <li><span class="highlight">Limited-Time Offers:</span> Create a sense of urgency by offering
-                    time-sensitive promotions or discounts.</li>
-                <li><span class="highlight">Low-Stock Notifications:</span> Use scarcity tactics to encourage immediate
-                    action by highlighting limited availability.</li>
-                <li><span class="highlight">Countdown Timers:</span> Incorporate countdown timers to visually emphasize
-                    the limited-time nature of offers.</li>
-            </ul>
-        </div>
-
-        <h3>3. Enhancing User Experience (UX)</h3>
-
-        <div class="key-point">
-            <h4>Responsive Design:</h4>
-            <ul>
-                <li><span class="highlight">Fluid Layouts:</span> Ensure your website adapts seamlessly to different
-                    screen sizes and orientations.</li>
-                <li><span class="highlight">Touch Optimization:</span> Optimize elements for touch interactions on
-                    mobile devices.</li>
-                <li><span class="highlight">Testing Across Devices:</span> Thoroughly test your website on various
-                    devices to identify and address any compatibility issues.</li>
-            </ul>
-        </div>
-
-        <div class="key-point">
-            <h4>Fast Load Times:</h4>
-            <ul>
-                <li><span class="highlight">Image Optimization:</span> Compress images without compromising quality to
-                    reduce loading times.</li>
-                <li><span class="highlight">Minification:</span> Minimize CSS and JavaScript files to improve page load
-                    speed.</li>
-                <li><span class="highlight">Caching:</span> Implement caching to store static content locally and reduce
-                    server load.</li>
-                <li><span class="highlight">Content Delivery Network (CDN):</span> Use a CDN to distribute content
-                    across multiple servers and improve performance.</li>
-            </ul>
-        </div>
-
-        <div class="key-point">
-            <h4>Simple Navigation:</h4>
-            <ul>
-                <li><span class="highlight">Clear Menus:</span> Use clear and concise menu labels that accurately
-                    reflect the content behind them.</li>
-                <li><span class="highlight">Breadcrumbs:</span> Implement breadcrumbs to help users understand their
-                    current location within the website.</li>
-                <li><span class="highlight">Search Functionality:</span> Provide a robust search feature to allow users
-                    to quickly find what they're looking for.</li>
-                <li><span class="highlight">Intuitive Site Structure:</span> Organize your content in a logical and
-                    intuitive manner to guide users through the website.</li>
-            </ul>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -4,127 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI and Bias: Mitigating Bias in Machine Learning Models</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+    <title>Week 9</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
 
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
         h2 {
             color: #007bff;
-            /* Bootstrap primary blue */
-            margin-top: 30px;
-        }
-
-        h3 {
-            color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 20px;
-        }
-
-        .content-section {
-            margin-bottom: 30px;
-        }
-
-        .accent {
-            color: #007bff;
-            font-weight: bold;
-        }
-
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        .case-study {
-            background-color: #f8f9fa;
-            /* Light gray background */
-            padding: 15px;
-            border-left: 5px solid #007bff;
-            margin-bottom: 20px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container mt-5">
-
-        <h1 class="text-center">AI and Bias: Mitigating Bias in Machine Learning Models</h1>
-
-        <div class="content-section">
-            <p>Bias in AI models can lead to unfair and discriminatory outcomes, impacting individuals and communities.
-                It is crucial to understand the causes of bias and implement strategies to mitigate it.</p>
-        </div>
-
-        <div class="content-section">
-            <h2>Sources of Bias in AI Models</h2>
-            <ul>
-                <li><span class="accent">Biased Data:</span> If the data used to train an AI model is biased, the model
-                    will likely reflect those biases in its predictions.</li>
-                <li><span class="accent">Algorithmic Bias:</span> The algorithms themselves can introduce bias if they
-                    are not designed or implemented carefully.</li>
-                <li><span class="accent">Human Bias:</span> Human biases can be inadvertently introduced during the
-                    development and deployment of AI models.</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h2>Strategies to Mitigate Bias</h2>
-            <ul>
-                <li><span class="accent">Diverse and Representative Datasets:</span> Use diverse and representative
-                    datasets to train AI models. This helps to reduce biases that may be present in the data.</li>
-                <li><span class="accent">Bias Detection and Mitigation Techniques:</span> Employ techniques like
-                    fairness metrics, adversarial training, and data augmentation to identify and mitigate biases in AI
-                    models.</li>
-                <li><span class="accent">Regular Auditing and Monitoring:</span> Continuously monitor AI models for
-                    signs of bias and take corrective action as needed.</li>
-                <li><span class="accent">Human Oversight:</span> Involve human experts to review and validate the output
-                    of AI models, ensuring that they are fair and unbiased.</li>
-                <li><span class="accent">Ethical Guidelines:</span> Develop and adhere to ethical guidelines for AI
-                    development and deployment, emphasizing fairness, transparency, and accountability.</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h2>Case Studies of Bias in AI</h2>
-            <div class="case-study">
-                <h3>Facial Recognition</h3>
-                <p>Some facial recognition systems have been shown to be biased against certain demographics, such as
-                    people of color.</p>
-            </div>
-            <div class="case-study">
-                <h3>Hiring Algorithms</h3>
-                <p>AI-powered hiring algorithms have been criticized for perpetuating biases against certain groups of
-                    job applicants.</p>
-            </div>
-            <div class="case-study">
-                <h3>Criminal Justice Systems</h3>
-                <p>AI-powered tools used in criminal justice systems have been shown to be biased against certain racial
-                    and ethnic groups.</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>The Importance of Fairness and Transparency</h2>
-            <p>Ensuring fairness and transparency in AI models is essential for building trust and avoiding negative
-                consequences. By addressing bias and promoting fairness, we can harness the power of AI for positive
-                social and economic impact.</p>
-            <p>It is important to note that mitigating bias in AI models is an ongoing process. As AI technology
-                continues to evolve, new challenges and opportunities will arise. By understanding the sources of bias
-                and implementing effective strategies, we can create AI systems that are fair, equitable, and beneficial
-                to society.</p>
-        </div>
-
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

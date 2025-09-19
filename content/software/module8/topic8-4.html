@@ -4,140 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment: Creating a Short Animated Logo or Social Media Ad</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+    <title>Week 8</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
         h1,
-        h2,
-        h3 {
+        h2 {
             color: #007bff;
-        }
-
-        .content-section {
-            margin-bottom: 40px;
-        }
-
-        .highlight {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-left: 5px solid #007bff;
-        }
-
-        .list-group-item {
-            background-color: transparent;
-            border: none;
-        }
-
-        .list-group-item:hover {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .important-note {
-            font-weight: bold;
-            color: #dc3545;
-            /* Bootstrap danger color */
         }
     </style>
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Assignment: Creating a Short Animated Logo or Social Media Ad</h1>
 
-        <div class="content-section">
-            <h2>Goal</h2>
-            <p>To create a visually appealing and engaging animated logo or social media ad that captures the essence of
-                a brand or product.</p>
-        </div>
-
-        <div class="content-section highlight">
-            <h2>Prompt</h2>
-            <p>Choose a brand or product for your animation. Consider the brand's identity, target audience, and the key
-                message you want to convey. Analyze what makes the brand unique and how you can represent it effectively
-                through animation.</p>
-        </div>
-
-        <div class="content-section">
-            <h2>Materials</h2>
-            <p>Gather the following materials to assist in the creation of your animation:</p>
-            <ul class="list-group">
-                <li class="list-group-item">Design software like Adobe After Effects, Blender, or other animation tools.
-                </li>
-                <li class="list-group-item">Audio editing software (optional) for sound design.</li>
-                <li class="list-group-item">Images, video clips, or other assets related to your chosen brand.</li>
-            </ul>
-        </div>
-
-        <div class="content-section highlight">
-            <h2>Steps</h2>
-            <p>Follow these steps to successfully create your animated logo or social media ad:</p>
-            <ol class="list-group">
-                <li class="list-group-item">**Brainstorm and Plan:** Develop a concept for your animation, considering
-                    the brand's identity, target audience, and the desired message. Define the tone and style of your
-                    animation.</li>
-                <li class="list-group-item">**Create a Storyboard:** Sketch out the sequence of scenes or frames for
-                    your animation. This will help visualize the flow and timing of your animation.</li>
-                <li class="list-group-item">**Design the Visual Elements:** Create the necessary visual elements, such
-                    as the logo, background graphics, and characters. Ensure that all elements are cohesive with the
-                    brand's identity.</li>
-                <li class="list-group-item">**Animate the Elements:** Use keyframes and tweening to bring the elements
-                    to life. Pay attention to the timing and easing of each movement for a natural feel.</li>
-                <li class="list-group-item">**Add Sound Effects and Music:** Incorporate appropriate sound effects and
-                    music to enhance the animation. Sound design can greatly influence the viewer's perception of the
-                    animation.</li>
-                <li class="list-group-item">**Render and Export:** Render your animation and export it in a suitable
-                    format for social media or other platforms. Make sure to choose resolutions that fit the intended
-                    display medium.</li>
-            </ol>
-        </div>
-
-        <div class="content-section">
-            <h2>Grading Rubric</h2>
-            <p>Your animation will be assessed based on the following criteria:</p>
-            <ul class="list-group">
-                <li class="list-group-item">**Visual Appeal:** Is the animation visually appealing and engaging?</li>
-                <li class="list-group-item">**Smooth Transitions:** Are the transitions between scenes smooth and
-                    natural?</li>
-                <li class="list-group-item">**Brand Consistency:** Does the animation align with the brand's identity
-                    and messaging?</li>
-                <li class="list-group-item">**Effectiveness:** Does the animation effectively convey the intended
-                    message?</li>
-                <li class="list-group-item">**Technical Skill:** Is the animation well-executed and free of errors?</li>
-                <li class="list-group-item">**Creativity:** Does the animation demonstrate originality and creativity?
-                </li>
-            </ul>
-        </div>
-
-        <div class="content-section highlight">
-            <h2>Additional Tips</h2>
-            <p>To enhance your project, keep these tips in mind:</p>
-            <ul class="list-group">
-                <li class="list-group-item">**Keep it Short and Sweet:** Social media users have short attention spans,
-                    so aim for a concise animation, ideally under 30 seconds.</li>
-                <li class="list-group-item">**Use Strong Visuals:** Choose high-quality images and graphics that
-                    complement your animation. Ensure the visuals resonate with the target audience.</li>
-                <li class="list-group-item">**Experiment with Different Styles:** Try different animation styles and
-                    techniques to find what works best for your brand. Consider traditional 2D animation, 3D animation,
-                    or motion graphics.</li>
-                <li class="list-group-item">**Test on Different Devices:** Ensure that your animation looks good and
-                    plays smoothly on various devices and platforms, including mobile and desktop.</li>
-                <li class="list-group-item">**Get Feedback:** Share your animation with peers or potential viewers and
-                    seek feedback to improve it. Constructive criticism can help refine your work.</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h2 class="important-note">By following these steps and applying the principles of motion graphics, you can
-                create a captivating animated logo or social media ad that will help your brand stand out.</h2>
-        </div>
-    </div>
 </body>
 
 </html>
