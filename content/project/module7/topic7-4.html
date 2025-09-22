@@ -121,8 +121,330 @@
     </style>
 </head>
 
-<body>
 
-</body>
+
+<body>
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .module-content {
+      padding: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .card-header {
+      background-color: #f8f9fa;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+    .card-body {
+      padding: 15px;
+    }
+    .key-point {
+      background-color: #e7f3ff;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    ul, ol {
+      margin: 10px 0;
+      padding-left: 30px;
+    }
+    li {
+      margin: 5px 0;
+    }
+    h1, h2, h3, h4 {
+      color: #333;
+    }
+    p {
+      line-height: 1.6;
+    }
+    code {
+      background-color: #f5f5f5;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    .custom-table th {
+      background-color: #f2f2f2;
+    }
+    .custom-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+  
+  <div class="container">
+    <div class="header">
+      <h1>Lecture 7.4: Agile Execution and Monitoring - Sustaining Momentum and Measuring Progress</h1>
+    </div>
+    
+    <div class="module-content">
+      <h2>Learning Objective:</h2>
+      <p>After this lecture, you will be able to sustain Agile workflows through effective daily operations, implement robust feedback loops, and use performance metrics to adapt and improve project delivery.</p>
+      
+      <h2>Why This Matters:</h2>
+      <p>In today's fast-paced business environment, even the best Agile plans fail without strong execution and monitoring. Companies like Spotify and Amazon don't just plan well—they execute with discipline and measure what matters. According to the State of Agile Report, teams that consistently implement Agile practices are 60% more likely to meet their goals. Mastering execution and monitoring transforms Agile from theory into tangible business results, making you the kind of leader who delivers value predictably in uncertain environments.</p>
+      
+      <h2>Core Content:</h2>
+      
+      <h3>Daily Operations: The Engine of Agile Execution</h3>
+      <p>Imagine a professional sports team. They don't just show up on game day and hope for the best. They have daily practices, brief check-ins, and constant adjustments to their strategy. Agile teams operate similarly—daily operations are the practice sessions that prepare them for successful "game day" delivery.</p>
+      
+      <h4>The Daily Stand-up: The 15-Minute Pulse Check</h4>
+      <p>The Daily Stand-up (or Daily Scrum) is a cornerstone of Agile execution. It's a brief, time-boxed meeting where the team synchronizes activities and creates a plan for the next 24 hours. Think of it as a team huddle before a play—quick, focused, and action-oriented.</p>
+      
+      <p><strong>The Three Questions:</strong></p>
+      <p>Every team member answers three fundamental questions:</p>
+      <ol>
+        <li><strong>What did I do yesterday?</strong> (Progress made)</li>
+        <li><strong>What will I do today?</strong> (Commitments for the day)</li>
+        <li><strong>Are there any impediments in my way?</strong> (Blockers to address)</li>
+      </ol>
+      
+      <p><strong>Why This Structure Works:</strong></p>
+      <ul>
+        <li><strong>Forces Conciseness</strong>: The 15-minute time limit prevents rambling and forces focus on what matters.</li>
+        <li><strong>Creates Transparency</strong>: Everyone knows what others are working on and how it connects to the sprint goal.</li>
+        <li><strong>Identifies Blockers Early</strong>: Problems surface immediately rather than festering for days.</li>
+        <li><strong>Promotes Accountability</strong>: Public commitments increase the likelihood of follow-through.</li>
+      </ul>
+      
+      <p><strong>Common Pitfalls and How to Avoid Them:</strong></p>
+      <ol>
+        <li><strong>Turning it into a status meeting</strong>: The stand-up is for coordination, not reporting to a manager. Keep it focused on the team's needs.
+          <p><em>Solution: Have team members talk to each other, not to the Scrum Master or Product Owner.</em></p>
+        </li>
+        <li><strong>Problem-solving during the stand-up</strong>: Detailed discussions derail the meeting and waste everyone's time.
+          <p><em>Solution: Create a "parking lot" for issues to discuss after the stand-up with only those involved.</em></p>
+        </li>
+        <li><strong>Inconsistent attendance</strong>: When team members miss stand-ups, coordination suffers.
+          <p><em>Solution: Make stand-ups non-negotiable and consider rotating facilitation to increase engagement.</em></p>
+        </li>
+      </ol>
+      
+      <p><strong>Real-World Example:</strong></p>
+      <p>A software development team at a fintech startup holds their stand-up at 9:30 AM daily. They stand in a circle around their physical Kanban board. Each person spends no more than 60 seconds speaking. When the backend developer mentions she's blocked by an API issue, the frontend developer immediately says, "I had that issue last week—let's connect right after this." The problem is resolved before 10 AM, preventing a day of lost productivity.</p>
+      
+      <h4>Sprint Execution: Focused Work on Backlog Items</h4>
+      <p>While the daily stand-up provides coordination, sprint execution is where the actual work happens. This is the team's "deep work" time—focused, uninterrupted effort toward the sprint goal.</p>
+      
+      <p><strong>Creating an Environment for Focused Work:</strong></p>
+      <ol>
+        <li><strong>Protect the Team's Time</strong>: Treat sprint execution time as sacred. Minimize interruptions, unnecessary meetings, and context switching.
+          <p><em>Think of it as "Maker's Schedule" vs. "Manager's Schedule"—creators need long, uninterrupted blocks to produce quality work.</em></p>
+        </li>
+        <li><strong>Maintain a Sustainable Pace</strong>: Agile teams work at a pace they can maintain indefinitely. Avoid the "death march" approach common in traditional projects.
+          <p><em>A well-rested team delivers better quality than an exhausted one working 60-hour weeks.</em></p>
+        </li>
+        <li><strong>Self-Organization</strong>: The team decides how to accomplish the work, not just what work to do. This autonomy increases engagement and accountability.
+          <p><em>Like a jazz ensemble—each musician knows their part but improvises within the structure to create something greater than the sum of its parts.</em></p>
+        </li>
+      </ol>
+      
+      <p><strong>Two Simple Rules for Sprint Execution:</strong></p>
+      <ol>
+        <li><strong>No Interruptions</strong>: When a team member is working on a task, they shouldn't be pulled into unrelated meetings or discussions unless absolutely necessary.
+          <p><em>Implement "focus hours" where no meetings are scheduled and communication is asynchronous.</em></p>
+        </li>
+        <li><strong>No New Work</strong>: Once a sprint begins, the team doesn't accept new work unless it's critical and the Product Owner removes an equivalent amount of existing work.
+          <p><em>This protects the sprint commitment and prevents scope creep.</em></p>
+        </li>
+      </ol>
+      
+      <p><strong>Case Study: Mobile App Development Team</strong></p>
+      <p>A team building a fitness tracking app faced constant interruptions from stakeholders asking for status updates. They implemented two changes:</p>
+      <ol>
+        <li>They designated "no-meeting Wednesdays" for focused development work.</li>
+        <li>They created a public dashboard showing real-time progress on sprint goals.</li>
+      </ol>
+      <p>Result: The team completed 40% more story points in the next sprint, and stakeholder satisfaction actually increased because they had better visibility into progress without interrupting the team.</p>
+      
+      <h3>Feedback Loops: Learning and Adapting</h3>
+      <p>Agile is built on the principle of inspection and adaptation. Feedback loops are the mechanisms that make this possible—they allow teams to learn from experience and adjust their approach accordingly.</p>
+      
+      <h4>Sprint Review: Demonstrating Value to Stakeholders</h4>
+      <p>The Sprint Review (or Sprint Demo) is where the team demonstrates what they've accomplished during the sprint. It's not a status report—it's a working demonstration of the product increment.</p>
+      
+      <p><strong>Purpose of the Sprint Review:</strong></p>
+      <ol>
+        <li><strong>Inspect the Increment</strong>: Stakeholders see the actual working software, not PowerPoint slides.</li>
+        <li><strong>Adapt the Product Backlog</strong>: Feedback from stakeholders helps the Product Owner refine priorities.</li>
+        <li><strong>Celebrate Progress</strong>: Recognizing accomplishments builds team morale and momentum.</li>
+        <li><strong>Align on Direction</strong>: Ensures everyone understands where the product is heading.</li>
+      </ol>
+      
+      <p><strong>Effective Sprint Reviews:</strong></p>
+      <ol>
+        <li><strong>Focus on Working Software</strong>: The demonstration should be of actual functionality, not mockups or descriptions.
+          <p><em>Like a chef presenting a finished dish to food critics—not describing how they would cook it.</em></p>
+        </li>
+        <li><strong>Keep it Interactive</strong>: Encourage stakeholders to try the software themselves and provide immediate feedback.
+          <p><em>The more hands-on the demo, the more valuable the feedback.</em></p>
+        </li>
+        <li><strong>Time-Boxed Appropriately</strong>: For a 2-week sprint, allocate 2-4 hours maximum for the review.
+          <p><em>Respect everyone's time while ensuring adequate opportunity for feedback.</em></p>
+        </li>
+        <li><strong>Include the Right People</strong>: Invite stakeholders who can provide meaningful feedback and make decisions about the product.</li>
+      </ol>
+      
+      <p><strong>Sprint Review Format:</strong></p>
+      <ol>
+        <li><strong>Sprint Goal Review (5 minutes)</strong>: Briefly remind everyone of the sprint goal.</li>
+        <li><strong>Demonstration (30-60 minutes)</strong>: Show the working software, focusing on features that meet the acceptance criteria.</li>
+        <li><strong>Feedback Session (30-60 minutes)</strong>: Collect stakeholder feedback using a structured format like "I like/I wish/What if":
+          <ul>
+            <li><strong>I like</strong>: What worked well?</li>
+            <li><strong>I wish</strong>: What could be improved?</li>
+            <li><strong>What if</strong>: What new ideas or possibilities does this suggest?</li>
+          </ul>
+        </li>
+        <li><strong>Backlog Adjustment (15-30 minutes)</strong>: The Product Owner incorporates feedback into the backlog, explaining how it affects future priorities.</li>
+      </ol>
+      
+      <p><strong>Real-World Example: Task Management App</strong></p>
+      <p>A team developing a task management app demonstrated their new "task sharing" feature in their sprint review. During the feedback session, a stakeholder from the sales team said, "I wish I could see who has viewed a shared task—this would help with follow-up." The Product Owner added this as a new user story: "As a task owner, I want to see who has viewed my shared tasks so that I can follow up appropriately." This feedback directly improved the product's value.</p>
+      
+      <h4>Retrospectives: The Engine of Continuous Improvement</h4>
+      <p>If the Sprint Review focuses on the product, the Retrospective focuses on the process. It's a regular opportunity for the team to reflect on how they're working and identify improvements.</p>
+      
+      <p><strong>The Prime Directive:</strong></p>
+      <p>Retrospectives work best when the team follows Norm Kerth's Prime Directive:</p>
+      <p><em>"Regardless of what we discover, we understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand."</em></p>
+      <p>This creates psychological safety, allowing team members to be honest without fear of blame.</p>
+      
+      <p><strong>The Retrospective Process:</strong></p>
+      <ol>
+        <li><strong>Set the Stage</strong>: Create a safe environment and establish the purpose of the retrospective.</li>
+        <li><strong>Gather Data</strong>: Collect facts and feelings about the sprint.</li>
+        <li><strong>Generate Insights</strong>: Analyze the data to understand what happened and why.</li>
+        <li><strong>Decide What to Do</strong>: Identify specific, actionable improvements.</li>
+        <li><strong>Close the Retrospective</strong>: Summarize commitments and express appreciation.</li>
+      </ol>
+      
+      <p><strong>Popular Retrospective Techniques:</strong></p>
+      <ol>
+        <li><strong>Start/Stop/Continue</strong>:
+          <ul>
+            <li><strong>Start</strong>: What should we start doing?</li>
+            <li><strong>Stop</strong>: What should we stop doing?</li>
+            <li><strong>Continue</strong>: What should we continue doing?</li>
+          </ul>
+          <p>This simple framework is easy to facilitate and produces clear action items.</p>
+        </li>
+        <li><strong>4Ls (Liked, Learned, Lacked, Longed For)</strong>:
+          <ul>
+            <li><strong>Liked</strong>: What did you like about the sprint?</li>
+            <li><strong>Learned</strong>: What did you learn?</li>
+            <li><strong>Lacked</strong>: What was missing?</li>
+            <li><strong>Longed For</strong>: What did you wish for?</li>
+          </ul>
+          <p>This encourages deeper reflection on both positive and negative aspects.</p>
+        </li>
+        <li><strong>Sailboat</strong>:
+          <ul>
+            <li>Visualize the team as a sailboat moving toward an island (goal).</li>
+            <li>Wind represents things helping the team.</li>
+            <li>Anchors represent things holding the team back.</li>
+            <li>Rocks represent risks ahead.</li>
+          </ul>
+          <p>This visual approach makes abstract concepts concrete and engaging.</p>
+        </li>
+      </ol>
+      
+      <p><strong>Making Retrospectives Actionable:</strong></p>
+      <ol>
+        <li><strong>Focus on Process, Not People</strong>: Discuss how the team works, not individual performance.</li>
+        <li><strong>Generate Specific Actions</strong>: Avoid vague commitments like "communicate better." Instead, identify specific actions like "update the task board by 10 AM daily."</li>
+        <li><strong>Assign Owners</strong>: Each action item should have a clear owner responsible for implementing it.</li>
+        <li><strong>Review Previous Actions</strong>: Start the next retrospective by reviewing progress on action items from the previous one.</li>
+      </ol>
+      
+      <p><strong>Case Study: Healthcare App Team</strong></p>
+      <p>A team developing a healthcare app was struggling with missed deadlines and low morale. In their retrospective using the Start/Stop/Continue format, they identified:</p>
+      <ul>
+        <li><strong>Start</strong>: Daily check-ins between developers and QA testers</li>
+        <li><strong>Stop</strong>: Waiting until the end of the sprint for testing</li>
+        <li><strong>Continue</strong>: Pair programming for complex features</li>
+      </ul>
+      <p>They implemented these changes and saw a 50% reduction in bugs found after development and a 25% increase in sprint completion rate over the next three sprints.</p>
+      
+      <h3>Metrics & Adaptation: Measuring What Matters</h3>
+      <p>Agile teams use metrics to make informed decisions, not to measure individual performance or create pressure. The right metrics provide insights that help the team improve their process and deliver more value.</p>
+      
+      <h4>Velocity Trends: Understanding Team Capacity</h4>
+      <p>Velocity measures how much work a team completes in a sprint, typically expressed in story points. It's a planning tool, not a measure of productivity or efficiency.</p>
+      
+      <p><strong>Using Velocity Effectively:</strong></p>
+      <ol>
+        <li><strong>Focus on Trends, Not Individual Sprints</strong>: A single sprint's velocity can be affected by many factors (holidays, sick days, technical challenges). Look at the trend over 3-5 sprints.
+          <p><em>Like tracking a runner's pace over several races, not just one.</em></p>
+        </li>
+        <li><strong>Use Velocity for Forecasting, Not Targets</strong>: Velocity helps answer "When can we deliver this?" not "How can we increase velocity?"
+          <p><em>Pressuring teams to increase velocity often leads to inflated estimates and lower quality.</em></p>
+        </li>
+        <li><strong>Consider Context</strong>: Velocity is unique to each team. Don't compare velocities between teams.</li>
+      </ol>
+      
+      <p><strong>Interpreting Velocity Charts:</strong></p>
+      <ul>
+        <li><strong>Stable Velocity</strong>: Indicates a predictable team with good estimation and consistent process.</li>
+        <li><strong>Increasing Velocity</strong>: May indicate improving process, but could also indicate estimation inflation.</li>
+        <li><strong>Decreasing Velocity</strong>: May indicate process problems, technical debt, or changing team composition.</li>
+        <li><strong>Erratic Velocity</strong>: Suggests inconsistent process, poor estimation, or external disruptions.</li>
+      </ul>
+      
+      <p><strong>Real-World Example: E-commerce Platform</strong></p>
+      <p>A team maintaining an e-commerce platform noticed their velocity had declined for three consecutive sprints. Instead of pressuring the team to "work faster," they investigated and discovered that:</p>
+      <ol>
+        <li>The platform had accumulated significant technical debt</li>
+        <li>The team was spending 40% of their time fixing bugs</li>
+        <li>New features were becoming more complex</li>
+      </ol>
+      <p>They adjusted their process to allocate 20% of each sprint to technical debt reduction. After three sprints, their velocity stabilized, and bug reports decreased by 60%.</p>
+      
+      <h4>Burndown and Burnup Charts: Visualizing Progress</h4>
+      <p>Burndown and burnup charts provide a visual representation of progress toward the sprint goal.</p>
+      
+      <p><strong>Burndown Charts:</strong></p>
+      <ul>
+        <li><strong>What they show</strong>: The amount of work remaining over time.</li>
+        <li><strong>How to read them</strong>: An ideal burndown shows a steady downward slope. A flat line indicates no progress, while an upward line indicates scope increase.</li>
+        <li><strong>When to use them</strong>: Useful for tracking daily progress within a sprint.</li>
+      </ul>
+      
+      <p><strong>Burnup Charts:</strong></p>
+      <ul>
+        <li><strong>What they show</strong>: The amount of work completed over time, plus the total scope.</li>
+        <li><strong>How to read them</strong>: The completed work line should rise steadily. The total scope line should be relatively flat (unless scope is intentionally added).</li>
+        <li><strong>When to use them
 
 </html>
