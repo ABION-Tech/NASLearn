@@ -121,8 +121,331 @@
     </style>
 </head>
 
+
+
 <body>
-
-</body>
-
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .module-content {
+      padding: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .card-header {
+      background-color: #f8f9fa;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+    .card-body {
+      padding: 15px;
+    }
+    .key-point {
+      background-color: #e7f3ff;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    ul, ol {
+      margin: 10px 0;
+      padding-left: 30px;
+    }
+    li {
+      margin: 5px 0;
+    }
+    h1, h2, h3, h4 {
+      color: #333;
+    }
+    p {
+      line-height: 1.6;
+    }
+    code {
+      background-color: #f5f5f5;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+  
+  <div class="container">
+    <div class="header">
+      <h1>Lecture 7.3: Agile Planning and Estimation - From Rigid Schedules to Value-Driven Delivery</h1>
+    </div>
+    
+    <div class="module-content">
+      <h2>Learning Objective:</h2>
+      <p>After this lecture, you will be able to replace rigid plans with adaptive, value-driven scheduling by effectively managing backlogs, applying appropriate estimation techniques, and creating flexible schedules that respond to change.</p>
+      
+      <h2>Why This Matters:</h2>
+      <p>In today's fast-paced business environment, traditional planning methods often lead to missed deadlines, blown budgets, and products that don't meet customer needs. A study by the Project Management Institute found that agile projects are 28% more successful than traditional projects. By mastering Agile planning and estimation, you'll be able to create realistic, flexible plans that deliver maximum value to customers and stakeholders, making you an indispensable asset to any organization navigating uncertainty.</p>
+      
+      <h2>Core Content:</h2>
+      
+      <h3>Backlog Management: The Foundation of Agile Planning</h3>
+      <p>Imagine you're planning a large dinner party. Instead of creating a rigid minute-by-minute schedule, you start with a prioritized list of dishes to prepare, considering your guests' preferences, dietary restrictions, and the time and resources available. This list is your "backlog"—a living document that guides your work but remains flexible as conditions change.</p>
+      <p>In Agile, the Product Backlog serves the same purpose. It's the single source of truth for everything that might be included in a product or project, ordered by value, risk, and priority.</p>
+      
+      <h4>Creating and Refining the Product Backlog</h4>
+      <p>The Product Backlog is more than just a to-do list—it's a strategic tool that guides product development. Here's how to create and maintain it effectively:</p>
+      <ol>
+        <li><strong>Initial Backlog Creation</strong>:
+          <ul>
+            <li>Start with broad themes or epics (large user stories)</li>
+            <li>Gather input from all stakeholders: customers, users, business leaders, and the development team</li>
+            <li>Focus on outcomes and problems to solve, not just features</li>
+            <li>Consider both business value and technical needs</li>
+          </ul>
+        </li>
+        <li><strong>Backlog Refinement (Grooming)</strong>:
+          <ul>
+            <li>Regularly review and prioritize backlog items (usually weekly or bi-weekly)</li>
+            <li>Break down large items into smaller, more manageable pieces</li>
+            <li>Add details as items get closer to implementation</li>
+            <li>Remove items that are no longer relevant or valuable</li>
+            <li>Ensure high-priority items are "ready" for upcoming sprints</li>
+          </ul>
+        </li>
+        <li><strong>Prioritization Techniques</strong>:
+          <ul>
+            <li><strong>Value vs. Effort Matrix</strong>: Plot items on a 2x2 grid based on value to the customer versus effort to implement. Focus on high-value, low-effort items first.</li>
+            <li><strong>MoSCoW Method</strong>: Categorize items as Must have, Should have, Could have, and Won't have (this time).</li>
+            <li><strong>Cost of Delay</strong>: Calculate the economic impact of not implementing a feature now versus later.</li>
+            <li><strong>Kano Model</strong>: Classify features as basic, performance, or delight attributes to understand how they impact customer satisfaction.</li>
+          </ul>
+        </li>
+      </ol>
+      <p>The Product Owner is primarily responsible for the backlog, but effective refinement is a collaborative effort involving the entire Scrum Team and key stakeholders.</p>
+      
+      <h4>User Stories: Putting the Customer First</h4>
+      <p>User stories are the building blocks of an Agile backlog. They shift the focus from writing technical specifications to understanding what users need and why. The standard format is:</p>
+      <p><strong>"As a [type of user], I want [some goal] so that [some reason]."</strong></p>
+      <p>This simple format accomplishes three important things:</p>
+      <ol>
+        <li><strong>Identifies the User</strong>: Who needs this feature? This helps ensure we're designing for real people, not abstract concepts.</li>
+        <li><strong>Describes the Goal</strong>: What does the user want to accomplish? This focuses on outcomes rather than solutions.</li>
+        <li><strong>Explains the Value</strong>: Why is this important to the user? This helps prioritize features and provides context for the development team.</li>
+      </ol>
+      <p>For example, instead of a technical requirement like "Implement password reset functionality," a user story would be:</p>
+      <p><strong>"As a registered user, I want to reset my password so that I can regain access to my account when I forget my password."</strong></p>
+      <p>This version clarifies who needs the feature (registered users), what they want to do (reset their password), and why it matters (to regain account access).</p>
+      
+      <p><strong>Writing Effective User Stories:</strong></p>
+      <ol>
+        <li><strong>INVEST Principle</strong>: Good user stories are:
+          <ul>
+            <li><strong>Independent</strong>: They can be developed separately with minimal dependencies</li>
+            <li><strong>Negotiable</strong>: The details can be discussed and adjusted</li>
+            <li><strong>Valuable</strong>: They deliver clear value to the user or customer</li>
+            <li><strong>Estimable</strong>: The team can estimate how much effort they require</li>
+            <li><strong>Small</strong>: They can be completed within a single sprint</li>
+            <li><strong>Testable</strong>: There's a clear way to verify they've been implemented correctly</li>
+          </ul>
+        </li>
+        <li><strong>The 3 C's</strong>: User stories are often described using the 3 C's:
+          <ul>
+            <li><strong>Card</strong>: A brief written description of the story (the standard format)</li>
+            <li><strong>Conversation</strong>: A discussion about the details between the team, Product Owner, and stakeholders</li>
+            <li><strong>Confirmation</strong>: The acceptance criteria that define when the story is done</li>
+          </ul>
+        </li>
+        <li><strong>Breaking Down Stories</strong>: Large stories (epics) should be broken down into smaller, implementable stories:
+          <ul>
+            <li>Split by user role or type</li>
+            <li>Divide by workflow steps</li>
+            <li>Separate happy path from edge cases</li>
+            <li>Break into functional layers (UI, business logic, data)</li>
+          </ul>
+        </li>
+      </ol>
+      
+      <h4>Acceptance Criteria: Defining "Done"</h4>
+      <p>Acceptance criteria are the conditions that must be met for a user story to be considered complete. They serve as a contract between the Product Owner and the development team, defining expectations and preventing misunderstandings.</p>
+      
+      <p><strong>Effective Acceptance Criteria:</strong></p>
+      <ol>
+        <li><strong>Testable</strong>: Each criterion should be verifiable, either through automated tests or manual verification.</li>
+        <li><strong>Clear and Unambiguous</strong>: Use simple language that everyone can understand.</li>
+        <li><strong>Focused on Outcomes</strong>: Describe what the system should do, not how it should be implemented.</li>
+        <li><strong>Comprehensive</strong>: Cover the main functionality, edge cases, and error conditions.</li>
+      </ol>
+      
+      <p><strong>Common Formats for Acceptance Criteria:</strong></p>
+      <ol>
+        <li><strong>Given/When/Then Format</strong> (from Behavior-Driven Development):
+          <ul>
+            <li><strong>Given</strong>: The initial context or state</li>
+            <li><strong>When</strong>: The action or event</li>
+            <li><strong>Then</strong>: The expected outcome</li>
+          </ul>
+          <p>Example:</p>
+          <pre>
+Given I am a registered user who has forgotten my password
+When I enter my email address and click "Reset Password"
+Then I should receive an email with a password reset link
+And the link should expire after 24 hours
+          </pre>
+        </li>
+        <li><strong>Checklist Format</strong>:
+          <pre>
+- User can request password reset via email
+- System sends reset link to user's email
+- Reset link expires after 24 hours
+- User can set new password after clicking the link
+- System validates new password meets security requirements
+- User receives confirmation after password is successfully reset
+          </pre>
+        </li>
+      </ol>
+      <p>Acceptance criteria are crucial for several reasons:</p>
+      <ul>
+        <li>They prevent scope creep by clearly defining boundaries</li>
+        <li>They help the development team understand what's expected</li>
+        <li>They provide a basis for testing and verification</li>
+        <li>They ensure the team delivers what the Product Owner envisioned</li>
+      </ul>
+      
+      <h3>Estimation Techniques: Sizing the Work</h3>
+      <p>Traditional project management often tries to estimate work in absolute time (hours, days), but this approach has significant drawbacks. It assumes perfect knowledge of requirements and no unexpected challenges—conditions that rarely exist in complex projects.</p>
+      <p>Agile estimation focuses on relative effort rather than absolute time, acknowledging that uncertainty is inherent in creative work. It's like estimating the size of rocks by comparing them to each other rather than trying to calculate their exact weight in kilograms.</p>
+      
+      <h4>Story Points: Relative Effort Estimation</h4>
+      <p>Story points are a unit of measure for expressing the overall effort required to implement a user story. They represent a combination of:</p>
+      <ul>
+        <li>Complexity: How difficult is the work?</li>
+        <li>Uncertainty: How much is unknown?</li>
+        <li>Effort: How much work is involved?</li>
+      </ul>
+      
+      <p><strong>Why Story Points Work:</strong></p>
+      <ol>
+        <li><strong>They're Relative, Not Absolute</strong>: Instead of saying "this will take 8 hours," we say "this is about twice as much work as that story we estimated as 4 points."</li>
+        <li><strong>They Account for Uncertainty</strong>: Higher point values indicate greater uncertainty and risk.</li>
+        <li><strong>They Enable Team-Based Estimation</strong>: The team collectively determines what each point value means for them.</li>
+        <li><strong>They Improve Over Time</strong>: As the team completes more work, their understanding of point values becomes more consistent.</li>
+      </ol>
+      
+      <p><strong>The Fibonacci Sequence in Story Points:</strong></p>
+      <p>Most teams use the Fibonacci sequence (1, 2, 3, 5, 8, 13, 20, 40, 100) for story points. This sequence has several advantages:</p>
+      <ol>
+        <li><strong>Reflects Increasing Uncertainty</strong>: The gap between numbers grows as they get larger, acknowledging that bigger stories have more uncertainty.</li>
+        <li><strong>Forces a Choice</strong>: Teams can't estimate something as "7.5"—they must decide if it's closer to 5 or 8, preventing false precision.</li>
+        <li><strong>Encourages Breaking Down Large Stories</strong>: Stories estimated at 13 or more points are usually too large for a single sprint and should be broken down.</li>
+      </ol>
+      
+      <p><strong>Establishing a Baseline:</strong></p>
+      <p>Teams typically establish a baseline by selecting a small, simple story and assigning it 1 or 2 points. All other stories are then estimated relative to this baseline.</p>
+      <p>For example:</p>
+      <ul>
+        <li>A 1-point story might be "Change the color of a button"</li>
+        <li>A 2-point story might be "Add a new field to a form"</li>
+        <li>A 3-point story might be "Implement basic search functionality"</li>
+        <li>A 5-point story might be "Create a user registration process"</li>
+        <li>An 8-point story might be "Implement a shopping cart"</li>
+      </ul>
+      
+      <p><strong>Common Pitfalls in Story Point Estimation:</strong></p>
+      <ol>
+        <li><strong>Equating Points to Hours</strong>: While there's often a correlation between points and hours, they're not the same. Points represent relative effort, not time.</li>
+        <li><strong>Inconsistent Estimation</strong>: Different team members may have different interpretations of point values. Regular calibration helps maintain consistency.</li>
+        <li><strong>Pressure to Estimate Uncertain Work</strong>: If a story is too vague to estimate, it needs more refinement, not an arbitrary point value.</li>
+        <li><strong>Ignoring Velocity</strong>: Velocity (how many points the team completes in a sprint) is a historical measure, not a target to be increased.</li>
+      </ol>
+      
+      <h4>T-Shirt Sizing: High-Level Estimation</h4>
+      <p>T-shirt sizing (XS, S, M, L, XL) is a quick, high-level estimation technique often used early in the planning process when details are still emerging. It's less precise than story points but faster and easier for initial prioritization.</p>
+      
+      <p><strong>When to Use T-Shirt Sizing:</strong></p>
+      <ol>
+        <li><strong>Initial Backlog Creation</strong>: When you have a large number of items to estimate quickly</li>
+        <li><strong>Portfolio Planning</strong>: When comparing projects or features across multiple teams</li>
+        <li><strong>Stakeholder Discussions</strong>: When you need to communicate relative size in a way that's easy to understand</li>
+      </ol>
+      
+      <p><strong>Mapping T-Shirt Sizes to Story Points:</strong></p>
+      <p>Many teams use t-shirt sizing as a first step before assigning story points:</p>
+      <ul>
+        <li><strong>XS (Extra Small)</strong>: 1-2 points</li>
+        <li><strong>S (Small)</strong>: 3-5 points</li>
+        <li><strong>M (Medium)</strong>: 8-13 points</li>
+        <li><strong>L (Large)</strong>: 20-40 points</li>
+        <li><strong>XL (Extra Large)</strong>: 50+ points (likely needs to be broken down)</li>
+      </ul>
+      
+      <p><strong>Benefits of T-Shirt Sizing:</strong></p>
+      <ol>
+        <li><strong>Speed</strong>: Teams can estimate many items quickly</li>
+        <li><strong>Accessibility</strong>: Easy for non-technical stakeholders to understand</li>
+        <li><strong>Focus on Relative Size</strong>: Encourages comparing items rather than assigning absolute values</li>
+        <li><strong>Identifies Epic Items</strong>: Large and XL items clearly need to be broken down</li>
+      </ol>
+      
+      <h4>Planning Poker: Team-Based Consensus Building</h4>
+      <p>Planning Poker (also called Scrum Poker) is a consensus-based estimation technique that uses cards to estimate user stories. It's designed to overcome common estimation pitfalls like anchoring bias (where the first number mentioned influences others) and groupthink.</p>
+      
+      <p><strong>How Planning Poker Works:</strong></p>
+      <ol>
+        <li><strong>Preparation</strong>: The Product Owner presents a user story and answers questions from the team.</li>
+        <li><strong>Private Estimation</strong>: Each team member selects a card representing their estimate, keeping it hidden.</li>
+        <li><strong>Reveal</strong>: Everyone reveals their cards simultaneously.</li>
+        <li><strong>Discussion</strong>: Team members with the highest and lowest estimates explain their reasoning.</li>
+        <li><strong>Re-estimation</strong>: The team discusses the story and re-estimates until they reach consensus.</li>
+      </ol>
+      
+      <p><strong>The Planning Poker Deck:</strong></p>
+      <p>A typical Planning Poker deck includes cards with:</p>
+      <ul>
+        <li>Fibonacci sequence: 0, 1, 2, 3, 5, 8, 13, 20, 40, 100</li>
+        <li>Special cards: 
+          <ul>
+            <li>"?": I need more information</li>
+            <li>"∞": This story is too big to estimate</li>
+            <li>"Coffee cup": I need a break</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <p><strong>Why Planning Poker Is Effective:</strong></p>
+      <ol>
+        <li><strong>Prevents Anchoring</strong>: Because everyone reveals their estimates simultaneously, no one is influenced by others' opinions.</li>
+        <li><strong>Reveals Different Perspectives</strong>: The discussion after revealing cards uncovers assumptions and different understandings of the work.</li>
+        <li><strong>Promotes Engagement</strong>: Everyone participates in the estimation process.</li>
+        <li><strong>Builds Shared Understanding</strong>: The discussion helps the team develop a common understanding of the work.</li>
+        <li><strong>Efficient</strong>: The team can estimate many stories in a relatively short time.</li>
+      </ol>
+      
+      <p><strong>Virtual Planning Poker:</strong></p>
+      <p>With remote teams becoming more common, digital Planning Poker tools have gained popularity. These tools allow team members to select estimates privately and reveal them simultaneously, often with additional features like timers and automated calculation of averages.</p>
+      
+      <h3>Scheduling: From Vision to Execution</h3>
+      <p>Agile scheduling differs fundamentally from traditional project scheduling. Instead of creating a detailed, fixed plan for the entire project, Agile uses a two-level planning approach: release planning (medium-term) and sprint planning (short-term). This approach balances the need for direction with the flexibility to adapt to change.</p>
+      
+      <h4>Release Planning: Creating a Roadmap</h4>
+      <p>Release planning answers the question: "What can we deliver in the next few months?" It's a collaborative process that creates a high-level plan for multiple sprints, typically covering 3-6 months.</p>
+      
+      <p><strong>Key Elements of Release Planning:</strong></p>
+      <ol>
+        <li><strong>Vision and Goals</strong>: What are we trying to achieve with this release? What business value does it provide?</li>
+        <li><strong>Themes and Epics</strong>: What major features or functionality will be included?</li>
+        <li><strong>Prioritized Backlog</strong>: What user stories support these themes and epics?</li>
+        <li><strong>Estimated Velocity</strong>: How much work can the team complete in each sprint?</li>
+        <li><stro
 </html>
