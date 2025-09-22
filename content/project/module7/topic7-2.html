@@ -121,8 +121,410 @@
     </style>
 </head>
 
-<body>
 
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Lecture 7.2: Key Agile Frameworks</h1>
+    </div>
+    
+    <div class="module-content">
+      <h2>Learning Objective:</h2>
+      <p>After this lecture, you will be able to implement Scrum, Kanban, and complementary Agile methodologies to optimize project delivery in diverse business contexts.</p>
+      
+      <h2>Why This Matters:</h2>
+      <p>In today's dynamic business environment, understanding Agile frameworks isn't just beneficial—it's essential for project success. Companies like Amazon, Google, and Spotify have leveraged these frameworks to accelerate delivery, improve quality, and outperform competitors. Mastering these methodologies will equip you to choose and implement the right approach for any project, making you an invaluable asset to any organization.</p>
+      
+      <h2>Core Content:</h2>
+      
+      <h3>Scrum: The Most Popular Agile Framework</h3>
+      <p>Scrum is like a well-coordinated sports team—everyone has a specific role, follows a clear playbook, and works in short, intense bursts (sprints) to move toward the goal. Originally developed for software development, Scrum has proven effective across industries, from marketing to manufacturing.</p>
+      
+      <h4>The Three Pillars of Scrum</h4>
+      <p>Scrum rests on three pillars that create a foundation for success:</p>
+      <ol>
+        <li><strong>Transparency</strong>: All aspects of the process—progress, challenges, and outcomes—are visible to everyone involved. There are no hidden agendas or secret information.</li>
+        <li><strong>Inspection</strong>: Regularly examining progress toward the Sprint Goal to detect undesirable variances. This happens through frequent reviews and checkpoints.</li>
+        <li><strong>Adaptation</strong>: Adjusting the process as soon as possible to minimize any further issues. This is the core benefit of Agile—responding quickly to what you learn.</li>
+      </ol>
+      
+      <h4>Scrum Roles: The Three Essential Players</h4>
+      <p>Imagine a restaurant kitchen preparing for a busy service. Scrum roles function similarly:</p>
+      <ol>
+        <li><strong>Product Owner (The Visionary/Menu Designer)</strong>:
+          <ul>
+            <li>Represents the customer and business stakeholders</li>
+            <li>Defines what needs to be built and in what order</li>
+            <li>Maintains and prioritizes the Product Backlog</li>
+            <li>Makes final decisions about requirements and priorities</li>
+          </ul>
+          <p>In our restaurant analogy, the Product Owner is like the head chef who designs the menu, decides which dishes to feature based on customer preferences, and ensures the kitchen is preparing what customers actually want.</p>
+        </li>
+        <li><strong>Scrum Master (The Facilitator/Kitchen Manager)</strong>:
+          <ul>
+            <li>Ensures the Scrum process is followed</li>
+            <li>Removes impediments that block the team's progress</li>
+            <li>Facilitates Scrum events</li>
+            <li>Coaches the team in Agile practices</li>
+          </ul>
+          <p>The Scrum Master is like the kitchen manager who ensures the kitchen runs smoothly, resolves conflicts, brings missing ingredients, and makes sure chefs have what they need to deliver quality food on time.</p>
+        </li>
+        <li><strong>Development Team (The Executors/Chefs)</strong>:
+          <ul>
+            <li>Cross-functional group with all skills needed to deliver the product</li>
+            <li>Self-organizing—they decide how to accomplish the work</li>
+            <li>Responsible for delivering potentially shippable increments each Sprint</li>
+            <li>Typically 3-9 individuals</li>
+          </ul>
+          <p>These are the chefs who actually prepare the dishes. They decide how to organize their work, who specializes in what, and how to ensure each dish meets quality standards before it leaves the kitchen.</p>
+        </li>
+      </ol>
+      
+      <h4>Scrum Artifacts: The Tools of the Trade</h4>
+      <p>Scrum artifacts provide transparency and opportunities for inspection and adaptation:</p>
+      <ol>
+        <li><strong>Product Backlog (The Master Plan)</strong>:
+          <ul>
+            <li>A prioritized list of all desired work on the project</li>
+            <li>Owned by the Product Owner but created with input from the entire team</li>
+            <li>Dynamic—constantly updated and re-prioritized</li>
+            <li>Contains features, requirements, bugs, and technical work</li>
+          </ul>
+          <p>This is like the restaurant's entire menu with all possible dishes, including seasonal specials and customer favorites, ordered by profitability and popularity.</p>
+        </li>
+        <li><strong>Sprint Backlog (The Daily Prep List)</strong>:
+          <ul>
+            <li>Selected items from the Product Backlog that the team commits to completing in the current Sprint</li>
+            <li>Includes the plan for delivering these items</li>
+            <li>Owned by the Development Team</li>
+            <li>Updated daily</li>
+          </ul>
+          <p>This is the list of dishes the kitchen will prepare today, with prep instructions and timing for each.</p>
+        </li>
+        <li><strong>Increment (The Ready-to-Serve Dish)</strong>:
+          <ul>
+            <li>The sum of all Product Backlog items completed during a Sprint</li>
+            <li>Must be in usable condition and meet the team's quality standards</li>
+            <li>Potentially shippable—ready for customer use</li>
+          </ul>
+          <p>This is the completed dish that's ready to be served to customers—fully cooked, plated, and meeting quality standards.</p>
+        </li>
+      </ol>
+      
+      <h4>Scrum Events: The Rhythm of Work</h4>
+      <p>Scrum events create regularity and minimize the need for other meetings. They're like the carefully timed service intervals in a restaurant:</p>
+      <ol>
+        <li><strong>Sprint Planning (The Pre-Service Meeting)</strong>:
+          <ul>
+            <li>Time-boxed to 8 hours for a one-month Sprint (shorter for shorter Sprints)</li>
+            <li>Entire Scrum Team collaborates</li>
+            <li>Determines what can be delivered and how to accomplish it</li>
+            <li>Results in a Sprint Backlog and Sprint Goal</li>
+          </ul>
+          <p>Before service begins, the kitchen team meets to review reservations, decide which specials to prepare, and assign responsibilities.</p>
+        </li>
+        <li><strong>Daily Stand-up (The 15-Minute Line Check)</strong>:
+          <ul>
+            <li>15-minute time-boxed meeting for the Development Team</li>
+            <li>Answers three questions: What did I do yesterday? What will I do today? Are there any impediments?</li>
+            <li>Not a status report but a coordination meeting</li>
+            <li>Helps identify and remove obstacles quickly</li>
+          </ul>
+          <p>The chefs quickly gather before service to check progress, identify any missing ingredients, and adjust staffing for the coming rush.</p>
+        </li>
+        <li><strong>Sprint Review (The Tasting Menu)</strong>:
+          <ul>
+            <li>Time-boxed to 4 hours for a one-month Sprint</li>
+            <li>Team demonstrates what was accomplished in the Sprint</li>
+            <li>Stakeholders provide feedback</li>
+            <li>Product Backlog may be adjusted based on feedback</li>
+          </ul>
+          <p>At the end of service, the head chef presents new dishes to the restaurant owner for feedback, which might influence tomorrow's menu.</p>
+        </li>
+        <li><strong>Sprint Retrospective (The Post-Service Debrief)</strong>:
+          <ul>
+            <li>Time-boxed to 3 hours for a one-month Sprint</li>
+            <li>Scrum Team inspects its process and identifies improvements</li>
+            <li>Focuses on people, relationships, process, and tools</li>
+            <li>Results in specific improvement actions for the next Sprint</li>
+          </ul>
+          <p>After closing, the kitchen team discusses what went well, what didn't, and how they can improve tomorrow's service.</p>
+        </li>
+      </ol>
+      
+      <h4>Scrum Metrics: Measuring What Matters</h4>
+      <p>Scrum teams use specific metrics to track progress and make data-driven decisions:</p>
+      <ol>
+        <li><strong>Velocity</strong>:
+          <ul>
+            <li>Measures the amount of work a team completes in a Sprint</li>
+            <li>Usually expressed in story points (a relative measure of effort)</li>
+            <li>Helps forecast future Sprints and plan releases</li>
+            <li>Should stabilize over time as the team learns its capacity</li>
+          </ul>
+          <p>Velocity is like a restaurant knowing how many covers they can handle during a typical dinner service—helps with staffing and ingredient ordering.</p>
+        </li>
+        <li><strong>Burndown Charts</strong>:
+          <ul>
+            <li>Visual representation of remaining work versus time</li>
+            <li>Updated daily to show progress toward the Sprint Goal</li>
+            <li>Helps identify if the team is on track to complete the planned work</li>
+            <li>Can reveal problems early (e.g., flat line indicates no progress)</li>
+          </ul>
+          <p>This is like the kitchen's order ticket board—showing how many orders are pending and how quickly they're being completed.</p>
+        </li>
+      </ol>
+      
+      <h3>Kanban: Visualizing and Optimizing Flow</h3>
+      <p>While Scrum works in time-boxed Sprints, Kanban focuses on continuous flow. Imagine a highway system—Kanban helps visualize traffic, identify bottlenecks, and optimize the flow of vehicles (work) from origin to destination.</p>
+      
+      <h4>Core Principles of Kanban</h4>
+      <ol>
+        <li><strong>Visualize the Workflow</strong>:
+          <ul>
+            <li>Make work visible by using a Kanban board</li>
+            <li>Columns represent different stages of the workflow</li>
+            <li>Cards represent individual work items</li>
+            <li>Everyone can see the status of all work at a glance</li>
+          </ul>
+          <p>This is like having a live traffic map showing all vehicles on the highway system—where they are, how fast they're moving, and where congestion is building.</p>
+        </li>
+        <li><strong>Limit Work in Progress (WIP)</strong>:
+          <ul>
+            <li>Set explicit limits on how many items can be in each stage simultaneously</li>
+            <li>Prevents overloading the team and context switching</li>
+            <li>Forces focus on completing work before starting new items</li>
+            <li>Identifies bottlenecks in the system</li>
+          </ul>
+          <p>This is like highway ramp metering—controlling how many cars enter the highway at once to prevent gridlock.</p>
+        </li>
+        <li><strong>Manage and Optimize Flow</strong>:
+          <ul>
+            <li>Measure how long it takes for work to move through the system</li>
+            <li>Identify and address bottlenecks</li>
+            <li>Make incremental improvements to the process</li>
+            <li>Aim for smooth, predictable delivery</li>
+          </ul>
+          <p>This is like traffic engineers analyzing traffic patterns and adjusting signal timing to improve flow during peak hours.</p>
+        </li>
+      </ol>
+      
+      <h4>Kanban in Practice</h4>
+      <p>A typical Kanban board might have columns like:</p>
+      <ul>
+        <li>Backlog (work waiting to start)</li>
+        <li>To Do (ready to begin)</li>
+        <li>Design (in progress)</li>
+        <li>Development (in progress)</li>
+        <li>Testing (in progress)</li>
+        <li>Done (completed)</li>
+      </ul>
+      <p>Each column has a WIP limit—for example, only 3 items can be in "Testing" at once. When a column reaches its limit, the team must focus on moving items out before starting new ones.</p>
+      
+      <h4>Kanban Metrics</h4>
+      <ol>
+        <li><strong>Cycle Time</strong>:
+          <ul>
+            <li>Measures how long it takes for a work item to move from "To Do" to "Done"</li>
+            <li>Helps predict delivery timelines</li>
+            <li>Identifies where delays occur in the process</li>
+          </ul>
+          <p>This is like measuring how long it takes a car to travel from point A to point B on the highway.</p>
+        </li>
+        <li><strong>Throughput</strong>:
+          <ul>
+            <li>Measures how many work items are completed in a given time period</li>
+            <li>Indicates the team's delivery capacity</li>
+            <li>Helps with forecasting and planning</li>
+          </ul>
+          <p>This is like measuring how many cars pass a specific point on the highway per hour.</p>
+        </li>
+        <li><strong>Cumulative Flow Diagram</strong>:
+          <ul>
+            <li>Visual representation of work items in each stage over time</li>
+            <li>Shows WIP, arrival rate, and departure rate</li>
+            <li>Helps identify trends and systemic issues</li>
+          </ul>
+          <p>This is like a time-lapse video of traffic flow, showing where congestion builds and dissipates.</p>
+        </li>
+      </ol>
+      
+      <h3>Complementary Frameworks</h3>
+      <p>While Scrum and Kanban are the most widely used Agile frameworks, several complementary methodologies enhance their effectiveness:</p>
+      
+      <h4>Extreme Programming (XP): Engineering Excellence</h4>
+      <p>XP focuses on technical practices that improve software quality and responsiveness to changing requirements. Key practices include:</p>
+      <ol>
+        <li><strong>Test-Driven Development (TDD)</strong>:
+          <ul>
+            <li>Write tests before writing code</li>
+            <li>Ensures code meets requirements</li>
+            <li>Creates safety net for future changes</li>
+          </ul>
+          <p>Like an architect creating detailed blueprints before construction begins.</p>
+        </li>
+        <li><strong>Pair Programming</strong>:
+          <ul>
+            <li>Two developers work together at one computer</li>
+            <li>Driver writes code, navigator reviews and thinks strategically</li>
+            <li>Improves code quality and knowledge sharing</li>
+          </ul>
+          <p>Like two pilots in a cockpit—one flying while the other monitors systems and navigation.</p>
+        </li>
+        <li><strong>Continuous Integration</strong>:
+          <ul>
+            <li>Code is integrated into a shared repository multiple times daily</li>
+            <li>Automated tests verify each integration</li>
+            <li>Catches integration issues early</li>
+          </ul>
+          <p>Like chefs tasting and adjusting a sauce throughout cooking rather than only at the end.</p>
+        </li>
+        <li><strong>Sustainable Pace</strong>:
+          <ul>
+            <li>Teams work at a pace they can maintain indefinitely</li>
+            <li>Avoids burnout and maintains quality</li>
+            <li>Recognizes that overtime reduces productivity</li>
+          </ul>
+          <p>Like marathon runners maintaining a steady pace rather than sprinting and then collapsing.</p>
+        </li>
+      </ol>
+      
+      <h4>Lean: Eliminating Waste</h4>
+      <p>Lean thinking originated in manufacturing (Toyota Production System) but has been widely adopted in software development and other knowledge work. The core principle is eliminating waste (anything that doesn't add value for the customer).</p>
+      <p>The Eight Wastes (adapted from manufacturing to software):</p>
+      <ol>
+        <li><strong>Partially Done Work</strong>: Features started but not completed</li>
+        <li><strong>Extra Processes</strong>: Unnecessary documentation or approval steps</li>
+        <li><strong>Extra Features</strong>: Features that aren't actually needed by customers</li>
+        <li><strong>Task Switching</strong>: Context switching between different types of work</li>
+        <li><strong>Waiting</strong>: Delays between handoffs or for decisions</li>
+        <li><strong>Motion</strong>: Unnecessary movement of information or people</li>
+        <li><strong>Defects</strong>: Bugs and quality issues that require rework</li>
+        <li><strong>Unused Talent</strong>: Not leveraging team members' full skills and creativity</li>
+      </ol>
+      <p>Lean thinking asks: "What value does this activity create for the customer?" If the answer is "none," it's waste and should be eliminated.</p>
+      
+      <h4>DevOps: Integrating Development and Operations</h4>
+      <p>DevOps is not a framework but a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the development lifecycle and provide continuous delivery. Key practices include:</p>
+      <ol>
+        <li><strong>Continuous Integration/Continuous Delivery (CI/CD)</strong>:
+          <ul>
+            <li>Automate the build, test, and deployment process</li>
+            <li>Enable rapid, reliable releases</li>
+            <li>Reduce manual errors and delays</li>
+          </ul>
+          <p>Like an automated assembly line that can produce and ship products on demand.</p>
+        </li>
+        <li><strong>Infrastructure as Code</strong>:
+          <ul>
+            <li>Manage infrastructure through code and automation</li>
+            <li>Enable consistent, repeatable environments</li>
+            <li>Reduce configuration drift</li>
+          </ul>
+          <p>Like having blueprints and automated machinery to build identical factories anywhere in the world.</p>
+        </li>
+        <li><strong>Monitoring and Logging</strong>:
+          <ul>
+            <li>Comprehensive visibility into system performance</li>
+            <li>Proactive identification of issues</li>
+            <li>Data-driven decision making</li>
+          </ul>
+          <p>Like a network of sensors throughout a factory that immediately detect and report any anomalies.</p>
+        </li>
+        <li><strong>Microservices Architecture</strong>:
+          <ul>
+            <li>Structure applications as collections of loosely coupled services</li>
+            <li>Enable independent deployment and scaling</li>
+            <li>Increase resilience and flexibility</li>
+          </ul>
+          <p>Like organizing a factory into specialized workshops that can operate independently but coordinate to produce a final product.</p>
+        </li>
+      </ol>
+      
+      <h3>Choosing the Right Framework</h3>
+      <p>The best Agile framework depends on your specific context:</p>
+      <ul>
+        <li><strong>Scrum works well when</strong>:
+          <ul>
+            <li>Work can be planned in 1-4 week cycles</li>
+            <li>A cross-functional team can deliver value incrementally</li>
+            <li>Regular inspection and adaptation are needed</li>
+            <li>The product direction is evolving</li>
+          </ul>
+        </li>
+        <li><strong>Kanban works well when</strong>:
+          <ul>
+            <li>Work arrives unpredictably</li>
+            <li>Priorities change frequently</li>
+            <li>The team is handling diverse work types</li>
+            <li>Visualizing and optimizing flow is the primary concern</li>
+          </ul>
+        </li>
+        <li><strong>Hybrid approaches work well when</strong>:
+          <ul>
+            <li>The team needs both structure (Scrum) and flow flexibility (Kanban)</li>
+            <li>Different parts of the organization work differently</li>
+            <li>The organization is transitioning to Agile</li>
+            <li>The project has both predictable and uncertain elements</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <div class="card">
+        <div class="card-header">In-Lesson Activity</div>
+        <div class="card-body">
+          <p>Let's apply what we've learned by creating a Kanban board for a marketing campaign and simulating WIP limits.</p>
+          
+          <h4>Scenario:</h4>
+          <p>You're managing a marketing campaign for a new product launch. The campaign includes creating social media content, blog posts, email newsletters, and paid advertisements. Your team consists of a content creator, a graphic designer, a copywriter, and a marketing specialist.</p>
+          
+          <h4>Your Task:</h4>
+          <ol>
+            <li><strong>Design a Kanban Board</strong>:
+              <ul>
+                <li>Create columns that represent the workflow stages for your marketing campaign</li>
+                <li>Consider stages like: Idea, Content Creation, Design, Review, Approval, Scheduled, Published</li>
+                <li>Set WIP limits for each column based on your team's capacity</li>
+              </ul>
+            </li>
+            <li><strong>Populate with Work Items</strong>:
+              <ul>
+                <li>Create at least 10 work items (cards) representing different marketing deliverables</li>
+                <li>Examples: "LinkedIn post about product feature," "Blog post on industry trends," "Email newsletter for launch announcement," etc.</li>
+                <li>Place them in the appropriate starting column (likely "Idea" or "To Do")</li>
+              </ul>
+            </li>
+            <li><strong>Simulate Workflow</strong>:
+              <ul>
+                <li>Move cards through the workflow, respecting WIP limits</li>
+                <li>When a column reaches its WIP limit, you must complete or move an item out before adding a new one</li>
+                <li>Note where bottlenecks occur and how they affect the overall flow</li>
+              </ul>
+            </li>
+            <li><strong>Reflect and Optimize</strong>:
+              <ul>
+                <li>After running the simulation for several "days," identify:
+                  <ul>
+                    <li>Where did bottlenecks form?</li>
+                    <li>How did WIP limits help or hinder progress?</li>
+                    <li>What adjustments would you make to improve flow?</li>
+                    <li>How does this approach compare to how you might have managed this campaign traditionally?</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <p>Take 20 minutes to complete this activity before continuing. You can use physical sticky notes, a whiteboard, or a digital tool like Trello or Miro.</p>
+        </div>
+      </div>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>The most effective Agile practitioners understand that frameworks like Scrum and Kanban are not rigid prescriptions but flexible tools to be adapted to your specific context—combining their strengths with complementary practices like XP, Lean, and DevOps to create a tailored approach that optimizes value delivery.</p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
