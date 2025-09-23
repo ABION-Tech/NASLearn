@@ -53,7 +53,7 @@
         }
     </style>
 </head>
-
+<!--
 <body>
 
     <div class="container">
@@ -95,6 +95,125 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-</body>
+</body> -->
+
+
+
+
+
+
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Marketing Measurement and Analytics</h1>
+    </div>
+    
+    <div class="module-content">
+
+      <!-- Day 2 -->
+      <h2>GA4 Implementation & Core Reporting</h2>
+      <h3>Lecture Title</h3>
+      <p>"GA4 Mastery: Building Your Analytics Engine for Cross-Platform Insights"</p>
+      
+      <h3>Learning Objective</h3>
+      <p>After this lecture, students will be able to architect a GA4 implementation that captures meaningful customer interactions across platforms and configure reports that reveal actionable growth opportunities.</p>
+      
+      <h3>Why This Matters</h3>
+      <p>With 86% of marketers using Google Analytics as their primary analytics tool (HubSpot, 2023), GA4 proficiency is non-negotiable. Companies with advanced GA4 implementations identify customer behavior patterns 3x faster than competitors, leading to quicker optimization cycles and 15-30% higher conversion rates.</p>
+      
+      <h3>Core Content</h3>
+      <h4>The GA4 Paradigm Shift: Event-Based Intelligence</h4>
+      <p>GA4 represents a fundamental reimagining of analytics measurement. Understand these architectural differences:</p>
+      <div class="card">
+        <div class="card-header">
+          Universal Analytics (Legacy)
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Session-based measurement</li>
+            <li>Hit types (pageview, event, transaction)</li>
+            <li>Cookie-dependent user tracking</li>
+            <li>Limited cross-device capabilities</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Google Analytics 4 (Future-Proof)
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Event-based measurement (everything is an event)</li>
+            <li>Flexible parameter system</li>
+            <li>Multiple identity signals (device ID, user ID, modeling)</li>
+            <li>Unified web/app measurement</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h4>Event Architecture: Building Your Measurement Foundation</h4>
+      <p>Events in GA4 are like LEGO blocks—you combine them to build complete customer behavior pictures. Master this hierarchy:</p>
+      <ol>
+        <li><strong>Automatically Collected</strong> (page_view, session_start)</li>
+        <li><strong>Enhanced Measurement</strong> (scroll, file_download, video_start)</li>
+        <li><strong>Recommended Events</strong> (login, purchase, add_to_cart)</li>
+        <li><strong>Custom Events</strong> (business-specific interactions)</li>
+      </ol>
+      
+      <p><strong>Parameter Strategy</strong><br>
+      Parameters add context to events. Implement this structure:</p>
+      <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; font-family: monospace;">Event: "content_engagement"
+Parameters:
+- content_type: "blog_post" | "video" | "infographic"
+- content_id: "post_12345"
+- engagement_depth: "full_read" | "partial"
+- time_spent: 185 (seconds)</pre>
+      
+      <h4>Conversion Configuration: From Events to Business Value</h4>
+      <p>Conversions in GA4 are simply marked events. Implement this strategic approach:</p>
+      <ul>
+        <li><strong>Revenue-Generating</strong>: purchase, subscription_start, upgrade</li>
+        <li><strong>Lead Generation</strong>: form_submit, demo_request, trial_start</li>
+        <li><strong>Engagement Milestones</strong>: account_creation, profile_completion, content_download</li>
+      </ul>
+      
+      <h4>GA4 Account Architecture for Scale</h4>
+      <p>Structure your GA4 implementation for enterprise-grade insights:</p>
+      <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px; font-family: monospace;">Account: Global Brand Inc.
+├── Property: North America (Web + App)
+│   ├── Data Stream: Website
+│   ├── Data Stream: iOS App
+│   └── Data Stream: Android App
+├── Property: EMEA (Web + App)
+└── Property: APAC (Web + App)</pre>
+      
+      <h4>Advanced Reporting: Beyond Standard Views</h4>
+      <p>GA4's standard reports provide starting points, but true insights come from custom exploration:</p>
+      <ul>
+        <li><strong>Funnel Exploration</strong>: Map conversion paths and identify drop-off points</li>
+        <li><strong>Path Exploration</strong>: Visualize common navigation sequences</li>
+        <li><strong>Segment Overlap</strong>: Compare audience behaviors</li>
+        <li><strong>Cohort Analysis</strong>: Track group behaviors over time</li>
+      </ul>
+      
+      <h3>In-Lesson Activity</h3>
+      <p><strong>GA4 Implementation Simulation</strong><br>
+      <em>Scenario</em>: You're implementing GA4 for a meal kit delivery service with both website and mobile app.<br>
+      <em>Your Task</em>:
+      <ol>
+        <li>Design the event architecture for key interactions (recipe browsing, meal plan selection, checkout, etc.)</li>
+        <li>Configure 3 conversions with business justification</li>
+        <li>Map the account structure for US and Canada operations</li>
+        <li>Create an exploration plan to answer: "Which recipe categories drive the highest customer lifetime value?"</li>
+      </ol>
+      <em>Deliverable</em>: A GA4 implementation document with event schema, conversion definitions, and exploration strategy.</p>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>GA4's event-based architecture and cross-platform capabilities provide a unified view of customer behavior—when implemented strategically, it transforms raw interactions into actionable insights that drive business growth.</p>
+      </div>
+      </body>
 
 </html>
