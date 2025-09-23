@@ -48,7 +48,7 @@
         }
     </style>
 </head>
-
+<!--
 <body>
 
     <div class="container">
@@ -80,5 +80,164 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
+-->
+
+      <!-- Day 3 -->
+      <h2>The Customer Journey & Attribution</h2>
+      <h3>Lecture Title</h3>
+      <p>"Decoding the Conversion Path: Multi-Touch Attribution and Customer Value Optimization"</p>
+      
+      <h3>Learning Objective</h3>
+      <p>After this lecture, students will be able to map complex customer journeys, evaluate attribution models across different business contexts, and optimize marketing investments based on customer lifetime value.</p>
+      
+      <h3>Why This Matters</h3>
+      <p>The average B2B customer journey now involves 27 touchpoints across 13 channels (Forrester, 2023). Companies that master attribution modeling see 15-35% improvements in marketing ROI by accurately valuing each touchpoint. Without this understanding, marketers consistently over-invest in last-click channels while undervaluing critical awareness-building activities.</p>
+      
+      <h3>Core Content</h3>
+      <h4>The Modern Customer Journey: A Network of Influence</h4>
+      <p>Today's customer journeys resemble neural networks more than linear paths. Map these journey patterns:</p>
+      <ul>
+        <li><strong>Linear Pathway</strong>: Sequential touchpoints (common for low-consideration products)</li>
+        <li><strong>Branching Path</strong>: Multiple decision branches (common for complex B2B sales)</li>
+        <li><strong>Cyclical Journey</strong>: Repeated engagement before conversion (common for high-value purchases)</li>
+        <li><strong>Network Effect</strong>: Peer-influenced decisions (common in social products)</li>
+      </ul>
+      
+      <h4>Attribution Modeling: Valuing the Touchpoint Ecosystem</h4>
+      <p>Attribution models assign credit to touchpoints—choose based on business context:</p>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Best For</th>
+            <th>Limitations</th>
+            <th>Example Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Last Click</strong></td>
+            <td>Direct response campaigns with short cycles</td>
+            <td>Undervalues awareness activities</td>
+            <td>E-commerce flash sales</td>
+          </tr>
+          <tr>
+            <td><strong>First Click</strong></td>
+            <td>Brand-building campaigns</td>
+            <td>Ignores nurturing efforts</td>
+            <td>New product launches</td>
+          </tr>
+          <tr>
+            <td><strong>Linear</strong></td>
+            <td>Long-cycle B2B with equal touchpoint value</td>
+            <td>Doesn't reflect varying influence</td>
+            <td>Enterprise software sales</td>
+          </tr>
+          <tr>
+            <td><strong>Time Decay</strong></td>
+            <td>Journeys with clear recency patterns</td>
+            <td>May undervalue initial research</td>
+            <td>Travel booking sites</td>
+          </tr>
+          <tr>
+            <td><strong>Position-Based</strong></td>
+            <td>Journeys with distinct start/end importance</td>
+            <td>Arbitrary 40/40/20 split</td>
+            <td>Lead generation funnels</td>
+          </tr>
+          <tr>
+            <td><strong>Data-Driven</strong></td>
+            <td>Complex, high-volume journeys</td>
+            <td>Requires significant data</td>
+            <td>SaaS with 10k+ conversions/month</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h4>Channel Effectiveness Analysis: Beyond Surface Metrics</h4>
+      <p>Evaluate channels using this multi-dimensional framework:</p>
+      <ul>
+        <li><strong>Role Analysis</strong>: Initiators (social, display), Nurturers (content, email), Closers (search, direct)</li>
+        <li><strong>Efficiency Metrics</strong>: Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS), Payback Period</li>
+        <li><strong>Quality Indicators</strong>: Lead-to-customer conversion rate, Customer lifetime value (LTV), Retention rate by acquisition channel</li>
+      </ul>
+      
+      <h4>Customer Lifetime Value (LTV): The Ultimate Metric</h4>
+      <p>LTV shifts focus from transactional to relational marketing. Calculate using this progressive approach:</p>
+      <div class="card">
+        <div class="card-header">
+          LTV Calculation Tiers
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Basic LTV</strong>:<br>
+            LTV = Average Order Value × Purchase Frequency × Customer Lifespan<br>
+            <em>Example</em>: $75 × 4×/year × 3 years = $900</li>
+            <li><strong>Gross Margin LTV</strong>:<br>
+            LTV = (AOV × Purchase Frequency × Gross Margin %) × Lifespan<br>
+            <em>Example</em>: ($75 × 4 × 40%) × 3 = $360</li>
+            <li><strong>Predictive LTV</strong>:<br>
+            Incorporate retention probability and discount rate:<br>
+            LTV = (Margin × Retention Rate) / (1 + Discount Rate - Retention Rate)</li>
+          </ol>
+        </div>
+      </div>
+      
+      <h3>In-Lesson Activity</h3>
+      <p><strong>Journey Analysis & Budget Optimization</strong><br>
+      <em>Scenario</em>: You're analyzing a B2B cybersecurity company with these journey patterns:<br>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Journey Path</th>
+            <th>Frequency</th>
+            <th>Conversion Rate</th>
+            <th>Avg. Deal Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Organic Search → Whitepaper → Demo → Close</td>
+            <td>35%</td>
+            <td>12%</td>
+            <td>$25,000</td>
+          </tr>
+          <tr>
+            <td>LinkedIn Ad → Webinar → Demo → Close</td>
+            <td>25%</td>
+            <td>18%</td>
+            <td>$30,000</td>
+          </tr>
+          <tr>
+            <td>Trade Show → Meeting → Proposal → Close</td>
+            <td>15%</td>
+            <td>25%</td>
+            <td>$50,000</td>
+          </tr>
+          <tr>
+            <td>Direct Visit → Demo → Close</td>
+            <td>25%</td>
+            <td>8%</td>
+            <td>$20,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <em>Current Budget Allocation</em>: SEO/Content: $15k/month, LinkedIn Ads: $20k/month, Trade Shows: $30k/month, Direct Sales: $10k/month<br>
+      <em>Your Task</em>:
+      <ol>
+        <li>Calculate the ROI of each journey path using different attribution models</li>
+        <li>Recommend a reallocated budget based on last-click, position-based, and your recommended model</li>
+        <li>Estimate the impact of your changes on total monthly pipeline</li>
+      </ol>
+      <em>Deliverable</em>: A budget optimization plan with attribution analysis and projected outcomes.</p>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Effective attribution and LTV analysis reveal the true economics of customer acquisition—enabling marketers to optimize not just for conversions, but for profitable, long-term customer relationships.</p>
+      </div>
+      </body>
+
+
+
 
 </html>
