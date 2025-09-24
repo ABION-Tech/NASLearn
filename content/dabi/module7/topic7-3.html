@@ -4,178 +4,618 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Learning with Python</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-        background-color: #ffffff;
-        color: #000000;
-        font-family: Arial, sans-serif;
-    }
-
-    h1,
-    h2,
-    h3 {
-        color: #007BFF;
-        /* Blue accent */
-    }
-
-    .content-container {
-        margin: 50px auto;
-        max-width: 900px;
-    }
-
-    .custom-section {
-        margin-bottom: 40px;
-    }
-
-    .custom-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .custom-section ul {
-        margin-left: 20px;
-    }
-
-    .custom-section ul li {
-        margin-bottom: 10px;
-    }
-
-    blockquote {
-        font-size: 1.1em;
-        padding: 15px;
-        border-left: 5px solid #007BFF;
-        background-color: #f8f9fa;
-    }
-
-    /* Video container to hold everything */
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 100px;
-    }
-
-    /* Gradient border container */
-    .gradient-border {
-        padding: 5px;
-        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-        border-radius: 10px;
-    }
-
-    /* Video or content inside the border */
-    .video-content {
-        border-radius: 10px;
-        display: block;
-    }
-
-    .video-links {
-        color: grey;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    /* Ensure responsive width and height for the video */
-    iframe {
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-    }
-
-    /* Responsiveness */
-    @media (min-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 450px;
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
-    }
 
-    @media (max-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 350px;
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    }
 
-    @media (max-width: 768px) {
-        iframe {
-            width: 500px;
-            height: 200px;
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
         }
-    }
 
-    /* For mobile screens, to avoid the box-like appearance */
-    @media (max-width: 360px) {
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
         .video-content {
-            width: 280px;
-            /* Take full width */
-            height: 200px;
-            /* Adjust height to give a more rectangular shape */
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
         }
 
         /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 256px) {
+        @media (max-width: 360px) {
             .video-content {
-                width: 1080px;
+                width: 280px;
                 /* Take full width */
-                height: 300px;
+                height: 200px;
                 /* Adjust height to give a more rectangular shape */
             }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
-    }
-</style>
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
 
 <body>
-    <header>
-        <h1>Machine Learning with Python</h1>
-    </header>
-
-    <main>
-        <section id="data-preparation">
-            <h2>Data Preparation and Preprocessing</h2>
-            <ul>
-                <li><strong>Feature Engineering:</strong>
-                    <ul>
-                        <li>Feature Scaling</li>
-                        <li>Encoding Categorical Variables</li>
-                    </ul>
-                </li>
-                <li><strong>Handling Missing Data:</strong>
-                    <ul>
-                        <li>Imputation Techniques: Mean, Median, Mode</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <section id="model-evaluation">
-            <h2>Model Evaluation and Validation</h2>
-            <ul>
-                <li><strong>Cross-Validation:</strong>
-                    <ul>
-                        <li>K-Fold Cross-Validation</li>
-                        <li>Stratified Cross-Validation</li>
-                    </ul>
-                </li>
-                <li><strong>Overfitting and Underfitting:</strong>
-                    <ul>
-                        <li>Techniques to Mitigate Overfitting (e.g., Regularization)</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p><strong>Hands-On Practice:</strong> Preprocess data for machine learning tasks, including feature
-                engineering and handling missing values. Implement cross-validation techniques to assess model
-                performance and optimize hyperparameters.</p>
-        </section>
-    </main>
-
+  <div class="container">
+    <div class="header">
+      <h1>Statistical Analysis & Hypothesis Testing: Making Data-Driven Business Decisions</h1>
+    </div>
+    
+    <div class="module-content">
+      <h2>Learning Objective</h2>
+      <p>After completing this lecture, you will be able to apply statistical analysis and hypothesis testing techniques to evaluate business scenarios, interpret statistical significance, and make data-driven decisions.</p>
+      
+      <h2>Why This Matters</h2>
+      <p>In today's competitive business landscape, decisions based on gut feeling or anecdotal evidence can lead to costly mistakes. Companies like Amazon, Google, and Microsoft rely on statistical analysis to validate business strategies, optimize marketing campaigns, and improve product features. Understanding these statistical concepts empowers you to separate meaningful patterns from random noise and make decisions that drive measurable business results.</p>
+      
+      <h2>Core Content</h2>
+      
+      <h3>1. Descriptive/Inferential Statistics</h3>
+      
+      <h4>Distributions, Central Tendency, and Variance</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Understanding Data Distributions
+        </div>
+        <div class="card-body">
+          <p>Imagine you're analyzing customer purchase amounts at your e-commerce store. Some customers spend very little, some spend moderately, and a few spend a lot. When you plot these amounts, they form a pattern called a distribution.</p>
+          <p>The most common distribution is the normal distribution (bell curve), where most values cluster around the center, and fewer values appear at the extremes. Think of heights in a population - most people are of average height, with fewer very short or very tall people.</p>
+          <p>Other important distributions include:</p>
+          <ul>
+            <li><strong>Skewed distributions</strong>: Where data piles up on one side (like income distribution, where most people earn below average with a few high earners)</li>
+            <li><strong>Uniform distributions</strong>: Where all values are equally likely (like rolling a fair die)</li>
+            <li><strong>Bimodal distributions</strong>: With two peaks (like customer ages that peak for both young adults and seniors)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Measures of Central Tendency
+        </div>
+        <div class="card-body">
+          <p>Central tendency tells us where the "center" of our data lies. The three main measures are:</p>
+          <ol>
+            <li><strong>Mean</strong>: The arithmetic average. Add all values and divide by the count.
+              <ul>
+                <li><em>Business example</em>: Average order value in your online store</li>
+                <li><em>Limitation</em>: Sensitive to extreme values (outliers)</li>
+              </ul>
+            </li>
+            <li><strong>Median</strong>: The middle value when data is ordered.
+              <ul>
+                <li><em>Business example</em>: Median household income in a target market</li>
+                <li><em>Advantage</em>: Not affected by extreme values</li>
+              </ul>
+            </li>
+            <li><strong>Mode</strong>: The most frequently occurring value.
+              <ul>
+                <li><em>Business example</em>: Most common product category purchased</li>
+                <li><em>Use case</em>: Useful for categorical data or identifying popular items</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Understanding Variability
+        </div>
+        <div class="card-body">
+          <p>Variability measures how spread out your data points are. Two datasets can have the same mean but very different spreads.</p>
+          <ol>
+            <li><strong>Range</strong>: The difference between the highest and lowest values.
+              <ul>
+                <li><em>Business example</em>: The gap between your highest and lowest priced products</li>
+              </ul>
+            </li>
+            <li><strong>Variance</strong>: The average of squared differences from the mean.
+              <ul>
+                <li><em>Business example</em>: Variability in daily sales figures</li>
+              </ul>
+            </li>
+            <li><strong>Standard Deviation</strong>: The square root of variance, in the same units as the data.
+              <ul>
+                <li><em>Business example</em>: How much customer satisfaction scores typically deviate from the average</li>
+                <li><em>Rule of thumb</em>: In a normal distribution, about 68% of values fall within one standard deviation of the mean</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A retail manager analyzing customer spending patterns might find that while the average purchase is $75 (mean), the median is $65, indicating that a few high-value purchases are pulling the average up. The standard deviation of $25 suggests most purchases fall between $50 and $100. This insight could inform pricing strategies and promotional offers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Correlation Matrices, Covariance, and P-values</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Understanding Relationships Between Variables
+        </div>
+        <div class="card-body">
+          <p>In business, we often want to know how different factors relate to each other. Does advertising spend correlate with sales? Does customer satisfaction correlate with repeat purchases?</p>
+          <p><strong>Covariance</strong> measures how two variables change together:</p>
+          <ul>
+            <li>Positive covariance: When one variable increases, the other tends to increase</li>
+            <li>Negative covariance: When one variable increases, the other tends to decrease</li>
+            <li><em>Business example</em>: The relationship between marketing spend and revenue</li>
+          </ul>
+          <p><strong>Correlation</strong> standardizes covariance to a range of -1 to 1, making it easier to interpret:</p>
+          <ul>
+            <li>1: Perfect positive correlation (as one increases, the other increases proportionally)</li>
+            <li>0: No correlation</li>
+            <li>-1: Perfect negative correlation (as one increases, the other decreases proportionally)</li>
+            <li><em>Business example</em>: The correlation between customer service wait times and satisfaction scores</li>
+          </ul>
+          <p><strong>Correlation Matrices</strong> display correlations between multiple variables in a table format, making it easy to identify relationships at a glance.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Understanding Statistical Significance with P-values
+        </div>
+        <div class="card-body">
+          <p>When we observe a relationship in our data, we need to determine if it's statistically significant or if it could have occurred by random chance. This is where p-values come in.</p>
+          <p>A p-value represents the probability of observing your results (or more extreme results) if there were actually no relationship (the null hypothesis).</p>
+          <ul>
+            <li>Low p-value (typically < 0.05): Suggests the observed relationship is unlikely to be due to chance</li>
+            <li>High p-value: Suggests the observed relationship could easily be due to random variation</li>
+          </ul>
+          <p><em>Analogy</em>: Imagine you're testing a new fertilizer. If plants with the fertilizer grow taller, the p-value tells you how likely it is that you'd see this difference just by chance, even if the fertilizer had no effect.</p>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A marketing team might analyze the correlation between advertising spend across different channels and sales revenue. They might find a strong positive correlation between social media ads and sales (correlation = 0.7) with a low p-value (0.01), suggesting that increasing social media advertising is likely to increase sales. However, they might find no significant correlation between print ads and sales (high p-value), indicating that reallocating budget from print to social media could improve ROI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>2. Hypothesis Testing</h3>
+      
+      <h4>T-tests, ANOVA, and Chi-square Tests for Business Decisions</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          The Framework of Hypothesis Testing
+        </div>
+        <div class="card-body">
+          <p>Hypothesis testing is a structured method for making decisions using data. It helps answer questions like:</p>
+          <ul>
+            <li>Does our new website design increase conversion rates?</li>
+            <li>Is there a difference in customer satisfaction between our two store locations?</li>
+            <li>Does a new training program improve employee productivity?</li>
+          </ul>
+          <p>The process involves:</p>
+          <ol>
+            <li>Formulating a null hypothesis (H₀) - the default position that there's no effect or difference</li>
+            <li>Formulating an alternative hypothesis (H₁) - the position we're trying to prove</li>
+            <li>Collecting and analyzing data</li>
+            <li>Determining if the evidence is strong enough to reject the null hypothesis</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          T-tests: Comparing Means
+        </div>
+        <div class="card-body">
+          <p>T-tests compare the means of two groups to determine if they're statistically different from each other.</p>
+          <p><em>Types of t-tests:</em></p>
+          <ul>
+            <li><strong>Independent samples t-test</strong>: Compares means from two separate groups
+              <ul>
+                <li><em>Business example</em>: Comparing average sales between two different store locations</li>
+              </ul>
+            </li>
+            <li><strong>Paired t-test</strong>: Compares means from the same group at different times
+              <ul>
+                <li><em>Business example</em>: Comparing employee productivity before and after a training program</li>
+              </ul>
+            </li>
+          </ul>
+          <p><em>Business case</em>: A retail chain wants to know if a new store layout increases sales. They implement the layout in half their stores (test group) and keep the old layout in the other half (control group). After a month, they use an independent t-test to compare average sales between the two groups.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          ANOVA: Comparing Multiple Groups
+        </div>
+        <div class="card-body">
+          <p>When you want to compare means across three or more groups, Analysis of Variance (ANOVA) is the appropriate test.</p>
+          <p><em>Business example</em>: A company wants to test four different marketing messages to see which generates the most website clicks. They randomly assign each message to equal groups of customers and use ANOVA to determine if there's a statistically significant difference in click-through rates between the messages.</p>
+          <p><em>Key insight</em>: ANOVA tells you if at least one group differs from the others, but not which specific groups differ. Follow-up tests are needed to identify the specific differences.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Chi-square Tests: Analyzing Categorical Data
+        </div>
+        <div class="card-body">
+          <p>Chi-square tests examine relationships between categorical variables (data that falls into categories, not numerical ranges).</p>
+          <p><em>Business example</em>: A hotel chain wants to know if customer satisfaction (satisfied/neutral/dissatisfied) is independent of the hotel location (downtown/airport/suburban). A chi-square test can determine if there's a statistically significant association between these categorical variables.</p>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A software company wants to determine if their new user interface increases user engagement. They randomly assign half their users to the new interface (test group) and half to the old interface (control group). After two weeks, they measure the average session duration for each group.</p>
+              <ul>
+                <li>Null hypothesis (H₀): There is no difference in average session duration between the two interfaces</li>
+                <li>Alternative hypothesis (H₁): The new interface results in longer average session duration</li>
+              </ul>
+              <p>Using a t-test, they find a statistically significant difference (p-value < 0.05) with the new interface showing longer sessions. This gives them confidence to roll out the new interface to all users.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Confidence Intervals and Statistical Significance</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Understanding Confidence Intervals
+        </div>
+        <div class="card-body">
+          <p>A confidence interval provides a range of values that likely contains the true population parameter. It's more informative than a single point estimate because it accounts for sampling variability.</p>
+          <p><em>Analogy</em>: If you're estimating the average height of all adult men in a country, you can't measure everyone. Instead, you take a sample and calculate a confidence interval (e.g., 175-178 cm with 95% confidence). This means that if you repeated this sampling process many times, 95% of the intervals would contain the true average height.</p>
+          <p>The confidence level (typically 95%) indicates how confident we are that the interval contains the true parameter.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Statistical Significance vs. Practical Significance
+        </div>
+        <div class="card-body">
+          <p>Statistical significance tells us whether an effect is likely real (not due to chance). Practical significance tells us whether the effect is large enough to matter in the real world.</p>
+          <p><em>Business example</em>: A large retailer tests a new checkout process and finds it reduces checkout time by 0.5 seconds on average. With a sample size of 100,000 transactions, this difference is statistically significant (p-value < 0.05). However, is a half-second improvement meaningful to customers or the business? That's a question of practical significance.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Avoiding Common Misinterpretations
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>P-value is not the probability that the null hypothesis is true</strong>: It's the probability of observing your data (or more extreme) if the null hypothesis were true.</li>
+            <li><strong>Statistical significance doesn't prove causation</strong>: It only suggests an association. Other factors might be involved.</li>
+            <li><strong>Lack of statistical significance doesn't prove no effect</strong>: It might mean your sample size was too small to detect a real effect.</li>
+          </ol>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A pharmaceutical company is testing a new drug to lower blood pressure. In their clinical trial, they find the drug lowers blood pressure by an average of 5 mmHg with a 95% confidence interval of 3-7 mmHg. This means they're 95% confident that the true effect of the drug is a reduction of between 3 and 7 mmHg.</p>
+              <p>Since the entire interval is above zero (no effect), the result is statistically significant. They must then determine if a 3-7 mmHg reduction is practically significant enough to bring the drug to market, considering factors like side effects, production costs, and existing treatments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>3. Regression Foundations</h3>
+      
+      <h4>Linear Regression with Statsmodels</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Understanding Linear Regression
+        </div>
+        <div class="card-body">
+          <p>Linear regression models the relationship between a dependent variable (the outcome we're interested in) and one or more independent variables (factors that might influence the outcome).</p>
+          <p><em>Analogy</em>: Imagine you're trying to predict house prices. You might find that for every additional square foot, the price increases by a certain amount. Linear regression quantifies this relationship.</p>
+          <p>The basic form of a simple linear regression is:</p>
+          <p style="font-family: monospace; background-color: #f5f5f5; padding: 5px; border-radius: 3px;">Y = a + bX + ε</p>
+          <p>Where:</p>
+          <ul>
+            <li>Y is the dependent variable (what we're trying to predict)</li>
+            <li>X is the independent variable (the predictor)</li>
+            <li>a is the intercept (value of Y when X is zero)</li>
+            <li>b is the slope (how much Y changes for each unit change in X)</li>
+            <li>ε is the error term (variation not explained by the model)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Interpreting Regression Coefficients
+        </div>
+        <div class="card-body">
+          <p>The coefficients in a regression model tell us about the relationship between variables:</p>
+          <ul>
+            <li><strong>Intercept (a)</strong>: The expected value of Y when all X variables are zero</li>
+            <li><strong>Slope (b)</strong>: The expected change in Y for a one-unit increase in X, holding all other variables constant</li>
+          </ul>
+          <p><em>Business example</em>: A regression model predicting monthly sales based on advertising spend might yield:</p>
+          <p style="font-family: monospace; background-color: #f5f5f5; padding: 5px; border-radius: 3px;">Sales = 10,000 + 5.5 × Advertising_Spend</p>
+          <p>This means:</p>
+          <ul>
+            <li>With no advertising spend, expected sales are $10,000</li>
+            <li>For each additional $1,000 in advertising spend, sales increase by $5,500</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Understanding R-squared
+        </div>
+        <div class="card-body">
+          <p>R-squared (R²) measures how much of the variation in the dependent variable is explained by the independent variables.</p>
+          <ul>
+            <li>R² ranges from 0 to 1 (or 0% to 100%)</li>
+            <li>Higher R² indicates a better fit</li>
+            <li><em>Business example</em>: An R² of 0.75 means that 75% of the variation in sales can be explained by the variables in the model</li>
+          </ul>
+          <p>However, a high R² doesn't necessarily mean the model is good or useful. It's important to consider:</p>
+          <ul>
+            <li>The context of the analysis</li>
+            <li>The complexity of the model</li>
+            <li>Whether the model makes logical sense</li>
+          </ul>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A subscription-based streaming service wants to understand factors affecting customer churn. They build a regression model with churn as the dependent variable and factors like:</p>
+              <ul>
+                <li>Monthly subscription price</li>
+                <li>Number of content hours watched per month</li>
+                <li>Customer service interactions</li>
+                <li>Account tenure</li>
+              </ul>
+              <p>The model might reveal that:</p>
+              <ul>
+                <li>Each $1 increase in subscription price increases churn probability by 0.2%</li>
+                <li>Each additional hour of content watched per month decreases churn probability by 0.5%</li>
+                <li>Each customer service interaction increases churn probability by 1.2%</li>
+                <li>Each additional month of account tenure decreases churn probability by 0.3%</li>
+              </ul>
+              <p>With an R² of 0.65, the model explains 65% of the variation in churn. This information helps the company focus on content production and customer service to reduce churn, while informing pricing strategy decisions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>4. Hands-On: Testing Website Redesign Impact on Conversion Rates</h3>
+      
+      <div class="card">
+        <div class="card-header">
+          Scenario
+        </div>
+        <div class="card-body">
+          <p>An e-commerce company has redesigned their product page to improve user experience and increase conversion rates. Before implementing the change sitewide, they conducted an A/B test where:</p>
+          <ul>
+            <li>Group A (control): 5,000 users saw the original design</li>
+            <li>Group B (test): 5,000 users saw the redesigned page</li>
+          </ul>
+          <p>After the test period, they collected data on conversions (purchases).</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 1: Formulating Hypotheses
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Null Hypothesis (H₀)</strong>: The redesign has no effect on conversion rates (both designs have the same conversion rate)</li>
+            <li><strong>Alternative Hypothesis (H₁)</strong>: The redesign increases conversion rates</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 2: Collecting and Summarizing Data
+        </div>
+        <div class="card-body">
+          <p>The company collected the following results:</p>
+          <ul>
+            <li>Group A (original): 200 conversions out of 5,000 visits (4% conversion rate)</li>
+            <li>Group B (redesign): 250 conversions out of 5,000 visits (5% conversion rate)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 3: Choosing the Right Statistical Test
+        </div>
+        <div class="card-body">
+          <p>Since we're comparing proportions (conversion rates) between two independent groups, a two-proportion z-test is appropriate. This test will determine if the observed difference in conversion rates is statistically significant.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 4: Analyzing the Results
+        </div>
+        <div class="card-body">
+          <p>The statistical analysis yields:</p>
+          <ul>
+            <li>Difference in conversion rates: 1% (5% - 4%)</li>
+            <li>P-value: 0.03</li>
+            <li>95% Confidence Interval for the difference: 0.1% to 1.9%</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 5: Interpreting the Results
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Statistical Significance</strong>: With a p-value of 0.03 (less than 0.05), we reject the null hypothesis. This suggests the observed difference in conversion rates is unlikely to be due to random chance.</li>
+            <li><strong>Practical Significance</strong>: The 95% confidence interval (0.1% to 1.9%) tells us that we're 95% confident the true improvement in conversion rate from the redesign is between 0.1% and 1.9%.</li>
+            <li><strong>Business Impact</strong>: For a website with 1 million monthly visitors, this improvement translates to:
+              <ul>
+                <li>Minimum expected additional conversions: 1,000 (1,000,000 × 0.1%)</li>
+                <li>Maximum expected additional conversions: 19,000 (1,000,000 × 1.9%)</li>
+                <li>With an average order value of $50, this represents potential additional revenue of $50,000 to $950,000 monthly</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 6: Making a Business Decision
+        </div>
+        <div class="card-body">
+          <p>Based on this analysis, the company decides to:</p>
+          <ol>
+            <li>Implement the redesigned product page sitewide</li>
+            <li>Continue monitoring conversion rates to ensure the improvement persists</li>
+            <li>Consider further A/B tests to optimize other elements of the page</li>
+          </ol>
+          <p><strong>Key Considerations:</strong></p>
+          <ul>
+            <li><strong>Sample Size</strong>: With 5,000 users per group, the test had sufficient power to detect meaningful differences</li>
+            <li><strong>External Factors</strong>: The company ensured no major marketing campaigns or external events occurred during the test that could skew results</li>
+            <li><strong>Segment Analysis</strong>: They also examined results by customer segment and found the improvement was consistent across segments</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          In-Lesson Activity
+        </div>
+        <div class="card-body">
+          <p>Imagine you're a marketing analyst at a subscription box company. The company is considering changing their pricing from $19.99 to $24.99 per month. Before implementing this change, they conducted a test with two groups:</p>
+          <ul>
+            <li>Group A (current price): 1,000 visitors, 80 subscriptions (8% conversion rate)</li>
+            <li>Group B (higher price): 1,000 visitors, 60 subscriptions (6% conversion rate)</li>
+          </ul>
+          <p>Your task is to:</p>
+          <ol>
+            <li>Formulate the null and alternative hypotheses for this test</li>
+            <li>Calculate the difference in conversion rates</li>
+            <li>Discuss what statistical test would be appropriate and why</li>
+            <li>Consider the business implications: If the higher price results in fewer conversions but more revenue per customer, what factors would you consider in making a recommendation?</li>
+          </ol>
+          <p>Take 10 minutes to work through this scenario, then reflect on how statistical analysis helps balance short-term conversion metrics with long-term business value.</p>
+        </div>
+      </div>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Statistical analysis and hypothesis testing provide a structured framework for making data-driven business decisions. By understanding distributions, relationships between variables, and how to test for statistical significance, you can move beyond intuition and make decisions based on evidence. Remember that statistical significance doesn't always equal practical significance—consider the business context and potential impact when interpreting results. The goal isn't just to find statistically significant results, but to generate actionable insights that drive business value.</p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

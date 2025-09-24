@@ -4,183 +4,759 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Learning Basics</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<style>
-    body {
-        background-color: #ffffff;
-        color: #000000;
-        font-family: Arial, sans-serif;
-    }
-
-    h1,
-    h2,
-    h3 {
-        color: #007BFF;
-        /* Blue accent */
-    }
-
-    .content-container {
-        margin: 50px auto;
-        max-width: 900px;
-    }
-
-    .custom-section {
-        margin-bottom: 40px;
-    }
-
-    .custom-section p {
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .custom-section ul {
-        margin-left: 20px;
-    }
-
-    .custom-section ul li {
-        margin-bottom: 10px;
-    }
-
-    blockquote {
-        font-size: 1.1em;
-        padding: 15px;
-        border-left: 5px solid #007BFF;
-        background-color: #f8f9fa;
-    }
-
-    /* Video container to hold everything */
-    .video-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 100px;
-    }
-
-    /* Gradient border container */
-    .gradient-border {
-        padding: 5px;
-        background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
-        border-radius: 10px;
-    }
-
-    /* Video or content inside the border */
-    .video-content {
-        border-radius: 10px;
-        display: block;
-    }
-
-    .video-links {
-        color: grey;
-        font-size: 0.8rem;
-        text-align: center;
-        margin-top: 5px;
-    }
-
-    /* Ensure responsive width and height for the video */
-    iframe {
-        width: 100%;
-        height: 400px;
-        border-radius: 10px;
-    }
-
-    /* Responsiveness */
-    @media (min-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 450px;
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
-    }
 
-    @media (max-width: 1200px) {
-        iframe {
-            width: 800px;
-            height: 350px;
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    }
 
-    @media (max-width: 768px) {
-        iframe {
-            width: 500px;
-            height: 200px;
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
         }
-    }
 
-    /* For mobile screens, to avoid the box-like appearance */
-    @media (max-width: 360px) {
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
         .video-content {
-            width: 280px;
-            /* Take full width */
-            height: 200px;
-            /* Adjust height to give a more rectangular shape */
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
         }
 
         /* For mobile screens, to avoid the box-like appearance */
-        @media (max-width: 256px) {
+        @media (max-width: 360px) {
             .video-content {
-                width: 1080px;
+                width: 280px;
                 /* Take full width */
-                height: 300px;
+                height: 200px;
                 /* Adjust height to give a more rectangular shape */
             }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
         }
-    }
-</style>
 
-<body>
-    <header>
-        <h1>Machine Learning Basics</h1>
-    </header>
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
 
-    <main>
-        <section id="introduction">
-            <h2>Introduction to Machine Learning</h2>
-            <ul>
-                <li><strong>Definition and Scope of Machine Learning:</strong>
-                    <ul>
-                        <li>Supervised Learning</li>
-                        <li>Unsupervised Learning</li>
-                        <li>Reinforcement Learning</li>
-                    </ul>
-                </li>
-                <li><strong>Applications of Machine Learning in Business:</strong>
-                    <ul>
-                        <li>Predictive Modeling</li>
-                        <li>Customer Segmentation</li>
-                        <li>Recommendation Systems</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+        h1,
+        h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+ 
+ <body>
+  <div class="container">
+    <div class="header">
+      <h1>Mastering Advanced Pandas: From Data Wrangling to Time-Series Analysis</h1>
+    </div>
+    
+    <div class="module-content">
+      <h2>Learning Objective</h2>
+      <p>After completing this lecture, you will be able to perform advanced data manipulation tasks in Pandas, including multi-indexing, merging datasets, time-series analysis, and real-world data wrangling techniques to clean and analyze complex datasets.</p>
+      
+      <h2>Why This Matters</h2>
+      <p>In today's data-driven world, the ability to efficiently clean, transform, and analyze data is a highly sought-after skill. Companies like Airbnb, Uber, and Netflix rely on these advanced Pandas techniques to derive insights from messy, real-world data. Mastering these skills will enable you to handle complex datasets with confidence, turning raw data into actionable business intelligence.</p>
+      
+      <h2>Core Content</h2>
+      
+      <h3>1. Pandas Mastery</h3>
+      
+      <h4>Multi-indexing, Pivot Tables, and Groupby for Aggregation</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Multi-indexing
+        </div>
+        <div class="card-body">
+          <p>Multi-indexing (or hierarchical indexing) allows you to have multiple index levels on an axis. This is particularly useful for working with higher-dimensional data in a lower-dimensional form.</p>
+          <p>Think of multi-indexing as having a table of contents with chapters and sections. Instead of just one level (chapter), you have two (chapter and section), which helps organize information more efficiently.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>import pandas as pd
+import numpy as np
+# Create a DataFrame with multi-index
+arrays = [
+    ['CA', 'CA', 'NY', 'NY', 'TX', 'TX'],
+    ['Q1', 'Q2', 'Q1', 'Q2', 'Q1', 'Q2']
+]
+tuples = list(zip(*arrays))
+index = pd.MultiIndex.from_tuples(tuples, names=['State', 'Quarter'])
+df = pd.DataFrame({'Sales': [100, 150, 200, 250, 300, 350]}, index=index)
+print(df)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Pivot Tables
+        </div>
+        <div class="card-body">
+          <p>Pivot tables are a powerful tool for summarizing and reshaping data. They allow you to transform long-format data into a wide format, making it easier to analyze.</p>
+          <p>Think of a pivot table as a dynamic summary table that reorganizes and groups data to highlight different aspects.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example: Sales data
+data = {
+    'Date': ['2023-01-01', '2023-01-01', '2023-01-02', '2023-01-02', '2023-01-03'],
+    'Region': ['East', 'West', 'East', 'West', 'East'],
+    'Product': ['A', 'B', 'A', 'B', 'A'],
+    'Sales': [100, 150, 200, 250, 300]
+}
+df = pd.DataFrame(data)
+# Create a pivot table
+pivot = df.pivot_table(index='Date', columns='Region', values='Sales', aggfunc='sum')
+print(pivot)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Groupby for Aggregation
+        </div>
+        <div class="card-body">
+          <p>The <code>groupby</code> operation allows you to split data into groups, apply a function to each group, and combine the results. This is fundamental for data analysis.</p>
+          <p>Think of groupby as sorting your data into buckets (by one or more keys) and then performing calculations on each bucket.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example: Group by region and product
+grouped = df.groupby(['Region', 'Product'])['Sales'].sum()
+print(grouped)
+# Multiple aggregations
+agg_funcs = {
+    'Sales': ['sum', 'mean', 'count'],
+    'Date': 'first'
+}
+grouped_multi = df.groupby(['Region', 'Product']).agg(agg_funcs)
+print(grouped_multi)</code></pre>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A retail company might use multi-indexing to organize sales data by region and time period. Pivot tables could help summarize sales by product category across different stores. Groupby operations are essential for calculating metrics like total sales per region, average transaction value per customer, or product performance over time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Merging/Joining Datasets (inner, outer, left joins) vs. SQL</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Types of Joins
+        </div>
+        <div class="card-body">
+          <p>Pandas provides various ways to combine DataFrames, similar to SQL joins. Understanding these operations is crucial when working with data from multiple sources.</p>
+          <ol>
+            <li><strong>Inner Join</strong>: Returns only the rows with matching keys in both DataFrames.</li>
+            <li><strong>Left Join</strong>: Returns all rows from the left DataFrame and matched rows from the right DataFrame.</li>
+            <li><strong>Right Join</strong>: Returns all rows from the right DataFrame and matched rows from the left DataFrame.</li>
+            <li><strong>Outer Join</strong>: Returns all rows from both DataFrames, with NaN where there's no match.</li>
+          </ol>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example: Customer and order data
+customers = pd.DataFrame({
+    'CustomerID': [1, 2, 3, 4],
+    'Name': ['Alice', 'Bob', 'Charlie', 'David']
+})
+orders = pd.DataFrame({
+    'OrderID': [101, 102, 103, 104],
+    'CustomerID': [1, 2, 1, 3],
+    'Amount': [100, 200, 150, 300]
+})
+# Inner join
+inner_join = pd.merge(customers, orders, on='CustomerID', how='inner')
+print("Inner Join:\n", inner_join)
+# Left join
+left_join = pd.merge(customers, orders, on='CustomerID', how='left')
+print("\nLeft Join:\n", left_join)
+# Right join
+right_join = pd.merge(customers, orders, on='CustomerID', how='right')
+print("\nRight Join:\n", right_join)
+# Outer join
+outer_join = pd.merge(customers, orders, on='CustomerID', how='outer')
+print("\nOuter Join:\n", outer_join)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Comparison with SQL
+        </div>
+        <div class="card-body">
+          <p>Pandas merge operations are similar to SQL joins but with some syntax differences:</p>
+          
+          <table class="custom-table" style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <thead>
+              <tr>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">SQL</th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Pandas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;"><code>SELECT * FROM customers INNER JOIN orders ON customers.CustomerID = orders.CustomerID</code></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><code>pd.merge(customers, orders, on='CustomerID', how='inner')</code></td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #ddd; padding: 8px;"><code>SELECT * FROM customers LEFT JOIN orders ON customers.CustomerID = orders.CustomerID</code></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><code>pd.merge(customers, orders, on='CustomerID', how='left')</code></td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A company might have separate datasets for customer information and purchase history. By merging these datasets, they can analyze customer purchasing patterns. For example, a left join would help identify customers who haven't made any purchases (for targeted marketing), while an inner join would focus on active customers for loyalty programs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Time-Series Analysis: Datetime Indexing, Resampling, Rolling Windows</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Datetime Indexing
+        </div>
+        <div class="card-body">
+          <p>Time-series data is ubiquitous in business (e.g., stock prices, sales data, website traffic). Pandas provides powerful tools for working with time-series data.</p>
+          <p>Converting a column to datetime and setting it as the index unlocks powerful time-series functionalities.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Create a time-series DataFrame
+dates = pd.date_range('2023-01-01', periods=10, freq='D')
+ts_data = pd.DataFrame({
+    'Date': dates,
+    'Value': np.random.randn(10).cumsum()
+})
+# Set Date as index
+ts_data.set_index('Date', inplace=True)
+print(ts_data)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Resampling
+        </div>
+        <div class="card-body">
+          <p>Resampling is the process of changing the time frequency of your data (e.g., from daily to monthly). It's particularly useful for aggregating data over different time periods.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Resample to monthly frequency
+monthly = ts_data.resample('M').sum()
+print("\nMonthly Resampling:\n", monthly)
+# Other frequencies: 'D' (daily), 'W' (weekly), 'Q' (quarterly), 'A' (annual)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Rolling Windows
+        </div>
+        <div class="card-body">
+          <p>Rolling windows (or moving averages) are used to smooth out short-term fluctuations and highlight longer-term trends.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Calculate a 3-day rolling mean
+ts_data['RollingMean'] = ts_data['Value'].rolling(window=3).mean()
+print("\nRolling Mean:\n", ts_data)</code></pre>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A financial analyst might use resampling to convert daily stock prices to monthly returns for a portfolio analysis. Rolling windows are commonly used in sales forecasting to identify trends and seasonality. For example, a 7-day rolling average of daily sales can help a retailer understand the underlying trend by smoothing out day-of-week effects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>2. Real-World Data Wrangling</h3>
+      
+      <h4>Handling Outliers, Duplicates, and Inconsistent Formats</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Outliers
+        </div>
+        <div class="card-body">
+          <p>Real-world data is often messy. Here's how to handle common issues:</p>
+          <p>Outliers are data points that differ significantly from other observations. They can be due to variability in measurement or experimental errors.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Detecting outliers using Z-score
+from scipy import stats
+data = pd.DataFrame({'Values': [10, 12, 12, 13, 12, 11, 14, 13, 15, 10, 10, 10, 100]})
+z_scores = np.abs(stats.zscore(data['Values']))
+outliers = data[z_scores > 3]  # Threshold of 3 standard deviations
+print("Outliers:\n", outliers)
+# Handling outliers: capping
+data['Values_capped'] = np.where(z_scores > 3, data['Values'].median(), data['Values'])
+print("\nCapped Data:\n", data)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Duplicates
+        </div>
+        <div class="card-body">
+          <p>Duplicate records can skew analysis. Identifying and removing them is essential.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example with duplicates
+df = pd.DataFrame({
+    'ID': [1, 2, 2, 3, 4, 4, 4],
+    'Name': ['Alice', 'Bob', 'Bob', 'Charlie', 'David', 'David', 'David']
+})
+# Check for duplicates
+print("Duplicate rows:\n", df[df.duplicated()])
+# Remove duplicates
+df_unique = df.drop_duplicates()
+print("\nAfter removing duplicates:\n", df_unique)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Inconsistent Formats
+        </div>
+        <div class="card-body">
+          <p>Data often comes in inconsistent formats (e.g., dates, categorical data). Standardizing these is crucial for analysis.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example: Inconsistent date formats
+dates = pd.DataFrame({
+    'Date': ['2023-01-01', '02/01/2023', '03-01-2023', '2023.04.01']
+})
+# Convert to datetime
+dates['Date'] = pd.to_datetime(dates['Date'], errors='coerce')
+print("\nStandardized Dates:\n", dates)
+# Example: Inconsistent categorical data
+categories = pd.DataFrame({
+    'Category': ['Electronics', 'electronics', 'ELECTRONICS', 'Clothing', 'clothing']
+})
+# Standardize to lowercase
+categories['Category'] = categories['Category'].str.lower()
+print("\nStandardized Categories:\n", categories)</code></pre>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A data analyst at an e-commerce company might encounter outliers in customer purchase amounts (e.g., extremely high values due to data entry errors). Duplicate orders could result from system glitches. Inconsistent product categories might come from different data sources. Cleaning these issues ensures accurate sales reporting and customer analysis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Text Manipulation: String Methods, Regex for Pattern Extraction</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          String Methods
+        </div>
+        <div class="card-body">
+          <p>Text data often requires cleaning and extraction of specific patterns. Pandas provides vectorized string operations and supports regular expressions.</p>
+          <p>Pandas offers a wide range of string methods for common text operations.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example: Product descriptions
+products = pd.DataFrame({
+    'Description': [
+        'Premium Laptop - 16GB RAM, 512GB SSD',
+        'Wireless Mouse - Ergonomic Design',
+        '4K Monitor - 27 inch, HDR'
+    ]
+})
+# Extract brand (first word)
+products['Brand'] = products['Description'].str.split().str[0]
+print("\nExtracted Brand:\n", products)
+# Check for specific keywords
+products['Is_Premium'] = products['Description'].str.contains('Premium')
+print("\nContains Premium:\n", products)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Regex for Pattern Extraction
+        </div>
+        <div class="card-body">
+          <p>Regular expressions (regex) are powerful for pattern matching and extraction.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example: Extract RAM size from descriptions
+import re
+def extract_ram(description):
+    match = re.search(r'(\d+)GB RAM', description)
+    return match.group(1) if match else None
+products['RAM_GB'] = products['Description'].apply(extract_ram)
+print("\nExtracted RAM:\n", products)
+# Extract all numbers
+products['All_Numbers'] = products['Description'].str.findall(r'\d+')
+print("\nAll Numbers:\n", products)</code></pre>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A marketing team might analyze customer reviews to extract product features mentioned (e.g., "battery life", "screen size"). An HR department could use regex to extract phone numbers or email addresses from unstructured text data. These techniques help transform unstructured text into structured data for analysis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Memory Optimization for Large Datasets (dtypes, chunk processing)</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Optimizing Data Types
+        </div>
+        <div class="card-body">
+          <p>Working with large datasets can be memory-intensive. Optimizing memory usage is essential for efficient analysis.</p>
+          <p>Using appropriate data types can significantly reduce memory usage.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Create a DataFrame with inefficient data types
+df = pd.DataFrame({
+    'ID': [1, 2, 3, 4, 5],
+    'Age': [25, 30, 35, 40, 45],
+    'Rating': [4.5, 4.7, 4.2, 4.0, 4.3],
+    'Category': ['A', 'B', 'A', 'C', 'B']
+})
+# Check memory usage
+print("Original memory usage:\n", df.memory_usage(deep=True))
+# Optimize data types
+df['ID'] = df['ID'].astype('int32')  # Smaller integer type
+df['Age'] = df['Age'].astype('int8')  # Smallest integer type for age
+df['Rating'] = df['Rating'].astype('float32')  # Smaller float type
+df['Category'] = df['Category'].astype('category')  # Categorical type
+print("\nOptimized memory usage:\n", df.memory_usage(deep=True))</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Chunk Processing
+        </div>
+        <div class="card-body">
+          <p>For very large datasets that don't fit in memory, processing in chunks is a solution.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example: Processing a large CSV in chunks
+chunk_size = 1000  # Number of rows per chunk
+results = []
+for chunk in pd.read_csv('large_dataset.csv', chunksize=chunk_size):
+    # Process each chunk (e.g., filter, aggregate)
+    chunk_result = chunk.groupby('Category')['Value'].sum()
+    results.append(chunk_result)
+# Combine results
+final_result = pd.concat(results).groupby(level=0).sum()
+print("\nFinal aggregated result:\n", final_result)</code></pre>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A data scientist working with millions of customer records might optimize data types to reduce memory usage by 50% or more. When processing web server logs that are several gigabytes in size, chunk processing allows analysis on a standard laptop without requiring expensive hardware. These optimizations make large-scale data analysis feasible and efficient.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>3. Hands-On: Clean a Messy E-commerce Dataset and Generate Sales Trends by Region</h3>
+      
+      <div class="card">
+        <div class="card-header">
+          Step-by-Step Guide
+        </div>
+        <div class="card-body">
+          <p>Let's walk through a comprehensive example of cleaning a messy e-commerce dataset and analyzing sales trends by region.</p>
+          
+          <h5>Step 1: Load and Explore the Dataset</h5>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
-        <section id="supervised-learning-algorithms">
-            <h2>Supervised Learning Algorithms</h2>
-            <ul>
-                <li><strong>Regression:</strong>
-                    <ul>
-                        <li>Linear Regression</li>
-                        <li>Logistic Regression</li>
-                    </ul>
-                </li>
-                <li><strong>Classification:</strong>
-                    <ul>
-                        <li>Decision Trees</li>
-                        <li>Random Forests</li>
-                        <li>Support Vector Machines</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+# Create a messy e-commerce dataset (in practice, you'd load from a file)
+data = {
+    'OrderID': [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010],
+    'CustomerID': ['C001', 'C002', 'C003', 'C004', 'C005', 'C006', 'C007', 'C008', 'C009', 'C010'],
+    'OrderDate': ['2023-01-15', '2023-01-20', '2023-02-05', '2023-02-10', '2023-03-01', 
+                  '2023-03-15', '2023-04-01', '2023-04-10', '2023-05-01', '2023-05-20'],
+    'ProductID': ['P100', 'P200', 'P100', 'P300', 'P200', 'P400', 'P100', 'P500', 'P200', 'P300'],
+    'Quantity': [2, 1, 3, 1, 2, 1, 4, 1, 2, 1],
+    'UnitPrice': [50.00, 75.00, 50.00, 120.00, 75.00, 200.00, 50.00, 300.00, 75.00, 120.00],
+    'Region': ['North', 'South', 'North', 'East', 'South', 'West', 'North', 'East', 'South', 'West'],
+    'SalesRep': ['Alice', 'Bob', 'Alice', 'Charlie', 'Bob', 'David', 'Alice', 'Charlie', 'Bob', 'David']
+}
 
-        <section id="practical-exercise">
-            <h2>Practical Exercise</h2>
-            <p><strong>Hands-On Practice:</strong> Implement supervised learning algorithms using Python’s Scikit-learn
-                library. Build regression and classification models, evaluate model performance using metrics like
-                accuracy and RMSE, and interpret model outputs.</p>
-        </section>
-    </main>
+# Introduce some messiness
+# Missing dates
+data['OrderDate'][2] = np.nan
+# Mismatched IDs (ProductID not in product catalog)
+data['ProductID'][5] = 'P999'
+# Inconsistent region names
+data['Region'][7] = 'east'  # lowercase
+# Duplicate order
+data['OrderID'].append(1001)
+data['CustomerID'].append('C001')
+data['OrderDate'].append('2023-01-15')
+data['ProductID'].append('P100')
+data['Quantity'].append(2)
+data['UnitPrice'].append(50.00)
+data['Region'].append('North')
+data['SalesRep'].append('Alice')
 
+df = pd.DataFrame(data)
+print("Messy Dataset:")
+print(df)</code></pre>
+          
+          <h5>Step 2: Clean the Dataset</h5>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Convert OrderDate to datetime
+df['OrderDate'] = pd.to_datetime(df['OrderDate'], errors='coerce')
+# Handle missing dates - forward fill (carry last valid observation forward)
+df['OrderDate'].fillna(method='ffill', inplace=True)
+# Standardize region names
+df['Region'] = df['Region'].str.title()
+# Remove duplicate orders
+df.drop_duplicates(subset=['OrderID'], keep='first', inplace=True)
+# Handle mismatched ProductID (set to a default or remove)
+# For this example, we'll set unknown products to 'Unknown'
+product_catalog = ['P100', 'P200', 'P300', 'P400', 'P500']
+df['ProductID'] = df['ProductID'].where(df['ProductID'].isin(product_catalog), 'Unknown')
+# Calculate total sales
+df['TotalSales'] = df['Quantity'] * df['UnitPrice']
+print("\nCleaned Dataset:")
+print(df)</code></pre>
+          
+          <h5>Step 3: Analyze Sales Trends by Region</h5>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Set OrderDate as index for time-series analysis
+df.set_index('OrderDate', inplace=True)
+# Resample to monthly sales by region
+monthly_sales = df.groupby('Region').resample('M')['TotalSales'].sum().unstack(level=0)
+print("\nMonthly Sales by Region:")
+print(monthly_sales)
+# Calculate rolling average (3-month) for each region
+rolling_avg = monthly_sales.rolling(window=3).mean()
+print("\n3-Month Rolling Average by Region:")
+print(rolling_avg)</code></pre>
+          
+          <h5>Step 4: Visualize the Results</h5>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Plot monthly sales by region
+plt.figure(figsize=(12, 6))
+monthly_sales.plot(kind='line', marker='o')
+plt.title('Monthly Sales by Region')
+plt.xlabel('Month')
+plt.ylabel('Sales ($)')
+plt.grid(True)
+plt.legend(title='Region')
+plt.tight_layout()
+plt.show()
+
+# Plot rolling average
+plt.figure(figsize=(12, 6))
+rolling_avg.plot(kind='line', marker='o')
+plt.title('3-Month Rolling Average Sales by Region')
+plt.xlabel('Month')
+plt.ylabel('Sales ($)')
+plt.grid(True)
+plt.legend(title='Region')
+plt.tight_layout()
+plt.show()</code></pre>
+          
+          <h5>Step 5: Derive Insights</h5>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Calculate total sales by region
+region_sales = df.groupby('Region')['TotalSales'].sum().sort_values(ascending=False)
+print("\nTotal Sales by Region:")
+print(region_sales)
+# Calculate month-over-month growth rate
+monthly_growth = monthly_sales.pct_change() * 100
+print("\nMonth-over-Month Growth Rate (%):")
+print(monthly_growth)
+# Identify best and worst performing regions
+best_region = region_sales.idxmax()
+worst_region = region_sales.idxmin()
+print(f"\nBest performing region: {best_region} with ${region_sales.max():.2f} in sales")
+print(f"Worst performing region: {worst_region} with ${region_sales.min():.2f} in sales")</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          In-Lesson Activity
+        </div>
+        <div class="card-body">
+          <p>Now it's your turn to apply these advanced Pandas techniques. Complete the following tasks:</p>
+          
+          <ol>
+            <li><strong>Setup</strong>: Create a new Jupyter Notebook and import the necessary libraries (pandas, numpy, matplotlib).</li>
+            <li><strong>Data Loading</strong>: Create a DataFrame with the following messy data:
+              <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>data = {
+    'TransactionID': ['T001', 'T002', 'T003', 'T004', 'T005', 'T006', 'T007', 'T008'],
+    'Date': ['2023-01-10', '2023-01-15', '2023-02-05', '2023-02-20', '2023-03-01', 
+             '2023-03-15', '2023-04-01', '2023-04-10'],
+    'Store': ['Store A', 'store b', 'Store A', 'Store C', 'store b', 'Store A', 'Store C', 'Store A'],
+    'Product': ['Laptop', 'Phone', 'Tablet', 'Laptop', 'Phone', 'Laptop', 'Tablet', 'Phone'],
+    'Price': [999, 699, 299, 999, 699, 999, 299, 699],
+    'Quantity': [1, 2, 1, 1, 3, 2, 1, 1],
+    'CustomerID': ['C100', 'C200', 'C100', 'C300', 'C200', 'C100', 'C400', 'C500']
+}
+# Introduce issues:
+# - Missing date for T003
+# - Inconsistent store names (lowercase)
+# - Duplicate transaction (T001)
+data['Date'][2] = np.nan
+data['TransactionID'].append('T001')
+data['Date'].append('2023-01-10')
+data['Store'].append('Store A')
+data['Product'].append('Laptop')
+data['Price'].append(999)
+data['Quantity'].append(1)
+data['CustomerID'].append('C100')
+
+df = pd.DataFrame(data)</code></pre>
+            </li>
+            <li><strong>Data Cleaning</strong>:
+              <ul>
+                <li>Convert 'Date' to datetime and handle missing values (forward fill)</li>
+                <li>Standardize 'Store' names to title case</li>
+                <li>Remove duplicate transactions</li>
+                <li>Add a 'Total' column (Price × Quantity)</li>
+              </ul>
+            </li>
+            <li><strong>Advanced Manipulation</strong>:
+              <ul>
+                <li>Create a pivot table showing total sales by Store and Product</li>
+                <li>Group by Store and calculate total sales, average transaction value, and transaction count</li>
+                <li>Resample the data to monthly frequency and calculate total sales per month</li>
+              </ul>
+            </li>
+            <li><strong>Time-Series Analysis</strong>:
+              <ul>
+                <li>Calculate a 2-month rolling average of monthly sales</li>
+                <li>Identify the month with the highest sales</li>
+              </ul>
+            </li>
+            <li><strong>Insights</strong>:
+              <ul>
+                <li>Which store has the highest total sales?</li>
+                <li>Which product is the most popular across all stores?</li>
+                <li>What is the overall sales trend over the months?</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <p>Take your time to complete these tasks, referring back to the lecture material as needed. This activity will help reinforce the advanced Pandas techniques you've learned.</p>
+        </div>
+      </div>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Advanced Pandas techniques are essential for transforming raw, messy data into valuable insights. By mastering multi-indexing, merging datasets, time-series analysis, and data wrangling, you can tackle complex real-world data challenges. Remember that the goal is not just to clean data, but to do so efficiently and effectively, enabling you to focus on deriving actionable business intelligence. These skills are directly applicable in industry, where data is rarely clean and analysis often requires sophisticated manipulation to uncover meaningful patterns and trends.</p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

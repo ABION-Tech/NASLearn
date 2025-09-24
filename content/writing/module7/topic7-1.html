@@ -4,119 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep Learning and Neural Networks - Week 7</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: #ffffff;
-            color: #000000;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
         h1,
-        h2,
-        h3 {
+        h2 {
             color: #007bff;
-            /* Blue accent color */
-        }
-
-        .content-section {
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #f8f9fa;
-            /* Light grey background for sections */
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="content-section">
-            <h1>Week 7: Deep Learning and Neural Networks</h1>
-
-            <h2>Overview of Neural Networks: Introduction to Neural Networks: Structure and Function</h2>
-
-            <p>Neural networks are a powerful class of machine learning models inspired by the structure and function of
-                the human brain. They are composed of interconnected layers of artificial neurons, which process and
-                transmit information.</p>
-
-            <h3>1. Structure of a Neural Network</h3>
-            <ul>
-                <li><strong>Input layer:</strong> The first layer that receives the input data.</li>
-                <li><strong>Hidden layers:</strong> Intermediate layers that process the input data and extract
-                    features.</li>
-                <li><strong>Output layer:</strong> The final layer that produces the predicted output.</li>
-                <li><strong>Neurons:</strong> The fundamental units of a neural network. Each neuron receives inputs,
-                    performs a weighted sum of the inputs, applies an activation function, and produces an output.</li>
-                <li><strong>Weights and biases:</strong> Parameters that determine the strength of the connections
-                    between neurons.</li>
-            </ul>
-
-            <h3>2. Activation Functions</h3>
-            <p>The purpose of activation functions is to introduce non-linearity into the neural network, allowing it to
-                learn complex patterns.</p>
-            <ul>
-                <li><strong>Sigmoid:</strong> Maps values to the range [0, 1].</li>
-                <li><strong>Tanh:</strong> Maps values to the range [-1, 1].</li>
-                <li><strong>ReLU (Rectified Linear Unit):</strong> Maps negative values to 0 and positive values to
-                    themselves.</li>
-                <li><strong>Leaky ReLU:</strong> A variant of ReLU that allows for a small negative slope.</li>
-            </ul>
-
-            <h3>3. Forward Propagation</h3>
-            <p>The process of forward propagation can be summarized in the following steps:</p>
-            <ol>
-                <li>Input data is fed into the input layer.</li>
-                <li>The weighted sum of the inputs is calculated for each neuron in the hidden layers.</li>
-                <li>An activation function is applied to the weighted sum.</li>
-                <li>The output of the hidden layers is passed to the next layer, and the process is repeated until the
-                    output layer is reached.</li>
-            </ol>
-
-            <h3>4. Backpropagation</h3>
-            <p>The process of backpropagation can be summarized in the following steps:</p>
-            <ol>
-                <li>Calculate the error between the predicted output and the actual target.</li>
-                <li>Propagate the error backward through the network, updating the weights and biases to minimize the
-                    error.</li>
-                <li><strong>Gradient descent:</strong> An optimization algorithm commonly used for backpropagation.</li>
-            </ol>
-
-            <h3>5. Types of Neural Networks</h3>
-            <p>Different types of neural networks serve various purposes:</p>
-            <ul>
-                <li><strong>Feedforward neural networks:</strong> The most basic type of neural network, where
-                    information flows in one direction.</li>
-                <li><strong>Recurrent neural networks (RNNs):</strong> Neural networks that can process sequential data,
-                    such as text or time series.</li>
-                <li><strong>Convolutional neural networks (CNNs):</strong> Neural networks specifically designed for
-                    processing image data.</li>
-            </ul>
-
-            <p>By understanding the structure and function of neural networks, you can build powerful models for a
-                variety of tasks, including image classification, natural language processing, and time series analysis.
-            </p>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS and dependencies (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

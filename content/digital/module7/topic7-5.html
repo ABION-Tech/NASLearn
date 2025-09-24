@@ -4,301 +4,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Exercises</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
         }
 
         .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
+            padding: 20px;
         }
 
-        h1 {
-            color: #007BFF;
-            /* Blue accent for main heading */
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
             text-align: center;
-            margin-bottom: 30px;
+            margin-top: 5px;
         }
 
-        h2 {
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
             color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 20px;
+            /* Blue accent for section titles */
         }
 
-        ul {
-            list-style-type: none;
-            /* Remove default list styling */
-            padding-left: 0;
-            /* Remove padding */
-        }
-
-        li {
-            background-color: #f8f9fa;
-            /* Light gray background for list items */
-            margin: 10px 0;
-            /* Space between items */
-            padding: 15px;
-            /* Padding for items */
-            border-left: 4px solid #007BFF;
-            /* Blue accent on the left */
-            border-radius: 5px;
-            /* Rounded corners */
-        }
-
-        .task,
-        .solution {
-            margin-top: 10px;
-            font-size: 14px;
+        h1,
+        h2 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="container">
-        <h1>Practice Exercises</h1>
-
-        <h2>1. Google Analytics Setup Exercise:</h2>
-        <li>
-            <strong>Task:</strong> Set up Google Analytics for a fictional website.
-            <div class="task">
-                <strong>Steps:</strong>
-                <ol>
-                    <li>Create a Google Analytics account.</li>
-                    <li>Set up a new property for the fictional website.</li>
-                    <li>Install the tracking code on the website.</li>
-                    <li>Explore the dashboard and identify key metrics.</li>
-                </ol>
-            </div>
-            <div class="solution">
-                <strong>Solution Outline:</strong> A screenshot of the Google Analytics dashboard with annotations
-                indicating key areas to focus on.
-            </div>
-        </li>
-
-        <h2>2. Traffic Analysis Exercise:</h2>
-        <li>
-            <strong>Scenario:</strong> Given a dataset of user behavior metrics (traffic sources, bounce rates, session
-            duration), analyze the data and provide recommendations.
-            <div class="solution">
-                <strong>Solution Outline:</strong>
-                <ul>
-                    <li>Identify which traffic source has the highest bounce rate.</li>
-                    <li>Recommend improvements to that traffic channel (e.g., content changes, targeting adjustments).
-                    </li>
-                    <li>Suggest ways to increase engagement based on session duration.</li>
-                </ul>
-            </div>
-        </li>
+<div class="container">
+    <div class="header">
+          <!-- Day 5 -->
+      <h2>From Insight to Action</h2>
+      
     </div>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment </title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            color: #007BFF;
-            /* Blue accent for main heading */
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-            /* Remove default list styling */
-            padding-left: 0;
-            /* Remove padding */
-        }
-
-        li {
-            background-color: #f8f9fa;
-            /* Light gray background for list items */
-            margin: 10px 0;
-            /* Space between items */
-            padding: 15px;
-            /* Padding for items */
-            border-left: 4px solid #007BFF;
-            /* Blue accent on the left */
-            border-radius: 5px;
-            /* Rounded corners */
-        }
-
-        .quiz,
-        .project {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-        <h1>Assessment </h1>
-
-        <h2>Quiz Questions:</h2>
-        <li>
-            1. What is the purpose of Google Analytics, and why is it essential for digital marketing?
-        </li>
-        <li>
-            2. Explain the significance of bounce rates and how they can impact marketing strategies.
-        </li>
-        <li>
-            3. What are some key metrics to analyze when assessing the effectiveness of a marketing campaign?
-        </li>
-
-        <h2>Project Assignment:</h2>
-        <li>
-            <strong>Conduct a comprehensive analysis of a real or fictional website using Google Analytics.</strong>
-            <div class="project">
-                Prepare a report that includes an overview of traffic sources, user behavior metrics, and actionable
-                recommendations based on your findings.
-            </div>
-        </li>
-    </div>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practical Applications</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            color: #007BFF;
-            /* Blue accent for main heading */
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-            /* Remove default list styling */
-            padding-left: 0;
-            /* Remove padding */
-        }
-
-        li {
-            background-color: #f8f9fa;
-            /* Light gray background for list items */
-            margin: 10px 0;
-            /* Space between items */
-            padding: 15px;
-            /* Padding for items */
-            border-left: 4px solid #007BFF;
-            /* Blue accent on the left */
-            border-radius: 5px;
-            /* Rounded corners */
-        }
-
-        .scenario,
-        .career {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-        <h1>Practical Applications</h1>
-
-        <h2>Real-World Scenario:</h2>
-        <li>
-            A startup is launching a new product and wants to gauge the effectiveness of their online marketing efforts.
-            <div class="scenario">
-                Discuss how they can utilize Google Analytics to track user engagement, analyze traffic sources, and
-                make informed decisions to enhance their marketing strategies.
-            </div>
-        </li>
-
-        <h2>Career Applications:</h2>
-        <li>
-            Skills in analytics and data interpretation are critical for roles such as data analyst, digital marketing
-            manager, and SEO specialist.
-            <div class="career">
-                Understanding how to use data effectively can greatly enhance career prospects in these fields.
-            </div>
-        </li>
-    </div>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    
+    <div class="module-content">
+     <h3>Lecture Title</h3>
+      <p>"The Analytics Activation Playbook: Turning Data Into Decisions, Dashboards, and Testing Culture"</p>
+      
+      <h3>Learning Objective</h3>
+      <p>After this lecture, students will be able to craft compelling data narratives, design executive dashboards, implement scientific testing frameworks, and build organizational cultures that thrive on data-driven decision making.</p>
+      
+      <h3>Why This Matters</h3>
+      <p>Companies with strong data-driven cultures are 23% more profitable and acquire customers 19x faster than competitors (McKinsey, 2023). Yet 87% of marketing data goes unused (Forrester). The ability to transform insights into action is the defining skill that separates elite marketers from practitioners.</p>
+      
+      <h3>Core Content</h3>
+      <h4>Data Storytelling: The Art of Persuasive Analytics</h4>
+      <p>Data storytelling bridges analysis and action. Master this narrative structure:</p>
+      <div class="card">
+        <div class="card-header">
+          The SCQA Framework
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Situation</strong>: Set the context<br>
+            "Our customer acquisition cost has increased 30% over the last quarter."</li>
+            <li><strong>Complication</strong>: Introduce the problem<br>
+            "This is occurring despite stable conversion rates and increased marketing spend."</li>
+            <li><strong>Question</strong>: Pose the key question<br>
+            "Why are we becoming less efficient at acquiring customers?"</li>
+            <li><strong>Answer</strong>: Provide the resolution<br>
+            "Our analysis reveals that while paid search costs remain stable, social media acquisition costs have doubled due to increased competition and algorithm changes."</li>
+          </ol>
+        </div>
+      </div>
+      
+      <h4>Dashboard Design: Creating Decision Engines</h4>
+      <p>Dashboards should answer questions, not just display data. Design using these principles:</p>
+      <div class="card">
+        <div class="card-header">
+          Dashboard Purpose Hierarchy
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Strategic Dashboards</strong> (Executives):
+              <ul>
+                <li>Focus: Business outcomes and trends</li>
+                <li>Metrics: Revenue, profit, market share, LTV:CAC ratio</li>
+                <li>Update Frequency: Monthly/Quarterly</li>
+              </ul>
+            </li>
+            <li><strong>Tactical Dashboards</strong> (Managers):
+              <ul>
+                <li>Focus: Performance and optimization</li>
+                <li>Metrics: Channel ROI, conversion rates, campaign performance</li>
+                <li>Update Frequency: Weekly/Daily</li>
+              </ul>
+            </li>
+            <li><strong>Operational Dashboards</strong> (Teams):
+              <ul>
+                <li>Focus: Execution and monitoring</li>
+                <li>Metrics: Daily traffic, social engagement, email performance</li>
+                <li>Update Frequency: Real-time/Hourly</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+      
+      <h4>A/B Testing: The Scientific Method for Marketing</h4>
+      <p>A/B testing removes guesswork from optimization. Implement this rigorous framework:</p>
+      <ul>
+        <li><strong>Strategic Tests</strong> (High Impact): Value proposition testing, pricing model experiments, target audience validation</li>
+        <li><strong>Tactical Tests</strong> (Medium Impact): Landing page layouts, email subject lines, ad creative variations</li>
+        <li><strong>Executional Tests</strong> (Low Impact): Button colors, form field order, image selection</li>
+      </ul>
+      
+      <p><strong>Statistical Testing Fundamentals</strong></p>
+      <ul>
+        <li><strong>Sample Size Calculation</strong>: Use tools like Optimizely's sample size calculator (Minimum: 1,000 visitors per variant for 95% confidence)</li>
+        <li><strong>Test Duration</strong>: Run for full business cycles (usually 2-4 weeks)</li>
+        <li><strong>Significance Threshold</strong>: Require 95% confidence level (p-value ≤ 0.05)</li>
+        <li><strong>Segment Analysis</strong>: Always check results by key segments (new vs. returning, mobile vs. desktop)</li>
+      </ul>
+      
+      <h4>Building a Data-Driven Culture: The Change Management Framework</h4>
+      <p>Culture transformation requires systematic effort. Implement this approach:</p>
+      <div class="card">
+        <div class="card-header">
+          The 4C Culture Change Model
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Commitment</strong> (Leadership):
+              <ul>
+                <li>Executives must model data-driven decision making</li>
+                <li>Tie compensation to data-informed outcomes</li>
+                <li>Allocate resources to data infrastructure and training</li>
+              </ul>
+            </li>
+            <li><strong>Capability</strong> (Skills):
+              <ul>
+                <li>Implement data literacy training programs</li>
+                <li>Create certification paths for analytics tools</li>
+                <li>Establish communities of practice for knowledge sharing</li>
+              </ul>
+            </li>
+            <li><strong>Communication</strong> (Transparency):
+              <ul>
+                <li>Share performance data openly across teams</li>
+                <li>Celebrate data-driven wins (and learnings from failures)</li>
+                <li>Create regular data review rituals (weekly, monthly)</li>
+              </ul>
+            </li>
+            <li><strong>Continuous Improvement</strong> (Process):
+              <ul>
+                <li>Implement quarterly testing roadmaps</li>
+                <li>Create feedback loops from analysis to action</li>
+                <li>Establish data governance policies</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+      
+      <h3>In-Lesson Activity</h3>
+      <p><strong>Analytics Activation Strategy</strong><br>
+      <em>Scenario</em>: You're presenting Q3 performance to executives of a subscription education platform. Key findings:
+      <ul>
+        <li>Free trial sign-ups increased 40% (great!)</li>
+        <li>Trial-to-paid conversion rate dropped from 25% to 15% (problem!)</li>
+        <li>Customer acquisition cost increased 22%</li>
+        <li>Analysis shows new users from TikTok have 60% lower conversion than other channels</li>
+      </ul>
+      <em>Your Task</em>:
+      <ol>
+        <li>Create a data story outline using the SCQA framework</li>
+        <li>Design a strategic dashboard focusing on trial conversion health</li>
+        <li>Propose 3 A/B tests to improve trial conversion rates</li>
+        <li>Outline a cultural initiative to improve data-driven decision making</li>
+      </ol>
+      <em>Deliverable</em>: A 3-page analytics activation plan with storytelling approach, dashboard sketch, testing roadmap, and culture change proposal.</p>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>The ultimate value of analytics lies not in measurement, but in activation—transforming data into compelling narratives, intuitive dashboards, scientific testing, and organizational cultures that turn insights into sustainable competitive advantage.</p>
+      </div>
 </body>
 
 </html>

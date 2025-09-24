@@ -1,1 +1,658 @@
-Ends here
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Machine Learning for Predictive Analytics: Turning Data into Business Value</h1>
+    </div>
+    
+    <div class="module-content">
+      <h2>Learning Objective</h2>
+      <p>After completing this lecture, you will be able to implement a complete machine learning workflow, select appropriate algorithms for different business problems, evaluate model performance effectively, and optimize models for maximum business impact.</p>
+      
+      <h2>Why This Matters</h2>
+      <p>Machine learning has transformed how businesses operate, from Netflix's recommendation engine to Amazon's demand forecasting and American Express's fraud detection. These aren't just technical achievements—they're competitive advantages that drive revenue, reduce costs, and improve customer experiences. Understanding ML principles empowers you to leverage these techniques in your own organization, turning raw data into actionable insights that drive strategic decisions.</p>
+      
+      <h2>Core Content</h2>
+      
+      <h3>1. ML Workflow with scikit-learn</h3>
+      
+      <h4>Supervised vs. Unsupervised Learning Contexts</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Supervised Learning: Learning with a Teacher
+        </div>
+        <div class="card-body">
+          <p>In supervised learning, we train algorithms on labeled data—where we know the "correct" answers. The algorithm learns patterns from these examples to make predictions on new, unseen data.</p>
+          <p><em>Analogy</em>: Think of supervised learning like a student studying with an answer key. The student (algorithm) learns from examples (training data) and their correct answers (labels), then applies this knowledge to solve new problems (make predictions).</p>
+          
+          <p><strong>Business Applications:</strong></p>
+          <ul>
+            <li><strong>Predicting sales</strong>: Using historical sales data (features) to forecast future sales (target)</li>
+            <li><strong>Customer churn prediction</strong>: Using customer behavior data to predict who will leave (churn vs. not churn)</li>
+            <li><strong>Credit scoring</strong>: Using financial history to predict loan default risk</li>
+            <li><strong>Price optimization</strong>: Using market data to predict optimal pricing</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Unsupervised Learning: Finding Hidden Patterns
+        </div>
+        <div class="card-body">
+          <p>In unsupervised learning, we work with unlabeled data, allowing the algorithm to discover hidden structures and patterns on its own.</p>
+          <p><em>Analogy</em>: Unsupervised learning is like exploring a new city without a map. You might naturally group similar neighborhoods together or identify distinct areas based on their characteristics—even though no one told you these groupings in advance.</p>
+          
+          <p><strong>Business Applications:</strong></p>
+          <ul>
+            <li><strong>Customer segmentation</strong>: Grouping customers with similar behaviors for targeted marketing</li>
+            <li><strong>Anomaly detection</strong>: Identifying unusual transactions that might indicate fraud</li>
+            <li><strong>Market basket analysis</strong>: Discovering products frequently purchased together</li>
+            <li><strong>Topic modeling</strong>: Identifying common themes in customer feedback</li>
+          </ul>
+          
+          <p><strong>Choosing the Right Approach:</strong></p>
+          <ul>
+            <li>Use supervised learning when you have a specific outcome to predict and labeled historical data</li>
+            <li>Use unsupervised learning when you want to explore data structure or identify natural groupings without predefined labels</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h4>Train-Test Splits, Cross-Validation, and Avoiding Overfitting</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          The Importance of Proper Data Splitting
+        </div>
+        <div class="card-body">
+          <p>When building machine learning models, we need to evaluate how well they'll perform on new, unseen data. This is where data splitting comes in.</p>
+          <p><em>Analogy</em>: Think of training for an exam. You wouldn't use the exact same questions for studying and then for the final test—you'd study with practice questions and then face new questions on the actual exam. Similarly, we train models on one set of data and test them on a different set.</p>
+          
+          <p><strong>Train-Test Split:</strong></p>
+          <ul>
+            <li><strong>Training set</strong> (typically 70-80%): Data used to train the model</li>
+            <li><strong>Testing set</strong> (typically 20-30%): Data held back to evaluate the model's performance on unseen data</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Cross-Validation: Going Beyond a Simple Split
+        </div>
+        <div class="card-body">
+          <p>A single train-test split can be sensitive to how the data is divided. Cross-validation provides a more robust evaluation by rotating which data is used for training and testing.</p>
+          <p><em>Analogy</em>: If you're evaluating a teacher's effectiveness, you wouldn't base your judgment on just one class. Cross-validation is like evaluating the teacher across multiple classes to get a more reliable assessment.</p>
+          
+          <p><strong>K-Fold Cross-Validation:</strong></p>
+          <ol>
+            <li>Split the data into K equal parts (folds)</li>
+            <li>For each fold:
+              <ul>
+                <li>Use that fold as the test set</li>
+                <li>Use the remaining K-1 folds as the training set</li>
+              </ul>
+            </li>
+            <li>Average the performance across all K folds</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          The Danger of Overfitting
+        </div>
+        <div class="card-body">
+          <p>Overfitting occurs when a model learns the training data too well, including its noise and random fluctuations. Such models perform excellently on training data but poorly on new data.</p>
+          <p><em>Analogy</em>: An overfit model is like a student who memorizes exact answers to practice questions rather than learning the underlying concepts. When faced with new questions, they struggle because they didn't learn the general principles.</p>
+          
+          <p><strong>Techniques to Avoid Overfitting:</strong></p>
+          <ul>
+            <li><strong>Regularization</strong>: Adding a penalty for model complexity</li>
+            <li><strong>Pruning</strong>: Simplifying decision trees by removing less important branches</li>
+            <li><strong>Early stopping</strong>: Halting training before the model starts memorizing noise</li>
+            <li><strong>Feature selection</strong>: Using only the most relevant features</li>
+            <li><strong>Ensemble methods</strong>: Combining multiple models to reduce variance</li>
+          </ul>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A retail company developing a demand forecasting model must avoid overfitting to seasonal patterns or one-time events (like a pandemic). By using proper train-test splits and cross-validation, they ensure their model generalizes well to future periods, leading to more accurate inventory planning and reduced stockouts or overstock situations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>2. Key Algorithms</h3>
+      
+      <h4>Regression: Predicting Sales and House Prices</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Linear Regression: The Foundation
+        </div>
+        <div class="card-body">
+          <p>Regression algorithms predict continuous numerical values—anything with a quantity rather than a category.</p>
+          <p>Linear regression models the relationship between features and a target variable by fitting a linear equation to the observed data.</p>
+          <p><em>Analogy</em>: Linear regression is like drawing the best-fit line through a scatter plot of data points. It finds the line that minimizes the distance between itself and all the points.</p>
+          
+          <p><strong>Business Applications:</strong></p>
+          <ul>
+            <li><strong>Sales forecasting</strong>: Predicting future sales based on historical trends, marketing spend, and economic indicators</li>
+            <li><strong>Real estate valuation</strong>: Estimating property values based on features like square footage, location, and number of bedrooms</li>
+            <li><strong>Demand planning</strong>: Forecasting product demand to optimize inventory levels</li>
+            <li><strong>Pricing analytics</strong>: Determining how price changes affect sales volume</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Decision Trees for Regression
+        </div>
+        <div class="card-body">
+          <p>Decision trees make predictions by learning simple decision rules inferred from the data features. For regression, they predict the average value of samples that reach each leaf node.</p>
+          <p><em>Analogy</em>: A decision tree is like a flowchart of questions. For predicting house prices, it might ask: "Is the square footage > 2000?" If yes, "Is it in a good school district?" and so on, until it reaches a prediction.</p>
+          
+          <p><strong>Business Applications:</strong></p>
+          <ul>
+            <li><strong>Customer lifetime value prediction</strong>: Estimating the total value a customer will bring over their relationship with the company</li>
+            <li><strong>Resource allocation</strong>: Predicting how much budget to allocate to different departments or projects</li>
+            <li><strong>Risk assessment</strong>: Estimating potential financial losses from various risk factors</li>
+          </ul>
+          
+          <p><strong>When to Use Each Algorithm:</strong></p>
+          <ul>
+            <li><strong>Linear regression</strong>: Best when relationships between variables are approximately linear and interpretability is important</li>
+            <li><strong>Decision trees</strong>: Better when relationships are complex and non-linear, though they may require pruning to avoid overfitting</li>
+          </ul>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A real estate company might use linear regression to establish baseline property valuations based on fundamental features (square footage, bedrooms, location). They could then use decision tree regression to capture more complex interactions, such as how the value of a renovated kitchen varies by neighborhood, providing more nuanced pricing recommendations for sellers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Classification: Customer Churn and Fraud Detection</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Logistic Regression: Simple Yet Powerful
+        </div>
+        <div class="card-body">
+          <p>Classification algorithms predict categorical outcomes—assigning data points to predefined classes.</p>
+          <p>Despite its name, logistic regression is used for classification, not regression. It estimates the probability that an observation belongs to a particular class.</p>
+          <p><em>Analogy</em>: Logistic regression is like a probability calculator. For customer churn, it might calculate a 75% probability that a customer will leave based on their behavior patterns.</p>
+          
+          <p><strong>Business Applications:</strong></p>
+          <ul>
+            <li><strong>Customer churn prediction</strong>: Identifying customers likely to stop using a service</li>
+            <li><strong>Credit approval</strong>: Classifying loan applicants as approved or denied</li>
+            <li><strong>Spam detection</strong>: Classifying emails as spam or not spam</li>
+            <li><strong>Medical diagnosis</strong>: Predicting disease presence based on symptoms and test results</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Random Forests: The Wisdom of Crowds
+        </div>
+        <div class="card-body">
+          <p>Random forests build multiple decision trees and combine their predictions through voting (for classification) or averaging (for regression). This ensemble approach reduces overfitting and often improves accuracy.</p>
+          <p><em>Analogy</em>: A random forest is like asking a panel of experts for their opinions and then going with the majority vote. Each expert (tree) has slightly different knowledge (trained on different data subsets), but collectively they make better decisions than any individual expert.</p>
+          
+          <p><strong>Business Applications:</strong></p>
+          <ul>
+            <li><strong>Fraud detection</strong>: Identifying potentially fraudulent transactions</li>
+            <li><strong>Customer segmentation</strong>: Classifying customers into different behavioral groups</li>
+            <li><strong>Predictive maintenance</strong>: Classifying equipment as likely to fail soon or not</li>
+            <li><strong>Content recommendation</strong>: Classifying content as relevant to a user or not</li>
+          </ul>
+          
+          <p><strong>When to Use Each Algorithm:</strong></p>
+          <ul>
+            <li><strong>Logistic regression</strong>: Best when you need a simple, interpretable model and relationships between variables are approximately linear</li>
+            <li><strong>Random forests</strong>: Better when accuracy is prioritized over interpretability and relationships are complex</li>
+          </ul>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A telecommunications company might use logistic regression for churn prediction because it's easy to explain to business stakeholders: "Customers with decreasing usage and increasing support calls are 3x more likely to churn." For fraud detection, where accuracy is critical and patterns are complex, they might use random forests to catch more fraudulent transactions while minimizing false positives that inconvenience customers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Clustering: Customer Segmentation</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          K-means: The Most Popular Clustering Algorithm
+        </div>
+        <div class="card-body">
+          <p>Clustering algorithms group similar data points together without predefined labels, revealing natural structures in the data.</p>
+          <p>K-means partitions data into K clusters, where each data point belongs to the cluster with the nearest mean (centroid).</p>
+          <p><em>Analogy</em>: K-means is like organizing a closet by color. You decide how many color groups (K) you want, then assign each item to the nearest color group, and recalculate the center of each group until the assignments stabilize.</p>
+          
+          <p><strong>Business Applications:</strong></p>
+          <ul>
+            <li><strong>Customer segmentation</strong>: Grouping customers with similar behaviors or preferences</li>
+            <li><strong>Market research</strong>: Identifying distinct market segments based on consumer behavior</li>
+            <li><strong>Image compression</strong>: Reducing the number of colors in an image by clustering similar colors</li>
+            <li><strong>Document analysis</strong>: Grouping documents with similar content</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Determining the Right Number of Clusters
+        </div>
+        <div class="card-body">
+          <p>A key challenge in K-means is choosing K (the number of clusters). Common approaches include:</p>
+          <ul>
+            <li><strong>Elbow method</strong>: Plotting the within-cluster sum of squares against K and looking for an "elbow" point</li>
+            <li><strong>Silhouette analysis</strong>: Measuring how similar an object is to its own cluster compared to other clusters</li>
+            <li><strong>Business context</strong>: Using domain knowledge to determine meaningful segments</li>
+          </ul>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>An e-commerce company might use K-means clustering to segment customers into groups like "frequent high-value shoppers," "bargain hunters," "seasonal shoppers," and "new customers." Each segment would receive different marketing strategies—loyalty rewards for the first group, promotional offers for the second, timely reminders for the third, and welcome campaigns for the fourth. This targeted approach increases marketing ROI and improves customer experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>3. Model Evaluation</h3>
+      
+      <h4>Metrics: Accuracy, Precision, Recall, F1-Score, ROC-AUC</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Accuracy: The Simplest Metric
+        </div>
+        <div class="card-body">
+          <p>Evaluating machine learning models requires choosing the right metrics based on the business problem.</p>
+          <p>Accuracy measures the proportion of correct predictions out of all predictions.</p>
+          <p><em>Formula</em>: (True Positives + True Negatives) / Total Predictions</p>
+          <p><strong>Limitation</strong>: Accuracy can be misleading, especially with imbalanced datasets. For example, if 95% of customers don't churn, a model that always predicts "no churn" will have 95% accuracy but be useless.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Precision: When False Positives Are Costly
+        </div>
+        <div class="card-body">
+          <p>Precision measures the proportion of true positives among all positive predictions.</p>
+          <p><em>Formula</em>: True Positives / (True Positives + False Positives)</p>
+          <p><strong>Business Context</strong>: Precision is crucial when the cost of false positives is high. In fraud detection, a false positive (legitimate transaction flagged as fraud) might inconvenience customers, so high precision is desirable.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Recall: When False Negatives Are Costly
+        </div>
+        <div class="card-body">
+          <p>Recall (sensitivity) measures the proportion of actual positives that were correctly identified.</p>
+          <p><em>Formula</em>: True Positives / (True Positives + False Negatives)</p>
+          <p><strong>Business Context</strong>: Recall is crucial when the cost of false negatives is high. In medical diagnosis, a false negative (missing a disease) could be life-threatening, so high recall is essential.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          F1-Score: Balancing Precision and Recall
+        </div>
+        <div class="card-body">
+          <p>F1-score is the harmonic mean of precision and recall, providing a balanced measure.</p>
+          <p><em>Formula</em>: 2 × (Precision × Recall) / (Precision + Recall)</p>
+          <p><strong>Business Context</strong>: F1-score is useful when you need to balance precision and recall, such as in churn prediction where both false positives (wasting retention efforts on loyal customers) and false negatives (missing at-risk customers) have costs.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          ROC-AUC: Evaluating Across All Thresholds
+        </div>
+        <div class="card-body">
+          <p>ROC (Receiver Operating Characteristic) curves plot the true positive rate against the false positive rate at various classification thresholds. AUC (Area Under the Curve) measures the overall performance across all possible thresholds.</p>
+          <p><strong>Business Context</strong>: ROC-AUC is useful for comparing models and understanding their performance across different operating points. A model with AUC of 0.9 is generally better than one with AUC of 0.7, regardless of the specific threshold chosen.</p>
+          
+          <p><strong>Choosing the Right Metric:</strong></p>
+          <ul>
+            <li><strong>Accuracy</strong>: Balanced classes, similar costs for false positives and negatives</li>
+            <li><strong>Precision</strong>: High cost of false positives</li>
+            <li><strong>Recall</strong>: High cost of false negatives</li>
+            <li><strong>F1-Score</strong>: Need to balance precision and recall</li>
+            <li><strong>ROC-AUC</strong>: Overall model performance across thresholds</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h4>Hyperparameter Tuning with GridSearchCV</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          GridSearchCV: Systematic Hyperparameter Search
+        </div>
+        <div class="card-body">
+          <p>Hyperparameters are settings that control the learning process of an algorithm (e.g., the number of trees in a random forest). Tuning these hyperparameters is crucial for optimal performance.</p>
+          <p>GridSearchCV exhaustively tries all possible combinations of specified hyperparameter values and evaluates each combination using cross-validation.</p>
+          <p><em>Analogy</em>: GridSearchCV is like testing every possible combination of ingredients in a recipe to find the perfect one. You specify the possible ingredients (hyperparameter values), and it tries every combination to find what works best.</p>
+          
+          <p><strong>The Process:</strong></p>
+          <ol>
+            <li>Define a grid of hyperparameter values to test</li>
+            <li>For each combination:
+              <ul>
+                <li>Train the model using cross-validation</li>
+                <li>Evaluate performance using a chosen metric</li>
+              </ul>
+            </li>
+            <li>Select the hyperparameters that yield the best performance</li>
+          </ol>
+          
+          <p><strong>RandomizedSearchCV: A More Efficient Alternative</strong></p>
+          <p>When the hyperparameter space is large, RandomizedSearchCV samples a fixed number of combinations rather than trying all possibilities. It's often more efficient and can find good solutions faster.</p>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Practical Application in Business
+            </div>
+            <div class="card-body">
+              <p>A financial institution building a credit risk model might use GridSearchCV to optimize hyperparameters like the number of trees in a random forest, the maximum depth of trees, and the minimum samples required to split a node. By systematically testing combinations and evaluating using ROC-AUC (to balance identifying risky applicants while not rejecting too many good ones), they can develop a model that maximizes profitability while managing risk appropriately.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>4. Hands-On: Build a Churn Prediction Model and Optimize for Business Impact</h3>
+      
+      <div class="card">
+        <div class="card-header">
+          Business Context: Customer Churn Prediction
+        </div>
+        <div class="card-body">
+          <p>Customer churn—when customers stop doing business with a company—is a critical challenge across industries. Acquiring new customers costs 5-25 times more than retaining existing ones, making churn prediction a high-value application of machine learning.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          The Business Problem
+        </div>
+        <div class="card-body">
+          <p>A telecommunications company wants to predict which customers are likely to churn in the next month so they can proactively offer retention incentives. However, these incentives have a cost, so they need to balance:</p>
+          <ol>
+            <li>Identifying as many true churners as possible (high recall)</li>
+            <li>Minimizing false positives to avoid wasting resources on customers who wouldn't have churned (high precision)</li>
+            <li>Considering the lifetime value of different customers when deciding who to target</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 1: Data Preparation
+        </div>
+        <div class="card-body">
+          <p>The company collects data on:</p>
+          <ul>
+            <li>Customer demographics (age, location)</li>
+            <li>Service information (plan type, contract length, monthly charges)</li>
+            <li>Usage patterns (data usage, call minutes, international calls)</li>
+            <li>Customer service interactions (number of calls, complaints)</li>
+            <li>Payment history (payment method, delays)</li>
+          </ul>
+          
+          <p><strong>Feature Engineering:</strong></p>
+          <p>Creating new features that might be predictive of churn:</p>
+          <ul>
+            <li><strong>Tenure</strong>: How long the customer has been with the company</li>
+            <li><strong>Usage trends</strong>: Changes in usage over recent months</li>
+            <li><strong>Service utilization</strong>: Ratio of usage to the customer's plan allowance</li>
+            <li><strong>Support intensity</strong>: Frequency of customer service contacts</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 2: Model Building
+        </div>
+        <div class="card-body">
+          <p>The team trains several models:</p>
+          <ol>
+            <li><strong>Logistic Regression</strong>: As a baseline for interpretability</li>
+            <li><strong>Random Forest</strong>: For potentially higher accuracy</li>
+            <li><strong>Gradient Boosting</strong>: Another powerful ensemble method</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 3: Model Evaluation
+        </div>
+        <div class="card-body">
+          <p>They evaluate models using multiple metrics:</p>
+          <ul>
+            <li><strong>Accuracy</strong>: Overall correctness</li>
+            <li><strong>Precision</strong>: To minimize wasted retention efforts</li>
+            <li><strong>Recall</strong>: To capture as many potential churners as possible</li>
+            <li><strong>F1-Score</strong>: To balance precision and recall</li>
+            <li><strong>ROC-AUC</strong>: To compare overall model performance</li>
+          </ul>
+          
+          <p>The random forest performs best overall, with an ROC-AUC of 0.85.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 4: Business Optimization
+        </div>
+        <div class="card-body">
+          <p>Instead of using the default probability threshold of 0.5, the team optimizes for business impact:</p>
+          
+          <ol>
+            <li><strong>Customer Value Segmentation</strong>: They segment customers by lifetime value (high, medium, low)</li>
+            <li><strong>Cost-Benefit Analysis</strong>: They calculate:
+              <ul>
+                <li>Cost of retention offer: $50</li>
+                <li>Value of retaining a high-value customer: $500 (annual profit)</li>
+                <li>Value of retaining a medium-value customer: $200</li>
+                <li>Value of retaining a low-value customer: $50</li>
+              </ul>
+            </li>
+            <li><strong>Threshold Optimization</strong>: They set different probability thresholds for each segment:
+              <ul>
+                <li><strong>High-value</strong>: Lower threshold (0.3) - worth targeting even with moderate churn risk</li>
+                <li><strong>Medium-value</strong>: Medium threshold (0.5) - balance between targeting and cost</li>
+                <li><strong>Low-value</strong>: Higher threshold (0.7) - only target when churn risk is very high</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 5: Implementation and Monitoring
+        </div>
+        <div class="card-body">
+          <p>The company implements the model in their customer relationship management (CRM) system, which:</p>
+          <ul>
+            <li>Automatically calculates churn probabilities for each customer</li>
+            <li>Flags high-risk customers based on their value segment</li>
+            <li>Generates retention offers tailored to each customer's profile</li>
+            <li>Tracks the effectiveness of interventions</li>
+          </ul>
+          
+          <p><strong>Results:</strong></p>
+          <ul>
+            <li>15% reduction in overall churn rate</li>
+            <li>30% improvement in retention of high-value customers</li>
+            <li>25% reduction in retention spending (by targeting more effectively)</li>
+          </ul>
+          
+          <p><strong>Key Learnings:</strong></p>
+          <ul>
+            <li>Model performance metrics alone don't determine business success</li>
+            <li>Aligning model thresholds with business value is crucial</li>
+            <li>Continuous monitoring ensures the model adapts to changing customer behavior</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Machine learning is a powerful tool for turning data into business value, but success requires more than technical implementation. By understanding different algorithms, evaluating models with appropriate metrics, and optimizing for business impact rather than just accuracy, you can develop solutions that drive meaningful results. Remember that the best model isn't necessarily the most accurate one—it's the one that delivers the most business value when deployed in the real world.</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

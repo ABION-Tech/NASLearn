@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Advanced Visualization & Communication: Transforming Data into Business Impact</h1>
+    </div>
+    
+    <div class="module-content">
+      <h2>Learning Objective</h2>
+      <p>After completing this lecture, you will be able to create advanced interactive visualizations, build automated reporting systems, and effectively communicate data-driven insights through compelling narratives that drive business decisions.</p>
+      
+      <h2>Why This Matters</h2>
+      <p>In today's data-saturated business environment, the ability to transform complex analyses into clear, actionable insights is a critical competitive advantage. Companies like Airbnb, Netflix, and Spotify don't just analyze data—they visualize it in ways that reveal opportunities, communicate strategies, and drive organizational alignment. Mastering these advanced visualization and communication skills ensures your hard-won insights don't just sit in a notebook but actually influence decisions and create business value.</p>
+      
+      <h2>Core Content</h2>
+      
+      <h3>1. Advanced Plotting</h3>
+      
+      <h4>Seaborn: Multivariate Plots and Statistical Visualizations</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Heatmaps: Visualizing Complex Relationships
+        </div>
+        <div class="card-body">
+          <p>Heatmaps use color gradients to represent values in a matrix format, making them ideal for displaying correlation matrices, confusion matrices, or any data where both axes represent categorical variables.</p>
+          <p><em>Business Application:</em> A retail company might use a heatmap to visualize correlations between product categories. This could reveal that customers who buy camping equipment also tend to purchase outdoor clothing—insights that can inform product bundling and store layout decisions.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>import seaborn as sns
+import matplotlib.pyplot as plt
+# Example: Correlation heatmap
+correlation = df[['Sales', 'Marketing_Spend', 'Customer_Rating', 'Product_Price']].corr()
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation, annot=True, cmap='coolwarm', center=0)
+plt.title('Correlation Matrix of Business Metrics')
+plt.show()</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Pair Plots: Exploring Multivariate Relationships
+        </div>
+        <div class="card-body">
+          <p>Pair plots create a grid of scatter plots and histograms for each pair of variables in a dataset, allowing you to explore relationships between multiple variables simultaneously.</p>
+          <p><em>Business Application:</em> A marketing team could use pair plots to understand how different customer demographics (age, income, location) relate to purchasing behavior and product preferences, enabling more targeted marketing campaigns.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example: Pair plot for customer segmentation
+sns.pairplot(df[['Age', 'Income', 'Spending_Score', 'Loyalty_Status']], hue='Loyalty_Status')
+plt.suptitle('Customer Segmentation Analysis', y=1.02)
+plt.show()</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Statistical Visualizations: Beyond Basic Charts
+        </div>
+        <div class="card-body">
+          <p>Seaborn offers specialized plots for statistical analysis:</p>
+          <ul>
+            <li><strong>Regression plots</strong>: Show the relationship between variables with regression lines and confidence intervals</li>
+            <li><strong>Distribution plots</strong>: Combine histograms with kernel density estimates</li>
+            <li><strong>Categorical plots</strong>: Visualize relationships between categorical and numerical variables</li>
+          </ul>
+          <p><em>Business Application:</em> A financial analyst might use regression plots to understand how economic indicators (interest rates, unemployment) affect company stock performance, providing insights for investment strategies.</p>
+        </div>
+      </div>
+      
+      <h4>Plotly/Bokeh: Interactive Dashboards, Geospatial Maps, Animations</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Interactive Dashboards with Plotly Dash
+        </div>
+        <div class="card-body">
+          <p>While static plots are useful for reports, interactive visualizations empower users to explore data dynamically and discover insights on their own.</p>
+          <p>Plotly Dash is a framework for building analytical web applications without needing to write HTML, CSS, or JavaScript. It allows you to create fully interactive dashboards with dropdowns, sliders, and other input controls.</p>
+          <p><em>Business Application:</em> A sales operations team could build a real-time dashboard showing sales performance by region, product line, and time period. Managers could filter data to identify underperforming areas and drill down to understand root causes.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>import dash
+from dash import dcc, html
+import plotly.express as px
+# Simple Dash app example
+app = dash.Dash(__name__)
+app.layout = html.Div([
+    html.H1("Sales Performance Dashboard"),
+    dcc.Dropdown(
+        id='region-dropdown',
+        options=[{'label': r, 'value': r} for r in df['Region'].unique()],
+        value='All'
+    ),
+    dcc.Graph(id='sales-graph')
+])
+
+@app.callback(
+    dash.dependencies.Output('sales-graph', 'figure'),
+    [dash.dependencies.Input('region-dropdown', 'value')]
+)
+def update_graph(selected_region):
+    if selected_region == 'All':
+        filtered_df = df
+    else:
+        filtered_df = df[df['Region'] == selected_region]
+    
+    fig = px.line(filtered_df, x='Date', y='Sales', color='Product_Category')
+    return fig
+
+if __name__ == '__main__':
+    app.run_server(debug=True)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Geospatial Maps for Location-Based Insights
+        </div>
+        <div class="card-body">
+          <p>Plotly and Bokeh both offer powerful mapping capabilities that can visualize data by geographic location, from country-level overviews to street-level details.</p>
+          <p><em>Business Application:</em> A logistics company could use interactive maps to visualize delivery routes, track vehicle locations in real-time, and identify geographic patterns in delivery delays or customer satisfaction.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example: Choropleth map with Plotly
+fig = px.choropleth(
+    df, 
+    locations='State', 
+    locationmode="USA-states", 
+    color='Sales',
+    scope="usa",
+    title='Sales by State'
+)
+fig.show()</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Animations: Showing Change Over Time
+        </div>
+        <div class="card-body">
+          <p>Animated visualizations can effectively communicate trends and patterns that change over time, making them ideal for time-series data or before/after comparisons.</p>
+          <p><em>Business Application:</em> A marketing team could create an animated bar chart showing how market share has evolved among competitors over time, highlighting the impact of strategic decisions and market shifts.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Example: Animated bar chart
+fig = px.bar(
+    df, 
+    x='Product', 
+    y='Market_Share', 
+    animation_frame='Quarter',
+    range_y=[0, 100],
+    title='Market Share Evolution by Quarter'
+)
+fig.show()</code></pre>
+        </div>
+      </div>
+      
+      <h3>2. Automated Reporting</h3>
+      
+      <h4>Generate PDF/HTML Reports with Jinja2 and Pandas</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          The Reporting Workflow
+        </div>
+        <div class="card-body">
+          <p>Automating report generation saves time, ensures consistency, and allows for regular updates without manual intervention. By combining Pandas for data manipulation with Jinja2 for templating, you can create dynamic reports that update automatically with fresh data.</p>
+          <p>The process involves:</p>
+          <ol>
+            <li><strong>Data Preparation</strong>: Use Pandas to clean, transform, and analyze your data</li>
+            <li><strong>Template Creation</strong>: Design a report structure in HTML or LaTeX with Jinja2 placeholders</li>
+            <li><strong>Content Generation</strong>: Use Pandas to create tables, summaries, and visualizations</li>
+            <li><strong>Template Rendering</strong>: Combine the template with data using Jinja2</li>
+            <li><strong>Export</strong>: Save as HTML (for web distribution) or convert to PDF</li>
+          </ol>
+          <p><em>Business Application:</em> A financial analyst could set up a system that automatically generates monthly performance reports, pulling the latest data from databases, calculating key metrics, and producing a polished PDF report with charts and narrative insights—without any manual work each month.</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>from jinja2 import Environment, FileSystemLoader
+import pandas as pd
+
+# Prepare data
+summary_stats = df.groupby('Region')['Sales'].agg(['mean', 'sum', 'count'])
+
+# Create Jinja2 template
+env = Environment(loader=FileSystemLoader('.'))
+template = env.get_template('report_template.html')
+
+# Render template with data
+html_out = template.render(
+    title='Monthly Sales Report',
+    summary_table=summary_stats.to_html(),
+    date=pd.Timestamp.now().strftime('%B %d, %Y')
+)
+
+# Save to HTML file
+with open('sales_report.html', 'w') as f:
+    f.write(html_out)</code></pre>
+        </div>
+      </div>
+      
+      <h4>Embed Python Outputs in Power BI/Tableau</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Power BI Integration
+        </div>
+        <div class="card-body">
+          <p>While Python is powerful for analysis, business intelligence tools like Power BI and Tableau excel at interactive dashboards and user-friendly interfaces. Integrating Python outputs with these tools combines the best of both worlds.</p>
+          <p>Power BI allows you to run Python scripts within its environment, enabling you to:</p>
+          <ul>
+            <li>Perform complex data transformations not available in Power Query</li>
+            <li>Create advanced visualizations beyond Power BI's native capabilities</li>
+            <li>Apply machine learning models for predictions and anomaly detection</li>
+          </ul>
+          <p><em>Business Application:</em> A retail company could use Python in Power BI to apply a clustering algorithm to customer segments, then visualize these segments in an interactive Power BI dashboard that allows business users to explore segment characteristics.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Tableau Integration
+        </div>
+        <div class="card-body">
+          <p>Tableau's TabPy server allows you to run Python code and return results to Tableau, enabling:</p>
+          <ul>
+            <li>Advanced statistical calculations</li>
+            <li>Natural language processing on text data</li>
+            <li>Predictive modeling and forecasting</li>
+          </ul>
+          <p><em>Business Application:</em> A healthcare provider could use Python in Tableau to analyze patient readmission risk factors, then display the risk scores and contributing factors in a Tableau dashboard that helps clinicians identify high-risk patients.</p>
+          <p><strong>Key Advantage:</strong> This integration leverages Python's analytical power while using BI tools for their strengths in interactivity, user-friendliness, and enterprise deployment.</p>
+        </div>
+      </div>
+      
+      <h3>3. Data Storytelling</h3>
+      
+      <h4>Translate Model Results into Business Narratives</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          The Elements of Effective Data Storytelling
+        </div>
+        <div class="card-body">
+          <p>Data storytelling is the art of weaving data, visualizations, and narrative into a compelling story that drives action. It's not just about presenting numbers—it's about making them meaningful and memorable.</p>
+          <p>The elements of effective data storytelling include:</p>
+          <ol>
+            <li><strong>Context</strong>: Establish the business problem and why it matters</li>
+            <li><strong>Characters</strong>: Introduce the key metrics or variables as characters in your story</li>
+            <li><strong>Conflict</strong>: Describe the challenge or opportunity revealed by the data</li>
+            <li><strong>Resolution</strong>: Present insights and recommendations as the solution</li>
+            <li><strong>Visual Evidence</strong>: Use visualizations to support each part of the story</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Translating Technical Results to Business Impact
+        </div>
+        <div class="card-body">
+          <p><strong>Regression Models:</strong> Instead of "The coefficient for X is 0.75," say "For every additional hour of customer support training, we see a 75% increase in customer satisfaction scores."</p>
+          
+          <p><strong>Classification Models:</strong> Instead of "The model has 85% accuracy," say "Our model correctly identifies 85% of customers at risk of churn, allowing us to target retention efforts effectively."</p>
+          
+          <p><strong>Clustering Models:</strong> Instead of "We found 5 clusters," say "We identified 5 distinct customer segments, each with unique behaviors that require tailored marketing strategies."</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Example Narrative: "Churn risk increases 3x for customers with X behavior"
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Context</strong>: "Customer retention is critical for our subscription business, with acquiring new customers costing 5x more than retaining existing ones."</li>
+            <li><strong>Character</strong>: "We analyzed customer behavior patterns over the last year, focusing on engagement metrics and support interactions."</li>
+            <li><strong>Conflict</strong>: "We discovered that customers who haven't used Feature X in the first 30 days are 3 times more likely to churn within 90 days."</li>
+            <li><strong>Resolution</strong>: "By targeting these customers with a personalized tutorial on Feature X, we can reduce churn by 15%, saving approximately $2.4M annually."</li>
+            <li><strong>Visual Evidence</strong>: [Show a bar chart comparing churn rates for users who did/didn't use Feature X, and a line chart showing projected impact of the intervention]</li>
+          </ol>
+          
+          <p><strong>Key Techniques for Effective Data Storytelling:</strong></p>
+          <ul>
+            <li><strong>Start with the "So What?"</strong>: Begin with the business implication, not the technical details</li>
+            <li><strong>Use Analogies</strong>: Compare complex concepts to familiar experiences</li>
+            <li><strong>Focus on Action</strong>: Clearly state what should happen as a result of your insights</li>
+            <li><strong>Know Your Audience</strong>: Tailor your narrative to the concerns and knowledge level of your stakeholders</li>
+            <li><strong>Keep It Simple</strong>: Avoid jargon and technical details unless specifically requested</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h3>4. Hands-On: Create an Interactive Dashboard</h3>
+      
+      <div class="card">
+        <div class="card-header">
+          Business Scenario
+        </div>
+        <div class="card-body">
+          <p>You're a data analyst at a retail company that needs to forecast sales for the upcoming quarter and understand the key drivers behind those forecasts. The sales team needs an interactive tool to explore these forecasts and adjust their strategies accordingly.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 1: Data Preparation and Analysis
+        </div>
+        <div class="card-body">
+          <p>First, prepare your data by:</p>
+          <ul>
+            <li>Loading historical sales data with dates, product categories, regions, and promotional activities</li>
+            <li>Adding external factors like holidays, economic indicators, and weather data</li>
+            <li>Performing feature engineering to create lagged variables and moving averages</li>
+          </ul>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>import pandas as pd
+import numpy as np
+
+# Load and prepare data
+df = pd.read_csv('retail_sales.csv')
+df['Date'] = pd.to_datetime(df['Date'])
+df = df.set_index('Date')
+
+# Create time-based features
+df['Month'] = df.index.month
+df['Quarter'] = df.index.quarter
+df['Year'] = df.index.year
+df['DayOfWeek'] = df.index.dayofweek
+
+# Create lagged features
+df['Sales_Lag_7'] = df['Sales'].shift(7)
+df['Sales_Lag_30'] = df['Sales'].shift(30)
+
+# Create moving averages
+df['Sales_MA_7'] = df['Sales'].rolling(window=7).mean()
+df['Sales_MA_30'] = df['Sales'].rolling(window=30).mean()</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 2: Build a Forecasting Model
+        </div>
+        <div class="card-body">
+          <p>Develop a time-series forecasting model to predict future sales:</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>from statsmodels.tsa.statespace.sarimax import SARIMAX
+
+# Define and fit the model
+model = SARIMAX(df['Sales'], order=(1, 1, 1), seasonal_order=(1, 1, 1, 12))
+results = model.fit()
+
+# Generate forecast
+forecast = results.get_forecast(steps=90)
+forecast_mean = forecast.predicted_mean
+forecast_conf_int = forecast.conf_int()</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 3: Identify Key Drivers
+        </div>
+        <div class="card-body">
+          <p>Analyze which factors have the most significant impact on sales:</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>from sklearn.ensemble import RandomForestRegressor
+
+# Prepare features and target
+features = ['Month', 'Quarter', 'Is_Holiday', 'Promotion', 'Temperature', 'Economic_Index']
+X = df[features].fillna(0)
+y = df['Sales']
+
+# Train model and get feature importance
+model = RandomForestRegressor()
+model.fit(X, y)
+
+importance = pd.DataFrame({
+    'Feature': features,
+    'Importance': model.feature_importances_
+}).sort_values('Importance', ascending=False)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 4: Create Interactive Visualizations with Plotly
+        </div>
+        <div class="card-body">
+          <p>Build interactive plots to display the forecast and key drivers:</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>import plotly.express as px
+import plotly.graph_objects as go
+
+# Create forecast visualization
+fig_forecast = go.Figure()
+fig_forecast.add_trace(go.Scatter(
+    x=df.index, y=df['Sales'], 
+    mode='lines', name='Historical Sales'
+))
+fig_forecast.add_trace(go.Scatter(
+    x=forecast_mean.index, y=forecast_mean,
+    mode='lines', name='Forecast'
+))
+fig_forecast.add_trace(go.Scatter(
+    x=forecast_conf_int.index, 
+    y=forecast_conf_int.iloc[:, 0],
+    mode='lines', line=dict(width=0), showlegend=False
+))
+fig_forecast.add_trace(go.Scatter(
+    x=forecast_conf_int.index, 
+    y=forecast_conf_int.iloc[:, 1],
+    mode='lines', line=dict(width=0), fillcolor='rgba(68, 68, 68, 0.2)',
+    fill='tonexty', name='Confidence Interval'
+))
+fig_forecast.update_layout(title='Sales Forecast with Confidence Interval')
+
+# Create driver importance visualization
+fig_drivers = px.bar(importance, x='Importance', y='Feature', orientation='h')
+fig_drivers.update_layout(title='Key Drivers of Sales')</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 5: Build the Dashboard with Plotly Dash
+        </div>
+        <div class="card-body">
+          <p>Combine the visualizations into an interactive dashboard:</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>import dash
+from dash import dcc, html, Input, Output
+
+app = dash.Dash(__name__)
+app.layout = html.Div([
+    html.H1("Sales Forecast Dashboard"),
+    
+    html.Div([
+        html.Label("Select Product Category:"),
+        dcc.Dropdown(
+            id='category-dropdown',
+            options=[{'label': cat, 'value': cat} for cat in df['Category'].unique()],
+            value='All'
+        )
+    ], style={'width': '30%', 'display': 'inline-block'}),
+    
+    html.Div([
+        html.Label("Select Region:"),
+        dcc.Dropdown(
+            id='region-dropdown',
+            options=[{'label': reg, 'value': reg} for reg in df['Region'].unique()],
+            value='All'
+        )
+    ], style={'width': '30%', 'display': 'inline-block'}),
+    
+    dcc.Graph(id='forecast-graph'),
+    dcc.Graph(id='drivers-graph')
+])
+
+@app.callback(
+    [dash.dependencies.Output('forecast-graph', 'figure'),
+     dash.dependencies.Output('drivers-graph', 'figure')],
+    [dash.dependencies.Input('category-dropdown', 'value'),
+     dash.dependencies.Input('region-dropdown', 'value')]
+)
+def update_dashboard(selected_category, selected_region):
+    # Filter data based on selections
+    filtered_df = df.copy()
+    if selected_category != 'All':
+        filtered_df = filtered_df[filtered_df['Category'] == selected_category]
+    if selected_region != 'All':
+        filtered_df = filtered_df[filtered_df['Region'] == selected_region]
+    
+    # Update forecast graph (simplified for example)
+    fig_forecast = px.line(
+        filtered_df.reset_index(), 
+        x='Date', 
+        y='Sales',
+        title='Sales Forecast'
+    )
+    
+    # Update drivers graph (simplified for example)
+    fig_drivers = px.bar(
+        importance, 
+        x='Importance', 
+        y='Feature', 
+        orientation='h',
+        title='Key Drivers of Sales'
+    )
+    
+    return fig_forecast, fig_drivers
+
+if __name__ == '__main__':
+    app.run_server(debug=True)</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Step 6: Create an Automated Report
+        </div>
+        <div class="card-body">
+          <p>Generate a PDF report that summarizes key insights:</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>from jinja2 import Template
+import weasyprint
+
+# Create report template
+report_template = Template('''
+<h1>Sales Forecast Report</h1>
+<p>Generated on: {{ date }}</p>
+<h2>Executive Summary</h2>
+<p>Our forecast predicts {{ forecast_growth }}% growth in sales for the upcoming quarter, 
+driven primarily by {{ top_driver }}. The {{ category }} category in {{ region }} shows 
+the strongest growth potential.</p>
+<h2>Key Insights</h2>
+<ul>
+    <li>Sales are expected to increase by {{ forecast_growth }}% next quarter</li>
+    <li>{{ top_driver }} is the most significant driver of sales, accounting for {{ driver_impact }}% of the variation</li>
+    <li>The {{ category }} category shows the strongest growth potential at {{ category_growth }}%</li>
+</ul>
+<h2>Recommendations</h2>
+<ol>
+    <li>Increase marketing focus on {{ top_driver }} to capitalize on its strong impact</li>
+    <li>Allocate additional inventory to the {{ region }} region to meet expected demand</li>
+    <li>Develop targeted promotions for the {{ category }} category to accelerate growth</li>
+</ol>
+''')
+
+# Calculate key metrics
+forecast_growth = 12.5  # Example value
+top_driver = importance.iloc[0]['Feature']
+driver_impact = round(importance.iloc[0]['Importance'] * 100, 1)
+category = 'Electronics'  # Example value
+region = 'West'  # Example value
+category_growth = 18.3  # Example value
+
+# Render template
+html_report = report_template.render(
+    date=pd.Timestamp.now().strftime('%Y-%m-%d'),
+    forecast_growth=forecast_growth,
+    top_driver=top_driver,
+    driver_impact=driver_impact,
+    category=category,
+    region=region,
+    category_growth=category_growth
+)
+
+# Convert to PDF
+pdf_report = weasyprint.HTML(string=html_report).write_pdf('sales_forecast_report.pdf')</code></pre>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          In-Lesson Activity
+        </div>
+        <div class="card-body">
+          <p><strong>Task:</strong> Create a simplified version of the interactive dashboard described above using Plotly Express and Dash.</p>
+          <p><strong>Scenario:</strong> You're a data analyst at a subscription-based streaming service. You need to create a dashboard that shows user engagement metrics and helps identify factors that influence subscription renewals.</p>
+          <p><strong>Steps:</strong></p>
+          <ol>
+            <li><strong>Data Preparation</strong>: 
+              <ul>
+                <li>Create a synthetic dataset with columns: Date, User_ID, Country, Subscription_Type, Hours_Watched, Content_Rating, Support_Contacts, Renewed</li>
+                <li>Generate at least 1000 records spanning 6 months</li>
+              </ul>
+            </li>
+            <li><strong>Basic Analysis</strong>:
+              <ul>
+                <li>Calculate overall renewal rate</li>
+                <li>Identify which factors correlate most strongly with renewals</li>
+                <li>Create a simple forecast of renewal rates for the next month</li>
+              </ul>
+            </li>
+            <li><strong>Create Visualizations</strong>:
+              <ul>
+                <li>A line chart showing renewal rates over time</li>
+                <li>A bar chart showing renewal rates by subscription type</li>
+                <li>A scatter plot showing the relationship between hours watched and renewal rate</li>
+              </ul>
+            </li>
+            <li><strong>Build a Simple Dash App</strong>:
+              <ul>
+                <li>Include the three visualizations</li>
+                <li>Add a dropdown to filter by country</li>
+                <li>Add a slider to adjust the date range</li>
+              </ul>
+            </li>
+            <li><strong>Prepare a Brief Narrative</strong>:
+              <ul>
+                <li>Write a 3-paragraph summary of key insights</li>
+                <li>Include at least one data-driven recommendation</li>
+              </ul>
+            </li>
+          </ol>
+          <p><strong>Reflection Questions:</strong></p>
+          <ol>
+            <li>How does interactivity enhance the user's ability to explore the data?</li>
+            <li>What additional features would make this dashboard more useful for business stakeholders?</li>
+            <li>How would you communicate the key insights from this dashboard to a non-technical executive?</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Advanced visualization and communication are about bridging the gap between data analysis and business impact. The most sophisticated model is worthless if its insights aren't understood and acted upon. By mastering interactive dashboards, automated reporting, and data storytelling, you ensure your work drives real business value. Remember: the goal isn't just to create impressive visualizations—it's to create understanding and inspire action. As you develop these skills, focus on how each visualization and narrative element serves the business objective and guides decision-making.</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

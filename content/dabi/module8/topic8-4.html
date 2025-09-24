@@ -122,7 +122,654 @@
 </head>
 
 <body>
+<div class="container">
+<div class="header">
+<h1>Module 8 Activities & Assessment: Integrating Big Data, Cloud Analytics, and Future Trends</h1>
+</div>
 
+<div class="module-content">
+<h2>Case Study Analysis: Netflix's Data Platform Architecture</h2>
+<p><strong>Objective:</strong> Analyze how Netflix leverages big data technologies and cloud services to power its recommendation engine and business operations.</p>
+
+<h3>Instructions</h3>
+<ol>
+<li>
+<strong>Research Phase:</strong> Study Netflix's data architecture using available resources (technical blogs, case studies, conference talks). Focus on:
+<ul>
+<li>Data sources and ingestion methods</li>
+<li>Storage and processing technologies</li>
+<li>Analytics and machine learning applications</li>
+<li>Cloud platform utilization</li>
+</ul>
+</li>
+<li>
+<strong>Architecture Breakdown:</strong> Create a detailed diagram and explanation of Netflix's data platform, mapping components to Module 8 concepts:
+<table class="custom-table" style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px;">
+<thead>
+<tr style="background-color: #f2f2f2;">
+<th style="border: 1px solid #ddd; padding: 12px; text-align: left; font-weight: bold;">Component</th>
+<th style="border: 1px solid #ddd; padding: 12px; text-align: left; font-weight: bold;">Netflix Implementation</th>
+<th style="border: 1px solid #ddd; padding: 12px; text-align: left; font-weight: bold;">Module 8 Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;"><strong>Data Ingestion</strong></td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">Real-time event streaming from user interactions, batch processing of content metadata</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">Cloud streaming services (Kinesis/Pub/Sub), event-driven architecture</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;"><strong>Data Storage</strong></td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">S3 for raw data, Cassandra for real-time access, specialized databases for different use cases</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">Data lake (S3/ADLS/GCS), multi-model databases</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;"><strong>Data Processing</strong></td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">Spark for batch processing, Flink for real-time analytics</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">Cloud-based Spark (EMR/Dataproc/Databricks), stream processing</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;"><strong>Data Serving</strong></td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">Custom-built serving layers for recommendations, Elasticsearch for search</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">Lakehouse architecture (Delta Lake/Iceberg), specialized serving engines</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;"><strong>Analytics & ML</strong></td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">Personalized recommendations, content valuation, churn prediction</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">Augmented analytics, ML operations, semantic layer for metrics</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;"><strong>Governance</strong></td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">Centralized data governance, access controls, data quality monitoring</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">DataOps practices, security/privacy compliance, AI ethics frameworks</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<strong>Future Trends Analysis:</strong> Identify how Netflix exemplifies or could benefit from:
+<ul>
+<li>DataOps practices (CI/CD for data pipelines)</li>
+<li>Augmented analytics capabilities</li>
+<li>Lakehouse architecture advantages</li>
+<li>Ethical considerations in recommendation algorithms</li>
+</ul>
+</li>
+<li>
+<strong>Submission:</strong> Prepare a 1,500-word report with architecture diagrams and a 10-minute presentation summarizing key findings.
+</li>
+</ol>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Reflection Questions
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>How does Netflix's architecture address the challenges of scale and real-time processing?</li>
+<li>What trade-offs has Netflix made in its technology choices?</li>
+<li>How does Netflix balance data-driven personalization with privacy concerns?</li>
+</ul>
+</div>
+</div>
+
+<h2>Hands-On Lab: Building a Cloud ETL Pipeline</h2>
+<p><strong>Objective:</strong> Implement a complete cloud-based ETL pipeline using real-world tools and datasets.</p>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Scenario
+</div>
+<div class="card-body" style="padding: 15px;">
+<p>You're a data engineer at an e-commerce company needing to analyze customer behavior patterns. You'll build a pipeline that processes web clickstream data to generate insights for the marketing team.</p>
+<p><strong>Tools Required:</strong></p>
+<ul>
+<li>Cloud Platform: AWS, Azure, or GCP (choose one)</li>
+<li>Cloud Storage: S3, ADLS, or GCS</li>
+<li>Processing: Spark cluster (EMR, Databricks, or Dataproc)</li>
+<li>Data Warehouse: Redshift, BigQuery, or Synapse</li>
+<li>Visualization: Tableau, Power BI, or QuickSight</li>
+<li>Orchestration: Glue, Data Factory, or Composer</li>
+</ul>
+</div>
+</div>
+
+<h3>Step-by-Step Guide</h3>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+1. Environment Setup (30 mins)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Create cloud accounts and set up necessary permissions</li>
+<li>Configure storage buckets and database instances</li>
+<li>Set up networking and security groups</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+2. Data Ingestion (45 mins)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Download a public dataset (e.g., <a href="https://www.kaggle.com/datasets/carrie1/ecommerce-data">Kaggle E-commerce Data</a>)</li>
+<li>Upload raw data to cloud storage bucket</li>
+<li>Document data structure and quality issues</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+3. Data Transformation (90 mins)
+</div>
+<div class="card-body" style="padding: 15px;">
+<p>Launch a cloud-based Spark cluster and implement PySpark code:</p>
+<pre style="background-color: #f8f8f8; border: 1px solid #ddd; padding: 15px; border-radius: 4px; overflow-x: auto; font-family: monospace; font-size: 14px; line-height: 1.5;">
+Sample transformation tasks
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, to_date, regexp_replace
+
+spark = SparkSession.builder.appName("EcommerceTransform").getOrCreate()
+
+Load raw data
+raw_df = spark.read.csv("s3://your-bucket/raw-data.csv", header=True, inferSchema=True)
+
+Clean and transform
+cleaned_df = raw_df.withColumn("InvoiceDate", to_date(col("InvoiceDate"), "M/d/yyyy H:mm"))
+.withColumn("CustomerID", regexp_replace(col("CustomerID"), "[^0-9]", ""))
+.na.drop(subset=["CustomerID", "InvoiceNo"])
+
+Create analytical tables
+customer_summary = cleaned_df.groupBy("CustomerID")
+.agg({"Quantity": "sum", "UnitPrice": "avg"})
+.withColumnRenamed("sum(Quantity)", "TotalQuantity")
+.withColumnRenamed("avg(UnitPrice)", "AvgPrice")
+
+Save transformed data
+customer_summary.write.parquet("s3://your-bucket/processed/customer_summary/")
+</pre>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+4. Data Loading (45 mins)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Create tables in cloud data warehouse</li>
+<li>Load transformed data using appropriate connectors</li>
+<li>Verify data integrity and performance</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+5. Visualization (60 mins)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Connect BI tool to data warehouse</li>
+<li>Create dashboards showing:
+<ul>
+<li>Customer purchasing patterns over time</li>
+<li>Product category performance</li>
+<li>Geographic distribution of customers</li>
+</ul>
+</li>
+<li>Implement interactive filters and drill-down capabilities</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+6. Orchestration (60 mins)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Build a pipeline using cloud orchestration tool</li>
+<li>Schedule daily execution</li>
+<li>Configure error handling and notifications</li>
+<li>Implement data quality checks</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Deliverables
+</div>
+<div class="card-body" style="padding: 15px;">
+<ol>
+<li>Documented code repository with all transformation scripts</li>
+<li>Screenshots of cloud resources and BI dashboards</li>
+<li>Pipeline architecture diagram</li>
+<li>5-minute demonstration video of the working pipeline</li>
+</ol>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Challenge Extension
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Add streaming capability to process real-time click events</li>
+<li>Implement data quality checks and alerting</li>
+<li>Optimize pipeline performance and cost</li>
+</ul>
+</div>
+</div>
+
+<h2>Discussion Forum: Ethics in Algorithmic Decision-Making</h2>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Scenario
+</div>
+<div class="card-body" style="padding: 15px;">
+<p>A social media company uses machine learning algorithms to personalize content feeds and target advertisements. The company collects extensive user data including demographics, browsing behavior, location, and social connections to train these algorithms.</p>
+</div>
+</div>
+
+<h3>Discussion Prompts</h3>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+1. Data Collection Ethics
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>What are the ethical implications of collecting extensive user data without explicit, informed consent?</li>
+<li>How should companies balance data utility with user privacy?</li>
+<li>What level of transparency should users have about how their data is collected and used?</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+2. Algorithmic Bias
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>How might these algorithms perpetuate or amplify societal biases (e.g., racial, gender, socioeconomic)?</li>
+<li>What responsibility do companies have to audit and mitigate bias in their algorithms?</li>
+<li>Should there be regulatory requirements for algorithmic fairness?</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+3. Business vs. User Interests
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>When do personalized content and advertising cross the line from helpful to manipulative?</li>
+<li>How can companies design algorithms that serve both business objectives and user well-being?</li>
+<li>What role should users play in controlling algorithmic decisions about them?</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+4. Accountability and Governance
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Who should be held accountable when algorithms cause harm (users, companies, regulators)?</li>
+<li>What governance structures can ensure ethical algorithm development and deployment?</li>
+<li>How can we balance innovation with responsible AI practices?</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Participation Requirements
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Initial post (400-500 words) addressing at least two prompts</li>
+<li>Respond to at least two peers with substantive counterpoints or extensions (200-300 words each)</li>
+<li>Cite at least two sources from Module 8 content or external research</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Grading Criteria
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Depth of ethical analysis (40%)</li>
+<li>Integration of course concepts (30%)</li>
+<li>Quality of peer engagement (20%)</li>
+<li>Evidence and reasoning (10%)</li>
+</ul>
+</div>
+</div>
+
+<h2>Capstone Project Proposal</h2>
+<p><strong>Objective:</strong> Design a comprehensive solution to a business problem using big data technologies on a cloud platform, with explicit attention to governance and security.</p>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Scenario
+</div>
+<div class="card-body" style="padding: 15px;">
+<p>A smart city initiative aims to optimize traffic flow, reduce congestion, and improve public transportation efficiency using IoT sensors and connected vehicle data.</p>
+</div>
+</div>
+
+<h3>Proposal Requirements</h3>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+1. Executive Summary (1 page)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Problem statement and business impact</li>
+<li>Proposed solution overview</li>
+<li>Expected outcomes and ROI</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+2. Problem Analysis (2-3 pages)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Detailed description of current challenges</li>
+<li>Data sources available (IoT sensors, traffic cameras, GPS data, public transit records)</li>
+<li>Stakeholders and their requirements</li>
+<li>Technical and business constraints</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+3. Technical Architecture (3-4 pages)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li><strong>Data Ingestion:</strong> How data will be collected from various sources</li>
+<li><strong>Storage Strategy:</strong> Data lake vs. warehouse decisions, data lifecycle management</li>
+<li><strong>Processing Framework:</strong> Batch vs. real-time processing, technology choices</li>
+<li><strong>Analytics Components:</strong> Descriptive, predictive, and prescriptive analytics approaches</li>
+<li><strong>Visualization & Reporting:</strong> How insights will be delivered to different stakeholders</li>
+</ul>
+<p>Include architecture diagram showing all components and data flows.</p>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+4. Implementation Plan (2-3 pages)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Phased rollout strategy</li>
+<li>Resource requirements (team, budget, timeline)</li>
+<li>Risk assessment and mitigation strategies</li>
+<li>Success metrics and KPIs</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+5. Governance & Security Framework (2-3 pages)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Data security measures (encryption, access controls)</li>
+<li>Privacy considerations for citizen data</li>
+<li>Compliance requirements (GDPR, local regulations)</li>
+<li>Data quality management</li>
+<li>Ethical AI considerations for traffic optimization algorithms</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+6. Future Roadmap (1 page)
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Potential enhancements and expansions</li>
+<li>Emerging technologies to incorporate</li>
+<li>Long-term vision for the solution</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Submission Format
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>10-15 page document (excluding appendices)</li>
+<li>Professional formatting with executive summary</li>
+<li>Appendices for technical details and supporting materials</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Evaluation Criteria
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Technical soundness (30%)</li>
+<li>Business alignment (20%)</li>
+<li>Governance comprehensiveness (20%)</li>
+<li>Innovation and future-readiness (15%)</li>
+<li>Clarity and professionalism (15%)</li>
+</ul>
+</div>
+</div>
+
+<h2>Weekly Quiz: Integrated Knowledge Assessment</h2>
+<p><strong>Instructions:</strong> Complete this 30-minute quiz to demonstrate your understanding of how big data concepts map to cloud services and future trends.</p>
+
+<h3>Part 1: Multiple Choice (1 point each - 10 points total)</h3>
+<ol>
+<li>Which cloud service is most analogous to HDFS in a traditional Hadoop ecosystem?
+<ul>
+<li>a) Amazon DynamoDB</li>
+<li>b) Azure SQL Database</li>
+<li>c) Google Cloud Storage</li>
+<li>d) Amazon Redshift</li>
+</ul>
+</li>
+<li>What is the primary advantage of a lakehouse architecture over traditional data lakes?
+<ul>
+<li>a) Lower storage costs</li>
+<li>b) ACID transactions and performance optimizations</li>
+<li>c) Easier data visualization</li>
+<li>d) Better support for unstructured data</li>
+</ul>
+</li>
+<li>Which service exemplifies the augmented analytics trend?
+<ul>
+<li>a) AWS Glue</li>
+<li>b) Google BigQuery ML</li>
+<li>c) Azure Data Factory</li>
+<li>d) Amazon S3</li>
+</ul>
+</li>
+<li>In DataOps, what is the equivalent of continuous integration in DevOps?
+<ul>
+<li>a) Continuous data validation</li>
+<li>b) Automated data deployment</li>
+<li>c) Continuous monitoring</li>
+<li>d) Automated testing of data pipelines</li>
+</ul>
+</li>
+<li>Which technology enables the semantic layer in Power BI?
+<ul>
+<li>a) DAX</li>
+<li>b) Python</li>
+<li>c) SQL</li>
+<li>d) R</li>
+</ul>
+</li>
+</ol>
+
+<h3>Part 2: Matching (1 point each - 10 points total)</h3>
+<p>Match the big data concept with its cloud implementation:</p>
+<table class="custom-table" style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px;">
+<thead>
+<tr style="background-color: #f2f2f2;">
+<th style="border: 1px solid #ddd; padding: 12px; text-align: left; font-weight: bold;">Concept</th>
+<th style="border: 1px solid #ddd; padding: 12px; text-align: left; font-weight: bold;">Cloud Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">1. MapReduce</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">a) Amazon Kinesis</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">2. Hive</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">b) Google BigQuery</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">3. Kafka</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">c) AWS Glue</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">4. HBase</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">d) Azure Cosmos DB</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">5. Oozie</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">e) Amazon EMR</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">6. Sqoop</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">f) Azure Data Factory</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">7. Mahout</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">g) AWS SageMaker</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">8. Zookeeper</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">h) Google Pub/Sub</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">9. Pig</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">i) Azure HDInsight</td>
+</tr>
+<tr>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">10. Spark MLlib</td>
+<td style="border: 1px solid #ddd; padding: 12px; vertical-align: top;">j) Amazon DynamoDB</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Part 3: Short Answer (5 points each - 20 points total)</h3>
+<ol>
+<li>Explain how cloud pricing models for analytics workloads differ from traditional on-premises infrastructure costs. Provide specific examples of pricing models from at least two cloud providers.</li>
+<li>Describe three key ethical considerations when implementing AI algorithms in a business context, and explain how organizations can address each one.</li>
+</ol>
+
+<h3>Part 4: Scenario Analysis (10 points)</h3>
+<p>A retail company is experiencing rapid growth and needs to modernize its data infrastructure. Currently, they have:</p>
+<ul>
+<li>Transactional data in on-premises SQL Server</li>
+<li>Customer behavior data in log files</li>
+<li>Inventory data in spreadsheets</li>
+<li>Marketing data in various SaaS applications</li>
+</ul>
+<p>Design a cloud-based architecture that addresses their needs. Include:</p>
+<ul>
+<li>Recommended cloud provider and services</li>
+<li>Data integration strategy</li>
+<li>Processing and storage approach</li>
+<li>Analytics and reporting capabilities</li>
+<li>Governance and security considerations</li>
+</ul>
+
+<h2>Implementation Notes for Instructors</h2>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Assessment Strategy
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>The case study builds analytical skills and real-world context understanding</li>
+<li>The hands-on lab provides practical experience with cloud tools</li>
+<li>The discussion forum develops ethical reasoning and communication skills</li>
+<li>The capstone proposal prepares students for the final project</li>
+<li>The quiz assesses integrated knowledge of module concepts</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Scaffolding Approach
+</div>
+<div class="card-body" style="padding: 15px;">
+<ol>
+<li>Begin with case study to establish real-world context</li>
+<li>Follow with hands-on lab for technical skill development</li>
+<li>Use discussion forum to explore ethical dimensions</li>
+<li>Culminate with capstone proposal that integrates all elements</li>
+<li>Conclude with quiz to reinforce key concepts</li>
+</ol>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Adaptation Options
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>For time-constrained courses: Focus on hands-on lab and quiz</li>
+<li>For advanced students: Add complexity to capstone proposal</li>
+<li>For online delivery: Use virtual labs and video submissions</li>
+<li>For diverse backgrounds: Provide tiered complexity options</li>
+</ul>
+</div>
+</div>
+
+<div class="card" style="border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+<div class="card-header" style="background-color: #f2f2f2; padding: 10px 15px; border-bottom: 1px solid #ddd; font-weight: bold;">
+Grading Rubrics
+</div>
+<div class="card-body" style="padding: 15px;">
+<ul>
+<li>Detailed rubrics should be provided for each assessment</li>
+<li>Emphasize both technical correctness and conceptual understanding</li>
+<li>Include criteria for practical application and critical thinking</li>
+<li>Provide formative feedback opportunities throughout</li>
+</ul>
+</div>
+</div>
+</div> </div>
 </body>
 
 </html>

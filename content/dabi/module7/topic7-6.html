@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Comprehensive Hands-On Project: End-to-End Data Analysis Workflow</h1>
+    </div>
+    
+    <div class="module-content">
+      <h2>Learning Objective</h2>
+      <p>After completing this project, you will be able to integrate all previously learned skills—from SQL data extraction to machine learning and visualization—into a cohesive workflow that solves real business problems and delivers actionable insights.</p>
+      
+      <h2>Why This Matters</h2>
+      <p>In industry, data analysts rarely work in silos. They must extract data from databases, clean and transform it, apply statistical methods, build predictive models, and communicate findings—all within a single project. This hands-on practice mirrors the complete workflow you'll encounter in professional settings, preparing you to tackle complex business challenges from start to finish.</p>
+      
+      <h2>Project: Retail Sales Analysis and Demand Forecasting</h2>
+      
+      <div class="card">
+        <div class="card-header">
+          Business Problem
+        </div>
+        <div class="card-body">
+          <p>A national retail chain is experiencing inconsistent sales performance across stores and wants to understand the factors driving sales to optimize inventory management and marketing strategies. They need to answer key questions:</p>
+          <ul>
+            <li>What factors most significantly impact sales?</li>
+            <li>How effective are their current promotions?</li>
+            <li>Can they accurately forecast future demand to optimize inventory?</li>
+            <li>Which stores are underperforming and why?</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h2>Step-by-Step Guide</h2>
+      
+      <h3>Step 1: Extract Data from SQL (Module 3)</h3>
+      
+      <div class="card">
+        <div class="card-header">
+          Objective
+        </div>
+        <div class="card-body">
+          <p>Retrieve relevant data from the company's database for analysis.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Guide
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>Identify the tables containing sales data, product information, store details, and promotion records.</li>
+            <li>Write SQL queries to extract:
+              <ul>
+                <li>Historical sales transactions (date, product ID, store ID, quantity, price)</li>
+                <li>Product details (category, brand, cost)</li>
+                <li>Store information (location, size, staffing levels)</li>
+                <li>Promotion details (type, discount percentage, duration)</li>
+                <li>External factors (holidays, local events, economic indicators)</li>
+              </ul>
+            </li>
+            <li>Use appropriate JOIN statements to connect related tables.</li>
+            <li>Export the data to CSV files or connect directly to the database from Python.</li>
+          </ol>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Key Considerations
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Ensure you extract a sufficient time period (at least 2-3 years) to capture seasonality.</li>
+                <li>Include all relevant variables that might impact sales.</li>
+                <li>Consider the size of the dataset and optimize queries for performance.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Answer
+        </div>
+        <div class="card-body">
+          <p>To extract data from SQL, you would typically use a database connector in Python. Here's a conceptual approach:</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>import sqlite3
+import pandas as pd
+
+# Connect to the database
+conn = sqlite3.connect('retail_database.db')
+
+# Write SQL query to extract sales data with relevant joins
+query = """
+SELECT 
+    s.date, 
+    s.store_id, 
+    s.product_id, 
+    s.quantity, 
+    s.price,
+    p.category,
+    p.brand,
+    st.location,
+    st.size_sqft,
+    st.staff_count,
+    pr.promotion_type,
+    pr.discount_percentage
+FROM 
+    sales s
+JOIN 
+    products p ON s.product_id = p.product_id
+JOIN 
+    stores st ON s.store_id = st.store_id
+LEFT JOIN 
+    promotions pr ON s.promotion_id = pr.promotion_id
+WHERE 
+    s.date >= '2020-01-01'
+"""
+
+# Execute query and load into DataFrame
+df = pd.read_sql(query, conn)
+
+# Close the connection
+conn.close()
+
+# Save to CSV for later use
+df.to_csv('retail_sales_data.csv', index=False)</code></pre>
+        </div>
+      </div>
+      
+      <h3>Step 2: Clean, Transform, and Explore Data (Pandas, Visualization)</h3>
+      
+      <div class="card">
+        <div class="card-header">
+          Objective
+        </div>
+        <div class="card-body">
+          <p>Prepare the data for analysis and gain initial insights.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Guide
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Data Loading and Inspection:</strong>
+              <ul>
+                <li>Load the extracted data into Pandas DataFrames.</li>
+                <li>Examine the structure, data types, and basic statistics.</li>
+                <li>Check for missing values, duplicates, and outliers.</li>
+              </ul>
+            </li>
+            <li><strong>Data Cleaning:</strong>
+              <ul>
+                <li>Handle missing values (imputation, deletion, or flagging).</li>
+                <li>Correct data types (convert dates to datetime, categorical variables to category type).</li>
+                <li>Remove duplicates and irrelevant columns.</li>
+                <li>Address outliers (using domain knowledge or statistical methods).</li>
+              </ul>
+            </li>
+            <li><strong>Feature Engineering:</strong>
+              <ul>
+                <li>Create time-based features (day of week, month, year, holiday flags).</li>
+                <li>Calculate derived metrics (total sales = quantity × price, profit margin).</li>
+                <li>Create aggregated features (average sales by store, category, etc.).</li>
+                <li>Encode categorical variables (one-hot encoding, label encoding).</li>
+              </ul>
+            </li>
+            <li><strong>Exploratory Data Analysis (EDA):</strong>
+              <ul>
+                <li>Visualize sales trends over time (line charts).</li>
+                <li>Analyze sales distribution by store, product category, and region (bar charts, box plots).</li>
+                <li>Examine relationships between variables (scatter plots, correlation matrices).</li>
+                <li>Identify patterns, anomalies, and potential insights.</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Key Considerations
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Document all cleaning and transformation steps for reproducibility.</li>
+                <li>Use visualizations to guide your analysis and identify areas for deeper investigation.</li>
+                <li>Consider business context when interpreting patterns (e.g., holiday spikes, regional differences).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Answer
+        </div>
+        <div class="card-body">
+          <p>Here's how you might approach data cleaning and exploration:</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the data
+df = pd.read_csv('retail_sales_data.csv')
+
+# Convert date to datetime
+df['date'] = pd.to_datetime(df['date'])
+
+# Check for missing values
+print(df.isnull().sum())
+
+# Handle missing values
+df['promotion_type'].fillna('No Promotion', inplace=True)
+df['discount_percentage'].fillna(0, inplace=True)
+
+# Create total sales feature
+df['total_sales'] = df['quantity'] * df['price']
+
+# Extract time features
+df['year'] = df['date'].dt.year
+df['month'] = df['date'].dt.month
+df['day_of_week'] = df['date'].dt.dayofweek
+df['is_weekend'] = df['day_of_week'].isin([5, 6]).astype(int)
+
+# Create holiday flag (simplified example)
+holidays = ['2020-12-25', '2021-12-25', '2020-07-04', '2021-07-04']  # etc.
+df['is_holiday'] = df['date'].dt.strftime('%Y-%m-%d').isin(holidays).astype(int)
+
+# Remove outliers in total_sales (e.g., above 99th percentile)
+upper_limit = df['total_sales'].quantile(0.99)
+df = df[df['total_sales'] <= upper_limit]
+
+# EDA: Sales over time
+plt.figure(figsize=(12, 6))
+df.groupby('date')['total_sales'].sum().plot()
+plt.title('Total Sales Over Time')
+plt.ylabel('Total Sales')
+plt.show()
+
+# Sales by category
+plt.figure(figsize=(10, 6))
+sns.barplot(x='category', y='total_sales', data=df, estimator=sum)
+plt.title('Total Sales by Category')
+plt.xticks(rotation=45)
+plt.show()
+
+# Correlation heatmap
+numeric_df = df.select_dtypes(include=[np.number])
+plt.figure(figsize=(10, 8))
+sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix')
+plt.show()</code></pre>
+        </div>
+      </div>
+      
+      <h3>Step 3: Test Hypotheses (e.g., "Promotion Y drives higher revenue")</h3>
+      
+      <div class="card">
+        <div class="card-header">
+          Objective
+        </div>
+        <div class="card-body">
+          <p>Statistically validate assumptions about factors affecting sales.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Guide
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Formulate Hypotheses:</strong>
+              <ul>
+                <li>Based on EDA and business knowledge, develop testable hypotheses.</li>
+                <li>Examples:
+                  <ul>
+                    <li>"Promotion Y increases average sales by at least 15%."</li>
+                    <li>"Stores in urban areas have higher sales per square foot than suburban stores."</li>
+                    <li>"Holiday periods have significantly higher sales than non-holiday periods."</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><strong>Select Appropriate Tests:</strong>
+              <ul>
+                <li>For comparing means between groups: t-tests or ANOVA.</li>
+                <li>For relationships between categorical variables: chi-square tests.</li>
+                <li>For correlations: Pearson or Spearman correlation coefficients.</li>
+              </ul>
+            </li>
+            <li><strong>Conduct Statistical Testing:</strong>
+              <ul>
+                <li>Prepare data for each test (grouping, filtering).</li>
+                <li>Perform the tests and extract relevant statistics (p-values, confidence intervals).</li>
+                <li>Interpret results in the context of the business problem.</li>
+              </ul>
+            </li>
+            <li><strong>Document Findings:</strong>
+              <ul>
+                <li>Summarize which hypotheses were supported or rejected.</li>
+                <li>Quantify the impact of significant factors (e.g., "Promotion Y increases sales by 18.5%").</li>
+                <li>Identify unexpected findings that warrant further investigation.</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Key Considerations
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Ensure assumptions of statistical tests are met (normality, equal variance, etc.).</li>
+                <li>Consider practical significance alongside statistical significance.</li>
+                <li>Adjust for multiple comparisons if conducting many tests.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Answer
+        </div>
+        <div class="card-body">
+          <p>Here's how you might test hypotheses about promotions:</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>from scipy import stats
+
+# Hypothesis: Promotion Y increases sales
+# Group data by promotion type
+promo_y = df[df['promotion_type'] == 'Promotion Y']['total_sales']
+no_promo = df[df['promotion_type'] == 'No Promotion']['total_sales']
+
+# T-test
+t_stat, p_value = stats.ttest_ind(promo_y, no_promo, equal_var=False)
+print(f"T-statistic: {t_stat}, P-value: {p_value}")
+
+# Calculate the actual difference
+mean_diff = promo_y.mean() - no_promo.mean()
+percent_increase = (mean_diff / no_promo.mean()) * 100
+print(f"Mean difference: ${mean_diff:.2f}")
+print(f"Percentage increase: {percent_increase:.2f}%")
+
+# Interpretation
+if p_value < 0.05:
+    print("Conclusion: Reject the null hypothesis. Promotion Y significantly increases sales.")
+else:
+    print("Conclusion: Fail to reject the null hypothesis. No significant evidence that Promotion Y increases sales.")</code></pre>
+        </div>
+      </div>
+      
+      <h3>Step 4: Build a Predictive Model (e.g., Forecast Demand)</h3>
+      
+      <div class="card">
+        <div class="card-header">
+          Objective
+        </div>
+        <div class="card-body">
+          <p>Develop a model to forecast future sales and identify key drivers.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Guide
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Define the Modeling Goal:</strong>
+              <ul>
+                <li>Determine what to predict (e.g., daily sales, weekly sales by store).</li>
+                <li>Establish the prediction horizon (e.g., 30 days, 90 days).</li>
+              </ul>
+            </li>
+            <li><strong>Prepare Data for Modeling:</strong>
+              <ul>
+                <li>Select relevant features based on EDA and hypothesis testing.</li>
+                <li>Handle time-specific considerations (trends, seasonality).</li>
+                <li>Split data into training and testing sets, preserving temporal order.</li>
+              </ul>
+            </li>
+            <li><strong>Select and Train Models:</strong>
+              <ul>
+                <li>Start with simpler models (linear regression) as baselines.</li>
+                <li>Progress to more complex models (Random Forest, Gradient Boosting).</li>
+                <li>For time series forecasting, consider ARIMA, Prophet, or LSTM networks.</li>
+                <li>Train multiple models and compare their performance.</li>
+              </ul>
+            </li>
+            <li><strong>Evaluate Model Performance:</strong>
+              <ul>
+                <li>Use appropriate metrics (MAE, RMSE, MAPE for regression; accuracy, precision, recall for classification).</li>
+                <li>Analyze residuals to identify patterns the model missed.</li>
+                <li>Perform cross-validation to ensure robustness.</li>
+              </ul>
+            </li>
+            <li><strong>Interpret Model Results:</strong>
+              <ul>
+                <li>Extract feature importance to identify key drivers.</li>
+                <li>Analyze model predictions for insights (e.g., which stores are predicted to underperform).</li>
+                <li>Quantify the business impact of the model (e.g., potential reduction in stockouts).</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Key Considerations
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Balance model complexity with interpretability based on business needs.</li>
+                <li>Consider the cost of different types of errors (false positives vs. false negatives).</li>
+                <li>Document the modeling process for transparency and reproducibility.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Answer
+        </div>
+        <div class="card-body">
+          <p>Here's how you might build a sales forecasting model:</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code>from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+import numpy as np
+
+# Prepare data for modeling
+# Aggregate daily sales
+daily_sales = df.groupby('date').agg({
+    'total_sales': 'sum',
+    'is_weekend': 'max',
+    'is_holiday': 'max'
+}).reset_index()
+
+# Create lag features
+for i in range(1, 8):
+    daily_sales[f'lag_{i}'] = daily_sales['total_sales'].shift(i)
+
+# Create moving average features
+daily_sales['ma_7'] = daily_sales['total_sales'].rolling(window=7).mean().shift(1)
+
+# Drop rows with NaN values
+daily_sales.dropna(inplace=True)
+
+# Define features and target
+X = daily_sales.drop(['date', 'total_sales'], axis=1)
+y = daily_sales['total_sales']
+
+# Split data (temporal split)
+split_point = int(len(daily_sales) * 0.8)
+X_train, X_test = X[:split_point], X[split_point:]
+y_train, y_test = y[:split_point], y[split_point:]
+
+# Train model
+model = RandomForestRegressor(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate model
+mae = mean_absolute_error(y_test, y_pred)
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+print(f"MAE: {mae:.2f}")
+print(f"RMSE: {rmse:.2f}")
+
+# Feature importance
+importances = pd.DataFrame({
+    'feature': X.columns,
+    'importance': model.feature_importances_
+}).sort_values('importance', ascending=False)
+print(importances)
+
+# Plot actual vs predicted
+plt.figure(figsize=(12, 6))
+plt.plot(y_test.values, label='Actual')
+plt.plot(y_pred, label='Predicted')
+plt.legend()
+plt.title('Actual vs Predicted Sales')
+plt.show()</code></pre>
+        </div>
+      </div>
+      
+      <h3>Step 5: Visualize Insights and Automate Reporting</h3>
+      
+      <div class="card">
+        <div class="card-header">
+          Objective
+        </div>
+        <div class="card-body">
+          <p>Communicate findings effectively and create reusable reports.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Guide
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Develop Key Visualizations:</strong>
+              <ul>
+                <li>Create charts that highlight the most important findings.</li>
+                <li>Use appropriate visualization types for different insights (line charts for trends, bar charts for comparisons, heatmaps for correlations).</li>
+                <li>Ensure visualizations are clear, well-labeled, and visually appealing.</li>
+              </ul>
+            </li>
+            <li><strong>Build an Interactive Dashboard (Optional but Recommended):</strong>
+              <ul>
+                <li>Use Plotly Dash or Streamlit to create an interactive interface.</li>
+                <li>Include filters for different dimensions (time, store, product category).</li>
+                <li>Incorporate model predictions with confidence intervals.</li>
+              </ul>
+            </li>
+            <li><strong>Automate Reporting:</strong>
+              <ul>
+                <li>Create templates for regular reports (weekly, monthly).</li>
+                <li>Use Python libraries (Jinja2, ReportLab) to generate PDF or HTML reports.</li>
+                <li>Set up scheduling to run reports automatically.</li>
+              </ul>
+            </li>
+            <li><strong>Craft the Executive Summary:</strong>
+              <ul>
+                <li>Summarize key findings in business terms.</li>
+                <li>Highlight actionable recommendations.</li>
+                <li>Quantify the potential impact of implementing recommendations.</li>
+                <li>Keep it concise and focused on business value.</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Key Considerations
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Tailor visualizations and reports to the audience (executives vs. technical teams).</li>
+                <li>Focus on insights that drive business decisions, not just interesting patterns.</li>
+                <li>Ensure automated reports are robust and handle edge cases gracefully.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Answer
+        </div>
+        <div class="card-body">
+          <p>Here's how you might create visualizations and an executive summary:</p>
+          
+          <pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace; overflow-x: auto;">
+<code># Create key visualizations
+# Sales by promotion type
+plt.figure(figsize=(10, 6))
+sns.barplot(x='promotion_type', y='total_sales', data=df, estimator=np.mean)
+plt.title('Average Sales by Promotion Type')
+plt.xticks(rotation=45)
+plt.show()
+
+# Sales by day of week
+plt.figure(figsize=(10, 6))
+sns.barplot(x='day_of_week', y='total_sales', data=df, estimator=np.mean)
+plt.title('Average Sales by Day of Week')
+plt.xticks([0, 1, 2, 3, 4, 5, 6], ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'])
+plt.show()
+
+# Forecast visualization
+plt.figure(figsize=(12, 6))
+plt.plot(daily_sales['date'][:split_point], daily_sales['total_sales'][:split_point], label='Historical')
+plt.plot(daily_sales['date'][split_point:], y_test, label='Actual')
+plt.plot(daily_sales['date'][split_point:], y_pred, label='Forecast')
+plt.legend()
+plt.title('Sales Forecast')
+plt.show()
+
+# Executive Summary
+from IPython.display import Markdown
+
+markdown_text = """
+# Retail Sales Analysis: Executive Summary
+
+## Key Findings
+1. **Promotion Impact**: Promotion Y significantly increases sales by an average of 18.5% compared to no promotion.
+2. **Weekly Patterns**: Sales peak on weekends, with Saturday being the highest sales day.
+3. **Forecast Accuracy**: Our Random Forest model achieves a Mean Absolute Error of $2,450 in daily sales forecasts.
+4. **Key Drivers**: Historical sales (lag features) and weekend indicators are the strongest predictors of future sales.
+
+## Recommendations
+1. **Optimize Promotion Schedule**: Increase frequency of Promotion Y, especially on weekends.
+2. **Inventory Management**: Adjust inventory levels to match weekly patterns, increasing stock before weekends.
+3. **Forecast Implementation**: Use the forecasting model to optimize inventory levels, potentially reducing stockouts by 15-20%.
+4. **Further Analysis**: Investigate underperforming stores identified by the model to address location-specific issues.
+
+## Expected Impact
+- Implementing these recommendations could increase overall sales by approximately 8-10%.
+- Improved inventory management could reduce holding costs by 12%.
+- Better promotion targeting could increase marketing ROI by 25%.
+"""
+
+display(Markdown(markdown_text))</code></pre>
+        </div>
+      </div>
+      
+      <h2>Deliverables: Jupyter Notebook with Code, Visualizations, and Executive Summary</h2>
+      
+      <div class="card">
+        <div class="card-header">
+          Objective
+        </div>
+        <div class="card-body">
+          <p>Create a comprehensive deliverable that showcases your entire workflow and findings.</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Guide
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Structure Your Notebook:</strong>
+              <ul>
+                <li>Begin with a clear title and overview of the business problem.</li>
+                <li>Organize sections logically (data extraction, cleaning, EDA, hypothesis testing, modeling, insights).</li>
+                <li>Use markdown cells to explain each step and interpret results.</li>
+                <li>Include code cells with comments for clarity.</li>
+              </ul>
+            </li>
+            <li><strong>Include Key Visualizations:</strong>
+              <ul>
+                <li>Embed plots directly in the notebook.</li>
+                <li>Ensure visualizations are properly labeled and easy to understand.</li>
+                <li>Highlight the most important insights from each visualization.</li>
+              </ul>
+            </li>
+            <li><strong>Document Your Process:</strong>
+              <ul>
+                <li>Explain your decision-making at each step.</li>
+                <li>Note any challenges you encountered and how you addressed them.</li>
+                <li>Discuss limitations of your analysis and potential improvements.</li>
+              </ul>
+            </li>
+            <li><strong>Create an Executive Summary:</strong>
+              <ul>
+                <li>Place this at the beginning or end of the notebook.</li>
+                <li>Structure it as a business memo:
+                  <ul>
+                    <li>Briefly state the business problem.</li>
+                    <li>Summarize key findings (3-5 bullet points).</li>
+                    <li>Provide actionable recommendations with expected impact.</li>
+                    <li>Keep it to one page or less.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><strong>Final Review:</strong>
+              <ul>
+                <li>Ensure the notebook runs from start to finish without errors.</li>
+                <li>Check that all visualizations are properly displayed.</li>
+                <li>Verify that the executive summary clearly communicates business value.</li>
+                <li>Proofread for clarity, conciseness, and professionalism.</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <div class="card" style="margin-top: 15px;">
+            <div class="card-header">
+              Key Considerations
+            </div>
+            <div class="card-body">
+              <ul>
+                <li>Balance technical detail with business relevance throughout.</li>
+                <li>Remember that the notebook is both a technical document and a business communication tool.</li>
+                <li>Focus on demonstrating your ability to translate data into business value.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Answer
+        </div>
+        <div class="card-body">
+          <p>The final Jupyter Notebook should be structured as follows:</p>
+          
+          <ol>
+            <li><strong>Title and Introduction</strong>
+              <ul>
+                <li>Title: "Retail Sales Analysis and Demand Forecasting"</li>
+                <li>Brief description of the business problem and objectives</li>
+              </ul>
+            </li>
+            <li><strong>Data Extraction</strong>
+              <ul>
+                <li>Code for SQL queries and data loading</li>
+                <li>Description of data sources and variables</li>
+              </ul>
+            </li>
+            <li><strong>Data Cleaning and Transformation</strong>
+              <ul>
+                <li>Code for handling missing values, outliers</li>
+                <li>Feature engineering steps</li>
+                <li>Before/after comparisons of data quality</li>
+              </ul>
+            </li>
+            <li><strong>Exploratory Data Analysis</strong>
+              <ul>
+                <li>Visualizations of sales patterns, distributions, relationships</li>
+                <li>Insights discovered during exploration</li>
+              </ul>
+            </li>
+            <li><strong>Hypothesis Testing</strong>
+              <ul>
+                <li>Description of hypotheses tested</li>
+                <li>Code for statistical tests</li>
+                <li>Results and interpretation</li>
+              </ul>
+            </li>
+            <li><strong>Predictive Modeling</strong>
+              <ul>
+                <li>Data preparation for modeling</li>
+                <li>Model selection and training</li>
+                <li>Evaluation metrics and interpretation</li>
+                <li>Feature importance analysis</li>
+              </ul>
+            </li>
+            <li><strong>Insights and Recommendations</strong>
+              <ul>
+                <li>Key visualizations highlighting important findings</li>
+                <li>Detailed explanation of insights</li>
+                <li>Actionable recommendations with expected impact</li>
+              </ul>
+            </li>
+            <li><strong>Executive Summary</strong>
+              <ul>
+                <li>Concise summary of key findings and recommendations</li>
+                <li>Focus on business value and implementation steps</li>
+              </ul>
+            </li>
+            <li><strong>Conclusion</strong>
+              <ul>
+                <li>Summary of the analysis process</li>
+                <li>Limitations and potential improvements</li>
+                <li>Next steps for further analysis</li>
+              </ul>
+            </li>
+          </ol>
+          
+          <p>The notebook should be well-documented with clear explanations of each step, interpretations of results, and connections to business objectives. All code should be executable from top to bottom without errors.</p>
+        </div>
+      </div>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>This comprehensive project demonstrates the end-to-end workflow of a data analyst, from extracting data with SQL to communicating insights through visualizations and executive summaries. By completing this project, you've shown how to transform raw data into actionable business intelligence, a skill that's highly valued in today's data-driven business environment. Remember that the goal isn't just to perform technical tasks correctly—it's to deliver insights that drive real business value.</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

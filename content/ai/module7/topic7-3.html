@@ -4,154 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Error Detection and Debugging</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
-        }
-
-        h1,
-        h2,
-        h3 {
-            color: #007bff;
-            /* Blue accent */
-        }
-
-        p,
-        li {
-            line-height: 1.6;
+            top: 80px;
         }
 
         .container {
-            padding: 30px;
+            padding: 20px;
         }
 
-        .section {
-            margin-bottom: 40px;
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
         }
 
-        .highlight {
-            background-color: #f8f9fa;
-            /* Light gray background for emphasis */
-            padding: 10px;
-            border-left: 4px solid #007bff;
-            /* Blue accent border */
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
+        }
+
+        h1,
+        h2 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="section">
-            <h1>AI-Powered Error Detection and Debugging</h1>
-        </div>
-
-        <div class="section">
-            <h2>The Challenges of Traditional Debugging</h2>
-            <p>
-                Debugging, the process of identifying and fixing errors in software code, can be a time-consuming and
-                complex task. Traditional methods often involve manual inspection, trial and error, and the use of
-                debugging tools. However, as software systems become increasingly complex, these methods can become less
-                effective. Debugging often leads to frustration and can significantly slow down development, making it
-                crucial to explore more efficient solutions.
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>AI to the Rescue</h2>
-            <p>
-                Artificial Intelligence (AI) has emerged as a powerful tool for automating and improving the process of
-                error detection and debugging. AI-powered tools can analyze code, identify potential issues, and suggest
-                solutions, significantly reducing the time and effort required for debugging. By leveraging advanced
-                algorithms and large datasets, these tools provide insights that traditional methods often miss.
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>Key AI Techniques for Error Detection and Debugging</h2>
-            <p>Some of the prominent techniques employed in AI-powered debugging include:</p>
-            <ul>
-                <li><strong>Static Code Analysis:</strong> AI can analyze code without executing it to identify
-                    potential errors, such as syntax errors, type mismatches, and code smells. This proactive approach
-                    allows developers to catch issues early in the development cycle.</li>
-                <li><strong>Dynamic Code Analysis:</strong> AI can analyze code as it is executed to identify runtime
-                    errors, such as memory leaks, crashes, and performance bottlenecks. This technique helps in
-                    understanding how the code behaves under different conditions.</li>
-                <li><strong>Machine Learning:</strong> Machine learning algorithms can be trained on large datasets of
-                    code to learn patterns and identify common errors. Over time, these models improve their accuracy
-                    and relevance, adapting to the specific coding practices of a development team.</li>
-                <li><strong>Natural Language Processing (NLP):</strong> NLP can be used to understand code comments and
-                    documentation, providing additional context for error detection. By processing natural language
-                    comments, AI can bridge the gap between code and documentation, enhancing overall comprehension.
-                </li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>AI-Powered Debugging Tools</h2>
-            <p>Several AI-powered tools are available to assist developers in error detection and debugging:</p>
-            <ul>
-                <li><strong>DeepCode:</strong> This tool uses deep learning to analyze code and identify potential
-                    errors and vulnerabilities. It continually learns from new code patterns, improving its detection
-                    capabilities over time.</li>
-                <li><strong>Infer:</strong> Infer is a static analysis tool that can detect potential bugs and security
-                    vulnerabilities in C, C++, and Objective-C code. Its focus on early detection makes it invaluable
-                    for maintaining code quality.</li>
-                <li><strong>CodeGuru:</strong> CodeGuru is a cloud-based service from Amazon Web Services that uses
-                    machine learning to identify performance bottlenecks and code issues. Its recommendations are
-                    tailored to improve code efficiency and performance.</li>
-                <li><strong>Visual Studio IntelliCode:</strong> IntelliCode is a code completion tool that uses AI to
-                    suggest relevant code snippets based on the context of your code. It learns from the practices of
-                    thousands of developers, making suggestions that align with best coding practices.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Benefits of AI-Powered Debugging</h2>
-            <p>AI-powered debugging provides several key advantages:</p>
-            <ul>
-                <li><strong>Improved Efficiency:</strong> AI can significantly reduce the time it takes to identify and
-                    fix errors in code, allowing developers to focus on higher-level tasks.</li>
-                <li><strong>Increased Accuracy:</strong> AI-powered tools can often detect errors that human developers
-                    might miss, thus enhancing the overall reliability of the software.</li>
-                <li><strong>Proactive Debugging:</strong> AI can identify potential issues before they cause problems,
-                    preventing errors from occurring in the first place. This proactive approach minimizes downtime and
-                    enhances user satisfaction.</li>
-                <li><strong>Enhanced Code Quality:</strong> By identifying and fixing errors early on, AI can help
-                    improve the overall quality of software, resulting in fewer bugs and a better user experience.</li>
-            </ul>
-        </div>
-
-        <div class="section highlight">
-            <h2>The Future of AI-Powered Debugging</h2>
-            <p>
-                As AI technology continues to advance, we can expect to see even more powerful and effective tools for
-                error detection and debugging. Future developments may include:
-            </p>
-            <ul>
-                <li><strong>More Contextual Awareness:</strong> AI tools may gain the ability to understand the intent
-                    behind the code, leading to more precise error detection and suggestions.</li>
-                <li><strong>Integration with Development Environments:</strong> Seamless integration of AI debugging
-                    tools with popular IDEs could streamline workflows, allowing developers to address issues in
-                    real-time.</li>
-                <li><strong>Community Learning:</strong> AI systems may evolve to share knowledge across development
-                    teams, learning from collective experiences to enhance error detection capabilities.</li>
-            </ul>
-            <p>
-                By leveraging these tools, developers can streamline their workflows, improve the quality of their
-                software, and deliver better products to their users. Embracing AI in debugging processes is no longer
-                just an advantage; it's becoming a necessity in today's fast-paced software development environment.
-            </p>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

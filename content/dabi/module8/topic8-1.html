@@ -122,7 +122,457 @@
 </head>
 
 <body>
-
+  <div class="container">
+    <div class="header">
+      <h1>Mastering Big Data in the Cloud: From Distributed Processing to Real-Time Analytics</h1>
+    </div>
+    
+    <div class="module-content">
+      <h2>Learning Objective</h2>
+      <p>After completing this lecture, you will be able to design and implement a modern big data architecture using cloud services, build distributed data pipelines, and understand the trade-offs between different technologies.</p>
+      
+      <h2>Why This Matters</h2>
+      <p>In today's data-driven world, organizations generate massive volumes of data that traditional systems cannot handle. Cloud-based big data technologies provide scalable, cost-effective solutions for processing, storing, and analyzing this data. Understanding these technologies is crucial for building robust data systems that can handle the scale and complexity of modern data challenges.</p>
+      
+      <h2>Core Content</h2>
+      
+      <h3>1. Integrated Big Data & Cloud Architecture</h3>
+      
+      <h4>From Concept to Cloud Implementation</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          Big Data Ecosystem in the Cloud: Evolution from Hadoop to Managed Services
+        </div>
+        <div class="card-body">
+          <div class="card">
+            <div class="card-header">
+              Hadoop Ecosystem Recap
+            </div>
+            <div class="card-body">
+              <p>Let's start by recalling the foundation of big data processing. Hadoop emerged as the solution to handle data volumes that exceeded the capacity of traditional databases. At its core, Hadoop consists of two main components:</p>
+              <ul>
+                <li><strong>HDFS (Hadoop Distributed File System)</strong>: Imagine HDFS as a massive digital warehouse where your data is split into blocks and distributed across multiple servers. Each block is replicated across different machines to ensure data isn't lost if one server fails.</li>
+                <li><strong>YARN (Yet Another Resource Negotiator)</strong>: This is Hadoop's resource manager, acting like a traffic controller for your cluster. It decides which applications get resources (CPU, memory) and when they get them.</li>
+                <li><strong>MapReduce</strong>: The original processing engine that broke tasks into two phases - mapping (organizing data) and reducing (aggregating results).</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              Challenges with Traditional Hadoop
+            </div>
+            <div class="card-body">
+              <p>While revolutionary, traditional Hadoop requires significant expertise to set up, configure, and maintain. Organizations must manage hardware, software updates, security, and scalability manually. This operational overhead can be prohibitive for many businesses. Imagine having to build your own power plant every time you need electricity - that's what managing your own Hadoop cluster feels like.</p>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              Cloud-Native Managed Services
+            </div>
+            <div class="card-body">
+              <p>Cloud providers have transformed this landscape by offering managed services that abstract away the infrastructure management. These services include:</p>
+              <ul>
+                <li><strong>AWS EMR (Elastic MapReduce)</strong>: Think of this as a pre-configured Hadoop/Spark environment that you can launch with a few clicks. AWS handles the infrastructure, allowing you to focus on processing data.</li>
+                <li><strong>Azure HDInsight</strong>: Microsoft's version of managed Hadoop, integrated with the Azure ecosystem. It's like having a Hadoop cluster that's already connected to all your other Azure services.</li>
+                <li><strong>Databricks</strong>: A unified analytics platform that provides a collaborative environment for data engineering, machine learning, and analytics, built on Apache Spark. It's like having a data science lab that's already set up and ready to use.</li>
+              </ul>
+              
+              <p><strong>Key Advantages of Cloud-Native Services:</strong></p>
+              <ol>
+                <li><strong>Reduced Operational Overhead</strong>: No need to manage hardware or software patches. The cloud provider handles maintenance, security updates, and infrastructure management.</li>
+                <li><strong>Elastic Scalability</strong>: Resources can be scaled up or down based on demand. Need more processing power for a big job? Scale up. Done with the job? Scale down and save money.</li>
+                <li><strong>Pay-as-you-go Pricing</strong>: Pay only for the resources you use. This transforms big data processing from a capital expense to an operational expense.</li>
+                <li><strong>Integration with Other Cloud Services</strong>: Seamless integration with storage, databases, and analytics tools in the same cloud ecosystem.</li>
+              </ol>
+              
+              <p><strong>Analogy:</strong> Think of traditional Hadoop as building your own power plant. You have to manage the generators, fuel supply, and distribution lines. Cloud-native managed services are like plugging into the power grid – you get electricity (data processing power) without worrying about how it's generated or maintained.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Spark for Distributed Processing: PySpark in the Cloud
+        </div>
+        <div class="card-body">
+          <div class="card">
+            <div class="card-header">
+              Why Spark?
+            </div>
+            <div class="card-body">
+              <p>Apache Spark has become the de facto standard for big data processing, largely replacing traditional MapReduce. It offers several key advantages:</p>
+              <ul>
+                <li><strong>Speed</strong>: Spark's in-memory processing makes it up to 100 times faster than MapReduce for certain applications. Instead of writing intermediate results to disk (which is slow), Spark keeps them in memory.</li>
+                <li><strong>Ease of Use</strong>: Provides high-level APIs in Java, Scala, Python, and R. For Python users, PySpark makes Spark accessible without learning a new language.</li>
+                <li><strong>Versatility</strong>: Supports batch processing, stream processing, machine learning, and graph processing all in one unified framework.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              PySpark: Python API for Spark
+            </div>
+            <div class="card-body">
+              <p>PySpark allows Python developers to leverage Spark's capabilities. It's particularly valuable for data scientists and analysts who are proficient in Python but need to process large datasets that don't fit on a single machine.</p>
+              
+              <p><strong>Running PySpark on a Cloud Cluster:</strong></p>
+              <p>We can run PySpark on cloud clusters using several approaches:</p>
+              <ul>
+                <li><strong>AWS EMR</strong>: Launch a Spark cluster with a few clicks, submit PySpark jobs, and let AWS manage the infrastructure.</li>
+                <li><strong>Azure Synapse Spark Pools</strong>: Create a Spark pool within Azure Synapse Analytics and run PySpark notebooks directly in the cloud.</li>
+                <li><strong>Databricks</strong>: Use Databricks notebooks to write and execute PySpark code in a collaborative environment optimized for Spark.</li>
+              </ul>
+              
+              <p><strong>Example Workflow:</strong></p>
+              <ol>
+                <li><strong>Set up a Spark cluster</strong> on AWS EMR or Azure Synapse.</li>
+                <li><strong>Load data</strong> from cloud storage (e.g., S3 or ADLS) into a Spark DataFrame.</li>
+                <li><strong>Transform data</strong> using PySpark operations (filter, group by, aggregate, etc.).</li>
+                <li><strong>Analyze data</strong> using Spark SQL or machine learning libraries.</li>
+                <li><strong>Save results</strong> back to cloud storage or a data warehouse.</li>
+              </ol>
+              
+              <p><strong>Analogy:</strong> If traditional data processing is like cooking for a small family on a home stove, Spark is like running a restaurant kitchen. It can handle multiple orders (tasks) simultaneously, use specialized equipment (algorithms), and scale up to serve a banquet (big data).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Data Lakes & Warehouses: The Central Storage Repository
+        </div>
+        <div class="card-body">
+          <div class="card">
+            <div class="card-header">
+              Data Lakes
+            </div>
+            <div class="card-body">
+              <p>A data lake is a centralized repository that allows you to store all your structured and unstructured data at any scale. You can store your data as-is, without having to first structure the data, and run different types of analytics—from dashboards and visualizations to big data processing, real-time analytics, and machine learning to guide better decisions.</p>
+              
+              <p><strong>Cloud Data Lake Implementations:</strong></p>
+              <ul>
+                <li><strong>AWS S3 (Simple Storage Service)</strong>: Object storage service that offers industry-leading scalability, data availability, security, and performance. It's like a massive digital attic where you can store anything and everything.</li>
+                <li><strong>Azure Data Lake Storage (ADLS) Gen2</strong>: A set of capabilities dedicated to big data analytics, built on Azure Blob storage. It combines the scalability and cost-effectiveness of object storage with the performance and reliability required for big data analytics.</li>
+                <li><strong>Google Cloud Storage</strong>: A unified object storage for developers and enterprises, with live migration tools and industry-leading security.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              Data Warehouses
+            </div>
+            <div class="card-body">
+              <p>A data warehouse is a system used for reporting and data analysis, and is considered a core component of business intelligence. Data warehouses are central repositories of integrated data from one or more disparate sources.</p>
+              
+              <p><strong>Cloud Data Warehouse Implementations:</strong></p>
+              <ul>
+                <li><strong>Snowflake</strong>: A cloud-based data warehouse that separates storage and compute, allowing independent scaling. It's like having a warehouse where you can adjust the number of workers (compute) and the size of the storage area independently.</li>
+                <li><strong>Google BigQuery</strong>: A serverless, highly scalable, and cost-effective cloud data warehouse. It's designed to handle petabytes of data and run complex queries in seconds.</li>
+                <li><strong>Amazon Redshift</strong>: A fully managed, petabyte-scale data warehouse service. It's optimized for complex queries and can handle large-scale data warehousing workloads.</li>
+                <li><strong>Azure Synapse Analytics</strong>: An analytics service that brings together data integration, enterprise data warehousing, and big data analytics.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              Integrating Data Lakes and Warehouses
+            </div>
+            <div class="card-body">
+              <p>Modern architectures often use a data lake as the central storage repository (for raw, processed, and curated data) and a data warehouse for high-performance SQL analytics and business intelligence. This is known as a "lakehouse" architecture.</p>
+              
+              <p><strong>Example Architecture:</strong></p>
+              <ol>
+                <li><strong>Ingest raw data</strong> into the data lake (e.g., S3 or ADLS).</li>
+                <li><strong>Process and clean data</strong> using Spark (e.g., on EMR or Databricks) and store the processed data back in the lake.</li>
+                <li><strong>Load processed data</strong> into the data warehouse (e.g., Redshift or BigQuery) for analytics.</li>
+                <li><strong>Run analytics</strong> using SQL or BI tools connected to the data warehouse.</li>
+              </ol>
+              
+              <p><strong>Analogy:</strong> A data lake is like a reservoir that collects water (data) from various sources. It stores water in its natural state. A data warehouse is like a water treatment plant that takes water from the reservoir, purifies it, and distributes it to homes (business users) for consumption (analytics).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Building Modern Data Pipelines</h4>
+      
+      <div class="card">
+        <div class="card-header">
+          ELT in Practice: The Modern Approach
+        </div>
+        <div class="card-body">
+          <div class="card">
+            <div class="card-header">
+              What is ELT?
+            </div>
+            <div class="card-body">
+              <p>ELT stands for Extract, Load, Transform. It's a modern data integration pattern where:</p>
+              <ul>
+                <li><strong>Extract</strong>: Data is extracted from source systems.</li>
+                <li><strong>Load</strong>: Data is loaded directly into the data lake or data warehouse without transformation.</li>
+                <li><strong>Transform</strong>: Data is transformed within the data warehouse or data lake using the computing power of the warehouse or a separate processing engine (like Spark).</li>
+              </ul>
+              
+              <p><strong>Contrast with ETL:</strong></p>
+              <p>In traditional ETL (Extract, Transform, Load), data is transformed before being loaded into the target system. This approach was necessary when target systems had limited processing capabilities. With modern cloud data warehouses and big data processing engines, we can now handle transformations at scale after loading.</p>
+              
+              <p><strong>Benefits of ELT:</strong></p>
+              <ol>
+                <li><strong>Preserve Raw Data</strong>: By loading raw data first, we retain all the original information for future use. This is crucial for compliance and reprocessing needs.</li>
+                <li><strong>Leverage Warehouse Power</strong>: Use the scalable compute of the data warehouse for transformations, which is often more efficient than transforming before loading.</li>
+                <li><strong>Flexibility</strong>: Transformations can be adapted as business needs change without re-extracting data.</li>
+              </ol>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              Implementing ELT with Cloud Services
+            </div>
+            <div class="card-body">
+              <ol>
+                <li><strong>Extract</strong>: Use tools like AWS DMS, Azure Data Factory, or Google Cloud Dataflow to extract data from sources (databases, APIs, files).</li>
+                <li><strong>Load</strong>: Load the data into a cloud data lake (S3, ADLS) or directly into the data warehouse.</li>
+                <li><strong>Transform</strong>: 
+                  <ul>
+                    <li><strong>In the Data Warehouse</strong>: Use SQL, stored procedures, or warehouse-specific tools (e.g., BigQuery SQL, Redshift stored procedures) to transform data.</li>
+                    <li><strong>In the Data Lake</strong>: Use Spark (on EMR, Databricks) or cloud-native services (AWS Glue, Azure Data Factory) to transform data and then load into the warehouse.</li>
+                  </ul>
+                </li>
+              </ol>
+              
+              <p><strong>Example ELT Pipeline:</strong></p>
+              <ol>
+                <li>Extract customer order data from an on-premises SQL Server using AWS DMS.</li>
+                <li>Load the raw data into S3.</li>
+                <li>Use AWS Glue (which runs Spark) to clean and transform the data, then load into Redshift.</li>
+                <li>Alternatively, load the raw data directly into Redshift and use Redshift's SQL to transform.</li>
+              </ol>
+              
+              <p><strong>Analogy:</strong> ETL is like preparing a meal in a food truck kitchen (limited space) and then serving it. You have to chop vegetables and cook before loading the plate. ELT is like bringing all ingredients to a fully equipped restaurant kitchen (data warehouse) and then preparing the meal with professional tools.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Orchestration with Cloud Tools
+        </div>
+        <div class="card-body">
+          <div class="card">
+            <div class="card-header">
+              Why Orchestration?
+            </div>
+            <div class="card-body">
+              <p>Data pipelines involve multiple steps and dependencies. Orchestration tools help automate, schedule, monitor, and manage these pipelines. Without orchestration, managing complex data workflows would be like conducting an orchestra without a conductor - chaotic and prone to errors.</p>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              Cloud Orchestration Services
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><strong>AWS Glue</strong>: A fully managed ETL service that makes it easy to prepare and load data for analytics. It includes a data catalog, ETL engine, and job scheduling. Think of it as a Swiss Army knife for data integration.</li>
+                <li><strong>Azure Data Factory</strong>: A cloud-based data integration service that allows you to create data-driven workflows for orchestrating data movement and transforming data at scale. It's like having a factory assembly line for your data.</li>
+                <li><strong>Google Cloud Dataflow</strong>: A fully managed streaming analytics service that minimizes latency, processing time, and cost for real-time and batch data processing.</li>
+              </ul>
+              
+              <p><strong>Key Features:</strong></p>
+              <ol>
+                <li><strong>Visual Interface</strong>: Many tools provide a drag-and-drop interface for building pipelines, making it accessible to non-developers.</li>
+                <li><strong>Scheduling</strong>: Run pipelines on a schedule (e.g., daily, hourly) or trigger them based on events.</li>
+                <li><strong>Monitoring</strong>: Track pipeline execution, set up alerts for failures, and view logs for debugging.</li>
+                <li><strong>Serverless</strong>: No infrastructure to manage - the cloud provider handles all the underlying resources.</li>
+              </ol>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              Example Pipeline with AWS Glue
+            </div>
+            <div class="card-body">
+              <ol>
+                <li><strong>Define a Crawler</strong>: To scan data in S3 and populate the Glue Data Catalog with metadata.</li>
+                <li><strong>Create an ETL Job</strong>: Use PySpark script to transform data.</li>
+                <li><strong>Schedule the Job</strong>: Run daily at 2 AM using a cron-like schedule.</li>
+                <li><strong>Monitor</strong>: View job history and logs in the Glue console to ensure everything is running smoothly.</li>
+              </ol>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              Example Pipeline with Azure Data Factory
+            </div>
+            <div class="card-body">
+              <ol>
+                <li><strong>Create a Pipeline</strong>: Use the visual interface to define activities (copy data, run a Spark job).</li>
+                <li><strong>Set Triggers</strong>: Schedule or event-based triggers to start the pipeline.</li>
+                <li><strong>Monitor</strong>: Use the monitoring dashboard to track pipeline runs and troubleshoot issues.</li>
+              </ol>
+              
+              <p><strong>Analogy:</strong> Orchestration tools are like conductors of an orchestra. They ensure each instrument (task) plays at the right time, in the right sequence, and that the entire performance (pipeline) runs smoothly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Streaming Architecture: Real-Time Analytics
+        </div>
+        <div class="card-body">
+          <div class="card">
+            <div class="card-header">
+              What is Streaming Analytics?
+            </div>
+            <div class="card-body">
+              <p>Streaming analytics involves processing and analyzing data as it is generated, enabling real-time insights and actions. This is crucial for use cases like fraud detection, IoT monitoring, and real-time recommendations. Instead of analyzing data in batches (like reviewing yesterday's sales), streaming analytics processes data as it arrives (like monitoring sales as they happen).</p>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              Cloud Streaming Services
+            </div>
+            <div class="card-body">
+              <p><strong>Ingestion:</strong></p>
+              <ul>
+                <li><strong>Amazon Kinesis</strong>: A service for collecting, processing, and analyzing video and data streams in real time. It's like a conveyor belt that continuously delivers data to your processing systems.</li>
+                <li><strong>Azure Event Hubs</strong>: A hyper-scale telemetry ingestion service that collects, transforms, and stores millions of events. Think of it as a massive event reception desk that can handle millions of visitors simultaneously.</li>
+                <li><strong>Google Cloud Pub/Sub</strong>: A fully-managed real-time messaging service that allows you to send and receive messages between independent applications. It's like a global postal service for your data events.</li>
+              </ul>
+              
+              <p><strong>Processing:</strong></p>
+              <ul>
+                <li><strong>Spark Streaming</strong>: Part of Apache Spark, it enables scalable, high-throughput, fault-tolerant stream processing. It processes data in small batches (micro-batches) to achieve near-real-time analytics.</li>
+                <li><strong>Cloud-Specific Processors</strong>:
+                  <ul>
+                    <li><strong>AWS Kinesis Data Analytics</strong>: For processing and analyzing streaming data using SQL or Apache Flink. It's like having a real-time data analyst that never sleeps.</li>
+                    <li><strong>Azure Stream Analytics</strong>: A serverless event processing engine for real-time analytics. It can process millions of events per second with sub-second latency.</li>
+                    <li><strong>Google Cloud Dataflow</strong>: For both batch and stream processing using Apache Beam. It provides a unified programming model for both batch and streaming use cases.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+              Building a Streaming Pipeline
+            </div>
+            <div class="card-body">
+              <ol>
+                <li><strong>Ingest</strong>: Use Kinesis, Event Hubs, or Pub/Sub to ingest real-time data (e.g., website clicks, sensor readings).</li>
+                <li><strong>Process</strong>: 
+                  <ul>
+                    <li>Use Spark Streaming (on EMR, Databricks) or cloud-specific processors (e.g., Kinesis Data Analytics) to process the stream.</li>
+                    <li>Apply transformations, aggregations, and enrichments in real-time.</li>
+                  </ul>
+                </li>
+                <li><strong>Store</strong>: Save processed data to a data lake or database for historical analysis.</li>
+                <li><strong>Analyze and Visualize</strong>: Connect real-time dashboards to the processed stream for immediate insights.</li>
+              </ol>
+              
+              <p><strong>Example: Real-Time Website Analytics</strong></p>
+              <ol>
+                <li><strong>Ingest</strong>: Website click events are sent to Amazon Kinesis Data Streams.</li>
+                <li><strong>Process</strong>: Kinesis Data Analytics runs SQL queries to count page views by URL and user.</li>
+                <li><strong>Store</strong>: Aggregated results are saved to S3 every minute.</li>
+                <li><strong>Visualize</strong>: A dashboard in QuickSight displays near real-time page view counts.</li>
+              </ol>
+              
+              <p><strong>Analogy:</strong> Batch processing is like reading a book and then writing a report. Streaming processing is like live commentary during a sports game – you analyze and react as events happen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3>In-Lesson Activity: Design a Cloud Data Pipeline</h3>
+      
+      <div class="card">
+        <div class="card-header">
+          Scenario
+        </div>
+        <div class="card-body">
+          <p>You are a data engineer at an e-commerce company. The company wants to build a pipeline that processes both batch and real-time data to provide insights into customer behavior and inventory management.</p>
+          <p><strong>Requirements:</strong></p>
+          <ol>
+            <li><strong>Batch Data</strong>: Daily sales data from the transactional database (SQL Server).</li>
+            <li><strong>Real-Time Data</strong>: Website clickstream data.</li>
+            <li><strong>Storage</strong>: Use a cloud data lake for raw data and a cloud data warehouse for analytics.</li>
+            <li><strong>Processing</strong>: 
+              <ul>
+                <li>For batch data: Clean, transform, and aggregate daily sales.</li>
+                <li>For real-time data: Count page views and identify popular products in real-time.</li>
+              </ul>
+            </li>
+            <li><strong>Analytics</strong>: 
+              <ul>
+                <li>Generate daily sales reports.</li>
+                <li>Create a real-time dashboard of website activity.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Task
+        </div>
+        <div class="card-body">
+          <p>Design a cloud architecture that meets these requirements. Choose a cloud provider (AWS, Azure, or GCP) and specify the services you would use for each component. Explain how data flows through the system.</p>
+          <p><strong>Steps:</strong></p>
+          <ol>
+            <li><strong>Choose a Cloud Provider</strong>: Select one (AWS, Azure, or GCP) and justify your choice.</li>
+            <li><strong>Design the Batch Pipeline</strong>:
+              <ul>
+                <li>How will you extract daily sales data?</li>
+                <li>Where will you store the raw data?</li>
+                <li>How will you transform the data?</li>
+                <li>Where will you store the processed data?</li>
+                <li>How will you generate reports?</li>
+              </ul>
+            </li>
+            <li><strong>Design the Streaming Pipeline</strong>:
+              <ul>
+                <li>How will you ingest clickstream data?</li>
+                <li>How will you process the real-time data?</li>
+                <li>Where will you store the processed real-time data?</li>
+                <li>How will you visualize real-time insights?</li>
+              </ul>
+            </li>
+            <li><strong>Orchestration</strong>: How will you schedule and monitor the batch pipeline?</li>
+            <li><strong>Diagram</strong>: Sketch a high-level architecture diagram of your solution.</li>
+          </ol>
+          <p><strong>Reflection Questions:</strong></p>
+          <ol>
+            <li>What are the benefits of using a cloud-based approach for this scenario?</li>
+            <li>What challenges might you encounter in implementing this pipeline?</li>
+            <li>How would you ensure data quality and reliability?</li>
+          </ol>
+        </div>
+      </div>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Modern big data architectures leverage cloud services to handle the volume, velocity, and variety of data. By understanding how to integrate data lakes, data warehouses, distributed processing engines like Spark, and orchestration tools, you can build scalable and efficient data pipelines. The shift from on-premises Hadoop to cloud-native managed services reduces operational overhead and allows organizations to focus on deriving insights from their data. Whether processing batch data or real-time streams, the cloud provides the tools to collect, store, process, and analyze data at any scale, enabling data-driven decision-making in real-time.</p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

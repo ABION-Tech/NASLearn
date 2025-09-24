@@ -4,74 +4,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discussion Questions</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
         body {
-            background-color: white;
-            color: black;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             font-family: Arial, sans-serif;
+            top: 80px;
         }
 
         .container {
-            margin-top: 50px;
-            margin-bottom: 50px;
+            padding: 20px;
         }
 
-        h1 {
-            color: #007BFF;
-            /* Blue accent for main heading */
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
             text-align: center;
-            margin-bottom: 30px;
+            margin-top: 5px;
         }
 
-        h2 {
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
             color: #007BFF;
-            /* Darker blue for subheadings */
-            margin-top: 20px;
+            /* Blue accent for section titles */
         }
 
-        ul {
-            list-style-type: none;
-            /* Remove default list styling */
-            padding-left: 0;
-            /* Remove padding */
-        }
-
-        li {
-            background-color: #f8f9fa;
-            /* Light gray background for list items */
-            margin: 10px 0;
-            /* Space between items */
-            padding: 15px;
-            /* Padding for items */
-            border-left: 4px solid #007BFF;
-            /* Blue accent on the left */
-            border-radius: 5px;
-            /* Rounded corners */
+        h1,
+        h2 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="container">
-        <h1>Discussion Questions</h1>
-
-        <ul>
-            <li>1. How can businesses effectively use Google Analytics to enhance their marketing strategies?</li>
-            <li>2. What are the potential limitations of relying solely on data for decision-making?</li>
-            <li>3. Discuss the ethical implications of tracking user behavior through analytics.</li>
-            <li>4. How can understanding traffic sources influence budget allocation for marketing campaigns?</li>
-            <li>5. What strategies can be implemented to reduce bounce rates on a website?</li>
-        </ul>
+ <div class="container">
+    <div class="header">
+     <!-- Day 4 -->
+       <h2>Social & Content Analytics</h2>
+    
     </div>
-
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <div class="module-content">
+  <h3>Lecture Title</h3>
+      <p>"Content Intelligence: Measuring Social Impact and Content ROI in the Attention Economy"</p>
+      
+      <h3>Learning Objective</h3>
+      <p>After this lecture, students will be able to quantify social media effectiveness, calculate content marketing ROI, and implement social listening strategies that drive product and marketing innovation.</p>
+      
+      <h3>Why This Matters</h3>
+      <p>With 500+ hours of video uploaded to YouTube every minute and 4.7M blog posts published daily, content saturation is at an all-time high. Companies that master content analytics achieve 7.8x higher traffic growth and 3x more leads than those that don't (Semrush, 2023). Without measurement, content creation becomes an expensive guessing game.</p>
+      
+      <h3>Core Content</h3>
+      <h4>Social Media Metrics: The Performance Hierarchy</h4>
+      <p>Social metrics must be evaluated in context. Use this hierarchical framework:</p>
+      <div class="card">
+        <div class="card-header">
+          Tier 1: Awareness Metrics (Volume)
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Reach</strong>: Unique users exposed to content</li>
+            <li><strong>Impressions</strong>: Total content views</li>
+            <li><strong>Share of Voice</strong>: Brand mentions vs. competitors</li>
+            <li><em>Action Trigger</em>: When reach drops below 15% of target audience</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Tier 2: Engagement Metrics (Quality)
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Engagement Rate</strong>: (Likes + Comments + Shares + Saves) ÷ Reach</li>
+            <li><strong>Conversation Rate</strong>: Comments per post</li>
+            <li><strong>Amplification Rate</strong>: Shares per post</li>
+            <li><em>Action Trigger</em>: When engagement rate falls below industry benchmarks (B2B: 2%, B2C: 5%)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          Tier 3: Conversion Metrics (Business Impact)
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Conversion Rate</strong>: Desired actions ÷ clicks</li>
+            <li><strong>Cost Per Conversion</strong>: Ad spend ÷ conversions</li>
+            <li><strong>Social Media ROI</strong>: (Value from social - Social costs) ÷ Social costs</li>
+            <li><em>Action Trigger</em>: When cost per conversion exceeds customer acquisition targets</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h4>Content Performance Analysis: Beyond Vanity Metrics</h4>
+      <p>Evaluate content using this multi-dimensional approach:</p>
+      <ul>
+        <li><strong>Consumption Analysis</strong>: Time on page, scroll depth, video completion rate</li>
+        <li><strong>Engagement Analysis</strong>: Comments per post, social shares, backlinks earned</li>
+        <li><strong>Conversion Analysis</strong>: Lead generation rate, assisted conversion rate, sales influenced</li>
+      </ul>
+      
+      <h4>Content ROI Calculation: The Comprehensive Approach</h4>
+      <p>Measure content marketing ROI using this multi-faceted formula:</p>
+      <ol>
+        <li><strong>Direct Revenue Attribution</strong>: Sales from content-specific landing pages, promo code redemptions</li>
+        <li><strong>Lead Value Calculation</strong>:<br>
+        Lead Value = (Average Deal Size × Lead-to-Customer Rate) ÷ Number of Leads</li>
+        <li><strong>SEO Value Estimation</strong>:<br>
+        SEO Value = (Organic Traffic × Conversion Rate × Average Order Value) - SEO Investment</li>
+        <li><strong>Brand Impact Assessment</strong>: Brand lift studies, share of voice growth</li>
+      </ol>
+      
+      <h4>Social Listening: Turning Conversations into Innovation</h4>
+      <p>Social listening transforms passive monitoring into active intelligence. Implement this framework:</p>
+      <ul>
+        <li><strong>Keyword Taxonomy</strong>: Brand terms, competitor mentions, industry topics, product features, pain points</li>
+        <li><strong>Analysis Dimensions</strong>: Sentiment, themes, influencers, competitive positioning</li>
+        <li><strong>Action Triggers</strong>: Volume spikes, sentiment shifts, competitive moves</li>
+      </ul>
+      
+      <h3>In-Lesson Activity</h3>
+      <p><strong>Content Performance Audit & Strategy</strong><br>
+      <em>Scenario</em>: You're auditing content performance for a sustainable home goods company with these metrics:<br>
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Content Type</th>
+            <th>Pieces Published</th>
+            <th>Avg. Time on Page</th>
+            <th>Conversion Rate</th>
+            <th>Production Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Blog Posts</td>
+            <td>24</td>
+            <td>2:45</td>
+            <td>1.2%</td>
+            <td>$800/post</td>
+          </tr>
+          <tr>
+            <td>How-To Videos</td>
+            <td>8</td>
+            <td>4:20</td>
+            <td>2.8%</td>
+            <td>$1,500/video</td>
+          </tr>
+          <tr>
+            <td>Product Guides</td>
+            <td>12</td>
+            <td>5:15</td>
+            <td>3.5%</td>
+            <td>$600/guide</td>
+          </tr>
+          <tr>
+            <td>Instagram Reels</td>
+            <td>36</td>
+            <td>N/A</td>
+            <td>0.8%</td>
+            <td>$200/Reel</td>
+          </tr>
+        </tbody>
+      </table>
+      <em>Additional Data</em>: Blog posts drive 60% of organic traffic, Videos have highest social shares (avg. 45/post), Product guides have lowest bounce rate (25%), Reels generate most brand mentions<br>
+      <em>Your Task</em>:
+      <ol>
+        <li>Calculate the ROI for each content type using lead value = $150 (average) and traffic value = $0.50/visit (organic)</li>
+        <li>Recommend a content mix and budget allocation for next quarter ($25k total)</li>
+        <li>Propose 3 social listening queries to guide future content creation</li>
+      </ol>
+      <em>Deliverable</em>: A content strategy document with performance analysis, ROI calculations, and listening recommendations.</p>
+      
+      <div class="key-point">
+        <h4>Key Takeaway</h4>
+        <p>Content and social analytics must measure beyond surface metrics to quantify true business impact—transforming content from a cost center into a measurable growth driver through strategic performance analysis and social intelligence.</p>
+      </div>
+      
 
 </body>
 

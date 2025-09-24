@@ -4,143 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment: Designing Custom Icons and an Illustrated Graphic</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #fff;
-            color: #000;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+    <title>Week 7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+        .container h1 {
+            font-size: 2.3rem;
         }
 
-        .blue-accent {
-            color: #007bff;
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            top: 80px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Video container to hold everything */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+
+        /* Gradient border container */
+        .gradient-border {
+            padding: 5px;
+            background: linear-gradient(135deg, #3197eb, #ffffff, rgb(0, 174, 255));
+            border-radius: 10px;
+        }
+
+        /* Video or content inside the border */
+        .video-content {
+            border-radius: 10px;
+            display: block;
+        }
+
+        .video-links {
+            color: grey;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Ensure responsive width and height for the video */
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* Responsiveness */
+        @media (min-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            iframe {
+                width: 800px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        /* For mobile screens, to avoid the box-like appearance */
+        @media (max-width: 360px) {
+            .video-content {
+                width: 280px;
+                /* Take full width */
+                height: 200px;
+                /* Adjust height to give a more rectangular shape */
+            }
+
+            /* For mobile screens, to avoid the box-like appearance */
+            @media (max-width: 256px) {
+                .video-content {
+                    width: 1080px;
+                    /* Take full width */
+                    height: 300px;
+                    /* Adjust height to give a more rectangular shape */
+                }
+            }
+        }
+
+        .section-title {
+            margin-top: 30px;
+            color: #007BFF;
+            /* Blue accent for section titles */
         }
 
         h1,
-        h2,
-        h3 {
-            margin-top: 20px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        .content-section {
-            margin-bottom: 40px;
-        }
-
-        .step-list {
-            list-style-type: decimal;
-            margin-left: 20px;
-        }
-
-        .tip-list,
-        .rubric-list {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        .custom-card {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px;
+        h2 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="content-section">
-            <h1 class="blue-accent">Assignment: Designing Custom Icons and an Illustrated Graphic</h1>
-            <h2>Goal</h2>
-            <p>The objective of this assignment is to create a cohesive set of custom icons and an illustrated graphic
-                tailored for a web or app interface. The design should be visually engaging and enhance the user
-                experience by effectively conveying the intended message.</p>
-        </div>
-
-        <div class="content-section">
-            <h2>Prompt</h2>
-            <p>Choose a concept or theme for your design. Consider the target audience, the overall aesthetic, and the
-                key message you want to convey. This is an opportunity to explore your creativity while ensuring
-                functionality.</p>
-        </div>
-
-        <div class="content-section">
-            <h2>Materials</h2>
-            <ul class="tip-list">
-                <li>Paper or digital design software (e.g., Adobe Illustrator, Photoshop, Canva)</li>
-                <li>Color palette tools or apps (optional)</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h2>Steps</h2>
-            <ol class="step-list">
-                <li><strong>Brainstorm and Define the Concept:</strong> Articulate the purpose of the icons and the
-                    overall theme of the graphic. What message do you want to communicate?</li>
-                <li><strong>Research and Inspiration:</strong> Explore existing icons, illustrations, and cultural
-                    references to gather inspiration.</li>
-                <li><strong>Create Icon Sketches:</strong> Draft potential icon designs. Focus on simplicity, clarity,
-                    and consistency with the theme.</li>
-                <li><strong>Digitize and Refine:</strong> Convert your sketches into digital vector graphics. Refine
-                    your designs to meet professional standards.</li>
-                <li><strong>Create the Illustrated Graphic:</strong> Develop an illustration that complements the icons
-                    and reinforces the overall message. Ensure cohesion in style and theme.</li>
-                <li><strong>Choose a Color Palette:</strong> Select a color palette that aligns with both the icons and
-                    the illustrated graphic, enhancing the overall aesthetic.</li>
-                <li><strong>Test and Iterate:</strong> Conduct usability testing with potential users. Ensure that the
-                    icons and graphic are easily recognizable and comprehensible. Adjust based on feedback.</li>
-            </ol>
-        </div>
-
-        <div class="content-section">
-            <h2>Grading Rubric</h2>
-            <p>Your work will be assessed based on the following criteria:</p>
-            <ul class="rubric-list">
-                <li><strong>Consistency:</strong> Do the icons and graphic complement each other and align with the
-                    overall theme?</li>
-                <li><strong>Clarity and Simplicity:</strong> Are the icons clear, recognizable, and easy to understand?
-                </li>
-                <li><strong>Visual Appeal:</strong> Are the icons and graphic visually appealing and engaging?</li>
-                <li><strong>Scalability:</strong> Are the icons designed as vector graphics to ensure scalability
-                    without loss of quality?</li>
-                <li><strong>Accessibility:</strong> Are the icons accessible to users with visual impairments?</li>
-                <li><strong>Creativity:</strong> Do the icons and graphic demonstrate originality and creativity?</li>
-            </ul>
-        </div>
-
-        <div class="content-section">
-            <h2>Additional Tips</h2>
-            <div class="custom-card">
-                <p>Keep the following tips in mind while working on your assignment:</p>
-                <ul class="tip-list">
-                    <li><strong>Consider the Target Audience:</strong> Ensure your design appeals to your intended
-                        users.</li>
-                    <li><strong>Use a Consistent Style:</strong> Maintain a consistent design style throughout the icons
-                        and graphic.</li>
-                    <li><strong>Experiment with Different Techniques:</strong> Try various design techniques such as
-                        line art, flat design, or isometric projection to enhance creativity.</li>
-                    <li><strong>Seek Feedback:</strong> Share your designs with peers or mentors to gain constructive
-                        feedback and identify areas for improvement.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Conclusion</h2>
-            <p>By following these steps and applying the principles of icon design and illustration, you will create a
-                set of custom icons and a graphic that enhance the visual appeal and usability of your web or app
-                interface. Embrace your creativity and make thoughtful design choices that resonate with your target
-                audience.</p>
-        </div>
-    </div>
 
 </body>
 
