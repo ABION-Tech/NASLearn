@@ -486,7 +486,7 @@
             </div>
             
             <div class="form-container">
-                <form id="nasApplicationForm">
+                <form id="nasApplicationForm" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSeZ8DCDtNsVxhW_g0LCn_LfqgJ8ksxneBAUfxgiba9a3vxo8g/formResponse">
                     <!-- Section 1: Basic Information -->
                     <div class="form-step active" id="step1">
                         <div class="step-header">
@@ -782,7 +782,7 @@
                             </ol>
                             
                             <h4>Affiliates and Disclaimers</h4>
-                            <p>This course is provided by New Age University (NAS), an initiative of ABION Industries Ltd. Throughout the course, NAS may collaborate with affiliates, partners, and external organizations to provide resources, materials, and internship opportunities.</p>
+                            <p>This course is provided by New Age Skillsphere (NAS), an initiative of ABION Industries Ltd. Throughout the course, NAS may collaborate with affiliates, partners, and external organizations to provide resources, materials, and internship opportunities.</p>
                             <ol>
                                 <li>
                                     <strong>Affiliates and Partners:</strong> Certain course resources, training materials, and project opportunities may come from NAS's partners and affiliates. By participating in this course, you acknowledge that external affiliates may assist in course facilitation, internship projects, or additional training resources as part of this program.
@@ -881,7 +881,7 @@
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <h3>Thank you for your submission!</h3>
-                    <p>Your application to New Age University has been successfully recorded. We are excited to review your details and will be in touch soon with the next steps. Welcome to the future of learning!</p>
+                    <p>Your application to New Age Skillsphere has been successfully recorded. We are excited to review your details and will be in touch soon with the next steps. Welcome to the future of learning!</p>
                     <a href="./index.html" class="btn btn-primary">Back to Home</a>
                 </div>
             </div>
@@ -1078,7 +1078,9 @@
                     return;
                 }
                 
-                // Show loading indicator
+                // Show loading indicator and prevent double-submit
+                const submitBtn = form.querySelector('button[type="submit"]');
+                if (submitBtn) submitBtn.disabled = true;
                 form.style.display = 'none';
                 formLoading.classList.add('show');
                 
@@ -1086,6 +1088,11 @@
                 const formData = new FormData();
                 
                 // Map form fields to Google Form entry IDs
+                // Include email and other fields
+                try {
+                    const emailVal = document.getElementById('email') ? document.getElementById('email').value : '';
+                    if (emailVal) formData.append('email', emailVal);
+                } catch (err) { /* ignore */ }
                 formData.append('entry.1462508126', document.getElementById('firstName').value);
                 formData.append('entry.2024498573', document.getElementById('surname').value);
                 formData.append('entry.2069535780', document.getElementById('phone').value);
@@ -1129,7 +1136,7 @@
                     // Hide loading, show success
                     formLoading.classList.remove('show');
                     formSuccess.style.display = 'block';
-                    
+
                     // Scroll to success message
                     formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 })
@@ -1138,6 +1145,7 @@
                     // Hide loading, show form again
                     formLoading.classList.remove('show');
                     form.style.display = 'block';
+                    if (submitBtn) submitBtn.disabled = false;
                     alert('There was an error submitting your application. Please try again.');
                 });
             });
