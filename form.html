@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAS Application Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #059669;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --africa-green: #008751;
+            --africa-gold: #fcd116;
+            --africa-red: #ce1126;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s ease;
+            --border: #e2e8f0;
+            --primary-light: rgba(37, 99, 235, 0.1);
+            --text-gray: #64748b;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+        /* Header & Navigation */
+        header {
+            background-color: var(--light);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .logo-icon {
+            color: var(--primary);
+            font-size: 1.75rem;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .logo-text span {
+            color: var(--primary);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.25rem;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+        .theme-toggle:hover {
+            color: var(--primary);
+            transform: rotate(15deg);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        .main-content {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .form-subtitle {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        .form-container {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+        .form-step {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .form-step.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .step-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .step-indicator {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        .required {
+            color: var(--error);
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 0.375rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .radio-option input,
+        .checkbox-option input {
+            width: auto;
+        }
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            position: relative;
+        }
+        .form-progress::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background-color: var(--light-gray);
+            z-index: 1;
+        }
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+        .progress-step.active .step-number {
+            background-color: var(--primary);
+            color: white;
+        }
+        .step-label {
+            font-size: 0.875rem;
+            color: var(--gray);
+            text-align: center;
+        }
+        .progress-step.active .step-label {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        .terms-container {
+            background-color: var(--light-gray);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
+        }
+        .terms-container h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .terms-container h4 {
+            font-size: 1.1rem;
+            margin: 1rem 0 0.5rem;
+            color: var(--dark);
+        }
+        .terms-container p,
+        .terms-container li {
+            margin-bottom: 0.75rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        .terms-container ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .form-success {
+            text-align: center;
+            padding: 3rem 0;
+            display: none;
+        }
+        .success-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+        .form-success h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .form-success p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .date-inputs {
+            display: flex;
+            gap: 1rem;
+        }
+        .date-inputs .form-group {
+            flex: 1;
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .error-message.show {
+            display: block;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        .loading.show {
+            display: block;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--primary);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @media (max-width: 768px) {
+            .nav-links, .nav-actions {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .date-inputs {
+                flex-direction: column;
+            }
+            .radio-group,
+            .checkbox-group {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">NAS</div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#courses" class="nav-link">Courses</a>
+                <a href="#why" class="nav-link">Why NAS?</a>
+                <a href="./form.html" class="nav-link">Apply</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span class="visually-hidden">Toggle theme</span>
+                </button>
+                <a href="https://newageskills.com.ng/Learn" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Login</a>
+                <a href="./form.html" class="btn btn-primary">Apply Now</a>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <div class="main-content">
+        <div class="container">
+            <div class="form-header">
+                <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                    <div class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="logo-text">NAS<span>killsphere</span></div>
+                </div>
+                <h1 class="form-title">Application Form</h1>
+                <p class="form-subtitle">Join our transformative program and launch your career</p>
+            </div>
+            
+            <div class="form-container">
+                <form id="nasApplicationForm">
+                    <!-- Section 1: Basic Information -->
+                    <div class="form-step active" id="step1">
+                        <div class="step-header">
+                            <h2 class="step-title">Basic Information</h2>
+                            <div class="step-indicator">Section 1 of 3</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="emailError">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <div class="error-message" id="firstNameError">Please enter your first name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="surname">Surname <span class="required">*</span></label>
+                            <input type="text" id="surname" name="surname" required>
+                            <div class="error-message" id="surnameError">Please enter your surname</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number (with country code) <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <div class="error-message" id="phoneError">Please enter your phone number</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Gender <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="gender" value="Male" required>
+                                    <span>Male</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="gender" value="Female">
+                                    <span>Female</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="gender" value="Other">
+                                    <span>Other</span>
+                                </label>
+                            </div>
+                            <div class="error-message" id="genderError">Please select your gender</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label id="dobLabel">Date of Birth <span class="required">*</span></label>
+                            <div class="date-inputs">
+                                <div class="form-group">
+                                    <select id="birthMonth" name="birthMonth" required aria-labelledby="dobLabel">
+                                        <option value="">Month</option>
+                                        <option value="01">January</option>
+                                        <option value="02">February</option>
+                                        <option value="03">March</option>
+                                        <option value="04">April</option>
+                                        <option value="05">May</option>
+                                        <option value="06">June</option>
+                                        <option value="07">July</option>
+                                        <option value="08">August</option>
+                                        <option value="09">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                    <div class="error-message" id="birthMonthError">Please select month</div>
+                                </div>
+                                <div class="form-group">
+                                    <select id="birthDay" name="birthDay" required aria-labelledby="dobLabel">
+                                        <option value="">Day</option>
+                                    </select>
+                                    <div class="error-message" id="birthDayError">Please select day</div>
+                                </div>
+                                <div class="form-group">
+                                    <select id="birthYear" name="birthYear" required aria-labelledby="dobLabel">
+                                        <option value="">Year</option>
+                                    </select>
+                                    <div class="error-message" id="birthYearError">Please select year</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <div></div>
+                            <button type="button" class="btn btn-primary next-step">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 2: Course Info -->
+                    <div class="form-step" id="step2">
+                        <div class="step-header">
+                            <h2 class="step-title">Course Info</h2>
+                            <div class="step-indicator">Section 2 of 3</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="convinceUs">Convince Us you deserve this!</label>
+                            <textarea id="convinceUs" name="convinceUs" rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="course">Which course are you enrolling in? <span class="required">*</span></label>
+                            <select id="course" name="course" required>
+                                <option value="">Select a course</option>
+                                <option value="AI for Business and Productivity">AI for Business and Productivity</option>
+                                <option value="AI Development (Machine Learning)">AI Development (Machine Learning)</option>
+                                <option value="Content Media Production">Content Media Production</option>
+                                <option value="Data Analysis and Business Intelligence">Data Analysis and Business Intelligence</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="Project Management">Project Management</option>
+                                <option value="Software Engineering">Software Engineering</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Writing">Writing</option>
+                            </select>
+                            <div class="error-message" id="courseError">Please select a course</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cohort">Confirm your cohort <span class="required">*</span></label>
+                            <select id="cohort" name="cohort" required>
+                                <option value="">Select a cohort</option>
+                                <option value="Cohort 1 (26th January, 2026)">Cohort 1 (26th January, 2026)</option>
+                                <option value="Cohort 2 (27th July, 2026)">Cohort 2 (27th July, 2026)</option>
+                            </select>
+                            <div class="error-message" id="cohortError">Please select a cohort</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="qualification">Highest Qualification <span class="required">*</span></label>
+                            <select id="qualification" name="qualification" required>
+                                <option value="">Select your qualification</option>
+                                <option value="High School Diploma / Secondary School Certificate">High School Diploma / Secondary School Certificate</option>
+                                <option value="National Diploma (ND)">National Diploma (ND)</option>
+                                <option value="Higher National Diploma (HND)">Higher National Diploma (HND)</option>
+                                <option value="Associate Degree">Associate Degree</option>
+                                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                <option value="Master's Degree">Master's Degree</option>
+                                <option value="Doctorate (PhD)">Doctorate (PhD)</option>
+                                <option value="Professional Certification">Professional Certification</option>
+                                <option value="Vocational Training / Diploma">Vocational Training / Diploma</option>
+                                <option value="No Formal Qualification">No Formal Qualification</option>
+                            </select>
+                            <div class="error-message" id="qualificationError">Please select your qualification</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="whyCourse">Why this course? <span class="required">*</span></label>
+                            <textarea id="whyCourse" name="whyCourse" rows="4" required></textarea>
+                            <div class="error-message" id="whyCourseError">Please tell us why you want this course</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Do you have access to reliable internet connection and necessary equipment? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="internetAccess" value="Yes" required>
+                                    <span>Yes</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="internetAccess" value="No">
+                                    <span>No</span>
+                                </label>
+                            </div>
+                            <div class="error-message" id="internetAccessError">Please select an option</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="occupation">Current Occupation</label>
+                            <input type="text" id="occupation" name="occupation">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="referral">How did you hear about this course? <span class="required">*</span></label>
+                            <select id="referral" name="referral" required>
+                                <option value="">Select an option</option>
+                                <option value="Social Media">Social Media</option>
+                                <option value="Friend/Colleague">Friend/Colleague</option>
+                                <option value="Search Engine">Search Engine</option>
+                                <option value="Advertisement">Advertisement</option>
+                                <option value="News Article">News Article</option>
+                                <option value="Educational Institution">Educational Institution</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="error-message" id="referralError">Please select an option</div>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-outline prev-step">Previous</button>
+                            <button type="button" class="btn btn-primary next-step">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 3: Terms and Conditions -->
+                    <div class="form-step" id="step3">
+                        <div class="step-header">
+                            <h2 class="step-title">Terms and Conditions</h2>
+                            <div class="step-indicator">Section 3 of 3</div>
+                        </div>
+                        
+                        <div class="terms-container">
+                            <h3>Introduction</h3>
+                            <p>Welcome to our online course. By registering for this course, you agree to the following terms and conditions. Please read them carefully.</p>
+                            
+                            <h4>Course Structure</h4>
+                            <ol>
+                                <li>
+                                    <strong>Course Duration:</strong> The course consists of two parts:
+                                    <ul>
+                                        <li>12-week Class Course: An intensive learning period covering essential skills and knowledge.</li>
+                                        <li>3-month Internship: A practical, hands-on internship designed to help you master the skills learned during the class course. This internship is conducted within our startup, providing you with real-world experience.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Certification:</strong> Upon successful completion of both parts of the course, you will receive a certificate of achievement.
+                                </li>
+                            </ol>
+                            
+                            <h4>Fees and Charges</h4>
+                            <ol>
+                                <li>
+                                    <strong>No Fees:</strong> This course is offered free of charge. There are no registration fees, tuition fees, or any other hidden charges.
+                                </li>
+                            </ol>
+                            
+                            <h4>Internship Details</h4>
+                            <ol>
+                                <li>
+                                    <strong>Purpose:</strong> The internship provides practical experience and contributes to our startup's projects.
+                                </li>
+                                <li>
+                                    <strong>Duration:</strong> The internship lasts for 3 months following the completion of the class course.
+                                </li>
+                                <li>
+                                    <strong>Commitment:</strong> Participants are expected to commit to the full duration and actively contribute to assigned projects and tasks.
+                                </li>
+                                <li>
+                                    <strong>Compensation:</strong> This internship is unpaid. Participants acknowledge that they are not entitled to wages for the time spent in the internship.
+                                </li>
+                            </ol>
+                            
+                            <h4>Participant Responsibilities</h4>
+                            <ol>
+                                <li>
+                                    <strong>Attendance:</strong> Participants must attend all scheduled classes and complete all assignments and projects on time.
+                                </li>
+                                <li>
+                                    <strong>Active Participation:</strong> Engage actively in both the class and internship phases. Participation is crucial for both your learning and the success of our startup projects.
+                                </li>
+                                <li>
+                                    <strong>Conduct:</strong> Maintain professional behavior and adhere to our startup's code of conduct during the internship.
+                                </li>
+                            </ol>
+                            
+                            <h4>Data and Privacy</h4>
+                            <ol>
+                                <li>
+                                    <strong>Data Collection:</strong> We will collect and store your personal information for course administration and communication.
+                                </li>
+                                <li>
+                                    <strong>Privacy:</strong> Your data will be kept confidential and will not be shared with third parties without your consent, except as required by law.
+                                </li>
+                            </ol>
+                            
+                            <h4>Intellectual Property</h4>
+                            <ol>
+                                <li>
+                                    <strong>Course Materials:</strong> 
+                                    <ul>
+                                        <li><strong>Original Content:</strong> Course materials created by our startup are the intellectual property of our startup. You are granted a non-exclusive license to use these materials for personal learning purposes only.</li>
+                                        <li><strong>Third-Party Content:</strong> Some course materials, including but not limited to YouTube videos, are the property of their respective owners and are used in accordance with applicable laws and platform policies. Your use of such content is subject to the terms and conditions of the respective platforms or content owners.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Internship Work:</strong> Any work produced during the internship is the property of our startup. However, participants may include projects they worked on in their personal portfolios, subject to any confidentiality restrictions.
+                                </li>
+                            </ol>
+                            
+                            <h4>Termination</h4>
+                            <ol>
+                                <li>
+                                    <strong>Termination by Participant:</strong> You may terminate your participation at any time with written notice. This may affect your eligibility for certification.
+                                </li>
+                                <li>
+                                    <strong>Termination by Startup:</strong> We reserve the right to terminate your participation for violations of these terms, including misconduct, failure to attend at least 60% classes, or non-performance during the internship.
+                                </li>
+                                <li>
+                                    <strong>Consequences of Termination:</strong> Upon termination, you must cease use of all course materials. No partial certification will be provided.
+                                </li>
+                            </ol>
+                            
+                            <h4>Affiliates and Disclaimers</h4>
+                            <p>This course is provided by New Age University (NAS), an initiative of ABION Industries Ltd. Throughout the course, NAS may collaborate with affiliates, partners, and external organizations to provide resources, materials, and internship opportunities.</p>
+                            <ol>
+                                <li>
+                                    <strong>Affiliates and Partners:</strong> Certain course resources, training materials, and project opportunities may come from NAS's partners and affiliates. By participating in this course, you acknowledge that external affiliates may assist in course facilitation, internship projects, or additional training resources as part of this program.
+                                </li>
+                                <li>
+                                    <strong>Third-Party Content and Services:</strong> NAS may integrate third-party content, software, and online platforms as part of the curriculum. While NAS strives to ensure quality and relevance, we do not assume liability for the accuracy, functionality, or availability of third-party resources. Participants' use of third-party content is subject to the respective platform's terms and conditions.
+                                </li>
+                                <li>
+                                    <strong>Non-Endorsement Disclaimer:</strong> NAS's collaboration with affiliates and partners does not imply endorsement of their products, services, or practices unless otherwise stated. Participants should independently review the policies and practices of any third-party services utilized during the course.
+                                </li>
+                                <li>
+                                    <strong>Data Sharing:</strong> Personal information may be shared with affiliates solely for course facilitation and internship coordination purposes, in accordance with data protection laws. NAS will ensure that all affiliates adhere to strict privacy and confidentiality standards.
+                                </li>
+                            </ol>
+                            
+                            <h4>Affiliate Sales</h4>
+                            <p>As part of our course, New Age Skillsphere (NAS) may recommend or provide links to third-party products, services, or educational resources through affiliate partnerships. By engaging with these affiliate links, participants may directly support NAS's operations at no extra cost to themselves.</p>
+                            <ol>
+                                <li>
+                                    <strong>Affiliate Commissions:</strong> NAS may earn commissions from sales generated through affiliate links included in course materials, resources, or communications. These affiliate partnerships help NAS to offer this course free of charge and sustain our educational mission.
+                                </li>
+                                <li>
+                                    <strong>Transparency and Independence:</strong> While NAS may recommend third-party products and services, our recommendations are based solely on their educational value and relevance to the course. Our affiliates have no influence over course content or structure, and participants are encouraged to make independent purchasing decisions.
+                                </li>
+                                <li>
+                                    <strong>No Obligation:</strong> Participants are not required to purchase any third-party products or services through affiliate links, and alternative resources are always available. Choosing to engage with these affiliates is entirely voluntary.
+                                </li>
+                                <li>
+                                    <strong>Disclosure Compliance:</strong> NAS complies with applicable disclosure regulations to ensure participants are fully informed of any affiliate relationships in our materials, as required by law.
+                                </li>
+                            </ol>
+                            
+                            <h4>Dispute Resolution</h4>
+                            <p>Any disputes arising from this agreement will first be subject to good-faith negotiation. If unresolved, disputes will be settled by binding arbitration.</p>
+                            
+                            <h4>Limitation of Liability</h4>
+                            <p>Our startup's liability for any claim arising from this course or internship is limited to the direct damages incurred, not to exceed the equivalent of the fair market value of the course.</p>
+                            
+                            <h4>Changes to Terms</h4>
+                            <p>We reserve the right to modify these terms. Any changes will be communicated to participants with at least 14 days' notice.</p>
+                            
+                            <h4>Acknowledgment</h4>
+                            <p>By registering for this course, you acknowledge that you have read, understood, and agree to these terms and conditions.</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Do you agree to the terms and conditions? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="termsAgree" value="Yes" required>
+                                    <span>Yes</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="termsAgree" value="No">
+                                    <span>No</span>
+                                </label>
+                            </div>
+                            <div class="error-message" id="termsError">You must agree to the terms and conditions to proceed</div>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-outline prev-step">Previous</button>
+                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-progress">
+                        <div class="progress-step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Basic Info</div>
+                        </div>
+                        <div class="progress-step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Course Info</div>
+                        </div>
+                        <div class="progress-step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Terms</div>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="loading" id="formLoading">
+                    <div class="spinner"></div>
+                    <p>Submitting your application...</p>
+                </div>
+                
+                <div class="form-success" id="formSuccess">
+                    <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                        <div class="logo-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="logo-text">NAS<span>killsphere</span></div>
+                    </div>
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Thank you for your submission!</h3>
+                    <p>Your application to New Age University has been successfully recorded. We are excited to review your details and will be in touch soon with the next steps. Welcome to the future of learning!</p>
+                    <a href="./index.html" class="btn btn-primary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Theme Toggle
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
+            
+            // Check for saved theme preference or respect OS preference
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.classList.add('dark-mode');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+            
+            themeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark-mode');
+                
+                if (document.documentElement.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            });
+            
+            // Populate day options based on month
+            const monthSelect = document.getElementById('birthMonth');
+            const daySelect = document.getElementById('birthDay');
+            const yearSelect = document.getElementById('birthYear');
+            
+            // Populate years (18-60 years ago)
+            const currentYear = new Date().getFullYear();
+            for (let year = currentYear - 18; year >= currentYear - 60; year--) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+            }
+            
+            // Update days when month changes
+            monthSelect.addEventListener('change', function() {
+                updateDayOptions();
+            });
+            
+            yearSelect.addEventListener('change', function() {
+                updateDayOptions();
+            });
+            
+            function updateDayOptions() {
+                const month = parseInt(monthSelect.value);
+                const year = parseInt(yearSelect.value);
+                
+                // Clear existing options
+                daySelect.innerHTML = '<option value="">Day</option>';
+                
+                if (month && year) {
+                    // Get number of days in month
+                    const daysInMonth = new Date(year, month, 0).getDate();
+                    
+                    // Add day options
+                    for (let day = 1; day <= daysInMonth; day++) {
+                        const option = document.createElement('option');
+                        option.value = day < 10 ? '0' + day : day;
+                        option.textContent = day;
+                        daySelect.appendChild(option);
+                    }
+                }
+            }
+            
+            // Form handling
+            const form = document.getElementById('nasApplicationForm');
+            const formSteps = document.querySelectorAll('.form-step');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            const nextButtons = document.querySelectorAll('.next-step');
+            const prevButtons = document.querySelectorAll('.prev-step');
+            const formSuccess = document.getElementById('formSuccess');
+            const formLoading = document.getElementById('formLoading');
+            
+            let currentStep = 1;
+            
+            // Next step button
+            nextButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const currentStepElement = document.getElementById(`step${currentStep}`);
+                    const inputs = currentStepElement.querySelectorAll('input[required], select[required], textarea[required]');
+                    let isValid = true;
+                    
+                    // Hide all error messages
+                    const errorMessages = currentStepElement.querySelectorAll('.error-message');
+                    errorMessages.forEach(msg => msg.classList.remove('show'));
+                    
+                    // Validate required fields
+                    inputs.forEach(input => {
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            input.style.borderColor = 'var(--error)';
+                            const errorMsg = document.getElementById(input.id + 'Error');
+                            if (errorMsg) errorMsg.classList.add('show');
+                        } else {
+                            input.style.borderColor = '';
+                        }
+                    });
+                    
+                    // Special validation for date of birth
+                    if (currentStep === 1) {
+                        if (!monthSelect.value || !daySelect.value || !yearSelect.value) {
+                            isValid = false;
+                            if (!monthSelect.value) {
+                                monthSelect.style.borderColor = 'var(--error)';
+                                document.getElementById('birthMonthError').classList.add('show');
+                            }
+                            if (!daySelect.value) {
+                                daySelect.style.borderColor = 'var(--error)';
+                                document.getElementById('birthDayError').classList.add('show');
+                            }
+                            if (!yearSelect.value) {
+                                yearSelect.style.borderColor = 'var(--error)';
+                                document.getElementById('birthYearError').classList.add('show');
+                            }
+                        } else {
+                            monthSelect.style.borderColor = '';
+                            daySelect.style.borderColor = '';
+                            yearSelect.style.borderColor = '';
+                        }
+                    }
+                    
+                    // Special validation for radio buttons
+                    if (currentStep === 1) {
+                        const genderRadios = document.querySelectorAll('input[name="gender"]');
+                        const genderSelected = Array.from(genderRadios).some(radio => radio.checked);
+                        if (!genderSelected) {
+                            isValid = false;
+                            document.getElementById('genderError').classList.add('show');
+                        }
+                    }
+                    
+                    if (isValid) {
+                        if (currentStep < formSteps.length) {
+                            currentStep++;
+                            updateFormSteps();
+                        }
+                    }
+                });
+            });
+            
+            // Previous step button
+            prevButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if (currentStep > 1) {
+                        currentStep--;
+                        updateFormSteps();
+                    }
+                });
+            });
+            
+            // Update form steps
+            function updateFormSteps() {
+                formSteps.forEach((step, index) => {
+                    if (index + 1 === currentStep) {
+                        step.classList.add('active');
+                    } else {
+                        step.classList.remove('active');
+                    }
+                });
+                
+                progressSteps.forEach((step, index) => {
+                    if (index + 1 <= currentStep) {
+                        step.classList.add('active');
+                    } else {
+                        step.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Check if terms are agreed
+                const termsAgree = document.querySelector('input[name="termsAgree"]:checked');
+                if (!termsAgree || termsAgree.value !== 'Yes') {
+                    document.getElementById('termsError').classList.add('show');
+                    return;
+                }
+                
+                // Show loading indicator
+                form.style.display = 'none';
+                formLoading.classList.add('show');
+                
+                // Get form data
+                const formData = new FormData();
+                
+                // Map form fields to Google Form entry IDs
+                formData.append('entry.1462508126', document.getElementById('firstName').value);
+                formData.append('entry.2024498573', document.getElementById('surname').value);
+                formData.append('entry.2069535780', document.getElementById('phone').value);
+                
+                // Gender
+                const gender = document.querySelector('input[name="gender"]:checked');
+                if (gender) formData.append('entry.678737299', gender.value);
+                
+                // Date of Birth (combine year, month, day)
+                const birthYear = document.getElementById('birthYear').value;
+                const birthMonth = document.getElementById('birthMonth').value;
+                const birthDay = document.getElementById('birthDay').value;
+                if (birthYear && birthMonth && birthDay) {
+                    formData.append('entry.1147420493', `${birthYear}-${birthMonth}-${birthDay}`);
+                }
+                
+                // Course Info
+                formData.append('entry.1104243376', document.getElementById('convinceUs').value);
+                formData.append('entry.313841554', document.getElementById('course').value);
+                formData.append('entry.1401664998', document.getElementById('cohort').value);
+                formData.append('entry.118940101', document.getElementById('qualification').value);
+                formData.append('entry.159300695', document.getElementById('whyCourse').value);
+                
+                // Internet Access
+                const internetAccess = document.querySelector('input[name="internetAccess"]:checked');
+                if (internetAccess) formData.append('entry.141969707', internetAccess.value);
+                
+                formData.append('entry.638588409', document.getElementById('occupation').value);
+                formData.append('entry.768836630', document.getElementById('referral').value);
+                
+                // Terms Agreement
+                if (termsAgree) formData.append('entry.1008142398', termsAgree.value);
+                
+                // Submit to Google Forms
+                fetch('https://docs.google.com/forms/d/e/1FAIpQLSeZ8DCDtNsVxhW_g0LCn_LfqgJ8ksxneBAUfxgiba9a3vxo8g/formResponse', {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                })
+                .then(response => {
+                    // Hide loading, show success
+                    formLoading.classList.remove('show');
+                    formSuccess.style.display = 'block';
+                    
+                    // Scroll to success message
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Hide loading, show form again
+                    formLoading.classList.remove('show');
+                    form.style.display = 'block';
+                    alert('There was an error submitting your application. Please try again.');
+                });
+            });
+            
+            // Add input event listeners to remove error styling
+            const inputs = document.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.value.trim()) {
+                        this.style.borderColor = '';
+                        const errorMsg = document.getElementById(this.id + 'Error');
+                        if (errorMsg) errorMsg.classList.remove('show');
+                    }
+                });
+                
+                input.addEventListener('change', function() {
+                    if (this.value.trim()) {
+                        this.style.borderColor = '';
+                        const errorMsg = document.getElementById(this.id + 'Error');
+                        if (errorMsg) errorMsg.classList.remove('show');
+                    }
+                });
+            });
+            
+            // Special handling for radio buttons
+            const radioGroups = document.querySelectorAll('input[type="radio"]');
+            radioGroups.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const groupName = this.name;
+                    const errorMsg = document.getElementById(groupName + 'Error');
+                    if (errorMsg) errorMsg.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

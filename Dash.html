@@ -289,7 +289,7 @@
     <div class="mt-auto">
       <a href="#" class="btn btn-outline-primary w-100" id="settingsLink">
         <i class="fas fa-cog"></i> Settings
-      </a>
+        <h3>Learning Center</h3>
     </div>
   </div>
 
@@ -337,10 +337,14 @@
       <div class="card">
         <h4>Project Progress</h4>
         <div class="progress mb-3">
-          <div class="progress-bar" style="width: 70%;">70%</div>
+          <div class="progress-bar" role="progressbar" aria-label="Project progress" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" data-value="70">70%</div>
+          </div>
         </div>
         <div class="progress">
-          <div class="progress-bar" style="width: 45%;">45%</div>
+          <div class="progress-bar" role="progressbar" aria-label="Project progress" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" data-value="45">45%</div>
+          </div>
         </div>
       </div>
 
@@ -355,8 +359,8 @@
       </div>
     </div>
 
-    <!-- Dynamic Content Area -->
-    <div id="dynamicContent" style="display: none;"></div>
+  <!-- Dynamic Content Area -->
+  <div id="dynamicContent" class="d-none"></div>
   </main>
 
   <!-- Modal -->
@@ -374,6 +378,17 @@
   </div>
 
   <script>
+    // Initialize progress fills from data-value / aria-valuenow
+    (function () {
+      document.querySelectorAll('.progress-bar').forEach(function (bar) {
+        var fill = bar.querySelector('.progress-fill');
+        if (!fill) return;
+        var val = bar.getAttribute('aria-valuenow') || fill.getAttribute('data-value') || '0';
+        var pct = Math.max(0, Math.min(100, Number(val))) + '%';
+        fill.style.width = pct;
+      });
+    })();
+
     // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;

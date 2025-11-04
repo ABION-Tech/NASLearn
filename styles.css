@@ -48,3 +48,64 @@ button:hover {
     border: none;
     cursor: pointer;
 }
+
+/* Helpers added to consolidate inline styles and improve animation performance */
+.logo-img {
+    height: 70px;
+    width: auto;
+    display: inline-block;
+}
+
+/* Hint for the browser when animating opacity/transform to avoid layout thrashing */
+.will-change-transform {
+    will-change: transform, opacity;
+}
+
+/* Onboarding / section helpers */
+.onboard-title {
+    font-size: 1.6em;
+    margin: 0 0 0.5rem 0;
+}
+.onboard-subtitle {
+    font-size: 1.4em;
+    margin: 0 0 1rem 0;
+}
+.onboard-highlight {
+    margin-top: 30px;
+    font-size: 1.6em;
+    color: #2E5BBA;
+    font-weight: 600;
+}
+.onboard-paragraph {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+/* Generic helpers */
+.main-offset { padding-top: 90px; }
+.site-name { font-size: 25px; }
+.notification-list { display: none; }
+.footer-link { color: #777; }
+.section--lightbg { background-color: #f9fafb; }
+.cta-heading { margin-bottom: 1rem; font-size: 1.5rem; }
+.cta-subtext { margin-bottom: 2rem; color: var(--text-gray, var(--gray, #666)); }
+
+/* Progress bar: width will be set by JS from aria-valuenow */
+.progress-bar {
+    height: 1rem;
+    background-color: #e6e6e6;
+    border-radius: 999px;
+    overflow: hidden;
+}
+.progress-bar > .progress-fill {
+    height: 100%;
+    background-color: #2E5BBA;
+    width: 0%;
+    transition: width 400ms ease;
+}
+
+/* Small helpers */
+.auth-message { color: red; }
+
+/* Small utility classes */
+.muted-opacity { opacity: 0.8; }
