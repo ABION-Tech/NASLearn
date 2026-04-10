@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAS Internship Portal - NewAgeSkillsphere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #004E89;
+            --accent-color: #1A659E;
+            --success-color: #52B788;
+            --warning-color: #F77F00;
+            --danger-color: #D62828;
+            --dark-bg: #0D1B2A;
+            --light-bg: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --text-primary: #0D1B2A;
+            --text-secondary: #6C757D;
+            --text-light: #F8F9FA;
+            --border-color: #DEE2E6;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            --gradient-secondary: linear-gradient(135deg, #004E89 0%, #1A659E 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Verification Page Styles */
+        .verification-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .verification-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+        
+        .verification-header {
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo i {
+            margin-right: 12px;
+            font-size: 2.2rem;
+            color: white;
+        }
+        
+        .verification-content {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .verification-container {
+            width: 100%;
+            max-width: 480px;
+            background-color: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 45px;
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .verification-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            text-align: center;
+        }
+        
+        .verification-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+        
+        .verify-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+        
+        .verify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .verify-btn:active {
+            transform: translateY(0);
+        }
+        
+        .result-card {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .result-card.success {
+            background-color: rgba(82, 183, 136, 0.1);
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .result-card.pending {
+            background-color: rgba(247, 127, 0, 0.1);
+            border-left: 4px solid var(--warning-color);
+        }
+        
+        .result-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        
+        .result-message {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+        
+        .dashboard-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .dashboard-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Dashboard Page Styles */
+        .dashboard-page {
+            display: none;
+            min-height: 100vh;
+            background-color: var(--light-bg);
+        }
+        
+        .dashboard-header {
+            background-color: var(--dark-bg);
+            padding: 15px 0;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .header-logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .header-nav {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .header-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .header-nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .user-name {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .dashboard-content {
+            padding: 30px 0;
+        }
+        
+        .welcome-section {
+            margin-bottom: 35px;
+            background: var(--gradient-secondary);
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+        }
+        
+        .welcome-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .welcome-subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .dashboard-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-color);
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .card-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        
+        .card-icon.primary {
+            background-color: rgba(255, 107, 53, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .card-icon.success {
+            background-color: rgba(82, 183, 136, 0.1);
+            color: var(--success-color);
+        }
+        
+        .card-icon.warning {
+            background-color: rgba(247, 127, 0, 0.1);
+            color: var(--warning-color);
+        }
+        
+        .card-icon.danger {
+            background-color: rgba(214, 40, 40, 0.1);
+            color: var(--danger-color);
+        }
+        
+        .card-content {
+            margin-bottom: 15px;
+        }
+        
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .progress-container {
+            margin-top: 15px;
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: var(--border-color);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 5px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .task-list {
+            list-style: none;
+        }
+        
+        .task-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .task-item:last-child {
+            border-bottom: none;
+        }
+        
+        .task-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .task-checkbox.completed {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+            color: white;
+        }
+        
+        .task-text {
+            flex-grow: 1;
+            font-size: 0.95rem;
+        }
+        
+        .task-text.completed {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+        }
+        
+        .task-date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        .countdown-container {
+            text-align: center;
+            padding: 25px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            color: white;
+        }
+        
+        .countdown-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .countdown-item {
+            text-align: center;
+        }
+        
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+        
+        .communication-channels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .channel-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s;
+            border: 1px solid var(--border-color);
+        }
+        
+        .channel-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .channel-icon {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .channel-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .footer-text {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-nav {
+                display: none;
+            }
+            
+            .countdown-timer {
+                gap: 10px;
+            }
+            
+            .countdown-value {
+                font-size: 2rem;
+            }
+            
+            .communication-channels {
+                grid-template-columns: 1fr;
+            }
+            
+            .verification-container {
+                margin: 0 20px;
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Verification Page -->
+    <div id="verificationPage" class="verification-page">
+        <header class="verification-header">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    NewAgeSkillsphere
+                </div>
+            </div>
+        </header>
+        
+        <main class="verification-content">
+            <div class="container">
+                <div class="verification-container">
+                    <h1 class="verification-title">Internship Portal</h1>
+                    <p class="verification-subtitle">Enter your credentials to access your personalized internship dashboard</p>
+                    
+                    <div class="form-group">
+                        <label for="statusInput" class="form-label">Email or Student ID</label>
+                        <input type="text" id="statusInput" class="form-input" placeholder="Enter your email or student ID">
+                    </div>
+                    
+                    <button class="verify-btn" onclick="checkStatus()">Access Dashboard</button>
+                    
+                    <div id="resultCard" class="result-card">
+                        <div id="resultTitle" class="result-title"></div>
+                        <div id="resultMessage" class="result-message"></div>
+                        <div id="resultAction"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Dashboard Page -->
+    <div id="dashboardPage" class="dashboard-page">
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        NewAgeSkillsphere
+                    </div>
+                    
+                    <nav class="header-nav">
+                        <a href="#overview" onclick="scrollToSection('overview', event)">Overview</a>
+                        <a href="#tasks" onclick="scrollToSection('tasks', event)">Tasks</a>
+                        <a href="#progress" onclick="scrollToSection('progress', event)">Progress</a>
+                        <a href="#communication" onclick="scrollToSection('communication', event)">Communication</a>
+                    </nav>
+                    
+                    <div class="user-profile">
+                        <div class="user-avatar">JD</div>
+                        <span class="user-name">John Doe</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="dashboard-content">
+            <div class="container">
+                <section id="overview" class="welcome-section">
+                    <h1 class="welcome-title">Welcome back, John! 👋</h1>
+                    <p class="welcome-subtitle">You're making great progress in your internship journey. Keep up the excellent work!</p>
+                </section>
+                
+                <div class="dashboard-grid">
+                    <!-- Internship Progress Card -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2 class="card-title">Internship Progress</h2>
+                            <div class="card-icon primary">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="stat-value">65%</div>
+                            <div class="stat-label">Overall Completion</div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>Week 5 of 12</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tasks Card -->
+                    <div class="dashboard-card" id="tasks">
+                        <div class="card-header">
+                            <h2 class="card-title">Tasks</h2>
+                            <div class="card-icon success">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="stat-value">8/12</div>
+                            <div class="stat-label">Tasks Completed</div>
+                        </div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <div class="task-checkbox completed" onclick="toggleTask(this)">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="task-text completed">Complete onboarding documentation</div>
+                                <div class="task-date">Due: 2 weeks ago</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox completed" onclick="toggleTask(this)">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="task-text completed">Set up development environment</div>
+                                <div class="task-date">Due: 10 days ago</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-text">Review project requirements</div>
+                                <div class="task-date">Due: Tomorrow</div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-text">Submit weekly progress report</div>
+                                <div class="task-date">Due: 3 days</div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Internship Countdown Card -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2 class="card-title">Internship Countdown</h2>
+                            <div class="card-icon warning">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <div class="countdown-container">
+                            <div class="countdown-title">Time Remaining</div>
+                            <div class="countdown-timer" id="countdown">
+                                <div class="countdown-item">
+                                    <span class="countdown-value" id="months">1</span>
+                                    <span class="countdown-label">Months</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-value" id="weeks">3</span>
+                                    <span class="countdown-label">Weeks</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-value" id="days">5</span>
+                                    <span class="countdown-label">Days</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-value" id="hours">12</span>
+                                    <span class="countdown-label">Hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Communication Channels Card -->
+                    <div class="dashboard-card" id="communication">
+                        <div class="card-header">
+                            <h2 class="card-title">Communication</h2>
+                            <div class="card-icon danger">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="stat-label">Stay connected with your team</div>
+                        </div>
+                        <div class="communication-channels">
+                            <a href="#" class="channel-item" onclick="openChannel('Slack', event)">
+                                <i class="fab fa-slack channel-icon"></i>
+                                <span class="channel-text">Team Slack</span>
+                            </a>
+                            <a href="#" class="channel-item" onclick="openChannel('Zoom', event)">
+                                <i class="fas fa-video channel-icon"></i>
+                                <span class="channel-text">Zoom Meetings</span>
+                            </a>
+                            <a href="#" class="channel-item" onclick="openChannel('Email', event)">
+                                <i class="fas fa-envelope channel-icon"></i>
+                                <span class="channel-text">Company Email</span>
+                            </a>
+                            <a href="#" class="channel-item" onclick="openChannel('GitHub', event)">
+                                <i class="fab fa-github channel-icon"></i>
+                                <span class="channel-text">GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Skills Development Card -->
+                    <div class="dashboard-card" id="progress">
+                        <div class="card-header">
+                            <h2 class="card-title">Skills Development</h2>
+                            <div class="card-icon primary">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="stat-label">Skills you're developing</div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>JavaScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>React</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>UI/UX Design</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Performance Metrics Card -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2 class="card-title">Performance</h2>
+                            <div class="card-icon success">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="stat-value">4.7/5.0</div>
+                            <div class="stat-label">Overall Rating</div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>Quality of Work</span>
+                                <span>4.8/5.0</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 96%;"></div>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span>Team Collaboration</span>
+                                <span>4.5/5.0</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        NewAgeSkillsphere
+                    </div>
+                    <p class="footer-text">© 2023 NewAgeSkillsphere. An ABION Industries Initiative. Powered by NAS.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Check status function
+        function checkStatus() {
+            const input = document.getElementById('statusInput').value.trim();
+            const resultCard = document.getElementById('resultCard');
+            const resultTitle = document.getElementById('resultTitle');
+            const resultMessage = document.getElementById('resultMessage');
+            const resultAction = document.getElementById('resultAction');
+            
+            // Reset result card
+            resultCard.className = 'result-card';
+            resultAction.innerHTML = '';
+            
+            if (input === '') {
+                showNotification('Please enter your email or student ID');
+                return;
+            }
+            
+            if (input.toLowerCase() === 'test@nas.com' || input.toLowerCase() === 'john.doe' || input.toLowerCase() === 'demo') {
+                // Success state
+                resultCard.classList.add('success');
+                resultTitle.textContent = '✓ Status: Internship Unlocked';
+                resultMessage.textContent = 'Assigned to: ABION Tech. Your 3-month journey begins now!';
+                
+                // Create button element directly
+                const button = document.createElement('button');
+                button.className = 'dashboard-btn';
+                button.textContent = 'Go to Dashboard';
+                button.onclick = showDashboard;
+                resultAction.appendChild(button);
+            } else {
+                // Default state
+                resultCard.classList.add('pending');
+                resultTitle.textContent = '⚠ Status: Course in Progress';
+                resultMessage.textContent = 'Keep building! Complete your courses to unlock your internship placement.';
+            }
+            
+            // Show result card with animation
+            resultCard.style.display = 'block';
+        }
+        
+        // Show dashboard function
+        function showDashboard() {
+            document.getElementById('verificationPage').style.display = 'none';
+            document.getElementById('dashboardPage').style.display = 'block';
+            updateCountdown();
+            // Update countdown every hour
+            setInterval(updateCountdown, 3600000);
+            // Update countdown every minute for demo purposes
+            setInterval(updateCountdown, 60000);
+        }
+        
+        // Update countdown function
+        function updateCountdown() {
+            // Set the end date (3 months from now)
+            const now = new Date();
+            const endDate = new Date(now);
+            endDate.setMonth(endDate.getMonth() + 3);
+            
+            // Calculate the difference
+            const diff = endDate - now;
+            
+            // Calculate months, weeks, days, hours
+            const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+            const weeks = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24 * 7));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            // Update the countdown display
+            document.getElementById('months').textContent = months;
+            document.getElementById('weeks').textContent = weeks;
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+        }
+        
+        // Toggle task completion
+        function toggleTask(element) {
+            element.classList.toggle('completed');
+            const taskText = element.nextElementSibling;
+            taskText.classList.toggle('completed');
+            
+            if (element.classList.contains('completed')) {
+                element.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                element.innerHTML = '';
+            }
+            
+            // Update task count
+            updateTaskCount();
+        }
+        
+        // Update task count
+        function updateTaskCount() {
+            const totalTasks = document.querySelectorAll('.task-item').length;
+            const completedTasks = document.querySelectorAll('.task-checkbox.completed').length;
+            const statValue = document.querySelector('.dashboard-card .stat-value');
+            if (statValue && statValue.textContent.includes('/')) {
+                statValue.textContent = `${completedTasks}/${totalTasks}`;
+            }
+        }
+        
+        // Scroll to section
+        function scrollToSection(sectionId, event) {
+            if (event) {
+                event.preventDefault();
+            }
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        // Open communication channel
+        function openChannel(channel, event) {
+            event.preventDefault();
+            showNotification(`Opening ${channel}...`);
+            // In a real application, this would open the actual communication channel
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--gradient-primary);
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: var(--shadow-lg);
+                z-index: 1000;
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.textContent = message;
+            
+            // Add animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.3s ease-out reverse';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
+        // Allow pressing Enter key to verify
+        document.getElementById('statusInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkStatus();
+            }
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add some initial animations
+            const cards = document.querySelectorAll('.dashboard-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s, transform 0.5s';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
